@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsw3mhlhecw65"]
+
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_clemh"]
+
+[node name="NPC" type="Node2D"]
+script = ExtResource("1_clemh")

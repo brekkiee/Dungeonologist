@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://bphpdmmsdqanf"]
+
+[ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
+[ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/bare.png" id="2_y7mte"]
+[ext_resource type="Texture2D" uid="uid://lwtjxiowv28w" path="res://Assets/chatbox.png" id="3_0kcfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_och05"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okj4b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainScreen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScreenBorders" type="TextureRect" parent="MainScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fmdvm")
+
+[node name="ChatWindow" type="Panel" parent="MainScreen/ScreenBorders"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 25.0
+offset_right = 88.0
+offset_bottom = 65.0
+scale = Vector2(4.627, 8.59573)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_och05")
+
+[node name="Character" type="Panel" parent="MainScreen/ScreenBorders/ChatWindow"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.3808
+offset_top = -0.0964546
+offset_right = 0.100704
+offset_bottom = 12.0388
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.95978, -1.96892)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
+
+[node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.462597
+offset_bottom = 0.462597
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00347, 1.02213)
+texture = ExtResource("2_y7mte")
+expand_mode = 1
+flip_v = true
+
+[node name="Chatbox" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.4871
+offset_top = 1.16337
+offset_right = 57.5129
+offset_bottom = 49.1634
+grow_horizontal = 2
+scale = Vector2(0.47266, 0.278712)
+texture = ExtResource("3_0kcfq")
