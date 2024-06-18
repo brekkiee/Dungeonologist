@@ -1,20 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=8 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
-[ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/bare.png" id="2_y7mte"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_kg4ec"]
+[ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/Sprites/bare.png" id="2_ok5nv"]
 [ext_resource type="Texture2D" uid="uid://lwtjxiowv28w" path="res://Assets/chatbox.png" id="3_0kcfq"]
+[ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="4_iyqxm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_och05"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okj4b"]
 
-[node name="Control" type="Control"]
+[node name="MainUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kg4ec")
 
 [node name="MainScreen" type="Panel" parent="."]
 layout_mode = 1
@@ -70,7 +73,7 @@ offset_bottom = 0.462597
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00347, 1.02213)
-texture = ExtResource("2_y7mte")
+texture = ExtResource("2_ok5nv")
 expand_mode = 1
 flip_v = true
 
@@ -87,3 +90,22 @@ offset_bottom = 49.1634
 grow_horizontal = 2
 scale = Vector2(0.47266, 0.278712)
 texture = ExtResource("3_0kcfq")
+
+[node name="BookShelf" type="Panel" parent="MainScreen/ScreenBorders"]
+clip_contents = true
+layout_mode = 0
+offset_left = 28.0
+offset_top = 407.0
+offset_right = 259.0
+offset_bottom = 503.0
+
+[node name="MonsterBook" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 30.0
+offset_bottom = 98.0
+action_mode = 0
+texture_normal = ExtResource("4_iyqxm")
+stretch_mode = 0
+
+[connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]

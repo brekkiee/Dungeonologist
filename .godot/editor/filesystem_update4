@@ -1,10 +1,8 @@
 res://Scenes/home.tscn
 res://Scenes/UI.tscn
-res://Scripts/MagnifyingGlass.gd
-res://Scenes/magnifying_glass.tscn
 res://Scenes/chat_box.tscn
-res://Scripts/chat_box.gd
-res://Singletons/DialogueManager.gd
 res://Scenes/NPC.tscn
-res://Scripts/NPC.gd
-res://Scripts/magnifying_glass.gd
+res://Scripts/UI.gd
+res://Scripts/book.gd
+res://Scenes/book.tscn
+res://Singletons/DialogueManager.gd
