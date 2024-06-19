@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmh42strr33gs"]
+[gd_scene load_steps=3 format=3 uid="uid://bmh42strr33gs"]
 
 [ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/UI.tscn" id="1_52rdi"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/magnifying_glass.tscn" id="1_c52ij"]
-[ext_resource type="PackedScene" uid="uid://dsw3mhlhecw65" path="res://Scenes/NPC.tscn" id="3_787if"]
 
 [node name="Home" type="Node2D"]
 
@@ -15,7 +14,3 @@ layer = -1
 z_index = 1
 position = Vector2(616, 606)
 scale = Vector2(2, 2)
-
-[node name="NPC" parent="." instance=ExtResource("3_787if")]
-position = Vector2(99, 120)
-scale = Vector2(413.631, 1)

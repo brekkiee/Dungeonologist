@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=10 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_kg4ec"]
 [ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/Sprites/bare.png" id="2_ok5nv"]
-[ext_resource type="Texture2D" uid="uid://lwtjxiowv28w" path="res://Assets/chatbox.png" id="3_0kcfq"]
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="3_ggbwu"]
 [ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="4_iyqxm"]
+[ext_resource type="Texture2D" uid="uid://bc2u4ocwp1y34" path="res://Assets/Sprites/wizard.png" id="4_qn8ya"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_och05"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okj4b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeue0"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -62,6 +65,8 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.95978, -1.96892)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
+script = ExtResource("3_ggbwu")
+character_sprite = ExtResource("4_qn8ya")
 
 [node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
@@ -77,19 +82,18 @@ texture = ExtResource("2_ok5nv")
 expand_mode = 1
 flip_v = true
 
-[node name="Chatbox" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow"]
-visible = false
+[node name="ChatBoxPosition" type="PanelContainer" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -18.4871
-offset_top = 1.16337
-offset_right = 57.5129
-offset_bottom = 49.1634
-grow_horizontal = 2
-scale = Vector2(0.47266, 0.278712)
-texture = ExtResource("3_0kcfq")
+anchors_preset = -1
+anchor_left = 0.519
+anchor_top = 1.066
+anchor_right = 0.519
+anchor_bottom = 1.066
+offset_left = -9.28037
+offset_top = 5.08524
+offset_right = 9.71963
+offset_bottom = 11.0852
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qeue0")
 
 [node name="BookShelf" type="Panel" parent="MainScreen/ScreenBorders"]
 clip_contents = true

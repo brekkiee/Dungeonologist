@@ -20,15 +20,6 @@ func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
 	
-	# update text box size
-	custom_minimum_size.x = min(size.x, MAX_WIDTH)
-	if size.x > MAX_WIDTH:
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		custom_minimum_size.y = size.y
-		
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 24
-	
 	label.text = ""
 	_display_character()
 	

@@ -44,6 +44,7 @@ horizontal_alignment = 1
 
 [node name="Pic" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+stretch_mode = 3
 
 [node name="Text" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

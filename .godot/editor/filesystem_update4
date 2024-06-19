@@ -1,8 +1,9 @@
 res://Scenes/home.tscn
 res://Scenes/UI.tscn
 res://Scenes/chat_box.tscn
-res://Scenes/NPC.tscn
-res://Scripts/UI.gd
-res://Scripts/book.gd
 res://Scenes/book.tscn
-res://Singletons/DialogueManager.gd
+res://Scenes/NPC.tscn
+res://Scripts/NPC.gd
+res://Scripts/UI.gd
+res://Scripts/chat_box.gd
+res://Scripts/book.gd

@@ -1,14 +1,14 @@
+PanelContainer
+TextureRect
 Control
+Sprite2D
 Button
 HBoxContainer
 MarginContainer
-TextureRect
 Label
 VBoxContainer
-PanelContainer
 TextureButton
 Panel
-Sprite2D
 Timer
 NinePatchRect
 Camera2D
