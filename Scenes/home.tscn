@@ -1,16 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmh42strr33gs"]
+[gd_scene load_steps=7 format=3 uid="uid://bmh42strr33gs"]
 
 [ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/UI.tscn" id="1_52rdi"]
+[ext_resource type="Script" path="res://Scripts/tweezers.gd" id="1_514t0"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/magnifying_glass.tscn" id="1_c52ij"]
+[ext_resource type="PackedScene" uid="uid://ca2gxr4j2dn0f" path="res://Scenes/tweezers.tscn" id="4_y2836"]
+[ext_resource type="PackedScene" uid="uid://ccghv05kf58v" path="res://Scenes/monster.tscn" id="5_6i7e5"]
+[ext_resource type="PackedScene" uid="uid://dwl8ctvkevob0" path="res://Scenes/splinter.tscn" id="6_ww02q"]
 
 [node name="Home" type="Node2D"]
+script = ExtResource("1_514t0")
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="Control" parent="UI" instance=ExtResource("1_52rdi")]
+offset_left = -2.0
+offset_right = -2.0
 
 [node name="MagnifyingGlass" parent="." instance=ExtResource("1_c52ij")]
-z_index = 1
 position = Vector2(616, 606)
 scale = Vector2(2, 2)
+splinter_path = NodePath("../splinter")
+
+[node name="tweezers" parent="." instance=ExtResource("4_y2836")]
+z_index = 1
+position = Vector2(663, 607)
+scale = Vector2(2.02262, 2.02262)
+picked_up = false
+target_color = Color(0, 1, 0, 1)
+normal_color = Color(1, 1, 1, 1)
+splinter_path = NodePath("../splinter")
+
+[node name="monster" parent="." instance=ExtResource("5_6i7e5")]
+position = Vector2(690, 425)
+
+[node name="splinter" parent="." instance=ExtResource("6_ww02q")]
+z_index = 1
+position = Vector2(682, 441)
+scale = Vector2(1.63281, 1.64)

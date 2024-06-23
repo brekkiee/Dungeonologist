@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwl8ctvkevob0"]
+
+[ext_resource type="Texture2D" uid="uid://besft1shxtnb2" path="res://Assets/Sprites/splinter.png" id="1_jjul6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fa14"]
+
+[node name="splinter" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7fa14")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jjul6")

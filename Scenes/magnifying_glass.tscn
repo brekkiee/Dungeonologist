@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2kd"]
 
 [node name="MagnifyingGlass" type="Area2D"]
+z_index = 2
 script = ExtResource("1_28yun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

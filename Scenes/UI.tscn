@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=12 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_kg4ec"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/NPC.gd" id="3_ggbwu"]
 [ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="4_iyqxm"]
 [ext_resource type="Texture2D" uid="uid://bc2u4ocwp1y34" path="res://Assets/Sprites/wizard.png" id="4_qn8ya"]
+[ext_resource type="Texture2D" uid="uid://dl15v83fdbyfj" path="res://Assets/Sprites/examination_table.png" id="7_t6mku"]
+[ext_resource type="Script" path="res://Scripts/examination_table.gd" id="7_vvbcd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_och05"]
 
@@ -108,8 +110,25 @@ layout_mode = 0
 offset_left = 1.0
 offset_right = 30.0
 offset_bottom = 98.0
+focus_mode = 0
 action_mode = 0
 texture_normal = ExtResource("4_iyqxm")
 stretch_mode = 0
+
+[node name="ExaminationTable" type="Panel" parent="MainScreen/ScreenBorders"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 400.0
+offset_right = 1145.0
+offset_bottom = 565.0
+script = ExtResource("7_vvbcd")
+
+[node name="ExamTableSprite2D" type="Sprite2D" parent="MainScreen/ScreenBorders/ExaminationTable"]
+position = Vector2(423.567, 94.482)
+scale = Vector2(2.27286, 1.80967)
+texture = ExtResource("7_t6mku")
+
+[node name="MonsterSpawnPoint" type="Node2D" parent="MainScreen/ScreenBorders/ExaminationTable"]
+position = Vector2(423, 38)
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]

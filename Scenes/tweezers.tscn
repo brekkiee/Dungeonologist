@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca2gxr4j2dn0f"]
+
+[ext_resource type="Script" path="res://Scripts/tweezers.gd" id="1_gbm6v"]
+[ext_resource type="Texture2D" uid="uid://qxcsfuhsrm5x" path="res://Assets/Sprites/tweezers.png" id="2_vvrs4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n3qh"]
+
+[node name="tweezers" type="Area2D"]
+z_index = 2
+script = ExtResource("1_gbm6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5n3qh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vvrs4")

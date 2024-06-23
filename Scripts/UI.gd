@@ -1,6 +1,7 @@
 extends Control
 
 @onready var book_scene = preload("res://Scenes/book.tscn")
+@onready var exam_table_scene = $MainScreen/ScreenBorders/ExaminationTable
 
 var book
 var book_open = false
@@ -13,3 +14,7 @@ func _on_monster_book_pressed():
 	elif book_open:
 		book.queue_free()
 		book_open = false
+
+#func _ready():
+#	# Spawning a monster TODO: Add button
+#	exam_table_scene.spawn_monster()
