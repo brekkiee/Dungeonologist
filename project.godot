@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://Singletons/DialogueManager.gd"
+QuestManager="*res://Singletons/QuestManager.gd"
 
 [display]
 

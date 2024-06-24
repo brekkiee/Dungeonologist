@@ -5,12 +5,16 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n3qh"]
 
-[node name="tweezers" type="Area2D"]
+[node name="tweezers" type="Area2D" node_paths=PackedStringArray("sprite")]
 z_index = 2
 script = ExtResource("1_gbm6v")
+sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5n3qh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_vvrs4")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

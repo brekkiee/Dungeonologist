@@ -3,7 +3,7 @@ extends MarginContainer
 @onready var label = $MarginContainer/Label
 @onready var timer = $Timer
 
-const MAX_WIDTH = 76
+const MAX_WIDTH = 800
 
 var text = ""
 var letter_index = 0
@@ -14,12 +14,20 @@ var letter_index = 0
 @export var punct_time = 0.2
 
 signal finished()
-
+#func _process(delta):
+	#print(custom_minimum_size)
 # updates text box text and size
 func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
 	
+	custom_minimum_size.x = min(size.x, MAX_WIDTH)
+	
+	# force text to write on new line when max width reached
+	if size.x > MAX_WIDTH:
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		custom_minimum_size.y = size.y
+		
 	label.text = ""
 	_display_character()
 	

@@ -5,6 +5,7 @@ extends Control
 
 var book
 var book_open = false
+signal quest_complete_npc
 
 func _on_monster_book_pressed():
 	if not book_open:
@@ -18,3 +19,7 @@ func _on_monster_book_pressed():
 #func _ready():
 #	# Spawning a monster TODO: Add button
 #	exam_table_scene.spawn_monster()
+
+
+func _on_monster_quest_complete():
+	emit_signal("quest_complete_npc")

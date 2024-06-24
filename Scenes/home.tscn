@@ -26,15 +26,16 @@ splinter_path = NodePath("../splinter")
 z_index = 1
 position = Vector2(663, 607)
 scale = Vector2(2.02262, 2.02262)
-picked_up = false
-target_color = Color(0, 1, 0, 1)
-normal_color = Color(1, 1, 1, 1)
 splinter_path = NodePath("../splinter")
 
 [node name="monster" parent="." instance=ExtResource("5_6i7e5")]
 position = Vector2(690, 425)
 
-[node name="splinter" parent="." instance=ExtResource("6_ww02q")]
+[node name="splinter" parent="." node_paths=PackedStringArray("Tweezer") instance=ExtResource("6_ww02q")]
 z_index = 1
 position = Vector2(682, 441)
 scale = Vector2(1.63281, 1.64)
+Tweezer = NodePath("../tweezers")
+
+[connection signal="quest_complete" from="monster" to="UI/Control" method="_on_monster_quest_complete"]
+[connection signal="healmonster" from="splinter" to="monster" method="_on_heal_monster"]

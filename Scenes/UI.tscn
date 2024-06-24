@@ -131,4 +131,5 @@ texture = ExtResource("7_t6mku")
 [node name="MonsterSpawnPoint" type="Node2D" parent="MainScreen/ScreenBorders/ExaminationTable"]
 position = Vector2(423, 38)
 
+[connection signal="quest_complete_npc" from="." to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_main_ui_quest_complete_npc"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]

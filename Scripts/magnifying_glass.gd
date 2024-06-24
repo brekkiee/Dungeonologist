@@ -6,6 +6,8 @@ extends Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 @export var splinter_path: NodePath  # Path to the splinter node
 
+var diagnosed = false
+
 func _ready():
 	if not is_connected("mouse_entered", Callable(self, "_on_mouse_entered")):
 		self.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
@@ -22,16 +24,19 @@ func _process(delta):
 	if Input.is_mouse_button_pressed(0):
 		picked_up = false
 	
-	var splinter = get_node(splinter_path)
-	if splinter:
-		var collision_shape = splinter.get_node("CollisionShape2D")
-		if collision_shape:
-			var shape = collision_shape.shape
-			var splinter_rect = Rect2(collision_shape.global_position - shape.extents, shape.extents * 2)
-			if splinter_rect.has_point(global_position):
-				sprite.modulate = target_color  # Change color to green
-			else:
-				sprite.modulate = normal_color  # Change color back to normal
+	if not diagnosed: 
+		var splinter = get_node(splinter_path)
+		if splinter:
+			var collision_shape = splinter.get_node("CollisionShape2D")
+			if collision_shape:
+				var shape = collision_shape.shape
+				var splinter_rect = Rect2(collision_shape.global_position - shape.extents, shape.extents * 2)
+				if splinter_rect.has_point(global_position):
+					sprite.modulate = target_color  # Change color to green
+					diagnosed = true
+					QuestManager.advanceQuest("TutorialQuest") # advance quest 
+				else:
+					sprite.modulate = normal_color  # Change color back to normal
 
 func _on_mouse_exited():
 	if not Input.is_mouse_button_pressed(1):
