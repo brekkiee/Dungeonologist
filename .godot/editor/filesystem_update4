@@ -1,5 +1,5 @@
-res://Scenes/quest_display.tscn
-res://Scripts/tweezers.gd
 res://Scenes/home.tscn
+res://Scripts/tweezers.gd
 res://Scenes/UI.tscn
 res://Scenes/chat_box.tscn
+res://Scenes/quest_display.tscn
