@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0l6l4r1h261c"]
+
+[ext_resource type="Script" path="res://Scenes/scene_change_buttons.gd" id="1_fsfw4"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Fonts/yoster.ttf" id="2_mpwjf"]
+[ext_resource type="StyleBox" path="res://Styles/scene_change_buttons.tres" id="3_hhero"]
+[ext_resource type="Texture2D" uid="uid://b4jxb3k4asrw5" path="res://Assets/Test_Button_Home.png" id="3_if2ch"]
+[ext_resource type="Texture2D" uid="uid://v6ik2sqkcccg" path="res://Assets/Test_Button_Alchemy_Lab.png" id="5_iifm4"]
+[ext_resource type="Texture2D" uid="uid://cbmcduang8f21" path="res://Assets/Test_Button_Monster_Enclosure.png" id="6_d2mvn"]
+
+[node name="SceneButtons" type="Control"]
+layout_mode = 3
+anchor_right = 0.459
+anchor_bottom = 0.174
+offset_left = 1.0
+offset_right = 1.23199
+offset_bottom = 0.248001
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fsfw4")
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = -359.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mpwjf")
+text = "Home Scene"
+icon = ExtResource("3_if2ch")
+
+[node name="AlchemyLabButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 40.0
+offset_right = -209.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mpwjf")
+theme_override_styles/normal = ExtResource("3_hhero")
+theme_override_styles/hover = ExtResource("3_hhero")
+text = "Alchemy Lab"
+icon = ExtResource("5_iifm4")
+
+[node name="MonsterEnclosureButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = 40.0
+offset_right = -20.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mpwjf")
+theme_override_styles/normal = ExtResource("3_hhero")
+theme_override_styles/hover = ExtResource("3_hhero")
+text = "Monster Enclosure"
+icon = ExtResource("6_d2mvn")

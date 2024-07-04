@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=13 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_kg4ec"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bc2u4ocwp1y34" path="res://Assets/Sprites/wizard.png" id="4_qn8ya"]
 [ext_resource type="Texture2D" uid="uid://dl15v83fdbyfj" path="res://Assets/Sprites/examination_table.png" id="7_t6mku"]
 [ext_resource type="Script" path="res://Scripts/examination_table.gd" id="7_vvbcd"]
+[ext_resource type="PackedScene" uid="uid://c0l6l4r1h261c" path="res://Scenes/scene_change_buttons.tscn" id="9_03sy1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_och05"]
 
@@ -130,6 +131,17 @@ texture = ExtResource("7_t6mku")
 
 [node name="MonsterSpawnPoint" type="Node2D" parent="MainScreen/ScreenBorders/ExaminationTable"]
 position = Vector2(423, 38)
+
+[node name="SceneButtons" parent="." instance=ExtResource("9_03sy1")]
+layout_mode = 1
+anchor_left = 0.215
+anchor_top = -0.035
+anchor_right = 0.674
+anchor_bottom = 0.139
+offset_left = 0.319992
+offset_top = -0.32
+offset_right = 0.552002
+offset_bottom = -0.0719986
 
 [connection signal="quest_complete_npc" from="." to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_main_ui_quest_complete_npc"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
