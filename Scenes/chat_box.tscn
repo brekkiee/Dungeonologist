@@ -12,7 +12,7 @@ offset_right = -1076.0
 offset_bottom = -600.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.91373, 1.91373)
+scale = Vector2(2, 2)
 script = ExtResource("1_1ugle")
 
 [node name="TextureRect" type="TextureRect" parent="."]
