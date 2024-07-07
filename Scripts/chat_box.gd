@@ -8,7 +8,7 @@ const MAX_WIDTH = 800
 var text = ""
 var letter_index = 0
 
-# timing customisation
+# timing customisation for text display
 @export var letter_time = 0.03
 @export var space_time = 0.06
 @export var punct_time = 0.2
@@ -23,7 +23,7 @@ func display_text(text_to_display: String):
 	
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	
-	# force text to write on new line when max width reached
+	# fEnable word wrap if width exceeds max
 	if size.x > MAX_WIDTH:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		custom_minimum_size.y = size.y
@@ -31,7 +31,7 @@ func display_text(text_to_display: String):
 	label.text = ""
 	_display_character()
 	
-# displays each character and sets appropriate timer
+# displays each character with appropriate timing
 func _display_character():
 	label.text += text[letter_index]
 	
@@ -46,10 +46,10 @@ func _display_character():
 			timer.start(punct_time)
 		" ": # spaces
 			timer.start(space_time)
-		_: # anything else
+		_: # Other characters
 			timer.start(letter_time)
 	
-# timer tells script when to display next character
+# Timer signals when to display next character
 func _on_timer_timeout():
 	_display_character()
 
