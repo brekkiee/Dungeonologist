@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lwtjxiowv28w"
-path="res://.godot/imported/chatbox.png-bb1632d87fb34bed1d4c81b2b8324a29.ctex"
+uid="uid://c3lix6m1sr8pq"
+path="res://.godot/imported/Border.png-0386e93bfffd015c52d19652479bb873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chatbox.png"
-dest_files=["res://.godot/imported/chatbox.png-bb1632d87fb34bed1d4c81b2b8324a29.ctex"]
+source_file="res://Assets/UI/Border.png"
+dest_files=["res://.godot/imported/Border.png-0386e93bfffd015c52d19652479bb873.ctex"]
 
 [params]
 

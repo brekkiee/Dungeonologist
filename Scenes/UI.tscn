@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bphpdmmsdqanf"]
 
-[ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_kg4ec"]
+[ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/UI/Border.png" id="2_6eh3v"]
 [ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/Sprites/bare.png" id="2_ok5nv"]
 [ext_resource type="Script" path="res://Scripts/NPC.gd" id="3_ggbwu"]
 [ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="4_iyqxm"]
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_fmdvm")
+texture = ExtResource("2_6eh3v")
 
 [node name="ChatWindow" type="Panel" parent="MainScreen/ScreenBorders"]
 layout_mode = 0

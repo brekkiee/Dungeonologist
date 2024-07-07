@@ -1,8 +1,14 @@
+MarginContainer
+VBoxContainer
+Panel
+TextureRect
+GridContainer
+HFlowContainer
+VFlowContainer
+HSplitContainer
 Label
 ColorRect
-TextureRect
 HBoxContainer
-VBoxContainer
 PanelContainer
 Control
 Button
@@ -16,8 +22,6 @@ CanvasLayer
 AnimationPlayer
 CharacterBody2D
 AnimatableBody2D
-Panel
-MarginContainer
 TextureButton
 Timer
 Camera2D
