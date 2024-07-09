@@ -31,13 +31,13 @@ func _deferred_goto_scene(path):
 	get_tree().set_current_scene(current_scene)
 
 func tool_click(clickedItem, toolname):
-	if QuestManager.ActiveQuests.has("TutorialQuest"):
+	if QuestManager.activeQuests.has("TutorialQuest"):
 		# check if clicked item is splinter
 		if clickedItem.name == "splinter": 
 			play_sound() #  plays success sound
 			# check which tool made the click
 			if toolname == "MagnifyingGlass":
-				if QuestManager.ActiveQuests["TutorialQuest"]["CurrentStage"] < 2:
+				if QuestManager.activeQuests["TutorialQuest"]["CurrentStage"] < 2:
 					QuestManager.advanceQuest("TutorialQuest") # advance quest 
 			elif toolname == "Tweezers":
 				get_node("/root/Home/monster")._on_heal_monster()

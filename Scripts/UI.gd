@@ -1,7 +1,7 @@
 extends Control
 
 @onready var book_scene = preload("res://Scenes/book.tscn")
-@onready var exam_table_scene = $MainScreen/ScreenBorders/ExaminationTable
+@onready var exam_table_scene = $AspectRatioContainer/HBoxContainer/Room/ExaminationTable
 
 var book
 var book_open = false

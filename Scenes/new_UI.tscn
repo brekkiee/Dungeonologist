@@ -1,15 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5bkgslfaeq4t"]
+[gd_scene load_steps=12 format=3 uid="uid://c5bkgslfaeq4t"]
 
 [ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/UI/Border.png" id="1_hqsfl"]
 [ext_resource type="Texture2D" uid="uid://x5k15j0ikoh1" path="res://icon.svg" id="1_m3rwl"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_qcxh4"]
+[ext_resource type="PackedScene" uid="uid://dsw3mhlhecw65" path="res://Scenes/NPC.tscn" id="3_6so4b"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_n77t0"]
+[ext_resource type="StyleBox" uid="uid://deib21jicw1qo" path="res://Styles/scene_change_buttons.tres" id="4_5y3jk"]
+[ext_resource type="Script" path="res://Scripts/scene_change_buttons.gd" id="4_7t3ip"]
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="5_d2rh8"]
+[ext_resource type="StyleBox" uid="uid://c2h5wru554o3a" path="res://Styles/scene_change_buttons_active.tres" id="7_knsm5"]
+[ext_resource type="Script" path="res://Scripts/examination_table.gd" id="8_0q5v2"]
+[ext_resource type="Texture2D" uid="uid://dl15v83fdbyfj" path="res://Assets/Sprites/examination_table.png" id="9_bluhq"]
 
-[node name="Control" type="Control"]
+[node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qcxh4")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -42,11 +52,23 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 
-[node name="ChatWindow" type="ColorRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.8
-color = Color(1, 1, 1, 0)
+size_flags_stretch_ratio = 2.84
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 5
+
+[node name="NPC" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/PanelContainer/MarginContainer" instance=ExtResource("3_6so4b")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.84
+alignment = 1
+character_name = "Guntheidon"
 
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer"]
 layout_mode = 2
@@ -123,6 +145,7 @@ size_flags_stretch_ratio = 9.25
 [node name="InventoryPanel" type="HSplitContainer" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("5_d2rh8")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel"]
 layout_mode = 2
@@ -133,50 +156,83 @@ vertical_scroll_mode = 3
 [node name="GridContainer" type="GridContainer" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="InventorySlot" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_m3rwl")
-
-[node name="InventorySlot2" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_m3rwl")
-
-[node name="InventorySlot3" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_m3rwl")
-
-[node name="InventorySlot4" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_m3rwl")
-
-[node name="InventorySlot5" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_m3rwl")
-
-[node name="InventorySlot6" type="TextureRect" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel/ScrollContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_m3rwl")
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
 
 [node name="Panel" type="Panel" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 9.25
 
-[node name="Room" type="ColorRect" parent="AspectRatioContainer/HBoxContainer"]
+[node name="Room" type="VBoxContainer" parent="AspectRatioContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.07
-color = Color(1, 0.8, 1, 0)
+
+[node name="SceneButtons" type="HBoxContainer" parent="AspectRatioContainer/HBoxContainer/Room"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7t3ip")
+normal_button_style = ExtResource("4_5y3jk")
+active_button_style = ExtResource("7_knsm5")
+
+[node name="HomeButton" type="Button" parent="AspectRatioContainer/HBoxContainer/Room/SceneButtons"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n77t0")
+theme_override_styles/normal = ExtResource("4_5y3jk")
+theme_override_styles/hover = ExtResource("4_5y3jk")
+action_mode = 0
+text = "Home"
+
+[node name="AlchemyLabButton" type="Button" parent="AspectRatioContainer/HBoxContainer/Room/SceneButtons"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n77t0")
+theme_override_styles/normal = ExtResource("4_5y3jk")
+theme_override_styles/hover = ExtResource("4_5y3jk")
+text = "Alchemy Lab"
+
+[node name="MonsterEnclosureButton" type="Button" parent="AspectRatioContainer/HBoxContainer/Room/SceneButtons"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_n77t0")
+theme_override_styles/normal = ExtResource("4_5y3jk")
+theme_override_styles/hover = ExtResource("4_5y3jk")
+text = "Monster
+Enclosure"
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/HBoxContainer/Room"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ExaminationTable" type="Panel" parent="AspectRatioContainer/HBoxContainer/Room"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+script = ExtResource("8_0q5v2")
+
+[node name="ExamTableSprite2D" type="Sprite2D" parent="AspectRatioContainer/HBoxContainer/Room/ExaminationTable"]
+position = Vector2(423.567, 94.482)
+scale = Vector2(2.27286, 1.80967)
+texture = ExtResource("9_bluhq")
+
+[node name="MonsterSpawnPoint" type="Node2D" parent="AspectRatioContainer/HBoxContainer/Room/ExaminationTable"]
+position = Vector2(423, 38)

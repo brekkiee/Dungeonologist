@@ -1,7 +1,7 @@
 extends Control
 
 @onready var sprite_texture = $CharacterSprite
-@onready var chat_pos = $ChatBoxPosition
+@onready var chat_pos = $ChatBox
 
 @export var character_name = ""
 @export var character_sprite: Texture2D 
@@ -42,11 +42,11 @@ func _unhandled_input(event):
 		
 		# check advance text, but quest not complete
 	elif event.is_action_pressed("advance_text") && already_met && not quest_finished:
-		DialogueManager.start_chat(chat_pos.global_position, lines)
+		DialogueManager.start_chat(chat_pos.position, lines)
 		
 		# check if advance text, quest IS finished
 	elif event.is_action_pressed("advance_text") && quest_finished:
-		DialogueManager.start_chat(chat_pos.global_position, quest_complete_lines)
+		DialogueManager.start_chat(chat_pos.position, quest_complete_lines)
 
 
 func _on_main_ui_quest_complete_npc():

@@ -4,17 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://bc2u4ocwp1y34" path="res://Assets/Sprites/wizard.png" id="2_g55jr"]
 [ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/Sprites/bare.png" id="3_u7w6d"]
 
-[node name="NPC" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="NPC" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_clemh")
 character_sprite = ExtResource("2_g55jr")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+[node name="ChatBox" type="ColorRect" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="CharacterSprite" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("3_u7w6d")
+stretch_mode = 4

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3lp1p85apmv3"]
+
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_u2idb"]
+[ext_resource type="Texture2D" uid="uid://dq31row4lb5gd" path="res://Assets/Sprites/magnifying_glass.png" id="2_xo5j1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jseuu"]
+
+[node name="Item" type="Node2D" groups=["Items"]]
+script = ExtResource("1_u2idb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jseuu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xo5j1")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

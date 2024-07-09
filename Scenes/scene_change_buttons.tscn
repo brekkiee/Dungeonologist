@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj7vyh4w4hv07"]
 
 [ext_resource type="Script" path="res://Scripts/scene_change_buttons.gd" id="1_fa4id"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Fonts/yoster.ttf" id="1_vvaff"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="1_vvaff"]
 [ext_resource type="StyleBox" uid="uid://deib21jicw1qo" path="res://Styles/scene_change_buttons.tres" id="2_ssk0g"]
 [ext_resource type="StyleBox" uid="uid://c2h5wru554o3a" path="res://Styles/scene_change_buttons_active.tres" id="3_s8gpy"]
 
