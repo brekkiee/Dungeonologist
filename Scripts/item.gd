@@ -12,6 +12,7 @@ var scene_path: String = "res://Scenes/item.tscn"
 @export var item_effect = ""
 
 var item_hovered = false
+var item_is_draggable = false
 
 func _ready():
 	# assign texture when game runs
@@ -23,8 +24,16 @@ func _process(delta):
 	if Engine.is_editor_hint():
 		item_sprite.texture = item_texture
 		
-	if item_hovered && Input.is_action_just_pressed("pick_up"):
+	if item_is_draggable:
+		global_position = get_global_mouse_position() # make item follow mouse
+		
+		if Input.is_action_just_pressed("pick_up"): # drop item at current position
+			global_position = get_global_mouse_position()
+			item_is_draggable = false
+		
+	elif item_hovered && Input.is_action_just_pressed("pick_up"):
 		pickup_item()
+		
 
 # add item to inventory
 func pickup_item():
@@ -36,8 +45,8 @@ func pickup_item():
 		"effect" : item_effect,
 		"scene_path" : scene_path,
 	}
-	InventoryManager.addItem(item)
 	print("Pick up " + item_name)
+	InventoryManager.addItem(item)
 	self.queue_free() # remove from scene
 
 # picks up item when clicked on with the mouse
@@ -48,3 +57,9 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	item_hovered = false
 	print(item_name + " is not hovered")
+
+func set_item_data(data):
+	item_texture = data["texture"]
+	item_name = data["name"]
+	item_type = data["type"]
+	item_effect = data["effect"]

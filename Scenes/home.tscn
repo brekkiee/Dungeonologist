@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2kgwgd11hbaw"]
+[gd_scene load_steps=10 format=3 uid="uid://b2kgwgd11hbaw"]
 
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/magnifying_glass.tscn" id="1_c52ij"]
 [ext_resource type="PackedScene" uid="uid://c5bkgslfaeq4t" path="res://Scenes/new_UI.tscn" id="1_yi0rs"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwl8ctvkevob0" path="res://Scenes/splinter.tscn" id="6_ww02q"]
 [ext_resource type="PackedScene" uid="uid://3lp1p85apmv3" path="res://Scenes/item.tscn" id="7_26d88"]
 [ext_resource type="Texture2D" uid="uid://qxcsfuhsrm5x" path="res://Assets/Sprites/tweezers.png" id="8_m8y3o"]
+[ext_resource type="Texture2D" uid="uid://besft1shxtnb2" path="res://Assets/Sprites/splinter.png" id="9_baauo"]
 
 [node name="Home" type="Node2D"]
 
@@ -47,6 +48,20 @@ position = Vector2(373, 362)
 item_texture = ExtResource("8_m8y3o")
 item_name = "Tweezers"
 item_type = "Tool"
+item_effect = "N/A"
+
+[node name="Item2" parent="." instance=ExtResource("7_26d88")]
+position = Vector2(475, 300)
+item_texture = ExtResource("8_m8y3o")
+item_name = "Tweezers"
+item_type = "Tool"
+item_effect = "N/A"
+
+[node name="Item3" parent="." instance=ExtResource("7_26d88")]
+position = Vector2(564, 259)
+item_texture = ExtResource("9_baauo")
+item_name = "Snack"
+item_type = "Food"
 item_effect = "N/A"
 
 [connection signal="area_entered" from="ToolBox/MagnifyingGlass" to="ToolBox/MagnifyingGlass" method="_on_area_entered"]

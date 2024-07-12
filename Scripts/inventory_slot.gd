@@ -20,6 +20,7 @@ func _process(delta):
 func _on_button_pressed():
 	if item != null:
 		print("Using " + item["name"])
+		InventoryManager.dropItem(item, get_global_mouse_position())
 		InventoryManager.removeItem(item)
 
 # shows details panel on mouse hover

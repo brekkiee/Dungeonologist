@@ -158,7 +158,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
-columns = 5
+columns = 4
 
 [node name="Panel" type="Panel" parent="AspectRatioContainer/HBoxContainer/Chat&Inventory/VBoxContainer/MarginContainer/VBoxContainer/InventoryPanel"]
 layout_mode = 2
