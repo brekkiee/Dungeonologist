@@ -4,8 +4,8 @@ extends Control
 @onready var quest_text = $PanelContainer/VBoxContainer/QuestText
 
 
-func update_quest(name: String, text: String):
-	quest_name.text = name
+func update_quest(questName: String, text: String):
+	quest_name.text = questName
 	quest_text.text = text
 
 func complete_quest():

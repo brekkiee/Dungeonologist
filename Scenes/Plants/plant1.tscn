@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw28cxxwqsy18"]
+
+[ext_resource type="Texture2D" uid="uid://cmq5u88u33us1" path="res://Assets/Sprites/plant1.png" id="1_2jcso"]
+[ext_resource type="Script" path="res://Scripts/plant.gd" id="1_a4qlr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfcqt"]
+size = Vector2(87, 138)
+
+[node name="Plant1" type="Area2D"]
+script = ExtResource("1_a4qlr")
+harvested_item_name = "plant1_item"
+
+[node name="plantSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.74074, 1.74074)
+texture = ExtResource("1_2jcso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jfcqt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -7,49 +7,44 @@ var quest_display
 # Dictionary to store all quests for the level/monster
 var Quests: Dictionary = {
 	"TutorialQuest" :{
-		"QuestName": "Help Carlson",
-		"CurrentStage": 0,
-		"QuestDescription":{
-			"1": "Diagnose Carlson",
-			"2": "Treat Carlson"
-		}
+		"Script": "res://Quests/TutorialQuest/tutorialquest.gd",
+		"QuestType": "monster",
 	},
 }
 
-var ActiveQuests: Dictionary = {}
-var CompletedQuests: Array = []
+var active_monster_quest: Node = null
+var ActiveOtherQuests = []
+var CompletedQuests = []
 
 func _ready():
+	# Instantiate and add quest display to the scene tree
 	quest_display = quest_display_scene.instantiate()
 	get_tree().root.add_child.call_deferred(quest_display)
 
 # Add quest to active quests
 func addQuest(quest_id: String):
-	if quest_id in Quests.keys():
-		ActiveQuests[quest_id] = Quests[quest_id]
-		advanceQuest(quest_id)
+	var questNodeParent = get_node("/root/Header/QuestsScriptsNode")
+	if Quests[quest_id].QuestType == "monster":
+		if active_monster_quest == null:
+			# Load and instantiate the quest script
+			var quest_script = load(Quests[quest_id].Script)
+			active_monster_quest = quest_script.new()
 	else:
-		print(quest_id + ": quest not found.")
+		# Handle other types of quests here
+		pass
 
-# update current stage of quest
-func advanceQuest(quest_id: String):
-	if not ActiveQuests.has(quest_id):
-		print("Error: Quest ID " + quest_id + " not found in ActiveQuests")
-		return
-	# increment current stage by 1 and convert to string
-	ActiveQuests[quest_id]["CurrentStage"] += 1
-	var current_stage: String = str(ActiveQuests[quest_id]["CurrentStage"])
-	
-	if current_stage in ActiveQuests[quest_id]["QuestDescription"].keys():
-		# get updated quest description for the new stage
-		quest_display.update_quest(ActiveQuests[quest_id]["QuestName"], ActiveQuests[quest_id]["QuestDescription"][current_stage])
-	else:
-		completeQuest(quest_id)
-	
-# handle quest completion
-func completeQuest(quest_id: String):
-	if ActiveQuests.has(quest_id):
-		CompletedQuests.append(Quests[quest_id]["QuestName"])
-		ActiveQuests.erase(quest_id)
-		quest_display.complete_quest()
-		print("quest completed")
+# Called from dialogue manager when current conversation is finished
+# Calls chat_finished method in active monster quest if it exists
+func chat_finished():
+	if active_monster_quest != null:
+		if active_monster_quest.has_method("chat_finished"):
+			active_monster_quest.chat_finished()
+
+# Removes active monster quest and associated monster
+# Only used when the quest is completed and monster is no longer required
+func delete_monster_quest():
+	CompletedQuests.append(active_monster_quest.info.Name)
+	active_monster_quest.queue_free.call_deferred()
+	active_monster_quest = null
+	GameManager.spawned_monster.queue_free.call_deferred()
+	GameManager.spawned_monster = null

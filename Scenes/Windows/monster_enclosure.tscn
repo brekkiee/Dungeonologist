@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://hxsuqplnekk3"]
+
+[ext_resource type="Texture2D" uid="uid://lefm6v2rglac" path="res://Assets/UI/border_lines.png" id="1_y606p"]
+
+[node name="MonsterEnclosure" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScreenBorders" type="TextureRect" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.304
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_y606p")
+metadata/_edit_use_anchors_ = true

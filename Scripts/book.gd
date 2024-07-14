@@ -15,7 +15,7 @@ func _ready():
 
 # list of monster pics for each page
 var page_pic: Array[Texture2D] = [
-	load("res://Assets/chatbox.png"),
+	load("res://Assets/UI/chatbox.png"),
 	load("res://Assets/Sprites/slime.png"),
 	load("res://Assets/Sprites/octo.png"),
 ]

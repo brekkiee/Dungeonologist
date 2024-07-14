@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2v0wkaafl2kj"]
+
+[ext_resource type="Texture2D" uid="uid://lefm6v2rglac" path="res://Assets/UI/border_lines.png" id="1_ef0mi"]
+[ext_resource type="Texture2D" uid="uid://b03mf2cboy58v" path="res://Assets/Sprites/garden_bg.png" id="2_mayqv"]
+[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Scenes/Plants/plant1.tscn" id="3_jq60l"]
+[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Scenes/Plants/plant2.tscn" id="4_twhdk"]
+[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Scenes/Plants/plant3.tscn" id="5_v3wnm"]
+
+[node name="Garden" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScreenBorders" type="TextureRect" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.304
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_ef0mi")
+metadata/_edit_use_anchors_ = true
+
+[node name="backgroundSprite" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(721.683, 325.093)
+scale = Vector2(0.938307, 0.947405)
+texture = ExtResource("2_mayqv")
+
+[node name="Plant1" parent="." instance=ExtResource("3_jq60l")]
+position = Vector2(422, 412)
+
+[node name="Plant2" parent="." instance=ExtResource("4_twhdk")]
+position = Vector2(560, 340)
+
+[node name="Plant3" parent="." instance=ExtResource("5_v3wnm")]
+position = Vector2(889, 320)

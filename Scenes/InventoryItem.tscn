@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ixn7w31wao8"]
+
+[ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_jonsr"]
+[ext_resource type="Texture2D" uid="uid://buu4qabs0bils" path="res://Assets/InventoryIcons/plant1_icon.png" id="2_ve2wf"]
+
+[node name="InventoryItem" type="Control"]
+layout_mode = 3
+anchor_right = 0.035
+anchor_bottom = 0.062
+offset_right = 1111.68
+offset_bottom = 607.824
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jonsr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.062
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -20.32
+offset_bottom = -20.176
+focus_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.062
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -20.32
+offset_bottom = -20.176
+mouse_filter = 2
+texture = ExtResource("2_ve2wf")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

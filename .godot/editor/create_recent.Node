@@ -1,7 +1,10 @@
-Button
-HBoxContainer
-Panel
-MarginContainer
-AudioStreamPlayer
 Node2D
+Area2D
+Node
+CollisionShape2D
+Panel
+Button
+TextureRect
+ScrollContainer
+AnimatedSprite2D
 Control

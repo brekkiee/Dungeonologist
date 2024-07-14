@@ -1,0 +1,145 @@
+[gd_scene load_steps=12 format=3 uid="uid://bphpdmmsdqanf"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_8cuee"]
+[ext_resource type="Texture2D" uid="uid://bhuq17quytxyv" path="res://Assets/UI/LeftPanel.png" id="2_cbw3r"]
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="3_m2gkd"]
+[ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/Sprites/bare.png" id="5_piwk3"]
+[ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="6_ikh6n"]
+[ext_resource type="Script" path="res://Scripts/inventory_panel.gd" id="7_wmh0l"]
+[ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/scene_change_buttons.tscn" id="9_17vtp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_och05"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okj4b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeue0"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8cuee")
+
+[node name="MainScreen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j37hr")
+
+[node name="ScreenBorders" type="TextureRect" parent="MainScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.152
+offset_right = -866.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cbw3r")
+
+[node name="ChatWindow" type="Panel" parent="MainScreen/ScreenBorders"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 25.0
+offset_right = 88.0
+offset_bottom = 65.0
+scale = Vector2(4.627, 8.59573)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_och05")
+
+[node name="Character" type="Panel" parent="MainScreen/ScreenBorders/ChatWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = 5.6192
+offset_top = 23.9035
+offset_right = -19.8993
+offset_bottom = 12.1188
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.95978, -1.96892)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
+script = ExtResource("3_m2gkd")
+
+[node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = 0.462597
+offset_bottom = 12.5979
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00347, 1.02213)
+texture = ExtResource("5_piwk3")
+expand_mode = 1
+flip_v = true
+
+[node name="ChatBoxPosition" type="PanelContainer" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.207
+anchor_top = 1.066
+anchor_right = 1.243
+anchor_bottom = 1.066
+offset_left = 1.21074
+offset_top = 5.5866
+offset_right = -19.7874
+offset_bottom = 5.5866
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qeue0")
+
+[node name="BookShelf" type="Panel" parent="MainScreen/ScreenBorders"]
+clip_contents = true
+layout_mode = 0
+offset_left = 28.0
+offset_top = 407.0
+offset_right = 259.0
+offset_bottom = 503.0
+
+[node name="MonsterBook" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 30.0
+offset_bottom = 98.0
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("6_ikh6n")
+stretch_mode = 0
+
+[node name="SceneButtons" parent="." instance=ExtResource("9_17vtp")]
+layout_mode = 1
+anchor_left = 0.215
+anchor_top = -0.035
+anchor_right = 0.674
+anchor_bottom = 0.139
+offset_left = 0.319992
+offset_top = -0.32
+offset_right = 0.552002
+offset_bottom = -0.0720139
+
+[node name="InventoryPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.801
+anchor_right = 0.227
+anchor_bottom = 0.963
+offset_left = -0.0400009
+offset_top = -0.0480347
+offset_right = -0.504028
+offset_bottom = -0.0240479
+script = ExtResource("7_wmh0l")
+
+[connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
