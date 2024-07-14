@@ -1,6 +1,6 @@
 extends Control
 
-@onready var book_scene = preload("res://Scenes/book.tscn")
+@onready var codex_scene = preload("res://Scenes/codex.tscn")
 @onready var exam_table_scene = $AspectRatioContainer/HBoxContainer/Room/ExaminationTable
 
 var book

@@ -1,9 +1,10 @@
-res://Scenes/home.tscn
 res://Scripts/tool_box.gd
 res://Styles/scene_change_buttons.tres
 res://Styles/scene_change_buttons_active.tres
-res://Scenes/new_UI.tscn
-res://Scenes/inventory_slot.tscn
-res://Singletons/InventoryManager.gd
-res://Scripts/item.gd
-res://Scripts/inventory_slot.gd
+res://Scenes/codex.tscn
+res://Scenes/book.tscn
+res://Scenes/page.tscn
+res://Scripts/page.gd
+res://Scenes/home.tscn
+res://Scripts/UI.gd
+res://Scripts/codex.gd
