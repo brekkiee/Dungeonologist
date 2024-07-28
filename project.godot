@@ -21,6 +21,7 @@ DialogueManager="*res://Singletons/DialogueManager.gd"
 QuestManager="*res://Singletons/QuestManager.gd"
 GameManager="*res://Singletons/GameManager.gd"
 InventoryManager="*res://Singletons/InventoryManager.gd"
+MonsterManager="*res://Singletons/MonsterManager.gd"
 
 [display]
 

@@ -1,10 +1,11 @@
+res://Scenes/home.tscn
 res://Scripts/tool_box.gd
 res://Styles/scene_change_buttons.tres
 res://Styles/scene_change_buttons_active.tres
-res://Scenes/codex.tscn
-res://Scenes/book.tscn
 res://Scenes/page.tscn
-res://Scripts/page.gd
-res://Scenes/home.tscn
+res://Scenes/codex.tscn
 res://Scripts/UI.gd
-res://Scripts/codex.gd
+res://Scenes/monster.tscn
+res://Scripts/monster_enclosure.gd
+res://Scenes/Monsters/forest_dinglebat.tscn
+res://Scenes/monster_enclosure.tscn

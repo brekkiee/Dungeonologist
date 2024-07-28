@@ -1,11 +1,40 @@
-extends Area2D
+@tool
+extends Node2D
 
-@onready var monster_sprite = $monsterSprite2D
-signal quest_complete
+# references
+var scene_path: String = "res://Scenes/monster.tscn"
+@onready var monster_sprite = $Sprite2D
+
+# monster properties
+@export var monster_texture: Array[Texture2D] = []
+@export var monster_name = ""
+@export var monster_diet: Array[String] = []
+@export var monster_habitat: Array[String] = []
+
+var monster_hovered = false
+
 func _ready():
-	monster_sprite.modulate = Color(0, 1, 0)  # Set monster to green at the start
+	# assign texture when game runs
+	if not Engine.is_editor_hint():
+		monster_sprite.texture = monster_texture[0]
 
+func _process(delta):
+	# assign texture while still in the editor
+	if Engine.is_editor_hint():
+		monster_sprite.texture = monster_texture[0]
 
-func _on_heal_monster():
-	emit_signal("quest_complete")
-	monster_sprite.modulate = Color(1, 1, 1)  # Reset color to normal
+func add_new_monster():
+	var monster = {
+		"texture" : monster_texture,
+		"name" : monster_name,
+		"diet" : monster_diet,
+		"habitat" : monster_habitat,
+		"scene_path" : scene_path,
+	}
+	print("Adding " + monster_name)
+
+func set_monster_data(data):
+	monster_texture = data["texture"]
+	monster_name = data["name"]
+	monster_diet = data["diet"]
+	monster_habitat = data["habitat"]

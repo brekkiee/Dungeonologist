@@ -12,7 +12,7 @@ func _on_monster_book_pressed():
 	if not book_open:
 		print("Opening book")
 		book_open = true
-		book = book_scene.instantiate()
+		#book = book_scene.instantiate()
 		print("Book instantiated")
 		call_deferred("add_child", book)
 		print("Book added to scene tree")

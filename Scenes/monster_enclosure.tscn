@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://hxsuqplnekk3"]
+[gd_scene load_steps=5 format=3 uid="uid://hxsuqplnekk3"]
 
+[ext_resource type="Script" path="res://Scripts/monster_enclosure.gd" id="1_dymdu"]
 [ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/UI_test_scene.tscn" id="1_w10vf"]
+[ext_resource type="Texture2D" uid="uid://c77gnvc6b7c43" path="res://Assets/Backgrounds/Garden_background.png" id="3_djpum"]
+[ext_resource type="PackedScene" uid="uid://dxhkphmyj4wsk" path="res://Scenes/Monsters/forest_dinglebat.tscn" id="4_0dlbe"]
 
 [node name="MonsterEnclosure" type="Node2D"]
+script = ExtResource("1_dymdu")
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = -1
@@ -10,3 +14,17 @@ layer = -1
 [node name="Control" parent="UI" instance=ExtResource("1_w10vf")]
 offset_left = -2.0
 offset_right = -2.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_djpum")
+expand_mode = 1
+
+[node name="forest_dinglebat" parent="." instance=ExtResource("4_0dlbe")]
+position = Vector2(604, 388)
+scale = Vector2(0.1, 0.1)

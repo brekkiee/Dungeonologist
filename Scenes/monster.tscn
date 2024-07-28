@@ -1,18 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccghv05kf58v"]
 
-[ext_resource type="Texture2D" uid="uid://cae8lccnegdy7" path="res://Assets/Sprites/slime.png" id="1_gyvto"]
-[ext_resource type="Script" path="res://Scripts/monster.gd" id="1_xsjbf"]
+[ext_resource type="Script" path="res://Scripts/monster.gd" id="1_q6755"]
+[ext_resource type="Texture2D" uid="uid://cae8lccnegdy7" path="res://Assets/Sprites/slime.png" id="2_mf7h7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
 
-[node name="monster" type="Area2D"]
-script = ExtResource("1_xsjbf")
+[node name="monster" type="Node2D"]
+script = ExtResource("1_q6755")
+monster_texture = Array[Texture2D]([ExtResource("2_mf7h7")])
 
-[node name="monsterSprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.74074, 1.74074)
-texture = ExtResource("1_gyvto")
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5, 18)
 scale = Vector2(3.75, 3.75)
 shape = SubResource("CircleShape2D_xfjx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mf7h7")
