@@ -1,5 +1,4 @@
 res://Scenes/Windows/MainWindow.tscn
-res://Styles/cauldron_sprite_frames.tres
 res://Styles/scene_change_buttons.tres
 res://Styles/scene_change_buttons_active.tres
 res://Scenes/UI/MainUI.tscn
