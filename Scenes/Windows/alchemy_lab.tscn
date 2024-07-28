@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b68hjcj1kn4s5"]
+
+[ext_resource type="Texture2D" uid="uid://lefm6v2rglac" path="res://Assets/UI/border_lines.png" id="1_x38m0"]
+[ext_resource type="Texture2D" uid="uid://dmp7ukvfh5pj4" path="res://Assets/Sprites/alchemy_lab_bg.png" id="2_c2qeg"]
+[ext_resource type="SpriteFrames" uid="uid://cyltpyfu36qvm" path="res://Styles/cauldron_sprite_frames.tres" id="3_24ive"]
+[ext_resource type="Script" path="res://Scripts/cauldron.gd" id="3_ofq0i"]
+[ext_resource type="Texture2D" uid="uid://1d2lb310eqjx" path="res://Assets/Sprites/ladle.png" id="5_0x0f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8h5dc"]
+size = Vector2(92.9333, 70.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c1g6"]
+size = Vector2(143, 138)
+
+[node name="AlchemyLab" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScreenBorders" type="TextureRect" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.304
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_x38m0")
+metadata/_edit_use_anchors_ = true
+
+[node name="backgroundSprite" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(721.683, 325.093)
+scale = Vector2(0.938307, 0.947405)
+texture = ExtResource("2_c2qeg")
+
+[node name="Cauldron" type="Area2D" parent="."]
+position = Vector2(716, 359)
+script = ExtResource("3_ofq0i")
+
+[node name="CauldronAnimation2d" type="AnimatedSprite2D" parent="Cauldron"]
+scale = Vector2(1.19405, 1.19405)
+sprite_frames = ExtResource("3_24ive")
+frame_progress = 0.25265
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron"]
+position = Vector2(0.75, 85.5)
+scale = Vector2(3.75, 3.75)
+shape = SubResource("RectangleShape2D_8h5dc")
+
+[node name="Ladle" type="Area2D" parent="Cauldron"]
+position = Vector2(299, 2)
+
+[node name="monsterSprite2D" type="Sprite2D" parent="Cauldron/Ladle"]
+scale = Vector2(5.09259, 5.09259)
+texture = ExtResource("5_0x0f1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Ladle"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_5c1g6")
+
+[connection signal="input_event" from="Cauldron" to="Cauldron" method="_on_input_event"]
+[connection signal="input_event" from="Cauldron/Ladle" to="Cauldron" method="_on_ladle_input_event"]

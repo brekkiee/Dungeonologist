@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj7vyh4w4hv07"]
+[gd_scene load_steps=6 format=3 uid="uid://cj7vyh4w4hv07"]
 
 [ext_resource type="Script" path="res://Scripts/scene_change_buttons.gd" id="1_fa4id"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="1_vvaff"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Fonts/yoster.ttf" id="1_vvaff"]
 [ext_resource type="StyleBox" uid="uid://deib21jicw1qo" path="res://Styles/scene_change_buttons.tres" id="2_ssk0g"]
 [ext_resource type="StyleBox" uid="uid://c2h5wru554o3a" path="res://Styles/scene_change_buttons_active.tres" id="3_s8gpy"]
+[ext_resource type="ButtonGroup" uid="uid://1skcfijramt2" path="res://Styles/scenes_button_group.tres" id="5_n0l7k"]
 
 [node name="SceneButtons" type="Control"]
 layout_mode = 3
@@ -38,7 +39,10 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_vvaff")
 theme_override_styles/normal = ExtResource("2_ssk0g")
 theme_override_styles/hover = ExtResource("2_ssk0g")
+theme_override_styles/pressed = ExtResource("3_s8gpy")
+toggle_mode = true
 action_mode = 0
+button_group = ExtResource("5_n0l7k")
 text = "Home"
 
 [node name="AlchemyLabButton" type="Button" parent="."]
@@ -60,16 +64,19 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_vvaff")
 theme_override_styles/normal = ExtResource("2_ssk0g")
 theme_override_styles/hover = ExtResource("2_ssk0g")
+theme_override_styles/pressed = ExtResource("3_s8gpy")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
 text = "Alchemy Lab"
 
 [node name="MonsterEnclosureButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 1.267
 anchor_bottom = 1.0
 offset_left = 350.0
 offset_top = 40.0
-offset_right = -58.0
+offset_right = -199.243
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -81,9 +88,37 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_vvaff")
 theme_override_styles/normal = ExtResource("2_ssk0g")
 theme_override_styles/hover = ExtResource("2_ssk0g")
+theme_override_styles/pressed = ExtResource("3_s8gpy")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
 text = "Monster
 Enclosure"
+
+[node name="GardenButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.267
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 40.0
+offset_right = -49.243
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_vvaff")
+theme_override_styles/normal = ExtResource("2_ssk0g")
+theme_override_styles/hover = ExtResource("2_ssk0g")
+theme_override_styles/pressed = ExtResource("3_s8gpy")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
+text = "Garden"
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="AlchemyLabButton" to="." method="_on_alchemy_lab_button_pressed"]
 [connection signal="pressed" from="MonsterEnclosureButton" to="." method="_on_monster_enclosure_button_pressed"]
+[connection signal="pressed" from="GardenButton" to="." method="_on_garden_button_pressed"]

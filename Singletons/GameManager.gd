@@ -2,52 +2,57 @@ extends Node
 
 var current_scene = null
 
-func _ready():
-	# Store current scenee name in variable
-	var root = get_tree().get_root()
-	current_scene = root.get_child(root.get_child_count() - 1)
-	QuestManager.addQuest.call_deferred("TutorialQuest")
+@onready var home_scene = preload("res://Scenes/Windows/home.tscn")
+@onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
+@onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")
+@onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
 
+@onready var npc: Control = get_node("/root/Header/UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character/")
+var spawned_monster: Node2D = null
+
+func _ready():
+	start_game()
+
+func start_game():
+	QuestManager.addQuest("TutorialQuest")
+	call_deferred("_deferred_goto_scene", home_scene)
+
+# Change sub scene based on input scene_name
 func change_scene(scene_name):
+	print(scene_name)
 	if scene_name != current_scene.name:
 		if scene_name == "Home":
-			call_deferred("_deferred_goto_scene", "res://Scenes/home.tscn")
+			call_deferred("_deferred_goto_scene", home_scene)
 		elif scene_name == "AlchemyLab":
-			call_deferred("_deferred_goto_scene", "res://Scenes/alchemy_lab.tscn")
+			call_deferred("_deferred_goto_scene", alchemy_lab_scene)
 		elif scene_name == "MonsterEnclosure":
-			call_deferred("_deferred_goto_scene", "res://Scenes/monster_enclosure.tscn")
+			call_deferred("_deferred_goto_scene", monster_enclosure_scene)
+		elif scene_name == "Garden":
+			call_deferred("_deferred_goto_scene", garden_scene)
 
-func _deferred_goto_scene(path):
-	print("Loading Scene: " + path)
-	# safely remove current scene safely
-	current_scene.free()
-	# Load new scene
-	var s = ResourceLoader.load(path)
+func _deferred_goto_scene(scene):
+	var scene_spawn_point = get_node("/root/Header/SceneLoadPoint")
+	if not scene_spawn_point:
+		print("Can't load home scene")
+		return
+
+	print("Changing Scene")
+	# Safely remove current scene
+	if current_scene != null:
+		current_scene.free()
 	# Instance new scene
-	current_scene = s.instantiate()
+	current_scene = scene.instantiate()
 	# Add new scene to active scene
-	get_tree().get_root().add_child(current_scene)
-	# now compatible with the SceneTree.change_scene() API
-	get_tree().set_current_scene(current_scene)
+	scene_spawn_point.add_child(current_scene)
 
-func tool_click(clickedItem, toolname):
-	if QuestManager.activeQuests.has("TutorialQuest"):
-		# check if clicked item is splinter
-		if clickedItem.name == "splinter": 
-			play_sound() #  plays success sound
-			# check which tool made the click
-			if toolname == "MagnifyingGlass":
-				if QuestManager.activeQuests["TutorialQuest"]["CurrentStage"] < 2:
-					QuestManager.advanceQuest("TutorialQuest") # advance quest 
-			elif toolname == "Tweezers":
-				get_node("/root/Home/monster")._on_heal_monster()
-				QuestManager.completeQuest("TutorialQuest")
-				clickedItem.get_node("Sprite2D").visible = false
-	return true
+	# Load home scene if active monster quest exists
+	if (scene == home_scene and QuestManager.active_monster_quest != null):
+		if QuestManager.active_monster_quest.has_method("home_scene_load"):
+			QuestManager.active_monster_quest.home_scene_load.call_deferred()
 
 func play_sound():
-	var audio_stream = get_node("/root/Home/MainMusic")
+	var audio_stream = get_node("/root/Header/MainMusic")
 	if audio_stream:
-		# assign sound to play here or in inspector
+		# Assign sound to play here or in inspector
 		audio_stream.stream = load("res://Sounds/ToolSuccessSound.wav")
 		audio_stream.play()

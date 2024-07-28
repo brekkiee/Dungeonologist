@@ -1,6 +1,8 @@
+res://Assets/Sprites
 res://Scripts
-res://Scenes
-res://Styles
+res://Assets/InventoryIcons
 res://Singletons
-res://Assets
-res://Sounds
+res://
+res://Assets/UI
+res://Scenes/Windows
+res://Scenes/UI

@@ -1,10 +1,6 @@
-res://Scripts/tool_box.gd
+res://Scenes/Windows/MainWindow.tscn
 res://Styles/scene_change_buttons.tres
 res://Styles/scene_change_buttons_active.tres
-res://Scenes/codex.tscn
-res://Scenes/book.tscn
-res://Scenes/page.tscn
-res://Scripts/page.gd
-res://Scenes/home.tscn
-res://Scripts/UI.gd
-res://Scripts/codex.gd
+res://Scenes/UI/MainUI.tscn
+res://Scenes/quest_node.tscn
+res://Scenes/quest_display.tscn

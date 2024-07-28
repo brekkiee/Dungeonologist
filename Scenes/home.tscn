@@ -1,21 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2kgwgd11hbaw"]
+[gd_scene load_steps=8 format=3 uid="uid://b2kgwgd11hbaw"]
 
+[ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/UI_test_scene.tscn" id="1_52rdi"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/magnifying_glass.tscn" id="1_c52ij"]
-[ext_resource type="PackedScene" uid="uid://c5bkgslfaeq4t" path="res://Scenes/new_UI.tscn" id="1_yi0rs"]
 [ext_resource type="Script" path="res://Scripts/tool_box.gd" id="4_fwafx"]
 [ext_resource type="PackedScene" uid="uid://ca2gxr4j2dn0f" path="res://Scenes/tweezers.tscn" id="4_y2836"]
 [ext_resource type="PackedScene" uid="uid://ccghv05kf58v" path="res://Scenes/monster.tscn" id="5_6i7e5"]
 [ext_resource type="PackedScene" uid="uid://dwl8ctvkevob0" path="res://Scenes/splinter.tscn" id="6_ww02q"]
-[ext_resource type="PackedScene" uid="uid://3lp1p85apmv3" path="res://Scenes/item.tscn" id="7_26d88"]
-[ext_resource type="Texture2D" uid="uid://qxcsfuhsrm5x" path="res://Assets/Sprites/tweezers.png" id="8_m8y3o"]
-[ext_resource type="Texture2D" uid="uid://besft1shxtnb2" path="res://Assets/Sprites/splinter.png" id="9_baauo"]
+[ext_resource type="AudioStream" uid="uid://xoh8g8m1opgd" path="res://Sounds/ToolSound.wav" id="7_wpwo3"]
 
 [node name="Home" type="Node2D"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="UI" parent="UI" instance=ExtResource("1_yi0rs")]
+[node name="Control" parent="UI" instance=ExtResource("1_52rdi")]
+offset_left = -2.0
+offset_right = -2.0
 
 [node name="monster" parent="." instance=ExtResource("5_6i7e5")]
 position = Vector2(690, 425)
@@ -23,7 +23,7 @@ position = Vector2(690, 425)
 [node name="splinter" parent="." instance=ExtResource("6_ww02q")]
 z_index = 1
 position = Vector2(682, 441)
-scale = Vector2(1.991, 2)
+scale = Vector2(1.63281, 1.64)
 
 [node name="ToolBox" type="Node2D" parent="." node_paths=PackedStringArray("tool_nodes")]
 z_index = 1
@@ -40,30 +40,11 @@ position = Vector2(663, 607)
 scale = Vector2(2.02262, 2.02262)
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wpwo3")
 volume_db = -15.0
 pitch_scale = 0.43
 
-[node name="Item" parent="." instance=ExtResource("7_26d88")]
-position = Vector2(373, 362)
-item_texture = ExtResource("8_m8y3o")
-item_name = "Tweezers"
-item_type = "Tool"
-item_effect = "N/A"
-
-[node name="Item2" parent="." instance=ExtResource("7_26d88")]
-position = Vector2(475, 300)
-item_texture = ExtResource("8_m8y3o")
-item_name = "Tweezers"
-item_type = "Tool"
-item_effect = "N/A"
-
-[node name="Item3" parent="." instance=ExtResource("7_26d88")]
-position = Vector2(564, 259)
-item_texture = ExtResource("9_baauo")
-item_name = "Snack"
-item_type = "Food"
-item_effect = "N/A"
-
+[connection signal="quest_complete" from="monster" to="UI/Control" method="_on_monster_quest_complete"]
 [connection signal="area_entered" from="ToolBox/MagnifyingGlass" to="ToolBox/MagnifyingGlass" method="_on_area_entered"]
 [connection signal="area_exited" from="ToolBox/MagnifyingGlass" to="ToolBox/MagnifyingGlass" method="_on_area_exited"]
 [connection signal="area_entered" from="ToolBox/Tweezers" to="ToolBox/Tweezers" method="_on_area_entered"]

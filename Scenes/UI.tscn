@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=12 format=3 uid="uid://bphpdmmsdqanf"]
 
+[ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/Border.png" id="1_fmdvm"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="1_kg4ec"]
-[ext_resource type="Texture2D" uid="uid://c3lix6m1sr8pq" path="res://Assets/UI/Border.png" id="2_6eh3v"]
 [ext_resource type="Texture2D" uid="uid://cxq3ulj8y7o0v" path="res://Assets/Sprites/bare.png" id="2_ok5nv"]
 [ext_resource type="Script" path="res://Scripts/NPC.gd" id="3_ggbwu"]
 [ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="4_iyqxm"]
-[ext_resource type="Texture2D" uid="uid://bc2u4ocwp1y34" path="res://Assets/Sprites/wizard.png" id="4_qn8ya"]
 [ext_resource type="Texture2D" uid="uid://dl15v83fdbyfj" path="res://Assets/Sprites/examination_table.png" id="7_t6mku"]
 [ext_resource type="Script" path="res://Scripts/examination_table.gd" id="7_vvbcd"]
 [ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/scene_change_buttons.tscn" id="9_wcjxt"]
@@ -42,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6eh3v")
+texture = ExtResource("1_fmdvm")
 
 [node name="ChatWindow" type="Panel" parent="MainScreen/ScreenBorders"]
 layout_mode = 0
@@ -69,7 +68,6 @@ grow_vertical = 0
 scale = Vector2(1.95978, -1.96892)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
 script = ExtResource("3_ggbwu")
-character_sprite = ExtResource("4_qn8ya")
 
 [node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
@@ -143,5 +141,4 @@ offset_top = -0.32
 offset_right = 0.552002
 offset_bottom = -0.0720139
 
-[connection signal="quest_complete_npc" from="." to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_main_ui_quest_complete_npc"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
