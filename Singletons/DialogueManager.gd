@@ -1,56 +1,78 @@
 extends Node
 
-@onready var chat_box_scene = preload("res://Scenes/chat_box.tscn")
-
-var chat_lines = []
+@onready var chat_box_scene = preload("res://Dialogue/chatbox.tscn")
+var chat_lines: Array = []
 var current_line_index = 0
 var chat_box
-var chat_box_pos: Vector2
+var chat_box_pos: Vector2 = Vector2(350, 400)
 var is_chat_active = false
 var can_advance_line = false
 
-# Start new chat at given position with provided lines
-func start_chat(position: Vector2, lines):
-	if is_chat_active:
-		# Add new lines to current chat if chat is active
-		chat_lines += lines
-		return # Exit if chat is already active
 
+#func _process(delta):
+#	print("line index: ",current_line_index, " chat_line size: ", chat_lines.size())
+# Start new chat at given position with provided lines
+func start_chat(emotions: Dictionary, lines: Array):
+	if is_chat_active:
+		return # Exit if chat is already active
+		
+	current_line_index = 0
 	chat_lines = lines
-	chat_box_pos = position
 	_show_chat_box()
+	
 	is_chat_active = true
 
-# Set up and display chat box scene
+# set up new chat box scene
 func _show_chat_box():
+	print("showing new chatbox")
 	chat_box = chat_box_scene.instantiate()
-	# Connect signal for when chat box is ready for next line
+	var scene_spawn_point = get_node("/root/Header/UI")
+	# get signal from chat box when ready for new line
 	chat_box.finished.connect(_on_chat_box_finished)
-	get_node("/root/Header/UI/MainUI").add_child(chat_box)
+	#parent_node.add_child(chat_box)
+	#get_tree().root.add_child(chat_box)
+	scene_spawn_point.add_child(chat_box)
+	
+	#display first line of text
+	var current_line = chat_lines[current_line_index]
+	
+	#grab text from array and assign to correct variables
+	
+	var speaker_name = current_line.get("name", "")
+	var dialogue_text = current_line.get("text", "")
+	
 	# Set chat box position and display first line of text
 	chat_box.global_position = chat_box_pos
-	chat_box.display_text(chat_lines[current_line_index])
+	chat_box.display_text(speaker_name, dialogue_text)
 	can_advance_line = false
 
 # Enable advancing to next line when chat box finishes current line
 func _on_chat_box_finished():
+	print("chatbox finished")
 	can_advance_line = true
 
-# Handle input for advancing chat lines
-func _unhandled_input(event):
-	if (
-		event.is_action_pressed("advance_text") and
-		is_chat_active and
+# handle input for advancing chat lines
+#it dhfunc _unhandled_input(event):
+	#if event.is_action_pressed("advance_text"):
+	#	print("dialogue manager input event")
+	#	advanceText()
+
+func advanceText():
+	
+		if (
+		is_chat_active &&
 		can_advance_line
-	):
-		chat_box.queue_free()
-		current_line_index += 1
-
+		):
+			
+			chat_box.queue_free()
+			current_line_index += 1
+			print( "size: ", chat_lines.size()," current line index: ",current_line_index)
 		# End chat if all lines are shown
-		if current_line_index >= chat_lines.size():
-			QuestManager.chat_finished()
-			is_chat_active = false
-			current_line_index = 0 # Reset line index
-			return
-
-		_show_chat_box()
+			if current_line_index >= (chat_lines.size()):
+				is_chat_active = false 
+				print("chat is no longer active ")
+				current_line_index = 0 # reset line index
+				return
+			_show_chat_box()
+		else:
+			print("is chat active: ",is_chat_active, "can advance line: ", can_advance_line)

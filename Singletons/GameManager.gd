@@ -57,3 +57,6 @@ func play_sound():
 		# Assign sound to play here or in inspector
 		audio_stream.stream = load("res://Sounds/ToolSuccessSound.wav")
 		audio_stream.play()
+
+
+	DialogueManager.start_convo("Wizard")

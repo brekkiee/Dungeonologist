@@ -43,7 +43,6 @@ func _init():
 # Function called from the GameManager when the home scene is loaded
 func home_scene_load():
 	if first_time_opening_home_scene:
-		GameManager.npc.start_dialogue(dialogue["StartDialogue"])
 		first_time_opening_home_scene = false
 	update_quest_display()
 	print("Quest_load_home_scene")

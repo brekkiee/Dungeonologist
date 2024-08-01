@@ -1,6 +1,7 @@
+Sprite2D
+Button
 TextureRect
 NinePatchRect
 AnimatedSprite2D
 Node2D
 Control
-Sprite2D

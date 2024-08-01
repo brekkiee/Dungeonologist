@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch6x6bc4jaaxc"]
+
+[ext_resource type="Script" path="res://Scripts/chat_box.gd" id="1_81ia0"]
+[ext_resource type="Texture2D" uid="uid://dvshlbfusb4pv" path="res://Assets/DialogueSprites/Guntheidon.png" id="2_aaxgi"]
+[ext_resource type="Texture2D" uid="uid://lwtjxiowv28w" path="res://Dialogue/chatboxNew.png" id="3_ndpqg"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="4_c0qwo"]
+
+[node name="Dialogue" type="Control" node_paths=PackedStringArray("label", "character_name")]
+z_index = 100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.392932, 0.392932)
+script = ExtResource("1_81ia0")
+label = NodePath("NinePatchRect/Chat")
+character_name = NodePath("NinePatchRect/Name")
+
+[node name="NPCTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -497.0
+offset_top = -979.0
+offset_right = 2235.0
+offset_bottom = 1069.0
+scale = Vector2(0.741355, 0.741355)
+mouse_filter = 2
+texture = ExtResource("2_aaxgi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 24.0
+offset_right = 1566.0
+offset_bottom = 462.0
+texture = ExtResource("3_ndpqg")
+region_rect = Rect2(0, 0, 76, 39)
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 28.0
+offset_right = 212.0
+offset_bottom = 52.0
+scale = Vector2(3.60781, 3.60781)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_c0qwo")
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 120.0
+offset_right = 374.0
+offset_bottom = 184.0
+scale = Vector2(4.3951, 4.3951)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_c0qwo")
+fit_content = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

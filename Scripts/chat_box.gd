@@ -1,11 +1,12 @@
-extends MarginContainer
+extends Control
 
-@onready var label = $MarginContainer/Label
+@export var label: RichTextLabel
+@export var character_name: RichTextLabel
 @onready var timer = $Timer
 
 const MAX_WIDTH = 800
 
-var text = ""
+var textToDisplay = ""
 var letter_index = 0
 
 # timing customisation for text display
@@ -13,14 +14,15 @@ var letter_index = 0
 @export var space_time = 0.06
 @export var punct_time = 0.2
 
-signal finished()
+signal finished
 #func _process(delta):
 	#print(custom_minimum_size)
 # updates text box text and size
-func display_text(text_to_display: String):
-	text = text_to_display
-	label.text = text_to_display
+func display_text(speaker_name: String, text_to_display: String):
+	textToDisplay = text_to_display
 	
+	label.text = text_to_display
+	character_name.text = speaker_name
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	
 	# fEnable word wrap if width exceeds max
@@ -33,15 +35,15 @@ func display_text(text_to_display: String):
 	
 # displays each character with appropriate timing
 func _display_character():
-	label.text += text[letter_index]
+	label.text += textToDisplay[letter_index]
 	
 	letter_index += 1
-	if letter_index >= text.length():
+	if letter_index >= textToDisplay.length():
 		finished.emit()
 		return 
 	
 	# set timer for character type
-	match text[letter_index]:
+	match textToDisplay[letter_index]:
 		"!", ".", ",", "?": # punctuation
 			timer.start(punct_time)
 		" ": # spaces
