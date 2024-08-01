@@ -1,7 +1,7 @@
 extends Node
 
 var current_scene = null
-
+var monster_spawn_point = null
 @onready var home_scene = preload("res://Scenes/Windows/home.tscn")
 @onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
 @onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")
@@ -47,6 +47,7 @@ func _deferred_goto_scene(scene):
 
 	# Load home scene if active monster quest exists
 	if (scene == home_scene and QuestManager.active_monster_quest != null):
+		monster_spawn_point = current_scene.get_node("ExaminationTable/MonsterSpawnPoint")
 		if QuestManager.active_monster_quest.has_method("home_scene_load"):
 			QuestManager.active_monster_quest.home_scene_load.call_deferred()
 

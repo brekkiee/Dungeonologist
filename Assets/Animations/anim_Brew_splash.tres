@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cykaw41hd5xq1"]
+
+[ext_resource type="Texture2D" uid="uid://dq61x7mhpxqsv" path="res://Assets/Animations/anim_Brew_splash.png" id="1_66a1n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4s34"]
+atlas = ExtResource("1_66a1n")
+region = Rect2(0, 0, 36, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nih7r"]
+atlas = ExtResource("1_66a1n")
+region = Rect2(0, 11, 36, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g183d"]
+atlas = ExtResource("1_66a1n")
+region = Rect2(0, 22, 36, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycnkr"]
+atlas = ExtResource("1_66a1n")
+region = Rect2(0, 33, 36, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6d4j"]
+atlas = ExtResource("1_66a1n")
+region = Rect2(0, 44, 36, 10)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4s34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nih7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g183d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycnkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6d4j")
+}],
+"loop": true,
+"name": &"brew_splash",
+"speed": 5.0
+}]

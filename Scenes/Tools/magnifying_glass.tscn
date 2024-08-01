@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1eahw0u8vb76"]
+
+[ext_resource type="Script" path="res://Scripts/tool_icon.gd" id="1_te7w8"]
+[ext_resource type="Texture2D" uid="uid://b6snuvu34wirh" path="res://Assets/Tools/tool_See_0.png" id="2_drkdn"]
+[ext_resource type="Texture2D" uid="uid://058ekc3qfw7i" path="res://Assets/Tools/tool_See_1.png" id="3_d8av1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2kd"]
+
+[node name="MagnifyingGlass" type="Area2D"]
+z_index = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_te7w8")
+normal_sprite = ExtResource("2_drkdn")
+hover_sprite = ExtResource("3_d8av1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4f2kd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_drkdn")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

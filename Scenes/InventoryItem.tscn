@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ixn7w31wao8"]
+[gd_scene load_steps=6 format=3 uid="uid://d0ixn7w31wao8"]
 
 [ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_jonsr"]
 [ext_resource type="Texture2D" uid="uid://buu4qabs0bils" path="res://Assets/InventoryIcons/plant1_icon.png" id="2_ve2wf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhcti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc6ms"]
 
 [node name="InventoryItem" type="Control"]
 layout_mode = 3
@@ -24,6 +30,9 @@ offset_top = -20.0
 offset_right = -20.32
 offset_bottom = -20.176
 focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pnb0x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uhcti")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gc6ms")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw64ur2rwh2xj"]
+
+[ext_resource type="Script" path="res://Scripts/tool_icon.gd" id="1_e8rw0"]
+[ext_resource type="Texture2D" uid="uid://fr2qjwge5qmj" path="res://Assets/Tools/tool_bandaid_0.png" id="2_phtnt"]
+[ext_resource type="Texture2D" uid="uid://fq5vmrrnin1b" path="res://Assets/Tools/tool_bandaid_1.png" id="3_6mmfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2kd"]
+
+[node name="Bandaid" type="Area2D"]
+z_index = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_e8rw0")
+normal_sprite = ExtResource("2_phtnt")
+hover_sprite = ExtResource("3_6mmfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4f2kd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_phtnt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

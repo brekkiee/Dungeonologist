@@ -1,0 +1,203 @@
+[gd_scene load_steps=17 format=3 uid="uid://bphpdmmsdqanf"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_8cuee"]
+[ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/UI/Overlay_Frame_Top.png" id="2_ngwsp"]
+[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/UI/Overlay_Char_BG.png" id="3_cglt1"]
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="3_m2gkd"]
+[ext_resource type="Texture2D" uid="uid://7w17bej6yhg5" path="res://Assets/Sprites/char_0_basic.png" id="5_dak42"]
+[ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/mon_book.png" id="6_ikh6n"]
+[ext_resource type="Texture2D" uid="uid://dutncfgxiacn8" path="res://Assets/UI/drawer_closed.png" id="7_clbrm"]
+[ext_resource type="Script" path="res://Scripts/inventory_panel.gd" id="7_wmh0l"]
+[ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/scene_change_buttons.tscn" id="9_17vtp"]
+[ext_resource type="Texture2D" uid="uid://ba76spmhrib31" path="res://Assets/UI/drawer_open.png" id="10_i8813"]
+[ext_resource type="Texture2D" uid="uid://dy58iobnomh1m" path="res://Assets/UI/drawer_handle.png" id="11_pngar"]
+[ext_resource type="Texture2D" uid="uid://crmjc3ri53c72" path="res://Assets/UI/drawer_single.png" id="12_aaljx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okj4b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeue0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7geqy"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_8cuee")
+
+[node name="MainScreen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j37hr")
+
+[node name="ScreenBorders" type="TextureRect" parent="MainScreen"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.152
+offset_right = -866.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ngwsp")
+
+[node name="ChatWindow" type="TextureRect" parent="MainScreen/ScreenBorders"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.569
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -8.71201
+texture = ExtResource("3_cglt1")
+
+[node name="Character" type="Panel" parent="MainScreen/ScreenBorders/ChatWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
+script = ExtResource("3_m2gkd")
+
+[node name="ChatBoxPosition" type="PanelContainer" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = -128.0
+offset_right = -110.5
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qeue0")
+
+[node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.164
+anchor_top = 0.214
+anchor_right = 0.836
+anchor_bottom = 0.984
+offset_left = 0.0559998
+offset_top = -0.0420074
+offset_right = -0.0559998
+offset_bottom = 0.14798
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dak42")
+
+[node name="BookShelf" type="Panel" parent="MainScreen/ScreenBorders"]
+clip_contents = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 371.0
+offset_right = 280.0
+offset_bottom = 502.0
+
+[node name="MonsterBook" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.206
+anchor_bottom = 0.206
+offset_left = 1.0
+offset_top = 0.013998
+offset_right = 30.0
+offset_bottom = 98.014
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("6_ikh6n")
+stretch_mode = 0
+
+[node name="Drawers" type="TextureRect" parent="MainScreen/ScreenBorders"]
+visible = false
+z_index = 5
+layout_mode = 0
+offset_top = 360.0
+offset_right = 285.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("7_clbrm")
+
+[node name="SceneButtons" parent="." instance=ExtResource("9_17vtp")]
+layout_mode = 1
+anchor_left = 0.215
+anchor_top = -0.035
+anchor_right = 0.674
+anchor_bottom = 0.139
+offset_left = -7.68001
+offset_top = -27.32
+offset_right = -7.448
+offset_bottom = -27.072
+
+[node name="InventoryPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.768
+anchor_right = 0.249
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7geqy")
+
+[node name="SlidingDrawer" type="TextureRect" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -3.31
+anchor_right = 4.016
+anchor_bottom = 0.938
+offset_left = -845.0
+offset_top = 507.612
+offset_right = -872.982
+offset_bottom = -1.01517
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = ExtResource("10_i8813")
+script = ExtResource("7_wmh0l")
+
+[node name="DrawerHandle" type="TextureRect" parent="InventoryPanel/SlidingDrawer"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.829956
+offset_right = 16.17
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("11_pngar")
+
+[node name="DrawerClosed" type="TextureRect" parent="InventoryPanel"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.994
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = -7.12695
+offset_bottom = -12.336
+mouse_filter = 2
+texture = ExtResource("12_aaljx")
+
+[connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
+[connection signal="gui_input" from="InventoryPanel/SlidingDrawer/DrawerHandle" to="InventoryPanel/SlidingDrawer" method="_on_texture_rect_gui_input"]

@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://Singletons/DialogueManager.gd"
 QuestManager="*res://Singletons/QuestManager.gd"
 GameManager="*res://Singletons/GameManager.gd"
-InventroyManager="*res://Singletons/InventroyManager.gd"
+InventoryManager="*res://Singletons/InventoryManager.gd"
 
 [display]
 

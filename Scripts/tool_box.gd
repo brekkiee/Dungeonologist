@@ -37,8 +37,9 @@ func _process(delta):
 func toolbox_click(tool_node):
 	for i in tool_nodes.size():
 		# Select and follow clicked tool
-		if tool_node == tool_nodes[i] and current_tool != tool_nodes[i]:
+		if tool_node == tool_nodes[i] and current_tool == null:
 			current_tool = tool_nodes[i]
+			current_tool.set_hover(false)
 			current_tool_index = i
 			# Hide mouse cursor
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

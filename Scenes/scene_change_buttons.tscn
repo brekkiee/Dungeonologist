@@ -1,10 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj7vyh4w4hv07"]
+[gd_scene load_steps=25 format=3 uid="uid://cj7vyh4w4hv07"]
 
 [ext_resource type="Script" path="res://Scripts/scene_change_buttons.gd" id="1_fa4id"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Fonts/yoster.ttf" id="1_vvaff"]
-[ext_resource type="StyleBox" uid="uid://deib21jicw1qo" path="res://Styles/scene_change_buttons.tres" id="2_ssk0g"]
-[ext_resource type="StyleBox" uid="uid://c2h5wru554o3a" path="res://Styles/scene_change_buttons_active.tres" id="3_s8gpy"]
+[ext_resource type="Texture2D" uid="uid://5lplwajuqksb" path="res://Assets/UI/btn_Brew_0.png" id="2_as6if"]
+[ext_resource type="Texture2D" uid="uid://be8dm5b2yu0m0" path="res://Assets/UI/btn_Brew_1.png" id="3_j4lh1"]
+[ext_resource type="Texture2D" uid="uid://bcsjdl6lhokra" path="res://Assets/UI/btn_Exam_0.png" id="3_mblje"]
+[ext_resource type="Texture2D" uid="uid://ckk1kbxksx0yv" path="res://Assets/UI/btn_Exam_1.png" id="4_s7tjb"]
 [ext_resource type="ButtonGroup" uid="uid://1skcfijramt2" path="res://Styles/scenes_button_group.tres" id="5_n0l7k"]
+[ext_resource type="Texture2D" uid="uid://cvuklclh6nau4" path="res://Assets/UI/btn_Grow_0.png" id="8_ka5h2"]
+[ext_resource type="Texture2D" uid="uid://bcvi1ryaqqjkk" path="res://Assets/UI/btn_Script_0.png" id="8_qsyu1"]
+[ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/UI/btn_Script_1.png" id="9_4fejs"]
+[ext_resource type="Texture2D" uid="uid://jx7y5swpvpui" path="res://Assets/UI/btn_Grow_1.png" id="9_gaiva"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o4mv"]
+texture = ExtResource("2_as6if")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tcclb"]
+texture = ExtResource("3_j4lh1")
+modulate_color = Color(0.74902, 0.74902, 0.74902, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnk5c"]
+texture = ExtResource("3_mblje")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s2a4"]
+texture = ExtResource("3_mblje")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4k4bs"]
+texture = ExtResource("4_s7tjb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5appu"]
+texture = ExtResource("2_as6if")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4g6om"]
+texture = ExtResource("2_as6if")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qv2j2"]
+texture = ExtResource("3_j4lh1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wf17x"]
+texture = ExtResource("8_ka5h2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ulofl"]
+texture = ExtResource("8_ka5h2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crfos"]
+texture = ExtResource("9_gaiva")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy2ev"]
+texture = ExtResource("8_qsyu1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pi7b"]
+texture = ExtResource("8_qsyu1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yq15j"]
+texture = ExtResource("9_4fejs")
 
 [node name="SceneButtons" type="Control"]
 layout_mode = 3
@@ -17,8 +65,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_fa4id")
-normal_button_style = ExtResource("2_ssk0g")
-active_button_style = ExtResource("3_s8gpy")
+normal_button_style = SubResource("StyleBoxTexture_8o4mv")
+active_button_style = SubResource("StyleBoxTexture_tcclb")
 
 [node name="HomeButton" type="Button" parent="."]
 layout_mode = 1
@@ -26,99 +74,74 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
-offset_top = 40.0
-offset_right = -359.0
-offset_bottom = -28.0
+offset_top = 50.0
+offset_right = -439.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vvaff")
-theme_override_styles/normal = ExtResource("2_ssk0g")
-theme_override_styles/hover = ExtResource("2_ssk0g")
-theme_override_styles/pressed = ExtResource("3_s8gpy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnk5c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7s2a4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4k4bs")
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("5_n0l7k")
-text = "Home"
 
 [node name="AlchemyLabButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 40.0
-offset_right = -209.0
-offset_bottom = -28.0
+offset_left = 95.0
+offset_top = 50.0
+offset_right = -394.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vvaff")
-theme_override_styles/normal = ExtResource("2_ssk0g")
-theme_override_styles/hover = ExtResource("2_ssk0g")
-theme_override_styles/pressed = ExtResource("3_s8gpy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5appu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4g6om")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qv2j2")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
-text = "Alchemy Lab"
-
-[node name="MonsterEnclosureButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.267
-anchor_bottom = 1.0
-offset_left = 350.0
-offset_top = 40.0
-offset_right = -199.243
-offset_bottom = -28.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vvaff")
-theme_override_styles/normal = ExtResource("2_ssk0g")
-theme_override_styles/hover = ExtResource("2_ssk0g")
-theme_override_styles/pressed = ExtResource("3_s8gpy")
-toggle_mode = true
-button_group = ExtResource("5_n0l7k")
-text = "Monster
-Enclosure"
 
 [node name="GardenButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.267
 anchor_bottom = 1.0
-offset_left = 500.0
-offset_top = 40.0
-offset_right = -49.243
-offset_bottom = -28.0
+offset_left = 140.0
+offset_top = 50.0
+offset_right = -490.243
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vvaff")
-theme_override_styles/normal = ExtResource("2_ssk0g")
-theme_override_styles/hover = ExtResource("2_ssk0g")
-theme_override_styles/pressed = ExtResource("3_s8gpy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wf17x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ulofl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_crfos")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
-text = "Garden"
+
+[node name="MonsterEnclosureButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.267
+anchor_bottom = 1.0
+offset_left = 185.0
+offset_top = 50.0
+offset_right = -445.243
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_oy2ev")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3pi7b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yq15j")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="AlchemyLabButton" to="." method="_on_alchemy_lab_button_pressed"]
-[connection signal="pressed" from="MonsterEnclosureButton" to="." method="_on_monster_enclosure_button_pressed"]
 [connection signal="pressed" from="GardenButton" to="." method="_on_garden_button_pressed"]
+[connection signal="pressed" from="MonsterEnclosureButton" to="." method="_on_monster_enclosure_button_pressed"]

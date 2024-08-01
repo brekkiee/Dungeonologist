@@ -23,7 +23,7 @@ func _ready():
 
 # Add quest to active quests
 func addQuest(quest_id: String):
-	var questNodeParent = get_node("/root/Header/QuestsScriptsNode")
+	#var questNodeParent = get_node("/root/Header/QuestsScriptsNode")
 	if Quests[quest_id].QuestType == "monster":
 		if active_monster_quest == null:
 			# Load and instantiate the quest script

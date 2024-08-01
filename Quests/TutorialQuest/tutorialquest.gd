@@ -4,7 +4,7 @@ extends Node
 var info: Dictionary = {
 	"Name": "TutorialQuest",  # Name of the quest
 	"MonsterSpawn": "res://Quests/TutorialQuest/tutorialslime.tscn",  # Path to the monster scene
-	"NpcSprite" : "res://Assets/Sprites/wizard.png",  # Path to the NPC sprite
+	"NpcSprite" : "res://Assets/Sprites/char_1_Guntheidon.png",  # Path to the NPC sprite
 
 	"QuestDisplayName": "Help Carlson",  # Display name of the quest
 	"QuestDescription": {  # Descriptions for each stage of the quest
@@ -50,9 +50,9 @@ func home_scene_load():
 	# Load the wizard sprite into the NPC node
 	GameManager.npc.sprite_texture.texture = load(info.NpcSprite)
 	var monster_scene = load(info.MonsterSpawn)
-	var monster_spawn_point = GameManager.current_scene.get_node("ExaminationTable/MonsterSpawnPoint")
+
 	var monster = monster_scene.instantiate()
-	monster_spawn_point.add_child(monster)
+	GameManager.monster_spawn_point.add_child(monster)
 	GameManager.spawned_monster = monster
 
 # Update the quest display

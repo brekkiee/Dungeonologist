@@ -21,7 +21,7 @@ func update_monster():
 # Handle input event when something clicks on the splinter
 func _on_splinter_input_event(viewport, event, shape_idx):
 	if InputMap.event_is_action(event, "left_click"):
-		var tool_box = GameManager.current_scene.get_node("ToolBox")
+		var tool_box = GameManager.current_scene.get_node("UI/ToolBox")
 		# Ensure the toolbox has a tool active before calling the function in tutorialquest.gd
 		if event.pressed and tool_box.current_tool != null:
 			QuestManager.active_monster_quest.tool_used(tool_box.current_tool.name)

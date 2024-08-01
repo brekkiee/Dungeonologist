@@ -1,6 +1,4 @@
 res://Scenes/Windows/MainWindow.tscn
-res://Styles/scene_change_buttons.tres
-res://Styles/scene_change_buttons_active.tres
-res://Scenes/UI/MainUI.tscn
-res://Scenes/quest_node.tscn
-res://Scenes/quest_display.tscn
+res://Assets/Animations/anim_Brew_splash.tres
+res://Assets/Animations/anim_Brew_bubble.tres
+res://Scripts/inventory_panel.gd
