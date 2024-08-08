@@ -12,17 +12,20 @@ var item_mouse_follow = null
 
 # Dictionary of all possible items and their icons
 var all_Items_list: Dictionary = {
-	"plant1_item": preload("res://Assets/InventoryIcons/plant1_item.png"),
-	"plant2_item": preload("res://Assets/InventoryIcons/plant2_item.png"),
-	"plant3_item": preload("res://Assets/InventoryIcons/plant3_item.png"),
-	"potion1": preload("res://Assets/InventoryIcons/potion1_icon.png") 
+	"snackle_item": preload("res://Assets/InventoryIcons/snackle_item.png"),
+	"snepper_item": preload("res://Assets/InventoryIcons/snepper_item.png"),
+	"peepermint_item": preload("res://Assets/InventoryIcons/peepermint_item.png"),
+	"minor_health_potion_item": preload("res://Assets/InventoryIcons/minor_health_potion_item.png"), 
+	"minor_mana_potion_item": preload("res://Assets/InventoryIcons/minor_mana_potion_item.png") 
 }
 # Tracks items in cauldron inventory
 var current_cauldron_inventory = []
 # Dictionary of all possible cauldron recipes
 var cauldron_recipies: Dictionary = {
-	0: { "items_required": ["plant1_item", "plant2_item", "plant3_item"],
-		"result": "potion1"}
+	0: { "items_required": ["snackle_item", "snepper_item", "peepermint_item"],
+		"result": "minor_health_potion_item"},
+	1: { "items_required": ["snepper_item", "peepermint_item"],
+		"result": "minor_mana_potion_item"}
 }
 
 # Parameters for item position and distance in inventory

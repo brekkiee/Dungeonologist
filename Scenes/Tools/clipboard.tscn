@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmicjfktxv81g"]
 
-[ext_resource type="Script" path="res://Scripts/tool_icon.gd" id="1_tkcb7"]
+[ext_resource type="Script" path="res://Scripts/Inventory/tool_icon.gd" id="1_tkcb7"]
 [ext_resource type="Texture2D" uid="uid://dn6rnop0smibm" path="res://Assets/Tools/tool_Clipboard_0.png" id="2_8rr0g"]
 [ext_resource type="Texture2D" uid="uid://d1c40ye0c7wjs" path="res://Assets/Tools/tool_Clipboard_1.png" id="3_dskwk"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2kd"]
 size = Vector2(15, 21)

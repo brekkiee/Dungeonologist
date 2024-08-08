@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb8gal6s23q0s"]
+
+[ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_njo0t"]
+[ext_resource type="Texture2D" uid="uid://cd0u2fgej4mvo" path="res://Assets/Sprites/Monsters/PlainsImp_Happy.png" id="2_y4s7n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
+radius = 134.933
+
+[node name="MonsterPlainsImp" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_njo0t")
+
+[node name="monsterSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_y4s7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.75, 3.75)
+shape = SubResource("CircleShape2D_xfjx7")

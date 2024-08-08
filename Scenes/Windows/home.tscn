@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2kgwgd11hbaw"]
 
-[ext_resource type="Script" path="res://Scripts/tool_box.gd" id="4_fwafx"]
+[ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="4_fwafx"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/Tools/magnifying_glass.tscn" id="4_x7xl2"]
-[ext_resource type="Texture2D" uid="uid://v1djiwyp7klf" path="res://Assets/Sprites/bg_Exam.png" id="5_acahm"]
+[ext_resource type="Texture2D" uid="uid://v1djiwyp7klf" path="res://Assets/Sprites/OldStuff/bg_Exam.png" id="5_acahm"]
 [ext_resource type="PackedScene" uid="uid://cnt00cm4ln655" path="res://Scenes/Tools/tweezers.tscn" id="5_sxe8j"]
 [ext_resource type="PackedScene" uid="uid://gn8h86qfhh7o" path="res://Scenes/Tools/hear.tscn" id="6_svhju"]
 [ext_resource type="PackedScene" uid="uid://cw64ur2rwh2xj" path="res://Scenes/Tools/bandaid.tscn" id="7_6jvbp"]

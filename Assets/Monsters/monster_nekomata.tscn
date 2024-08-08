@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3x1d6w8hql2c"]
+
+[ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_x8xnp"]
+[ext_resource type="Texture2D" uid="uid://b51csoxi6q6lx" path="res://Assets/Sprites/Monsters/Nekomata_Happy.png" id="2_tk5fy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
+radius = 133.66
+
+[node name="MonsterMysticKitty" type="Area2D"]
+script = ExtResource("1_x8xnp")
+
+[node name="monsterSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tk5fy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.75, 3.75)
+shape = SubResource("CircleShape2D_xfjx7")

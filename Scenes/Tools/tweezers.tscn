@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnt00cm4ln655"]
 
-[ext_resource type="Script" path="res://Scripts/tool_icon.gd" id="1_obj6v"]
+[ext_resource type="Script" path="res://Scripts/Inventory/tool_icon.gd" id="1_obj6v"]
 [ext_resource type="Texture2D" uid="uid://cd6vi67x1pv6d" path="res://Assets/Tools/tool_Pick_1.png" id="3_60xyk"]
 [ext_resource type="Texture2D" uid="uid://dvhmoydwc436y" path="res://Assets/Tools/tool_Pick_0.png" id="4_4r2do"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2kd"]
 

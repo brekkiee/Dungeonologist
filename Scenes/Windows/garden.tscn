@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2v0wkaafl2kj"]
 
-[ext_resource type="Texture2D" uid="uid://q8cv5lswy2yp" path="res://Assets/Sprites/bg_Grow.png" id="2_0lbdx"]
-[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Scenes/Plants/plant1.tscn" id="3_jq60l"]
-[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Scenes/Plants/plant2.tscn" id="4_twhdk"]
-[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Scenes/Plants/plant3.tscn" id="5_v3wnm"]
-[ext_resource type="Texture2D" uid="uid://cch6wcan51glq" path="res://Assets/Sprites/Grow_plant_2.png" id="6_kxphl"]
+[ext_resource type="Texture2D" uid="uid://q8cv5lswy2yp" path="res://Assets/Sprites/Garden/bg_Grow.png" id="1_bqh3r"]
+[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Scenes/Plants/snackle.tscn" id="3_jq60l"]
+[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Scenes/Plants/snepper.tscn" id="4_twhdk"]
+[ext_resource type="Texture2D" uid="uid://cch6wcan51glq" path="res://Assets/Sprites/Garden/Grow_plant_2.png" id="5_5r1g2"]
+[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Scenes/Plants/peepermint.tscn" id="5_v3wnm"]
 
 [node name="Garden" type="Node2D"]
 
@@ -12,7 +12,7 @@
 z_index = -10
 position = Vector2(718.683, 324.535)
 scale = Vector2(2.316, 2.30986)
-texture = ExtResource("2_0lbdx")
+texture = ExtResource("1_bqh3r")
 
 [node name="Plant1" parent="." instance=ExtResource("3_jq60l")]
 position = Vector2(401, 466)
@@ -29,4 +29,4 @@ scale = Vector2(0.5, 0.5)
 z_index = -1
 position = Vector2(719, 389)
 scale = Vector2(2.31, 2.31)
-texture = ExtResource("6_kxphl")
+texture = ExtResource("5_5r1g2")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://cj7vyh4w4hv07"]
 
-[ext_resource type="Script" path="res://Scripts/scene_change_buttons.gd" id="1_fa4id"]
+[ext_resource type="Script" path="res://Scripts/UI_Quests/scene_change_buttons.gd" id="1_fa4id"]
 [ext_resource type="Texture2D" uid="uid://5lplwajuqksb" path="res://Assets/UI/btn_Brew_0.png" id="2_as6if"]
 [ext_resource type="Texture2D" uid="uid://be8dm5b2yu0m0" path="res://Assets/UI/btn_Brew_1.png" id="3_j4lh1"]
 [ext_resource type="Texture2D" uid="uid://bcsjdl6lhokra" path="res://Assets/UI/btn_Exam_0.png" id="3_mblje"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bcvi1ryaqqjkk" path="res://Assets/UI/btn_Script_0.png" id="8_qsyu1"]
 [ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/UI/btn_Script_1.png" id="9_4fejs"]
 [ext_resource type="Texture2D" uid="uid://jx7y5swpvpui" path="res://Assets/UI/btn_Grow_1.png" id="9_gaiva"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o4mv"]
 texture = ExtResource("2_as6if")

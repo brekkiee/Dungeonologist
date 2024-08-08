@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://b68hjcj1kn4s5"]
 
 [ext_resource type="Texture2D" uid="uid://dn0go0t5nxx6y" path="res://Assets/Sprites/Alchemy/bg_Brew.png" id="1_j1vkd"]
+[ext_resource type="Script" path="res://Scripts/Alchemy/cauldron.gd" id="2_geudk"]
 [ext_resource type="Texture2D" uid="uid://dvqdpng0m7mq5" path="res://Assets/Sprites/Alchemy/Brew_cauldron_liquid.png" id="3_cy2ml"]
-[ext_resource type="Script" path="res://Scripts/cauldron.gd" id="3_ofq0i"]
 [ext_resource type="SpriteFrames" uid="uid://cykaw41hd5xq1" path="res://Assets/Animations/anim_Brew_splash.tres" id="5_q410n"]
 [ext_resource type="Texture2D" uid="uid://pyap40eyhn84" path="res://Assets/Sprites/Alchemy/Brew_caldron_front.png" id="6_cjf8j"]
 [ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/anim_Brew_bubble.tres" id="6_mngjr"]
@@ -25,7 +25,7 @@ texture = ExtResource("1_j1vkd")
 
 [node name="Cauldron" type="Area2D" parent="."]
 position = Vector2(716, 354)
-script = ExtResource("3_ofq0i")
+script = ExtResource("2_geudk")
 
 [node name="BrewLiquid" type="Node2D" parent="Cauldron"]
 

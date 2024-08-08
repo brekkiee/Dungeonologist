@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1dal5c4wsg5g"]
+
+[ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_lr3ic"]
+[ext_resource type="Texture2D" uid="uid://bxaemx8abni43" path="res://Assets/Sprites/Monsters/ForestDinglebat_Happy.png" id="2_plu0u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
+radius = 143.653
+
+[node name="MonsterBatBear" type="Area2D"]
+script = ExtResource("1_lr3ic")
+
+[node name="monsterSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_plu0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.75, 3.75)
+shape = SubResource("CircleShape2D_xfjx7")

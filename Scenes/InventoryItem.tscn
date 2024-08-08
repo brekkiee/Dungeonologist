@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0ixn7w31wao8"]
 
-[ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_jonsr"]
+[ext_resource type="Script" path="res://Scripts/Inventory/inventory_item.gd" id="1_6ufty"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
 
@@ -20,7 +20,7 @@ offset_bottom = 607.824
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_jonsr")
+script = ExtResource("1_6ufty")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
