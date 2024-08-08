@@ -4,7 +4,7 @@ extends Node
 var info: Dictionary = {
 	"Name": "TutorialQuest",  # Name of the quest
 	"MonsterSpawn": "res://Quests/TutorialQuest/tutorialslime.tscn",  # Path to the monster scene
-	"NpcSprite" : "res://Assets/Sprites/char_1_Guntheidon.png",  # Path to the NPC sprite
+	"NpcSprite" : "res://Assets/Sprites/Characters/char_1_Guntheidon.png",  # Path to the NPC sprite
 
 	"QuestDisplayName": "Help Carlson",  # Display name of the quest
 	"QuestDescription": {  # Descriptions for each stage of the quest

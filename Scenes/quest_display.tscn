@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/UI_Quests/quest_display.gd" id="1_q7b5e"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_2tsrw"]
 
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2its"]
 
 [node name="Quests" type="Control"]
