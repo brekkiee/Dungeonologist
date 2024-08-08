@@ -1,5 +1,52 @@
-[gd_scene format=3 uid="uid://hxsuqplnekk3"]
+[gd_scene load_steps=9 format=3 uid="uid://hxsuqplnekk3"]
+
+[ext_resource type="Texture2D" uid="uid://pw1ml4t3lmwr" path="res://Assets/Sprites/bg_Cage.png" id="1_jnx0s"]
+[ext_resource type="PackedScene" uid="uid://cgbr2gsaofps8" path="res://Assets/Monsters/monster_slime.tscn" id="2_46yxq"]
+[ext_resource type="PackedScene" uid="uid://c1dal5c4wsg5g" path="res://Assets/Monsters/monster_batbear.tscn" id="3_x64kw"]
+[ext_resource type="PackedScene" uid="uid://5tpgx4vpta1x" path="res://Assets/Monsters/monster_jellybelly.tscn" id="4_oijx5"]
+[ext_resource type="Script" path="res://Assets/Monsters/monster_jellybelly.gd" id="5_sruqj"]
+[ext_resource type="PackedScene" uid="uid://d3x1d6w8hql2c" path="res://Assets/Monsters/monster_mystickitty.tscn" id="6_xocai"]
+[ext_resource type="Script" path="res://Assets/Monsters/monster_mystickitty.gd" id="7_kn3gq"]
+[ext_resource type="PackedScene" uid="uid://dmnks055sa41o" path="res://Assets/Monsters/monster_plushroom.tscn" id="8_ye7yv"]
 
 [node name="MonsterEnclosure" type="Node2D"]
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(719.683, 324.093)
+scale = Vector2(2.316, 2.316)
+texture = ExtResource("1_jnx0s")
+
+[node name="MonsterSpawnPoint" type="Node2D" parent="."]
+position = Vector2(484, 481)
+
+[node name="MonsterSlime" parent="MonsterSpawnPoint" instance=ExtResource("2_46yxq")]
+scale = Vector2(0.5, 0.5)
+
+[node name="MonsterSpawnPoint2" type="Node2D" parent="."]
+
+[node name="MonsterBatBear" parent="MonsterSpawnPoint2" instance=ExtResource("3_x64kw")]
+position = Vector2(959, 413)
+scale = Vector2(0.1, 0.1)
+
+[node name="MonsterSpawnPoint3" type="Node2D" parent="."]
+position = Vector2(440, 260)
+
+[node name="MonsterJellyBelly" parent="MonsterSpawnPoint3" instance=ExtResource("4_oijx5")]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("5_sruqj")
+
+[node name="MonsterSpawnPoint4" type="Node2D" parent="."]
+position = Vector2(440, 260)
+
+[node name="MonsterMysticKitty" parent="MonsterSpawnPoint4" instance=ExtResource("6_xocai")]
+position = Vector2(275.01, -23.3434)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("7_kn3gq")
+
+[node name="MonsterSpawnPoint5" type="Node2D" parent="."]
+position = Vector2(440, 260)
+
+[node name="MonsterPlushroom" parent="MonsterSpawnPoint5" instance=ExtResource("8_ye7yv")]
+position = Vector2(328, 150)
+scale = Vector2(0.1, 0.1)

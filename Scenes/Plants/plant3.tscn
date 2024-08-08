@@ -11,7 +11,7 @@ script = ExtResource("1_jkdgj")
 harvested_item_name = "plant3_item"
 
 [node name="plantSprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.74074, 1.74074)
+scale = Vector2(2.867, 2.867)
 texture = ExtResource("2_byxua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

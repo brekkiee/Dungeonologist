@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://b68hjcj1kn4s5"]
 
-[ext_resource type="Texture2D" uid="uid://dn0go0t5nxx6y" path="res://Assets/Sprites/bg_Brew.png" id="2_0lctr"]
+[ext_resource type="Texture2D" uid="uid://dn0go0t5nxx6y" path="res://Assets/Sprites/Alchemy/bg_Brew.png" id="1_j1vkd"]
+[ext_resource type="Texture2D" uid="uid://dvqdpng0m7mq5" path="res://Assets/Sprites/Alchemy/Brew_cauldron_liquid.png" id="3_cy2ml"]
 [ext_resource type="Script" path="res://Scripts/cauldron.gd" id="3_ofq0i"]
-[ext_resource type="Texture2D" uid="uid://pyap40eyhn84" path="res://Assets/Sprites/Brew_caldron_front.png" id="4_3ir4a"]
-[ext_resource type="Texture2D" uid="uid://dvqdpng0m7mq5" path="res://Assets/Sprites/Brew_cauldron_liquid.png" id="4_6mxot"]
-[ext_resource type="Texture2D" uid="uid://1d2lb310eqjx" path="res://Assets/Sprites/ladle.png" id="5_0x0f1"]
-[ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Brew_cauldron_back.png" id="5_a7yeq"]
 [ext_resource type="SpriteFrames" uid="uid://cykaw41hd5xq1" path="res://Assets/Animations/anim_Brew_splash.tres" id="5_q410n"]
+[ext_resource type="Texture2D" uid="uid://pyap40eyhn84" path="res://Assets/Sprites/Alchemy/Brew_caldron_front.png" id="6_cjf8j"]
 [ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/anim_Brew_bubble.tres" id="6_mngjr"]
+[ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Alchemy/Brew_cauldron_back.png" id="7_2bw15"]
+[ext_resource type="Texture2D" uid="uid://1d2lb310eqjx" path="res://Assets/Sprites/Alchemy/ladle.png" id="8_lipfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h5dc"]
 size = Vector2(92.9333, 70.6667)
@@ -21,7 +21,7 @@ size = Vector2(143, 138)
 z_index = -10
 position = Vector2(719.683, 324.093)
 scale = Vector2(2.316, 2.313)
-texture = ExtResource("2_0lctr")
+texture = ExtResource("1_j1vkd")
 
 [node name="Cauldron" type="Area2D" parent="."]
 position = Vector2(716, 354)
@@ -33,7 +33,7 @@ script = ExtResource("3_ofq0i")
 z_index = 1
 position = Vector2(0.499939, 17.0745)
 scale = Vector2(2.56481, 2.53)
-texture = ExtResource("4_6mxot")
+texture = ExtResource("3_cy2ml")
 
 [node name="BrewSplash" type="AnimatedSprite2D" parent="Cauldron/BrewLiquid"]
 z_index = 3
@@ -62,19 +62,19 @@ shape = SubResource("RectangleShape2D_8h5dc")
 z_index = 5
 position = Vector2(0.300537, 100.375)
 scale = Vector2(2.37626, 2.37626)
-texture = ExtResource("4_3ir4a")
+texture = ExtResource("6_cjf8j")
 
 [node name="BrewCauldronBack" type="Sprite2D" parent="Cauldron"]
 position = Vector2(0.301, 78.975)
 scale = Vector2(2.37626, 2.37626)
-texture = ExtResource("5_a7yeq")
+texture = ExtResource("7_2bw15")
 
 [node name="Ladle" type="Area2D" parent="Cauldron"]
 position = Vector2(299, 2)
 
 [node name="monsterSprite2D" type="Sprite2D" parent="Cauldron/Ladle"]
 scale = Vector2(5.09259, 5.09259)
-texture = ExtResource("5_0x0f1")
+texture = ExtResource("8_lipfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Ladle"]
 position = Vector2(1, -1)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0go0t5nxx6y"
-path="res://.godot/imported/bg_Brew.png-274eeb3995fbcabe1072b00fe8e18be5.ctex"
+uid="uid://buw8rrcrdjnk7"
+path="res://.godot/imported/Meashroom happy.png-b650e72159a9393433500dd6ed137eaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/bg_Brew.png"
-dest_files=["res://.godot/imported/bg_Brew.png-274eeb3995fbcabe1072b00fe8e18be5.ctex"]
+source_file="res://Assets/Sprites/Monsters/Meashroom happy.png"
+dest_files=["res://.godot/imported/Meashroom happy.png-b650e72159a9393433500dd6ed137eaf.ctex"]
 
 [params]
 

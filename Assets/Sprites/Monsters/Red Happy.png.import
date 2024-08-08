@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b854j7516sbav"
-path="res://.godot/imported/plant2_icon.png-bb96c5fba443e24b914167339fcd8cef.ctex"
+uid="uid://cd0u2fgej4mvo"
+path="res://.godot/imported/Red Happy.png-c75318bb433757ca847b2e7da3193621.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/plant2_icon.png"
-dest_files=["res://.godot/imported/plant2_icon.png-bb96c5fba443e24b914167339fcd8cef.ctex"]
+source_file="res://Assets/Sprites/Monsters/Red Happy.png"
+dest_files=["res://.godot/imported/Red Happy.png-c75318bb433757ca847b2e7da3193621.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvqdpng0m7mq5"
-path="res://.godot/imported/Brew_cauldron_liquid.png-5e7ac32d888775667cba890fde2f9a15.ctex"
+uid="uid://bxaemx8abni43"
+path="res://.godot/imported/Bat Bear Happy.png-cab68ce692597249eac82267897f70e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Brew_cauldron_liquid.png"
-dest_files=["res://.godot/imported/Brew_cauldron_liquid.png-5e7ac32d888775667cba890fde2f9a15.ctex"]
+source_file="res://Assets/Sprites/Monsters/Bat Bear Happy.png"
+dest_files=["res://.godot/imported/Bat Bear Happy.png-cab68ce692597249eac82267897f70e1.ctex"]
 
 [params]
 

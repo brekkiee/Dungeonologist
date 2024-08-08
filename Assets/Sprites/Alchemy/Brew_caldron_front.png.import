@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3myrnkulhi1v"
-path="res://.godot/imported/Brew_WoodStack.png-673b7a5294c878fac0a641fcb197d35f.ctex"
+uid="uid://pyap40eyhn84"
+path="res://.godot/imported/Brew_caldron_front.png-e7c7ef1b9c4b92a7c2b56da233b4583c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Brew_WoodStack.png"
-dest_files=["res://.godot/imported/Brew_WoodStack.png-673b7a5294c878fac0a641fcb197d35f.ctex"]
+source_file="res://Assets/Sprites/Alchemy/Brew_caldron_front.png"
+dest_files=["res://.godot/imported/Brew_caldron_front.png-e7c7ef1b9c4b92a7c2b56da233b4583c.ctex"]
 
 [params]
 

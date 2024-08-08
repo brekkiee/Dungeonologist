@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doxsighm7leek"
-path="res://.godot/imported/Brew_Wood.png-cce644dacc1e9d1b6cc78bbbccf75805.ctex"
+uid="uid://vrm2jso3x5ll"
+path="res://.godot/imported/Kitty sad.png-2e934594f29fe27e9895db3d56b727fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Brew_Wood.png"
-dest_files=["res://.godot/imported/Brew_Wood.png-cce644dacc1e9d1b6cc78bbbccf75805.ctex"]
+source_file="res://Assets/Sprites/Monsters/Kitty sad.png"
+dest_files=["res://.godot/imported/Kitty sad.png-2e934594f29fe27e9895db3d56b727fa.ctex"]
 
 [params]
 

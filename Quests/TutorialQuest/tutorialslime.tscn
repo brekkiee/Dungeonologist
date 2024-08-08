@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccghv05kf58v"]
 
 [ext_resource type="Script" path="res://Quests/TutorialQuest/tutorialslime.gd" id="1_7jw38"]
-[ext_resource type="Texture2D" uid="uid://cae8lccnegdy7" path="res://Assets/Sprites/slime.png" id="2_61aqw"]
+[ext_resource type="Texture2D" uid="uid://cae8lccnegdy7" path="res://Assets/Sprites/Monsters/slime.png" id="2_bt7iu"]
 [ext_resource type="Texture2D" uid="uid://besft1shxtnb2" path="res://Assets/Sprites/splinter.png" id="3_c2of3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
@@ -15,7 +15,7 @@ script = ExtResource("1_7jw38")
 
 [node name="monsterSprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.74074, 1.74074)
-texture = ExtResource("2_61aqw")
+texture = ExtResource("2_bt7iu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.75, 3.75)

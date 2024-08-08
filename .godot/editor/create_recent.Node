@@ -1,6 +1,7 @@
+Node
+Node2D
+Sprite2D
 TextureRect
 NinePatchRect
 AnimatedSprite2D
-Node2D
 Control
-Sprite2D

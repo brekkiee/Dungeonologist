@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3omw16cmv1n7"
-path="res://.godot/imported/plant3_icon.png-aa7c23fb2fc375966e858af8d229288e.ctex"
+uid="uid://cnsosbuc7ygmk"
+path="res://.godot/imported/Meashroom sad.png-a4d0779e16dcc9a970a12c2f9ec5cdd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/plant3_icon.png"
-dest_files=["res://.godot/imported/plant3_icon.png-aa7c23fb2fc375966e858af8d229288e.ctex"]
+source_file="res://Assets/Sprites/Monsters/Meashroom sad.png"
+dest_files=["res://.godot/imported/Meashroom sad.png-a4d0779e16dcc9a970a12c2f9ec5cdd7.ctex"]
 
 [params]
 

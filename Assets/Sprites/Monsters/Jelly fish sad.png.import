@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cae8lccnegdy7"
-path="res://.godot/imported/slime.png-0079c41283c4a6c9999ec35ebeebe023.ctex"
+uid="uid://hiox25yrprqa"
+path="res://.godot/imported/Jelly fish sad.png-61e0849bc09d329b2d2159aeb8e84a17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/slime.png"
-dest_files=["res://.godot/imported/slime.png-0079c41283c4a6c9999ec35ebeebe023.ctex"]
+source_file="res://Assets/Sprites/Monsters/Jelly fish sad.png"
+dest_files=["res://.godot/imported/Jelly fish sad.png-61e0849bc09d329b2d2159aeb8e84a17.ctex"]
 
 [params]
 

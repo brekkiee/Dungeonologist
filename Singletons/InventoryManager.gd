@@ -12,9 +12,9 @@ var item_mouse_follow = null
 
 # Dictionary of all possible items and their icons
 var all_Items_list: Dictionary = {
-	"plant1_item": preload("res://Assets/InventoryIcons/plant1_icon.png"),
-	"plant2_item": preload("res://Assets/InventoryIcons/plant2_icon.png"),
-	"plant3_item": preload("res://Assets/InventoryIcons/plant3_icon.png"),
+	"plant1_item": preload("res://Assets/InventoryIcons/plant1_item.png"),
+	"plant2_item": preload("res://Assets/InventoryIcons/plant2_item.png"),
+	"plant3_item": preload("res://Assets/InventoryIcons/plant3_item.png"),
 	"potion1": preload("res://Assets/InventoryIcons/potion1_icon.png") 
 }
 # Tracks items in cauldron inventory

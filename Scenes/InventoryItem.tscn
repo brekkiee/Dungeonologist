@@ -1,13 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0ixn7w31wao8"]
 
 [ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_jonsr"]
-[ext_resource type="Texture2D" uid="uid://buu4qabs0bils" path="res://Assets/InventoryIcons/plant1_icon.png" id="2_ve2wf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhcti"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc6ms"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3vne0"]
+load_path = "res://.godot/imported/plant1_icon.png-3e7dc20221c5ab1b2cb3de009e8c2ca6.ctex"
 
 [node name="InventoryItem" type="Control"]
 layout_mode = 3
@@ -44,6 +46,6 @@ offset_top = -20.0
 offset_right = -20.32
 offset_bottom = -20.176
 mouse_filter = 2
-texture = ExtResource("2_ve2wf")
+texture = SubResource("CompressedTexture2D_3vne0")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

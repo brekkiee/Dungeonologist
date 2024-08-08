@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pyap40eyhn84"
-path="res://.godot/imported/Brew_caldron_front.png-d3499bec12657b8ef1b88c8f276f0cb9.ctex"
+uid="uid://pw1ml4t3lmwr"
+path="res://.godot/imported/bg_Cage.png-79c6093e75d644d78ab331445a378937.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Brew_caldron_front.png"
-dest_files=["res://.godot/imported/Brew_caldron_front.png-d3499bec12657b8ef1b88c8f276f0cb9.ctex"]
+source_file="res://Assets/Sprites/bg_Cage.png"
+dest_files=["res://.godot/imported/bg_Cage.png-79c6093e75d644d78ab331445a378937.ctex"]
 
 [params]
 
