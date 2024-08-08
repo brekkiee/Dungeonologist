@@ -15,11 +15,11 @@ func _ready():
 	add_child(happiness_timer)
 	
 	# Set timer properties
-	hunger_timer.wait_time = 10.0 # Need to adjust as necessary
+	hunger_timer.wait_time = 5.0 # Need to adjust as necessary
 	hunger_timer.one_shot = false
 	hunger_timer.connect("timeout", Callable(self, "_on_hunger_timer_timeout"))
 	
-	happiness_timer.wait_time = 10.0 # Need to adjust as necessary
+	happiness_timer.wait_time = 5.0 # Need to adjust as necessary
 	happiness_timer.one_shot = false
 	happiness_timer.connect("timeout", Callable(self, "_on_hunger_timer_timeout"))
 	
