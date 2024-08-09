@@ -1,10 +1,6 @@
-res://Scenes/MainUI.tscn
 res://Assets/Animations/anim_Brew_splash.tres
 res://Assets/Animations/anim_Brew_bubble.tres
-res://Scenes/Windows/monster_enclosure.tscn
-res://Assets/Monsters/monster_common_slime.tscn
-res://Assets/Monsters/monster_common_shrooman.tscn
-res://Assets/Monsters/monster_forest_dinglebat.tscn
-res://Assets/Monsters/monster_nekomata.tscn
-res://Assets/Monsters/monster_plains_imp.tscn
-res://Assets/Monsters/monster_shallows_jelly.tscn
+res://Assets/Dialogue/chatbox.tscn
+res://Scenes/MainUI.tscn
+res://Scenes/Windows/MainWindow.tscn
+res://Scripts/UI_Quests/NPC.gd

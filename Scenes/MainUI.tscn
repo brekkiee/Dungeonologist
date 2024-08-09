@@ -76,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
 script = ExtResource("4_68fy0")
+dialogue_file = "res://Assets/Dialogue/DialogueText/chat_template.json"
 
 [node name="ChatBoxPosition" type="PanelContainer" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
@@ -106,6 +107,12 @@ offset_bottom = 0.14798
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_f4hg6")
+
+[node name="Button" type="Button" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
+visibility_layer = 0
+layout_mode = 0
+offset_right = 274.0
+offset_bottom = 356.0
 
 [node name="BookShelf" type="Panel" parent="MainScreen/ScreenBorders"]
 clip_contents = true
@@ -199,5 +206,6 @@ offset_bottom = -12.336
 mouse_filter = 2
 texture = ExtResource("12_aaljx")
 
+[connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
 [connection signal="gui_input" from="InventoryPanel/SlidingDrawer/DrawerHandle" to="InventoryPanel/SlidingDrawer" method="_on_texture_rect_gui_input"]

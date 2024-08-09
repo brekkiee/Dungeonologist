@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/UI/btn_Script_1.png" id="9_4fejs"]
 [ext_resource type="Texture2D" uid="uid://jx7y5swpvpui" path="res://Assets/UI/btn_Grow_1.png" id="9_gaiva"]
 
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o4mv"]
 texture = ExtResource("2_as6if")
 
