@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cae8lccnegdy7" path="res://Assets/Sprites/Monsters/CommonSlime.png" id="2_rctbm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
-radius = 32.8
+radius = 23.4667
 
-[node name="MonsterSlime" type="Area2D"]
+[node name="MonsterSlime" type="CharacterBody2D"]
+input_pickable = true
 script = ExtResource("1_52shx")
 
 [node name="monsterSprite2D" type="Sprite2D" parent="."]

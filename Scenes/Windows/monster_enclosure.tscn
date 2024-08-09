@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hxsuqplnekk3"]
+[gd_scene load_steps=12 format=3 uid="uid://hxsuqplnekk3"]
 
 [ext_resource type="Texture2D" uid="uid://pw1ml4t3lmwr" path="res://Assets/Sprites/Enclosure/bg_Cage.png" id="1_jnx0s"]
 [ext_resource type="PackedScene" uid="uid://cgbr2gsaofps8" path="res://Assets/Monsters/monster_common_slime.tscn" id="2_46yxq"]
@@ -7,6 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://d3x1d6w8hql2c" path="res://Assets/Monsters/monster_nekomata.tscn" id="6_xocai"]
 [ext_resource type="PackedScene" uid="uid://bb8gal6s23q0s" path="res://Assets/Monsters/monster_plains_imp.tscn" id="7_55l87"]
 [ext_resource type="PackedScene" uid="uid://dmnks055sa41o" path="res://Assets/Monsters/monster_common_shrooman.tscn" id="8_ye7yv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suk5j"]
+size = Vector2(43, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdvgu"]
+size = Vector2(40, 641)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kxfm"]
+size = Vector2(784, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bun63"]
+size = Vector2(782, 49)
 
 [node name="MonsterEnclosure" type="Node2D"]
 
@@ -26,30 +38,50 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Dinglebat" parent="MonsterSpawnPoint2" instance=ExtResource("3_x64kw")]
 position = Vector2(931, 439)
-scale = Vector2(0.1, 0.1)
 
 [node name="MonsterSpawnPoint3" type="Node2D" parent="."]
 position = Vector2(440, 260)
 
 [node name="ShallowsJelly" parent="MonsterSpawnPoint3" instance=ExtResource("4_oijx5")]
-scale = Vector2(0.1, 0.1)
 
 [node name="MonsterSpawnPoint4" type="Node2D" parent="."]
 position = Vector2(440, 260)
 
 [node name="Nekomata" parent="MonsterSpawnPoint4" instance=ExtResource("6_xocai")]
 position = Vector2(250, -6)
-scale = Vector2(0.1, 0.1)
 
 [node name="MonsterSpawnPoint5" type="Node2D" parent="."]
 position = Vector2(440, 260)
 
 [node name="CommonShrooman" parent="MonsterSpawnPoint5" instance=ExtResource("8_ye7yv")]
 position = Vector2(268, 186)
-scale = Vector2(0.1, 0.1)
 
 [node name="MonsterSpawnPoint6" type="Node2D" parent="."]
 position = Vector2(440, 260)
 
 [node name="MonsterPlainsImp" parent="MonsterSpawnPoint6" instance=ExtResource("7_55l87")]
 position = Vector2(526, -16)
+
+[node name="EnclosureBoundaryLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnclosureBoundaryLeft"]
+position = Vector2(307.5, 323.5)
+shape = SubResource("RectangleShape2D_suk5j")
+
+[node name="EnclosureBoundaryRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnclosureBoundaryRight"]
+position = Vector2(1132, 325.5)
+shape = SubResource("RectangleShape2D_qdvgu")
+
+[node name="EnclosureBoundaryTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnclosureBoundaryTop"]
+position = Vector2(722, 103)
+shape = SubResource("RectangleShape2D_8kxfm")
+
+[node name="EnclosureBoundaryBottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnclosureBoundaryBottom"]
+position = Vector2(721, 623.5)
+shape = SubResource("RectangleShape2D_bun63")

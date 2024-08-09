@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfjx7"]
 radius = 134.933
 
-[node name="MonsterJellyBelly" type="Area2D"]
+[node name="MonsterJellyBelly" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+input_pickable = true
 script = ExtResource("1_ikks4")
 
 [node name="monsterSprite2D" type="Sprite2D" parent="."]
