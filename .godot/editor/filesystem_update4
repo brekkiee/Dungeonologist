@@ -1,6 +1,6 @@
+res://Scenes/MainUI.tscn
 res://Assets/Animations/anim_Brew_splash.tres
 res://Assets/Animations/anim_Brew_bubble.tres
-res://Assets/Dialogue/chatbox.tscn
-res://Scenes/MainUI.tscn
 res://Scenes/Windows/MainWindow.tscn
-res://Scripts/UI_Quests/NPC.gd
+res://Assets/Dialogue/chatbox.tscn
+res://Scripts/UI_Quests/chat_box.gd

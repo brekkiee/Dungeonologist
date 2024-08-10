@@ -12,8 +12,8 @@ layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.393, 0.393)
 script = ExtResource("1_eo7lx")
-label = NodePath("NinePatchRect/Name")
-character_name = NodePath("NinePatchRect/Chat")
+label = NodePath("NinePatchRect/Chat")
+character_name = NodePath("NinePatchRect/Name")
 
 [node name="NPCTexture" type="TextureRect" parent="."]
 layout_mode = 0
@@ -57,3 +57,5 @@ fit_content = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
