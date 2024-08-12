@@ -1,226 +1,204 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4lvsnq5ef3lw"]
 
-[ext_resource type="Script" path="res://Scripts/UI_Quests/book.gd" id="1_fr0qy"]
 [ext_resource type="Texture2D" uid="uid://d28bwulw4xhwg" path="res://Assets/Sprites/Codex/Codex.png" id="2_4r81q"]
+[ext_resource type="Script" path="res://Scripts/UI_Quests/codex.gd" id="2_shked"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
 [ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
 
-[node name="Codex" type="PanelContainer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -206.0
-offset_top = -140.0
-offset_right = 194.0
-offset_bottom = 160.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.962)
-script = ExtResource("1_fr0qy")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 2
+[node name="NinePatchRect" type="NinePatchRect"]
+anchors_preset = -1
+anchor_left = 0.266
+anchor_top = 0.005
+anchor_right = 0.961
+anchor_bottom = 0.931
+offset_left = 0.567993
+offset_top = -0.24
+offset_right = -0.0721436
+offset_bottom = -0.288025
 texture = ExtResource("2_4r81q")
+script = ExtResource("2_shked")
 
-[node name="NameContainer" type="Container" parent="NinePatchRect"]
+[node name="VBoxContainerLHS" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.261
-anchor_top = 0.157
-anchor_right = 0.261
-anchor_bottom = 0.157
-offset_left = -87.4
-offset_top = -14.8755
-offset_right = 87.6
-offset_bottom = 15.1245
+anchor_left = 0.069
+anchor_top = 0.125
+anchor_right = 0.444
+anchor_bottom = 0.917
+offset_left = -0.200005
+offset_right = -0.200043
+offset_bottom = -5.20001
 
-[node name="Name" type="RichTextLabel" parent="NinePatchRect/NameContainer"]
+[node name="Name" type="RichTextLabel" parent="VBoxContainerLHS"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]Monster Name[/center]"
+fit_content = true
+autowrap_mode = 0
 
-[node name="NotesTitleContainer" type="Container" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.743
-anchor_top = 0.157
-anchor_right = 0.743
-anchor_bottom = 0.157
-offset_left = -280.2
-offset_top = -14.8755
-offset_right = -105.2
-offset_bottom = 15.1245
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerLHS"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.67
 
-[node name="NotesTitle" type="RichTextLabel" parent="NinePatchRect/NotesTitleContainer"]
+[node name="EntrySprite2D" type="TextureRect" parent="VBoxContainerLHS/CenterContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(220, 245)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_lbd4c")
+expand_mode = 5
+
+[node name="DetailsVBoxContainer" type="VBoxContainer" parent="VBoxContainerLHS"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Diet" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[center]Notes[/center]"
-
-[node name="DietContainer" type="Container" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.261
-anchor_top = 0.651
-anchor_right = 0.261
-anchor_bottom = 0.651
-offset_left = -87.4
-offset_top = -163.075
-offset_right = 87.6
-offset_bottom = -133.075
-
-[node name="Diet" type="RichTextLabel" parent="NinePatchRect/DietContainer"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Diet: Anything"
+fit_content = true
 
-[node name="HabitatContainer" type="Container" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.26
-anchor_top = 0.15
-anchor_right = 0.26
-anchor_bottom = 0.15
-offset_left = -90.0
-offset_top = -15.0
-offset_right = 90.0
-offset_bottom = 15.1245
-
-[node name="Habitat" type="RichTextLabel" parent="NinePatchRect/HabitatContainer"]
+[node name="Habitat" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.33
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 11
 bbcode_enabled = true
 text = "Habitat: Forests, Caves"
+fit_content = true
 
-[node name="Facts" type="RichTextLabel" parent="NinePatchRect"]
+[node name="Facts" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
 layout_mode = 2
-offset_left = 20.0
-offset_top = 220.0
-offset_right = 190.0
-offset_bottom = 275.0
+size_flags_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
 text = "Shroomen seem to be able to communicate with others of their species without the need for vocalisations or body language."
+fit_content = true
 
-[node name="ResearchQuestion1" type="RichTextLabel" parent="NinePatchRect"]
+[node name="VBoxContainerRHS" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.531
+anchor_top = 0.133
+anchor_right = 0.969
+anchor_bottom = 0.917
+offset_left = 0.199982
+offset_top = 0.199997
+offset_right = -0.200012
+offset_bottom = -0.200012
+
+[node name="NotesTitle" type="RichTextLabel" parent="VBoxContainerRHS"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-offset_left = 211.0
-offset_top = 58.0
-offset_right = 383.0
-offset_bottom = 72.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Notes[/center]"
+fit_content = true
+
+[node name="ResearchQuestion0" type="RichTextLabel" parent="VBoxContainerRHS"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_pdsf2")
 bbcode_enabled = true
 text = "How do Shroomen communicate?"
+fit_content = true
 
-[node name="ResearchQuestion2" type="RichTextLabel" parent="NinePatchRect"]
+[node name="CenterContainer0" type="CenterContainer" parent="VBoxContainerRHS"]
+clip_contents = true
 layout_mode = 2
-offset_left = 211.0
-offset_top = 148.437
-offset_right = 383.0
-offset_bottom = 162.437
+size_flags_vertical = 0
+
+[node name="ResearchAnswer0" type="RichTextLabel" parent="VBoxContainerRHS/CenterContainer0"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 9
-bbcode_enabled = true
-text = "Second research question line?"
-
-[node name="ResearchAnswer1" type="RichTextLabel" parent="NinePatchRect"]
-layout_mode = 2
-offset_left = 211.0
-offset_top = 78.7901
-offset_right = 383.0
-offset_bottom = 129.79
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
 text = "It appears they communicate through a network of fungal threads that spread underground. I wonder how far they can go?"
+fit_content = true
 
-[node name="ResearchAnswer2" type="RichTextLabel" parent="NinePatchRect"]
+[node name="ResearchQuestion1" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
-offset_left = 211.0
-offset_top = 167.148
-offset_right = 383.0
-offset_bottom = 218.148
+size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_pdsf2")
-theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "Second research question line?"
+fit_content = true
+
+[node name="CenterContainer1" type="CenterContainer" parent="VBoxContainerRHS"]
+clip_contents = true
+layout_mode = 2
+
+[node name="ResearchAnswer1" type="RichTextLabel" parent="VBoxContainerRHS/CenterContainer1"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_pdsf2")
 bbcode_enabled = true
 text = "Second research task completion notes
 fdsw
 dsf
 fdsffdsfdsfds"
+fit_content = true
 
-[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect"]
-position = Vector2(100, 119.41)
-scale = Vector2(0.05, 0.054)
-texture = ExtResource("4_lbd4c")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
+[node name="ResearchQuestion2" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+bbcode_enabled = true
+text = "Second research question line?"
+fit_content = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainerRHS"]
+clip_contents = true
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="ResearchAnswer2" type="RichTextLabel" parent="VBoxContainerRHS/CenterContainer2"]
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+bbcode_enabled = true
+text = "Second research task completion notes
+fdsw
+dsf
+fdsffdsfdsfds"
+fit_content = true
 
-[node name="Title2" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-horizontal_alignment = 1
-
-[node name="Pic" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-stretch_mode = 3
-
-[node name="Text" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-autowrap_mode = 2
-
-[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_stretch_ratio = 0.0
-
-[node name="PrevPageButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-focus_mode = 0
+[node name="PrevPageButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 525.0
+offset_right = 53.0
+offset_bottom = 533.0
 text = "<"
 
-[node name="NextPageButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-focus_mode = 0
+[node name="NextPageButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 528.0
+offset_right = 749.0
+offset_bottom = 536.0
 text = ">"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PrevPageButton" to="." method="_on_prev_page_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="PrevPageButton" to="." method="_on_prev_page_button_pressed"]
+[connection signal="pressed" from="NextPageButton" to="." method="_on_next_page_button_pressed"]

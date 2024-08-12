@@ -1,10 +1,10 @@
-res://Scenes/codex.tscn
+res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Quests/Codex/codex.tscn
-res://Quests/Codex/CodexContent/CommonSlimeEntry.json
-res://Assets/Dialogue/chatbox.tscn
-res://Assets/Monsters/monster_common_shrooman.tscn
-res://Scripts/UI_Quests/UI.gd
 res://Scenes/MainUI.tscn
-res://Scenes/Windows/MainWindow.tscn
+res://Scripts/UI_Quests/UI.gd
+res://Scripts/UI_Quests/codex.gd
+res://Assets/Dialogue/chatbox.tscn
+res://Quests/Codex/codex.tscn
+res://Scenes/quest_display.tscn
+res://Quests/Codex/CodexContent/MonsterEntries.json

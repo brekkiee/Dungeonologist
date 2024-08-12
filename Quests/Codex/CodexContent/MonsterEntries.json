@@ -1,0 +1,96 @@
+[
+	{
+		"name": "Common Slime",
+		"sprite": "res://Assets/Sprites/Monsters/CommonSlime_Happy.png",
+		"diet": "Anything",
+		"habitat": "Plains, Forests, Caves",
+		"facts": "Slimes can be found throughout dungeons all over the world. They can survive and adapt to any type of environment, making them a menace to dungeon ecosystems without adventurers to keep their numbers in check.",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "I’ve always wondered if slimes have a favourite food… I swear they just eat anything and everything.",
+				"completion": "Slimes don’t appear to prefer any one food type."
+			},
+			{
+				"task_num": 1,
+				"question": "Second research question",
+				"completion": "Second task completed notes."
+			},
+			{
+				"task_num": 2,
+				"question": "Third research question",
+				"completion": "Third task completed notes."
+			}
+		]
+	},
+	{
+		"name": "Forest Dinglebat",
+		"sprite": "res://Assets/Sprites/Monsters/ForestDinglebat_Happy.png",
+		"diet": "Fruit",
+		"habitat": "Forests",
+		"facts": "Dinglebats are known for their affinity for fruits and can be seen darting between trees in search of their next snack. They are shy creatures and often hide from adventurers.",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "What type of fruit do Dinglebats prefer the most?",
+				"completion": "Dinglebats seem to have a preference for berries over other fruits."
+			}
+		]
+	},
+	{
+		"name": "Common Shrooman",
+		"sprite": "res://Assets/Sprites/Monsters/CommonShrooman_Happy.png",
+		"diet": "Anything",
+		"habitat": "Forests, Caves",
+		"facts": "Shroomen seem to be able to communicate with others of their species without the need for vocalisations or body language.",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "How do Shroomen communicate?",
+				"completion": "It appears they communicate through a network of fungal threads that spread underground. I wonder how far they can go?"
+			}
+		]
+	},
+	{
+		"name": "Plains Imp",
+		"sprite": "res://Assets/Sprites/Monsters/PlainsImp_Happy.png",
+		"diet": "Meat",
+		"habitat": "Plains",
+		"facts": "Plains Imps are mischievous creatures known for causing trouble in farming areas. They are fast and agile, making them difficult to catch.",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "What is the best way to trap a Plains Imp?",
+				"completion": "Using meat as bait seems to be the most effective way to lure and trap a Plains Imp."
+			}
+		]
+	},
+	{
+		"name": "Shallows Jelly",
+		"sprite": "res://Assets/Sprites/Monsters/ShallowsJelly_Happy.png",
+		"diet": "Anything",
+		"habitat": "Coast",
+		"facts": "Shallows Jellies are often seen floating near the shorelines. They have a translucent body that makes them difficult to spot in the water.",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "How do Shallows Jellies defend themselves?",
+				"completion": "Shallows Jellies release a mild toxin when threatened, which is enough to deter most predators."
+			}
+		]
+	},
+	{
+		"name": "Nekomata",
+		"sprite": "res://Assets/Sprites/Monsters/Nekomata_Happy.png",
+		"diet": "Meat",
+		"habitat": "Mountains",
+		"facts": "Nekomata are feline creatures known for their dual tails and mysterious powers. They are often found in the mountains, where they live in solitude.",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "What powers do Nekomata possess?",
+				"completion": "Nekomata are said to have the ability to control fire and communicate with spirits. Their dual tails are a symbol of their magical prowess."
+			}
+		]
+	}
+]
