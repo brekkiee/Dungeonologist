@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtian7rbsfdli"
-path="res://.godot/imported/anim_Grow_Planter.png-523fe2ceee790f40c064be12db95ef15.ctex"
+uid="uid://cj1o46qmqk0wg"
+path="res://.godot/imported/anim_Walk_PlainsImp.png-d4ede50482f10800e6694f75560a6ea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/anim_Grow_Planter.png"
-dest_files=["res://.godot/imported/anim_Grow_Planter.png-523fe2ceee790f40c064be12db95ef15.ctex"]
+source_file="res://Assets/Animations/Monsters/anim_Walk_PlainsImp.png"
+dest_files=["res://.godot/imported/anim_Walk_PlainsImp.png-d4ede50482f10800e6694f75560a6ea1.ctex"]
 
 [params]
 

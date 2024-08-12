@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkyam0b2hd3xt"
-path="res://.godot/imported/anim_Brew_wood.png-5744c2433ce1a69fb3b6cf4635aec2ef.ctex"
+uid="uid://dm8arhry1abjk"
+path="res://.godot/imported/anim_Walk_Nekomata.png-105ebed08644e2af8d58cca975b26ec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/anim_Brew_wood.png"
-dest_files=["res://.godot/imported/anim_Brew_wood.png-5744c2433ce1a69fb3b6cf4635aec2ef.ctex"]
+source_file="res://Assets/Animations/Monsters/anim_Walk_Nekomata.png"
+dest_files=["res://.godot/imported/anim_Walk_Nekomata.png-105ebed08644e2af8d58cca975b26ec8.ctex"]
 
 [params]
 

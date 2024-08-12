@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var monster_sprite = $monsterSprite2D
+@onready var monster_animation = $MonsterAnimSprite2D
 @onready var hunger_meter = 5
 @onready var happiness_meter = 5
 @onready var hunger_timer = Timer.new()
@@ -41,9 +41,9 @@ func _ready():
 # Called to update monster movement, hunger, happiness
 func update_monster():
 	if hunger_meter == 0 or happiness_meter == 0:
-		monster_sprite.modulate = Color(1,0,0) # Sad monster
+		monster_animation.modulate = Color(1,0,0) # Sad monster
 	else:
-		monster_sprite.modulate = Color(1,1,1) # Happy healthy monstaah
+		monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
 
 func _on_hunger_timer_timeout():
 	if hunger_meter > 0:
@@ -70,6 +70,7 @@ func random_move():
 	var move_duration = randf_range(0.5, 5.0)
 	
 	# Move the monster for the duration, then stop
+	monster_animation.play("walk")	
 	var move_timer = Timer.new()
 	move_timer.wait_time = move_duration
 	move_timer.one_shot = true
@@ -92,6 +93,7 @@ func _physics_process(delta):
 			
 func _stop_moving():
 	movement_direction = Vector2.ZERO
+	monster_animation.play("idle")
 	set_process(false)
 	
 	# Start the pause timer before the next move
@@ -104,20 +106,3 @@ func _input_event(viewport, event, shape_idx):
 			pet_monster() # For now, left click pets the monster
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			feed_monster() # For now, just right click to feed the monstaah
-	
-#	# Get the current stage of the quest from tutorialquest.gd
-#	var quest_stage = QuestManager.active_monster_quest.CurrentStage
-#	if quest_stage < 2:
-#		monster_sprite.modulate = Color(0, 1, 0)  # Set monster to green at the start
-#		$Splinter.visible = true
-#	else:
-#		monster_sprite.modulate = Color(1, 1, 1)  # Reset color to normal
-#		$Splinter.visible = false
-
-# Handle input event when something clicks on the splinter
-#func _on_splinter_input_event(viewport, event, shape_idx):
-#	if InputMap.event_is_action(event, "left_click"):
-#		var tool_box = GameManager.current_scene.get_node("UI/ToolBox")
-#		# Ensure the toolbox has a tool active before calling the function in tutorialquest.gd
-#		if event.pressed and tool_box.current_tool != null:
-#			QuestManager.active_monster_quest.tool_used(tool_box.current_tool.name)

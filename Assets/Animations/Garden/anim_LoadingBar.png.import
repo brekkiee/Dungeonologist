@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1u4cu50h5u8g"
-path="res://.godot/imported/anim_LoadingBar.png-333edf988a8f23ef2e719ef9701cef57.ctex"
+path="res://.godot/imported/anim_LoadingBar.png-c184a348880d82b641a2c30146305174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/anim_LoadingBar.png"
-dest_files=["res://.godot/imported/anim_LoadingBar.png-333edf988a8f23ef2e719ef9701cef57.ctex"]
+source_file="res://Assets/Animations/Garden/anim_LoadingBar.png"
+dest_files=["res://.godot/imported/anim_LoadingBar.png-c184a348880d82b641a2c30146305174.ctex"]
 
 [params]
 

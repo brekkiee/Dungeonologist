@@ -1,3 +1,5 @@
+CollisionPolygon2D
+AnimatedSprite2D
 Timer
 RichTextLabel
 NinePatchRect
@@ -5,10 +7,8 @@ TextureRect
 Control
 Sprite2D
 Button
-CollisionPolygon2D
 CollisionShape2D
 CharacterBody2D
 StaticBody2D
 Node
 Node2D
-AnimatedSprite2D

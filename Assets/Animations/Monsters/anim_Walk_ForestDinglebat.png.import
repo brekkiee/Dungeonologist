@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq61x7mhpxqsv"
-path="res://.godot/imported/anim_Brew_splash.png-062182dddf15a83290606395a1a11450.ctex"
+uid="uid://dk5ptvfsq5kch"
+path="res://.godot/imported/anim_Walk_ForestDinglebat.png-28de02f1798f19db54c5d90cda870f33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/anim_Brew_splash.png"
-dest_files=["res://.godot/imported/anim_Brew_splash.png-062182dddf15a83290606395a1a11450.ctex"]
+source_file="res://Assets/Animations/Monsters/anim_Walk_ForestDinglebat.png"
+dest_files=["res://.godot/imported/anim_Walk_ForestDinglebat.png-28de02f1798f19db54c5d90cda870f33.ctex"]
 
 [params]
 

@@ -1,32 +1,32 @@
 [gd_scene load_steps=10 format=3 uid="uid://cw28cxxwqsy18"]
 
 [ext_resource type="Script" path="res://Scripts/Garden/plant.gd" id="1_mlq5e"]
-[ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/anim_Grow_Planter.png" id="2_70umv"]
+[ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_47hms"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebym8"]
-atlas = ExtResource("2_70umv")
+atlas = ExtResource("2_47hms")
 region = Rect2(0, 0, 30, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbnpa"]
-atlas = ExtResource("2_70umv")
+atlas = ExtResource("2_47hms")
 region = Rect2(31, 0, 30, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjr2a"]
-atlas = ExtResource("2_70umv")
+atlas = ExtResource("2_47hms")
 region = Rect2(62, 0, 30, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ciibu"]
-atlas = ExtResource("2_70umv")
+atlas = ExtResource("2_47hms")
 region = Rect2(93, 0, 30, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hna6"]
-atlas = ExtResource("2_70umv")
+atlas = ExtResource("2_47hms")
 region = Rect2(124, 0, 30, 47)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xvjet"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.99,
 "texture": SubResource("AtlasTexture_ebym8")
 }, {
 "duration": 1.0,
@@ -57,8 +57,8 @@ harvested_item_name = "snackle_item"
 position = Vector2(-1.90735e-06, -7.62939e-06)
 scale = Vector2(2.86667, 2.86667)
 sprite_frames = SubResource("SpriteFrames_xvjet")
-frame = 4
-frame_progress = 0.359914
+autoplay = "default"
+frame_progress = 0.718162
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
