@@ -1,6 +1,6 @@
 extends Control
 
-@onready var book_scene = preload("res://Scenes/book.tscn")
+@onready var book_scene = preload("res://Quests/Codex/codex.tscn")
 
 var book
 var book_open = false

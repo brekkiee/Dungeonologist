@@ -1,11 +1,13 @@
+Container
+Sprite2D
+MarginContainer
+RichTextLabel
+NinePatchRect
 CollisionPolygon2D
 AnimatedSprite2D
 Timer
-RichTextLabel
-NinePatchRect
 TextureRect
 Control
-Sprite2D
 Button
 CollisionShape2D
 CharacterBody2D
