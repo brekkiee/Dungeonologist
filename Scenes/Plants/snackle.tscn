@@ -3,46 +3,46 @@
 [ext_resource type="Script" path="res://Scripts/Garden/plant.gd" id="1_mlq5e"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_47hms"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebym8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_opkqm"]
 atlas = ExtResource("2_47hms")
-region = Rect2(0, 0, 30, 47)
+region = Rect2(0, 50, 31, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbnpa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_edukh"]
 atlas = ExtResource("2_47hms")
-region = Rect2(31, 0, 30, 47)
+region = Rect2(31, 50, 31, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjr2a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbmph"]
 atlas = ExtResource("2_47hms")
-region = Rect2(62, 0, 30, 47)
+region = Rect2(62, 50, 31, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ciibu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iurmh"]
 atlas = ExtResource("2_47hms")
-region = Rect2(93, 0, 30, 47)
+region = Rect2(93, 50, 31, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6hna6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4p1h"]
 atlas = ExtResource("2_47hms")
-region = Rect2(124, 0, 30, 47)
+region = Rect2(124, 50, 31, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xvjet"]
 animations = [{
 "frames": [{
-"duration": 1.99,
-"texture": SubResource("AtlasTexture_ebym8")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opkqm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sbnpa")
+"texture": SubResource("AtlasTexture_edukh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cjr2a")
+"texture": SubResource("AtlasTexture_vbmph")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ciibu")
+"texture": SubResource("AtlasTexture_iurmh")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6hna6")
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_t4p1h")
 }],
 "loop": true,
-"name": &"default",
+"name": &"growth",
 "speed": 1.0
 }]
 
@@ -53,12 +53,13 @@ size = Vector2(87, 138)
 script = ExtResource("1_mlq5e")
 harvested_item_name = "snackle_item"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.90735e-06, -7.62939e-06)
 scale = Vector2(2.86667, 2.86667)
 sprite_frames = SubResource("SpriteFrames_xvjet")
-autoplay = "default"
-frame_progress = 0.718162
+animation = &"growth"
+autoplay = "growth"
+frame_progress = 0.103824
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)

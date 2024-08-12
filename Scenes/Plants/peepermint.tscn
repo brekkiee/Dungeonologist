@@ -1,7 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8ifm3uw7nioy"]
+[gd_scene load_steps=10 format=3 uid="uid://c8ifm3uw7nioy"]
 
 [ext_resource type="Script" path="res://Scripts/Garden/plant.gd" id="1_pjoax"]
-[ext_resource type="Texture2D" uid="uid://c3ks75imfw68k" path="res://Assets/Sprites/Garden/peepermint.png" id="2_cmxvm"]
+[ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_r0cjc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0w37"]
+atlas = ExtResource("2_r0cjc")
+region = Rect2(0, 250, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcwrp"]
+atlas = ExtResource("2_r0cjc")
+region = Rect2(31, 250, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfn1p"]
+atlas = ExtResource("2_r0cjc")
+region = Rect2(62, 250, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4j2f"]
+atlas = ExtResource("2_r0cjc")
+region = Rect2(93, 250, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m68lq"]
+atlas = ExtResource("2_r0cjc")
+region = Rect2(124, 250, 31, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro0yp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0w37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcwrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfn1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4j2f")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_m68lq")
+}],
+"loop": true,
+"name": &"growth",
+"speed": 1.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfcqt"]
 size = Vector2(87, 138)
@@ -10,9 +53,13 @@ size = Vector2(87, 138)
 script = ExtResource("1_pjoax")
 harvested_item_name = "peepermint_item"
 
-[node name="plantSprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.867, 2.867)
-texture = ExtResource("2_cmxvm")
+[node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, -7.62939e-06)
+scale = Vector2(2.86667, 2.86667)
+sprite_frames = SubResource("SpriteFrames_ro0yp")
+animation = &"growth"
+autoplay = "growth"
+frame_progress = 0.0659239
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
