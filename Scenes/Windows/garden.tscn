@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2v0wkaafl2kj"]
 
 [ext_resource type="Texture2D" uid="uid://q8cv5lswy2yp" path="res://Assets/Sprites/Garden/bg_Grow.png" id="1_bqh3r"]
-[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Scenes/Plants/snackle.tscn" id="3_jq60l"]
-[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Scenes/Plants/snepper.tscn" id="4_twhdk"]
+[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Assets/Garden/Plants/snackle.tscn" id="3_jq60l"]
+[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Assets/Garden/Plants/snepper.tscn" id="4_twhdk"]
 [ext_resource type="Texture2D" uid="uid://cch6wcan51glq" path="res://Assets/Sprites/Garden/Grow_plant_2.png" id="5_5r1g2"]
-[ext_resource type="PackedScene" uid="uid://beqqqebnqcv4e" path="res://Scenes/Plants/elfroot.tscn" id="5_nsbdl"]
-[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Scenes/Plants/peepermint.tscn" id="5_v3wnm"]
-[ext_resource type="PackedScene" uid="uid://bopt04330ejsn" path="res://Scenes/Plants/sunflower.tscn" id="6_laujj"]
-[ext_resource type="PackedScene" uid="uid://40ovq64rb0mg" path="res://Scenes/Plants/mushroom.tscn" id="7_dvba2"]
-[ext_resource type="PackedScene" uid="uid://43cpucc3koas" path="res://Scenes/Plants/berry.tscn" id="8_hctrc"]
+[ext_resource type="PackedScene" uid="uid://beqqqebnqcv4e" path="res://Assets/Garden/Plants/elfroot.tscn" id="5_nsbdl"]
+[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Assets/Garden/Plants/peepermint.tscn" id="5_v3wnm"]
+[ext_resource type="PackedScene" uid="uid://bopt04330ejsn" path="res://Assets/Garden/Plants/sunflower.tscn" id="6_laujj"]
+[ext_resource type="PackedScene" uid="uid://40ovq64rb0mg" path="res://Assets/Garden/Plants/mushroom.tscn" id="7_dvba2"]
+[ext_resource type="PackedScene" uid="uid://43cpucc3koas" path="res://Assets/Garden/Plants/berry.tscn" id="8_hctrc"]
 
 [node name="Garden" type="Node2D"]
 
