@@ -9,3 +9,7 @@ res://Scenes/UI/MainUI.tscn
 res://Scenes/UI/scene_change_buttons.tscn
 res://Scenes/Windows/monster_enclosure.tscn
 res://Scenes/Windows/home.tscn
+res://Quests/TutorialQuest/tutorialquest.gd
+res://Singletons/QuestManager.gd
+res://Quests/quest_template.gd
+res://Quests/harvestquest.gd

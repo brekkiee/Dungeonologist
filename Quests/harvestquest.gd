@@ -2,26 +2,25 @@ extends Node
 
 # Quest information
 var info: Dictionary = {
-	"Name": "",             # Name of the quest
-#	"MonsterSpawn": "",     # Path to the monster scene
-	"NpcSprite" : "",       # Path to the NPC sprite
+	"Name": "HarvestTutorial",             # Name of the quest
+	"NpcSprite" : "res://Assets/Sprites/Characters/char_5_Kael.png",       # Path to the NPC sprite
 
-	"QuestDisplayName": "", # Display name of the quest
+	"QuestDisplayName": "Harvest a plant", # Display name of the quest
 	"QuestDescription": {   # Descriptions for each stage of the quest
-		1: "",
-		2: ""
+		1: "Click on a plant to harvest",
+		2: "Click on another plant to harvest"
 	}
 }
 
 # Dialogue for the quest
-var dialogue: Dictionary = {
-	"StartDialogue" : [
-		"", "", "",    # Dialogue lines for the start of the quest
-	],
-	"CompleteDialogue": [
-		"", "", "",    # Dialogue lines for quest completion
-	],
-}
+#var dialogue: Dictionary = {
+#	"StartDialogue" : [
+#		"", "", "",    # Dialogue lines for the start of the quest
+#	],
+#	"CompleteDialogue": [
+#		"", "", "",    # Dialogue lines for quest completion
+#	],
+#}
 
 var CurrentStage = 0   # Current stage of the quest
 var first_time_opening_home_scene = true   # Check if home scene is opened for the first time

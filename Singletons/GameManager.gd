@@ -8,8 +8,6 @@ var scenes = {}
 @onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
 
 @onready var npc: Control = get_node("/root/Header/UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character/")
-var spawned_monster: Node2D = null
-var monster_spawn_point: Node2D
 
 func _ready():
 	start_game()
@@ -82,11 +80,10 @@ func _deferred_goto_scene(scene_name: String):
 	
 	print("Scene Spawn Point Children After: ", scene_spawn_point.get_child_count())
 
-	# Load home scene if active monster quest exists
-	if scene_name == "Home" and QuestManager.active_monster_quest != null:
-		monster_spawn_point = current_scene.get_node("ExaminationTable/MonsterSpawnPoint")
-		if QuestManager.active_monster_quest.has_method("home_scene_load"):
-			QuestManager.active_monster_quest.home_scene_load.call_deferred()
+	# Load home scene if active chat quest exists
+	if scene_name == "Home" and QuestManager.active_chat_quest != null:
+		if QuestManager.active_chat_quest.has_method("home_scene_load"):
+			QuestManager.active_chat_quest.home_scene_load.call_deferred()
 
 func play_sound():
 	var audio_stream = get_node("/root/Header/MainMusic")
