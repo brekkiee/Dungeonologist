@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jx7y5swpvpui"
-path="res://.godot/imported/btn_Grow_1.png-ec4cf933ea57578ad412522155ced957.ctex"
+uid="uid://ba76spmhrib31"
+path="res://.godot/imported/drawer_open.png-3dade7b15e3609f59456f558aa110e29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/btn_Grow_1.png"
-dest_files=["res://.godot/imported/btn_Grow_1.png-ec4cf933ea57578ad412522155ced957.ctex"]
+source_file="res://Assets/Sprites/UI/drawer_open.png"
+dest_files=["res://.godot/imported/drawer_open.png-3dade7b15e3609f59456f558aa110e29.ctex"]
 
 [params]
 

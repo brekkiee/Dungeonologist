@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lwtjxiowv28w"
-path="res://.godot/imported/chatbox.png-78b232d6d1ebfec234293527ea07cb6b.ctex"
+uid="uid://dy58iobnomh1m"
+path="res://.godot/imported/drawer_handle.png-f4d980c3ce7b02051c09a54d7fdce45b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/chatbox.png"
-dest_files=["res://.godot/imported/chatbox.png-78b232d6d1ebfec234293527ea07cb6b.ctex"]
+source_file="res://Assets/Sprites/UI/drawer_handle.png"
+dest_files=["res://.godot/imported/drawer_handle.png-f4d980c3ce7b02051c09a54d7fdce45b.ctex"]
 
 [params]
 

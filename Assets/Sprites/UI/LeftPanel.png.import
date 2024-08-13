@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lefm6v2rglac"
-path="res://.godot/imported/border_lines.png-a44403e4c97716911e2303c0d11b2785.ctex"
+uid="uid://bhuq17quytxyv"
+path="res://.godot/imported/LeftPanel.png-0950a65aa9750dd789a461dfa35d0f2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/border_lines.png"
-dest_files=["res://.godot/imported/border_lines.png-a44403e4c97716911e2303c0d11b2785.ctex"]
+source_file="res://Assets/Sprites/UI/LeftPanel.png"
+dest_files=["res://.godot/imported/LeftPanel.png-0950a65aa9750dd789a461dfa35d0f2d.ctex"]
 
 [params]
 

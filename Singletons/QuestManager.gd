@@ -1,6 +1,6 @@
 extends Node
 
-@onready var quest_display_scene = preload("res://Scenes/quest_display.tscn")
+@onready var quest_display_scene = preload("res://Quests/quest_display.tscn")
 
 var quest_display
 

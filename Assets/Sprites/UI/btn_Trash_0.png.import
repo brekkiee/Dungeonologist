@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj4o23odb3hw6"
-path="res://.godot/imported/Overlay_Char_BG.png-50fecbb7cee69490a35fcd0e06fb4bdf.ctex"
+uid="uid://cnx5y8cl887rc"
+path="res://.godot/imported/btn_Trash_0.png-c8e94cd1118d9025b61e437bd4b728e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Overlay_Char_BG.png"
-dest_files=["res://.godot/imported/Overlay_Char_BG.png-50fecbb7cee69490a35fcd0e06fb4bdf.ctex"]
+source_file="res://Assets/Sprites/UI/btn_Trash_0.png"
+dest_files=["res://.godot/imported/btn_Trash_0.png-c8e94cd1118d9025b61e437bd4b728e3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvuklclh6nau4"
-path="res://.godot/imported/btn_Grow_0.png-05fd0d10000844d76845ad5c9f2468fb.ctex"
+uid="uid://lefm6v2rglac"
+path="res://.godot/imported/border_lines.png-a0c97222dede1d299a96ed9919186ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/btn_Grow_0.png"
-dest_files=["res://.godot/imported/btn_Grow_0.png-05fd0d10000844d76845ad5c9f2468fb.ctex"]
+source_file="res://Assets/Sprites/UI/border_lines.png"
+dest_files=["res://.godot/imported/border_lines.png-a0c97222dede1d299a96ed9919186ef2.ctex"]
 
 [params]
 

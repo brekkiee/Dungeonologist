@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crmjc3ri53c72"
-path="res://.godot/imported/drawer_single.png-e0c21cb90a6465a28b3a8b2289f0bebc.ctex"
+uid="uid://bcsjdl6lhokra"
+path="res://.godot/imported/btn_Exam_0.png-d9768f381057c8117f9ca8b8aae19ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/drawer_single.png"
-dest_files=["res://.godot/imported/drawer_single.png-e0c21cb90a6465a28b3a8b2289f0bebc.ctex"]
+source_file="res://Assets/Sprites/UI/btn_Exam_0.png"
+dest_files=["res://.godot/imported/btn_Exam_0.png-d9768f381057c8117f9ca8b8aae19ecf.ctex"]
 
 [params]
 

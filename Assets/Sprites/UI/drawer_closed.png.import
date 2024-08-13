@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5lplwajuqksb"
-path="res://.godot/imported/btn_Brew_0.png-530a0cd37594885b5ce632935dbec693.ctex"
+uid="uid://dutncfgxiacn8"
+path="res://.godot/imported/drawer_closed.png-319e3071b07fb4c7cd43ae274aa8f900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/btn_Brew_0.png"
-dest_files=["res://.godot/imported/btn_Brew_0.png-530a0cd37594885b5ce632935dbec693.ctex"]
+source_file="res://Assets/Sprites/UI/drawer_closed.png"
+dest_files=["res://.godot/imported/drawer_closed.png-319e3071b07fb4c7cd43ae274aa8f900.ctex"]
 
 [params]
 

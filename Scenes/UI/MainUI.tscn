@@ -1,17 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=16 format=3 uid="uid://bphpdmmsdqanf"]
 
-[ext_resource type="Script" path="res://Scripts/UI_Quests/UI.gd" id="1_my5jn"]
-[ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/UI/Overlay_Frame_Top.png" id="2_ngwsp"]
-[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/UI/Overlay_Char_BG.png" id="3_cglt1"]
-[ext_resource type="Script" path="res://Scripts/UI_Quests/NPC.gd" id="4_68fy0"]
+[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
+[ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
+[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="3_40jcq"]
+[ext_resource type="Script" path="res://Scripts/Quests/NPC.gd" id="4_68fy0"]
 [ext_resource type="Texture2D" uid="uid://7w17bej6yhg5" path="res://Assets/Sprites/Characters/char_0_basic.png" id="5_f4hg6"]
-[ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/OldStuff/mon_book.png" id="6_503of"]
-[ext_resource type="Texture2D" uid="uid://dutncfgxiacn8" path="res://Assets/UI/drawer_closed.png" id="7_clbrm"]
-[ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/scene_change_buttons.tscn" id="9_17vtp"]
+[ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/Codex/mons_book.png" id="6_503of"]
+[ext_resource type="Texture2D" uid="uid://dutncfgxiacn8" path="res://Assets/Sprites/UI/drawer_closed.png" id="7_m5qe6"]
+[ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/UI/scene_change_buttons.tscn" id="9_17vtp"]
+[ext_resource type="Texture2D" uid="uid://ba76spmhrib31" path="res://Assets/Sprites/UI/drawer_open.png" id="9_kifj2"]
 [ext_resource type="Script" path="res://Scripts/Inventory/inventory_panel.gd" id="10_ggugm"]
-[ext_resource type="Texture2D" uid="uid://ba76spmhrib31" path="res://Assets/UI/drawer_open.png" id="10_i8813"]
-[ext_resource type="Texture2D" uid="uid://dy58iobnomh1m" path="res://Assets/UI/drawer_handle.png" id="11_pngar"]
-[ext_resource type="Texture2D" uid="uid://crmjc3ri53c72" path="res://Assets/UI/drawer_single.png" id="12_aaljx"]
+[ext_resource type="Texture2D" uid="uid://dy58iobnomh1m" path="res://Assets/Sprites/UI/drawer_handle.png" id="11_ltjqf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
@@ -54,7 +53,7 @@ offset_left = -0.152
 offset_right = -866.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ngwsp")
+texture = ExtResource("2_wqxa2")
 
 [node name="ChatWindow" type="TextureRect" parent="MainScreen/ScreenBorders"]
 layout_mode = 1
@@ -65,7 +64,7 @@ offset_left = 7.0
 offset_top = 7.0
 offset_right = -7.0
 offset_bottom = -8.71201
-texture = ExtResource("3_cglt1")
+texture = ExtResource("3_40jcq")
 
 [node name="Character" type="Panel" parent="MainScreen/ScreenBorders/ChatWindow"]
 layout_mode = 1
@@ -76,7 +75,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
 script = ExtResource("4_68fy0")
-dialogue_file = "res://Assets/Dialogue/DialogueText/chat_template.json"
+dialogue_file = "res://Quests/Dialogue/DialogueText/chat_template.json"
 
 [node name="ChatBoxPosition" type="PanelContainer" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
@@ -144,7 +143,6 @@ offset_top = 360.0
 offset_right = 285.0
 offset_bottom = 648.0
 mouse_filter = 2
-texture = ExtResource("7_clbrm")
 
 [node name="SceneButtons" parent="." instance=ExtResource("9_17vtp")]
 layout_mode = 1
@@ -177,7 +175,7 @@ offset_right = -872.982
 offset_bottom = -1.01517
 mouse_filter = 0
 mouse_force_pass_scroll_events = false
-texture = ExtResource("10_i8813")
+texture = ExtResource("9_kifj2")
 script = ExtResource("10_ggugm")
 
 [node name="DrawerHandle" type="TextureRect" parent="InventoryPanel/SlidingDrawer"]
@@ -191,7 +189,7 @@ offset_right = 16.17
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 0
-texture = ExtResource("11_pngar")
+texture = ExtResource("11_ltjqf")
 
 [node name="DrawerClosed" type="TextureRect" parent="InventoryPanel"]
 z_index = 5
@@ -204,7 +202,7 @@ offset_top = 12.0
 offset_right = -7.12695
 offset_bottom = -12.336
 mouse_filter = 2
-texture = ExtResource("12_aaljx")
+texture = ExtResource("7_m5qe6")
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]

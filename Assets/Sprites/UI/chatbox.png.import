@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckk1kbxksx0yv"
-path="res://.godot/imported/btn_Exam_1.png-d2762314f57d5f087ef941bbf7e05c27.ctex"
+uid="uid://lwtjxiowv28w"
+path="res://.godot/imported/chatbox.png-b8805b80e0150b423e86cc99766c7c84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/btn_Exam_1.png"
-dest_files=["res://.godot/imported/btn_Exam_1.png-d2762314f57d5f087ef941bbf7e05c27.ctex"]
+source_file="res://Assets/Sprites/UI/chatbox.png"
+dest_files=["res://.godot/imported/chatbox.png-b8805b80e0150b423e86cc99766c7c84.ctex"]
 
 [params]
 

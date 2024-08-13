@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhf3suq5hqkjk"]
 
-[ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/MainUI.tscn" id="1_nqokc"]
+[ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/UI/MainUI.tscn" id="1_nqokc"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x14cy"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cax3qkparjnfy"
-path="res://.godot/imported/Dungeonology_BorderUI.png-649d57bf460afa49f04dd0cf6536a57d.ctex"
+uid="uid://crmjc3ri53c72"
+path="res://.godot/imported/drawer_single.png-83b5859f0173668af44760169bf2b7b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Dungeonology_BorderUI.png"
-dest_files=["res://.godot/imported/Dungeonology_BorderUI.png-649d57bf460afa49f04dd0cf6536a57d.ctex"]
+source_file="res://Assets/Sprites/UI/drawer_single.png"
+dest_files=["res://.godot/imported/drawer_single.png-83b5859f0173668af44760169bf2b7b1.ctex"]
 
 [params]
 

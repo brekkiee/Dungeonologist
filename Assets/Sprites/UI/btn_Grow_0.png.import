@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iuwvjdrul14t"
-path="res://.godot/imported/HomeUI.png-effcaaf97ebcfcd9ef37ab5b0b7a107b.ctex"
+uid="uid://cvuklclh6nau4"
+path="res://.godot/imported/btn_Grow_0.png-6e9d6fbd0c75a4b44283301659a93f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/HomeUI.png"
-dest_files=["res://.godot/imported/HomeUI.png-effcaaf97ebcfcd9ef37ab5b0b7a107b.ctex"]
+source_file="res://Assets/Sprites/UI/btn_Grow_0.png"
+dest_files=["res://.godot/imported/btn_Grow_0.png-6e9d6fbd0c75a4b44283301659a93f44.ctex"]
 
 [params]
 
