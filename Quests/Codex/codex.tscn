@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4lvsnq5ef3lw"]
 
 [ext_resource type="Texture2D" uid="uid://d28bwulw4xhwg" path="res://Assets/Sprites/Codex/Codex.png" id="2_4r81q"]
-[ext_resource type="Script" path="res://Scripts/UI_Quests/codex.gd" id="2_shked"]
+[ext_resource type="Script" path="res://Scripts/Quests/codex.gd" id="2_shked"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
 [ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
 

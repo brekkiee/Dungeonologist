@@ -18,13 +18,13 @@ size = Vector2(40, 641)
 size = Vector2(835, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bun63"]
-size = Vector2(865, 49)
+size = Vector2(865, 106.5)
 
 [node name="MonsterEnclosure" type="Node2D"]
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(719.683, 324.093)
+position = Vector2(720, 244)
 scale = Vector2(2.316, 2.316)
 texture = ExtResource("1_jnx0s")
 
@@ -77,11 +77,11 @@ shape = SubResource("RectangleShape2D_qdvgu")
 [node name="EnclosureBoundaryTop" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnclosureBoundaryTop"]
-position = Vector2(714.5, 54)
+position = Vector2(714.5, -9)
 shape = SubResource("RectangleShape2D_8kxfm")
 
 [node name="EnclosureBoundaryBottom" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnclosureBoundaryBottom"]
-position = Vector2(719.5, 658.5)
+position = Vector2(716, 596.75)
 shape = SubResource("RectangleShape2D_bun63")

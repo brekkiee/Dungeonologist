@@ -1,11 +1,11 @@
-res://Scenes/Windows/alchemy_lab.tscn
+res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Scripts/Quests/NPC.gd
-res://Scenes/UI/InventoryItem.tscn
+res://Singletons/GameManager.gd
+res://Quests/Codex/codex.tscn
 res://Quests/quest_display.tscn
 res://Scenes/UI/MainUI.tscn
-res://Scenes/Windows/MainWindow.tscn
-res://Scenes/Windows/garden.tscn
-res://Assets/Alchemy/Couldron.tscn
-res://Assets/Alchemy/Ladle.tscn
+res://Scenes/UI/scene_change_buttons.tscn
+res://Scenes/Windows/monster_enclosure.tscn
+res://Scenes/Windows/home.tscn
