@@ -51,7 +51,7 @@ size = Vector2(87, 138)
 
 [node name="Mushroom" type="Area2D"]
 script = ExtResource("1_xuvks")
-harvested_item_name = "snepper_item"
+harvested_item_name = "mushroom_item"
 
 [node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.90735e-06, -7.62939e-06)

@@ -15,6 +15,10 @@ var all_Items_list: Dictionary = {
 	"snackle_item": preload("res://Assets/InventoryIcons/snackle_item.png"),
 	"snepper_item": preload("res://Assets/InventoryIcons/snepper_item.png"),
 	"peepermint_item": preload("res://Assets/InventoryIcons/peepermint_item.png"),
+	"elfroot_item": preload("res://Assets/InventoryIcons/elfroot_item.png"),
+	"sunflower_item": preload("res://Assets/InventoryIcons/sunflower_item.png"),
+	"berry_item": preload("res://Assets/InventoryIcons/berry_item.png"),
+	"mushroom_item": preload("res://Assets/InventoryIcons/mushroom_item.png"),
 	"minor_health_potion_item": preload("res://Assets/InventoryIcons/minor_health_potion_item.png"), 
 	"minor_mana_potion_item": preload("res://Assets/InventoryIcons/minor_mana_potion_item.png") 
 }
