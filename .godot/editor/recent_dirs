@@ -1,8 +1,10 @@
+res://Quests/Dialogue/DialogueText
+res://Scripts/Quests
+res://Scripts/UI
+res://Scenes
 res://Assets/Animations/Monsters
 res://Assets/Animations/Garden
 res://Assets/Sprites/Monsters
-res://Assets/Dialogue/DialogueText
-res://Assets/DialogueSprites
 res://Scripts/Enclosure
 res://Assets/Monsters
 res://Assets/Sprites

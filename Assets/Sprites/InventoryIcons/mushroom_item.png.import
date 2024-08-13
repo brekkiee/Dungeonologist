@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds5xd2hxdjqip"
-path="res://.godot/imported/pain_expression.png-c30b28e90e02d0d174d1a95a118a8782.ctex"
+uid="uid://lq4uvn4wajgp"
+path="res://.godot/imported/mushroom_item.png-5c7181d4bcbd7a12f7f0fa4f337610bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/OldStuff/pain_expression.png"
-dest_files=["res://.godot/imported/pain_expression.png-c30b28e90e02d0d174d1a95a118a8782.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/mushroom_item.png"
+dest_files=["res://.godot/imported/mushroom_item.png-5c7181d4bcbd7a12f7f0fa4f337610bf.ctex"]
 
 [params]
 

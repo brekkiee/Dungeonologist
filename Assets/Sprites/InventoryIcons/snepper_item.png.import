@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg2fyq2cmaigd"
-path="res://.godot/imported/minor_health_potion_item.png-fb8e20924186398363a49be3a1d782c2.ctex"
+uid="uid://lho4pm4s8aa6"
+path="res://.godot/imported/snepper_item.png-7a77567faf3068aff1d9718531e0108b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/minor_health_potion_item.png"
-dest_files=["res://.godot/imported/minor_health_potion_item.png-fb8e20924186398363a49be3a1d782c2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/snepper_item.png"
+dest_files=["res://.godot/imported/snepper_item.png-7a77567faf3068aff1d9718531e0108b.ctex"]
 
 [params]
 

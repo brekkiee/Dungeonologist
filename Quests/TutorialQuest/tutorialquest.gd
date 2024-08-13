@@ -48,11 +48,11 @@ func home_scene_load():
 	print("Quest_load_home_scene")
 	# Load the wizard sprite into the NPC node
 	GameManager.npc.sprite_texture.texture = load(info.NpcSprite)
-	var monster_scene = load(info.MonsterSpawn)
+#	var monster_scene = load(info.MonsterSpawn)
 
-	var monster = monster_scene.instantiate()
-	GameManager.monster_spawn_point.add_child(monster)
-	GameManager.spawned_monster = monster
+#	var monster = monster_scene.instantiate()
+#	GameManager.monster_spawn_point.add_child(monster)
+#	GameManager.spawned_monster = monster
 
 # Update the quest display
 func update_quest_display():

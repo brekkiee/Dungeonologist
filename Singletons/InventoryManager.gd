@@ -6,21 +6,21 @@ var current_plant_inventory = []
 # Stores all potions in the inventory
 var current_potion_inventory = []
 # Scene template for each inventory item
-var item_template = preload("res://Scenes/InventoryItem.tscn")
+var item_template = preload("res://Scenes/UI/InventoryItem.tscn")
 # Tracks item following the mouse
 var item_mouse_follow = null
 
 # Dictionary of all possible items and their icons
 var all_Items_list: Dictionary = {
-	"snackle_item": preload("res://Assets/InventoryIcons/snackle_item.png"),
-	"snepper_item": preload("res://Assets/InventoryIcons/snepper_item.png"),
-	"peepermint_item": preload("res://Assets/InventoryIcons/peepermint_item.png"),
-	"elfroot_item": preload("res://Assets/InventoryIcons/elfroot_item.png"),
-	"sunflower_item": preload("res://Assets/InventoryIcons/sunflower_item.png"),
-	"berry_item": preload("res://Assets/InventoryIcons/berry_item.png"),
-	"mushroom_item": preload("res://Assets/InventoryIcons/mushroom_item.png"),
-	"minor_health_potion_item": preload("res://Assets/InventoryIcons/minor_health_potion_item.png"), 
-	"minor_mana_potion_item": preload("res://Assets/InventoryIcons/minor_mana_potion_item.png") 
+	"snackle_item": preload("res://Assets/Sprites/InventoryIcons/snackle_item.png"),
+	"snepper_item": preload("res://Assets/Sprites/InventoryIcons/snepper_item.png"),
+	"peepermint_item": preload("res://Assets/Sprites/InventoryIcons/peepermint_item.png"),
+	"elfroot_item": preload("res://Assets/Sprites/InventoryIcons/elfroot_item.png"),
+	"sunflower_item": preload("res://Assets/Sprites/InventoryIcons/sunflower_item.png"),
+	"berry_item": preload("res://Assets/Sprites/InventoryIcons/berry_item.png"),
+	"mushroom_item": preload("res://Assets/Sprites/InventoryIcons/mushroom_item.png"),
+	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_item.png"), 
+	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png") 
 }
 # Tracks items in cauldron inventory
 var current_cauldron_inventory = []

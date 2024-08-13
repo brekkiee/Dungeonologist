@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://75fvve71gx0s"
-path="res://.godot/imported/peepermint_item.png-172229c0dd334518433cb80e604997e6.ctex"
+uid="uid://crrsusxwkce01"
+path="res://.godot/imported/chatboxNew.png-679d78a3be2bb0de44dc5dfc9a44e50d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/peepermint_item.png"
-dest_files=["res://.godot/imported/peepermint_item.png-172229c0dd334518433cb80e604997e6.ctex"]
+source_file="res://Assets/Sprites/Dialogue/chatboxNew.png"
+dest_files=["res://.godot/imported/chatboxNew.png-679d78a3be2bb0de44dc5dfc9a44e50d.ctex"]
 
 [params]
 

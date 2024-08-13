@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chk44xjuflxet"
-path="res://.godot/imported/elfroot_item.png-3dd883a057d76c6d2fac89864ce79b0b.ctex"
+uid="uid://75fvve71gx0s"
+path="res://.godot/imported/peepermint_item.png-5cb386a7ad232edbb14236bd23a25e19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/elfroot_item.png"
-dest_files=["res://.godot/imported/elfroot_item.png-3dd883a057d76c6d2fac89864ce79b0b.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/peepermint_item.png"
+dest_files=["res://.godot/imported/peepermint_item.png-5cb386a7ad232edbb14236bd23a25e19.ctex"]
 
 [params]
 

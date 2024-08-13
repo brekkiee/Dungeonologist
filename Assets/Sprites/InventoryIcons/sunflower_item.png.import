@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://besft1shxtnb2"
-path="res://.godot/imported/splinter.png-705dd2ba213a0fa6366c4d7a4a037161.ctex"
+uid="uid://dx7wbpwv5lcjp"
+path="res://.godot/imported/sunflower_item.png-f5131ffd30753d05b3696f6e582fe03c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/OldStuff/splinter.png"
-dest_files=["res://.godot/imported/splinter.png-705dd2ba213a0fa6366c4d7a4a037161.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/sunflower_item.png"
+dest_files=["res://.godot/imported/sunflower_item.png-f5131ffd30753d05b3696f6e582fe03c.ctex"]
 
 [params]
 

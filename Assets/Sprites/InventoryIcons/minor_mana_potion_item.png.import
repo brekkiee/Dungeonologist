@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b305gyiy1canp"
-path="res://.godot/imported/mon_book.png-990b083d2fca9b0d085040c8d9736057.ctex"
+uid="uid://bssk2np6pumtl"
+path="res://.godot/imported/minor_mana_potion_item.png-654ca2cb49662896fd1c4a1edb969b98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/OldStuff/mon_book.png"
-dest_files=["res://.godot/imported/mon_book.png-990b083d2fca9b0d085040c8d9736057.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png"
+dest_files=["res://.godot/imported/minor_mana_potion_item.png-654ca2cb49662896fd1c4a1edb969b98.ctex"]
 
 [params]
 

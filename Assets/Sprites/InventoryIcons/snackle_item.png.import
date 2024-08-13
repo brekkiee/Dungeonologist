@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3omw16cmv1n7"
-path="res://.godot/imported/plant3_iconold.png-da64afe960c864a2041c0f1af375042d.ctex"
+uid="uid://blm1kxhgx0rne"
+path="res://.godot/imported/snackle_item.png-4640d9d7423d1b8a4dd55c5e21e69c1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/OldStuff/plant3_iconold.png"
-dest_files=["res://.godot/imported/plant3_iconold.png-da64afe960c864a2041c0f1af375042d.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/snackle_item.png"
+dest_files=["res://.godot/imported/snackle_item.png-4640d9d7423d1b8a4dd55c5e21e69c1c.ctex"]
 
 [params]
 

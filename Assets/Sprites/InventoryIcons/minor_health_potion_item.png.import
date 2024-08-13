@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crrsusxwkce01"
-path="res://.godot/imported/chatboxNew.png-902f70cc6ca5b7630ec26aae58b9fbbd.ctex"
+uid="uid://cg2fyq2cmaigd"
+path="res://.godot/imported/minor_health_potion_item.png-cc825e77af700fd0819288d8732c6a5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dialogue/chatboxNew.png"
-dest_files=["res://.godot/imported/chatboxNew.png-902f70cc6ca5b7630ec26aae58b9fbbd.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/minor_health_potion_item.png"
+dest_files=["res://.godot/imported/minor_health_potion_item.png-cc825e77af700fd0819288d8732c6a5c.ctex"]
 
 [params]
 

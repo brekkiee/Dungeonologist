@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blm1kxhgx0rne"
-path="res://.godot/imported/snackle_item.png-6b97c5e476f8eab31d1a2955134a5a6c.ctex"
+uid="uid://brd5iukdfejlw"
+path="res://.godot/imported/Guntheidon_SAD.png-d2307d37943f104d9d936ee87d155c5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/snackle_item.png"
-dest_files=["res://.godot/imported/snackle_item.png-6b97c5e476f8eab31d1a2955134a5a6c.ctex"]
+source_file="res://Assets/Sprites/Dialogue/Guntheidon_SAD.png"
+dest_files=["res://.godot/imported/Guntheidon_SAD.png-d2307d37943f104d9d936ee87d155c5a.ctex"]
 
 [params]
 

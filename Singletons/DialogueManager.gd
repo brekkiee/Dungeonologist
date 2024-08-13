@@ -1,6 +1,6 @@
 extends Node
 
-@onready var chat_box_scene = preload("res://Assets/Dialogue/chatbox.tscn")
+@onready var chat_box_scene = preload("res://Quests/Dialogue/chatbox.tscn")
 var chat_lines: Array = []
 var current_line_index = 0
 var chat_box

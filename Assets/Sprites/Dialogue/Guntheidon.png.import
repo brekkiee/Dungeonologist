@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lq4uvn4wajgp"
-path="res://.godot/imported/mushroom_item.png-ac6294f0d87fa0e215a115054d3e3657.ctex"
+uid="uid://cm6rsa7rb4fbi"
+path="res://.godot/imported/Guntheidon.png-acc2ba15783e3ed1d8a8af8cbe455678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InventoryIcons/mushroom_item.png"
-dest_files=["res://.godot/imported/mushroom_item.png-ac6294f0d87fa0e215a115054d3e3657.ctex"]
+source_file="res://Assets/Sprites/Dialogue/Guntheidon.png"
+dest_files=["res://.godot/imported/Guntheidon.png-acc2ba15783e3ed1d8a8af8cbe455678.ctex"]
 
 [params]
 
