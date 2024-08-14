@@ -58,4 +58,5 @@ fit_content = true
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="finished" from="." to="." method="_on_chat_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

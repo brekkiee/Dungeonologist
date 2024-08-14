@@ -1,89 +1,52 @@
-extends Node
+extends QuestBase
 
 # Stores info required for the quest
 var info: Dictionary = {
-	"Name": "TutorialQuest",  # Name of the quest
-	"NpcSprite" : "res://Assets/Sprites/Characters/char_1_Guntheidon.png",  # Path to the NPC sprite
-
-	"QuestDisplayName": "Talk to Guntheidon",  # Display name of the quest
-	"QuestDescription": {  # Descriptions for each stage of the quest
+	"Name": "TutorialQuest",
+	"Type": "chat",
+	"NpcSprite": "res://Assets/Sprites/Characters/char_1_Guntheidon.png",
+	"QuestDisplayName": "Talk to Guntheidon",
+	"QuestDescription": {
 		1: "Click on Guntheidon to chat",
-		2: "Second description"
+		2: "Quest completed! You talked to Guntheidon."
 	}
 }
 
-# Stores the dialogue the NPC will speak
-#var dialogue: Dictionary = {
-#	"StartDialogue" : [
-#		"It is I, Guntheidon.",
-#		"And you are this… \n“Dungeon-ologist”, yes? Yes.",
-#		"My dear friend Carlson has taken ill.\n You must help him."
-#	],
-#	"IntermediateDialogue": [
-#		"Hurry!",
-#		"Shh… it’s okay Carlson, old boy. "
-#	],
-#	"CompleteDialogue": [
-#		"Carlson! You’re cured!",
-#		"The dungeon speaks highly of you, Dungeon-ologist. ",
-#		"We shall be comrades from this day forth.",
-#		"Good day to you. "
-#	],
-#}
+func _ready():
+	quest_name = info.Name
+	quest_type = "chat"
+	max_stage = 2 # 2 quest stages: 1. Chat instruction, 2: Quest completion
+	start_quest()
 
-var CurrentStage = 0  
-# Check if this was the first time the home screen is opened when the quest is active
-var first_time_opening_home_scene = true
-
-# Initialization function for this script
-func _init():
-	print("Started tutorial quest script")
-
-# Function called from the GameManager when the home scene is loaded
-func home_scene_load():
-	if first_time_opening_home_scene:
-		first_time_opening_home_scene = false
+# Override the method from QuestBase to start the quest
+func start_quest():
+	print("Starting tutorial quest...")
 	update_quest_display()
-	print("Quest_load_home_scene")
-	# Load the wizard sprite into the NPC node
-	GameManager.npc.sprite_texture.texture = load(info.NpcSprite)
+	update_npc_sprite(info.NpcSprite)
 
-# Update the quest display
+# Override the method from QuestBase to progress the quest
+func progress_quest(stage: int):
+	if stage <= max_stage:
+		current_stage = stage
+		update_quest_display()
+		if current_stage == max_stage:
+			complete_quest()
+
+# Override the method from BaseQuest to update the quest display
 func update_quest_display():
-	if CurrentStage == 0:
-		QuestManager.quest_display.update_quest(
-			info.QuestDisplayName, info.QuestDescription[1])
-	elif CurrentStage == 1:
-		QuestManager.quest_display.update_quest(
-			info.QuestDisplayName, info.QuestDescription[2])
+	var display_text = ""
+	if current_stage < max_stage:
+		display_text = info.QuestDescription[current_stage + 1]
 	else:
-		QuestManager.quest_display.complete_quest()
+		display_text = info.QuestDescription[max_stage]
 
+	QuestManager.quest_display.update_quest(info.QuestDisplayName, display_text)
+	print("quest script params Name: ", info.QuestDisplayName)
+	print("quest script params Description: ", display_text)
 
-
-
-# Function called from the tutorialslime when it detects a click from a tool
-func tool_used(tool_name):
-	print("tool " + tool_name)
-	GameManager.play_sound()
-	if tool_name == "MagnifyingGlass" and CurrentStage == 0:
-#		GameManager.npc.start_dialogue(dialogue["IntermediateDialogue"])
-		CurrentStage = 1
-
-	elif tool_name == "Tweezers" and CurrentStage == 1:
-		CurrentStage = 2
-#		GameManager.spawned_monster.update_monster()
-#		GameManager.npc.start_dialogue(dialogue["CompleteDialogue"])
+# Override the method from BaseQuest to complete the quest
+func complete_quest():
+	print("Tutorial quest completed!")
 	update_quest_display()
-
-# Function that is called when a chat is completed
-func chat_finished():
-	if CurrentStage >= 2:
-		print("chat finished, tutorial quest completed")
-		#QuestManager.delete_monster_quest()
-
-# Function gets executed when the quest is deleted, currently not needed but can be used if required
-#func _notification(what):
-#	if (what == NOTIFICATION_PREDELETE):
-#		QuestManager.quest_display.complete_quest()
-#		info.MonsterSpawns[0].queue_free()
+	# Handle any additional logic needed when the quest is completed
+	QuestManager.complete_quest(quest_type)

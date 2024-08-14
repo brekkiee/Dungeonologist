@@ -2,24 +2,39 @@ extends Node
 
 @onready var quest_display_scene = preload("res://Quests/quest_display.tscn")
 
-var quest_display
+var quest_display: Control
+var active_quests = {
+	"chat": null,
+	"garden": null,
+	"alchemy": null,
+	"monster": null,
+	"expedition": null	
+}
+var completed_quests = []
 
-# Dictionary to store all quests for the level/monster
-var Quests: Dictionary = {
+# Dictionary to store all quests for game
+var quests_data: Dictionary = {
 	"TutorialQuest" :{
-		"Script": "res://Quests/TutorialQuest/tutorialquest.gd",
-		"QuestType": "chat",
+		"script": "res://Quests/TutorialQuest/tutorialquest.gd",
+		"type": "chat",
 	},
 	"HarvestQuest" :{
-		"Script": "res://Quests/harvestquest.gd",
-		"QuestType": "garden",
+		"script": "res://Quests/harvestquest.gd",
+		"type": "garden",
+	},
+	"PotionQuest" :{
+		"script": "",
+		"type": "alchemy",
+	},
+	"FeedQuest" :{
+		"script": "",
+		"type": "monster",
+	},
+	"ExpeditionQuest" :{
+		"script": "",
+		"type": "expedition",
 	}
 }
-
-var active_chat_quest: Node = null
-var active_garden_quest: Node = null
-var ActiveOtherQuests = []
-var CompletedQuests = []
 
 func _ready():
 	# Instantiate and add quest display to the scene tree
@@ -27,35 +42,42 @@ func _ready():
 	get_tree().root.add_child.call_deferred(quest_display)
 
 # Add quest to active quests
-func addQuest(quest_id: String):
-	#var questNodeParent = get_node("/root/Header/QuestsScriptsNode")
-	if Quests[quest_id].QuestType == "chat":
-		if active_chat_quest == null:
-			# Load and instantiate the quest script
-			var quest_script = load(Quests[quest_id].Script)
-			active_chat_quest = quest_script.new()
+func add_quest(quest_id: String):
+	var quest_data = quests_data.get(quest_id, null)
+	if quest_data == null:
+		print("Quest ID not found: ", quest_id)
+		return
 	
-	# Handle other types of quests here
+	var quest_type = quest_data["type"]
+	if active_quests[quest_type] == null:
+		var quest_script = load(quest_data["script"])
+		if quest_script:
+			var quest_instance = quest_script.new()
+			active_quests[quest_type] = quest_instance
+			quest_instance.start_quest()
+			print("Added new quest: ", quest_id, " of type: ", quest_type)
+		else:
+			print("Failed to load quest script: ", quest_data["script"])
 	else:
-		if Quests[quest_id].QuestType == "garden":
-			if active_garden_quest == null:
-				# Load and instantiate the quest script
-				var quest_script = load(Quests[quest_id].Script)
-				active_garden_quest = quest_script.new()
-		pass
+		print("A quest of type ", quest_type, " is already active.")
 
-# Called from dialogue manager when current conversation is finished
-# Calls chat_finished method in active monster quest if it exists
-#func chat_finished():
-#	if active_monster_quest != null:
-#		if active_monster_quest.has_method("chat_finished"):
-#			active_monster_quest.chat_finished()
+	# NPC can update only when there is a quest active
+	if quest_type == "chat":
+		GameManager.npc.update_npc_sprite_based_on_active_quest()
 
-# Removes active monster quest and associated monster
-# Only used when the quest is completed and monster is no longer required
-#func delete_monster_quest():
-#	CompletedQuests.append(active_monster_quest.info.Name)
-#	active_monster_quest.queue_free.call_deferred()
-#	active_monster_quest = null
-#	GameManager.spawned_monster.queue_free.call_deferred()
-#	GameManager.spawned_monster = null
+# Progress a specific quest
+func progress_quest(quest_type: String, stage: int):
+	if active_quests[quest_type] != null:
+		active_quests[quest_type].progress_quest(stage)
+
+# Complete a specific quest
+func complete_quest(quest_type: String):
+	if active_quests.has(quest_type) and active_quests[quest_type] != null:
+		# Only call the quest's complete_quest method once
+		if completed_quests.has(quest_type):
+			print("Warning: Attempted to complete a quest that is already completed: ", quest_type)
+		else:
+			active_quests[quest_type].complete_quest()
+			completed_quests.append(quest_type)
+	else:
+		print("Warning: Attempted to complete a quest that is no longer active or does not exist: ", quest_type)

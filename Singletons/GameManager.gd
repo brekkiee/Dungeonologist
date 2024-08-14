@@ -1,89 +1,67 @@
 extends Node
 
-var current_scene = null
-var scenes = {}
+var current_scene: Node = null
+var scenes: Dictionary = {}
+
 @onready var home_scene = preload("res://Scenes/Windows/home.tscn")
 @onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
 @onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")
 @onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
+@onready var scene_spawn_point: Node2D = get_node("/root/Header/SceneLoadPoint")
 
-@onready var npc: Control = get_node("/root/Header/UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character/")
+@onready var npc: Control = get_node("/root/Header/UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character")
+#@onready var sprite_texture: TextureRect = npc.get_node("CharacterSprite")
 
 func _ready():
 	start_game()
 
 func start_game():
-	QuestManager.addQuest("TutorialQuest")
-	call_deferred("_deferred_goto_scene", "Home")
-
+	change_scene("Home")
+	QuestManager.add_quest("TutorialQuest")
+	
 # Change sub scene based on input scene_name
 func change_scene(scene_name: String):
-	print("Change scene called: " + scene_name)
-	if scene_name != current_scene.name:
-		print("Scene names are different, proceeding with change scene...")
-		call_deferred("_deferred_goto_scene", scene_name)
+	if current_scene == null or scene_name != current_scene.name:
+		print("Changing to scene: " + scene_name)
+		_goto_scene(scene_name)
 
-func _deferred_goto_scene(scene_name: String):
-	var scene_spawn_point = get_node("/root/Header/SceneLoadPoint")
-	if not scene_spawn_point:
+func _goto_scene(scene_name: String):
+	if scene_spawn_point == null:
 		print("Can't load scene - SceneLoadPoint not found")
-	else:
-		print("SceneLoadPoint found: ", scene_spawn_point)
+		return
 
-	print("Changing Scene")
-	print("Scene Spawn Point Children Before: ", scene_spawn_point.get_child_count())
-	
 	# Hide the current scene if any
 	if current_scene != null:
 		current_scene.visible = false
-		print("Hiding current scene: " + current_scene.name)
 
 	# Check is scene is already loaded, if not, load and add to scene tree.
-	var new_scene
-	if !scenes.has(scene_name):
-		print("Instantiating new scene: " + scene_name)
-		match scene_name:
-			"Home":
-				new_scene = home_scene.instantiate()
-				print("Instantiated scene: ", new_scene)
-			"AlchemyLab":
-				new_scene = alchemy_lab_scene.instantiate()
-				print("Instantiated scene: ", new_scene)
-			"MonsterEnclosure":
-				new_scene = monster_enclosure_scene.instantiate()
-				print("Instantiated scene: ", new_scene)
-			"Garden":
-				new_scene = garden_scene.instantiate()
-				print("Instantiated scene: ", new_scene)
-
-		if new_scene == null:
-			print("Error: Scene instantiation faled for " + scene_name)
+	if !scenes.has(scene_name):	
+		var new_scene = _instantiate_scene(scene_name)
+		if new_scene:
+			scenes[scene_name] = new_scene
+			scene_spawn_point.add_child(new_scene)
+			print("Scene added: " + new_scene.name)
+		else:
+			print("Error: Scene instantiation failed for: " + scene_name)
 			return
-		
-		scenes[scene_name] = new_scene
-		scene_spawn_point.add_child(new_scene)
-		print("Children of SceneLoadPoint after adding scene: ")
-		for child in scene_spawn_point.get_children():
-			print(child.name)
-		print("Added new scene to SceneLoadPoint: " + new_scene.name)
-	else:
-		new_scene = scenes[scene_name]
-		print("Using cached scene: " + new_scene.name)
-		
-	# Show the selected scene
-	new_scene.visible = true
-	print("Setting new scene visible: " + new_scene.name)
-	
-	# Update current_scene reference
-	current_scene = new_scene
-	print("Updated current_scene to: " + current_scene.name)
-	
-	print("Scene Spawn Point Children After: ", scene_spawn_point.get_child_count())
 
-	# Load home scene if active chat quest exists
-	if scene_name == "Home" and QuestManager.active_chat_quest != null:
-		if QuestManager.active_chat_quest.has_method("home_scene_load"):
-			QuestManager.active_chat_quest.home_scene_load.call_deferred()
+	else:
+		current_scene = scenes[scene_name]
+		current_scene.visible = true
+		print("Using cached scene: " + current_scene.name)
+		
+	current_scene = scenes[scene_name]
+	print("Scene switched to: " + current_scene.name)
+	
+func _instantiate_scene(scene_name: String) -> Node:
+	match scene_name:
+		"Home": return home_scene.instantiate()
+		"AlchemyLab": return alchemy_lab_scene.instantiate()
+		"MonsterEnclosure": return monster_enclosure_scene.instantiate()
+		"Garden": return garden_scene.instantiate()
+		_:
+			print("Unknown scene name: " + scene_name)
+			return null
 
 func play_sound():
 	var audio_stream = get_node("/root/Header/MainMusic")
@@ -92,5 +70,4 @@ func play_sound():
 		audio_stream.stream = load("res://Sounds/ToolSuccessSound.wav")
 		audio_stream.play()
 
-
-	DialogueManager.start_convo("Wizard")
+#	DialogueManager.start_convo("Wizard")

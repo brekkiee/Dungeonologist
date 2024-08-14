@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2its"]
 
-[node name="Quests" type="Control"]
+[node name="Quests" type="Control" node_paths=PackedStringArray("quest_name", "quest_text")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_q7b5e")
+quest_name = NodePath("PanelContainer/VBoxContainer/QuestName")
+quest_text = NodePath("PanelContainer/VBoxContainer/QuestText")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
