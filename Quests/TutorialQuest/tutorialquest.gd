@@ -4,11 +4,11 @@ extends QuestBase
 var info: Dictionary = {
 	"Name": "TutorialQuest",
 	"Type": "chat",
-	"NpcSprite": "res://Assets/Sprites/Characters/char_1_Guntheidon.png",
-	"QuestDisplayName": "Talk to Guntheidon",
+	"NpcSprite": "res://Assets/Sprites/Characters/char_4_Elspeth.png",
+	"QuestDisplayName": "Talk to Elspeth",
 	"QuestDescription": {
-		1: "Click on Guntheidon to chat",
-		2: "Quest completed! You talked to Guntheidon."
+		1: "Click on Elspeth to chat",
+		2: "Quest completed! You talked to Elspeth."
 	}
 }
 
