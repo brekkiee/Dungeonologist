@@ -6,9 +6,27 @@ var quest_type = ""
 var current_stage = 0
 var max_stage = 2 # Default max stage for a quest
 
+var is_completed = false
+var info: Dictionary
+
+func _init():
+	info  = {
+	"Name": "",
+	"Type": "",
+	"NpcSprite": "",
+	"QuestDisplayName": "",
+	"QuestDescription": {
+		1: "",
+		2: ""
+	}
+}
+
 func start_quest():
+	print("Starting quest with info: ", info)
 	current_stage = 0
+	is_completed = false
 	update_quest_display()
+	update_npc_sprite(info.NpcSprite)
 
 func progress_quest(stage: int):
 	if stage <= max_stage:
@@ -18,18 +36,26 @@ func progress_quest(stage: int):
 			complete_quest()
 
 func update_quest_display():
+	print("Updating quest display with current stages: ", current_stage)
+	var display_text = ""
 	if current_stage < max_stage:
-		QuestManager.quest_display.update_quest(quest_name, "Stage " + str(current_stage) + " of the quest")
+		display_text = info.QuestDescription.get(current_stage + 1, "Default Stage Description")
 	else:
-		QuestManager.quest_display.update_quest(quest_name, "Quest completed!")
-	pass
+		display_text = info.QuestDescription.get(max_stage, "Default Completion Description")
+
+	QuestManager.quest_display.update_quest(info.QuestDisplayName, display_text)
+	print("quest script params Name: ", info.QuestDisplayName)
+	print("quest script params Description: ", display_text)
 
 func complete_quest():
+	if is_completed:
+		return # Prevent re-completion of the quest
+	
 	print(quest_name + " quest completed!")
+	is_completed = true
 	update_quest_display()
 	# Call additional logic needed when the quest is completed
 	QuestManager.complete_quest(quest_type)
-	pass
 	
 # Method to update NPC sprite, can be called from any QuestBase derived quest script
 func update_npc_sprite(texture_path: String):

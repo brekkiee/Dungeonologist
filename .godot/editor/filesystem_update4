@@ -2,15 +2,8 @@ res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Scripts/Quests/NPC.gd
-res://Scripts/Quests/QuestBase.gd
-res://Scripts/Quests/codex.gd
-res://Singletons/DialogueManager.gd
-res://Singletons/GameManager.gd
-res://Singletons/InventoryManager.gd
-res://Singletons/QuestManager.gd
-res://Quests/TutorialQuest/tutorialquest.gd
-res://Scripts/Quests/quest_display.gd
 res://Quests/quest_display.tscn
-res://Scripts/Quests/chat_box.gd
 res://Quests/Dialogue/chatbox.tscn
 res://Scenes/UI/MainUI.tscn
+res://Scripts/Quests/QuestBase.gd
+res://Quests/TutorialQuest/tutorialquest.gd
