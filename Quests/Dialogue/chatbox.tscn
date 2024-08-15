@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxvqnrbmbgdpu"]
 
 [ext_resource type="Script" path="res://Scripts/Quests/chat_box.gd" id="1_eo7lx"]
-[ext_resource type="Texture2D" uid="uid://cm6rsa7rb4fbi" path="res://Assets/Sprites/Dialogue/Guntheidon.png" id="2_nwbtw"]
+[ext_resource type="Texture2D" uid="uid://cm6rsa7rb4fbi" path="res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png" id="2_37don"]
 [ext_resource type="Texture2D" uid="uid://crrsusxwkce01" path="res://Assets/Sprites/Dialogue/chatboxNew.png" id="3_02a0v"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="4_mef2a"]
 
@@ -23,7 +23,7 @@ offset_right = 2235.0
 offset_bottom = 1069.0
 scale = Vector2(0.741, 0.741)
 mouse_filter = 2
-texture = ExtResource("2_nwbtw")
+texture = ExtResource("2_37don")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0

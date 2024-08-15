@@ -1,8 +1,8 @@
 [
 	
-	{"emotion": "sad", "texture": "res://Assets/DialogueSprites/Guntheidon.png_SAD"}, 
-	{"emotion": "happy", "texture": "res://Assets/DialogueSprites/Guntheidon.png"},
-	{"emotion": "ponder", "texture": "res://Assets/DialogueSprites/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"}, 
+	{"emotion": "happy", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
 	
 	{"chat_num": "0", "name": "NameHere", "emotion": "ponder", "text": "Ahhh are you... MUHAHAHAHH AHAHAAAHAAAA AHH?"},
 	{"chat_num": "0", "name": "NameHere", "emotion": "happy", "text": "the warrior of light?"},

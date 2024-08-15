@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgkbl4qp3ir6t"
-path="res://.godot/imported/Guntheidon_PONDER.png-6c356af21737637fae00769c2241491e.ctex"
+path="res://.godot/imported/Guntheidon_PONDER.png-8a604fd99341384e654b6c763c58f2f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Dialogue/Guntheidon_PONDER.png"
-dest_files=["res://.godot/imported/Guntheidon_PONDER.png-6c356af21737637fae00769c2241491e.ctex"]
+source_file="res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"
+dest_files=["res://.godot/imported/Guntheidon_PONDER.png-8a604fd99341384e654b6c763c58f2f0.ctex"]
 
 [params]
 

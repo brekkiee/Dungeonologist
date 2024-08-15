@@ -7,3 +7,6 @@ res://Quests/Dialogue/chatbox.tscn
 res://Scenes/UI/MainUI.tscn
 res://Scripts/Quests/QuestBase.gd
 res://Quests/TutorialQuest/tutorialquest.gd
+res://Singletons/DialogueManager.gd
+res://Quests/Dialogue/DialogueText/chat_template.json
+res://Scripts/Quests/chat_box.gd

@@ -7,6 +7,7 @@ var chat_box: Control = null
 var chat_box_pos: Vector2 = Vector2(350, 400)
 var is_chat_active = false
 var can_advance_line = false
+var texture_mappings: Dictionary
 
 signal chat_finished
 
@@ -17,6 +18,7 @@ func start_chat(emotions: Dictionary, lines: Array):
 		
 	current_line_index = 0
 	chat_lines = lines
+	texture_mappings = emotions
 	_instantiate_chat_box()
 	is_chat_active = true
 
@@ -39,8 +41,12 @@ func _display_current_line():
 	var current_line = chat_lines[current_line_index]
 	var speaker_name = current_line.get("name", "")
 	var dialogue_text = current_line.get("text", "")
+	var emotion = current_line.get("emotion", "")
 	
-	chat_box.display_text(speaker_name, dialogue_text)
+	var texture_path = texture_mappings.get(emotion, "")
+	
+	chat_box.display_text(speaker_name, dialogue_text, texture_path)
+
 	can_advance_line = false
 
 # Enable advancing to next line when chat box finishes current line

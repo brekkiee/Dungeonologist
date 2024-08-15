@@ -2,6 +2,7 @@ extends Control
 
 @export var label: RichTextLabel
 @export var character_name: RichTextLabel
+@onready var npc_texture = $NPCTexture
 @onready var timer = $Timer
 
 const MAX_WIDTH = 800
@@ -18,12 +19,25 @@ signal finished
 #func _process(delta):
 	#print(custom_minimum_size)
 # updates text box text and size
-func display_text(speaker_name: String, text_to_display: String):
-	textToDisplay = text_to_display
+func display_text(speaker_name: String, text_to_display: String, emotion_texture_path: String):
+#	if npc_texture == null:
+#		print("Error: npc_texture is null! Ensure it's correctly assigned in the scene.")
+#		return
+#	var test_texture = load("res://Assets/Sprites/Characters/char_6_Pablo.png")
+#	npc_texture.texture = test_texture
 	
+	textToDisplay = text_to_display
 	label.text = text_to_display
 	character_name.text = speaker_name
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
+	
+	# Load and set the NPC texture based on emotion
+	var texture = load(emotion_texture_path)
+	if texture:
+		npc_texture.texture = texture
+		npc_texture.queue_redraw()
+	else:
+		print("Failed to load texture from path: ", emotion_texture_path)
 	
 	# fEnable word wrap if width exceeds max
 	if size.x > MAX_WIDTH:

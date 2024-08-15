@@ -34,6 +34,8 @@ func _ready():
 	_load_dialogue()
 	# Connect the DialogueManager's signal to the NPC's chat finished handler
 	DialogueManager.connect("chat_finished", Callable(self, "_on_chat_finished"))
+	# Connect to the emotion change signal
+	DialogueManager.connect("emotion_changed", Callable(self, "_on_emotion_changed"))
 
 # Method to update the NPC sprite based on the active quest
 func update_npc_sprite_based_on_active_quest():
@@ -104,3 +106,11 @@ func repeat_final_dialogue():
 	var final_dialogue_stage = dialogues[2] # Use the last dialogue
 	DialogueManager.start_chat(texture_mappings, final_dialogue_stage)
 	DialogueManager.advance_text()
+	
+# Method to handle the emotion change and update the sprite
+func _on_emotion_changed(emotion: String):
+	var texture_path = texture_mappings.get(emotion, "")
+	if texture_path != "":
+		update_sprite(texture_path)
+	else:
+		print("No texture found for emotion: ", emotion)
