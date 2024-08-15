@@ -9,3 +9,15 @@ res://Scenes/UI/MainUI.tscn
 res://Scripts/Garden/PlantBase.gd
 res://Scripts/Garden/snackle.gd
 res://Assets/Garden/Plants/snackle.tscn
+res://Scripts/Garden/elfroot.gd
+res://Scripts/Garden/peepermint.gd
+res://Scripts/Garden/snepper.gd
+res://Scripts/Garden/berry.gd
+res://Scripts/Garden/mushroom.gd
+res://Scripts/Garden/sunflower.gd
+res://Assets/Garden/Plants/sunflower.tscn
+res://Assets/Garden/Plants/elfroot.tscn
+res://Assets/Garden/Plants/peepermint.tscn
+res://Assets/Garden/Plants/snepper.tscn
+res://Assets/Garden/Plants/mushroom.tscn
+res://Scenes/Windows/garden.tscn

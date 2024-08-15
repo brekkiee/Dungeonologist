@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://pu4fop6gpx8i"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/plant.gd" id="1_udbnc"]
+[ext_resource type="Script" path="res://Scripts/Garden/snepper.gd" id="1_xstro"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_hnq02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vclg6"]
@@ -41,7 +41,7 @@ animations = [{
 "duration": 20.0,
 "texture": SubResource("AtlasTexture_ishnd")
 }],
-"loop": true,
+"loop": false,
 "name": &"growth",
 "speed": 1.0
 }]
@@ -50,8 +50,7 @@ animations = [{
 size = Vector2(87, 138)
 
 [node name="Snepper" type="Area2D"]
-script = ExtResource("1_udbnc")
-harvested_item_name = "snepper_item"
+script = ExtResource("1_xstro")
 
 [node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.90735e-06, -7.62939e-06)
@@ -66,3 +65,4 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_jfcqt")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="animation_finished" from="PlantAnimSprite2D" to="." method="_on_growth_animation_finished"]
