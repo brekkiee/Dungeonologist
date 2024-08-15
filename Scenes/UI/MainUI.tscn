@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=20 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
 [ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
@@ -13,10 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dy58iobnomh1m" path="res://Assets/Sprites/UI/drawer_handle.png" id="11_ltjqf"]
 [ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="12_x6kwb"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/Tools/magnifying_glass.tscn" id="13_tcum6"]
-[ext_resource type="PackedScene" uid="uid://cnt00cm4ln655" path="res://Scenes/Tools/tweezers.tscn" id="14_pt68w"]
-[ext_resource type="PackedScene" uid="uid://gn8h86qfhh7o" path="res://Scenes/Tools/hear.tscn" id="15_tl2fe"]
-[ext_resource type="PackedScene" uid="uid://cw64ur2rwh2xj" path="res://Scenes/Tools/bandaid.tscn" id="16_jmn8j"]
-[ext_resource type="PackedScene" uid="uid://bmicjfktxv81g" path="res://Scenes/Tools/clipboard.tscn" id="17_76vfu"]
+[ext_resource type="PackedScene" uid="uid://cpqpr6qjm2oe6" path="res://Scenes/Tools/petting_hand.tscn" id="14_e26kt"]
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
@@ -215,27 +212,15 @@ texture = ExtResource("7_m5qe6")
 
 [node name="ToolBox" type="Node2D" parent="." node_paths=PackedStringArray("tool_nodes")]
 script = ExtResource("12_x6kwb")
-tool_nodes = [NodePath("MagnifyingGlass"), NodePath("Tweezers"), NodePath("Hear"), NodePath("Bandaid"), NodePath("Clipboard")]
+tool_nodes = [NodePath("MagnifyingGlass"), NodePath("PettingHand")]
 
 [node name="MagnifyingGlass" parent="ToolBox" instance=ExtResource("13_tcum6")]
 z_index = 0
-position = Vector2(615, 606)
+position = Vector2(633, 606)
 
-[node name="Tweezers" parent="ToolBox" instance=ExtResource("14_pt68w")]
+[node name="PettingHand" parent="ToolBox" instance=ExtResource("14_e26kt")]
 z_index = 0
-position = Vector2(665, 606)
-
-[node name="Hear" parent="ToolBox" instance=ExtResource("15_tl2fe")]
-z_index = 0
-position = Vector2(715, 606)
-
-[node name="Bandaid" parent="ToolBox" instance=ExtResource("16_jmn8j")]
-z_index = 0
-position = Vector2(765, 606)
-
-[node name="Clipboard" parent="ToolBox" instance=ExtResource("17_76vfu")]
-z_index = 0
-position = Vector2(815, 606)
+position = Vector2(712, 606)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1

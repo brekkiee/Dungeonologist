@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fq5vmrrnin1b"
-path="res://.godot/imported/tool_bandaid_1.png-45a6821305cce5c79f03ba1051d3fc8e.ctex"
+uid="uid://dgsk0pds0mcpc"
+path="res://.godot/imported/emote_10_Yes.png-d3974562bd1ff566edaaaa81078d802e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tools/tool_bandaid_1.png"
-dest_files=["res://.godot/imported/tool_bandaid_1.png-45a6821305cce5c79f03ba1051d3fc8e.ctex"]
+source_file="res://Assets/Sprites/Alchemy/emote_10_Yes.png"
+dest_files=["res://.godot/imported/emote_10_Yes.png-d3974562bd1ff566edaaaa81078d802e.ctex"]
 
 [params]
 

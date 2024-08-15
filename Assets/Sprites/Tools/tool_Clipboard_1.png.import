@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fr2qjwge5qmj"
-path="res://.godot/imported/tool_bandaid_0.png-3970090bfc250e2ca22148097ce8b5d8.ctex"
+uid="uid://d1c40ye0c7wjs"
+path="res://.godot/imported/tool_Clipboard_1.png-c29a07fb413e07e8aa59957064be38f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tools/tool_bandaid_0.png"
-dest_files=["res://.godot/imported/tool_bandaid_0.png-3970090bfc250e2ca22148097ce8b5d8.ctex"]
+source_file="res://Assets/Sprites/Tools/tool_Clipboard_1.png"
+dest_files=["res://.godot/imported/tool_Clipboard_1.png-c29a07fb413e07e8aa59957064be38f5.ctex"]
 
 [params]
 

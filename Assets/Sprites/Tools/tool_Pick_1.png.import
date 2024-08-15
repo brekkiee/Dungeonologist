@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6snuvu34wirh"
-path="res://.godot/imported/tool_See_0.png-083b4026589e7e2484ee4926b5f22964.ctex"
+uid="uid://cd6vi67x1pv6d"
+path="res://.godot/imported/tool_Pick_1.png-d340da1587c7d7e790ac8e2865571ea6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tools/tool_See_0.png"
-dest_files=["res://.godot/imported/tool_See_0.png-083b4026589e7e2484ee4926b5f22964.ctex"]
+source_file="res://Assets/Sprites/Tools/tool_Pick_1.png"
+dest_files=["res://.godot/imported/tool_Pick_1.png-d340da1587c7d7e790ac8e2865571ea6.ctex"]
 
 [params]
 

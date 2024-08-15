@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpqpr6qjm2oe6"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/tool_icon.gd" id="1_1sf44"]
+[ext_resource type="Texture2D" uid="uid://5qultn6onq1n" path="res://Assets/Sprites/Tools/tool_Petting_0.png" id="2_butrd"]
+[ext_resource type="Texture2D" uid="uid://jjmh1fm45khx" path="res://Assets/Sprites/Tools/tool_Petting_1.png" id="3_fd05a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2kd"]
+
+[node name="PettingHand" type="Area2D"]
+z_index = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_1sf44")
+normal_sprite = ExtResource("2_butrd")
+hover_sprite = ExtResource("3_fd05a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4f2kd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_butrd")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

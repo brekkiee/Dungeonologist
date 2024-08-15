@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b68hjcj1kn4s5"]
+[gd_scene load_steps=13 format=3 uid="uid://b68hjcj1kn4s5"]
 
 [ext_resource type="Texture2D" uid="uid://dn0go0t5nxx6y" path="res://Assets/Sprites/Alchemy/bg_Brew.png" id="1_j1vkd"]
 [ext_resource type="Script" path="res://Scripts/Alchemy/cauldron.gd" id="2_geudk"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://pyap40eyhn84" path="res://Assets/Sprites/Alchemy/Brew_cauldron_front.png" id="6_xxi4o"]
 [ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Alchemy/Brew_cauldron_back.png" id="7_2bw15"]
 [ext_resource type="Texture2D" uid="uid://1d2lb310eqjx" path="res://Assets/Sprites/Alchemy/ladle.png" id="8_lipfk"]
+[ext_resource type="Texture2D" uid="uid://dgsk0pds0mcpc" path="res://Assets/Sprites/Alchemy/emote_10_Yes.png" id="9_0pftp"]
+[ext_resource type="Texture2D" uid="uid://cow33h26tnrxw" path="res://Assets/Sprites/Alchemy/emote_11_No.png" id="11_h3gm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h5dc"]
 size = Vector2(92.9333, 70.6667)
@@ -26,6 +28,12 @@ texture = ExtResource("1_j1vkd")
 [node name="Cauldron" type="Area2D" parent="."]
 position = Vector2(716, 354)
 script = ExtResource("2_geudk")
+yes_texture = ExtResource("9_0pftp")
+no_texture = ExtResource("11_h3gm0")
+
+[node name="AlchemyEmote" type="Sprite2D" parent="Cauldron"]
+position = Vector2(0, -126)
+scale = Vector2(5, 5)
 
 [node name="BrewLiquid" type="Node2D" parent="Cauldron"]
 

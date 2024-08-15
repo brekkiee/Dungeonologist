@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkpyjmkgbg6pj"
-path="res://.godot/imported/tool_Hear_1.png-e98fbcf36d9147c76a9a3830762ce44b.ctex"
+uid="uid://fq5vmrrnin1b"
+path="res://.godot/imported/tool_bandaid_1.png-efdc75164e671d3ba622f4f3f9e4c3cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tools/tool_Hear_1.png"
-dest_files=["res://.godot/imported/tool_Hear_1.png-e98fbcf36d9147c76a9a3830762ce44b.ctex"]
+source_file="res://Assets/Sprites/Tools/tool_bandaid_1.png"
+dest_files=["res://.godot/imported/tool_bandaid_1.png-efdc75164e671d3ba622f4f3f9e4c3cc.ctex"]
 
 [params]
 

@@ -1,12 +1,12 @@
+Sprite2D
+TextureRect
 Button
 CenterContainer
 MarginContainer
 VBoxContainer
-TextureRect
 GridContainer
 CollisionPolygon2D
 Container
-Sprite2D
 RichTextLabel
 NinePatchRect
 AnimatedSprite2D

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1c40ye0c7wjs"
-path="res://.godot/imported/tool_Clipboard_1.png-f81780cd2dfc603b116f179d844f0bab.ctex"
+uid="uid://5qultn6onq1n"
+path="res://.godot/imported/tool_Petting_0.png-149cf62c4023ccc4ea662615e4e9bdf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tools/tool_Clipboard_1.png"
-dest_files=["res://.godot/imported/tool_Clipboard_1.png-f81780cd2dfc603b116f179d844f0bab.ctex"]
+source_file="res://Assets/Sprites/Tools/tool_Petting_0.png"
+dest_files=["res://.godot/imported/tool_Petting_0.png-149cf62c4023ccc4ea662615e4e9bdf9.ctex"]
 
 [params]
 
