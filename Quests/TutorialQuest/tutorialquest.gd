@@ -8,11 +8,12 @@ func _init():
 	info["QuestDisplayName"] = "Talk to Elspeth"
 	info["QuestDescription"] = {
 		1: "Click on Elspeth to chat",
-		2: "Quest completed! You talked to Elspeth."
+		2: "Click on Elspeth again to continue chat.",
+		3: "Quest completed."
 	}
 	
 	quest_name = info["Name"]
 	quest_type = info["Type"]
-	max_stage = 2
+	max_stage = 3
 	
 	start_quest()
