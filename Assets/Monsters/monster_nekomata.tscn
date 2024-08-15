@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dux08f4tj4m1s" path="res://Assets/Animations/Monsters/anim_Idle_Nekomata.png" id="2_gyh1j"]
 [ext_resource type="Texture2D" uid="uid://dm8arhry1abjk" path="res://Assets/Animations/Monsters/anim_Walk_Nekomata.png" id="3_slrwv"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq0th"]
 atlas = ExtResource("2_gyh1j")
 region = Rect2(0, 0, 100, 105)

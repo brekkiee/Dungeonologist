@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7p8h1moj4fok" path="res://Assets/Animations/Monsters/anim_Idle_ForestDinglebat.png" id="2_mdvsx"]
 [ext_resource type="Texture2D" uid="uid://dk5ptvfsq5kch" path="res://Assets/Animations/Monsters/anim_Walk_ForestDinglebat.png" id="3_lwngg"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfufn"]
 atlas = ExtResource("2_mdvsx")
 region = Rect2(0, 0, 105, 94)
