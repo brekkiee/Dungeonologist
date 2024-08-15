@@ -1,8 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://c1dal5c4wsg5g"]
+[gd_scene load_steps=72 format=3 uid="uid://c1dal5c4wsg5g"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_lr3ic"]
 [ext_resource type="Texture2D" uid="uid://7p8h1moj4fok" path="res://Assets/Animations/Monsters/anim_Idle_ForestDinglebat.png" id="2_mdvsx"]
 [ext_resource type="Texture2D" uid="uid://dk5ptvfsq5kch" path="res://Assets/Animations/Monsters/anim_Walk_ForestDinglebat.png" id="3_lwngg"]
+[ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_ex3g3"]
+[ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_rnsp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfufn"]
 atlas = ExtResource("2_mdvsx")
@@ -318,6 +320,212 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhbqj"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 80, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqp4s"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 60, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg6fr"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 80, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1de2w"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 40, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45qur"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 60, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6chin"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 20, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6rui"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 40, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blva3"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 0, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwiuq"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 20, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vljb3"]
+atlas = ExtResource("4_ex3g3")
+region = Rect2(0, 0, 21, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53oe1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhbqj")
+}],
+"loop": true,
+"name": &"hunger_0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_qqp4s")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_kg6fr")
+}],
+"loop": true,
+"name": &"hunger_1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1de2w")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_45qur")
+}],
+"loop": true,
+"name": &"hunger_2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6chin")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_q6rui")
+}],
+"loop": true,
+"name": &"hunger_3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_blva3")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_mwiuq")
+}],
+"loop": true,
+"name": &"hunger_4",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vljb3")
+}],
+"loop": true,
+"name": &"hunger_5",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lguol"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 80, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6vbm"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 60, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iba4k"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 80, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e71bq"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 40, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfn4h"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 60, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r8pq"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 20, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5fy"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 40, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km8jh"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 0, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fswdj"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 20, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_416xc"]
+atlas = ExtResource("5_rnsp2")
+region = Rect2(0, 0, 21, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mna7h"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_lguol")
+}],
+"loop": true,
+"name": &"happy_0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6vbm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_iba4k")
+}],
+"loop": true,
+"name": &"happy_1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e71bq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_wfn4h")
+}],
+"loop": true,
+"name": &"happy_2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r8pq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_oh5fy")
+}],
+"loop": true,
+"name": &"happy_3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km8jh")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_fswdj")
+}],
+"loop": true,
+"name": &"happy_4",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_416xc")
+}],
+"loop": true,
+"name": &"happy_5",
+"speed": 1.0
+}]
+
 [node name="MonsterBatBear" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_lr3ic")
@@ -336,3 +544,17 @@ polygon = PackedVector2Array(-28, -67, -13, -68, 4, -71, 18, -66, 37, -67, 34, -
 z_index = 1
 position = Vector2(0, -127)
 scale = Vector2(4, 4)
+
+[node name="HungerAnimSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(-25, -110)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_53oe1")
+animation = &"hunger_5"
+
+[node name="HappyAnimSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(25, -110)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_mna7h")
+animation = &"happy_5"

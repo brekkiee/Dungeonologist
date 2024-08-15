@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var monster_animation = $MonsterAnimSprite2D
+@onready var hunger_meter_animation = $HungerAnimSprite2D
+@onready var happiness_meter_animation = $HappyAnimSprite2D
 @onready var emote_sprite = $EmoteSprite2D
 @onready var hunger_meter = 5
 @onready var happiness_meter = 5
@@ -77,6 +79,36 @@ func update_monster():
 	else:
 		#monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
 		emote_sprite.texture = emote_happy
+	
+	# Play the relevant hunger animation
+	match hunger_meter:
+		5:
+			hunger_meter_animation.play("hunger_5")
+		4:
+			hunger_meter_animation.play("hunger_4")
+		3:
+			hunger_meter_animation.play("hunger_3")
+		2:
+			hunger_meter_animation.play("hunger_2")
+		1:
+			hunger_meter_animation.play("hunger_1")
+		0:
+			hunger_meter_animation.play("hunger_0")
+	
+	# Play the relevant happiness animation
+	match happiness_meter:
+		5:
+			happiness_meter_animation.play("happy_5")
+		4:
+			happiness_meter_animation.play("happy_4")
+		3:
+			happiness_meter_animation.play("happy_3")
+		2:
+			happiness_meter_animation.play("happy_2")
+		1:
+			happiness_meter_animation.play("happy_1")
+		0:
+			happiness_meter_animation.play("happy_0")
 	
 
 func _on_hunger_timer_timeout():
