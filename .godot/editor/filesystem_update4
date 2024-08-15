@@ -5,8 +5,9 @@ res://Scripts/Quests/NPC.gd
 res://Quests/quest_display.tscn
 res://Quests/Dialogue/chatbox.tscn
 res://Scenes/UI/MainUI.tscn
-res://Scripts/Quests/QuestBase.gd
-res://Quests/TutorialQuest/tutorialquest.gd
-res://Singletons/DialogueManager.gd
-res://Quests/Dialogue/DialogueText/chat_template.json
-res://Scripts/Quests/chat_box.gd
+res://Scenes/UI/scene_change_buttons.tscn
+res://Singletons/GameManager.gd
+res://Scripts/Quests/scene_change_buttons.gd
+res://Scenes/Windows/expeditions.tscn
+res://Scripts/Inventory/tool_box.gd
+res://Scenes/UI/InventoryItem.tscn

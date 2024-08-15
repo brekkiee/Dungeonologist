@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcsjdl6lhokra"
-path="res://.godot/imported/btn_Exam_0.png-d9768f381057c8117f9ca8b8aae19ecf.ctex"
+uid="uid://bcvi1ryaqqjkk"
+path="res://.godot/imported/btn_Expe_0.png-ce08dfcf8b0f251f1146cac2b323362d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/btn_Exam_0.png"
-dest_files=["res://.godot/imported/btn_Exam_0.png-d9768f381057c8117f9ca8b8aae19ecf.ctex"]
+source_file="res://Assets/Sprites/UI/btn_Expe_0.png"
+dest_files=["res://.godot/imported/btn_Expe_0.png-ce08dfcf8b0f251f1146cac2b323362d.ctex"]
 
 [params]
 

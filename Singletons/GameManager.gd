@@ -3,7 +3,7 @@ extends Node
 var current_scene: Node = null
 var scenes: Dictionary = {}
 
-@onready var home_scene = preload("res://Scenes/Windows/home.tscn")
+@onready var expedition_scene = preload("res://Scenes/Windows/expeditions.tscn")
 @onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
 @onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")
 @onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
@@ -16,7 +16,7 @@ func _ready():
 	start_game()
 
 func start_game():
-	change_scene("Home")
+	change_scene("MonsterEnclosure")
 	QuestManager.add_quest("TutorialQuest")
 	
 # Change sub scene based on input scene_name
@@ -55,7 +55,7 @@ func _goto_scene(scene_name: String):
 	
 func _instantiate_scene(scene_name: String) -> Node:
 	match scene_name:
-		"Home": return home_scene.instantiate()
+		"Expeditions": return expedition_scene.instantiate()
 		"AlchemyLab": return alchemy_lab_scene.instantiate()
 		"MonsterEnclosure": return monster_enclosure_scene.instantiate()
 		"Garden": return garden_scene.instantiate()

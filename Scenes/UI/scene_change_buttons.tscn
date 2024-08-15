@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/Quests/scene_change_buttons.gd" id="1_fa4id"]
 [ext_resource type="Texture2D" uid="uid://5lplwajuqksb" path="res://Assets/Sprites/UI/btn_Brew_0.png" id="2_as6if"]
 [ext_resource type="Texture2D" uid="uid://be8dm5b2yu0m0" path="res://Assets/Sprites/UI/btn_Brew_1.png" id="3_j4lh1"]
-[ext_resource type="Texture2D" uid="uid://bcsjdl6lhokra" path="res://Assets/Sprites/UI/btn_Exam_0.png" id="3_mblje"]
-[ext_resource type="Texture2D" uid="uid://ckk1kbxksx0yv" path="res://Assets/Sprites/UI/btn_Exam_1.png" id="4_s7tjb"]
+[ext_resource type="Texture2D" uid="uid://bcsjdl6lhokra" path="res://Assets/Sprites/UI/btn_Mons_0.png" id="4_3ykkq"]
+[ext_resource type="Texture2D" uid="uid://ckk1kbxksx0yv" path="res://Assets/Sprites/UI/btn_Mons_1.png" id="5_f35sv"]
 [ext_resource type="ButtonGroup" uid="uid://1skcfijramt2" path="res://Styles/scenes_button_group.tres" id="5_n0l7k"]
 [ext_resource type="Texture2D" uid="uid://cvuklclh6nau4" path="res://Assets/Sprites/UI/btn_Grow_0.png" id="8_ka5h2"]
-[ext_resource type="Texture2D" uid="uid://bcvi1ryaqqjkk" path="res://Assets/Sprites/UI/btn_Script_0.png" id="8_qsyu1"]
-[ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/Sprites/UI/btn_Script_1.png" id="9_4fejs"]
 [ext_resource type="Texture2D" uid="uid://jx7y5swpvpui" path="res://Assets/Sprites/UI/btn_Grow_1.png" id="9_gaiva"]
+[ext_resource type="Texture2D" uid="uid://bcvi1ryaqqjkk" path="res://Assets/Sprites/UI/btn_Expe_0.png" id="9_l6ro0"]
+[ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/Sprites/UI/btn_Expe_1.png" id="10_wvulv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o4mv"]
 texture = ExtResource("2_as6if")
@@ -18,23 +18,14 @@ texture = ExtResource("2_as6if")
 texture = ExtResource("3_j4lh1")
 modulate_color = Color(0.74902, 0.74902, 0.74902, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnk5c"]
-texture = ExtResource("3_mblje")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy2ev"]
+texture = ExtResource("4_3ykkq")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s2a4"]
-texture = ExtResource("3_mblje")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pi7b"]
+texture = ExtResource("4_3ykkq")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4k4bs"]
-texture = ExtResource("4_s7tjb")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5appu"]
-texture = ExtResource("2_as6if")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4g6om"]
-texture = ExtResource("2_as6if")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qv2j2"]
-texture = ExtResource("3_j4lh1")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yq15j"]
+texture = ExtResource("5_f35sv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wf17x"]
 texture = ExtResource("8_ka5h2")
@@ -45,14 +36,23 @@ texture = ExtResource("8_ka5h2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crfos"]
 texture = ExtResource("9_gaiva")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy2ev"]
-texture = ExtResource("8_qsyu1")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5appu"]
+texture = ExtResource("2_as6if")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pi7b"]
-texture = ExtResource("8_qsyu1")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4g6om"]
+texture = ExtResource("2_as6if")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yq15j"]
-texture = ExtResource("9_4fejs")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qv2j2"]
+texture = ExtResource("3_j4lh1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnk5c"]
+texture = ExtResource("9_l6ro0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s2a4"]
+texture = ExtResource("9_l6ro0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4k4bs"]
+texture = ExtResource("10_wvulv")
 
 [node name="SceneButtons" type="Control"]
 layout_mode = 3
@@ -68,69 +68,14 @@ script = ExtResource("1_fa4id")
 normal_button_style = SubResource("StyleBoxTexture_8o4mv")
 active_button_style = SubResource("StyleBoxTexture_tcclb")
 
-[node name="HomeButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = -439.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_fnk5c")
-theme_override_styles/hover = SubResource("StyleBoxTexture_7s2a4")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_4k4bs")
-toggle_mode = true
-action_mode = 0
-button_group = ExtResource("5_n0l7k")
-
-[node name="AlchemyLabButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 95.0
-offset_top = 50.0
-offset_right = -394.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_5appu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_4g6om")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qv2j2")
-toggle_mode = true
-button_group = ExtResource("5_n0l7k")
-
-[node name="GardenButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.267
-anchor_bottom = 1.0
-offset_left = 140.0
-offset_top = 50.0
-offset_right = -490.243
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_wf17x")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ulofl")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_crfos")
-toggle_mode = true
-button_group = ExtResource("5_n0l7k")
-
 [node name="MonsterEnclosureButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.267
 anchor_bottom = 1.0
-offset_left = 185.0
+offset_left = 57.0
 offset_top = 50.0
-offset_right = -445.243
+offset_right = -573.243
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -141,7 +86,61 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_yq15j")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
-[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
-[connection signal="pressed" from="AlchemyLabButton" to="." method="_on_alchemy_lab_button_pressed"]
-[connection signal="pressed" from="GardenButton" to="." method="_on_garden_button_pressed"]
+[node name="GardenButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.267
+anchor_bottom = 1.0
+offset_left = 143.0
+offset_top = 50.0
+offset_right = -487.243
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_wf17x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ulofl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_crfos")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
+
+[node name="AlchemyLabButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -389.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5appu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4g6om")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qv2j2")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
+
+[node name="ExpeditionsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 185.0
+offset_top = 50.0
+offset_right = -304.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnk5c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7s2a4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4k4bs")
+toggle_mode = true
+button_group = ExtResource("5_n0l7k")
+
 [connection signal="pressed" from="MonsterEnclosureButton" to="." method="_on_monster_enclosure_button_pressed"]
+[connection signal="pressed" from="GardenButton" to="." method="_on_garden_button_pressed"]
+[connection signal="pressed" from="AlchemyLabButton" to="." method="_on_alchemy_lab_button_pressed"]
+[connection signal="pressed" from="ExpeditionsButton" to="." method="_on_expeditions_button_pressed"]

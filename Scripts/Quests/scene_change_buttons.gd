@@ -4,10 +4,10 @@ extends Control
 @export var active_button_style: StyleBoxTexture
 
 func _ready():
-	$HomeButton.set_pressed_no_signal(true)
+	$MonsterEnclosureButton.set_pressed_no_signal(true)
 	
-func _on_home_button_pressed():
-	GameManager.change_scene("Home")
+func _on_expeditions_button_pressed():
+	GameManager.change_scene("Expeditions")
 
 func _on_alchemy_lab_button_pressed():
 	GameManager.change_scene("AlchemyLab")
