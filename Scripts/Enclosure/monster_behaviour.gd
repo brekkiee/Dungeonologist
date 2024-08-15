@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var hunger_timer = Timer.new()
 @onready var happiness_timer = Timer.new()
 @onready var pause_timer = Timer.new()
+@onready var visibility_timer = Timer.new()
 @export var emote_happy: Texture2D
 @export var emote_sad: Texture2D
 @export var emote_neutral: Texture2D
@@ -30,6 +31,7 @@ func _ready():
 	add_child(hunger_timer)
 	add_child(happiness_timer)
 	add_child(pause_timer)
+	add_child(visibility_timer)
 	
 	# Load monster emotes
 	_load_emotes()
@@ -47,9 +49,17 @@ func _ready():
 	pause_timer.one_shot = true
 	pause_timer.connect("timeout", Callable(self, "random_move"))
 	
+	visibility_timer.wait_time = 10.0
+	visibility_timer.one_shot = true
+	visibility_timer.connect("timeout", Callable(self, "_hide_meters"))
+	
+	
 	# Start the timers
 	hunger_timer.start()
 	happiness_timer.start()
+	
+	# Initially hide the meters
+	_hide_meters()
 	
 	# Update the monster visuals when spawned
 	update_monster()
@@ -130,10 +140,21 @@ func pet_monster():
 	update_monster()
 	
 func inspect_monster():
-	# Set the emote to visible
 	print("Inspected monster using magnifying glass")
+	_show_meters()
 	update_monster()
+
+# Show hunger and happiness meters
+func _show_meters():
+	hunger_meter_animation.visible = true
+	happiness_meter_animation.visible = true
+	visibility_timer.start()
 	
+# Hide hunger and happiness meters
+func _hide_meters():
+	hunger_meter_animation.visible = false
+	happiness_meter_animation.visible = false
+
 # Random movement within the enclosure
 func random_move():
 	movement_direction = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
