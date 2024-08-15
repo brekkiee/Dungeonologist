@@ -335,4 +335,4 @@ polygon = PackedVector2Array(-42, -2, -41, -38, -24, -61, 3, -71, 26, -65, 49, -
 
 [node name="EmoteSprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -127)
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)

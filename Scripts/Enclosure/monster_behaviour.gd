@@ -29,17 +29,8 @@ func _ready():
 	add_child(happiness_timer)
 	add_child(pause_timer)
 	
-	# Add monster emotes
-	emote_happy = load("res://Assets/Sprites/Emotes/emote_0_Happy.png")
-	emote_sad = load("res://Assets/Sprites/Emotes/emote_2_Sad.png")
-	emote_neutral = load("res://Assets/Sprites/Emotes/emote_1_Neutral.png")
-	emote_sick = load("res://Assets/Sprites/Emotes/emote_3_Sick.png")
-	emote_angry = load("res://Assets/Sprites/Emotes/emote_4_Angry.png")
-	emote_plead = load("res://Assets/Sprites/Emotes/emote_5_Plead.png")
-	emote_cringe = load("res://Assets/Sprites/Emotes/emote_6_Cringe.png")
-	emote_poop = load("res://Assets/Sprites/Emotes/emote_7_Poop.png")
-	emote_shock = load("res://Assets/Sprites/Emotes/emote_8_Shock.png")
-	emote_question = load("res://Assets/Sprites/Emotes/emote_9_Question.png")
+	# Load monster emotes
+	_load_emotes()
 	
 	# Set timer properties
 	hunger_timer.wait_time = 5.0 # Need to adjust as necessary
@@ -48,7 +39,7 @@ func _ready():
 	
 	happiness_timer.wait_time = 5.0 # Need to adjust as necessary
 	happiness_timer.one_shot = false
-	happiness_timer.connect("timeout", Callable(self, "_on_hunger_timer_timeout"))
+	happiness_timer.connect("timeout", Callable(self, "_on_happiness_timer_timeout"))
 	
 	pause_timer.wait_time = randf_range(0.5, 4.0) # Need to adjust as necessary
 	pause_timer.one_shot = true
@@ -61,15 +52,32 @@ func _ready():
 	# Update the monster visuals when spawned
 	update_monster()
 	random_move()
+
+# Load all the monster emote textures
+func _load_emotes():
+	emote_happy = load("res://Assets/Sprites/Emotes/emote_0_Happy.png")
+	emote_sad = load("res://Assets/Sprites/Emotes/emote_2_Sad.png")
+	emote_neutral = load("res://Assets/Sprites/Emotes/emote_1_Neutral.png")
+	emote_sick = load("res://Assets/Sprites/Emotes/emote_3_Sick.png")
+	emote_angry = load("res://Assets/Sprites/Emotes/emote_4_Angry.png")
+	emote_plead = load("res://Assets/Sprites/Emotes/emote_5_Plead.png")
+	emote_cringe = load("res://Assets/Sprites/Emotes/emote_6_Cringe.png")
+	emote_poop = load("res://Assets/Sprites/Emotes/emote_7_Poop.png")
+	emote_shock = load("res://Assets/Sprites/Emotes/emote_8_Shock.png")
+	emote_question = load("res://Assets/Sprites/Emotes/emote_9_Question.png")
 	
+
 # Called to update monster movement, hunger, happiness
 func update_monster():
 	if hunger_meter == 0 or happiness_meter == 0:
-		monster_animation.modulate = Color(1,0,0) # Sad monster
+		#monster_animation.modulate = Color(1,0,0) # Sad monster
 		emote_sprite.texture = emote_sad
+	elif hunger_meter <= 2 or happiness_meter <= 2:
+		emote_sprite.texture = emote_neutral
 	else:
-		monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
+		#monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
 		emote_sprite.texture = emote_happy
+	
 
 func _on_hunger_timer_timeout():
 	if hunger_meter > 0:
