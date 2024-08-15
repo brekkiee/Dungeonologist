@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dux08f4tj4m1s" path="res://Assets/Animations/Monsters/anim_Idle_Nekomata.png" id="2_gyh1j"]
 [ext_resource type="Texture2D" uid="uid://dm8arhry1abjk" path="res://Assets/Animations/Monsters/anim_Walk_Nekomata.png" id="3_slrwv"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq0th"]
 atlas = ExtResource("2_gyh1j")
 region = Rect2(0, 0, 100, 105)
@@ -324,10 +323,13 @@ input_pickable = true
 script = ExtResource("1_x8xnp")
 
 [node name="MonsterAnimSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_dvr5e")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-31, -39, 0, -33, 12, -33, 32, -38, 30, -5, 20, 3, 26, 10, 40, 17, 37, 30, 25, 32, 18, 49, 10, 50, 6, 40, -6.99999, 40, -12, 50, -20, 49, -23, 25, -32, 14, -31, 7, -20, 5, -14, 1, -28, -4, -29, -18)
+
+[node name="EmoteSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -127)
+scale = Vector2(5, 5)

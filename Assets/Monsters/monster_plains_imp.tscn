@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bobi08cmu3kf7" path="res://Assets/Animations/Monsters/anim_Idle_PlainsImp.png" id="2_78bcg"]
 [ext_resource type="Texture2D" uid="uid://cj1o46qmqk0wg" path="res://Assets/Animations/Monsters/anim_Walk_PlainsImp.png" id="3_68lig"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_76tnt"]
 atlas = ExtResource("2_78bcg")
 region = Rect2(0, 0, 109, 106)
@@ -332,3 +331,7 @@ autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-9, 22, -16, 30, -24, 30, -34, 16, -36, -5, -43, -7, -40, -16, -29, -37, -21, -47, -4, -58, 5, -73, 12, -59, 27, -51, 40, -39, 47, -23, 53, -11, 50, -6, 47, -1, 46, 9, 43, 20, 34, 31, 25, 31, 17, 21)
+
+[node name="EmoteSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -127)
+scale = Vector2(5, 5)

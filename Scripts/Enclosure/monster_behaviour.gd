@@ -1,11 +1,23 @@
 extends CharacterBody2D
 
 @onready var monster_animation = $MonsterAnimSprite2D
+@onready var emote_sprite = $EmoteSprite2D
 @onready var hunger_meter = 5
 @onready var happiness_meter = 5
 @onready var hunger_timer = Timer.new()
 @onready var happiness_timer = Timer.new()
 @onready var pause_timer = Timer.new()
+@export var emote_happy: Texture2D
+@export var emote_sad: Texture2D
+@export var emote_neutral: Texture2D
+@export var emote_sick: Texture2D
+@export var emote_angry: Texture2D
+@export var emote_plead: Texture2D
+@export var emote_cringe: Texture2D
+@export var emote_poop: Texture2D
+@export var emote_shock: Texture2D
+@export var emote_question: Texture2D
+
 var movement_speed = 1.0
 var movement_direction = Vector2.ZERO
 
@@ -16,6 +28,18 @@ func _ready():
 	add_child(hunger_timer)
 	add_child(happiness_timer)
 	add_child(pause_timer)
+	
+	# Add monster emotes
+	emote_happy = load("res://Assets/Sprites/Emotes/emote_0_Happy.png")
+	emote_sad = load("res://Assets/Sprites/Emotes/emote_2_Sad.png")
+	emote_neutral = load("res://Assets/Sprites/Emotes/emote_1_Neutral.png")
+	emote_sick = load("res://Assets/Sprites/Emotes/emote_3_Sick.png")
+	emote_angry = load("res://Assets/Sprites/Emotes/emote_4_Angry.png")
+	emote_plead = load("res://Assets/Sprites/Emotes/emote_5_Plead.png")
+	emote_cringe = load("res://Assets/Sprites/Emotes/emote_6_Cringe.png")
+	emote_poop = load("res://Assets/Sprites/Emotes/emote_7_Poop.png")
+	emote_shock = load("res://Assets/Sprites/Emotes/emote_8_Shock.png")
+	emote_question = load("res://Assets/Sprites/Emotes/emote_9_Question.png")
 	
 	# Set timer properties
 	hunger_timer.wait_time = 5.0 # Need to adjust as necessary
@@ -42,8 +66,10 @@ func _ready():
 func update_monster():
 	if hunger_meter == 0 or happiness_meter == 0:
 		monster_animation.modulate = Color(1,0,0) # Sad monster
+		emote_sprite.texture = emote_sad
 	else:
 		monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
+		emote_sprite.texture = emote_happy
 
 func _on_hunger_timer_timeout():
 	if hunger_meter > 0:
