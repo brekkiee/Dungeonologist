@@ -97,6 +97,11 @@ func pet_monster():
 	happiness_meter = 5
 	update_monster()
 	
+func inspect_monster():
+	# Set the emote to visible
+	print("Inspected monster using magnifying glass")
+	update_monster()
+	
 # Random movement within the enclosure
 func random_move():
 	movement_direction = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
@@ -136,7 +141,16 @@ func _stop_moving():
 # Handle input event when click on the monster
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			pet_monster() # For now, left click pets the monster
-		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			feed_monster() # For now, just right click to feed the monstaah
+		var toolbox = get_node("/root/Header/UI/MainUI/ToolBox")
+		print("toolbox: ", toolbox)
+		var current_tool = toolbox.current_tool
+		print("current_tool: ", current_tool)
+		
+		if current_tool and current_tool.tool_name == "PettingHand":
+			pet_monster()
+		elif current_tool and current_tool.tool_name == "MagnifyingGlass":
+			inspect_monster()
+		elif InventoryManager.item_mouse_follow != null:
+			# If item from inventory selected and dragged to monster, click to feed monster
+			feed_monster()
+			InventoryManager.item_used_click() # Remove the item from the inventory

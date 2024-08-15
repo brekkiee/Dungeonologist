@@ -331,5 +331,6 @@ autoplay = "idle"
 polygon = PackedVector2Array(-31, -39, 0, -33, 12, -33, 32, -38, 30, -5, 20, 3, 26, 10, 40, 17, 37, 30, 25, 32, 18, 49, 10, 50, 6, 40, -6.99999, 40, -12, 50, -20, 49, -23, 25, -32, 14, -31, 7, -20, 5, -14, 1, -28, -4, -29, -18)
 
 [node name="EmoteSprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -127)
 scale = Vector2(4, 4)

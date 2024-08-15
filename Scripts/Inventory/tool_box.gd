@@ -16,22 +16,20 @@ func _ready():
 		original_tool_positions.append(item.position)
 
 func put_down_tool():
-	# Wait 0.1 seconds before resetting the item to the inventory
-	await get_tree().create_timer(0.1).timeout
-	# Make mouse visible
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# Reset tool to original position
 	current_tool.position = original_tool_positions[current_tool_index]
 	current_tool_index = -1
 	current_tool = null
+	# Make mouse visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(delta):
 	if current_tool != null:
 		# Set tool position to mouse position
 		current_tool.position = get_global_mouse_position()
-		if Input.is_action_just_pressed("left_click"):
-			# Put down tool without calling any function
-			# Click detection is handled by clicked objects, e.g., tutorial_slime script
+		
+		# Return the tool to the toolbox only on right click
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 			put_down_tool()
 
 func toolbox_click(tool_node):
@@ -43,3 +41,4 @@ func toolbox_click(tool_node):
 			current_tool_index = i
 			# Hide mouse cursor
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+

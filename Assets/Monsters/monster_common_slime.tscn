@@ -334,5 +334,6 @@ frame_progress = 0.719311
 polygon = PackedVector2Array(-42, -2, -41, -38, -24, -61, 3, -71, 26, -65, 49, -43, 53, -17, 53, 3, 34, 20, 16, 20, -18, 20, -37, 7)
 
 [node name="EmoteSprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -127)
 scale = Vector2(4, 4)

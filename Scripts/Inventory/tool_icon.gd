@@ -4,6 +4,7 @@ extends Node2D
 @onready var sprite = $Sprite2D
 @export var normal_sprite: Texture2D
 @export var hover_sprite: Texture2D
+@export var tool_name: String = ""
 
 # Inform the toolbox that the tool is clicked
 # Simplified click detection to use a single function
@@ -22,3 +23,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	set_hover(false)
+
+# Checks if this tool is current active tool
+func is_active_tool():
+	return tool_box.current_tool == self
