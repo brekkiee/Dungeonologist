@@ -41,9 +41,7 @@ extends CharacterBody2D
 @export var emote_shock: Texture2D
 @export var emote_question: Texture2D
 
-enum MonsterTypeEnum {}
-		
-
+#enum MonsterTypeEnum {}
 
 var movement_direction = Vector2.ZERO
 
@@ -62,19 +60,19 @@ func _ready():
 	_load_emotes()
 	
 		# Set timer properties
-	hunger_timer.wait_time = 5.0 # Need to adjust as necessary
+	hunger_timer.wait_time = hunger_rate # Need to adjust as necessary
 	hunger_timer.one_shot = false
 	hunger_timer.connect("timeout", Callable(self, "_on_hunger_timer_timeout"))
 	
-	happiness_timer.wait_time = 5.0 # Need to adjust as necessary
+	happiness_timer.wait_time = unhappy_rate # Need to adjust as necessary
 	happiness_timer.one_shot = false
 	happiness_timer.connect("timeout", Callable(self, "_on_happiness_timer_timeout"))
 	
-	pause_timer.wait_time = randf_range(0.5, 4.0) # Need to adjust as necessary
+	pause_timer.wait_time = randf_range(min_idle_time, max_idle_time) # Need to adjust as necessary
 	pause_timer.one_shot = true
 	pause_timer.connect("timeout", Callable(self, "random_move"))
 	
-	visibility_timer.wait_time = 10.0
+	visibility_timer.wait_time = 5.0
 	visibility_timer.one_shot = true
 	visibility_timer.connect("timeout", Callable(self, "_hide_meters"))
 	
@@ -105,7 +103,7 @@ func _load_emotes():
 	emote_poop = load("res://Assets/Sprites/Emotes/emote_7_Poop.png")
 	emote_shock = load("res://Assets/Sprites/Emotes/emote_8_Shock.png")
 	emote_question = load("res://Assets/Sprites/Emotes/emote_9_Question.png")
-	
+	_hide_emote()
 # Called to update monster movement, hunger, happiness
 func update_monster():
 	if hunger_meter == 0 or happiness_meter == 0:
@@ -159,10 +157,12 @@ func _on_happiness_timer_timeout():
 	
 func feed_monster():
 	hunger_meter = 5
+	_show_emote()
 	update_monster()
 	
 func pet_monster():
 	happiness_meter = 5
+	_show_emote()
 	update_monster()
 	
 func inspect_monster():
@@ -173,7 +173,7 @@ func inspect_monster():
 # Show monster emote
 func _show_emote():
 	emote_sprite.visible = true
-	visibility_timer.start()
+	emote_timer.start()
 	
 # Hide monster emote
 func _hide_emote():
