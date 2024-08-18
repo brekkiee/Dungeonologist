@@ -3,6 +3,7 @@ extends Node
 var current_scene: Node = null
 var scenes: Dictionary = {}
 
+@onready var start_menu_scene = preload("res://Scenes/Windows/StartMenu.tscn")
 @onready var expedition_scene = preload("res://Scenes/Windows/expeditions.tscn")
 @onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
 @onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")

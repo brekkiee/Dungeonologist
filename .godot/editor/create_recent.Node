@@ -1,13 +1,13 @@
+VBoxContainer
+Container
+Button
+GridContainer
 AnimatedSprite2D
 Sprite2D
 TextureRect
-Button
 CenterContainer
 MarginContainer
-VBoxContainer
-GridContainer
 CollisionPolygon2D
-Container
 RichTextLabel
 NinePatchRect
 Timer
