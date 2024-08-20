@@ -1,3 +1,4 @@
+res://Scenes/Windows
 res://Assets/Sprites/Emotes
 res://Quests/Dialogue/DialogueText
 res://Scripts/Quests
@@ -12,4 +13,3 @@ res://Assets/Sprites
 res://Singletons
 res://Assets
 res://Assets/Animations
-res://Scenes/Windows

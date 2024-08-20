@@ -29,7 +29,7 @@ extends CharacterBody2D
 @export var max_idle_time = 4.0
 
 @export_group("Emotes Variables")
-@export var emote_time = 5.0
+@export var emote_time = 3.0
 @export var emote_happy: Texture2D
 @export var emote_sad: Texture2D
 @export var emote_neutral: Texture2D
@@ -109,8 +109,10 @@ func update_monster():
 	if hunger_meter == 0 or happiness_meter == 0:
 		#monster_animation.modulate = Color(1,0,0) # Sad monster
 		emote_sprite.texture = emote_sad
+		_show_emote()
 	elif hunger_meter <= 2 or happiness_meter <= 2:
 		emote_sprite.texture = emote_neutral
+		_show_emote()
 	else:
 		#monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
 		emote_sprite.texture = emote_happy

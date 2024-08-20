@@ -62,7 +62,7 @@ func add_quest(quest_id: String):
 		print("A quest of type ", quest_type, " is already active.")
 
 	# NPC can update only when there is a quest active
-	if quest_type == "chat":
+	if quest_type == "chat" and GameManager.npc:
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 
 # Progress a specific quest

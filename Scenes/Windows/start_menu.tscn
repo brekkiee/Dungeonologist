@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx16kq551h73q"]
+
+[ext_resource type="PackedScene" uid="uid://cqbciq3ldcgs8" path="res://Scenes/UI/StartMenuUI.tscn" id="1_24n8o"]
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 8
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+pitch_scale = 0.43
+
+[node name="StartMenuUI" parent="." instance=ExtResource("1_24n8o")]
+offset_left = 500.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 250.0
+scale = Vector2(2.56, 1.5)

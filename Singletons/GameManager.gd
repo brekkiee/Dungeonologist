@@ -3,22 +3,42 @@ extends Node
 var current_scene: Node = null
 var scenes: Dictionary = {}
 
-@onready var start_menu_scene = preload("res://Scenes/Windows/StartMenu.tscn")
-@onready var expedition_scene = preload("res://Scenes/Windows/expeditions.tscn")
-@onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
+@onready var start_menu_scene = preload("res://Scenes/Windows/start_menu.tscn")
 @onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")
 @onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
-@onready var scene_spawn_point: Node2D = get_node("/root/Header/SceneLoadPoint")
+@onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
+@onready var expedition_scene = preload("res://Scenes/Windows/expeditions.tscn")
 
-@onready var npc: Control = get_node("/root/Header/UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character")
+@onready var npc: Control = null
+@onready var scene_spawn_point: Node2D = null
 #@onready var sprite_texture: TextureRect = npc.get_node("CharacterSprite")
 
+@onready var start_menu: Node = get_node("/root/StartMenu")
+@onready var main_window = null
+
 func _ready():
-	start_game()
+	var main_window_scene = preload("res://Scenes/Windows/MainWindow.tscn")
+	main_window = main_window_scene
+	main_window.visible = false
+	get_tree().root.add_child(main_window)
+	
+	npc = main_window.get_node("UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character")
+	
+	change_scene("StartMenu")
 
 func start_game():
-	change_scene("MonsterEnclosure")
+	
 	QuestManager.add_quest("TutorialQuest")
+	print("start_menu: ", start_menu)
+	if start_menu != null:
+		start_menu.queue_free()
+	
+	# Ensure NPC updates according to the active quest
+	if npc:
+		npc.update_npc_sprite_based_on_active_quest()
+
+	# Switch to the monster enclosure scene
+	change_scene("MonsterEnclosure")
 	
 # Change sub scene based on input scene_name
 func change_scene(scene_name: String):
@@ -27,6 +47,8 @@ func change_scene(scene_name: String):
 		_goto_scene(scene_name)
 
 func _goto_scene(scene_name: String):
+	scene_spawn_point = get_node("/root/Header/SceneLoadPoint")
+	
 	if scene_spawn_point == null:
 		print("Can't load scene - SceneLoadPoint not found")
 		return
@@ -56,6 +78,7 @@ func _goto_scene(scene_name: String):
 	
 func _instantiate_scene(scene_name: String) -> Node:
 	match scene_name:
+		"StartMenu": return start_menu_scene.instantiate()
 		"Expeditions": return expedition_scene.instantiate()
 		"AlchemyLab": return alchemy_lab_scene.instantiate()
 		"MonsterEnclosure": return monster_enclosure_scene.instantiate()

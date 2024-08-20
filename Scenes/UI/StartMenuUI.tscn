@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqbciq3ldcgs8"]
 
-[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_l5ypx"]
+[ext_resource type="Script" path="res://Scripts/UI/start_menu.gd" id="1_dl8wi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
-[node name="MainUI" type="Control"]
+[node name="StartMenuUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_l5ypx")
+script = ExtResource("1_dl8wi")
 
 [node name="StartMenuScreen" type="Panel" parent="."]
 z_index = 1
@@ -31,13 +31,13 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_j37hr")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.277
-anchor_top = 0.262
+anchor_top = 0.327
 anchor_right = 0.708
-anchor_bottom = 0.96
+anchor_bottom = 0.759
 offset_left = -0.104004
-offset_top = 0.223984
+offset_top = 0.103989
 offset_right = 0.383972
-offset_bottom = -0.0800171
+offset_bottom = 0.167969
 
 [node name="StartButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
@@ -50,3 +50,6 @@ text = "Credits"
 [node name="ExitButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
 text = "Exit"
+
+[connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/ExitButton" to="." method="_on_exit_button_pressed"]

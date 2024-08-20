@@ -6,12 +6,12 @@
 
 [node name="Header" type="Node2D"]
 
+[node name="SceneLoadPoint" type="Node2D" parent="."]
+
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 8
 
 [node name="MainUI" parent="UI" instance=ExtResource("1_nqokc")]
-
-[node name="SceneLoadPoint" type="Node2D" parent="."]
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
