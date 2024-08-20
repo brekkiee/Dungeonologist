@@ -12,8 +12,9 @@ var scenes: Dictionary = {}
 @onready var npc: Control = null
 @onready var scene_spawn_point: Node2D = null
 @onready var start_menu: Node = get_node("/root/StartMenu")
-@onready var main_window = null
 @onready var pause_menu: Control = null
+@onready var main_window = null
+@onready var main_ui = null
 
 func _ready():
 	var main_window_scene = preload("res://Scenes/Windows/MainWindow.tscn")
@@ -22,7 +23,7 @@ func _ready():
 		print("Error: MainWindow failed to instantiate.")
 	else:
 		print("MainWindow instantiated successfully.")
-	
+	main_ui	 = main_window.get_node("UI/MainUI")
 	main_window.visible = false
 	get_tree().root.add_child(main_window)
 	print("MainWindow added to the scene tree.")
@@ -96,6 +97,9 @@ func _goto_scene(scene_name: String):
 		
 	current_scene = scenes[scene_name]
 	print("Scene switched to: " + current_scene.name)
+	
+	if scene_name == "StartMenu":
+		main_ui.visible = false
 	
 func _instantiate_scene(scene_name: String) -> Node:
 	match scene_name:
