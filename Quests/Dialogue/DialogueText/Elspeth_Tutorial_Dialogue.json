@@ -1,0 +1,24 @@
+[
+	
+	{"emotion": "confident", "texture": "res://Assets/Sprites/Dialogue/Elspeth/confident.png"},
+	{"emotion": "confident_2", "texture": "res://Assets/Sprites/Dialogue/Elspeth/confident_2.png"},
+	{"emotion": "hostile", "texture": "res://Assets/Sprites/Dialogue/Elspeth/hostile.png"}, 
+	{"emotion": "impressed", "texture": "res://Assets/Sprites/Dialogue/Elspeth/impressed.png"},
+	{"emotion": "informative", "texture": "res://Assets/Sprites/Dialogue/Elspeth/informative.png"},
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Elspeth/neutral.png"},
+	
+	{"chat_num": "0", "name": "Elspeth", "emotion": "hostile", "text": "Oh, finally! I thought I’d be waiting out there all day. You must be the new Dungeonologist. *sniff sniff* Gods… you certainly smell like one."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "confident", "text": "I’m Elspeth, head of the Ravenglass Adventurer’s Guild, and your new boss!"},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "confident_2", "text": "First, I’ll just need you to sign here, here and… let me see… ah yes, here!"},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "neutral", "text": "Now that that’s all sorted, I should probably give you a quick run down of what you’re here for, shouldn’t I?"},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "neutral", "text": "Well… long story short: the previous Dungeonologist - you probably know her, I’ve heard she’s something of a legend among you researcher types - Gertrude Flowerhorn, just up and disappeared one day."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "neutral", "text": "You might be thinking 'oh gods, what if she got devoured by a giant slime?' or 'should I really be considering taking on such a dangerous job?'"},
+
+	{"chat_num": "1", "name": "Elspeth", "emotion": "confident_2", "text": "Now that we’ve cleared that up, let’s talk about our expectations for you as an employee of the Ravenglass Adventurer’s Guild. Mainly, you’ll be conducting research on the various dungeon flora and fauna here in your lab. It’s all exactly as Gertrude left it, so I dare say you can pick up right where she left off."},
+	{"chat_num": "1", "name": "Elspeth", "emotion": "hostile", "text": "There’s a garden to grow herbs, veggies, and whatever else you might need to keep this place running. An alchemy lab for brewing potions and whatnot… don’t ask me about any of this stuff, I have no idea what any of these contraptions do."},
+	{"chat_num": "1", "name": "Elspeth", "emotion": "neutral", "text": "Oh, and there’s an enclosure for keeping the little monsters contained while you poke and prod them, of course. I’d recommend feeding them at least once a week, but you’re the Dungeonologist here, so you probably already know what to do."},
+	{"chat_num": "1", "name": "Elspeth", "emotion": "informative", "text": "And last but not least, you’ll write down all your findings so we can compile them into The Ultimate Dungeon Field Guide. You see… our findings suggest that we can increase our profits by at least 60% if we equip our adventurers with the appropriate knowledge beforehand. A dead adventurer can’t bring back any loot, after all!"},
+	{"chat_num": "1", "name": "Elspeth", "emotion": "neutral", "text": "Oh, and before I forget, here’s Gertrude’s old codex. If you get stuck, I’d suggest taking a look through her notes and jumping in where she left off."},
+
+	{"chat_num": "2", "name": "Elspeth", "emotion": "confident_2", "text": "Right, I should be getting back now. I’ll check in on you in a day or two to make sure you’re still alive. Cheerio!"}
+]

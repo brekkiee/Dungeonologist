@@ -1,19 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxvqnrbmbgdpu"]
 
-[ext_resource type="Script" path="res://Scripts/Quests/chat_box.gd" id="1_eo7lx"]
+[ext_resource type="Script" path="res://Scripts/Quests/chat_box.gd" id="1_dd7n4"]
 [ext_resource type="Texture2D" uid="uid://cm6rsa7rb4fbi" path="res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png" id="2_37don"]
 [ext_resource type="Texture2D" uid="uid://crrsusxwkce01" path="res://Assets/Sprites/Dialogue/chatboxNew.png" id="3_02a0v"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="4_mef2a"]
 
-[node name="Dialogue" type="Control" node_paths=PackedStringArray("label", "character_name")]
+[node name="Dialogue" type="Control" node_paths=PackedStringArray("chat", "character_name", "scroll_container")]
 z_index = 100
 z_as_relative = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.393, 0.393)
-script = ExtResource("1_eo7lx")
-label = NodePath("NinePatchRect/Chat")
+script = ExtResource("1_dd7n4")
+chat = NodePath("NinePatchRect/ScrollContainer/Chat")
 character_name = NodePath("NinePatchRect/Name")
+scroll_container = NodePath("NinePatchRect/ScrollContainer")
 
 [node name="NPCTexture" type="TextureRect" parent="."]
 layout_mode = 0
@@ -44,19 +45,30 @@ scale = Vector2(3.608, 3.608)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_mef2a")
 
-[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 101.0
-offset_top = 120.0
-offset_right = 374.0
-offset_bottom = 184.0
-scale = Vector2(4.395, 4.395)
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.269
+anchor_right = 0.973
+anchor_bottom = 0.938
+offset_left = -0.112999
+offset_top = 0.177986
+offset_right = -0.523071
+offset_bottom = 0.155975
+follow_focus = true
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_mef2a")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
 fit_content = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="finished" from="." to="." method="_on_chat_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

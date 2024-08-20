@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
 script = ExtResource("4_68fy0")
-dialogue_file = "res://Quests/Dialogue/DialogueText/chat_template.json"
+dialogue_file = "res://Quests/Dialogue/DialogueText/Elspeth_Tutorial_Dialogue.json"
 
 [node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1

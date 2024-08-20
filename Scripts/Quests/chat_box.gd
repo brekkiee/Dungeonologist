@@ -1,9 +1,10 @@
 extends Control
 
-@export var label: RichTextLabel
+@export var chat: RichTextLabel
 @export var character_name: RichTextLabel
 @onready var npc_texture = $NPCTexture
 @onready var timer = $Timer
+@export var scroll_container: ScrollContainer
 
 const MAX_WIDTH = 800
 
@@ -16,18 +17,10 @@ var letter_index = 0
 @export var punct_time = 0.2
 
 signal finished
-#func _process(delta):
-	#print(custom_minimum_size)
-# updates text box text and size
+
 func display_text(speaker_name: String, text_to_display: String, emotion_texture_path: String):
-#	if npc_texture == null:
-#		print("Error: npc_texture is null! Ensure it's correctly assigned in the scene.")
-#		return
-#	var test_texture = load("res://Assets/Sprites/Characters/char_6_Pablo.png")
-#	npc_texture.texture = test_texture
-	
 	textToDisplay = text_to_display
-	label.text = text_to_display
+	chat.text = ""
 	character_name.text = speaker_name
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	
@@ -41,20 +34,24 @@ func display_text(speaker_name: String, text_to_display: String, emotion_texture
 	
 	# fEnable word wrap if width exceeds max
 	if size.x > MAX_WIDTH:
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		chat.autowrap_mode = TextServer.AUTOWRAP_WORD
 		custom_minimum_size.y = size.y
 		
-	label.text = ""
+	chat.text = ""
+	letter_index = 0
 	_display_character()
 	
 # displays each character with appropriate timing
 func _display_character():
-	label.text += textToDisplay[letter_index]
-	
+	chat.text += textToDisplay[letter_index]
 	letter_index += 1
+	
+	# Scroll to the bottom as new text is added
+	call_deferred("_scroll_to_bottom()")
+	
 	if letter_index >= textToDisplay.length():
 		finished.emit()
-		return 
+		return
 	
 	# set timer for character type
 	match textToDisplay[letter_index]:
@@ -69,3 +66,6 @@ func _display_character():
 func _on_timer_timeout():
 	_display_character()
 
+func _scroll_to_bottom():
+	if scroll_container:
+		scroll_container.scroll_vertical = scroll_container.get_v_scrollbar().max_value

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://mkicu74u48ty"]
 
-[ext_resource type="Script" path="res://Scenes/UI/pause_menu.gd" id="1_mdjxg"]
+[ext_resource type="Script" path="res://Scripts/UI/pause_menu.gd" id="1_0libc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_mdjxg")
+script = ExtResource("1_0libc")
 
 [node name="PauseMenuScreen" type="Panel" parent="."]
 z_index = 1

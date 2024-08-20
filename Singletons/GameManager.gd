@@ -100,6 +100,8 @@ func _goto_scene(scene_name: String):
 	
 	if scene_name == "StartMenu":
 		main_ui.visible = false
+	if scene_name == "MonsterEnclosure":
+		main_ui.visible = true
 	
 func _instantiate_scene(scene_name: String) -> Node:
 	match scene_name:
