@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://mkicu74u48ty"]
+
+[ext_resource type="Script" path="res://Scenes/UI/pause_menu.gd" id="1_mdjxg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mdjxg")
+
+[node name="PauseMenuScreen" type="Panel" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j37hr")
+
+[node name="ButtonGridContainer" type="VBoxContainer" parent="PauseMenuScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277
+anchor_top = 0.327
+anchor_right = 0.708
+anchor_bottom = 0.759
+offset_left = 91.896
+offset_top = 0.103989
+offset_right = 92.384
+offset_bottom = 0.167999
+
+[node name="ResumeButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ExitButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="PauseMenuScreen/ButtonGridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenuScreen/ButtonGridContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PauseMenuScreen/ButtonGridContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -11,3 +11,6 @@ res://Scripts/UI/start_menu.gd
 res://Singletons/QuestManager.gd
 res://Scenes/Windows/MainWindow.tscn
 res://Scenes/UI/MainUI.tscn
+res://Quests/Dialogue/chatbox.tscn
+res://Scenes/UI/PauseMenu.tscn
+res://Scenes/UI/pause_menu.gd

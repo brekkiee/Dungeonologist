@@ -11,32 +11,53 @@ var scenes: Dictionary = {}
 
 @onready var npc: Control = null
 @onready var scene_spawn_point: Node2D = null
-#@onready var sprite_texture: TextureRect = npc.get_node("CharacterSprite")
-
 @onready var start_menu: Node = get_node("/root/StartMenu")
 @onready var main_window = null
+@onready var pause_menu: Control = null
 
 func _ready():
 	var main_window_scene = preload("res://Scenes/Windows/MainWindow.tscn")
-	main_window = main_window_scene
+	main_window = main_window_scene.instantiate()
+	if main_window == null:
+		print("Error: MainWindow failed to instantiate.")
+	else:
+		print("MainWindow instantiated successfully.")
+	
 	main_window.visible = false
 	get_tree().root.add_child(main_window)
+	print("MainWindow added to the scene tree.")
 	
 	npc = main_window.get_node("UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character")
+	
+	# Get the PauseMenu node from MainWindow
+	pause_menu = main_window.get_node("PauseMenu")
+	if pause_menu:
+		pause_menu.visible = false
 	
 	change_scene("StartMenu")
 
 func start_game():
+	# Load and instantiate MainWindow scene
+	var main_window_scene = preload("res://Scenes/Windows/MainWindow.tscn")
+	npc = main_window.get_node("UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character")
 	
-	QuestManager.add_quest("TutorialQuest")
-	print("start_menu: ", start_menu)
+	if main_window == null:
+		print("Error: MainWindow failed to load")
+		return
+		
+	main_window.visible = true
+	get_tree().root.add_child(main_window)
+	print("MainWindow added to the scene tree.")
+	
 	if start_menu != null:
 		start_menu.queue_free()
 	
+	QuestManager.add_quest("TutorialQuest")
+
 	# Ensure NPC updates according to the active quest
 	if npc:
 		npc.update_npc_sprite_based_on_active_quest()
-
+	
 	# Switch to the monster enclosure scene
 	change_scene("MonsterEnclosure")
 	
@@ -93,5 +114,19 @@ func play_sound():
 		# Assign sound to play here or in inspector
 		audio_stream.stream = load("res://Sounds/ToolSuccessSound.wav")
 		audio_stream.play()
+		
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()
 
-#	DialogueManager.start_convo("Wizard")
+func toggle_pause():
+	if get_tree().paused:
+		# Unpause the game
+		get_tree().paused = false
+		if pause_menu:
+			pause_menu.visible = false
+	else:
+		# Pause the game
+		get_tree().paused = true
+		if pause_menu:
+			pause_menu.visible = true

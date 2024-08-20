@@ -56,6 +56,7 @@ func add_quest(quest_id: String):
 			active_quests[quest_type] = quest_instance
 			quest_instance.start_quest()
 			print("Added new quest: ", quest_id, " of type: ", quest_type)
+			update_quest_display(quest_id)
 		else:
 			print("Failed to load quest script: ", quest_data["script"])
 	else:
@@ -64,6 +65,16 @@ func add_quest(quest_id: String):
 	# NPC can update only when there is a quest active
 	if quest_type == "chat" and GameManager.npc:
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
+
+# Method to update the quest display based on active quest
+func update_quest_display(quest_id: String) -> void:
+	var quest = active_quests[quests_data[quest_id]["type"]]
+	if quest:
+		var quest_name = quest.info["QuestDisplayName"]
+		var quest_description = quest.info["QuestDescription"][1]
+		quest_display.update_quest(quest_name, quest_description)
+	else:
+		print("Quest data not found for quest ID: ", quest_id)
 
 # Progress a specific quest
 func progress_quest(quest_type: String, stage: int):

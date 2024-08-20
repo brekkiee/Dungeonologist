@@ -32,9 +32,7 @@ func _ready():
 		update_npc_sprite_based_on_active_quest()
 
 	_load_dialogue()
-	# Connect the DialogueManager's signal to the NPC's chat finished handler
 	DialogueManager.connect("chat_finished", Callable(self, "_on_chat_finished"))
-	# Connect to the emotion change signal
 	DialogueManager.connect("emotion_changed", Callable(self, "_on_emotion_changed"))
 
 # Method to update the NPC sprite based on the active quest
