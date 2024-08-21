@@ -14,17 +14,17 @@ var completed_quests = []
 
 # Dictionary to store all quests for game
 var quests_data: Dictionary = {
-	"TutorialQuest" :{
-		"script": "res://Quests/TutorialQuest/tutorialquest.gd",
+	"SettlingIn" :{
+		"script": "res://Quests/TutorialQuest/settling_in.gd",
 		"type": "chat",
 	},
-	"HarvestQuest" :{
-		"script": "res://Quests/harvestquest.gd",
-		"type": "garden",
+	"TheReaperOfRavenglass" :{
+		"script": "res://Quests/the_reaper_of_ravenglass.gd",
+		"type": "chat",
 	},
-	"PotionQuest" :{
-		"script": "",
-		"type": "alchemy",
+	"EpicQuest" :{
+		"script": "res://Quests/epic_quest.gd",
+		"type": "chat",
 	},
 	"FeedQuest" :{
 		"script": "",

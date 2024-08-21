@@ -1,0 +1,9 @@
+[
+	{"emotion": "wave", "texture": "res://Assets/Sprites/Dialogue/Colin/wave.png"},
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Colin/neutral.png"},
+
+	{"chat_num": "0", "name": "Colin", "emotion": "wave", "text": "Howdy! I’m Colin, AKA The Reaper of Ravenglass. Oops, sorry! Elsie said you don’t like loud noises..."},
+	{"chat_num": "0", "name": "Colin", "emotion": "neutral", "text": "So Elsie said you’d have a mission for me?..."},
+	{"chat_num": "0", "name": "Colin", "emotion": "neutral", "text": "Uh… You just want samples? I see. So no epic quest then? *sigh*..."},
+	{"chat_num": "0", "name": "Colin", "emotion": "neutral", "text": "Elsie said I’d work for free? She does keep saying I need the exposure…"}
+]

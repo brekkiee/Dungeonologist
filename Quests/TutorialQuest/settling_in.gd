@@ -2,14 +2,14 @@ extends QuestBase
 
 func _init():
 	# Initialise quest-specific information
-	info["Name"] = "TutorialQuest"
+	info["Name"] = "SettlingIn"
 	info["Type"] = "chat"
 	info["NpcSprite"] = "res://Assets/Sprites/Characters/char_4_Elspeth.png"
-	info["QuestDisplayName"] = "Talk to Elspeth"
+	info["QuestDisplayName"] = "Settling In"
 	info["QuestDescription"] = {
-		1: "Click on Elspeth to chat",
-		2: "Click on Elspeth again to continue chat.",
-		3: "Quest completed."
+		1: "Harvest a plant from the garden.",
+		2: "Feed a monster",
+		3: "Talk to Elspeth"
 	}
 	
 	quest_name = info["Name"]

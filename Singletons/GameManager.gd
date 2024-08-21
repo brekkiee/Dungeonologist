@@ -53,7 +53,7 @@ func start_game():
 	if start_menu != null:
 		start_menu.queue_free()
 	
-	QuestManager.add_quest("TutorialQuest")
+	QuestManager.add_quest("SettlingIn")
 
 	# Ensure NPC updates according to the active quest
 	if npc:
