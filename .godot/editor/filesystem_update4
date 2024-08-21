@@ -1,7 +1,7 @@
-res://Quests/Dialogue/chatbox.tscn
+res://Scenes/UI/PauseMenu.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/UI/PauseMenu.tscn
 res://Scenes/Windows/MainWindow.tscn
 res://Scenes/UI/MainUI.tscn
+res://Quests/Dialogue/chatbox.tscn
 res://Scripts/Quests/chat_box.gd

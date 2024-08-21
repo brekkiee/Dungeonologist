@@ -46,9 +46,6 @@ func _display_character():
 	chat.text += textToDisplay[letter_index]
 	letter_index += 1
 	
-	# Scroll to the bottom as new text is added
-	call_deferred("_scroll_to_bottom()")
-	
 	if letter_index >= textToDisplay.length():
 		finished.emit()
 		return
@@ -65,12 +62,3 @@ func _display_character():
 # Timer signals when to display next character
 func _on_timer_timeout():
 	_display_character()
-
-func _scroll_to_bottom():
-	if scroll_container:
-		scroll_container.update()
-		call_deferred("_ready_scroll_to_bottom()")
-		
-func _ready_scroll_to_bottom():
-	if scroll_container:
-		scroll_container.scroll_vertical = scroll_container.get_v_scrollbar().max_value	
