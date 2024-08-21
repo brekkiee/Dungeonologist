@@ -68,4 +68,9 @@ func _on_timer_timeout():
 
 func _scroll_to_bottom():
 	if scroll_container:
-		scroll_container.scroll_vertical = scroll_container.get_v_scrollbar().max_value
+		scroll_container.update()
+		call_deferred("_ready_scroll_to_bottom()")
+		
+func _ready_scroll_to_bottom():
+	if scroll_container:
+		scroll_container.scroll_vertical = scroll_container.get_v_scrollbar().max_value	

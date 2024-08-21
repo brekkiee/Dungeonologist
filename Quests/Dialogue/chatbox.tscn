@@ -57,6 +57,7 @@ offset_top = 0.177986
 offset_right = -0.523071
 offset_bottom = 0.155975
 follow_focus = true
+horizontal_scroll_mode = 0
 
 [node name="Chat" type="RichTextLabel" parent="NinePatchRect/ScrollContainer"]
 layout_mode = 2
@@ -67,6 +68,7 @@ theme_override_fonts/normal_font = ExtResource("4_mef2a")
 theme_override_font_sizes/normal_font_size = 75
 bbcode_enabled = true
 fit_content = true
+scroll_following = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
