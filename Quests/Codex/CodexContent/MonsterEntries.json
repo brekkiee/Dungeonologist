@@ -13,13 +13,13 @@
 			},
 			{
 				"task_num": 1,
-				"question": "Second research question",
-				"completion": "Second task completed notes."
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			},
 			{
 				"task_num": 2,
-				"question": "Third research question",
-				"completion": "Third task completed notes."
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			}
 		]
 	},
@@ -28,12 +28,22 @@
 		"sprite": "res://Assets/Sprites/Monsters/ForestDinglebat_Happy.png",
 		"diet": "Fruit",
 		"habitat": "Forests",
-		"facts": "Dinglebats are known for their affinity for fruits and can be seen darting between trees in search of their next snack. They are shy creatures and often hide from adventurers.",
+		"facts": "Dinglebats are known for their affinity for fruits and can be seen darting between trees in search of their next snack. They are shy creatures, but struggle to hide due to the glowing orb on their head.",
 		"research_tasks": [
 			{
 				"task_num": 0,
-				"question": "What type of fruit do Dinglebats prefer the most?",
-				"completion": "Dinglebats seem to have a preference for berries over other fruits."
+				"question": "What is the purpose of the dinglebat’s glowing orb?",
+				"completion": "Dinglebats have complex mating rituals that involve the mating pair blinking their orbs in sync with each other, creating a spectacular light show."
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			}
 		]
 	},
@@ -48,6 +58,16 @@
 				"task_num": 0,
 				"question": "How do Shroomen communicate?",
 				"completion": "It appears they communicate through a network of fungal threads that spread underground. I wonder how far they can go?"
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			}
 		]
 	},
@@ -56,12 +76,22 @@
 		"sprite": "res://Assets/Sprites/Monsters/PlainsImp_Happy.png",
 		"diet": "Meat",
 		"habitat": "Plains",
-		"facts": "Plains Imps are mischievous creatures known for causing trouble in farming areas. They are fast and agile, making them difficult to catch.",
+		"facts": "Plains imps are mischievous creatures, known for playing pranks on novice adventurers. They live on a diet of meat, yet appear to lack the means to hunt their own prey.",
 		"research_tasks": [
 			{
 				"task_num": 0,
-				"question": "What is the best way to trap a Plains Imp?",
-				"completion": "Using meat as bait seems to be the most effective way to lure and trap a Plains Imp."
+				"question": "How do plains imps hunt their prey?",
+				"completion": "Plains imps appear to be highly intelligent, using trickery and illusion to steal prey right from under a superior predator’s nose."
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			}
 		]
 	},
@@ -70,12 +100,22 @@
 		"sprite": "res://Assets/Sprites/Monsters/ShallowsJelly_Happy.png",
 		"diet": "Anything",
 		"habitat": "Coast",
-		"facts": "Shallows Jellies are often seen floating near the shorelines. They have a translucent body that makes them difficult to spot in the water.",
+		"facts": "Shallows jellies have translucent bodies, making them difficult to spot amongst the waves. Some decorate themselves with debris such as shells, coral and seaweed.",
 		"research_tasks": [
 			{
 				"task_num": 0,
-				"question": "How do Shallows Jellies defend themselves?",
-				"completion": "Shallows Jellies release a mild toxin when threatened, which is enough to deter most predators."
+				"question": "Why do shallows jellies decorate themselves?",
+				"completion": "Shallows jellies appear to have complex social structures, with different “fashions” being popular amongst different jelly populations."
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			}
 		]
 	},
@@ -84,12 +124,22 @@
 		"sprite": "res://Assets/Sprites/Monsters/Nekomata_Happy.png",
 		"diet": "Meat",
 		"habitat": "Mountains",
-		"facts": "Nekomata are feline creatures known for their dual tails and mysterious powers. They are often found in the mountains, where they live in solitude.",
+		"facts": "Nekomata are mysterious creatures, and have a complicated relationship with adventurers. There are multiple accounts of adventurers being rescued from danger by a benevolent nekomata.",
 		"research_tasks": [
 			{
 				"task_num": 0,
-				"question": "What powers do Nekomata possess?",
-				"completion": "Nekomata are said to have the ability to control fire and communicate with spirits. Their dual tails are a symbol of their magical prowess."
+				"question": "What is the purpose of a nekomata’s blue flame?",
+				"completion": "According to the adventurer who brought back the nekomata, the blue flame always points towards the exit of the dungeon. More tests will be needed to confirm."
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder Content",
+				"completion": "Placeholder Content"
 			}
 		]
 	}
