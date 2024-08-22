@@ -1,5 +1,4 @@
 res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Quests/Codex/CodexContent/MonsterEntries.json
 res://Quests/Codex/codex.tscn

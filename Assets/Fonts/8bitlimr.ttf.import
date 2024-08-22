@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dbujpgfdoqmp3"
-path="res://.godot/imported/yoster.ttf-64117fb0451e364d2ef42f2df7a51248.fontdata"
+uid="uid://ciuho8q8n4oes"
+path="res://.godot/imported/8bitlimr.ttf-bd2f3d7081996ec1f04f74bc899249ea.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/yoster.ttf"
-dest_files=["res://.godot/imported/yoster.ttf-64117fb0451e364d2ef42f2df7a51248.fontdata"]
+source_file="res://Assets/Fonts/8bitlimr.ttf"
+dest_files=["res://.godot/imported/8bitlimr.ttf-bd2f3d7081996ec1f04f74bc899249ea.fontdata"]
 
 [params]
 
@@ -20,8 +20,8 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-hinting=0
-subpixel_positioning=0
+hinting=1
+subpixel_positioning=1
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

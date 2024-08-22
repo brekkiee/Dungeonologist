@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4lvsnq5ef3lw"]
+[gd_scene load_steps=6 format=3 uid="uid://c4lvsnq5ef3lw"]
 
 [ext_resource type="Texture2D" uid="uid://d28bwulw4xhwg" path="res://Assets/Sprites/Codex/Codex.png" id="2_4r81q"]
 [ext_resource type="Script" path="res://Scripts/Quests/codex.gd" id="2_shked"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
 [ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
+[ext_resource type="FontFile" uid="uid://ciuho8q8n4oes" path="res://Assets/Fonts/8bitlimr.ttf" id="5_e4s50"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 anchors_preset = -1
@@ -33,7 +34,7 @@ offset_bottom = -5.20001
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]Monster Name[/center]"
@@ -62,7 +63,7 @@ size_flags_vertical = 3
 [node name="Diet" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 bbcode_enabled = true
 text = "Diet: Anything"
 fit_content = true
@@ -72,7 +73,7 @@ layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.33
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 bbcode_enabled = true
 text = "Habitat: Forests, Caves"
 fit_content = true
@@ -81,7 +82,7 @@ fit_content = true
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 bbcode_enabled = true
 text = "Shroomen seem to be able to communicate with others of their species without the need for vocalisations or body language."
 fit_content = true
@@ -103,7 +104,7 @@ offset_bottom = -0.200012
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]Notes[/center]"
@@ -113,7 +114,7 @@ fit_content = true
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 bbcode_enabled = true
 text = "How do Shroomen communicate?"
 fit_content = true
@@ -136,7 +137,7 @@ fit_content = true
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 bbcode_enabled = true
 text = "Second research question line?"
 fit_content = true
@@ -162,7 +163,7 @@ fit_content = true
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_e4s50")
 bbcode_enabled = true
 text = "Second research question line?"
 fit_content = true
