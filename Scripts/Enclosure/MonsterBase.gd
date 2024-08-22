@@ -161,6 +161,7 @@ func feed_monster():
 	hunger_meter = 5
 	_show_emote()
 	update_monster()
+	QuestManager.on_monster_fed()
 	
 func pet_monster():
 	happiness_meter = 5

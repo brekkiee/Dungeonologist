@@ -9,7 +9,6 @@ func _init():
 	info["QuestDescription"] = {
 		1: "Harvest a plant from the garden.",
 		2: "Feed a monster",
-		3: "Chat with Elspeth",
 	}
 #	info["QuestProgression"] = {
 #		1: "HarvestPlant",

@@ -37,7 +37,7 @@ func _ready():
 
 # Method to update the NPC sprite based on the active quest
 func update_npc_sprite_based_on_active_quest():
-	var active_quest = QuestManager.active_quests["1"]
+	var active_quest = QuestManager.active_quest
 	
 	if active_quest and active_quest is QuestBase:  # Ensure it’s of the correct type
 		var sprite_path = active_quest.info.NpcSprite
@@ -82,6 +82,7 @@ func _on_button_pressed():
 	else:
 		# Repeat the final dialogue after the quest is complete
 		repeat_final_dialogue()
+		# Progress quest if the current task is ChatNPC
 
 # Start a chat session using the provided array
 func _start_chat(dialogue_array: Array):
@@ -95,12 +96,19 @@ func _on_chat_finished():
 		current_dialogue_id += 1
 		if current_dialogue_id == 2:
 			dialogue_finished = true
+#	# Check if the current stage of the active quest involves this NPC
+#	if QuestManager.active_quest:
+#		var current_stage_task = QuestManager.quests_data[QuestManager.active_quest.quest_name]["stage" + str(QuestManager.current_stage)]
+#		if current_stage_task == "ChatNPC":
+#			QuestManager.progress_active_quest()
 
 # Repeat the final dialogue after quest completion
 func repeat_final_dialogue():
 	var final_dialogue_stage = dialogues[2] # Use the last dialogue
 	DialogueManager.start_chat(texture_mappings, final_dialogue_stage)
 	DialogueManager.advance_text()
+	QuestManager.on_NPC_chat()
+	
 	
 # Method to handle the emotion change and update the sprite
 func _on_emotion_changed(emotion: String):

@@ -59,7 +59,7 @@ func complete_quest():
 	is_completed = true
 	update_quest_display()
 	# Call additional logic needed when the quest is completed
-	QuestManager.complete_quest(quest_type)
+	QuestManager.complete_active_quest()
 	
 # Method to update NPC sprite, can be called from any QuestBase derived quest script
 func update_npc_sprite(texture_path: String):

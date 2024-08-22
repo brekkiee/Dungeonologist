@@ -2,12 +2,12 @@ extends QuestBase
 
 func _init():
 	# Initialise quest-specific information
-	info["Name"] = "ReaperOfRavenglass"
+	info["Name"] = "TheReaperOfRavenglass"
 	info["Type"] = "chat"
 	info["NpcSprite"] = "res://Assets/Sprites/Characters/char_4_Elspeth.png"
 	info["QuestDisplayName"] = "The Reaper of Ravenglass"
 	info["QuestDescription"] = {
-		1: "Talk to Colin",
+		1: "Talk to Elspeth",
 	}
 	
 	quest_name = info["Name"]

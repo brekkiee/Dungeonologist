@@ -3,50 +3,28 @@ extends Node
 @onready var quest_display_scene = preload("res://Quests/quest_display.tscn")
 
 var quest_display: Control
-var active_quests = {
-	"1": null,
-	"2": null,
-	"3": null,
-	"4": null,
-	"5": null	
-}
+var active_quest = null  # Only one active quest
 var completed_quests = []
-var quest_progression = null
+var current_stage = 0
 
-# Dictionary to store all quests for game
+# Dictionary to store all quests for the game
 var quests_data: Dictionary = {
 	"SettlingIn" :{
 		"script": "res://Quests/TutorialQuest/settling_in.gd",
-		"type": "1",
-		"stage1": "HavestPlant",
+		"stage1": "HarvestPlant",
 		"stage2": "FeedMonster",
-		"stage3": "ChatNPC",
 	},
 	"TheReaperOfRavenglass" :{
 		"script": "res://Quests/the_reaper_of_ravenglass.gd",
-		"type": "2",
 		"stage1": "ChatNPC",
+		"stage2": "NavigateExpedition",
+		"stage3": "TalkToColin",
 	},
 	"EpicQuest" :{
 		"script": "res://Quests/epic_quest.gd",
-		"type": "3",
 		"stage1": "BrewPotion",
 		"stage2": "StartExpedition",
 		"stage3": "CollectExpedition",
-	},
-	"Quest4Placeholder" :{
-		"script": "",
-		"type": "4",
-		"stage1": "",
-		"stage2": "",
-		"stage3": "",
-	},
-	"Quest5Placeholder" :{
-		"script": "",
-		"type": "5",
-		"stage1": "",
-		"stage2": "",
-		"stage3": "",
 	}
 }
 
@@ -55,59 +33,87 @@ func _ready():
 	quest_display = quest_display_scene.instantiate()
 	get_tree().root.add_child.call_deferred(quest_display)
 
-# Add quest to active quests
+# Add a quest to active quests
 func add_quest(quest_id: String):
+	if active_quest != null:
+		print("A quest is already active. Complete it before starting a new one.")
+		return
+	
 	var quest_data = quests_data.get(quest_id, null)
 	if quest_data == null:
 		print("Quest ID not found: ", quest_id)
 		return
 	
-	var quest_type = quest_data["type"]
-	if active_quests[quest_type] == null:
-		var quest_script = load(quest_data["script"])
-		if quest_script:
-			var quest_instance = quest_script.new()
-			active_quests[quest_type] = quest_instance
-			quest_instance.start_quest()
-			print("Added new quest: ", quest_id, " of type: ", quest_type)
-			update_quest_display(quest_id)
-		else:
-			print("Failed to load quest script: ", quest_data["script"])
-	else:
-		print("A quest of type ", quest_type, " is already active.")
-
-	quest_progression = quest_data["stage1"]
-
-	# NPC can update only when there is a quest active
-#	if quest_type == "chat" and GameManager.npc:
-#		GameManager.npc.update_npc_sprite_based_on_active_quest()
-	if GameManager.npc:
+	var quest_script = load(quest_data["script"])
+	if quest_script:
+		active_quest = quest_script.new()
+		active_quest.start_quest()
+		current_stage = 1
+		update_quest_display()
+		GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json"
+		print("Dialogue file: ", GameManager.npc.dialogue_file)
+		GameManager.npc._load_dialogue()
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
+		print("Started quest: ", quest_id)
+	else:
+		print("Failed to load quest script: ", quest_data["script"])
 
-
-# Method to update the quest display based on active quest
-func update_quest_display(quest_id: String) -> void:
-	var quest = active_quests[quests_data[quest_id]["type"]]
-	if quest:
-		var quest_name = quest.info["QuestDisplayName"]
-		var quest_description = quest.info["QuestDescription"][1]
+# Method to update the quest display
+func update_quest_display() -> void:
+	if active_quest:
+		var quest_name = active_quest.info["QuestDisplayName"]
+		var quest_description = active_quest.info["QuestDescription"][current_stage]
 		quest_display.update_quest(quest_name, quest_description)
 	else:
-		print("Quest data not found for quest ID: ", quest_id)
+		print("No active quest to display.")
 
-# Progress a specific quest
-func progress_quest(quest_type: String, stage: int):
-	if active_quests[quest_type] != null:
-		active_quests[quest_type].progress_quest(stage)
-
-# Complete a specific quest
-func complete_quest(quest_type: String):
-	if active_quests.has(quest_type) and active_quests[quest_type] != null:
-		# Only call the quest's complete_quest method once
-		if completed_quests.has(quest_type):
-			print("Warning: Attempted to complete a quest that is already completed: ", quest_type)
+# Progress the current active quest
+func progress_active_quest():
+	print("progress_active_quest() called...")
+	if active_quest != null:
+		if current_stage < active_quest.max_stage:
+			current_stage += 1
+			print("current_stage: ", current_stage)
+			active_quest.progress_quest(current_stage)
+			update_quest_display()
 		else:
-			active_quests[quest_type].complete_quest()
-			completed_quests.append(quest_type)
-	else:
-		print("Warning: Attempted to complete a quest that is no longer active or does not exist: ", quest_type)
+			complete_active_quest()
+
+# Complete the current active quest
+func complete_active_quest():
+	print("complete_active_quest() called...")
+	if active_quest != null:
+		print("Completing quest: ", active_quest.quest_name)
+		active_quest.complete_quest()
+		completed_quests.append(active_quest.quest_name)
+		if active_quest.max_stage >= current_stage and active_quest. active_quest.quest_name == "SettlingIn":
+			active_quest = null
+			current_stage = 0
+			add_quest("TheReaperOfRavenglass")
+
+		
+# Function to progress quest when chat with NPC
+func on_NPC_chat():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "ChatNPC":
+		print("on_NPC_chat() called, active_quest.stage: ", active_quest.stage)
+		progress_active_quest()
+
+# Function to progress quest when a plant is harvested
+func on_plant_harvested():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "HarvestPlant":
+		progress_active_quest()
+
+# Function to progress quest when a monster is fed
+func on_monster_fed():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "FeedMonster":
+		progress_active_quest()
+
+# Function to progress quest when an expedition is started
+func on_expedition_started():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "StartExpedition":
+		progress_active_quest()
+
+# Function to progress quest when expedition rewards are collected
+func on_expedition_rewards_collected():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "CollectExpedition":
+		progress_active_quest()

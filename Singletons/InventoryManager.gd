@@ -67,6 +67,7 @@ func add_plant_inventory_item(itemName):
 	current_plant_inventory.append(newitem)
 	# Add item to inventory panel
 	invetory_panel_parent.call_deferred("add_child", newitem)
+	QuestManager.on_plant_harvested()
 	return true
 
 func add_potion_inventory_item(itemName):
