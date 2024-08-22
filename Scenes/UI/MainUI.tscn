@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okj4b")
 script = ExtResource("4_68fy0")
-dialogue_file = "res://Quests/Dialogue/DialogueText/Elspeth_Tutorial_Dialogue.json"
+dialogue_file = "res://Quests/Dialogue/DialogueText/Settling_In_Dialogue.json"
 
 [node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
@@ -130,11 +130,12 @@ offset_bottom = 502.0
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.206
-anchor_bottom = 0.206
+anchor_right = 0.11
+anchor_bottom = 0.954
 offset_left = 1.0
 offset_top = 0.013998
-offset_right = 30.0
-offset_bottom = 98.014
+offset_right = -0.0300026
+offset_bottom = 0.0259933
 focus_mode = 0
 action_mode = 0
 texture_normal = ExtResource("6_503of")

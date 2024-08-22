@@ -5,6 +5,8 @@ extends NinePatchRect
 @onready var diet_label = $VBoxContainerLHS/DetailsVBoxContainer/Diet
 @onready var habitat_label = $VBoxContainerLHS/DetailsVBoxContainer/Habitat
 @onready var facts_label = $VBoxContainerLHS/DetailsVBoxContainer/Facts
+
+@onready var notes_label = $VBoxContainerRHS/NotesTitle
 @onready var research_question0_label = $VBoxContainerRHS/ResearchQuestion0
 @onready var research_question1_label = $VBoxContainerRHS/ResearchQuestion1
 @onready var research_question2_label = $VBoxContainerRHS/ResearchQuestion2
@@ -34,6 +36,7 @@ func clear_content():
 	diet_label.text = ""
 	habitat_label.text = ""
 	facts_label.text = ""
+	notes_label.text = ""
 	research_question0_label.text = ""
 	research_answer0_label.text = ""
 	research_question1_label.text = ""
@@ -57,6 +60,9 @@ func validate_nodes() -> bool:
 		return false
 	if facts_label == null:
 		push_error("facts_label node is missing!")
+		return false
+	if notes_label == null:
+		push_error("notes label is missing!")
 		return false
 	if research_question0_label == null:
 		push_error("research_question0_label node is missing!")
@@ -91,16 +97,30 @@ func load_json(json_path: String):
 func display_entry(index: int):
 	var entry = entries[index]
 	
-	name_label.text = entry["name"]
-	print("name_label.text = " + entry["name"])
-	sprite_node.texture = load(entry["sprite"])
-	print("sprite_label.text = " + entry["sprite"])	
-	diet_label.text = "Diet: " + entry["diet"]
-	print("diet_label.text = " + entry["diet"])	
-	habitat_label.text = "Habitat: " + entry["habitat"]
-	print("habitat_label.text = " + entry["habitat"])	
-	facts_label.text = entry["facts"]
-	print("facts_label.text = " + entry["facts"])	
+	if entry["type"] == "monster":
+		name_label.text = entry["name"]
+		print("name_label.text = " + entry["name"])
+		sprite_node.texture = load(entry["sprite"])
+		print("sprite_label.text = " + entry["sprite"])	
+		diet_label.text = "Diet: " + entry["diet"]
+		print("diet_label.text = " + entry["diet"])	
+		habitat_label.text = "Habitat: " + entry["habitat"]
+		print("habitat_label.text = " + entry["habitat"])	
+		facts_label.text = entry["facts"]
+		print("facts_label.text = " + entry["facts"])	
+		notes_label.text = entry["notes"]
+	elif entry["type"] == "quest":
+		name_label.text = entry["name"]
+		print("name_label.text = " + entry["name"])
+		sprite_node.texture = load(entry["sprite"])
+		print("sprite_label.text = " + entry["sprite"])	
+		diet_label.text = ""
+		print("diet_label.text = " + entry["diet"])	
+		habitat_label.text = ""
+		print("habitat_label.text = " + entry["habitat"])	
+		facts_label.text = entry["facts"]
+		print("facts_label.text = " + entry["facts"])	
+		notes_label.text = entry["notes"]
 	
 	var research_tasks = entry["research_tasks"]
 

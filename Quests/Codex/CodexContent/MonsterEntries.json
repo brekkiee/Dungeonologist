@@ -1,10 +1,116 @@
 [
 	{
+		"type": "quest",
+		"name": "Settling In",
+		"sprite": "res://Assets/Sprites/Characters/char_4_Elspeth.png",
+		"diet": "N/A",
+		"habitat": "N/A",
+		"facts": "Quest with Elspeth to get started in the game.",
+		"notes": "Tasks",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Talk with Elspeth",
+				"completion": "You have talked with Elspeth."
+			},
+			{
+				"task_num": 1,
+				"question": "Harvest a plant from the garden",
+				"completion": "You have harvested a plant."
+			},
+			{
+				"task_num": 2,
+				"question": "Feed a monster",
+				"completion": "You have fed a monster."
+			}
+		]
+	},
+	{
+		"type": "quest",
+		"name": "The Reaper of Ravenglass",
+		"sprite": "res://Assets/Sprites/Characters/char_4_Elspeth.png",
+		"diet": "N/A",
+		"habitat": "N/A",
+		"facts": "Quest to learn about expeditions and meet Colin.",
+		"notes": "Tasks",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Talk with Elspeth",
+				"completion": "You have talked with Elspeth."
+			},
+			{
+				"task_num": 1,
+				"question": "Navigate to Expeditions",
+				"completion": "You have navigated to Expeditions."
+			},
+			{
+				"task_num": 2,
+				"question": "Talk with Colin",
+				"completion": "You have talked with Colin."
+			}
+		]
+	},
+	{
+		"type": "quest",
+		"name": "Epic Quest",
+		"sprite": "res://Assets/Sprites/Characters/char_3_Colin.png",
+		"diet": "N/A",
+		"habitat": "N/A",
+		"facts": "Help Colin prove his worth as an adventurer.",
+		"notes": "Tasks",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Brew a potion",
+				"completion": "You have brewed a potion."
+			},
+			{
+				"task_num": 1,
+				"question": "Start an expedition",
+				"completion": "You have started an expedition."
+			},
+			{
+				"task_num": 2,
+				"question": "Collect expedition rewards",
+				"completion": "You have collected the expedition rewards."
+			}
+		]
+	},
+	{
+		"type": "quest",
+		"name": "Placeholder Quest Name",
+		"sprite": "res://Assets/Sprites/Characters/char_0_basic.png",
+		"diet": "N/A",
+		"habitat": "N/A",
+		"facts": "Placeholder quest information.",
+		"notes": "Tasks",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Placeholder stage 1",
+				"completion": "Placeholder completion for stage 1."
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder stage 2",
+				"completion": "Placeholder completion for stage 2."
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder stage 3",
+				"completion": "Placeholder completion for stage 3."
+			}
+		]
+	},
+	{
+		"type": "monster",
 		"name": "Common Slime",
 		"sprite": "res://Assets/Sprites/Monsters/CommonSlime_Happy.png",
 		"diet": "Anything",
 		"habitat": "Plains, Forests, Caves",
 		"facts": "Slimes can be found throughout dungeons all over the world. They can survive and adapt to any type of environment, making them a menace to dungeon ecosystems without adventurers to keep their numbers in check.",
+		"notes": "Notes",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -24,11 +130,13 @@
 		]
 	},
 	{
+		"type": "monster",
 		"name": "Forest Dinglebat",
 		"sprite": "res://Assets/Sprites/Monsters/ForestDinglebat_Happy.png",
 		"diet": "Fruit",
 		"habitat": "Forests",
 		"facts": "Dinglebats are known for their affinity for fruits and can be seen darting between trees in search of their next snack. They are shy creatures, but struggle to hide due to the glowing orb on their head.",
+		"notes": "Notes",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -48,11 +156,13 @@
 		]
 	},
 	{
+		"type": "monster",
 		"name": "Common Shrooman",
 		"sprite": "res://Assets/Sprites/Monsters/CommonShrooman_Happy.png",
 		"diet": "Anything",
 		"habitat": "Forests, Caves",
 		"facts": "Shroomen seem to be able to communicate with others of their species without the need for vocalisations or body language.",
+		"notes": "Notes",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -72,11 +182,13 @@
 		]
 	},
 	{
+		"type": "monster",
 		"name": "Plains Imp",
 		"sprite": "res://Assets/Sprites/Monsters/PlainsImp_Happy.png",
 		"diet": "Meat",
 		"habitat": "Plains",
 		"facts": "Plains imps are mischievous creatures, known for playing pranks on novice adventurers. They live on a diet of meat, yet appear to lack the means to hunt their own prey.",
+		"notes": "Notes",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -96,11 +208,13 @@
 		]
 	},
 	{
+		"type": "monster",
 		"name": "Shallows Jelly",
 		"sprite": "res://Assets/Sprites/Monsters/ShallowsJelly_Happy.png",
 		"diet": "Anything",
 		"habitat": "Coast",
 		"facts": "Shallows jellies have translucent bodies, making them difficult to spot amongst the waves. Some decorate themselves with debris such as shells, coral and seaweed.",
+		"notes": "Notes",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -120,11 +234,13 @@
 		]
 	},
 	{
+		"type": "monster",
 		"name": "Nekomata",
 		"sprite": "res://Assets/Sprites/Monsters/Nekomata_Happy.png",
 		"diet": "Meat",
 		"habitat": "Mountains",
 		"facts": "Nekomata are mysterious creatures, and have a complicated relationship with adventurers. There are multiple accounts of adventurers being rescued from danger by a benevolent nekomata.",
+		"notes": "Notes",
 		"research_tasks": [
 			{
 				"task_num": 0,
