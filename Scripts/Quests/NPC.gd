@@ -14,7 +14,7 @@ extends Control
 @onready var NPCtexture = $NPCTexture
 
 var already_met = false
-var quest_finished = false
+var dialogue_finished = false
 
 var dialogues = {
 	0: [],
@@ -37,7 +37,7 @@ func _ready():
 
 # Method to update the NPC sprite based on the active quest
 func update_npc_sprite_based_on_active_quest():
-	var active_quest = QuestManager.active_quests["chat"]
+	var active_quest = QuestManager.active_quests["1"]
 	
 	if active_quest and active_quest is QuestBase:  # Ensure it’s of the correct type
 		var sprite_path = active_quest.info.NpcSprite
@@ -77,7 +77,7 @@ func _on_button_pressed():
 	if not already_met:
 		_start_chat(dialogues[0])
 		already_met = true
-	elif not quest_finished:
+	elif not dialogue_finished:
 		_start_chat(dialogues[current_dialogue_id])
 	else:
 		# Repeat the final dialogue after the quest is complete
@@ -91,13 +91,10 @@ func _start_chat(dialogue_array: Array):
 	
 # Called when the chat finishes
 func _on_chat_finished():
-	if not quest_finished:
+	if not dialogue_finished:
 		current_dialogue_id += 1
 		if current_dialogue_id == 2:
-			quest_finished = true
-			QuestManager.progress_quest("chat", 2)
-		else:
-			QuestManager.progress_quest("chat", current_dialogue_id)
+			dialogue_finished = true
 
 # Repeat the final dialogue after quest completion
 func repeat_final_dialogue():

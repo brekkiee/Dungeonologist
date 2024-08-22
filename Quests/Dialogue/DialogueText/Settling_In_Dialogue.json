@@ -20,5 +20,6 @@
 	{"chat_num": "1", "name": "Elspeth", "emotion": "informative", "text": "And last but not least, you’ll write down all your findings so we can compile them into The Ultimate Dungeon Field Guide. You see… our findings suggest that we can increase our profits by at least 60% if we equip our adventurers with the appropriate knowledge beforehand. A dead adventurer can’t bring back any loot, after all!"},
 	{"chat_num": "1", "name": "Elspeth", "emotion": "neutral", "text": "Oh, and before I forget, here’s Gertrude’s old codex. If you get stuck, I’d suggest taking a look through her notes and jumping in where she left off."},
 
-	{"chat_num": "2", "name": "Elspeth", "emotion": "confident_2", "text": "Right, I should be getting back now. I’ll check in on you in a day or two to make sure you’re still alive. Cheerio!"}
+	{"chat_num": "2", "name": "Elspeth", "emotion": "confident_2", "text": "Right, I should be getting back now. I’ll check in on you in a day or two to make sure you’re still alive. Cheerio!"},
+	{"chat_num": "2", "name": "Elspeth", "emotion": "informative", "text": "Head over to the garden, harvest a plant, and feed it to one of the monsters by dragging it to a monster"}
 ]

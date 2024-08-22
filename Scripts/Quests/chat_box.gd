@@ -12,9 +12,9 @@ var textToDisplay = ""
 var letter_index = 0
 
 # timing customisation for text display
-@export var letter_time = 0.03
-@export var space_time = 0.06
-@export var punct_time = 0.2
+@export var letter_time = 0.0003
+@export var space_time = 0.0006
+@export var punct_time = 0.0002
 
 signal finished
 

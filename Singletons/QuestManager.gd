@@ -4,35 +4,49 @@ extends Node
 
 var quest_display: Control
 var active_quests = {
-	"chat": null,
-	"garden": null,
-	"alchemy": null,
-	"monster": null,
-	"expedition": null	
+	"1": null,
+	"2": null,
+	"3": null,
+	"4": null,
+	"5": null	
 }
 var completed_quests = []
+var quest_progression = null
 
 # Dictionary to store all quests for game
 var quests_data: Dictionary = {
 	"SettlingIn" :{
 		"script": "res://Quests/TutorialQuest/settling_in.gd",
-		"type": "chat",
+		"type": "1",
+		"stage1": "HavestPlant",
+		"stage2": "FeedMonster",
+		"stage3": "ChatNPC",
 	},
 	"TheReaperOfRavenglass" :{
 		"script": "res://Quests/the_reaper_of_ravenglass.gd",
-		"type": "chat",
+		"type": "2",
+		"stage1": "ChatNPC",
 	},
 	"EpicQuest" :{
 		"script": "res://Quests/epic_quest.gd",
-		"type": "chat",
+		"type": "3",
+		"stage1": "BrewPotion",
+		"stage2": "StartExpedition",
+		"stage3": "CollectExpedition",
 	},
-	"FeedQuest" :{
+	"Quest4Placeholder" :{
 		"script": "",
-		"type": "monster",
+		"type": "4",
+		"stage1": "",
+		"stage2": "",
+		"stage3": "",
 	},
-	"ExpeditionQuest" :{
+	"Quest5Placeholder" :{
 		"script": "",
-		"type": "expedition",
+		"type": "5",
+		"stage1": "",
+		"stage2": "",
+		"stage3": "",
 	}
 }
 
@@ -62,9 +76,14 @@ func add_quest(quest_id: String):
 	else:
 		print("A quest of type ", quest_type, " is already active.")
 
+	quest_progression = quest_data["stage1"]
+
 	# NPC can update only when there is a quest active
-	if quest_type == "chat" and GameManager.npc:
+#	if quest_type == "chat" and GameManager.npc:
+#		GameManager.npc.update_npc_sprite_based_on_active_quest()
+	if GameManager.npc:
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
+
 
 # Method to update the quest display based on active quest
 func update_quest_display(quest_id: String) -> void:

@@ -7,3 +7,9 @@ res://Quests/TutorialQuest/settling_in.gd
 res://Quests/Codex/codex.tscn
 res://Quests/Codex/CodexContent/MonsterEntries.json
 res://Scripts/Quests/codex.gd
+res://Singletons/QuestManager.gd
+res://Scripts/Quests/NPC.gd
+res://Scripts/Quests/chat_box.gd
+res://Quests/Dialogue/DialogueText/Settling_In_Dialogue.json
+res://Scripts/Quests/QuestBase.gd
+res://Singletons/GameManager.gd

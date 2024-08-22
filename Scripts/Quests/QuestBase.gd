@@ -18,6 +18,10 @@ func _init():
 	"QuestDescription": {
 		1: "",
 		2: ""
+	},
+	"QuestProgression": {
+		1: "",
+		2: ""
 	}
 }
 
