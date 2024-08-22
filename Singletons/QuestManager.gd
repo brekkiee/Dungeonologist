@@ -22,9 +22,10 @@ var quests_data: Dictionary = {
 	},
 	"EpicQuest" :{
 		"script": "res://Quests/epic_quest.gd",
-		"stage1": "BrewPotion",
-		"stage2": "StartExpedition",
-		"stage3": "CollectExpedition",
+		"stage1": "ChatNPC",
+		"stage2": "BrewPotion",
+		"stage3": "StartExpedition",
+		"stage4": "CollectExpedition",
 	}
 }
 
@@ -38,21 +39,22 @@ func add_quest(quest_id: String):
 	if active_quest != null:
 		print("A quest is already active. Complete it before starting a new one.")
 		return
-	
+
 	var quest_data = quests_data.get(quest_id, null)
 	if quest_data == null:
 		print("Quest ID not found: ", quest_id)
 		return
-	
+
 	var quest_script = load(quest_data["script"])
 	if quest_script:
 		active_quest = quest_script.new()
 		active_quest.start_quest()
 		current_stage = 1
 		update_quest_display()
-		GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json"
-		print("Dialogue file: ", GameManager.npc.dialogue_file)
-		GameManager.npc._load_dialogue()
+		if quest_id == "TheReaperOfRavenglass":
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json"
+			print("Dialogue file: ", GameManager.npc.dialogue_file)
+			GameManager.npc._load_dialogue()
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		print("Started quest: ", quest_id)
 	else:
@@ -86,16 +88,28 @@ func complete_active_quest():
 		print("Completing quest: ", active_quest.quest_name)
 		active_quest.complete_quest()
 		completed_quests.append(active_quest.quest_name)
-		if active_quest.max_stage >= current_stage and active_quest. active_quest.quest_name == "SettlingIn":
+		
+		GameManager.npc.clear_dialogue()
+		
+		if active_quest.quest_name == "SettlingIn":
 			active_quest = null
 			current_stage = 0
 			add_quest("TheReaperOfRavenglass")
-
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json"
+			GameManager.npc._load_dialogue()
+		elif active_quest.quest_name == "TheReaperOfRavenglass":
+			active_quest = null
+			current_stage = 0
+			add_quest("EpicQuest")
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue.json"
+			GameManager.npc._load_dialogue()
+		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		
 # Function to progress quest when chat with NPC
 func on_NPC_chat():
-	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "ChatNPC":
-		print("on_NPC_chat() called, active_quest.stage: ", active_quest.stage)
+	print("active_quest.stage: ", current_stage)
+	if active_quest.max_stage >= current_stage and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "ChatNPC":
+		print("on_NPC_chat() called, active_quest.stage: ", current_stage)
 		progress_active_quest()
 
 # Function to progress quest when a plant is harvested
@@ -106,6 +120,11 @@ func on_plant_harvested():
 # Function to progress quest when a monster is fed
 func on_monster_fed():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "FeedMonster":
+		progress_active_quest()
+
+# Function to progress quest when a plant is harvested
+func on_potion_brewed():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "BrewPotion":
 		progress_active_quest()
 
 # Function to progress quest when an expedition is started

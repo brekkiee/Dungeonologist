@@ -12,6 +12,6 @@ func _init():
 	
 	quest_name = info["Name"]
 	quest_type = info["Type"]
-	max_stage = 1
+	max_stage = 2
 	
 	start_quest()

@@ -85,6 +85,7 @@ func add_potion_inventory_item(itemName):
 	current_potion_inventory.append(newitem)
 	# Add item to inventory panel
 	invetory_panel_parent.call_deferred("add_child", newitem)
+	QuestManager.on_potion_brewed()
 	return true
 
 # Handle icon click to start following mouse

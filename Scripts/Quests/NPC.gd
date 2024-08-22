@@ -14,15 +14,10 @@ extends Control
 @onready var NPCtexture = $NPCTexture
 
 var already_met = false
-var dialogue_finished = false
-
 var dialogues = {
 	0: [],
-	1: [],
-	2: [],
 }
 var texture_mappings = {}
-var current_dialogue_id = 0
 
 func _ready():
 	if not npc_sprite:
@@ -63,6 +58,7 @@ func update_sprite(texture_path: String):
 
 # Load dialogue from the JSON file
 func _load_dialogue():
+	clear_dialogue()
 	var file = FileAccess.open(dialogue_file, FileAccess.READ) 
 	var content = JSON.parse_string(file.get_as_text())	
 
@@ -70,45 +66,31 @@ func _load_dialogue():
 		if entry.has("texture"):
 			texture_mappings[entry["emotion"]] = entry["texture"]
 		elif entry.has("chat_num"):
-			dialogues[int(entry["chat_num"])].append(entry)
-
+			var chat_num = int(entry["chat_num"])
+			if not dialogues.has(chat_num):
+				dialogues[chat_num] = []
+			dialogues[chat_num].append(entry)
+	print("Dialogue loaded from file:", dialogue_file)
 # Handle button press to start or continue the chat
 func _on_button_pressed():
-	if not already_met:
-		_start_chat(dialogues[0])
-		already_met = true
-	elif not dialogue_finished:
-		_start_chat(dialogues[current_dialogue_id])
+	if DialogueManager.is_chat_active:
+		DialogueManager.advance_text()
+	elif DialogueManager.chat_ended:
+		DialogueManager.close_chat_box()
 	else:
-		# Repeat the final dialogue after the quest is complete
-		repeat_final_dialogue()
-		# Progress quest if the current task is ChatNPC
+		_start_chat(dialogues[0])
 
 # Start a chat session using the provided array
 func _start_chat(dialogue_array: Array):
 	print("Starting chat session...")
 	DialogueManager.start_chat(texture_mappings, dialogue_array)
-	DialogueManager.advance_text()
+#	DialogueManager.advance_text()
 	
 # Called when the chat finishes
 func _on_chat_finished():
-	if not dialogue_finished:
-		current_dialogue_id += 1
-		if current_dialogue_id == 2:
-			dialogue_finished = true
-#	# Check if the current stage of the active quest involves this NPC
-#	if QuestManager.active_quest:
-#		var current_stage_task = QuestManager.quests_data[QuestManager.active_quest.quest_name]["stage" + str(QuestManager.current_stage)]
-#		if current_stage_task == "ChatNPC":
-#			QuestManager.progress_active_quest()
-
-# Repeat the final dialogue after quest completion
-func repeat_final_dialogue():
-	var final_dialogue_stage = dialogues[2] # Use the last dialogue
-	DialogueManager.start_chat(texture_mappings, final_dialogue_stage)
-	DialogueManager.advance_text()
+	# When chat finished, player can click again to replay chat or progress quest
 	QuestManager.on_NPC_chat()
-	
+	print("Chat finished.")
 	
 # Method to handle the emotion change and update the sprite
 func _on_emotion_changed(emotion: String):
@@ -117,3 +99,10 @@ func _on_emotion_changed(emotion: String):
 		update_sprite(texture_path)
 	else:
 		print("No texture found for emotion: ", emotion)
+
+func clear_dialogue():
+	dialogues = {
+		0: [],
+	}
+	DialogueManager.close_chat_box()
+	print("Dialogue cleared and chat box closed")

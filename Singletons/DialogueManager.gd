@@ -7,6 +7,7 @@ var chat_box: Control = null
 var chat_box_pos: Vector2 = Vector2(350, 400)
 var is_chat_active = false
 var can_advance_line = false
+var chat_ended = false
 var texture_mappings: Dictionary
 
 signal chat_finished
@@ -15,20 +16,26 @@ signal chat_finished
 func start_chat(emotions: Dictionary, lines: Array):
 	if is_chat_active:
 		return # Exit if chat is already active
-		
+	
+	# Remove existing chat box
+	if chat_box and chat_box.is_inside_tree():
+		chat_box.queue_free()
+	
 	current_line_index = 0
 	chat_lines = lines
 	texture_mappings = emotions
 	_instantiate_chat_box()
 	is_chat_active = true
+	chat_ended = false
 
-# set up new chat box scene
+# Set up new chat box scene
 func _instantiate_chat_box():
 	chat_box = chat_box_scene.instantiate()
 	var scene_spawn_point = get_node("/root/Header/UI")
 	
 	# Connect signal to handle when the chat box is ready for the next line
-	chat_box.finished.connect(_on_chat_box_finished)
+	if not chat_box.finished.is_connected(_on_chat_box_finished):
+		chat_box.finished.connect(_on_chat_box_finished)
 	
 	# Add chat box to the UI and set its position
 	scene_spawn_point.add_child(chat_box)
@@ -51,24 +58,29 @@ func _display_current_line():
 
 # Enable advancing to next line when chat box finishes current line
 func _on_chat_box_finished():
-	print("chatbox finished")
+	print("Chatbox finished")
 	can_advance_line = true
 
 func advance_text():
 	if is_chat_active and can_advance_line:
-		chat_box.queue_free()
 		current_line_index += 1
-		if current_line_index >= (chat_lines.size()):
-			_end_chat() 
+		if current_line_index >= chat_lines.size():
+			_end_chat()
 		else:
-			_instantiate_chat_box()
+			_display_current_line()
 	else:
 		print("Cannot advance line. Chat active:", is_chat_active, "Can advance line:", can_advance_line)
 
 # End the current chat session with NPC
 func _end_chat():
 	is_chat_active = false
-	print("Chat no longer active")
 	current_line_index = 0 # Resets the line index
-	# Emit signal to let NPC.gd know the chat has finished
+	chat_ended = true
 	emit_signal("chat_finished")
+
+# Method to close the chat box if the player clicks the NPC after the chat ends
+func close_chat_box():
+	if chat_box:
+		chat_box.queue_free()
+		chat_box = null
+		chat_ended = false

@@ -17,3 +17,5 @@ res://Singletons/InventoryManager.gd
 res://Scripts/Enclosure/MonsterBase.gd
 res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json
 res://Quests/the_reaper_of_ravenglass.gd
+res://Singletons/DialogueManager.gd
+res://Quests/epic_quest.gd
