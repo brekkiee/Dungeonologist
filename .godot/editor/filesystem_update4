@@ -1,10 +1,9 @@
 res://Scenes/UI/ExpeditionsUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/UI/expedition_button.gd
-res://Scenes/UI/ExpeditionBagPopUp.tscn
-res://Scenes/Windows/expeditions.tscn
 res://Scenes/Windows/monster_enclosure.tscn
-res://Singletons/InventoryManager.gd
-res://Scripts/Enclosure/monster_enclosure.gd
-res://Singletons/GameManager.gd
+res://Scenes/UI/StartMenuUI.tscn
+res://Scripts/UI/start_menu.gd
+res://Scenes/Windows/start_menu.tscn
+res://Scenes/UI/ExpeditionBagPopUp.tscn
+res://Scenes/UI/expedition_button.gd

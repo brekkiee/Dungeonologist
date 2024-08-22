@@ -294,7 +294,6 @@ texture = ExtResource("5_kluyw")
 stretch_mode = 5
 
 [node name="ExpeditionBagPopUp" parent="." instance=ExtResource("6_gqrnp")]
-visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1

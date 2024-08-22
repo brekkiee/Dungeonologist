@@ -1,9 +1,10 @@
+Camera2D
+TextureRect
 CollisionShape2D
 AnimatedSprite2D
 Timer
 Button
 MarginContainer
-TextureRect
 PanelContainer
 HBoxContainer
 VBoxContainer
