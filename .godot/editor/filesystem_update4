@@ -1,5 +1,7 @@
 res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Singletons/QuestManager.gd
 res://Scenes/UI/ExpeditionBagPopUp.tscn
+res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue.json
+res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json
+res://Quests/Dialogue/DialogueText/Settling_In_Dialogue.json

@@ -4,11 +4,11 @@
 	{"emotion": "impressed", "texture": "res://Assets/Sprites/Dialogue/Elspeth/impressed.png"},
 
 	{"chat_num": "0", "name": "Elspeth", "emotion": "confident_2", "text": "Yoohoo~ I’m back!"},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "informative", "text": "Looks like everything is still alive, so I’d say you’re doing a fine job..."},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "impressed", "text": "Anyhoo… You’re probably wondering how you’re supposed to get new research samples..."},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "informative", "text": "This is the expedition board. Here, you can send adventurers out on expeditions into the dungeon to bring back loot..."},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "confident", "text": "And if you were looking for something to do with all those potions..."},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "impressed", "text": "Oh, silly me! You haven’t met any of our adventurers yet, have you?..."},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "informative", "text": "Alright, I’ll send over one of our uh… top adventurers. You may not be able to tell when you meet him, but he has a lot of potential..."},
-	{"chat_num": "0", "name": "Elspeth", "emotion": "impressed", "text": "There’s a mountain of paperwork with my name on it back at the guild, so I’ll get back to the grind..."}
+	{"chat_num": "0", "name": "Elspeth", "emotion": "informative", "text": "Looks like everything is still alive, so I’d say you’re doing a fine job. Wait… is that one supposed to do that?"},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "impressed", "text": "Anyhoo… You’re probably wondering how you’re supposed to get new research samples. I was supposed to cover it in your induction, but it completely slipped my mind in all the excitement."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "informative", "text": "This is the expedition board. Here, you can send adventurers out on expeditions into the dungeon to bring back loot- oops! I mean “samples”."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "confident", "text": "And if you were looking for something to do with all those potions I assume you’ve been brewing, I'd suggest giving them to one of your adventurer friends. The safer their dungeon trip, the more loot they’ll bring back for you, after all."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "impressed", "text": "Oh, silly me! You haven’t met any of our adventurers yet, have you? My bad, I should’ve expected you’d be as introverted as old Gertrude."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "informative", "text": "Alright, I’ll send over one of our uh… top adventurers. You may not be able to tell when you meet him, but he has a lot of potential... or enthusiasm, at least. And he’s free. That’s the important part."},
+	{"chat_num": "0", "name": "Elspeth", "emotion": "impressed", "text": "There’s a mountain of paperwork with my name on it back at the guild, so I’ll get back to the grind. Colin, the adventurer I just mentioned, will pop round later. Be nice. Ta-ta!"}
 ]
