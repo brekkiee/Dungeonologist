@@ -1,5 +1,12 @@
 res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Quests/Codex/CodexContent/MonsterEntries.json
 res://Quests/Codex/codex.tscn
+res://Scenes/UI/ExpeditionsUI.tscn
+res://Scenes/Windows/alchemy_lab.tscn
+res://Scenes/Windows/expeditions.tscn
+res://Scenes/Windows/garden.tscn
+res://Scenes/Windows/start_menu.tscn
+res://Scenes/Windows/monster_enclosure.tscn
+res://Scenes/UI/MainUI.tscn
+res://Scenes/UI/ExpeditionBagPopUp.tscn
