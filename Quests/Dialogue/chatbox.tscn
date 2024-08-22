@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Quests/chat_box.gd" id="1_dd7n4"]
 [ext_resource type="Texture2D" uid="uid://cm6rsa7rb4fbi" path="res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png" id="2_37don"]
 [ext_resource type="Texture2D" uid="uid://crrsusxwkce01" path="res://Assets/Sprites/Dialogue/chatboxNew.png" id="3_02a0v"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="4_mef2a"]
+[ext_resource type="FontFile" uid="uid://ciuho8q8n4oes" path="res://Assets/Fonts/8bitlimr.ttf" id="4_qoprj"]
 
 [node name="Dialogue" type="Control" node_paths=PackedStringArray("chat", "character_name", "scroll_container")]
 z_index = 100
@@ -37,13 +37,14 @@ region_rect = Rect2(0, 0, 76, 39)
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 28.0
-offset_right = 212.0
-offset_bottom = 52.0
+offset_left = 69.9873
+offset_top = 42.1578
+offset_right = 211.987
+offset_bottom = 66.1578
 scale = Vector2(3.608, 3.608)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_mef2a")
+theme_override_fonts/normal_font = ExtResource("4_qoprj")
+theme_override_font_sizes/normal_font_size = 15
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
 layout_mode = 1
@@ -64,8 +65,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_mef2a")
-theme_override_font_sizes/normal_font_size = 75
+theme_override_fonts/normal_font = ExtResource("4_qoprj")
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 scroll_following = true
 

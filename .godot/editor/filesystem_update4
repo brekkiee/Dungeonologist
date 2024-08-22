@@ -2,3 +2,5 @@ res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Quests/Codex/codex.tscn
+res://Quests/Dialogue/chatbox.tscn
+res://Quests/Dialogue/DialogueText/Elspeth_Tutorial_Dialogue.json
