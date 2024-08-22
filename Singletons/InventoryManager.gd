@@ -20,7 +20,8 @@ var all_Items_list: Dictionary = {
 	"berry_item": preload("res://Assets/Sprites/InventoryIcons/berry_item.png"),
 	"mushroom_item": preload("res://Assets/Sprites/InventoryIcons/mushroom_item.png"),
 	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_item.png"), 
-	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png") 
+	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png"),
+	"common_slime_item": preload("res://Assets/Sprites/InventoryIcons/common_slime_item.png")
 }
 # Tracks items in cauldron inventory
 var current_cauldron_inventory = []
@@ -90,7 +91,6 @@ func add_potion_inventory_item(itemName):
 
 # Handle icon click to start following mouse
 func icon_clicked(Icon):
-	if item_mouse_follow == null:
 		Icon.get_node("Button").visible = false
 		item_mouse_follow = Icon
 

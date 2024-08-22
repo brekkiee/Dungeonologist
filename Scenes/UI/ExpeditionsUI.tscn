@@ -1,13 +1,178 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmu3k3gncmnnf"]
+[gd_scene load_steps=33 format=3 uid="uid://dmu3k3gncmnnf"]
 
 [ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="1_xh8jr"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_hpsj0"]
 [ext_resource type="Texture2D" uid="uid://dn6rnop0smibm" path="res://Assets/Sprites/Tools/tool_Clipboard_0.png" id="3_ejiw1"]
 [ext_resource type="Texture2D" uid="uid://d1c40ye0c7wjs" path="res://Assets/Sprites/Tools/tool_Clipboard_1.png" id="4_sx3sn"]
 [ext_resource type="Texture2D" uid="uid://bwbct4qg7yio4" path="res://Assets/Sprites/Characters/char_3_Colin.png" id="5_kluyw"]
+[ext_resource type="Script" path="res://Scenes/UI/expedition_button.gd" id="5_p64fo"]
+[ext_resource type="PackedScene" uid="uid://tfr5aen1tpy" path="res://Scenes/UI/ExpeditionBagPopUp.tscn" id="6_gqrnp"]
+[ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="8_i017s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
 texture = ExtResource("1_xh8jr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqtug"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 0, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdtkf"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 25, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3mhw"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 50, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7fxo"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 75, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpco5"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 100, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7hn5"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 125, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k4lq"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 150, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86dhq"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 175, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0a21"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 200, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weo1r"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 225, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3fpb"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 250, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jooib"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 275, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu4g4"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 300, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vsar"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 325, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jljr"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 350, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n0o3"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 375, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gwql"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 400, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df572"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 425, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsvp2"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 450, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvtv5"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 475, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42qj5"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 500, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcpji"]
+atlas = ExtResource("8_i017s")
+region = Rect2(0, 525, 112, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nvi6"]
+animations = [{
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_rqtug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdtkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3mhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7fxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpco5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7hn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k4lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86dhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0a21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weo1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3fpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jooib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu4g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vsar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jljr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n0o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gwql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df572")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsvp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvtv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42qj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcpji")
+}],
+"loop": true,
+"name": &"adventuring",
+"speed": 5.0
+}]
 
 [node name="ExpeditionsUI" type="Control"]
 layout_mode = 3
@@ -23,11 +188,12 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.235
+anchor_right = 0.988
 anchor_bottom = 1.0
-offset_left = 271.0
-offset_right = -14.0
+offset_left = 0.279968
+offset_right = -0.176025
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rl8gd")
@@ -61,13 +227,17 @@ theme_override_constants/margin_bottom = 50
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Expedition Button" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Expedition Button" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("expedition_bag_popup", "adventurer_portrait", "adventure_animation")]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_ejiw1")
 texture_pressed = ExtResource("4_sx3sn")
 texture_hover = ExtResource("4_sx3sn")
 stretch_mode = 5
+script = ExtResource("5_p64fo")
+expedition_bag_popup = NodePath("../../../../../../ExpeditionBagPopUp")
+adventurer_portrait = NodePath("ColorRect/MarginContainer/VBoxContainer/Adventurer Portrait")
+adventure_animation = NodePath("../../../../../../ExpeditionAnimSprite2D")
 
 [node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button"]
 layout_mode = 1
@@ -122,3 +292,38 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_kluyw")
 stretch_mode = 5
+
+[node name="ExpeditionBagPopUp" parent="." instance=ExtResource("6_gqrnp")]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77
+anchor_top = 0.421
+anchor_right = 0.905
+anchor_bottom = 0.665
+offset_left = -0.0400391
+offset_top = 0.191986
+offset_right = 155.44
+offset_bottom = 158.08
+scale = Vector2(0.5, 0.5)
+
+[node name="StartExpeditionButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 888.0
+offset_top = 190.0
+offset_right = 1046.0
+offset_bottom = 246.0
+text = "Start Expedition"
+
+[node name="ExpeditionAnimSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(697, 417)
+scale = Vector2(4.29, 4.29)
+sprite_frames = SubResource("SpriteFrames_1nvi6")
+animation = &"adventuring"
+autoplay = "adventuring"
+frame_progress = 0.958615
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" to="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" method="_on_pressed"]
+[connection signal="pressed" from="StartExpeditionButton" to="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" method="_on_start_expedition_button_pressed"]

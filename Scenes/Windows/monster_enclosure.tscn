@@ -29,6 +29,7 @@ scale = Vector2(2.316, 2.316)
 texture = ExtResource("1_jnx0s")
 
 [node name="MonsterSpawnPoint1" type="Node2D" parent="."]
+visible = false
 position = Vector2(484, 481)
 
 [node name="CommonSlime" parent="MonsterSpawnPoint1" instance=ExtResource("2_46yxq")]

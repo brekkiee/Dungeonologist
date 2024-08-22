@@ -10,6 +10,7 @@ var scenes: Dictionary = {}
 @onready var expedition_scene = preload("res://Scenes/Windows/expeditions.tscn")
 
 @onready var npc: Control = null
+@onready var found_monster: Node2D = null
 @onready var scene_spawn_point: Node2D = null
 @onready var start_menu: Node = get_node("/root/StartMenu")
 @onready var pause_menu: Control = null
@@ -29,7 +30,6 @@ func _ready():
 	print("MainWindow added to the scene tree.")
 	
 	npc = main_window.get_node("UI/MainUI/MainScreen/ScreenBorders/ChatWindow/Character")
-	
 	# Get the PauseMenu node from MainWindow
 	pause_menu = main_window.get_node("PauseMenu")
 	if pause_menu:
@@ -62,6 +62,20 @@ func start_game():
 	# Switch to the monster enclosure scene
 	change_scene("MonsterEnclosure")
 	
+	# Assign found_monster variable after the MonsterEnclosure scene is instantiated
+	assign_found_monster()
+	
+# Method to assign the found_monster variable after the scene is loaded
+func assign_found_monster():
+	if current_scene:
+		found_monster = current_scene.get_node("MonsterSpawnPoint1")  # Adjust path to match your node structure
+		if found_monster:
+			print("found_monster variable assigned successfully.")
+		else:
+			print("Failed to find the monster node in MonsterEnclosure.")
+	else:
+		print("MonsterEnclosure scene not instantiated yet.")
+
 # Change sub scene based on input scene_name
 func change_scene(scene_name: String):
 	if current_scene == null or scene_name != current_scene.name:

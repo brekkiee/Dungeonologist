@@ -1,3 +1,5 @@
+res://Assets/Sprites/Expeditions
+res://Singletons
 res://Quests/Dialogue/DialogueText
 res://Scenes/Windows
 res://Assets/Sprites/Emotes
@@ -10,6 +12,5 @@ res://Assets/Sprites/Monsters
 res://Scripts/Enclosure
 res://Assets/Monsters
 res://Assets/Sprites
-res://Singletons
 res://Assets
 res://Assets/Animations
