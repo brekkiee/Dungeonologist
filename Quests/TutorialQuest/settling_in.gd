@@ -7,8 +7,9 @@ func _init():
 	info["NpcSprite"] = "res://Assets/Sprites/Characters/char_4_Elspeth.png"
 	info["QuestDisplayName"] = "Settling In"
 	info["QuestDescription"] = {
-		1: "Harvest a plant from the garden.",
-		2: "Feed a monster",
+		1: "Talk with Elspeth.",
+		2: "Harvest a plant from the garden.",
+		3: "Feed a monster",
 	}
 #	info["QuestProgression"] = {
 #		1: "HarvestPlant",
@@ -18,6 +19,6 @@ func _init():
 	
 	quest_name = info["Name"]
 	quest_type = info["Type"]
-	max_stage = 3
+	max_stage = 4
 	
 	start_quest()

@@ -11,8 +11,9 @@ var current_stage = 0
 var quests_data: Dictionary = {
 	"SettlingIn" :{
 		"script": "res://Quests/TutorialQuest/settling_in.gd",
-		"stage1": "HarvestPlant",
-		"stage2": "FeedMonster",
+		"stage1": "ChatNPC",
+		"stage2": "HarvestPlant",
+		"stage3": "FeedMonster",
 	},
 	"TheReaperOfRavenglass" :{
 		"script": "res://Quests/the_reaper_of_ravenglass.gd",
@@ -110,6 +111,7 @@ func on_NPC_chat():
 	print("active_quest.stage: ", current_stage)
 	if active_quest.max_stage >= current_stage and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "ChatNPC":
 		print("on_NPC_chat() called, active_quest.stage: ", current_stage)
+		GameManager.npc.update_sprite("res://Assets/Sprites/Characters/char_7_blank.png")
 		progress_active_quest()
 
 # Function to progress quest when a plant is harvested
