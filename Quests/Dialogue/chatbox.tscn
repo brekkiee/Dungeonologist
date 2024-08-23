@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Quests/chat_box.gd" id="1_dd7n4"]
 [ext_resource type="Texture2D" uid="uid://cm6rsa7rb4fbi" path="res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png" id="2_37don"]
-[ext_resource type="Texture2D" uid="uid://crrsusxwkce01" path="res://Assets/Sprites/Dialogue/chatboxNew.png" id="3_02a0v"]
+[ext_resource type="Texture2D" uid="uid://cj32w87ulmafe" path="res://Assets/Sprites/Dialogue/textbox.png" id="3_mjs1g"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="4_djoah"]
 
 [node name="Dialogue" type="Control" node_paths=PackedStringArray("chat", "character_name", "scroll_container")]
@@ -18,33 +18,34 @@ scroll_container = NodePath("NinePatchRect/ScrollContainer")
 
 [node name="NPCTexture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -497.0
-offset_top = -979.0
-offset_right = 2235.0
-offset_bottom = 1069.0
+offset_left = -625.954
+offset_top = -1086.51
+offset_right = 2106.05
+offset_bottom = 961.486
 scale = Vector2(0.741, 0.741)
 mouse_filter = 2
 texture = ExtResource("2_37don")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 215.0
-offset_top = 24.0
-offset_right = 1566.0
-offset_bottom = 462.0
-texture = ExtResource("3_02a0v")
-region_rect = Rect2(0, 0, 76, 39)
+offset_left = 53.0
+offset_top = -79.0
+offset_right = 1651.0
+offset_bottom = 409.0
+texture = ExtResource("3_mjs1g")
+region_rect = Rect2(0, 0, 308, 98)
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 28.0
-offset_right = 212.0
-offset_bottom = 52.0
+offset_left = 66.5928
+offset_top = 15.3868
+offset_right = 208.593
+offset_bottom = 39.3868
 scale = Vector2(3.608, 3.608)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_djoah")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 15
+text = "Name"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
 layout_mode = 1
@@ -53,10 +54,10 @@ anchor_left = 0.063
 anchor_top = 0.269
 anchor_right = 0.973
 anchor_bottom = 0.938
-offset_left = -0.112999
-offset_top = 0.177986
-offset_right = -0.523071
-offset_bottom = 0.155975
+offset_left = -29.5638
+offset_top = -24.4018
+offset_right = -29.9738
+offset_bottom = -24.4238
 follow_focus = true
 horizontal_scroll_mode = 0
 
@@ -68,6 +69,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_djoah")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
+text = "Text"
 scroll_following = true
 
 [node name="Timer" type="Timer" parent="."]
