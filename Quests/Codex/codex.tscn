@@ -160,13 +160,6 @@ bbcode_enabled = true
 text = "???"
 fit_content = true
 
-[node name="Button" type="Button" parent="VBoxContainerRHS/CenterContainer1/ResearchAnswer1"]
-layout_mode = 0
-offset_left = -3.99994
-offset_top = -1.0
-offset_right = 293.0
-offset_bottom = 91.0
-
 [node name="ResearchQuestion2" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
 size_flags_vertical = 0

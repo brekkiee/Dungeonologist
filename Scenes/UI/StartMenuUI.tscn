@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqbciq3ldcgs8"]
+[gd_scene load_steps=5 format=3 uid="uid://cqbciq3ldcgs8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/start_menu.gd" id="1_dl8wi"]
 [ext_resource type="Texture2D" uid="uid://b0422noucukd3" path="res://Assets/Sprites/UI/splashart.png" id="2_x1xi7"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_t2lgr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxmlv"]
 
@@ -45,21 +46,27 @@ anchor_left = 0.277
 anchor_top = 0.327
 anchor_right = 0.708
 anchor_bottom = 0.759
-offset_left = -0.104004
-offset_top = 0.103989
-offset_right = 0.383972
-offset_bottom = 0.167969
+offset_left = 155.896
+offset_top = 304.104
+offset_right = -123.616
+offset_bottom = 319.168
 
 [node name="StartButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t2lgr")
+theme_override_font_sizes/font_size = 27
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t2lgr")
+theme_override_font_sizes/font_size = 25
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t2lgr")
+theme_override_font_sizes/font_size = 25
 text = "Exit"
 
 [connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/StartButton" to="." method="_on_start_button_pressed"]

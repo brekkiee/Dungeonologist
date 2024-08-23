@@ -14,3 +14,6 @@ res://Scenes/Windows/monster_enclosure.tscn
 res://Singletons/QuestManager.gd
 res://Scenes/Windows/expeditions.tscn
 res://Scripts/Quests/OnSceneChangeTrigger.gd
+res://Quests/Codex/CodexContent/MonsterEntries.json
+res://Scenes/UI/PauseMenu.tscn
+res://Quests/TutorialQuest/settling_in.gd

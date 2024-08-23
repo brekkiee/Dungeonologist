@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://mkicu74u48ty"]
+[gd_scene load_steps=4 format=3 uid="uid://mkicu74u48ty"]
 
 [ext_resource type="Script" path="res://Scripts/UI/pause_menu.gd" id="1_0libc"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_rrwx8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
@@ -29,26 +30,34 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_j37hr")
 
 [node name="ButtonGridContainer" type="VBoxContainer" parent="PauseMenuScreen"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.277
-anchor_top = 0.327
-anchor_right = 0.708
-anchor_bottom = 0.759
-offset_left = 91.896
-offset_top = 0.103989
-offset_right = 92.384
-offset_bottom = 0.167999
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -50.5
+offset_right = 48.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ResumeButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rrwx8")
+theme_override_font_sizes/font_size = 25
 text = "Resume"
 
 [node name="MainMenuButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rrwx8")
+theme_override_font_sizes/font_size = 25
 text = "Main Menu"
 
 [node name="ExitButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rrwx8")
+theme_override_font_sizes/font_size = 25
 text = "Exit"
 
 [connection signal="pressed" from="PauseMenuScreen/ButtonGridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

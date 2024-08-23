@@ -141,22 +141,6 @@ action_mode = 0
 texture_normal = ExtResource("6_503of")
 stretch_mode = 0
 
-[node name="QuestBook" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
-modulate = Color(0.65098, 0, 0.282353, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.206
-anchor_right = 0.11
-anchor_bottom = 0.954
-offset_left = 44.0
-offset_top = 0.0139999
-offset_right = 42.97
-offset_bottom = 0.0259933
-focus_mode = 0
-action_mode = 0
-texture_normal = ExtResource("6_503of")
-stretch_mode = 0
-
 [node name="Drawers" type="TextureRect" parent="MainScreen/ScreenBorders"]
 visible = false
 z_index = 5
@@ -255,5 +239,4 @@ texture = ExtResource("18_ex3na")
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
-[connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/QuestBook" to="." method="_on_quest_book_pressed"]
 [connection signal="gui_input" from="InventoryPanel/SlidingDrawer/DrawerHandle" to="InventoryPanel/SlidingDrawer" method="_on_texture_rect_gui_input"]

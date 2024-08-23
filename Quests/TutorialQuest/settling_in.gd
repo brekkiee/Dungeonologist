@@ -7,8 +7,8 @@ func _init():
 	info["NpcSprite"] = "res://Assets/Sprites/Characters/char_4_Elspeth.png"
 	info["QuestDisplayName"] = "Settling In"
 	info["QuestDescription"] = {
-		1: "Talk with Elspeth.",
-		2: "Harvest a plant from the garden.",
+		1: "Talk with Elspeth",
+		2: "Harvest a plant from the garden",
 		3: "Feed a monster",
 	}
 #	info["QuestProgression"] = {
