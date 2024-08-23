@@ -1,0 +1,83 @@
+[
+	{
+		"type": "quest",
+		"name": "Settling In",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"stage": "Talk with Elspeth",
+			},
+			{
+				"task_num": 1,
+				"stage": "Harvest a plant from the garden",
+			},
+			{
+				"task_num": 2,
+				"stage": "Feed a monster",
+			}
+		]
+	},
+	{
+		"type": "quest",
+		"name": "The Reaper of Ravenglass",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Talk with Elspeth",
+				"completion": "You have talked with Elspeth."
+			},
+			{
+				"task_num": 1,
+				"question": "Navigate to Expeditions",
+				"completion": "You have navigated to Expeditions."
+			},
+			{
+				"task_num": 2,
+				"question": "Talk with Colin",
+				"completion": "You have talked with Colin."
+			}
+		]
+	},
+	{
+		"type": "quest",
+		"name": "Epic Quest",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Brew a potion",
+				"completion": "You have brewed a potion."
+			},
+			{
+				"task_num": 1,
+				"question": "Start an expedition",
+				"completion": "You have started an expedition."
+			},
+			{
+				"task_num": 2,
+				"question": "Collect expedition rewards",
+				"completion": "You have collected the expedition rewards."
+			}
+		]
+	},
+	{
+		"type": "quest",
+		"name": "Placeholder Quest Name",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "Placeholder stage 1",
+				"completion": "Placeholder completion for stage 1."
+			},
+			{
+				"task_num": 1,
+				"question": "Placeholder stage 2",
+				"completion": "Placeholder completion for stage 2."
+			},
+			{
+				"task_num": 2,
+				"question": "Placeholder stage 3",
+				"completion": "Placeholder completion for stage 3."
+			}
+		]
+	},
+]

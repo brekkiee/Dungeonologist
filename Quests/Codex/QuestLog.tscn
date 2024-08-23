@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4lvsnq5ef3lw"]
+[gd_scene load_steps=5 format=3 uid="uid://cyb7gvar0dbjg"]
 
-[ext_resource type="Texture2D" uid="uid://d28bwulw4xhwg" path="res://Assets/Sprites/Codex/Codex.png" id="2_4r81q"]
-[ext_resource type="Script" path="res://Scripts/Quests/codex.gd" id="2_shked"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
-[ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="3_vewcg"]
-[ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
+[ext_resource type="Texture2D" uid="uid://d28bwulw4xhwg" path="res://Assets/Sprites/Codex/Codex.png" id="1_rmlkl"]
+[ext_resource type="Script" path="res://Scripts/Quests/QuestLog.gd" id="2_88bkw"]
+[ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="3_l4ji7"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="5_v7ryb"]
 
-[node name="NinePatchRect" type="NinePatchRect"]
+[node name="NinePatchRect" type="NinePatchRect" node_paths=PackedStringArray("QuestName", "Stage")]
 anchors_preset = -1
 anchor_left = 0.266
 anchor_top = 0.005
@@ -16,8 +15,10 @@ offset_left = 0.567993
 offset_top = -0.24
 offset_right = -0.0721436
 offset_bottom = -0.288025
-texture = ExtResource("2_4r81q")
-script = ExtResource("2_shked")
+texture = ExtResource("1_rmlkl")
+script = ExtResource("2_88bkw")
+QuestName = NodePath("VBoxContainerLHS/QuestName")
+Stage = NodePath("VBoxContainerLHS/CenterContainer0/QuestObjective")
 
 [node name="VBoxContainerLHS" type="VBoxContainer" parent="."]
 clip_contents = true
@@ -35,88 +36,80 @@ offset_bottom = -5.20001
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_fonts/normal_font = ExtResource("3_l4ji7")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[center]Monster Name[/center]"
+text = "[center]Active Quests[/center]"
 fit_content = true
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerLHS"]
-clip_contents = true
+[node name="QuestName" type="RichTextLabel" parent="VBoxContainerLHS"]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.67
-
-[node name="EntrySprite2D" type="TextureRect" parent="VBoxContainerLHS/CenterContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(220, 245)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("4_lbd4c")
-expand_mode = 5
-
-[node name="DetailsVBoxContainer" type="VBoxContainer" parent="VBoxContainerLHS"]
-clip_contents = true
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Diet" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
-layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_fonts/normal_font = ExtResource("3_l4ji7")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "Diet: Anything"
+text = "QuestName"
 fit_content = true
 
-[node name="Habitat" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
+[node name="CenterContainer0" type="CenterContainer" parent="VBoxContainerLHS"]
+clip_contents = true
 layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.33
+size_flags_vertical = 0
+
+[node name="QuestObjective" type="RichTextLabel" parent="VBoxContainerLHS/CenterContainer0"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
-text = "Habitat: Forests, Caves"
 fit_content = true
 
-[node name="Facts" type="RichTextLabel" parent="VBoxContainerLHS/DetailsVBoxContainer"]
+[node name="ResearchQuestion1" type="RichTextLabel" parent="VBoxContainerLHS"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
-text = "Shroomen seem to be able to communicate with others of their species without the need for vocalisations or body language."
+fit_content = true
+
+[node name="ResearchQuestion2" type="RichTextLabel" parent="VBoxContainerLHS"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
+bbcode_enabled = true
 fit_content = true
 
 [node name="VBoxContainerRHS" type="VBoxContainer" parent="."]
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.531
-anchor_top = 0.133
-anchor_right = 0.969
+anchor_left = 0.069
+anchor_top = 0.125
+anchor_right = 0.444
 anchor_bottom = 0.917
-offset_left = 0.199982
-offset_top = 0.199997
-offset_right = -0.200012
-offset_bottom = -0.200012
+offset_left = 385.8
+offset_right = 385.8
+offset_bottom = -5.20001
 
-[node name="NotesTitle" type="RichTextLabel" parent="VBoxContainerRHS"]
-custom_minimum_size = Vector2(0, 50)
+[node name="Name" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_fonts/normal_font = ExtResource("3_l4ji7")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[center]Notes[/center]"
+text = "[center]Completed Quests[/center]"
 fit_content = true
 
 [node name="ResearchQuestion0" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_fonts/normal_font = ExtResource("3_l4ji7")
 bbcode_enabled = true
-text = "How do Shroomen communicate?"
+text = "QuestObjective"
 fit_content = true
 
 [node name="CenterContainer0" type="CenterContainer" parent="VBoxContainerRHS"]
@@ -128,21 +121,23 @@ size_flags_vertical = 0
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
 text = "It appears they communicate through a network of fungal threads that spread underground. I wonder how far they can go?"
 fit_content = true
 
 [node name="Button" type="Button" parent="VBoxContainerRHS/CenterContainer0/ResearchAnswer0"]
 layout_mode = 0
-offset_right = 297.0
-offset_bottom = 92.0
+offset_left = 270.0
+offset_top = -22.0
+offset_right = 567.0
+offset_bottom = 70.0
 
 [node name="ResearchQuestion1" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
 fit_content = true
 
@@ -155,7 +150,7 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
 text = "???"
 fit_content = true
@@ -171,7 +166,7 @@ offset_bottom = 91.0
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
 fit_content = true
 
@@ -184,7 +179,7 @@ custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_pdsf2")
+theme_override_fonts/normal_font = ExtResource("5_v7ryb")
 bbcode_enabled = true
 text = "???
 "

@@ -128,18 +128,21 @@ func display_entry(index: int):
 	if research_tasks.size() > 0:
 		research_question0_label.text = research_tasks[0]["question"]
 		research_answer0_label.text = research_tasks[0]["completion"]
+		research_answer0_label.visible = false
 		print("research_question0_label.text = " + research_tasks[0]["question"])
 		print("research_answer0_label.text = " + research_tasks[0]["completion"])
 
 	if research_tasks.size() > 1:
 		research_question1_label.text = research_tasks[1]["question"]
 		research_answer1_label.text = research_tasks[1]["completion"]
+		research_answer1_label.visible = false
 		print("research_question1_label.text = " + research_tasks[1]["question"])
 		print("research_answer1_label.text = " + research_tasks[1]["completion"])
 
 	if research_tasks.size() > 2:
 		research_question2_label.text = research_tasks[2]["question"]
 		research_answer2_label.text = research_tasks[2]["completion"]
+		research_answer2_label.visible = false
 		print("research_question2_label.text = " + research_tasks[2]["question"])
 		print("research_answer2_label.text = " + research_tasks[2]["completion"])
 

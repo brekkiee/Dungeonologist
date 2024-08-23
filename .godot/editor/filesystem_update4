@@ -8,3 +8,12 @@ res://Scenes/UI/StartMenuUI.tscn
 res://Scenes/Windows/start_menu.tscn
 res://Scenes/UI/InventoryItem.tscn
 res://Scenes/UI/expedition_button.gd
+res://Quests/Codex/codex.tscn
+res://Scripts/Quests/codex.gd
+res://Quests/Codex/CodexContent/QuestEntries.json
+res://Quests/Codex/CodexContent/MonsterEntries.json
+res://Scenes/UI/MainUI.tscn
+res://Scripts/UI/UI.gd
+res://Quests/Codex/QuestLog.tscn
+res://Scenes/Windows/MainWindow.tscn
+res://Scripts/Quests/QuestLog.gd
