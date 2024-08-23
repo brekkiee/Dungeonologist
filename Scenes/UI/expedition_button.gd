@@ -20,7 +20,6 @@ func _on_pressed():
 			InventoryManager.item_used_click()
 
 func _on_start_expedition_button_pressed():
-	expedition_bag_popup.visible = false
 	adventurer_portrait.modulate = Color(0.3,0.3,0.3)
 	adventure_animation.visible = true
 	expedition_timer.start()

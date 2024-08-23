@@ -1,3 +1,5 @@
+HBoxContainer
+Label
 Button
 Timer
 TextureButton
@@ -7,10 +9,8 @@ CollisionShape2D
 AnimatedSprite2D
 MarginContainer
 PanelContainer
-HBoxContainer
 VBoxContainer
 ColorRect
-Label
 ScrollContainer
 Container
 GridContainer
