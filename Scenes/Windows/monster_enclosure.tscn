@@ -33,6 +33,7 @@ visible = false
 position = Vector2(484, 481)
 
 [node name="CommonSlime" parent="MonsterSpawnPoint1" instance=ExtResource("2_46yxq")]
+visible = false
 
 [node name="MonsterSpawnPoint2" type="Node2D" parent="."]
 

@@ -30,10 +30,13 @@ var quests_data: Dictionary = {
 	}
 }
 
-func _ready():
-	# Instantiate and add quest display to the scene tree
+func on_scene_changed():
+		# Instantiate and add quest display to the scene tree
 	quest_display = quest_display_scene.instantiate()
-	get_tree().root.add_child.call_deferred(quest_display)
+	var current_scene = get_tree().current_scene
+	var Canvas = get_node("/root/Header/UI")
+	Canvas.add_child(quest_display)
+
 
 # Add a quest to active quests
 func add_quest(quest_id: String):
