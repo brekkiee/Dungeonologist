@@ -9,7 +9,8 @@ var current_potion_inventory = []
 var item_template = preload("res://Scenes/UI/InventoryItem.tscn")
 # Tracks item following the mouse
 var item_mouse_follow = null
-
+#item currently in hand
+var HeldItem
 # Dictionary of all possible items and their icons
 var all_Items_list: Dictionary = {
 	"snackle_item": preload("res://Assets/Sprites/InventoryIcons/snackle_item.png"),
@@ -19,7 +20,7 @@ var all_Items_list: Dictionary = {
 	"sunflower_item": preload("res://Assets/Sprites/InventoryIcons/sunflower_item.png"),
 	"berry_item": preload("res://Assets/Sprites/InventoryIcons/berry_item.png"),
 	"mushroom_item": preload("res://Assets/Sprites/InventoryIcons/mushroom_item.png"),
-	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_item.png"), 
+	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_item.png") as Texture, 
 	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png"),
 	"common_slime_item": preload("res://Assets/Sprites/InventoryIcons/common_slime_item.png")
 }
@@ -62,6 +63,7 @@ func add_plant_inventory_item(itemName):
 	newitem.ItemName = itemName
 	# Assign item's texture based on the all_items_list
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]
+	print(all_Items_list[itemName])
 	# get the spawn potion based on the array size and the row index.
 	newitem.position = get_new_item_offset(current_plant_inventory.size(), 0)	
 	#add item to the plants array
@@ -79,6 +81,7 @@ func add_potion_inventory_item(itemName):
 	var newitem = item_template.instantiate()
 	newitem.ItemName = itemName
 	# Assign item's texture based on the all_items_list
+
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]	
 	# get the spawn potion based on the array size and the row index.
 	newitem.position = get_new_item_offset(current_potion_inventory.size(), 1)	
@@ -90,10 +93,26 @@ func add_potion_inventory_item(itemName):
 	return true
 
 # Handle icon click to start following mouse
-func icon_clicked(Icon):
+func icon_clicked(Icon, ItemName: String):
 		Icon.get_node("Button").visible = false
+		HeldItem = ItemName
+		print(typeof(ItemName), "ItemName")
+		print(ItemName)
 		item_mouse_follow = Icon
 
+
+func CheckItemHeld():
+	var Item = all_Items_list[HeldItem]
+	print(Item, ":D")
+	print(typeof(Item))
+	
+	var ItemNameAndTexture = {
+		"Item": Item,
+		"HeldItem": HeldItem
+	}
+	
+	return ItemNameAndTexture
+	
 # Update item positions if inventory changes
 func update_item_positions():
 	for i in current_plant_inventory.size():
@@ -122,6 +141,13 @@ func item_not_used_click():
 		item_mouse_follow = null
 		print("Nothing pressed with item.")
 
+
+func RemoveItem(ItemName):
+		if current_plant_inventory.has(ItemName):
+			current_plant_inventory.erase(ItemName)
+		elif current_potion_inventory.has(ItemName):
+			current_potion_inventory.erase(ItemName)
+		print(ItemName, " removed.")
 # Execute every frame to make the item follow the mouse
 func _process(delta):
 	if item_mouse_follow != null:

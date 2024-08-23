@@ -9,4 +9,4 @@ func follow_mouse():
 
 # Called when inventory item button is clicked (item selected for use)
 func _on_button_pressed():
-	InventoryManager.icon_clicked(self)
+	InventoryManager.icon_clicked(self, ItemName)

@@ -8,6 +8,13 @@ var expedition_slots = 1 # Number of expeditions that can be run simultaneously
 #	expedition_bag_popup.visible = true
 #	# Handle logic for showing the popup and initializing it with relevant data
 
+
+func SetItem(ItemName: String): #set potion stats
+	match ItemName:
+		"minor_mana_potion_item":
+			print("Rare monster rates + 10%, Common monster rates - 20%")
+		"minor_health_potion_item":	
+			print("Material carry capacity + 1")
 func start_expedition(floor, adventurer, potion):
 	if expeditions.size() < expedition_slots:
 		expeditions.append({

@@ -3,20 +3,19 @@ extends TextureButton
 @export var expedition_bag_popup: Control
 @export var adventurer_portrait: TextureRect
 @export var adventure_animation: AnimatedSprite2D
-@onready var expedition_timer = Timer.new()
-@export var found_monster: Node2D
+@export var expedition_timer: Timer
+@export var found_monster: Node2D 
 
 func _ready():
 	add_child(expedition_timer)
 			# Set timer properties
 	expedition_timer.wait_time = 5 # Need to adjust as necessary
 	expedition_timer.one_shot = true
-	expedition_timer.connect("timeout", Callable(self, "_on_expedition_timer_timeout"))
 	
 func _on_pressed():
 		if InventoryManager.item_mouse_follow != null:
 			# If item from inventory selected and dragged to expedition portrait, click to add potion
-			#ExpeditionManager.show_expedition_popup()
+			ExpeditionManager.show_expedition_popup()
 			expedition_bag_popup.visible = true
 			InventoryManager.item_used_click()
 
@@ -43,3 +42,5 @@ func _on_expedition_timer_timeout():
 	if GameManager.found_monster:
 		GameManager.found_monster.visible = true
 		print("Monster made visible in Monster Enclosure")
+
+

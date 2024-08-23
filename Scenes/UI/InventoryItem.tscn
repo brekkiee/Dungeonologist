@@ -9,7 +9,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc6ms"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3vne0"]
-load_path = "res://.godot/imported/plant1_icon.png-3e7dc20221c5ab1b2cb3de009e8c2ca6.ctex"
 
 [node name="InventoryItem" type="Control"]
 layout_mode = 3

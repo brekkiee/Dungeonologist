@@ -227,7 +227,7 @@ theme_override_constants/margin_bottom = 50
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Expedition Button" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("expedition_bag_popup", "adventurer_portrait", "adventure_animation")]
+[node name="Expedition Button" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" node_paths=PackedStringArray("expedition_bag_popup", "adventurer_portrait", "adventure_animation", "expedition_timer")]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_ejiw1")
@@ -238,6 +238,7 @@ script = ExtResource("5_p64fo")
 expedition_bag_popup = NodePath("../../../../../../ExpeditionBagPopUp")
 adventurer_portrait = NodePath("ColorRect/MarginContainer/VBoxContainer/Adventurer Portrait")
 adventure_animation = NodePath("../../../../../../ExpeditionAnimSprite2D")
+expedition_timer = NodePath("../../../../../../Timer")
 
 [node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button"]
 layout_mode = 1
@@ -324,5 +325,9 @@ animation = &"adventuring"
 autoplay = "adventuring"
 frame_progress = 0.958615
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" to="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" method="_on_pressed"]
 [connection signal="pressed" from="StartExpeditionButton" to="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" method="_on_start_expedition_button_pressed"]
+[connection signal="timeout" from="Timer" to="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Expedition Button" method="_on_expedition_timer_timeout"]
+[connection signal="timeout" from="Timer" to="ExpeditionBagPopUp" method="_on_timer_timeout"]
