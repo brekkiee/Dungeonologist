@@ -133,10 +133,8 @@ bbcode_enabled = true
 text = "It appears they communicate through a network of fungal threads that spread underground. I wonder how far they can go?"
 fit_content = true
 
-[node name="Button" type="Button" parent="VBoxContainerRHS/CenterContainer0/ResearchAnswer0"]
-layout_mode = 0
-offset_right = 297.0
-offset_bottom = 92.0
+[node name="Button" type="Button" parent="VBoxContainerRHS"]
+layout_mode = 2
 
 [node name="ResearchQuestion1" type="RichTextLabel" parent="VBoxContainerRHS"]
 layout_mode = 2
@@ -199,5 +197,6 @@ offset_right = 749.0
 offset_bottom = 536.0
 text = ">"
 
+[connection signal="pressed" from="VBoxContainerRHS/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PrevPageButton" to="." method="_on_prev_page_button_pressed"]
 [connection signal="pressed" from="NextPageButton" to="." method="_on_next_page_button_pressed"]

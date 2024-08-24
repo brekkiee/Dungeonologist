@@ -155,3 +155,7 @@ func _on_next_page_button_pressed():
 	if current_index < entries.size() - 1:
 		current_index += 1
 		display_entry((current_index))
+
+
+func _on_button_pressed():
+	research_answer0_label.visible = true

@@ -1,7 +1,9 @@
 res://Scenes/UI/ExpeditionsUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/UI/ExpeditionBagPopUp.gd
-res://Scenes/UI/expedition_button.gd
-res://Quests/Dialogue/chatbox.tscn
 res://Scenes/UI/MainUI.tscn
+res://Quests/Dialogue/chatbox.tscn
+res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue.json
+res://Quests/Dialogue/DialogueText/Settling_In_Dialogue.json
+res://Quests/Codex/codex.tscn
+res://Scripts/Quests/codex.gd
