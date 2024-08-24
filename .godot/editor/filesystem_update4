@@ -3,7 +3,7 @@ res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Scenes/UI/MainUI.tscn
 res://Quests/Dialogue/chatbox.tscn
-res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue.json
-res://Quests/Dialogue/DialogueText/Settling_In_Dialogue.json
 res://Quests/Codex/codex.tscn
-res://Scripts/Quests/codex.gd
+res://Scenes/Windows/monster_enclosure.tscn
+res://Singletons/GameManager.gd
+res://Scenes/Windows/MainWindow.tscn
