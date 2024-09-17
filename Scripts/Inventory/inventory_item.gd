@@ -2,6 +2,7 @@ extends Control
 
 # Item name assigned when instantiated/spawned
 var ItemName: String
+var ItemQuantity: int
 
 # Follow mouse position
 func follow_mouse():

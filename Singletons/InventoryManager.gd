@@ -58,11 +58,21 @@ func add_plant_inventory_item(itemName):
 	# check if max item is reached
 	if current_plant_inventory.size() >= max_items_in_row:
 		return false
-	
+		
+	# Check if Item is Stackable
+	for item in current_plant_inventory:
+		if item.ItemName == itemName:
+			# Increase Item Quantity by One
+			item.ItemQuantity = item.ItemQuantity + 1
+			item.get_node("TextureRect/Label").text = str(item.ItemQuantity)
+			return true
+
 	var newitem = item_template.instantiate()
 	newitem.ItemName = itemName
+	newitem.ItemQuantity = 1
 	# Assign item's texture based on the all_items_list
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]
+	newitem.get_node("TextureRect/Label").text = str(newitem.ItemQuantity)
 	print(all_Items_list[itemName])
 	# get the spawn potion based on the array size and the row index.
 	newitem.position = get_new_item_offset(current_plant_inventory.size(), 0)	
@@ -77,6 +87,14 @@ func add_potion_inventory_item(itemName):
 	# check if max item is reached
 	if current_potion_inventory.size() >= max_items_in_row:
 		return false
+	
+	# Check if Item is Stackable
+	for item in current_plant_inventory:
+		if item.ItemName == itemName:
+			# Increase Item Quantity by One
+			item.ItemQuantity = item.ItemQuantity + 1
+			item.get_node("TextureRect/Label").text = str(item.ItemQuantity)
+			return true
 	
 	var newitem = item_template.instantiate()
 	newitem.ItemName = itemName
@@ -123,15 +141,26 @@ func update_item_positions():
 # Handle item used by cauldron
 func item_used_click():
 	if item_mouse_follow != null:
-		print(item_mouse_follow.ItemName + " is used")
+		print(item_mouse_follow.ItemName + " has been used")
 		if current_plant_inventory.has(item_mouse_follow):
-			current_plant_inventory.erase(item_mouse_follow)
+			# Check if the item needs to be removed
+			if item_mouse_follow.ItemQuantity == 1:
+				current_plant_inventory.erase(item_mouse_follow)
+				item_mouse_follow.queue_free()
+			else:
+				# Update Back and Front end quantity
+				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
+				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
 		elif current_potion_inventory.has(item_mouse_follow):
-			current_potion_inventory.erase(item_mouse_follow)
-
-		item_mouse_follow.queue_free()
-		item_mouse_follow = null
+			if item_mouse_follow.ItemQuantity == 1:
+				current_potion_inventory.erase(item_mouse_follow)
+				item_mouse_follow.queue_free()
+			else:
+				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
+				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
 		update_item_positions()
+		item_mouse_follow = null
+		
 
 # Reset item position if not used after 0.1 seconds
 func item_not_used_click():

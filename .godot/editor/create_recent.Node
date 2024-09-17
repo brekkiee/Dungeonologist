@@ -1,6 +1,6 @@
+Label
 AudioStreamPlayer2D
 HBoxContainer
-Label
 Button
 Timer
 TextureButton

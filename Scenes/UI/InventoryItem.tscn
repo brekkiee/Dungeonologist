@@ -47,4 +47,12 @@ offset_bottom = -20.176
 mouse_filter = 2
 texture = SubResource("CompressedTexture2D_3vne0")
 
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 41.0
+offset_bottom = 46.0
+text = "99"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,7 @@
-res://Scenes/UI/ExpeditionsUI.tscn
+res://Scenes/UI/InventoryItem.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
+res://Scripts/Inventory/inventory_item.gd
+res://Singletons/InventoryManager.gd
 res://Scenes/UI/MainUI.tscn
-res://Quests/Dialogue/chatbox.tscn
-res://Quests/Codex/codex.tscn
-res://Scenes/Windows/monster_enclosure.tscn
-res://Singletons/GameManager.gd
 res://Scenes/Windows/MainWindow.tscn
