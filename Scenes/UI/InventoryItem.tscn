@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0ixn7w31wao8"]
+[gd_scene load_steps=9 format=3 uid="uid://d0ixn7w31wao8"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/inventory_item.gd" id="1_6ufty"]
 [ext_resource type="Shader" path="res://Scenes/UI/Shaders/InventoryItem.gdshader" id="2_ejvjo"]
@@ -14,6 +14,10 @@
 shader = ExtResource("2_ejvjo")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_o46hg"]
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="InventoryItem" type="Control"]
 layout_mode = 3
@@ -60,6 +64,7 @@ offset_top = 20.0
 offset_right = 41.0
 offset_bottom = 46.0
 text = "99"
+label_settings = SubResource("LabelSettings_o46hg")
 
 [connection signal="mouse_entered" from="Button" to="." method="on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="on_button_mouse_exited"]

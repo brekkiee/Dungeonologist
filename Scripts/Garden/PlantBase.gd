@@ -8,7 +8,7 @@ var harvested_item_name: String = ""
 
 func _ready():
 	plant_animation.speed_scale = growth_speed
-	plant_animation.connect("animation_finished", Callable(self, "_on_growth_animation_finished"))
+	#plant_animation.connect("animation_finished", Callable(self, "_on_growth_animation_finished"))
 
 # Called when the growth animation finishes
 func _on_growth_animation_finished():
