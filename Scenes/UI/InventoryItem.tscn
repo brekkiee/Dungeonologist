@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0ixn7w31wao8"]
+[gd_scene load_steps=8 format=3 uid="uid://d0ixn7w31wao8"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/inventory_item.gd" id="1_6ufty"]
+[ext_resource type="Shader" path="res://Scenes/UI/Shaders/InventoryItem.gdshader" id="2_ejvjo"]
+[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/sunflower_item.png" id="3_bopax"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhcti"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4lt1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc6ms"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3vne0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1bm8"]
+shader = ExtResource("2_ejvjo")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.0
 
 [node name="InventoryItem" type="Control"]
 layout_mode = 3
@@ -32,10 +37,11 @@ offset_right = -20.32
 offset_bottom = -20.176
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pnb0x")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_uhcti")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y4lt1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_gc6ms")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_p1bm8")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
@@ -45,7 +51,7 @@ offset_top = -20.0
 offset_right = -20.32
 offset_bottom = -20.176
 mouse_filter = 2
-texture = SubResource("CompressedTexture2D_3vne0")
+texture = ExtResource("3_bopax")
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
@@ -55,4 +61,6 @@ offset_right = 41.0
 offset_bottom = 46.0
 text = "99"
 
+[connection signal="mouse_entered" from="Button" to="." method="on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="on_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -5,3 +5,5 @@ res://Scripts/Inventory/inventory_item.gd
 res://Singletons/InventoryManager.gd
 res://Scenes/UI/MainUI.tscn
 res://Scenes/Windows/MainWindow.tscn
+res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/Shaders/InventoryItem.gdshader

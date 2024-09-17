@@ -11,3 +11,10 @@ func follow_mouse():
 # Called when inventory item button is clicked (item selected for use)
 func _on_button_pressed():
 	InventoryManager.icon_clicked(self, ItemName)
+
+# Highlight Items on Hover
+func on_button_mouse_exited():
+	self.get_node("TextureRect").material.set_shader_parameter("line_thickness", 0)
+
+func on_button_mouse_entered():
+	self.get_node("TextureRect").material.set_shader_parameter("line_thickness", 0.4)
