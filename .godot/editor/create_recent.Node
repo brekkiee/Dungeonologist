@@ -1,6 +1,8 @@
+GridContainer
+BoxContainer
+HBoxContainer
 Label
 AudioStreamPlayer2D
-HBoxContainer
 Button
 Timer
 TextureButton
@@ -14,7 +16,6 @@ VBoxContainer
 ColorRect
 ScrollContainer
 Container
-GridContainer
 Sprite2D
 CenterContainer
 CollisionPolygon2D

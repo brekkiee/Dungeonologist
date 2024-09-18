@@ -12,15 +12,3 @@ func follow_mouse():
 func _on_button_pressed():
 	InventoryManager.icon_clicked(self, ItemName)
 
-# Highlight Items on Hover
-func on_button_mouse_exited():
-	self.get_node("TextureRect").material.set_shader_parameter("line_thickness", 0)
-	# TODO:
-	# Destroy / Clear Tool Tip
-
-func on_button_mouse_entered():
-	self.get_node("TextureRect").material.set_shader_parameter("line_thickness", 0.4)
-	# TODO:
-	# Create Tool Tip
-	# Set Tool Tip data
-	# Force Tool Tip to follow mouse

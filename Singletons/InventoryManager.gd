@@ -79,7 +79,7 @@ func add_plant_inventory_item(itemName):
 	#add item to the plants array
 	current_plant_inventory.append(newitem)
 	# Add item to inventory panel
-	invetory_panel_parent.call_deferred("add_child", newitem)
+	invetory_panel_parent.get_node("PlantInventory").call_deferred("add_child", newitem)
 	QuestManager.on_plant_harvested()
 	return true
 
@@ -166,8 +166,8 @@ func item_used_click():
 func item_not_used_click():
 	await get_tree().create_timer(0.1).timeout
 	if item_mouse_follow != null:
-		update_item_positions()
-		item_mouse_follow = null
+		#update_item_positions()
+		item_mouse_follow.queue_free()
 		print("Nothing pressed with item.")
 
 
