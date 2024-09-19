@@ -11,6 +11,8 @@ extends CharacterBody2D
 @onready var visibility_timer = Timer.new()
 @onready var emote_timer = Timer.new()
 
+@export var species: MonsterSpecies
+
 @export_group("Meters Variables")
 @export_subgroup("Hunger Meter")
 @export_range(0, 5) var hunger_meter = 5
@@ -40,8 +42,6 @@ extends CharacterBody2D
 @export var emote_poop: Texture2D
 @export var emote_shock: Texture2D
 @export var emote_question: Texture2D
-
-#enum MonsterTypeEnum {}
 
 var movement_direction = Vector2.ZERO
 

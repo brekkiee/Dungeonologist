@@ -1,7 +1,8 @@
-[gd_scene load_steps=72 format=3 uid="uid://cgbr2gsaofps8"]
+[gd_scene load_steps=73 format=3 uid="uid://cgbr2gsaofps8"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_52shx"]
 [ext_resource type="Texture2D" uid="uid://cd5cpf6fk0i4w" path="res://Assets/Animations/Monsters/anim_Idle_CommonSlime.png" id="2_cio4r"]
+[ext_resource type="Resource" uid="uid://464xev1yvx1j" path="res://Scripts/Enclosure/species_common_slime.tres" id="2_o03ce"]
 [ext_resource type="Texture2D" uid="uid://d0ie8360028hq" path="res://Assets/Animations/Monsters/anim_Walk_CommonSlime.png" id="3_nde4y"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_b120x"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_cwgi6"]
@@ -526,9 +527,10 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="MonsterSlime" type="CharacterBody2D"]
+[node name="CommonSlime" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_52shx")
+species = ExtResource("2_o03ce")
 
 [node name="MonsterAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.00002, -25)

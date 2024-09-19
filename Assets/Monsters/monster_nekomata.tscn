@@ -1,7 +1,8 @@
-[gd_scene load_steps=72 format=3 uid="uid://d3x1d6w8hql2c"]
+[gd_scene load_steps=73 format=3 uid="uid://d3x1d6w8hql2c"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_x8xnp"]
 [ext_resource type="Texture2D" uid="uid://dux08f4tj4m1s" path="res://Assets/Animations/Monsters/anim_Idle_Nekomata.png" id="2_gyh1j"]
+[ext_resource type="Resource" uid="uid://dy53effmn4ivh" path="res://Scripts/Enclosure/species_nekomata.tres" id="2_rb4im"]
 [ext_resource type="Texture2D" uid="uid://dm8arhry1abjk" path="res://Assets/Animations/Monsters/anim_Walk_Nekomata.png" id="3_slrwv"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_mjgle"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_hi6dx"]
@@ -526,9 +527,10 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="MonsterNekomata" type="CharacterBody2D"]
+[node name="Nekomata" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_x8xnp")
+species = ExtResource("2_rb4im")
 
 [node name="MonsterAnimSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvr5e")

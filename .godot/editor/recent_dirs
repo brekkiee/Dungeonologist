@@ -1,3 +1,4 @@
+res://Scripts/Enclosure
 res://Assets/Sprites/InventoryIcons
 res://Scripts/Quests
 res://Scenes/UI
@@ -11,7 +12,6 @@ res://Scenes
 res://Assets/Animations/Monsters
 res://Assets/Animations/Garden
 res://Assets/Sprites/Monsters
-res://Scripts/Enclosure
 res://Assets/Monsters
 res://Assets/Sprites
 res://Assets

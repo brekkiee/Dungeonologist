@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=2 format=3 uid="uid://dwvqs4e706ygk"]
+
+[ext_resource type="Script" path="res://Scripts/Enclosure/MonsterSpecies.gd" id="1_khfm5"]
+
+[resource]
+script = ExtResource("1_khfm5")
+name = "common_shrooman"
+diet = Array[String](["Anything"])
+habitats = Array[String](["Forests", "Caves"])
+hunger_rate = 5.0
+unhappy_rate = 5.0
+movement_speed = 1.0
+min_move_time = 0.5
+max_move_time = 5.0
+min_idle_time = 0.5
+max_idle_time = 4.0

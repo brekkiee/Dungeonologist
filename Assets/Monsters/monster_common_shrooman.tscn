@@ -1,6 +1,7 @@
-[gd_scene load_steps=72 format=3 uid="uid://dmnks055sa41o"]
+[gd_scene load_steps=73 format=3 uid="uid://dmnks055sa41o"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_44j5x"]
+[ext_resource type="Resource" uid="uid://dwvqs4e706ygk" path="res://Scripts/Enclosure/species_common_shrooman.tres" id="2_c2281"]
 [ext_resource type="Texture2D" uid="uid://bv1ctduwoer0q" path="res://Assets/Animations/Monsters/anim_Idle_CommonShrooman.png" id="2_k38m0"]
 [ext_resource type="Texture2D" uid="uid://cpchaen4ggeh8" path="res://Assets/Animations/Monsters/anim_Walk_CommonShrooman.png" id="3_7wu4u"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_unnes"]
@@ -526,9 +527,10 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="MonsterPlushroom" type="CharacterBody2D"]
+[node name="CommonShrooman" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_44j5x")
+species = ExtResource("2_c2281")
 
 [node name="MonsterAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.00002, -25)
