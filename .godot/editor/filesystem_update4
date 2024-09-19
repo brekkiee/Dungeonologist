@@ -1,11 +1,4 @@
-res://Scenes/UI/InventoryItem.tscn
+res://Scenes/Windows/monster_enclosure.tscn
+res://Scenes/UI/Shaders/InventoryItem.gdshader
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scripts/Inventory/inventory_item.gd
-res://Singletons/InventoryManager.gd
-res://Scenes/UI/MainUI.tscn
-res://Scenes/Windows/MainWindow.tscn
-res://Scenes/UI/StartMenuUI.tscn
-res://Scenes/UI/Shaders/InventoryItem.gdshader
-res://Scripts/Garden/PlantBase.gd
-res://Singletons/GameManager.gd
