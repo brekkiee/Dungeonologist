@@ -1,9 +1,10 @@
+res://Scenes/UI
+res://Scripts/Inventory
 res://Assets/Animations/Alchemy
 res://Assets/Sprites/Alchemy
 res://Scripts/Enclosure
 res://Assets/Sprites/InventoryIcons
 res://Scripts/Quests
-res://Scenes/UI
 res://Assets/Sprites/Expeditions
 res://Singletons
 res://Quests/Dialogue/DialogueText

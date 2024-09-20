@@ -17,7 +17,6 @@ outline_color = Color(0, 0, 0, 1)
 [node name="InventoryItem" type="Control"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1112.0
@@ -68,6 +67,6 @@ grow_vertical = 0
 text = "99"
 label_settings = SubResource("LabelSettings_o46hg")
 
-[connection signal="mouse_entered" from="." to="." method="on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="on_mouse_exited"]
+[connection signal="mouse_entered" from="Button" to="." method="on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
