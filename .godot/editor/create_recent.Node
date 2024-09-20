@@ -1,3 +1,9 @@
+CollisionShape2D
+Sprite2D
+Area2D
+AnimatedSprite2D
+TextureRect
+Node2D
 Label
 AudioStreamPlayer2D
 HBoxContainer
@@ -5,9 +11,6 @@ Button
 Timer
 TextureButton
 Camera2D
-TextureRect
-CollisionShape2D
-AnimatedSprite2D
 MarginContainer
 PanelContainer
 VBoxContainer
@@ -15,7 +18,6 @@ ColorRect
 ScrollContainer
 Container
 GridContainer
-Sprite2D
 CenterContainer
 CollisionPolygon2D
 RichTextLabel
@@ -24,4 +26,3 @@ Control
 CharacterBody2D
 StaticBody2D
 Node
-Node2D

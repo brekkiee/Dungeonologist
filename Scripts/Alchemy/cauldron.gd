@@ -1,73 +1,75 @@
 extends Node2D
 
-@onready var alchemy_emote = $AlchemyEmote
-@export var yes_texture = Texture2D
-@export var no_texture = Texture2D
-@onready var timer = Timer.new()
+@onready var anim_splash = $BrewLiquid/Splash
+@onready var anim_bubble = $BrewLiquid/Bubble
+@onready var liquid = $BrewLiquid/Liquid
+@onready var slot1 = $IngredientSlots/Slot1
+@onready var slot2 = $IngredientSlots/Slot2
+@onready var icon1 = $IngredientSlots/Slot1/Icon1
+@onready var icon2 = $IngredientSlots/Slot2/Icon2
+@onready var ladle = $Ladle
+@onready var color_timer = Timer.new()
+
+# For sound fx:
+#@onready var sfx_correct = preload("")
+#@onready var sfx_incorrect = preload("")
 
 # Start animation for cauldron bubbling when ready
 func _ready():
-	add_child(timer)
-	timer.one_shot = true
-	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+	add_child(color_timer)
+	color_timer.one_shot = true
+	color_timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+	anim_bubble.play()
+	ladle.connect("gui_input", Callable(self, "_on_ladle_gui_input"))
 	
+func stir_mixture():
+	if slot1.item_name != "" and slot2.item_name != "":
+		mix_ingredients()
+	else:
+		# Give player feedback that ingredients are missing
+		print("Need at least 2 ingredients to mix")
+		
+func mix_ingredients():
+	var ingredients = [slot1.item_name, slot2.item_name]
+	ingredients.sort()
+	var recipe_found = false
 	
-	#var _animated_sprite = get_node("CauldronAnimation2d")
-	#_animated_sprite.play()
+	for recipe in InventoryManager.cauldron_recipies.values():
+		recipe.items_required.sort()
+		if recipe.items_required == ingredients:
+			recipe_found = true
+			print("Correct recipe called")
+			_show_potion_mixture(true)
+		
+			# Add potion to inventory
+			InventoryManager.add_potion_inventory_item(recipe.result)
+			break
+		
+	if not recipe_found:
+		_show_potion_mixture(false)
+		
+	_clear_slots()
+	
+func _clear_slots():
+	# Clear the slots
+	slot1.item_name = ""
+	icon1.texture = null
+	slot2.item_name = ""
+	icon2.texture = null
+	
+func _on_item_added_to_slot(slot, item_name):
+	# TODO: Additional logic here
 	pass
 
-func display_emote(correct_recipe: bool):
-	if correct_recipe:
-		alchemy_emote.texture = yes_texture
-	elif not correct_recipe:
-		alchemy_emote.texture = no_texture
-	else:
-		alchemy_emote.texture = null
-	
-	# Start emote display timer
-	timer.start(5)
+func _on_item_removed_from_slot(slot, item_name):
+	InventoryManager.add_plant_inventory_item(item_name)
 
-# Called when the timer times out
+func _show_potion_mixture(correct_recipe: bool):
+	print("correct_recipe: ", correct_recipe)
+	await  get_tree().create_timer(1.0).timeout
+	liquid.modulate = Color(0, 128, 0) if correct_recipe else Color(150, 75, 0)
+	# Start timer to reset color
+	color_timer.start(4)
+
 func _on_timer_timeout():
-	alchemy_emote.texture = null
-
-# Handle input event signal from cauldron node in garden scene
-func _on_input_event(viewport, event, shape_idx):
-	if InputMap.event_is_action(event, "left_click"):
-		if event.pressed and InventoryManager.item_mouse_follow != null:
-			# Add item to cauldron's inventory
-			InventoryManager.current_cauldron_inventory.append(InventoryManager.item_mouse_follow.ItemName)
-			# Notify InventoryManager item is used
-			InventoryManager.item_used_click()
-
-# Handle input event signal from ladle node in garden scene
-func _on_ladle_input_event(viewport, event, shape_idx):
-	if InputMap.event_is_action(event, "left_click"):
-		if event.pressed:
-			# Sort items in cauldron inventory before comparing to recipes
-			var sorted_cauldron_items = InventoryManager.current_cauldron_inventory.duplicate()
-			sorted_cauldron_items.sort()
-			
-			var recipe_found = false
-			
-			# Check if current items match any recipe
-			for i in InventoryManager.cauldron_recipies.size():
-				if InventoryManager.cauldron_recipies[i].items_required == sorted_cauldron_items:
-					# Add resulting product from recipe
-					if InventoryManager.add_potion_inventory_item(InventoryManager.cauldron_recipies[i].result):
-						# sucessfully added potions to Inventory since there is space available
-						# clearing the cauldron's Inventory
-						display_emote(true)
-						print("valid recipe created, item added.")
-						InventoryManager.current_cauldron_inventory = []
-						recipe_found = true
-						break
-					else:
-						#This executes if the inventory is full and can't have more potions
-						print("Inventory is full, can't add new potions")
-			if not recipe_found:
-				display_emote(false)
-				InventoryManager.current_cauldron_inventory = []
-				print("invalid recipe, items in cauldron deleted.")
-			# Clear cauldron inventory
-
+	liquid.modulate = Color(1, 1, 1)  # Reset to default color
