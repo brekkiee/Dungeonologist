@@ -26,8 +26,13 @@ func _gui_input(event):
 			elif item_name != "":
 				# Player clicks to return item to inventory
 				get_parent().get_parent()._on_item_removed_from_slot(self, item_name)
-
+				# Search for and Return Item to inventory
+				for i in InventoryManager.current_plant_inventory:
+					if i.ItemName == item_name:
+						InventoryManager.return_item(i)
+				
 				# Clear slot
 				item_name = ""
 				item_texture = null
 				slot_texture.texture = null
+				

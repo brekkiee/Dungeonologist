@@ -1,3 +1,4 @@
 res://Scenes/UI/StartMenuUI.tscn
 res://Scripts/Inventory/inventory_item.gd
 res://Scenes/UI/InventoryItem.tscn
+res://Scripts/Alchemy/ingredient_slot.gd
