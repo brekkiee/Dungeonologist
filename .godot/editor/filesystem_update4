@@ -1,9 +1,7 @@
-res://Scenes/UI/MainUI.tscn
-res://Scenes/UI/Shaders/InventoryItem.gdshader
+res://Scenes/UI/InventoryItem.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/Windows/MainWindow.tscn
-res://Scenes/UI/InventoryItem.tscn
-res://Scenes/UI/StartMenuUI.tscn
 res://Singletons/InventoryManager.gd
-res://Scripts/Inventory/inventory_item.gd
+res://Scenes/UI/MainUI.tscn
+res://Scenes/Windows/MainWindow.tscn
+res://Scripts/Inventory/inventory_panel.gd

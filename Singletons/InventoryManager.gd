@@ -1,6 +1,8 @@
 extends Node
 
-var invetory_panel_parent: Control
+var inventory_panel_parent: Control
+# Number of items allowed in one row ( Array Control)
+var max_items_in_row = 15
 # Stores all plants in the inventory
 var current_plant_inventory = []
 # Stores all potions in the inventory
@@ -9,8 +11,9 @@ var current_potion_inventory = []
 var item_template = preload("res://Scenes/UI/InventoryItem.tscn")
 # Tracks item following the mouse
 var item_mouse_follow = null
+var item_mouse_follow_origin = null
 #item currently in hand
-var HeldItem
+var held_item = null
 # Dictionary of all possible items and their icons
 var all_Items_list: Dictionary = {
 	"snackle_item": preload("res://Assets/Sprites/InventoryIcons/snackle_item.png"),
@@ -34,24 +37,12 @@ var cauldron_recipies: Dictionary = {
 		"result": "minor_mana_potion_item"}
 }
 
-# Parameters for item position and distance in inventory
-var intial_item_spawn_point = Vector2(260,20)  #21, 15)
-var item_distance_horizontal = 50 # In pixels
-var item_distance_vertical = 40
-var max_items_in_row = 15
+
 
 # Sort items required for each cauldron recipe alphabetically
 func _ready():
 	for i in cauldron_recipies.size():
 		cauldron_recipies[i].items_required.sort()
-
-# Calculate position of new item based on inventory index
-func get_new_item_offset(inventory_index, row_num):
-	var column_num = inventory_index % max_items_in_row
-	#var row_num = floor(inventory_index / max_items_in_row)
-	var finalVectorX = (item_distance_vertical * column_num) + intial_item_spawn_point.x
-	var finalVectorY = (item_distance_horizontal * row_num) + intial_item_spawn_point.y
-	return intial_item_spawn_point + Vector2(finalVectorX, finalVectorY)
 
 # Add item to current inventory
 func add_plant_inventory_item(itemName):
@@ -73,13 +64,10 @@ func add_plant_inventory_item(itemName):
 	# Assign item's texture based on the all_items_list
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]
 	newitem.get_node("TextureRect/Label").text = str(newitem.ItemQuantity)
-	print(all_Items_list[itemName])
-	# get the spawn potion based on the array size and the row index.
-	newitem.position = get_new_item_offset(current_plant_inventory.size(), 0)	
 	#add item to the plants array
 	current_plant_inventory.append(newitem)
 	# Add item to inventory panel
-	invetory_panel_parent.get_node("PlantInventory").call_deferred("add_child", newitem)
+	inventory_panel_parent.get_node("PlantInventory").call_deferred("add_child", newitem)
 	QuestManager.on_plant_harvested()
 	return true
 
@@ -98,45 +86,42 @@ func add_potion_inventory_item(itemName):
 	
 	var newitem = item_template.instantiate()
 	newitem.ItemName = itemName
+	newitem.ItemQuantity = 1
 	# Assign item's texture based on the all_items_list
 
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]	
-	# get the spawn potion based on the array size and the row index.
-	newitem.position = get_new_item_offset(current_potion_inventory.size(), 1)	
 	#add item to the potions array
 	current_potion_inventory.append(newitem)
 	# Add item to inventory panel
-	invetory_panel_parent.call_deferred("add_child", newitem)
+	inventory_panel_parent.get_node("PotionInventory").call_deferred("add_child", newitem)
 	QuestManager.on_potion_brewed()
 	return true
 
 # Handle icon click to start following mouse
-func icon_clicked(Icon, ItemName: String):
-		Icon.get_node("Button").visible = false
-		HeldItem = ItemName
-		print(typeof(ItemName), "ItemName")
-		print(ItemName)
-		item_mouse_follow = Icon
+func icon_clicked(icon, item_name: String):
+		icon.get_node("Button").visible = false
+		held_item = item_name
+		print("Item Click Initated on : ", item_name)
+		item_mouse_follow_origin = icon.global_position
+		item_mouse_follow = icon
 
-
-func CheckItemHeld():
-	var Item = all_Items_list[HeldItem]
-	print(Item, ":D")
-	print(typeof(Item))
+# Check the item held for name and texture
+func check_item_held():
+	var item = all_Items_list[held_item]
+	print("Checking held item : ", item)
 	
-	var ItemNameAndTexture = {
-		"Item": Item,
-		"HeldItem": HeldItem
+	var item_name_and_texture = {
+		"Item": item,
+		"HeldItem": held_item
 	}
 	
-	return ItemNameAndTexture
-	
-# Update item positions if inventory changes
-func update_item_positions():
-	for i in current_plant_inventory.size():
-		current_plant_inventory[i].position = get_new_item_offset(i, 0)
-	for i in current_potion_inventory.size():
-		current_potion_inventory[i].position = get_new_item_offset(i, 1)
+	return item_name_and_texture
+
+# Return Item to original Position
+func return_item(item):
+	print("Returning ", item.ItemName ," to Origin Position")
+	item.global_position = item_mouse_follow_origin
+		
 
 # Handle item used by cauldron
 func item_used_click():
@@ -152,13 +137,14 @@ func item_used_click():
 				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
 		elif current_potion_inventory.has(item_mouse_follow):
+			# Check if the item needs to be removed
 			if item_mouse_follow.ItemQuantity == 1:
 				current_potion_inventory.erase(item_mouse_follow)
 				item_mouse_follow.queue_free()
 			else:
+				# Update Back and Front end quantity
 				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
-		update_item_positions()
 		item_mouse_follow = null
 		
 
@@ -167,16 +153,18 @@ func item_not_used_click():
 	await get_tree().create_timer(0.1).timeout
 	if item_mouse_follow != null:
 		#update_item_positions()
-		item_mouse_follow.queue_free()
+		return_item(item_mouse_follow)
+		item_mouse_follow = null
 		print("Nothing pressed with item.")
 
 
-func RemoveItem(ItemName):
-		if current_plant_inventory.has(ItemName):
-			current_plant_inventory.erase(ItemName)
-		elif current_potion_inventory.has(ItemName):
-			current_potion_inventory.erase(ItemName)
-		print(ItemName, " removed.")
+func remove_item(item_name):
+		if current_plant_inventory.has(item_name):
+			current_plant_inventory.erase(item_name)
+		elif current_potion_inventory.has(item_name):
+			current_potion_inventory.erase(item_name)
+		print(item_name, " removed.")
+
 # Execute every frame to make the item follow the mouse
 func _process(delta):
 	if item_mouse_follow != null:

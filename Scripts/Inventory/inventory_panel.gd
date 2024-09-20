@@ -8,7 +8,7 @@ var initial_difference: float
 # Called when node enters scene tree for the first time
 func _ready():
 	# Set inventory panel parent in InventoryManager
-	InventoryManager.invetory_panel_parent = self
+	InventoryManager.inventory_panel_parent = self
 
 func _process(delta):
 	if holding:

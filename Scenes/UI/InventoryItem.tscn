@@ -5,7 +5,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4lt1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17amd"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 0.466667)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc6ms"]
 
@@ -36,9 +37,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/icon_hover_color = Color(0.701961, 0.701961, 0.701961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pnb0x")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_y4lt1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_17amd")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_gc6ms")
 
 [node name="TextureRect" type="TextureRect" parent="."]
