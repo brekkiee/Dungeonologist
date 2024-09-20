@@ -34,6 +34,9 @@ func mix_ingredients():
 	ingredients.sort()
 	var recipe_found = false
 	
+	anim_splash.visible = true
+	anim_splash.play()
+	
 	for recipe in InventoryManager.cauldron_recipies.values():
 		recipe.items_required.sort()
 		if recipe.items_required == ingredients:
@@ -67,9 +70,12 @@ func _on_item_removed_from_slot(slot, item_name):
 func _show_potion_mixture(correct_recipe: bool):
 	print("correct_recipe: ", correct_recipe)
 	await  get_tree().create_timer(1.0).timeout
-	liquid.modulate = Color(0, 128, 0) if correct_recipe else Color(150, 75, 0)
+	liquid.modulate = Color(0, 1, 0) if correct_recipe else Color(1, 1, 0)
+	anim_bubble.visible = false
 	# Start timer to reset color
-	color_timer.start(4)
+	color_timer.start(1)
 
 func _on_timer_timeout():
 	liquid.modulate = Color(1, 1, 1)  # Reset to default color
+	anim_splash.visible = false
+	anim_bubble.visible = true
