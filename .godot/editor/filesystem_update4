@@ -1,15 +1,3 @@
-res://Scenes/Windows/alchemy_lab.tscn
-res://Scenes/UI/Shaders/InventoryItem.gdshader
-res://Assets/Animations/Alchemy/anim_Brew_splash.tres
-res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-<<<<<<< HEAD
-res://Singletons/InventoryManager.gd
-res://Scenes/UI/MainUI.tscn
-res://Scenes/Windows/MainWindow.tscn
-res://Scripts/Inventory/inventory_panel.gd
-=======
-res://Scripts/Alchemy/ladle.gd
-res://Assets/Alchemy/Cauldron.tscn
-res://Assets/Alchemy/Ladle.tscn
-res://Scripts/Alchemy/cauldron.gd
->>>>>>> Enclosure_Alchemy_Sprint1_Changes
+res://Scenes/UI/StartMenuUI.tscn
+res://Scripts/Inventory/inventory_item.gd
+res://Scenes/UI/InventoryItem.tscn

@@ -68,4 +68,6 @@ grow_vertical = 0
 text = "99"
 label_settings = SubResource("LabelSettings_o46hg")
 
+[connection signal="mouse_entered" from="." to="." method="on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

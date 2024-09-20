@@ -12,3 +12,11 @@ func follow_mouse():
 func _on_button_pressed():
 	InventoryManager.icon_clicked(self, ItemName)
 
+
+
+func on_mouse_entered():
+	pass # Replace with function body.
+
+
+func on_mouse_exited():
+	pass # Replace with function body.
