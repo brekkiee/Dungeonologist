@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=3 format=3 uid="uid://464xev1yvx1j"]
+
+[ext_resource type="Resource" uid="uid://sqx1is26yk8h" path="res://Scripts/Inventory/ItemDrops/DropTables/CommonSlimeDropTable.tres" id="1_jbj4i"]
+[ext_resource type="Script" path="res://Scripts/Enclosure/MonsterSpecies.gd" id="2_jgvr7"]
+
+[resource]
+script = ExtResource("2_jgvr7")
+name = "common_slime"
+diet = Array[String](["Anything"])
+habitats = Array[String](["Plains", "Forests", "Caves"])
+drop_table = ExtResource("1_jbj4i")
+item_type = 4
+drop_rate = 1
+hunger_rate = 5.0
+unhappy_rate = 5.0
+movement_speed = 1.0
+min_move_time = 0.5
+max_move_time = 5.0
+min_idle_time = 0.5
+max_idle_time = 4.0

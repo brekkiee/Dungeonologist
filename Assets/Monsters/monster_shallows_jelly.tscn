@@ -1,11 +1,12 @@
 [gd_scene load_steps=73 format=3 uid="uid://5tpgx4vpta1x"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_ikks4"]
-[ext_resource type="Resource" uid="uid://bcn8c8b4hh2ro" path="res://Scripts/Enclosure/species_shallows_jelly.tres" id="2_733a5"]
+[ext_resource type="Resource" uid="uid://bcn8c8b4hh2ro" path="res://Scripts/Enclosure/SpeciesResources/species_shallows_jelly.tres" id="2_733a5"]
 [ext_resource type="Texture2D" uid="uid://dmgveio24johe" path="res://Assets/Animations/Monsters/anim_Idle_ShallowsJelly.png" id="2_d1pqv"]
 [ext_resource type="Texture2D" uid="uid://c2csl6a1n1pc8" path="res://Assets/Animations/Monsters/anim_Walk_ShallowsJelly.png" id="3_27l27"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_2mcub"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_r3q7w"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ueglr"]
 atlas = ExtResource("2_d1pqv")

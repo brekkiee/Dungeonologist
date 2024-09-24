@@ -18,6 +18,7 @@ var scenes: Dictionary = {}
 @onready var main_ui = null
 
 func _ready():
+	randomize()
 	var main_window_scene = preload("res://Scenes/Windows/MainWindow.tscn")
 	main_window = main_window_scene.instantiate()
 	if main_window == null:

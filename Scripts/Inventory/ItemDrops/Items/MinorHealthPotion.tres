@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDrop" load_steps=2 format=3 uid="uid://duuq1o3ckbbof"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/ItemDrop.gd" id="1_5v04t"]
+
+[resource]
+script = ExtResource("1_5v04t")
+item_name = "minor_health_potion"
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 1

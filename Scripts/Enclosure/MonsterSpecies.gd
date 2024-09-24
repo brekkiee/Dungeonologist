@@ -4,12 +4,17 @@ extends Resource
 @export var name: String
 @export var diet: Array[String] = []
 @export var habitats: Array[String] = []
+@export var drop_table: DropTable
 
-@export_group("Meters Decline (Per Second)")
+@export_group("Item Drops")
+@export var item_type: int
+@export var drop_rate: int
+
+@export_group("Meters (Per Second)")
 @export var hunger_rate = 5.0
 @export var unhappy_rate = 5.0
 
-@export_group("Movement Variables")
+@export_group("Movement")
 @export_subgroup("Walking")
 @export var movement_speed = 1.0
 @export var min_move_time = 0.5

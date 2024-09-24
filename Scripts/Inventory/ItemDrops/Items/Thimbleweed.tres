@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDrop" load_steps=2 format=3 uid="uid://dt7rv86nkuhsm"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/ItemDrop.gd" id="1_4yc8i"]
+
+[resource]
+script = ExtResource("1_4yc8i")
+item_name = "thimbleweed"
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 1

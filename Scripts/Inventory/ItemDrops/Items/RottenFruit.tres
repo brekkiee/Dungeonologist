@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDrop" load_steps=2 format=3 uid="uid://ctd31fj17g1kt"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/ItemDrop.gd" id="1_krboh"]
+
+[resource]
+script = ExtResource("1_krboh")
+item_name = "rotten_fruit"
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 1

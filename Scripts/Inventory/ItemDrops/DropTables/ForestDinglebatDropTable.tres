@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DropTable" load_steps=3 format=3 uid="uid://bmtsv7lciwi0h"]
+
+[ext_resource type="Resource" uid="uid://ctd31fj17g1kt" path="res://Scripts/Inventory/ItemDrops/Items/RottenFruit.tres" id="1_lhqdy"]
+[ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/DropTable.gd" id="2_bq0pk"]
+
+[resource]
+script = ExtResource("2_bq0pk")
+drops = Array[Resource("res://Scripts/Inventory/ItemDrops/ItemDrop.gd")]([ExtResource("1_lhqdy")])

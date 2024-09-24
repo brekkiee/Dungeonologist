@@ -1,11 +1,12 @@
 [gd_scene load_steps=73 format=3 uid="uid://c1dal5c4wsg5g"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_lr3ic"]
-[ext_resource type="Resource" uid="uid://c006xxedkksd8" path="res://Scripts/Enclosure/species_forest_dinglebat.tres" id="2_ggycx"]
+[ext_resource type="Resource" uid="uid://c006xxedkksd8" path="res://Scripts/Enclosure/SpeciesResources/species_forest_dinglebat.tres" id="2_ggycx"]
 [ext_resource type="Texture2D" uid="uid://7p8h1moj4fok" path="res://Assets/Animations/Monsters/anim_Idle_ForestDinglebat.png" id="2_mdvsx"]
 [ext_resource type="Texture2D" uid="uid://dk5ptvfsq5kch" path="res://Assets/Animations/Monsters/anim_Walk_ForestDinglebat.png" id="3_lwngg"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_ex3g3"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_rnsp2"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfufn"]
 atlas = ExtResource("2_mdvsx")

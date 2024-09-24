@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DropTable" load_steps=3 format=3 uid="uid://bx0mv75mdsji2"]
+
+[ext_resource type="Resource" uid="uid://yhf055v77dne" path="res://Scripts/Inventory/ItemDrops/Items/LuckyCoin.tres" id="1_mchsr"]
+[ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/DropTable.gd" id="2_b5fk7"]
+
+[resource]
+script = ExtResource("2_b5fk7")
+drops = Array[Resource("res://Scripts/Inventory/ItemDrops/ItemDrop.gd")]([ExtResource("1_mchsr")])
