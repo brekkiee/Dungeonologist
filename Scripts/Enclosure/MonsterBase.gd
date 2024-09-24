@@ -70,7 +70,11 @@ func _ready():
 	update_monster()
 	random_move()
 	add_to_group("monsters")
-	
+	# Connect DayNightCycle signal
+	DayNightCycle.connect("day_started", Callable(self, "_on_day_started"))
+
+func _on_day_started(day_count):
+	attempt_item_drop()
 # Load all the monster emote textures
 func _load_emotes():
 	emote_happy = load("res://Assets/Sprites/Emotes/emote_0_Happy.png")
@@ -86,16 +90,17 @@ func _load_emotes():
 	_hide_emote()
 # Called to update monster movement, hunger, happiness
 func update_monster():
-	if hunger_meter == 0 or happiness_meter == 0:
-		#monster_animation.modulate = Color(1,0,0) # Sad monster
-		emote_sprite.texture = emote_sad
-		_show_emote()
-	elif hunger_meter <= 2 or happiness_meter <= 2:
-		emote_sprite.texture = emote_neutral
-		_show_emote()
-	else:
-		#monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
-		emote_sprite.texture = emote_happy
+	if not item_ready_to_collect:
+		if hunger_meter == 0 or happiness_meter == 0:
+			#monster_animation.modulate = Color(1,0,0) # Sad monster
+			emote_sprite.texture = emote_sad
+			_show_emote()
+		elif hunger_meter <= 2 or happiness_meter <= 2:
+			emote_sprite.texture = emote_neutral
+			_show_emote()
+		else:
+			#monster_animation.modulate = Color(1,1,1) # Happy healthy monstaah
+			emote_sprite.texture = emote_happy
 	
 	# Play the relevant hunger animation
 	match hunger_meter:
@@ -248,12 +253,13 @@ func _input_event(viewport, event, shape_idx):
 			InventoryManager.item_used_click() # Remove the item from the inventory
 
 func attempt_item_drop():
-	if hunger_meter < 5 or happiness_meter < 5:
-		# Monster does not drop items if not fully fed and happy
+	if hunger_meter < 2 or happiness_meter < 2:
+		#TODO: Monsters don't drop items if not fully fed and happy
 		return
 	
 	var drop_table = species.drop_table
 	if drop_table == null:
+		print("drop_table not set for this species")
 		return  # No drops available for this species
 
 	for item_drop in drop_table.drops:
@@ -263,6 +269,7 @@ func attempt_item_drop():
 			# Store the item in items_dropped dictionary
 			items_dropped[item_drop.item_name] = quantity
 			item_ready_to_collect = true
+			emote_sprite.texture = emote_question
 			_show_emote()
 			break  # Only one item drop per day
 

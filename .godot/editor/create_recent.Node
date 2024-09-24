@@ -1,10 +1,10 @@
+Label
 CollisionShape2D
 Sprite2D
 Area2D
 AnimatedSprite2D
 TextureRect
 Node2D
-Label
 AudioStreamPlayer2D
 HBoxContainer
 Button

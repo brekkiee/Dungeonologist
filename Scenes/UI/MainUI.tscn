@@ -267,6 +267,19 @@ offset_top = 2.0
 mouse_filter = 2
 texture = ExtResource("18_ex3na")
 
+[node name="DayCounterLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.231
+anchor_right = 0.562
+anchor_bottom = 0.336
+offset_left = 0.575989
+offset_top = 0.311996
+offset_right = 0.575928
+offset_bottom = 0.271988
+theme_override_font_sizes/font_size = 25
+
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
 [connection signal="gui_input" from="InventoryPanel/SlidingDrawer/DrawerHandle" to="InventoryPanel/SlidingDrawer" method="_on_texture_rect_gui_input"]

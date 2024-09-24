@@ -3,3 +3,9 @@ res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Singletons/DayNightCycle.gd
 res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/MainUI.tscn
+res://Scripts/Enclosure/MonsterBase.gd
+res://Scripts/UI/UI.gd
+res://Scripts/Inventory/ItemDrops/DropTables/CommonSlimeDropTable.tres
+res://Scripts/Inventory/ItemDrops/DropTables/CommonShroomanDropTable.tres
+res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres

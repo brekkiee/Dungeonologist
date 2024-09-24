@@ -3,7 +3,7 @@ extends Node
 signal day_started(day_count)
 signal night_started(day_count)
 
-var day_duration: float = 10.0  # Duration of a day in seconds
+var day_duration: float = 5.0  # Duration of a day in seconds
 var night_duration: float = 5.0  # Duration of a night in seconds
 var current_time: float = 0.0
 var is_day: bool = true
