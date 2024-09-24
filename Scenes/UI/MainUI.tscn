@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/Codex/mons_book.png" id="6_503of"]
 [ext_resource type="Texture2D" uid="uid://dutncfgxiacn8" path="res://Assets/Sprites/UI/drawer_closed.png" id="7_m5qe6"]
 [ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/UI/scene_change_buttons.tscn" id="9_17vtp"]
-[ext_resource type="Texture2D" uid="uid://ba76spmhrib31" path="res://Assets/Sprites/UI/drawer_open.png" id="9_kifj2"]
+[ext_resource type="Texture2D" uid="uid://bmltqku14lj0d" path="res://Assets/Sprites/UI/drawer_open.png" id="9_kifj2"]
 [ext_resource type="Script" path="res://Scripts/Inventory/inventory_panel.gd" id="10_ggugm"]
 [ext_resource type="Texture2D" uid="uid://dy58iobnomh1m" path="res://Assets/Sprites/UI/drawer_handle.png" id="11_ltjqf"]
 [ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="12_x6kwb"]

@@ -9,3 +9,6 @@ res://Scripts/UI/UI.gd
 res://Scripts/Inventory/ItemDrops/DropTables/CommonSlimeDropTable.tres
 res://Scripts/Inventory/ItemDrops/DropTables/CommonShroomanDropTable.tres
 res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres
+res://Scripts/Inventory/ItemDrops/Items/ShroomSpores.tres
+res://Scripts/Inventory/ItemDrops/Items/SlimeResidue.tres
+res://Scenes/UI/ExpeditionsUI.tscn

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmltqku14lj0d"
-path="res://.godot/imported/drawer_open.png-3dade7b15e3609f59456f558aa110e29.ctex"
+uid="uid://ckr1k27td2vf0"
+path="res://.godot/imported/Expe_Pin_4.png-34f28bf1030189f453d4817293e98d49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/drawer_open.png"
-dest_files=["res://.godot/imported/drawer_open.png-3dade7b15e3609f59456f558aa110e29.ctex"]
+source_file="res://Assets/Sprites/Expeditions/Expe_Pin_4.png"
+dest_files=["res://.godot/imported/Expe_Pin_4.png-34f28bf1030189f453d4817293e98d49.ctex"]
 
 [params]
 

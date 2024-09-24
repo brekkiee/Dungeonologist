@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="DropTable" load_steps=3 format=3 uid="uid://sqx1is26yk8h"]
+[gd_resource type="Resource" script_class="DropTable" load_steps=2 format=3 uid="uid://sqx1is26yk8h"]
 
-[ext_resource type="Resource" uid="uid://dsji5wgg83txs" path="res://Scripts/Inventory/ItemDrops/Items/SlimeResidue.tres" id="1_b2dwy"]
 [ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/DropTable.gd" id="1_bhxwd"]
 
 [resource]
 script = ExtResource("1_bhxwd")
-drops = Array[Resource("res://Scripts/Inventory/ItemDrops/ItemDrop.gd")]([ExtResource("1_b2dwy")])
+drops = Array[Resource("res://Scripts/Inventory/ItemDrops/ItemDrop.gd")]([])

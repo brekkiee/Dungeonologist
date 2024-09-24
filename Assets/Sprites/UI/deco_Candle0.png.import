@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmltqku14lj0d"
-path="res://.godot/imported/drawer_open.png-3dade7b15e3609f59456f558aa110e29.ctex"
+uid="uid://b8jyvnlx7wx3v"
+path="res://.godot/imported/deco_Candle0.png-5337d5241de004af299cc774140e43a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/drawer_open.png"
-dest_files=["res://.godot/imported/drawer_open.png-3dade7b15e3609f59456f558aa110e29.ctex"]
+source_file="res://Assets/Sprites/UI/deco_Candle0.png"
+dest_files=["res://.godot/imported/deco_Candle0.png-5337d5241de004af299cc774140e43a0.ctex"]
 
 [params]
 

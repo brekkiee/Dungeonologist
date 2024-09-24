@@ -1,3 +1,4 @@
+res://Assets/Sprites/Expeditions
 res://Singletons
 res://Scripts/Inventory/ItemDrops/DropTables
 res://Scripts/Inventory/ItemDrops
@@ -7,7 +8,6 @@ res://Scripts/Enclosure
 res://Assets/Sprites/InventoryIcons
 res://Scripts/Quests
 res://Scenes/UI
-res://Assets/Sprites/Expeditions
 res://Quests/Dialogue/DialogueText
 res://Scenes/Windows
 res://Assets/Sprites/Emotes

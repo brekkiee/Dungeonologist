@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://dmu3k3gncmnnf"]
 
-[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="1_xh8jr"]
+[ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="1_va3ym"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_hpsj0"]
 [ext_resource type="Texture2D" uid="uid://dn6rnop0smibm" path="res://Assets/Sprites/Tools/tool_Clipboard_0.png" id="3_ejiw1"]
 [ext_resource type="Texture2D" uid="uid://d1c40ye0c7wjs" path="res://Assets/Sprites/Tools/tool_Clipboard_1.png" id="4_sx3sn"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="8_i017s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
-texture = ExtResource("1_xh8jr")
+texture = ExtResource("1_va3ym")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqtug"]
 atlas = ExtResource("8_i017s")
