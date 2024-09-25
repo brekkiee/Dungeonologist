@@ -1,8 +1,8 @@
 extends Control
 
 var holding = false
-var min_x_value: float = -845
-var max_x_value: float = -200
+var min_x_value: float = -924
+var max_x_value: float = 0
 var initial_difference: float
 
 # Called when node enters scene tree for the first time

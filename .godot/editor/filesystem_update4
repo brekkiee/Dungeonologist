@@ -2,3 +2,6 @@ res://Scenes/UI/StartMenuUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Singletons/InventoryManager.gd
+res://Scenes/UI/MainUI.tscn
+res://Scripts/Inventory/inventory_panel.gd
+res://Scripts/Alchemy/ingredient_slot.gd
