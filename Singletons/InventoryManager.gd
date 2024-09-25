@@ -61,6 +61,7 @@ func add_plant_inventory_item(itemName):
 	var newitem = item_template.instantiate()
 	newitem.ItemName = itemName
 	newitem.ItemQuantity = 1
+	newitem.ItemType = "Plant"
 	# Assign item's texture based on the all_items_list
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]
 	newitem.get_node("TextureRect/Label").text = str(newitem.ItemQuantity)
@@ -87,6 +88,7 @@ func add_potion_inventory_item(itemName):
 	var newitem = item_template.instantiate()
 	newitem.ItemName = itemName
 	newitem.ItemQuantity = 1
+	newitem.ItemType = "Potion"
 	# Assign item's texture based on the all_items_list
 
 	newitem.get_node("TextureRect").texture = all_Items_list[itemName]	
@@ -153,6 +155,7 @@ func item_not_used_click():
 	await get_tree().create_timer(0.1).timeout
 	if item_mouse_follow != null:
 		#update_item_positions()
+		item_mouse_follow.hide_tooltip()
 		return_item(item_mouse_follow)
 		item_mouse_follow = null
 		print("Nothing pressed with item.")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcdgm83t3tys6"]
+
+[ext_resource type="Texture2D" uid="uid://dm7jyd33vbgl0" path="res://Assets/UI/item_ToolTip.png" id="1_f3as7"]
+[ext_resource type="Script" path="res://Scenes/UI/InvItemTooltip.gd" id="1_p40w1"]
+
+[node name="InvItemTooltip" type="NinePatchRect"]
+z_index = 50
+offset_left = 40.0
+offset_top = -10.0
+offset_right = 190.0
+offset_bottom = 65.0
+texture = ExtResource("1_f3as7")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("1_p40w1")
+
+[node name="M" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 8
+
+[node name="V" type="VBoxContainer" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ItemName" type="Label" parent="M/V"]
+layout_mode = 2
+text = "<Item Name>
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemType" type="Label" parent="M/V"]
+layout_mode = 2
+text = "<Item Type>
+"
+horizontal_alignment = 1
+vertical_alignment = 1

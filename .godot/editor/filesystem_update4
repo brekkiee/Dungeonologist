@@ -1,6 +1,3 @@
-res://Scenes/Windows/monster_enclosure.tscn
+res://Scenes/UI/StartMenuUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/UI/MainUI.tscn
-res://Scenes/Windows/expeditions.tscn
-res://Scenes/UI/ExpeditionsUI.tscn
