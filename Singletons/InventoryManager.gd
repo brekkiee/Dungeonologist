@@ -115,7 +115,7 @@ func icon_clicked(icon, item_name: String):
 			plant_item_origin.merge(temp, true)
 		if current_potion_inventory.has(icon):
 			var temp = {icon: icon.global_position}
-			potion_item_origin.merge(temp)
+			potion_item_origin.merge(temp, true)
 		item_mouse_follow = icon
 
 # Check the item held for name and texture
