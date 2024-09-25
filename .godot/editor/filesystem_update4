@@ -1,3 +1,4 @@
 res://Scenes/UI/StartMenuUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
+res://Singletons/InventoryManager.gd

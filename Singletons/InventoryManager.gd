@@ -11,7 +11,8 @@ var current_potion_inventory = []
 var item_template = preload("res://Scenes/UI/InventoryItem.tscn")
 # Tracks item following the mouse
 var item_mouse_follow = null
-var item_mouse_follow_origin = null
+var plant_item_origin: Dictionary = {}
+var potion_item_origin: Dictionary = {}
 #item currently in hand
 var held_item = null
 # Dictionary of all possible items and their icons
@@ -67,8 +68,11 @@ func add_plant_inventory_item(itemName):
 	newitem.get_node("TextureRect/Label").text = str(newitem.ItemQuantity)
 	#add item to the plants array
 	current_plant_inventory.append(newitem)
+	var temp = {newitem: newitem.global_position}
+	plant_item_origin.merge(temp)
 	# Add item to inventory panel
 	inventory_panel_parent.get_node("PlantInventory").call_deferred("add_child", newitem)
+	
 	QuestManager.on_plant_harvested()
 	return true
 
@@ -95,6 +99,8 @@ func add_potion_inventory_item(itemName):
 	#add item to the potions array
 	current_potion_inventory.append(newitem)
 	# Add item to inventory panel
+	var temp = {newitem: newitem.global_position}
+	potion_item_origin.merge(temp)
 	inventory_panel_parent.get_node("PotionInventory").call_deferred("add_child", newitem)
 	QuestManager.on_potion_brewed()
 	return true
@@ -104,7 +110,12 @@ func icon_clicked(icon, item_name: String):
 		icon.get_node("Button").visible = false
 		held_item = item_name
 		print("Item Click Initated on : ", item_name)
-		item_mouse_follow_origin = icon.global_position
+		if current_plant_inventory.has(icon):
+			var temp = {icon: icon.global_position}
+			plant_item_origin.merge(temp, true)
+		if current_potion_inventory.has(icon):
+			var temp = {icon: icon.global_position}
+			potion_item_origin.merge(temp)
 		item_mouse_follow = icon
 
 # Check the item held for name and texture
@@ -122,7 +133,11 @@ func check_item_held():
 # Return Item to original Position
 func return_item(item):
 	print("Returning ", item.ItemName ," to Origin Position")
-	item.global_position = item_mouse_follow_origin
+	item.get_node("Button").visible = true
+	if current_plant_inventory.has(item):
+		item.global_position = plant_item_origin.get(item)
+	elif current_potion_inventory.has(item):
+		item.global_position = potion_item_origin.get(item)
 		
 
 # Handle item used by cauldron
@@ -138,6 +153,8 @@ func item_used_click():
 				# Update Back and Front end quantity
 				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
+				item_mouse_follow.hide_tooltip()
+				return_item(item_mouse_follow)
 		elif current_potion_inventory.has(item_mouse_follow):
 			# Check if the item needs to be removed
 			if item_mouse_follow.ItemQuantity == 1:
@@ -147,6 +164,9 @@ func item_used_click():
 				# Update Back and Front end quantity
 				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
+				item_mouse_follow.hide_tooltip()
+				return_item(item_mouse_follow)
+				
 		item_mouse_follow = null
 		
 
