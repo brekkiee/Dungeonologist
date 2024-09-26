@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cebmlcokb1qku"
+path="res://.godot/imported/Monster Happy.mp3-72cc6df0467c01877ed76057c4527c0f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/Monster Happy.mp3"
+dest_files=["res://.godot/imported/Monster Happy.mp3-72cc6df0467c01877ed76057c4527c0f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

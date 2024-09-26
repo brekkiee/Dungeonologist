@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dporc2ne4pw6f"
+path="res://.godot/imported/chewing 2.mp3-d1a69c158e8e54c0e12d958262d3fb75.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/chewing 2.mp3"
+dest_files=["res://.godot/imported/chewing 2.mp3-d1a69c158e8e54c0e12d958262d3fb75.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

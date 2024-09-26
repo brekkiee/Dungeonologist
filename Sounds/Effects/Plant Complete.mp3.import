@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btbap83u3l02e"
+path="res://.godot/imported/Plant Complete.mp3-0b3dddd2d703fef6cbd54deb047fd3b1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/Plant Complete.mp3"
+dest_files=["res://.godot/imported/Plant Complete.mp3-0b3dddd2d703fef6cbd54deb047fd3b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
