@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=2 format=3 uid="uid://dvo56rxhki1jb"]
+[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=3 format=3 uid="uid://dvo56rxhki1jb"]
 
+[ext_resource type="Resource" uid="uid://da7d5r1eytfv3" path="res://Scripts/Inventory/ItemDrops/DropTables/PlainsImpDropTable.tres" id="1_6htim"]
 [ext_resource type="Script" path="res://Scripts/Enclosure/MonsterSpecies.gd" id="1_iq366"]
 
 [resource]
@@ -7,6 +8,7 @@ script = ExtResource("1_iq366")
 name = "plains_imp"
 diet = Array[String](["Meat"])
 habitats = Array[String](["Plains"])
+drop_table = ExtResource("1_6htim")
 item_type = 10
 drop_rate = 1
 hunger_rate = 5.0

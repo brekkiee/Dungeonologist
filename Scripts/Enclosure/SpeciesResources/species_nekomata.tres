@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=2 format=3 uid="uid://dy53effmn4ivh"]
+[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=3 format=3 uid="uid://dy53effmn4ivh"]
 
+[ext_resource type="Resource" uid="uid://bx0mv75mdsji2" path="res://Scripts/Inventory/ItemDrops/DropTables/NekomataDropTable.tres" id="1_h2m0w"]
 [ext_resource type="Script" path="res://Scripts/Enclosure/MonsterSpecies.gd" id="1_skskk"]
 
 [resource]
@@ -7,6 +8,7 @@ script = ExtResource("1_skskk")
 name = "nekomata"
 diet = Array[String](["Meat"])
 habitats = Array[String](["Mountains"])
+drop_table = ExtResource("1_h2m0w")
 item_type = 16
 drop_rate = 0
 hunger_rate = 5.0

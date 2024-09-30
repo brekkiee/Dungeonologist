@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cw28cxxwqsy18"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/snackle.gd" id="1_ah5q5"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/snackle.gd" id="1_ah5q5"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_47hms"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opkqm"]

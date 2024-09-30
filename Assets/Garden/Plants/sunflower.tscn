@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bopt04330ejsn"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/sunflower.gd" id="1_marwh"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/sunflower.gd" id="1_marwh"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_5u4dr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_parcg"]

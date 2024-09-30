@@ -8,3 +8,7 @@ item_name = "lucky_coin"
 drop_rate = 0.1
 min_quantity = 1
 max_quantity = 1
+type = "material"
+uses = Array[String](["alchemy"])
+drop_location = "enclosure"
+unlock_condition = 3

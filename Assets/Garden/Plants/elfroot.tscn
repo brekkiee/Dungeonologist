@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://beqqqebnqcv4e"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/elfroot.gd" id="1_xydk8"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/elfroot.gd" id="1_xydk8"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_xssym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ep45n"]

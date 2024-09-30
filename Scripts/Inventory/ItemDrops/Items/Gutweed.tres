@@ -8,3 +8,7 @@ item_name = "gutweed"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1
+type = "veg"
+uses = Array[String](["food"])
+drop_location = "garden"
+unlock_condition = 2

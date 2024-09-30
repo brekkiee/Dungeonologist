@@ -1,7 +1,10 @@
-res://Scenes/UI/StartMenuUI.tscn
+res://Assets/Alchemy/Cauldron.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Singletons/InventoryManager.gd
-res://Scenes/UI/MainUI.tscn
-res://Scripts/Inventory/inventory_panel.gd
-res://Scripts/Alchemy/ingredient_slot.gd
+res://Assets/Garden/Plants/elfroot.tscn
+res://Assets/Garden/Plants/peepermint.tscn
+res://Assets/Garden/Plants/snackle.tscn
+res://Assets/Garden/Plants/snepper.tscn
+res://Assets/Garden/Plants/sunflower.tscn
+res://Scenes/Windows/alchemy_lab.tscn
+res://Assets/Alchemy/Ladle.tscn

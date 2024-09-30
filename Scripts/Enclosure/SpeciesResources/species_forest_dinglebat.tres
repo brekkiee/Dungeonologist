@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=2 format=3 uid="uid://c006xxedkksd8"]
+[gd_resource type="Resource" script_class="MonsterSpecies" load_steps=3 format=3 uid="uid://c006xxedkksd8"]
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/MonsterSpecies.gd" id="1_porpw"]
+[ext_resource type="Resource" uid="uid://bmtsv7lciwi0h" path="res://Scripts/Inventory/ItemDrops/DropTables/ForestDinglebatDropTable.tres" id="1_tlbjl"]
 
 [resource]
 script = ExtResource("1_porpw")
 name = "forest_dinglebat"
 diet = Array[String](["Fruit"])
 habitats = Array[String](["Forests"])
+drop_table = ExtResource("1_tlbjl")
 item_type = 9
 drop_rate = 1
 hunger_rate = 5.0

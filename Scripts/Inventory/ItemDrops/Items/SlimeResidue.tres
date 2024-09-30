@@ -8,3 +8,7 @@ item_name = "slime_residue"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1
+type = "material"
+uses = Array[String](["alchemy"])
+drop_location = "enclosure"
+unlock_condition = 0

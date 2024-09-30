@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://pu4fop6gpx8i"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/snepper.gd" id="1_xstro"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/snepper.gd" id="1_xstro"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_hnq02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vclg6"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c8ifm3uw7nioy"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/peepermint.gd" id="1_vihrr"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/peepermint.gd" id="1_vihrr"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_r0cjc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0w37"]

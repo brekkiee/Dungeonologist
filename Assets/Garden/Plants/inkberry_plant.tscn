@@ -1,26 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://43cpucc3koas"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/berry.gd" id="1_kx5lu"]
-[ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_usgqn"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/inkberry_plant.gd" id="1_elaf5"]
+[ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_6xock"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4aaui"]
-atlas = ExtResource("2_usgqn")
+atlas = ExtResource("2_6xock")
 region = Rect2(0, 200, 31, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgxh8"]
-atlas = ExtResource("2_usgqn")
+atlas = ExtResource("2_6xock")
 region = Rect2(31, 200, 31, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odpgb"]
-atlas = ExtResource("2_usgqn")
+atlas = ExtResource("2_6xock")
 region = Rect2(62, 200, 31, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4wcl"]
-atlas = ExtResource("2_usgqn")
+atlas = ExtResource("2_6xock")
 region = Rect2(93, 200, 31, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a70dc"]
-atlas = ExtResource("2_usgqn")
+atlas = ExtResource("2_6xock")
 region = Rect2(124, 200, 31, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4qyd0"]
@@ -49,8 +49,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfcqt"]
 size = Vector2(87, 138)
 
-[node name="Berry" type="Area2D"]
-script = ExtResource("1_kx5lu")
+[node name="Inkberry" type="Area2D"]
+script = ExtResource("1_elaf5")
 
 [node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.90735e-06, -7.62939e-06)

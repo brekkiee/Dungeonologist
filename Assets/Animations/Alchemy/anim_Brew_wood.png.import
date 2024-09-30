@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkyam0b2hd3xt"
-path="res://.godot/imported/anim_Brew_wood.png-a4355db8b76e898fa14da5b1dea6a460.ctex"
+uid="uid://dqu15i7q7cawf"
+path="res://.godot/imported/anim_Brew_wood.png-69280f05377ae55c8472f22a031b7579.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Alchemy/anim_Brew_wood.png"
-dest_files=["res://.godot/imported/anim_Brew_wood.png-a4355db8b76e898fa14da5b1dea6a460.ctex"]
+source_file="res://Assets/Sprites/Alchemy/anim_Brew_wood.png"
+dest_files=["res://.godot/imported/anim_Brew_wood.png-69280f05377ae55c8472f22a031b7579.ctex"]
 
 [params]
 
