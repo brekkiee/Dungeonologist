@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://blm1kxhgx0rne"
+path="res://.godot/imported/sweetroot_icon.png-f3ffa2d1695c9ba61c4b9d46b5c3cf0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/sweetroot_icon.png"
+dest_files=["res://.godot/imported/sweetroot_icon.png-f3ffa2d1695c9ba61c4b9d46b5c3cf0b.ctex"]
 
 [params]
 

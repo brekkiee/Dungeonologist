@@ -23,6 +23,7 @@ GameManager="*res://Singletons/GameManager.gd"
 InventoryManager="*res://Singletons/InventoryManager.gd"
 ExpeditionManager="*res://Singletons/ExpeditionManager.gd"
 DayNightCycle="*res://Singletons/DayNightCycle.gd"
+PlayerData="*res://Singletons/PlayerData.gd"
 
 [display]
 

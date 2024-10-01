@@ -12,7 +12,6 @@ func _ready():
 
 # Called when the growth animation finishes
 func _on_growth_animation_finished():
-	print("Growth animation finished")
 	if plant_animation.animation == "growth":
 		# Stop on the last frame of the animation
 		plant_animation.stop()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://40ovq64rb0mg"]
 
-[ext_resource type="Script" path="res://Scripts/Garden/Plants/mushroom.gd" id="1_7tbku"]
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/blood_cap_plant.gd" id="1_2lckn"]
 [ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_5t21a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2xma"]
@@ -50,7 +50,7 @@ animations = [{
 size = Vector2(87, 138)
 
 [node name="BloodCap" type="Area2D"]
-script = ExtResource("1_7tbku")
+script = ExtResource("1_2lckn")
 
 [node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.90735e-06, -7.62939e-06)

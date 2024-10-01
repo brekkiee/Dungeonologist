@@ -2,5 +2,5 @@ extends PlantBase
 
 # Called when the node enters the scene tree for the first time.
 func _init():
-	growth_speed = 0.8
-	harvested_item_name = "inkberry_item"
+	growth_speed = 1
+	harvested_item_name = "sentient_moss_item"

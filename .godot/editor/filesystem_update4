@@ -1,10 +1,7 @@
-res://Assets/Alchemy/Cauldron.tscn
+res://Assets/Garden/Plants/blood_cap_plant.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Assets/Garden/Plants/elfroot.tscn
-res://Assets/Garden/Plants/peepermint.tscn
-res://Assets/Garden/Plants/snackle.tscn
-res://Assets/Garden/Plants/snepper.tscn
-res://Assets/Garden/Plants/sunflower.tscn
-res://Scenes/Windows/alchemy_lab.tscn
-res://Assets/Alchemy/Ladle.tscn
+res://Scenes/Windows/garden.tscn
+res://Quests/Codex/codex.tscn
+res://Quests/Codex/QuestLog.tscn
+res://Scripts/ResearchTasks/codex.gd

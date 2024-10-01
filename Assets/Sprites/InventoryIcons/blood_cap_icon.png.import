@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://lq4uvn4wajgp"
+path="res://.godot/imported/blood_cap_icon.png-d61a76bdfa9123efcabf1750c2cb8322.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/blood_cap_icon.png"
+dest_files=["res://.godot/imported/blood_cap_icon.png-d61a76bdfa9123efcabf1750c2cb8322.ctex"]
 
 [params]
 

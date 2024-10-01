@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://bopt04330ejsn"]
+
+[ext_resource type="Script" path="res://Scripts/Garden/Plants/dawn_grass_plant.gd" id="1_yx53b"]
+[ext_resource type="Texture2D" uid="uid://dtian7rbsfdli" path="res://Assets/Animations/Garden/anim_Grow_Planter.png" id="2_4wj51"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_parcg"]
+atlas = ExtResource("2_4wj51")
+region = Rect2(0, 100, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0r1f"]
+atlas = ExtResource("2_4wj51")
+region = Rect2(31, 100, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whi8v"]
+atlas = ExtResource("2_4wj51")
+region = Rect2(62, 100, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v13qv"]
+atlas = ExtResource("2_4wj51")
+region = Rect2(93, 100, 31, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1hts"]
+atlas = ExtResource("2_4wj51")
+region = Rect2(124, 100, 31, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qyd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_parcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0r1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whi8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v13qv")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_t1hts")
+}],
+"loop": false,
+"name": &"growth",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfcqt"]
+size = Vector2(87, 138)
+
+[node name="DawnGrass" type="Area2D"]
+script = ExtResource("1_yx53b")
+
+[node name="PlantAnimSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, -7.62939e-06)
+scale = Vector2(2.86667, 2.86667)
+sprite_frames = SubResource("SpriteFrames_4qyd0")
+animation = &"growth"
+autoplay = "growth"
+frame_progress = 0.00685794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jfcqt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="animation_finished" from="PlantAnimSprite2D" to="." method="_on_growth_animation_finished"]

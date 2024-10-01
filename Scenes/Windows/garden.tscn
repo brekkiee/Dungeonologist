@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2v0wkaafl2kj"]
 
 [ext_resource type="Texture2D" uid="uid://q8cv5lswy2yp" path="res://Assets/Sprites/Garden/bg_Grow.png" id="1_bqh3r"]
-[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Assets/Garden/Plants/snackle.tscn" id="3_jq60l"]
-[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Assets/Garden/Plants/snepper.tscn" id="4_twhdk"]
+[ext_resource type="PackedScene" uid="uid://cw28cxxwqsy18" path="res://Assets/Garden/Plants/sweetroot_plant.tscn" id="2_n08m3"]
+[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Assets/Garden/Plants/thimbleweed_plant.tscn" id="4_cghpx"]
 [ext_resource type="Texture2D" uid="uid://cch6wcan51glq" path="res://Assets/Sprites/Garden/Grow_plant_2.png" id="5_5r1g2"]
-[ext_resource type="PackedScene" uid="uid://beqqqebnqcv4e" path="res://Assets/Garden/Plants/elfroot.tscn" id="5_nsbdl"]
-[ext_resource type="PackedScene" uid="uid://c8ifm3uw7nioy" path="res://Assets/Garden/Plants/peepermint.tscn" id="5_v3wnm"]
-[ext_resource type="PackedScene" uid="uid://bopt04330ejsn" path="res://Assets/Garden/Plants/sunflower.tscn" id="6_laujj"]
-[ext_resource type="PackedScene" uid="uid://40ovq64rb0mg" path="res://Assets/Garden/Plants/mushroom.tscn" id="7_dvba2"]
-[ext_resource type="PackedScene" uid="uid://43cpucc3koas" path="res://Assets/Garden/Plants/berry.tscn" id="8_hctrc"]
+[ext_resource type="PackedScene" uid="uid://beqqqebnqcv4e" path="res://Assets/Garden/Plants/dwarven_nettle_plant.tscn" id="5_atyvl"]
+[ext_resource type="PackedScene" uid="uid://bopt04330ejsn" path="res://Assets/Garden/Plants/dawn_grass_plant.tscn" id="6_ylm6w"]
+[ext_resource type="PackedScene" uid="uid://40ovq64rb0mg" path="res://Assets/Garden/Plants/blood_cap_plant.tscn" id="7_dvba2"]
+[ext_resource type="PackedScene" uid="uid://pu4fop6gpx8i" path="res://Assets/Garden/Plants/inkberry_plant.tscn" id="8_hctrc"]
+[ext_resource type="PackedScene" uid="uid://43cpucc3koas" path="res://Assets/Garden/Plants/sentient_moss_plant.tscn" id="8_wrhss"]
 
 [node name="Garden" type="Node2D"]
 
@@ -18,27 +18,27 @@ position = Vector2(718.683, 324.535)
 scale = Vector2(2.316, 2.30986)
 texture = ExtResource("1_bqh3r")
 
-[node name="Snackle" parent="." instance=ExtResource("3_jq60l")]
+[node name="SweetrootPlant" parent="." instance=ExtResource("2_n08m3")]
 position = Vector2(401, 466)
 
-[node name="Snepper" parent="." instance=ExtResource("4_twhdk")]
+[node name="InkberryPlant" parent="." instance=ExtResource("8_hctrc")]
 position = Vector2(632, 295)
 scale = Vector2(0.5, 0.5)
 
-[node name="Peepermint" parent="." instance=ExtResource("5_v3wnm")]
+[node name="ThimbleweedPlant" parent="." instance=ExtResource("4_cghpx")]
 position = Vector2(783, 295)
 scale = Vector2(0.5, 0.5)
 
-[node name="Elfroot" parent="." instance=ExtResource("5_nsbdl")]
+[node name="DwarvenNettlePlant" parent="." instance=ExtResource("5_atyvl")]
 position = Vector2(877, 437)
 
-[node name="Sunflower" parent="." instance=ExtResource("6_laujj")]
+[node name="DawnGrassPlant" parent="." instance=ExtResource("6_ylm6w")]
 position = Vector2(571, 453)
 
-[node name="Mushroom" parent="." instance=ExtResource("7_dvba2")]
+[node name="BloodCapPlant" parent="." instance=ExtResource("7_dvba2")]
 position = Vector2(742, 453)
 
-[node name="Berry" parent="." instance=ExtResource("8_hctrc")]
+[node name="SentientMossPlant" parent="." instance=ExtResource("8_wrhss")]
 position = Vector2(1033, 446)
 
 [node name="Planter" type="Sprite2D" parent="."]

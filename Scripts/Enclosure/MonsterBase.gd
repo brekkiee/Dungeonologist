@@ -46,6 +46,10 @@ var movement_direction = Vector2.ZERO
 # Item drop variables
 var items_dropped: Dictionary = {}  # Stores items ready to be collected
 var item_ready_to_collect: bool = false
+var foods_fed = []
+var all_food_items = ["dawn_grass", "thimbleweed"]
+#TODO: Add these food items in all_food_items:
+#"inkberry", "sweetroot", "blood_cap", "sentient_moss", "rotten_fruit", "dwarven_nettle", "gelatinous_blob"
 
 signal quest_complete
 
@@ -170,6 +174,10 @@ func feed_monster():
 		_show_emote()
 		update_monster()
 		QuestManager.on_monster_fed()
+		if species.name == "common_slime":
+			if food_item not in foods_fed:
+				foods_fed.append(food_item)
+				check_common_slime_research_task()
 	else:
 		print("This monster dosen't eat that")
 		#TODO: Provide player feedback
@@ -288,3 +296,9 @@ func collect_item():
 	hide_item_drop_emote()
 # TODO: Change the magnifying glass to show meters on hover
 # instead of on click
+
+func check_common_slime_research_task():
+	if foods_fed.size() == all_food_items.size():
+		PlayerData.research_tasks_completed["Common Slime"][0] = true
+		PlayerData.save_data()
+		print("Research task 'Common Slime' completed")

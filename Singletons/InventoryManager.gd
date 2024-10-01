@@ -17,16 +17,22 @@ var potion_item_origin: Dictionary = {}
 var held_item = null
 # Dictionary of all possible items and their icons
 var all_Items_list: Dictionary = {
-	"snackle_item": preload("res://Assets/Sprites/InventoryIcons/snackle_item.png"),
-	"snepper_item": preload("res://Assets/Sprites/InventoryIcons/snepper_item.png"),
-	"peepermint_item": preload("res://Assets/Sprites/InventoryIcons/peepermint_item.png"),
-	"elfroot_item": preload("res://Assets/Sprites/InventoryIcons/elfroot_item.png"),
-	"sunflower_item": preload("res://Assets/Sprites/InventoryIcons/sunflower_item.png"),
-	"berry_item": preload("res://Assets/Sprites/InventoryIcons/berry_item.png"),
-	"mushroom_item": preload("res://Assets/Sprites/InventoryIcons/mushroom_item.png"),
-	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_item.png") as Texture, 
-	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png"),
-	"common_slime_item": preload("res://Assets/Sprites/InventoryIcons/common_slime_item.png")
+	"dawn_grass_item": preload("res://Assets/Sprites/InventoryIcons/dawn_grass_icon.png"),
+	"thimbleweed_item": preload("res://Assets/Sprites/InventoryIcons/thimbleweed_icon.png"),
+	"inkberry_item": preload("res://Assets/Sprites/InventoryIcons/inkberry_icon.png"),
+	"sweetroot_item": preload("res://Assets/Sprites/InventoryIcons/sweetroot_icon.png"),
+	"slime_residue_item": preload("res://Assets/Sprites/InventoryIcons/slime_residue_icon.png"),
+	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png"),
+	"blood_cap_item": preload("res://Assets/Sprites/InventoryIcons/blood_cap_icon.png"),
+	"sentient_moss_item": preload("res://Assets/Sprites/InventoryIcons/sentient_moss_icon.png"), 
+	"shroom_spores_item": preload("res://Assets/Sprites/InventoryIcons/shroom_spores_icon.png"),
+	"rotten_fruit_item": preload("res://Assets/Sprites/InventoryIcons/rotten_fruit_icon.png"),
+	"imp_droppings_item": preload("res://Assets/Sprites/InventoryIcons/imp_droppings_icon.png"),
+	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_icon.png"),
+	"minor_stamina_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_stamina_potion_icon.png"),
+	"dwarven_nettle_item": preload("res://Assets/Sprites/InventoryIcons/dwarven_nettle_icon.png"),
+	"gelatinous_blob_item": preload("res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"),
+	"lucky_coin_item": preload("res://Assets/Sprites/InventoryIcons/lucky_coin_icon.png")
 }
 # Tracks items in cauldron inventory
 var current_cauldron_inventory = []
@@ -37,8 +43,6 @@ var cauldron_recipies: Dictionary = {
 	1: { "items_required": ["snepper_item", "peepermint_item"],
 		"result": "minor_mana_potion_item"}
 }
-
-
 
 # Sort items required for each cauldron recipe alphabetically
 func _ready():

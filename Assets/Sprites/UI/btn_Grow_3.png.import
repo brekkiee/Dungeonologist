@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://cl0q3oe0opra"
+path="res://.godot/imported/btn_Grow_3.png-d1e297c6cdb776f967c5700408b319c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/UI/btn_Grow_3.png"
+dest_files=["res://.godot/imported/btn_Grow_3.png-d1e297c6cdb776f967c5700408b319c2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://ctvjb1xqrp526"
+path="res://.godot/imported/sentient_moss_icon.png-8cecb5bb860a39bf67edb53606ee8fa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/sentient_moss_icon.png"
+dest_files=["res://.godot/imported/sentient_moss_icon.png-8cecb5bb860a39bf67edb53606ee8fa0.ctex"]
 
 [params]
 

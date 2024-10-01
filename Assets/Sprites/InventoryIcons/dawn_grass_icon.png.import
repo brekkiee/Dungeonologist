@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://dx7wbpwv5lcjp"
+path="res://.godot/imported/dawn_grass_icon.png-d4275a17eac07d39c5117e88f45099fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/dawn_grass_icon.png"
+dest_files=["res://.godot/imported/dawn_grass_icon.png-d4275a17eac07d39c5117e88f45099fc.ctex"]
 
 [params]
 

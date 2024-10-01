@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://t3udr0swadd7"
+path="res://.godot/imported/btn_Brew_3.png-4c148e94395f962b6be48228baac7362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/UI/btn_Brew_3.png"
+dest_files=["res://.godot/imported/btn_Brew_3.png-4c148e94395f962b6be48228baac7362.ctex"]
 
 [params]
 

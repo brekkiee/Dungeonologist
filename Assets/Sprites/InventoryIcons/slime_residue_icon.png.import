@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://bwnxdpqkjdbgx"
+path="res://.godot/imported/slime_residue_icon.png-84aa05c0de86e7a74b3b370b418d1622.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/slime_residue_icon.png"
+dest_files=["res://.godot/imported/slime_residue_icon.png-84aa05c0de86e7a74b3b370b418d1622.ctex"]
 
 [params]
 

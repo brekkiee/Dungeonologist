@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x13juxu1itii"
-path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
+uid="uid://652v0olj5buy"
+path="res://.godot/imported/rotten_fruit_icon.png-2eb7b59f01a6585454f30b0a9a15d6c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
-dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/rotten_fruit_icon.png"
+dest_files=["res://.godot/imported/rotten_fruit_icon.png-2eb7b59f01a6585454f30b0a9a15d6c3.ctex"]
 
 [params]
 
