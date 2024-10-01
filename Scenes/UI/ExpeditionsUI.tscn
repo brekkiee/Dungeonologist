@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dmu3k3gncmnnf"]
+[gd_scene load_steps=42 format=3 uid="uid://dmu3k3gncmnnf"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ExpeditionsUI.gd" id="1_o3nvq"]
 [ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="1_va3ym"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cbev5u7nsrfse" path="res://Assets/Sprites/Expeditions/Expe_Page_1.png" id="3_yd8aw"]
 [ext_resource type="Texture2D" uid="uid://cmob5lexwse7j" path="res://Assets/Sprites/Expeditions/Expe_Pin_3.png" id="4_1vjrt"]
 [ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="6_51usy"]
+[ext_resource type="Texture2D" uid="uid://iibp5lb7v3op" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="7_8oafl"]
+[ext_resource type="Script" path="res://Scripts/Expeditions/potion_slot.gd" id="8_b6o5l"]
 [ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="8_i017s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
@@ -325,6 +327,23 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("CanvasTexture_8lblm")
+
+[node name="TextureRect" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1/Potion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -51.0
+offset_right = 57.5
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.971, 1.977)
+texture = ExtResource("7_8oafl")
+script = ExtResource("8_b6o5l")
 
 [node name="ExpeditionAnimSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false

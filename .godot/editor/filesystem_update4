@@ -4,3 +4,6 @@ res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Scenes/UI/StartMenuUI.tscn
 res://Scenes/UI/ExpeditionsUI.gd
+res://Scripts/Expeditions/potion_slot.gd
+res://Scenes/Windows/alchemy_lab.tscn
+res://Assets/Alchemy/Cauldron.tscn

@@ -1,9 +1,10 @@
+res://Scripts/Expeditions
+res://Assets/Sprites/Alchemy
 res://Assets/Sprites/UI
 res://Assets/Sprites/Expeditions
 res://Scenes/UI
 res://Scripts/Inventory
 res://Assets/Animations/Alchemy
-res://Assets/Sprites/Alchemy
 res://Scripts/Enclosure
 res://Assets/Sprites/InventoryIcons
 res://Scripts/Quests
@@ -19,4 +20,3 @@ res://Assets/Sprites/Monsters
 res://Assets/Monsters
 res://Assets/Sprites
 res://Assets
-res://Assets/Animations
