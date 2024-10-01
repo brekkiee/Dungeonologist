@@ -5,3 +5,7 @@ res://Scenes/Windows/garden.tscn
 res://Quests/Codex/codex.tscn
 res://Quests/Codex/QuestLog.tscn
 res://Scripts/ResearchTasks/codex.gd
+res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres
+res://Scripts/Inventory/ItemDrops/Items/BloodCap.tres
+res://Singletons/DayNightCycle.gd
+res://Singletons/GameManager.gd

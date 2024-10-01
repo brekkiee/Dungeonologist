@@ -29,7 +29,7 @@ func _ready():
 	night_timer.connect("timeout", Callable(self, "_on_night_timer_timeout"))
 
 	# Start the day
-	start_day()
+#	start_day()
 
 func start_day():
 	is_day = true

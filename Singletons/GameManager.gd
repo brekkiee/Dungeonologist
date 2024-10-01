@@ -63,6 +63,9 @@ func start_game():
 	# Switch to the monster enclosure scene
 	change_scene("MonsterEnclosure")
 	
+	# Start the day/night cycle
+	DayNightCycle.start_day()
+	
 	# Assign found_monster variable after the MonsterEnclosure scene is instantiated
 	assign_found_monster()
 	
