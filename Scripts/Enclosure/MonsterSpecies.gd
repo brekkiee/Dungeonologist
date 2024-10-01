@@ -5,6 +5,7 @@ extends Resource
 @export var diet: Array[String] = []
 @export var habitats: Array[String] = []
 @export var drop_table: DropTable
+@export var is_carnivore: bool = false
 
 @export_group("Item Drops")
 @export var item_type: int

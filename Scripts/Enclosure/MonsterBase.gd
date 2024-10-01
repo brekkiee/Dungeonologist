@@ -175,9 +175,10 @@ func feed_monster():
 		update_monster()
 		QuestManager.on_monster_fed()
 		if species.name == "common_slime":
-			if food_item not in foods_fed:
-				foods_fed.append(food_item)
+			if food_item.name not in foods_fed:
+				foods_fed.append(food_item.name)
 				check_common_slime_research_task()
+		InventoryManager.item_used_click()
 	else:
 		print("This monster dosen't eat that")
 		#TODO: Provide player feedback
@@ -245,9 +246,7 @@ func _stop_moving():
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		var toolbox = get_node("/root/Header/UI/MainUI/ToolBox")
-		print("toolbox: ", toolbox)
 		var current_tool = toolbox.current_tool
-		print("current_tool: ", current_tool)
 		
 		if item_ready_to_collect:
 			collect_item()
@@ -258,7 +257,6 @@ func _input_event(viewport, event, shape_idx):
 		elif InventoryManager.item_mouse_follow != null:
 			# If item from inventory selected and dragged to monster, click to feed monster
 			feed_monster()
-			InventoryManager.item_used_click() # Remove the item from the inventory
 
 func attempt_item_drop():
 	if hunger_meter < 2 or happiness_meter < 2:

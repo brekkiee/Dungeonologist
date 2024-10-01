@@ -9,6 +9,7 @@ name = "plains_imp"
 diet = Array[String](["Meat"])
 habitats = Array[String](["Plains"])
 drop_table = ExtResource("1_6htim")
+is_carnivore = true
 item_type = 10
 drop_rate = 1
 hunger_rate = 5.0

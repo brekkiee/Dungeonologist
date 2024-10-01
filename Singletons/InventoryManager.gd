@@ -115,7 +115,6 @@ func add_potion_inventory_item(itemName):
 func icon_clicked(icon, item_name: String):
 		icon.get_node("Button").visible = false
 		held_item = item_name
-		print("Item Click Initated on : ", item_name)
 		if current_plant_inventory.has(icon):
 			var temp = {icon: icon.global_position}
 			plant_item_origin.merge(temp, true)
@@ -127,7 +126,6 @@ func icon_clicked(icon, item_name: String):
 # Check the item held for name and texture
 func check_item_held():
 	var item = all_Items_list[held_item]
-	print("Checking held item : ", item)
 	
 	var item_name_and_texture = {
 		"Item": item,
@@ -184,7 +182,6 @@ func item_not_used_click():
 		item_mouse_follow.hide_tooltip()
 		return_item(item_mouse_follow)
 		item_mouse_follow = null
-		print("Nothing pressed with item.")
 
 
 func remove_item(item_name):

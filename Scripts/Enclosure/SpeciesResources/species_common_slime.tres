@@ -9,6 +9,7 @@ name = "common_slime"
 diet = Array[String](["dawn_grass_item", "thimbleweed_item", "inkberry_item", "sweetroot_item", "blood_cap_item", "sentient_moss_item", "rotten_fruit_item", "dwarven_nettle_item", "gutweed_item", "gelatinous_blob_item"])
 habitats = Array[String](["Plains", "Forests", "Caves"])
 drop_table = ExtResource("1_jbj4i")
+is_carnivore = true
 item_type = 4
 drop_rate = 1
 hunger_rate = 25.0

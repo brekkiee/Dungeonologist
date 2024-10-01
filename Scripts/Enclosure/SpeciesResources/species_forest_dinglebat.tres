@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_porpw")
 name = "forest_dinglebat"
-diet = Array[String](["Fruit"])
+diet = Array[String](["inkberry_item"])
 habitats = Array[String](["Forests"])
 drop_table = ExtResource("1_tlbjl")
 item_type = 9

@@ -23,23 +23,24 @@ position = Vector2(720, 244)
 scale = Vector2(2.316, 2.316)
 texture = ExtResource("1_jnx0s")
 
-[node name="MonsterSpawnPoint1" type="Node2D" parent="."]
+[node name="MonsterSpawnPoint0" type="Node2D" parent="."]
 position = Vector2(484, 481)
 
-[node name="CommonSlime" parent="MonsterSpawnPoint1" instance=ExtResource("2_46yxq")]
+[node name="CommonSlime" parent="MonsterSpawnPoint0" instance=ExtResource("2_46yxq")]
+
+[node name="MonsterSpawnPoint1" type="Node2D" parent="."]
+position = Vector2(806, 263)
 
 [node name="MonsterSpawnPoint2" type="Node2D" parent="."]
-
-[node name="MonsterSpawnPoint3" type="Node2D" parent="."]
 position = Vector2(656, 318)
 
-[node name="MonsterSpawnPoint4" type="Node2D" parent="."]
+[node name="MonsterSpawnPoint3" type="Node2D" parent="."]
 position = Vector2(949, 438)
 
-[node name="MonsterSpawnPoint5" type="Node2D" parent="."]
+[node name="MonsterSpawnPoint4" type="Node2D" parent="."]
 position = Vector2(564, 154)
 
-[node name="MonsterSpawnPoint6" type="Node2D" parent="."]
+[node name="MonsterSpawnPoint5" type="Node2D" parent="."]
 position = Vector2(976, 154)
 
 [node name="EnclosureBoundaryLeft" type="StaticBody2D" parent="."]

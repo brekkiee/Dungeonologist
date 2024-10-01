@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("1_mbcpu")
 name = "shallows_jelly"
-diet = Array[String](["Anything"])
+diet = Array[String](["dawn_grass_item", "thimbelweed_item", "inkberry_item", "sweetroot_item", "blood_cap_item", "sentient_moss_item", "rotten_fruit_item", "dwarven_nettle_item", "gutweed_item", "gelatinous_blob_item"])
 habitats = Array[String](["Coast"])
 drop_table = ExtResource("1_rhfsh")
+is_carnivore = true
 item_type = 15
 drop_rate = 1
 hunger_rate = 5.0

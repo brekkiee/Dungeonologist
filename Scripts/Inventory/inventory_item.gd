@@ -19,11 +19,19 @@ func on_mouse_entered():
 	tooltip = item_tooltip_template.instantiate()
 	tooltip.Config(self)
 	add_child(tooltip)
-	
 
 func on_mouse_exited():
-	tooltip.queue_free()
+	if tooltip:
+		tooltip.queue_free()
+		tooltip = null
 
 func hide_tooltip():
 	print("Hiding Tooltup")
-	tooltip.queue_free()
+	if tooltip:
+		tooltip.queue_free()
+		tooltip = null
+
+func _exit_tree():
+	if tooltip:
+		tooltip.queue_free()
+		tooltip = null

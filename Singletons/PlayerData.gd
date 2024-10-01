@@ -1,5 +1,7 @@
 extends Node
 
+const SAVE_FILE_PATH = "player_data.save"
+
 var research_tasks_completed = {
 	"Common Slime": [false, false, false],
 	"Forest Dinglebat": [false, false, false],
@@ -8,8 +10,6 @@ var research_tasks_completed = {
 	"Shallows Jelly": [false, false, false],
 	"Nekomata": [false, false, false]
 }
-
-const SAVE_FILE_PATH = "player_data.save"
 
 func _ready():
 	load_data()

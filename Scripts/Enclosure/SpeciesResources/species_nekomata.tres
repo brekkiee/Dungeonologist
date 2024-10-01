@@ -9,6 +9,7 @@ name = "nekomata"
 diet = Array[String](["Meat"])
 habitats = Array[String](["Mountains"])
 drop_table = ExtResource("1_h2m0w")
+is_carnivore = true
 item_type = 16
 drop_rate = 0
 hunger_rate = 5.0

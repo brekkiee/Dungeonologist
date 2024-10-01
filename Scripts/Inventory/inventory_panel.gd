@@ -31,8 +31,6 @@ func _on_texture_rect_gui_input(event):
 			initial_difference = get_global_mouse_position().x - position.x
 			
 			holding = true
-			print("Started dragging drawer.")
 		#event.pressed is false when the mouse lets go of left click
 		else:
 			holding = false
-			print("Ended dragging drawer.")
