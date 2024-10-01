@@ -1,15 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://dmu3k3gncmnnf"]
+[gd_scene load_steps=40 format=3 uid="uid://dmu3k3gncmnnf"]
 
+[ext_resource type="Script" path="res://Scenes/UI/ExpeditionsUI.gd" id="1_o3nvq"]
 [ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="1_va3ym"]
 [ext_resource type="Texture2D" uid="uid://bobxbyxclfgot" path="res://Assets/Sprites/Expeditions/Expe_Board.png" id="2_56re5"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_hpsj0"]
-[ext_resource type="Texture2D" uid="uid://dn6rnop0smibm" path="res://Assets/Sprites/Tools/tool_Clipboard_0.png" id="3_ejiw1"]
 [ext_resource type="Texture2D" uid="uid://cbev5u7nsrfse" path="res://Assets/Sprites/Expeditions/Expe_Page_1.png" id="3_yd8aw"]
 [ext_resource type="Texture2D" uid="uid://cmob5lexwse7j" path="res://Assets/Sprites/Expeditions/Expe_Pin_3.png" id="4_1vjrt"]
-[ext_resource type="Texture2D" uid="uid://d1c40ye0c7wjs" path="res://Assets/Sprites/Tools/tool_Clipboard_1.png" id="4_sx3sn"]
-[ext_resource type="Texture2D" uid="uid://bwbct4qg7yio4" path="res://Assets/Sprites/Characters/char_3_Colin.png" id="5_kluyw"]
-[ext_resource type="Script" path="res://Scenes/UI/expedition_button.gd" id="5_p64fo"]
-[ext_resource type="PackedScene" uid="uid://tfr5aen1tpy" path="res://Scenes/UI/ExpeditionBagPopUp.tscn" id="6_gqrnp"]
+[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="6_51usy"]
 [ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="8_i017s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
@@ -20,6 +16,16 @@ texture = ExtResource("1_va3ym")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utfuy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c583"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jq5l1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6itak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dvro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ejpv6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8lblm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqtug"]
 atlas = ExtResource("8_i017s")
@@ -194,8 +200,9 @@ offset_right = 14.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o3nvq")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PC" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.235
@@ -207,20 +214,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rl8gd")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="ExpoditionBoard" type="MarginContainer" parent="PC"]
 layout_mode = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 0
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="PC/ExpoditionBoard"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_56re5")
 expand_mode = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="PanelContainer/MarginContainer/TextureRect"]
+[node name="HBoxContainer" type="GridContainer" parent="PC/ExpoditionBoard/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21
@@ -231,13 +238,13 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="Expedtion1" type="TextureRect" parent="PanelContainer/MarginContainer/TextureRect/HBoxContainer"]
+[node name="Expedtion1" type="TextureRect" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("3_yd8aw")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/TextureRect/HBoxContainer/Expedtion1"]
+[node name="TextureRect" type="TextureRect" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -251,7 +258,7 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("4_1vjrt")
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/TextureRect/HBoxContainer/Expedtion1"]
+[node name="Button" type="Button" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -261,6 +268,63 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ddwew")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_utfuy")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6c583")
+
+[node name="ExpoPopUp" type="MarginContainer" parent="PC"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="TR1" type="TextureRect" parent="PC/ExpoPopUp"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_jq5l1")
+
+[node name="MC1" type="MarginContainer" parent="PC/ExpoPopUp/TR1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HB1" type="HBoxContainer" parent="PC/ExpoPopUp/TR1/MC1"]
+layout_mode = 2
+
+[node name="Adventurer" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_51usy")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="PC/ExpoPopUp/TR1/MC1/HB1/Adventurer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6itak")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3dvro")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ejpv6")
+
+[node name="AdventurerPortrait" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1/Adventurer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Potion" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("CanvasTexture_8lblm")
 
 [node name="ExpeditionAnimSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -273,100 +337,4 @@ frame_progress = 0.958615
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 2
-offset_left = 371.0
-offset_top = 153.0
-offset_right = 1038.0
-offset_bottom = 548.0
-
-[node name="Expedition Button" type="TextureButton" parent="HBoxContainer" node_paths=PackedStringArray("expedition_bag_popup", "adventurer_portrait", "adventure_animation", "expedition_timer")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("3_ejiw1")
-texture_pressed = ExtResource("4_sx3sn")
-texture_hover = ExtResource("4_sx3sn")
-stretch_mode = 5
-script = ExtResource("5_p64fo")
-expedition_bag_popup = NodePath("../ExpeditionBagPopUp")
-adventurer_portrait = NodePath("ColorRect/MarginContainer/VBoxContainer/Adventurer Portrait")
-adventure_animation = NodePath("../../ExpeditionAnimSprite2D")
-expedition_timer = NodePath("../../Timer")
-
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Expedition Button"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.322
-anchor_top = 0.117
-anchor_right = 0.686
-anchor_bottom = 0.943
-offset_left = -57.582
-offset_top = -3.215
-offset_right = 53.934
-offset_bottom = -1.48502
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Expedition Button/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -11.0
-offset_right = 11.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Expedition Button/ColorRect/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Expedition Button/ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_hpsj0")
-theme_override_font_sizes/font_size = 20
-text = "Adventurer Wanted"
-horizontal_alignment = 1
-
-[node name="Dungeon Floor Label" type="Label" parent="HBoxContainer/Expedition Button/ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_hpsj0")
-theme_override_font_sizes/font_size = 20
-text = "Floor 1"
-horizontal_alignment = 1
-
-[node name="Adventurer Portrait" type="TextureRect" parent="HBoxContainer/Expedition Button/ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_kluyw")
-stretch_mode = 5
-
-[node name="ExpeditionBagPopUp" parent="HBoxContainer" instance=ExtResource("6_gqrnp")]
-visible = false
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="StartExpeditionButton" type="Button" parent="HBoxContainer/ExpeditionBagPopUp"]
-layout_mode = 2
-offset_left = 72.0
-offset_top = 324.0
-offset_right = 230.0
-offset_bottom = 380.0
-theme_override_fonts/font = ExtResource("2_hpsj0")
-text = "Start Expedition"
-
-[connection signal="timeout" from="Timer" to="HBoxContainer/Expedition Button" method="_on_expedition_timer_timeout"]
-[connection signal="timeout" from="Timer" to="HBoxContainer/ExpeditionBagPopUp" method="_on_timer_timeout"]
-[connection signal="pressed" from="HBoxContainer/Expedition Button" to="HBoxContainer/Expedition Button" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/ExpeditionBagPopUp/StartExpeditionButton" to="HBoxContainer/Expedition Button" method="_on_start_expedition_button_pressed"]
+[connection signal="pressed" from="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1/Button" to="." method="on_button_pressed_expo1"]

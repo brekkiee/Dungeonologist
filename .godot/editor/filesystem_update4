@@ -1,4 +1,6 @@
-res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/expedition_button.gd
+res://Scenes/UI/ExpeditionsUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/UI/ExpeditionsUI.tscn
+res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/ExpeditionsUI.gd

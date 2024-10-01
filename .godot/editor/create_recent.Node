@@ -1,13 +1,13 @@
-GridContainer
-HBoxContainer
-Button
 TextureRect
+Button
 MarginContainer
+HBoxContainer
+PopupPanel
+GridContainer
 Label
 VBoxContainer
 NinePatchRect
 Popup
-PopupPanel
 Container
 CollisionShape2D
 Sprite2D
