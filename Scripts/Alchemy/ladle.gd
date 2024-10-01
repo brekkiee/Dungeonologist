@@ -3,7 +3,7 @@ extends Area2D
 
 var is_following_mouse = false
 var original_position = Vector2.ZERO
-@export var cauldron_node: Node2D
+@onready var cauldron_node = get_node("/root/Header/SceneLoadPoint/AlchemyLab/Cauldron")
 
 func _ready():
 	original_position = position

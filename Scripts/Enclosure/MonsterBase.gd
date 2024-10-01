@@ -288,7 +288,7 @@ func collect_item():
 	for item_name in items_dropped.keys():
 		var quantity = items_dropped[item_name]
 		# Add item to inventory
-		InventoryManager.add_plant_inventory_item(item_name)
+		InventoryManager.add_potion_inventory_item(item_name)
 		print("Collected ", quantity, " x ", item_name)
 	# Reset item drop variables
 	items_dropped.clear()

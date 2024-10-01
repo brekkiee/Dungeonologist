@@ -38,10 +38,12 @@ var all_Items_list: Dictionary = {
 var current_cauldron_inventory = []
 # Dictionary of all possible cauldron recipes
 var cauldron_recipies: Dictionary = {
-	0: { "items_required": ["snackle_item", "snepper_item", "peepermint_item"],
+	0: { "items_required": ["blood_cap_item", "sweetroot_item"],
 		"result": "minor_health_potion_item"},
-	1: { "items_required": ["snepper_item", "peepermint_item"],
-		"result": "minor_mana_potion_item"}
+	1: { "items_required": ["blood_cap_item", "thimbleweed_item"],
+		"result": "minor_mana_potion_item"},
+	2: { "items_required": ["blood_cap_item", "dwarven_nettle_item"],
+		"result": "minor_stamina_potion_item"}
 }
 
 # Sort items required for each cauldron recipe alphabetically
@@ -86,7 +88,7 @@ func add_potion_inventory_item(itemName):
 		return false
 	
 	# Check if Item is Stackable
-	for item in current_plant_inventory:
+	for item in current_potion_inventory:
 		if item.ItemName == itemName:
 			# Increase Item Quantity by One
 			item.ItemQuantity = item.ItemQuantity + 1

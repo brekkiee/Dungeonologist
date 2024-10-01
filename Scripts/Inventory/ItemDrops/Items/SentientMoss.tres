@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_q1rhb")
-item_name = "sentient_moss"
+item_name = "sentient_moss_item"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1

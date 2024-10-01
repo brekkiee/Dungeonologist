@@ -1,7 +1,8 @@
+res://Scripts/Inventory/ItemDrops/Items
+res://Scripts/Inventory/ItemDrops/DropTables
 res://Scripts/ResearchTasks
 res://Singletons
 C:/Users/danie/Documents/Torrens/2024/PPR301/Dundeonologist/Dungeonologist
-res://Scripts/Inventory/ItemDrops/DropTables
 res://Scenes/UI
 res://Scripts/Inventory
 res://Assets/Animations/Alchemy
@@ -19,4 +20,3 @@ res://Assets/Animations/Monsters
 res://Assets/Animations/Garden
 res://Assets/Sprites/Monsters
 res://Assets/Monsters
-res://Assets/Sprites

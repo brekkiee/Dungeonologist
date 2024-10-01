@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_j7ihd")
-item_name = "gutweed"
+item_name = "gutweed_item"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1

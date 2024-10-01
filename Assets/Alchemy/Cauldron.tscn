@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/Alchemy/anim_Brew_bubble.tres" id="3_jah1c"]
 [ext_resource type="Texture2D" uid="uid://d10ncmfiqumcv" path="res://Assets/Animations/Alchemy/anim_Fire.png" id="4_cn6mk"]
 [ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Alchemy/Brew_cauldron_back.png" id="5_76mcf"]
-[ext_resource type="Texture2D" uid="uid://dkyam0b2hd3xt" path="res://Assets/Animations/Alchemy/anim_Brew_wood.png" id="8_dit8y"]
+[ext_resource type="Texture2D" uid="uid://dqu15i7q7cawf" path="res://Assets/Animations/Alchemy/anim_Brew_wood.png" id="8_dit8y"]
 [ext_resource type="Texture2D" uid="uid://bmoigq87n12ua" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="8_olqu1"]
 [ext_resource type="Script" path="res://Scripts/Alchemy/ingredient_slot.gd" id="9_auto5"]
 [ext_resource type="Texture2D" uid="uid://pyap40eyhn84" path="res://Assets/Sprites/Alchemy/d.png" id="9_wo6tr"]

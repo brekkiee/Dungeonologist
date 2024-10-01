@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_qlwvv")
-item_name = "blood_cap"
+item_name = "blood_cap_item"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1
