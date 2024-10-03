@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://hxsuqplnekk3"]
+[gd_scene load_steps=6 format=3 uid="uid://hxsuqplnekk3"]
 
 [ext_resource type="Texture2D" uid="uid://pw1ml4t3lmwr" path="res://Assets/Sprites/Enclosure/bg_Cage.png" id="1_jnx0s"]
-[ext_resource type="PackedScene" uid="uid://cgbr2gsaofps8" path="res://Assets/Monsters/monster_common_slime.tscn" id="2_46yxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suk5j"]
 size = Vector2(43, 649)
@@ -25,8 +24,6 @@ texture = ExtResource("1_jnx0s")
 
 [node name="MonsterSpawnPoint0" type="Node2D" parent="."]
 position = Vector2(484, 481)
-
-[node name="CommonSlime" parent="MonsterSpawnPoint0" instance=ExtResource("2_46yxq")]
 
 [node name="MonsterSpawnPoint1" type="Node2D" parent="."]
 position = Vector2(806, 263)

@@ -47,15 +47,21 @@ anchor_top = 0.327
 anchor_right = 0.708
 anchor_bottom = 0.759
 offset_left = 155.896
-offset_top = 304.104
+offset_top = 249.104
 offset_right = -123.616
-offset_bottom = 319.168
+offset_bottom = 128.168
 
 [node name="StartButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_t2lgr")
 theme_override_font_sizes/font_size = 27
 text = "Start"
+
+[node name="SettingsButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_t2lgr")
+theme_override_font_sizes/font_size = 27
+text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
@@ -70,4 +76,5 @@ theme_override_font_sizes/font_size = 25
 text = "Exit"
 
 [connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -280,6 +280,19 @@ offset_right = 0.575928
 offset_bottom = 0.271988
 theme_override_font_sizes/font_size = 25
 
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31
+anchor_top = 0.383
+anchor_right = 0.56
+anchor_bottom = 0.488
+offset_left = -0.119995
+offset_top = -0.184006
+offset_right = -0.120117
+offset_bottom = -0.22403
+theme_override_font_sizes/font_size = 25
+
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
 [connection signal="gui_input" from="InventoryPanel/SlidingDrawer/DrawerHandle" to="InventoryPanel/SlidingDrawer" method="_on_texture_rect_gui_input"]

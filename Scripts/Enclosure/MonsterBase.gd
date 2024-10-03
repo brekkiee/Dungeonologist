@@ -175,8 +175,8 @@ func feed_monster():
 		update_monster()
 		QuestManager.on_monster_fed()
 		if species.name == "common_slime":
-			if food_item.name not in foods_fed:
-				foods_fed.append(food_item.name)
+			if food_item not in foods_fed:
+				foods_fed.append(food_item)
 				check_common_slime_research_task()
 		InventoryManager.item_used_click()
 	else:

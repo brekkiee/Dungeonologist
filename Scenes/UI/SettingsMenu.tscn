@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7fiwspnhlyyv"]
+
+[ext_resource type="Script" path="res://Scripts/UI/settings_menu.gd" id="1_3qiav"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_1vnv4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1liw0"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3qiav")
+
+[node name="SettingsMenuScreen" type="Panel" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1liw0")
+
+[node name="ScreenLabel" type="Label" parent="SettingsMenuScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 0.242
+anchor_right = 0.576
+anchor_bottom = 0.315
+offset_left = -0.0560303
+offset_top = 0.18399
+offset_right = -0.552063
+offset_bottom = -0.12001
+theme_override_font_sizes/font_size = 31
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonGridContainer" type="VBoxContainer" parent="SettingsMenuScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -50.5
+offset_right = 48.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeOptionButton" type="OptionButton" parent="SettingsMenuScreen/ButtonGridContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "In-Game Time"
+popup/item_0/id = 0
+popup/item_1/text = "Real-Time"
+popup/item_1/id = 1
+
+[node name="CloseButton" type="Button" parent="SettingsMenuScreen/ButtonGridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1vnv4")
+theme_override_font_sizes/font_size = 25
+text = "Close"
+
+[connection signal="pressed" from="SettingsMenuScreen/ButtonGridContainer/CloseButton" to="." method="_on_close_button_pressed"]

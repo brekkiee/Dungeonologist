@@ -3,6 +3,8 @@ extends Control
 @onready var monster_book_scene = preload("res://Quests/Codex/codex.tscn")
 @onready var quest_book_scene = preload("res://Quests/Codex/QuestLog.tscn")
 @onready var day_count_label = $DayCounterLabel
+@onready var time_label = $TimeLabel
+
 var monster_book
 var monster_book_open = false
 
@@ -12,6 +14,13 @@ var quest_book_open = false
 func _ready():
 	DayNightCycle.connect("day_started", Callable(self, "_on_day_started"))
 	update_day_counter(DayNightCycle.day_count)
+
+func _process(delta):
+	update_time_label()
+
+func update_time_label():
+	var time_string = DayNightCycle.get_formatted_time()
+	time_label.text = time_string
 
 func _on_day_started(day_count):
 	update_day_counter(day_count)

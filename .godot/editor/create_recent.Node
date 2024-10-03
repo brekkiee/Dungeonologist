@@ -1,6 +1,8 @@
-MarginContainer
+Button
+OptionButton
 Label
 VBoxContainer
+MarginContainer
 NinePatchRect
 Popup
 PopupPanel
@@ -13,7 +15,6 @@ AnimatedSprite2D
 Node2D
 AudioStreamPlayer2D
 HBoxContainer
-Button
 Timer
 TextureButton
 Camera2D

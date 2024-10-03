@@ -52,6 +52,7 @@ var monsters_to_spawn = [
 		monster_nekomata
 ]
 var pending_monsters = []
+var caught_monsters = []
 var spawn_point_index = 0
 var spawn_timer: Timer = null
 
@@ -87,6 +88,8 @@ func _ready():
 	spawn_timer.connect("timeout", Callable(self, "_on_spawn_tiemr_timeout"))
 	add_child(spawn_timer)
 	
+	monsters_to_spawn = PlayerData.player_monsters
+	
 	change_scene("StartMenu")
 
 func start_game():
@@ -114,8 +117,9 @@ func start_game():
 	change_scene("MonsterEnclosure")
 	# Assign found_monster variable after the MonsterEnclosure scene is instantiated
 	assign_found_monster()
-	# Start the day/night cycle
-	DayNightCycle.start_day()
+	
+	# Start time progression
+	DayNightCycle.start_time_progression()
 
 # Method to assign the found_monster variable after the scene is loaded
 func assign_found_monster():
@@ -169,11 +173,12 @@ func _goto_scene(scene_name: String):
 	
 	if scene_name == "StartMenu":
 		main_ui.visible = false
+		DayNightCycle.stop_time_progression()
 	if scene_name == "MonsterEnclosure":
 		main_ui.visible = true
-		assign_found_monster()
 		# Start spawning pending monsters, if any
 		spawn_pending_monsters()
+		DayNightCycle.start_time_progression()
 
 func _instantiate_scene(scene_name: String) -> Node:
 	match scene_name:
@@ -212,10 +217,13 @@ func spawn_next_monster():
 	# Cycle through spawn points
 	var spawn_point = monster_spawn_locations[spawn_point_index % monster_spawn_locations.size()]
 	spawn_point_index += 1
-
+	
 	var monster_scene = pending_monsters.pop_front()
 	var monster_instance = monster_scene.instantiate()
 	spawn_point.add_child(monster_instance)
+	caught_monsters.push_back(monster_instance)
+	monsters_to_spawn.pop_front()
+	PlayerData.player_monsters.push_back(monster_instance)
 	
 	# Research tasks check section
 	var species = monster_instance.species
