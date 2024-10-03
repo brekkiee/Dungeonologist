@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_FILE_PATH = "player_data.save"
+const SAVE_FILE_PATH = "user://player_data.save"
 
 var research_tasks_completed = {
 	"Common Slime": [false, false, false],
@@ -11,11 +11,12 @@ var research_tasks_completed = {
 	"Nekomata": [false, false, false]
 }
 
-var time_mode = "In-Game Time" # Default time mode
-var current_time: float = 00.0
+var time_mode = "In-Game Time"  # Default time mode
+var current_time: float = 0.0
 var is_day: bool = true
 var day_count: int = 1
 var player_monsters = []
+var pending_monsters = []
 
 func _ready():
 	load_data()
@@ -28,25 +29,27 @@ func get_time_mode():
 	return time_mode
 
 func save_data():
+	var data = {
+		"research_tasks_completed": research_tasks_completed,
+		"time_mode": time_mode,
+		"current_time": current_time,
+		"is_day": is_day,
+		"day_count": day_count,
+		"player_monsters": player_monsters,
+		"pending_monsters": pending_monsters
+	}
 	var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	if save_file:
-		var data = {
-			"research_tasks_completed": research_tasks_completed,
-			"time_mode": time_mode,
-			"current_time": current_time,
-			"is_day": is_day,
-			"day_count": day_count,
-			"player_monsters": player_monsters
-		}
 		save_file.store_var(data)
 		save_file.close()
 		print("Data saved successfully to ", SAVE_FILE_PATH)
-		print("research tasks: ", research_tasks_completed)
+		print("research_tasks_completed: ", research_tasks_completed)
 		print("time_mode: ", time_mode)
 		print("current_time: ", current_time)
 		print("is_day: ", is_day)
 		print("day_count: ", day_count)
 		print("player_monsters: ", player_monsters)
+		print("pending_monsters: ", pending_monsters)
 	else:
 		print("Failed to open save file for writing.")
 
@@ -61,14 +64,17 @@ func load_data():
 			is_day = data.get("is_day", true)
 			day_count = data.get("day_count", 1)
 			player_monsters = data.get("player_monsters", [])
+			pending_monsters = data.get("pending_monsters", [])
 			save_file.close()
 			print("Data loaded successfully from ", SAVE_FILE_PATH)
-			print("research tasks: ", research_tasks_completed)
+			print("Data saved successfully to ", SAVE_FILE_PATH)
+			print("research_tasks_completed: ", research_tasks_completed)
 			print("time_mode: ", time_mode)
 			print("current_time: ", current_time)
 			print("is_day: ", is_day)
 			print("day_count: ", day_count)
 			print("player_monsters: ", player_monsters)
+			print("pending_monsters: ", pending_monsters)
 		else:
 			print("Failed to open save file for reading.")
 	else:

@@ -3,156 +3,140 @@ extends Node
 signal day_started(day_count)
 signal night_started(day_count)
 
-var day_night_length: float = 50.0 #43200.0 # 12h*60m*60s 12 hours cycles
-
-var day_duration: float = day_night_length  # Duration of a day in seconds
-var night_duration: float = day_night_length  # Duration of a night in seconds
-
+# Default values
+var day_night_length: float = 50.0
 var current_time: float = 0.0
 var is_day: bool = true
-var day_count: int = 1  # Tracks the number of days passed
+var day_count: int = 1
+var day_duration: float = day_night_length
+var night_duration: float = day_night_length
+var test_monsters_to_award = [
+	"common_slime", "forest_dinglebat", "common_shrooman",
+	"plains_imp", "shallows_jelly", "nekomata"
+]
 
 func _ready():
-	# Initially disable processing time, until start game
 	process_mode = Node.PROCESS_MODE_DISABLED
-	
-	# Load time data from PlayerData
+	_load_player_data()
+	_initialize_time_mode()
+	_start_current_cycle()
+	get_tree().connect("about_to_quit", Callable(self, "_on_about_to_quit"))
+
+# Load the saved player data to restore the time
+func _load_player_data():
+	print("DayNightCycle: _load_player_data called, current_time before: ", current_time)
 	current_time = PlayerData.current_time
+	print("current_time after: ", current_time)	
 	is_day = PlayerData.is_day
 	day_count = PlayerData.day_count
-	print("current_time", current_time)
-	print("is_day", is_day)
-	print("day_count", day_count)
-	
-	# Load the player's time mode preference
+
+# Load the time mode and update the cycle length based on the mode
+func _initialize_time_mode():
 	var time_mode = PlayerData.get_time_mode()
 	if time_mode == "":
-		time_mode = "In-Game Time"  # Default mode
+		time_mode = "In-Game Time"
 		PlayerData.set_time_mode(time_mode)
-	
 	update_time_mode(time_mode)
-	print("time_mode", time_mode)
-	
-	# Start the cycle without resetting current_time
+
+# Start the correct cycle based on whether it's day or night, without resetting time
+func _start_current_cycle():
 	if is_day:
 		start_day(false)
 	else:
 		start_night(false)
-	
-	# Connect to the about_to_quit signal to save data on exit
-	get_tree().connect("about_to_quit", Callable(self, "_on_about_to_quit"))
-
-func _enter_tree():
-	print("DayNighyCycle: _enter_tree called")
-	get_tree().connect("about_to_quit", Callable(self, "_on_about_to_quit"))
-	print("DayNightCycle: Connected to about_to_quit signal")
 
 func start_time_progression():
 	process_mode = Node.PROCESS_MODE_INHERIT
-	print("DayNightCycle: Time progression started.")
 
 func stop_time_progression():
 	process_mode = Node.PROCESS_MODE_DISABLED
-	print("DayNightCycle: Time progression started.")
 
+# Start the day cycle, without resetting the time if not required
 func start_day(reset_current_time = true):
 	is_day = true
 	if reset_current_time:
 		current_time = 0.0
-	print("Day ", day_count, " has started.")
 	emit_signal("day_started", day_count)
-	#set_process(true)  # Start processing, update current_time
 
+# Start the night cycle, without resetting the time if not required
 func start_night(reset_current_time = true):
 	is_day = false
 	if reset_current_time:
 		current_time = 0.0
-	print("Night ", day_count, " has started.")
 	emit_signal("night_started", day_count)
-	
-	# Award a monster to player, in pending monsters, ready to spawn
-	if day_count <= GameManager.monsters_to_spawn.size():
-		var monster_scene = GameManager.monsters_to_spawn[day_count - 1]
-		GameManager.award_monster(monster_scene)
-		print("Awarded a monster on night ", day_count)
-	else:
-		print("No more monsters to award.")
-	
-	# If player is in Monster Enclosure, spawn pending monsters
+	_award_monster()
+	# Spawn pending monsters if the player is in the Monster Enclosure
 	if GameManager.current_scene and GameManager.current_scene.name == "MonsterEnclosure":
 		GameManager.spawn_pending_monsters()
-	
-	#set_process(true) # Continue processing, update current_time
 
+# Award a monster based on the day count
+func _award_monster():
+	if day_count <= test_monsters_to_award.size():
+		var species_name = test_monsters_to_award[day_count - 1]
+		GameManager.award_monster(species_name)
+	else:
+		print("No more monsters to award")
+
+# Process the time progression every frame
 func _process(delta):
 	current_time += delta
-	if is_day:
-		if current_time >= day_duration:
-			_on_day_cycle_complete()
-	else:
-		if current_time >= night_duration:
-			_on_night_cycle_complete()
+	if is_day and current_time >= day_duration:
+		_on_day_cycle_complete()
+	elif not is_day and current_time >= night_duration:
+		_on_night_cycle_complete()
 
+# Transition to the night cycle when the day completes
 func _on_day_cycle_complete():
-	#set_process(false) # Stop processing time til next cycle
-	start_night()
+	start_night(true)
 
+# Transition to the day cycle when the night completes
 func _on_night_cycle_complete():
-	#set_process(false) # Stop processing time til next cycle
 	day_count += 1
-	print("Day Count: ", day_count)
-	start_day()
+	print("DayNightCycle: _on_night_cycle_complete called, day_count: ", day_count)
+	start_day(true)
 
-func get_formatted_time():
-	# Total in-game duration of a day or night cycle in seconds (12 hours)
-	var total_in_game_cycle_duration = 12 * 3600.0  # 12 hours * 3600 seconds/hour = 43200 seconds
-	# Get current cycle's duration
+# Format the time for display
+func get_formatted_time() -> String:
+	var total_in_game_cycle_duration = 12 * 3600.0  # 43200 seconds
 	var cycle_duration = day_duration if is_day else night_duration
-	# Calculate percentage of current cycle that has passed
 	var percentage_of_cycle = current_time / cycle_duration
-	# Calculate in-game current time in seconds since start of cycle
 	var in_game_current_time = percentage_of_cycle * total_in_game_cycle_duration
-	# get base hour (6AM for day, 6PM for night)
-	var base_hour = 6 if is_day else 18  # 6 AM or 6 PM
-	# Calculate total seconds since base hour
+	var base_hour = 6 if is_day else 18
 	var total_seconds_since_base = int(in_game_current_time)
-	# Calculate hours and minutes
 	var hours = base_hour + int(total_seconds_since_base / 3600)
 	var minutes = int((total_seconds_since_base % 3600) / 60)
-	
-	# Adjust hours if exceeds 24
+
 	if hours >= 24:
 		hours -= 24
-	# Determine AM/PM period
 	var period = "AM" if hours < 12 else "PM"
-	# Convert to 12-hour format
 	var display_hours = hours % 12
 	if display_hours == 0:
 		display_hours = 12
-
-	# Return the formatted time
 	return "%02d:%02d %s" % [display_hours, minutes, period]
 
-func update_time_mode(time_mode):
-	# Calculate % of current cycle already passed before change time mode
-	var previous_cycle_duration = day_duration if is_day else night_duration
-	var percentage_of_cycle = current_time / previous_cycle_duration
-	
+# Update the time mode, ensuring the correct cycle length is applied
+func update_time_mode(time_mode: String):
 	if time_mode == "Real-Time":
-		day_night_length = 43200.0 # 12 hour cycles in seconds
+		day_night_length = 43200
 	else:
-		day_night_length = 5.0 # In-Game time duration in seconds
+		day_night_length = 5.0
+	
+	var old_duration = day_duration if is_day else night_duration
 	
 	day_duration = day_night_length
 	night_duration = day_night_length
 	
-	# Adjust current_time - reflect same % in new cycle duration
-	var new_cycle_duration = day_duration if is_day else night_duration
-	current_time = percentage_of_cycle * new_cycle_duration
+	var percentage_of_cycle
+	if old_duration > 0:
+		percentage_of_cycle = current_time / old_duration
+	else:
+		percentage_of_cycle = 0.0
+	
+	
+	#current_time = percentage_of_cycle * (day_duration if is_day else night_duration)
 
+# Save the current time when the game exits
 func _on_about_to_quit():
-	print("DayNightCycle: _on_about_to_quit called")
-	# Save current time data
 	PlayerData.current_time = current_time
 	PlayerData.is_day = is_day
 	PlayerData.day_count = day_count

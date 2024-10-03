@@ -37,7 +37,6 @@ func on_scene_changed():
 	var Canvas = get_node("/root/Header/UI")
 	Canvas.add_child(quest_display)
 
-
 # Add a quest to active quests
 func add_quest(quest_id: String):
 	if active_quest != null:

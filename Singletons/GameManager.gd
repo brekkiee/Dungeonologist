@@ -18,41 +18,25 @@ var scenes: Dictionary = {}
 @onready var main_ui = null
 
 # Monster resources
-var monster_common_slime = preload("res://Assets/Monsters/monster_common_slime.tscn")
-var monster_forest_dinglebat = preload("res://Assets/Monsters/monster_forest_dinglebat.tscn")
-var monster_common_shrooman = preload("res://Assets/Monsters/monster_common_shrooman.tscn")
-var monster_plains_imp = preload("res://Assets/Monsters/monster_plains_imp.tscn")
-var monster_shallows_jelly = preload("res://Assets/Monsters/monster_shallows_jelly.tscn")
-var monster_nekomata = preload("res://Assets/Monsters/monster_nekomata.tscn")
+var monster_scenes = {
+	"common_slime": preload("res://Assets/Monsters/monster_common_slime.tscn"),
+	"forest_dinglebat": preload("res://Assets/Monsters/monster_forest_dinglebat.tscn"),
+	"common_shrooman": preload("res://Assets/Monsters/monster_common_shrooman.tscn"),
+	"plains_imp": preload("res://Assets/Monsters/monster_plains_imp.tscn"),
+	"shallows_jelly": preload("res://Assets/Monsters/monster_shallows_jelly.tscn"),
+	"nekomata": preload("res://Assets/Monsters/monster_nekomata.tscn")
+}
 var monster_spawn_locations = []
 var monsters_to_spawn = [
-		monster_common_slime,
-		monster_forest_dinglebat,
-		monster_forest_dinglebat,
-		monster_common_shrooman,
-		monster_common_shrooman,
-		monster_plains_imp,
-		monster_shallows_jelly,
-		monster_nekomata,
-		monster_common_slime,
-		monster_forest_dinglebat,
-		monster_forest_dinglebat,
-		monster_common_shrooman,
-		monster_common_shrooman,
-		monster_plains_imp,
-		monster_shallows_jelly,
-		monster_nekomata,
-		monster_common_slime,
-		monster_forest_dinglebat,
-		monster_forest_dinglebat,
-		monster_common_shrooman,
-		monster_common_shrooman,
-		monster_plains_imp,
-		monster_shallows_jelly,
-		monster_nekomata
+	"common_slime",
+	"forest_dinglebat",
+	"common_shrooman",
+	"plains_imp",
+	"shallows_jelly",
+	"nekomata"
 ]
 var pending_monsters = []
-var caught_monsters = []
+var player_monsters = []
 var spawn_point_index = 0
 var spawn_timer: Timer = null
 
@@ -64,14 +48,15 @@ var other_carnivore_present = false
 
 func _ready():
 	randomize()
+	# Instantiate and add MainWindow to the scene tree
 	var main_window_scene = preload("res://Scenes/Windows/MainWindow.tscn")
 	main_window = main_window_scene.instantiate()
 	if main_window == null:
 		print("Error: MainWindow failed to instantiate.")
 	else:
 		print("MainWindow instantiated successfully.")
-	main_ui	 = main_window.get_node("UI/MainUI")
-	main_window.visible = false
+	main_ui = main_window.get_node("UI/MainUI")
+	main_window.visible = false  # Hide initially
 	get_tree().root.add_child(main_window)
 	print("MainWindow added to the scene tree.")
 	
@@ -81,14 +66,18 @@ func _ready():
 	if pause_menu:
 		pause_menu.visible = false
 	
-	# Initialise spawn timer
+	# Initialize spawn timer
 	spawn_timer = Timer.new()
-	spawn_timer.wait_time = 1.0 # 1 sec. delay between spawns
+	spawn_timer.wait_time = 1.0  # 1 sec. delay between spawns
 	spawn_timer.one_shot = true
-	spawn_timer.connect("timeout", Callable(self, "_on_spawn_tiemr_timeout"))
+	spawn_timer.connect("timeout", Callable(self, "_on_spawn_timer_timeout"))
 	add_child(spawn_timer)
 	
-	monsters_to_spawn = PlayerData.player_monsters
+	pending_monsters = PlayerData.pending_monsters
+	player_monsters = PlayerData.player_monsters
+	
+	# Get the StartMenu node
+	start_menu = get_node("/root/StartMenu")
 	
 	change_scene("StartMenu")
 
@@ -118,10 +107,9 @@ func start_game():
 	# Assign found_monster variable after the MonsterEnclosure scene is instantiated
 	assign_found_monster()
 	
-	# Start time progression
-	DayNightCycle.start_time_progression()
+#	# Start time progression
+#	DayNightCycle.start_time_progression()
 
-# Method to assign the found_monster variable after the scene is loaded
 func assign_found_monster():
 	if current_scene and current_scene.name == "MonsterEnclosure":
 		# Initialize monster_spawn_locations
@@ -136,7 +124,7 @@ func assign_found_monster():
 		print("Monster spawn locations initialized.")
 	else:
 		print("MonsterEnclosure scene not instantiated yet.")
-# Change sub scene based on input scene_name
+
 func change_scene(scene_name: String):
 	if current_scene == null or scene_name != current_scene.name:
 		print("Changing to scene: " + scene_name)
@@ -144,7 +132,7 @@ func change_scene(scene_name: String):
 
 func _goto_scene(scene_name: String):
 	scene_spawn_point = get_node("/root/Header/SceneLoadPoint")
-	
+
 	if scene_spawn_point == null:
 		print("Can't load scene - SceneLoadPoint not found")
 		return
@@ -153,8 +141,8 @@ func _goto_scene(scene_name: String):
 	if current_scene != null:
 		current_scene.visible = false
 
-	# Check is scene is already loaded, if not, load and add to scene tree.
-	if !scenes.has(scene_name):	
+	# Check if scene is already loaded, if not, load and add to scene tree
+	if !scenes.has(scene_name):
 		var new_scene = _instantiate_scene(scene_name)
 		if new_scene:
 			scenes[scene_name] = new_scene
@@ -167,17 +155,21 @@ func _goto_scene(scene_name: String):
 		current_scene = scenes[scene_name]
 		current_scene.visible = true
 		print("Using cached scene: " + current_scene.name)
-		
+
 	current_scene = scenes[scene_name]
 	print("Scene switched to: " + current_scene.name)
-	
+
 	if scene_name == "StartMenu":
 		main_ui.visible = false
 		DayNightCycle.stop_time_progression()
-	if scene_name == "MonsterEnclosure":
+	elif scene_name == "MonsterEnclosure":
 		main_ui.visible = true
-		# Start spawning pending monsters, if any
+		assign_found_monster()
+		spawn_player_monsters()
 		spawn_pending_monsters()
+		DayNightCycle.start_time_progression()
+	else:
+		main_ui.visible = true
 		DayNightCycle.start_time_progression()
 
 func _instantiate_scene(scene_name: String) -> Node:
@@ -191,40 +183,44 @@ func _instantiate_scene(scene_name: String) -> Node:
 			print("Unknown scene name: " + scene_name)
 			return null
 
-func award_monster(monster_scene):
-	pending_monsters.append(monster_scene)
-	print("Awarded a new monster")
+func award_monster(species_name):
+	pending_monsters.append(species_name)
+	PlayerData.pending_monsters = pending_monsters
+	PlayerData.save_data()
+	print("Awarded a new monster: ", species_name)
 
 func spawn_pending_monsters():
 	if current_scene.name != "MonsterEnclosure":
-		print("MonsterEnclosure  is not active, wait to spawn pending monsters.")
+		print("MonsterEnclosure is not active, wait to spawn pending monsters.")
 		return
-	if pending_monsters.size() == 0:
+	if pending_monsters.is_empty():
 		print("No pending monsters to spawn")
 		return
-	# Make sure monster_spawn_locations are assigned
 	assign_found_monster()
-	if monster_spawn_locations.size() == 0:
+	if monster_spawn_locations.is_empty():
 		print("No spawn locations available.")
 		return
-	# Start spawning monsters one by one
 	spawn_next_monster()
 
 func spawn_next_monster():
-	if pending_monsters.size() == 0:
+	if pending_monsters.is_empty():
 		print("All pending monsters spawned.")
 		return
-	# Cycle through spawn points
 	var spawn_point = monster_spawn_locations[spawn_point_index % monster_spawn_locations.size()]
 	spawn_point_index += 1
-	
-	var monster_scene = pending_monsters.pop_front()
+
+	var species_name = pending_monsters.pop_front()
+	var monster_scene = monster_scenes.get(species_name, null)
+	if monster_scene == null:
+		print("Unknown species: ", species_name)
+		return
 	var monster_instance = monster_scene.instantiate()
 	spawn_point.add_child(monster_instance)
-	caught_monsters.push_back(monster_instance)
-	monsters_to_spawn.pop_front()
-	PlayerData.player_monsters.push_back(monster_instance)
-	
+	player_monsters.append(species_name)
+	PlayerData.player_monsters = player_monsters
+	PlayerData.pending_monsters = pending_monsters
+	PlayerData.save_data()
+
 	# Research tasks check section
 	var species = monster_instance.species
 	if species.name == "forest_dinglebat":
@@ -239,26 +235,44 @@ func spawn_next_monster():
 			PlayerData.research_tasks_completed["Common Shrooman"][0] = true
 			PlayerData.save_data()
 			print("Research task 'Common Shrooman' completed")
-	
+
 	if species.name == "plains_imp":
 		plains_imp_present = true
 	elif species.is_carnivore:
 		other_carnivore_present = true
-	
+
 	if plains_imp_present and other_carnivore_present:
 		PlayerData.research_tasks_completed["Plains Imp"][0] = true
 		PlayerData.save_data()
 		print("Research task 'Plains Imp' completed")
-		
+
 	if species.name == "nekomata":
 		PlayerData.research_tasks_completed["Nekomata"][0] = true
 		PlayerData.save_data()
 		print("Research task 'Nekomata' completed")
 	# End research tasks check section
-	
-	# Start timer to spawn next monster
+
 	if pending_monsters.size() > 0:
 		spawn_timer.start()
+
+func spawn_player_monsters():
+	if current_scene.name != "MonsterEnclosure":
+		return
+	assign_found_monster()
+	if monster_spawn_locations.is_empty():
+		print("No spawn locations available.")
+		return
+
+	var index = 0
+	for species_name in player_monsters:
+		var monster_scene = monster_scenes.get(species_name, null)
+		if monster_scene == null:
+			print("Unknown species: ", species_name)
+			continue
+		var monster_instance = monster_scene.instantiate()
+		var spawn_point = monster_spawn_locations[index % monster_spawn_locations.size()]
+		index += 1
+		spawn_point.add_child(monster_instance)
 
 func _on_spawn_timer_timeout():
 	spawn_next_monster()
@@ -266,7 +280,6 @@ func _on_spawn_timer_timeout():
 func play_sound():
 	var audio_stream = get_node("/root/Header/MainMusic")
 	if audio_stream:
-		# Assign sound to play here or in inspector
 		audio_stream.stream = load("res://Sounds/ToolSuccessSound.wav")
 		audio_stream.play()
 

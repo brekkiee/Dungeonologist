@@ -12,3 +12,4 @@ res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres
 res://Assets/Monsters/monster_common_slime.tscn
 res://Scripts/Enclosure/MonsterBase.gd
 res://Scenes/Windows/monster_enclosure.tscn
+res://Singletons/QuestManager.gd
