@@ -26,7 +26,7 @@ func _init():
 }
 
 func start_quest():
-	print("Starting quest with info: ", info)
+	#print("Starting quest with info: ", info)
 	current_stage = 0
 	is_completed = false
 	update_quest_display()
@@ -40,7 +40,7 @@ func progress_quest(stage: int):
 			complete_quest()
 
 func update_quest_display():
-	print("Updating quest display with current stages: ", current_stage)
+	#print("Updating quest display with current stages: ", current_stage)
 	var display_text = ""
 	if current_stage < max_stage:
 		display_text = info.QuestDescription.get(current_stage + 1, "Default Stage Description")
@@ -48,14 +48,14 @@ func update_quest_display():
 		display_text = info.QuestDescription.get(max_stage, "Default Completion Description")
 
 	QuestManager.quest_display.update_quest(info.QuestDisplayName, display_text)
-	print("quest script params Name: ", info.QuestDisplayName)
-	print("quest script params Description: ", display_text)
+	#print("quest script params Name: ", info.QuestDisplayName)
+	#print("quest script params Description: ", display_text)
 
 func complete_quest():
 	if is_completed:
 		return # Prevent re-completion of the quest
 	
-	print(quest_name + " quest completed!")
+	#print(quest_name + " quest completed!")
 	is_completed = true
 	update_quest_display()
 	# Call additional logic needed when the quest is completed

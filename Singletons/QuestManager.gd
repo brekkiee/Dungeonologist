@@ -56,10 +56,10 @@ func add_quest(quest_id: String):
 		update_quest_display()
 		if quest_id == "TheReaperOfRavenglass":
 			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Reaper_of_Ravenglass_Dialogue.json"
-			print("Dialogue file: ", GameManager.npc.dialogue_file)
+			#print("Dialogue file: ", GameManager.npc.dialogue_file)
 			GameManager.npc._load_dialogue()
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
-		print("Started quest: ", quest_id)
+		#print("Started quest: ", quest_id)
 	else:
 		print("Failed to load quest script: ", quest_data["script"])
 
@@ -74,7 +74,7 @@ func update_quest_display() -> void:
 
 # Progress the current active quest
 func progress_active_quest():
-	print("progress_active_quest() called...")
+	#print("progress_active_quest() called...")
 	if active_quest != null:
 		if current_stage < active_quest.max_stage:
 			current_stage += 1
@@ -86,9 +86,9 @@ func progress_active_quest():
 
 # Complete the current active quest
 func complete_active_quest():
-	print("complete_active_quest() called...")
+	#print("complete_active_quest() called...")
 	if active_quest != null:
-		print("Completing quest: ", active_quest.quest_name)
+		#print("Completing quest: ", active_quest.quest_name)
 		active_quest.complete_quest()
 		completed_quests.append(active_quest.quest_name)
 		
@@ -110,9 +110,9 @@ func complete_active_quest():
 		
 # Function to progress quest when chat with NPC
 func on_NPC_chat():
-	print("active_quest.stage: ", current_stage)
+	#print("active_quest.stage: ", current_stage)
 	if active_quest.max_stage >= current_stage and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "ChatNPC":
-		print("on_NPC_chat() called, active_quest.stage: ", current_stage)
+		#print("on_NPC_chat() called, active_quest.stage: ", current_stage)
 		GameManager.npc.update_sprite("res://Assets/Sprites/Characters/char_7_blank.png")
 		progress_active_quest()
 

@@ -58,7 +58,6 @@ func _display_current_line():
 
 # Enable advancing to next line when chat box finishes current line
 func _on_chat_box_finished():
-	print("Chatbox finished")
 	can_advance_line = true
 
 func advance_text():

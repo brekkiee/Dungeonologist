@@ -10,10 +10,10 @@ var is_day: bool = true
 var day_count: int = 1
 var day_duration: float = day_night_length
 var night_duration: float = day_night_length
-var test_monsters_to_award = [
-	"common_slime", "forest_dinglebat", "common_shrooman",
-	"plains_imp", "shallows_jelly", "nekomata"
-]
+#var test_monsters_to_award = [
+#	"common_slime", "forest_dinglebat", "common_shrooman",
+#	"plains_imp", "shallows_jelly", "nekomata"
+#]
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
@@ -64,18 +64,18 @@ func start_night(reset_current_time = true):
 	if reset_current_time:
 		current_time = 0.0
 	emit_signal("night_started", day_count)
-	_award_monster()
+#	_award_monster()
 	# Spawn pending monsters if the player is in the Monster Enclosure
 	if GameManager.current_scene and GameManager.current_scene.name == "MonsterEnclosure":
 		GameManager.spawn_pending_monsters()
 
 # Award a monster based on the day count
-func _award_monster():
-	if day_count <= test_monsters_to_award.size():
-		var species_name = test_monsters_to_award[day_count - 1]
-		GameManager.award_monster(species_name)
-	else:
-		print("No more monsters to award")
+#func _award_monster():
+#	if day_count <= test_monsters_to_award.size():
+#		var species_name = test_monsters_to_award[day_count - 1]
+#		GameManager.award_monster(species_name)
+#	else:
+#		print("No more monsters to award")
 
 # Process the time progression every frame
 func _process(delta):
@@ -131,7 +131,6 @@ func update_time_mode(time_mode: String):
 		percentage_of_cycle = current_time / old_duration
 	else:
 		percentage_of_cycle = 0.0
-	
 	
 	#current_time = percentage_of_cycle * (day_duration if is_day else night_duration)
 

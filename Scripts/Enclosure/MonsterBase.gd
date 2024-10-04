@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export var species: MonsterSpecies
 
+@export var monster_id: int = 0
+
 # Meters
 @export_group("Meters Variables")
 @export_range(0, 5) var hunger_meter = 5
