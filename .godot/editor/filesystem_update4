@@ -6,3 +6,4 @@ res://Scripts/Enclosure/MonsterBase.gd
 res://Assets/Monsters/monster_common_shrooman.tscn
 res://Singletons/GameManager.gd
 res://Singletons/PlayerData.gd
+res://Scripts/Quests/chat_box.gd

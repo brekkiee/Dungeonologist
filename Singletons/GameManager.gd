@@ -32,6 +32,16 @@ var player_monsters = []
 var spawn_point_index = 0
 var spawn_timer: Timer = null
 var monster_id_counter: int = 1
+var test_monsters = [
+	"common_slime",
+	"forest_dinglebat",
+	"common_shrooman",
+	"common_shrooman",
+	"plains_imp",
+	"shallows_jelly",
+	"nekomata",
+	"forest_dinglebat"
+]
 
 # Variables for research tasks
 var dinglebat_count = 0
@@ -281,11 +291,15 @@ func spawn_player_monsters():
 	var index = 0
 	for monster_id in PlayerData.player_monsters.keys():
 		print("monster_id in playerdata monsters keys: ", monster_id)
+		if get_monster_instance_by_id(monster_id) != null:
+			print("Monster with ID %d already instantiated. Skipping spawn." % monster_id)
+			continue
+		
 		var monster_data = PlayerData.player_monsters[monster_id]
 		var monster_instance = create_monster_from_data(monster_data)
 		if monster_instance == null:
 			continue
-			
+	
 		var spawn_point = monster_spawn_locations[index % monster_spawn_locations.size()]
 		index += 1
 		spawn_point.add_child(monster_instance)
@@ -335,7 +349,9 @@ func create_monster_from_data(monster_data: Dictionary) -> Node:
 	monster_instance.hunger_meter = monster_data.get("hunger_meter", 5)
 	monster_instance.happiness_meter = monster_data.get("happiness_meter", 5)
 	monster_instance.foods_fed = monster_data.get("foods_fed", [])
-
+	
+	monster_instance.add_to_group("monsters")
+	
 	return monster_instance
 
 func get_monster_scene_by_species(species_name: String) -> PackedScene:
@@ -348,17 +364,6 @@ func get_monster_scene_by_species(species_name: String) -> PackedScene:
 		return null
 
 func spawn_test_monsters():
-	var test_monsters = [
-		"common_slime",
-		"forest_dinglebat",
-		"common_shrooman",
-		"common_shrooman",
-		"plains_imp",
-		"shallows_jelly",
-		"nekomata",
-		"forest_dinglebat"
-	]
-	
 	for species_name in test_monsters:
 		award_monster(species_name)  # Add test monsters to pending monsters
 	
