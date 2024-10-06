@@ -182,13 +182,10 @@ func _instantiate_scene(scene_name: String) -> Node:
 			return null
 
 func award_monster(species_name):
-	if not pending_monsters.has(species_name):  # Prevent duplicates
-		pending_monsters.append(species_name)
-		PlayerData.pending_monsters = pending_monsters
-		PlayerData.save_data()
-		print("Awarded a new monster: ", species_name)
-	else:
-		print("Monster already awarded: ", species_name)
+	pending_monsters.append(species_name)
+	PlayerData.pending_monsters = pending_monsters
+	PlayerData.save_data()
+	print("Awarded a new monster: ", species_name)
 
 func spawn_pending_monsters():
 	if current_scene.name != "MonsterEnclosure":
@@ -367,3 +364,9 @@ func spawn_test_monsters():
 	
 	PlayerData.save_data()  # Save test monsters so they persist across game runs
 	print("Test monsters spawned and saved.")
+
+func get_monster_instance_by_id(monster_id: int) -> MonsterBase:
+	for monster in get_tree().get_nodes_in_group("monsters"):
+		if monster.monster_id == monster_id:
+			return monster
+	return null

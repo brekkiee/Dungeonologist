@@ -30,6 +30,14 @@ func get_time_mode():
 
 func save_data():
 	var monster_data = {}
+	
+	for monster_id in player_monsters.keys():
+		var monster_instance = GameManager.get_monster_instance_by_id(monster_id)
+		if monster_instance:
+			player_monsters[monster_id]["hunger_meter"] = monster_instance.hunger_meter
+			player_monsters[monster_id]["happiness_meter"] = monster_instance.happiness_meter
+			player_monsters[monster_id]["foods_fed"] = monster_instance.foods_fed
+	
 	for monster in player_monsters.values():
 		print("species_name in save_data()", monster.get("species_name"))
 		monster_data[monster.monster_id] = {

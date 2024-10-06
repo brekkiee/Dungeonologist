@@ -1,7 +1,8 @@
 res://Scenes/Windows/monster_enclosure.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Assets/Monsters/monster_common_shrooman.tscn
 res://Singletons/DayNightCycle.gd
-res://Singletons/PlayerData.gd
+res://Scripts/Enclosure/MonsterBase.gd
+res://Assets/Monsters/monster_common_shrooman.tscn
 res://Singletons/GameManager.gd
+res://Singletons/PlayerData.gd
