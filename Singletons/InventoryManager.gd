@@ -53,6 +53,10 @@ func _ready():
 
 # Add item to current inventory
 func add_plant_inventory_item(itemName):
+	if inventory_panel_parent == null:
+		print("Warning: inventory_panel_parent is not yet init.")
+		return false
+	
 	# check if max item is reached
 	if current_plant_inventory.size() >= max_items_in_row:
 		return false
@@ -183,7 +187,6 @@ func item_not_used_click():
 		return_item(item_mouse_follow)
 		item_mouse_follow = null
 
-
 func remove_item(item_name):
 		if current_plant_inventory.has(item_name):
 			current_plant_inventory.erase(item_name)
@@ -199,3 +202,49 @@ func _process(delta):
 		if Input.is_action_just_pressed("left_click"):
 			item_mouse_follow.get_node("Button").visible = true
 			item_not_used_click()
+
+func get_plant_inventory_data() -> Array:
+	var plant_inventory = []
+	for item in current_plant_inventory:
+		plant_inventory.append({
+			"ItemName": item.ItemName,
+			"ItemQuantity": item.ItemQuantity
+		})
+	return plant_inventory
+
+func get_potion_inventory_data() -> Array:
+	var potion_inventory = []
+	for item in current_potion_inventory:
+		potion_inventory.append({
+			"ItemName": item.ItemName,
+			"ItemQuantity": item.ItemQuantity
+		})
+	return potion_inventory
+
+func load_inventory_data(inventory_data: Dictionary):
+	# Clear current inventories
+	clear_inventory()
+
+	# Defer loading the inventory to ensure `inventory_panel_parent` is set
+	call_deferred("_load_inventory_deferred", inventory_data)
+
+func _load_inventory_deferred(inventory_data: Dictionary):
+	# Load plant inventory
+	for plant_data in inventory_data.get("plants", []):
+		for i in range(plant_data["ItemQuantity"]):
+			add_plant_inventory_item(plant_data["ItemName"])
+
+	# Load potion inventory
+	for potion_data in inventory_data.get("potions", []):
+		for i in range(potion_data["ItemQuantity"]):
+			add_potion_inventory_item(potion_data["ItemName"])
+
+func clear_inventory():
+	# Clear plant and potion inventories
+	for item in current_plant_inventory:
+		item.queue_free()
+	for item in current_potion_inventory:
+		item.queue_free()
+
+	current_plant_inventory.clear()
+	current_potion_inventory.clear()

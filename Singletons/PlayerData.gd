@@ -48,6 +48,11 @@ func save_data():
 			"foods_fed": monster.foods_fed
 		}
 	
+	var inventory_data = {
+		"plants": InventoryManager.get_plant_inventory_data(),
+		"potion": InventoryManager.get_potion_inventory_data(),		
+	}
+	
 	var data = {
 		"research_tasks_completed": research_tasks_completed,
 		"time_mode": time_mode,
@@ -55,20 +60,14 @@ func save_data():
 		"is_day": is_day,
 		"day_count": day_count,
 		"player_monsters": monster_data,
-		"pending_monsters": pending_monsters
+		"pending_monsters": pending_monsters,
+		"inventory": inventory_data
 	}
 	var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	if save_file:
 		save_file.store_var(data)
 		save_file.close()
 		print("Data saved successfully to ", SAVE_FILE_PATH)
-		print("research_tasks_completed: ", research_tasks_completed)
-		print("time_mode: ", time_mode)
-		print("current_time: ", current_time)
-		print("is_day: ", is_day)
-		print("day_count: ", day_count)
-		print("player_monsters: ", player_monsters)
-		print("pending_monsters: ", pending_monsters)
 	else:
 		print("Failed to open save file for writing.")
 
@@ -96,16 +95,12 @@ func load_data():
 					monster.set("species_name", monster_info["species_name"])
 				player_monsters[monster_id] = monster_info
 			
+			if data.has("inventory"):
+				InventoryManager.load_inventory_data(data["inventory"])
+			
 			save_file.close()
 			print("Data loaded successfully from ", SAVE_FILE_PATH)
-			print("Data saved successfully to ", SAVE_FILE_PATH)
-			print("research_tasks_completed: ", research_tasks_completed)
-			print("time_mode: ", time_mode)
-			print("current_time: ", current_time)
-			print("is_day: ", is_day)
-			print("day_count: ", day_count)
-			print("player_monsters: ", player_monsters)
-			print("pending_monsters: ", pending_monsters)
+		
 		else:
 			print("Failed to open save file for reading.")
 	else:
