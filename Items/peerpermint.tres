@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b2b0ci3qxj17v"]
+
+[ext_resource type="Texture2D" uid="uid://75fvve71gx0s" path="res://Assets/Sprites/InventoryIcons/peepermint_item.png" id="1_1nhmc"]
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_q4s5k"]
+
+[resource]
+script = ExtResource("1_q4s5k")
+Name = "Peerpermint"
+Type = 0
+Sprite = ExtResource("1_1nhmc")

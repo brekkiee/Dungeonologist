@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dxp66elsrvy5i"]
+
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_5fgdp"]
+[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/sunflower_item.png" id="1_uc0md"]
+
+[resource]
+script = ExtResource("1_5fgdp")
+Name = "Sunflower"
+Type = 0
+Sprite = ExtResource("1_uc0md")

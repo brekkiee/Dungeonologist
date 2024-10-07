@@ -1,17 +1,15 @@
-[gd_scene load_steps=42 format=3 uid="uid://dmu3k3gncmnnf"]
+[gd_scene load_steps=35 format=3 uid="uid://dmu3k3gncmnnf"]
 
-[ext_resource type="Script" path="res://Scenes/UI/ExpeditionsUI.gd" id="1_o3nvq"]
-[ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="1_va3ym"]
-[ext_resource type="Texture2D" uid="uid://bobxbyxclfgot" path="res://Assets/Sprites/Expeditions/Expe_Board.png" id="2_56re5"]
-[ext_resource type="Texture2D" uid="uid://cbev5u7nsrfse" path="res://Assets/Sprites/Expeditions/Expe_Page_1.png" id="3_yd8aw"]
-[ext_resource type="Texture2D" uid="uid://cmob5lexwse7j" path="res://Assets/Sprites/Expeditions/Expe_Pin_3.png" id="4_1vjrt"]
-[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="6_51usy"]
-[ext_resource type="Texture2D" uid="uid://iibp5lb7v3op" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="7_8oafl"]
-[ext_resource type="Script" path="res://Scripts/Expeditions/potion_slot.gd" id="8_b6o5l"]
-[ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="8_i017s"]
+[ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionsUI.gd" id="1_0jrf1"]
+[ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="2_ij7ww"]
+[ext_resource type="Texture2D" uid="uid://bobxbyxclfgot" path="res://Assets/Sprites/Expeditions/Expe_Board.png" id="3_hoil5"]
+[ext_resource type="Texture2D" uid="uid://cbev5u7nsrfse" path="res://Assets/Sprites/Expeditions/Expe_Page_1.png" id="4_11jdo"]
+[ext_resource type="Texture2D" uid="uid://cmob5lexwse7j" path="res://Assets/Sprites/Expeditions/Expe_Pin_3.png" id="5_hm03j"]
+[ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="6_ph7lu"]
+[ext_resource type="PackedScene" uid="uid://tfr5aen1tpy" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn" id="7_anmr1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
-texture = ExtResource("1_va3ym")
+texture = ExtResource("2_ij7ww")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ddwew"]
 
@@ -19,102 +17,92 @@ texture = ExtResource("1_va3ym")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c583"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jq5l1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6itak"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dvro"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ejpv6"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_8lblm"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqtug"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 0, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdtkf"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 25, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p3mhw"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 50, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7fxo"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 75, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpco5"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 100, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t7hn5"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 125, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5k4lq"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 150, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_86dhq"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 175, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0a21"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 200, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weo1r"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 225, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3fpb"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 250, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jooib"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 275, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wu4g4"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 300, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vsar"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 325, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jljr"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 350, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1n0o3"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 375, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gwql"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 400, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_df572"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 425, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsvp2"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 450, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvtv5"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 475, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42qj5"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 500, 112, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcpji"]
-atlas = ExtResource("8_i017s")
+atlas = ExtResource("6_ph7lu")
 region = Rect2(0, 525, 112, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1nvi6"]
@@ -202,7 +190,7 @@ offset_right = 14.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o3nvq")
+script = ExtResource("1_0jrf1")
 
 [node name="PC" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -226,7 +214,7 @@ theme_override_constants/margin_bottom = 0
 [node name="TextureRect" type="TextureRect" parent="PC/ExpoditionBoard"]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_56re5")
+texture = ExtResource("3_hoil5")
 expand_mode = 2
 
 [node name="HBoxContainer" type="GridContainer" parent="PC/ExpoditionBoard/TextureRect"]
@@ -244,7 +232,7 @@ columns = 5
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("3_yd8aw")
+texture = ExtResource("4_11jdo")
 
 [node name="TextureRect" type="TextureRect" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1"]
 layout_mode = 1
@@ -258,7 +246,7 @@ offset_top = -15.0
 offset_bottom = 10.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("4_1vjrt")
+texture = ExtResource("5_hm03j")
 
 [node name="Button" type="Button" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1"]
 layout_mode = 1
@@ -271,80 +259,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ddwew")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_utfuy")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6c583")
 
-[node name="ExpoPopUp" type="MarginContainer" parent="PC"]
-layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
-
-[node name="TR1" type="TextureRect" parent="PC/ExpoPopUp"]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_jq5l1")
-
-[node name="MC1" type="MarginContainer" parent="PC/ExpoPopUp/TR1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="HB1" type="HBoxContainer" parent="PC/ExpoPopUp/TR1/MC1"]
-layout_mode = 2
-
-[node name="Adventurer" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("6_51usy")
-expand_mode = 1
-
-[node name="Button" type="Button" parent="PC/ExpoPopUp/TR1/MC1/HB1/Adventurer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6itak")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_3dvro")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ejpv6")
-
-[node name="AdventurerPortrait" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1/Adventurer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Potion" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = SubResource("CanvasTexture_8lblm")
-
-[node name="TextureRect" type="TextureRect" parent="PC/ExpoPopUp/TR1/MC1/HB1/Potion"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -56.5
-offset_top = -51.0
-offset_right = 57.5
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.971, 1.977)
-texture = ExtResource("7_8oafl")
-script = ExtResource("8_b6o5l")
-
 [node name="ExpeditionAnimSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(697, 417)
@@ -355,5 +269,10 @@ autoplay = "adventuring"
 frame_progress = 0.958615
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="BagPopUp" parent="." instance=ExtResource("7_anmr1")]
+layout_mode = 1
+offset_left = 125.0
+offset_right = 125.0
 
 [connection signal="pressed" from="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1/Button" to="." method="on_button_pressed_expo1"]

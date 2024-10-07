@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0ixn7w31wao8"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/inventory_item.gd" id="1_6ufty"]
-[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/sunflower_item.png" id="3_bopax"]
+[ext_resource type="Script" path="res://Scripts/Inventory/inventory_item.gd" id="1_qd0tr"]
+[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/sunflower_item.png" id="2_flpmo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
 
@@ -27,7 +27,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-script = ExtResource("1_6ufty")
+script = ExtResource("1_qd0tr")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -50,7 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_bopax")
+texture = ExtResource("2_flpmo")
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 1

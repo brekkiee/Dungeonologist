@@ -1,0 +1,180 @@
+[gd_scene load_steps=14 format=3 uid="uid://tfr5aen1tpy"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.gd" id="1_3s8g6"]
+[ext_resource type="Texture2D" uid="uid://b8x261ipqu838" path="res://Assets/Sprites/Expeditions/Expe_Exit_Sign.png" id="2_k717y"]
+[ext_resource type="Texture2D" uid="uid://dmhht46gjb4nq" path="res://Assets/Sprites/Expeditions/Expe_Exit_BagSlot.png" id="3_ywxaw"]
+[ext_resource type="Texture2D" uid="uid://bkik4tcgqerwn" path="res://Assets/Sprites/Expeditions/Brew_Slot.png" id="4_77d3q"]
+[ext_resource type="Texture2D" uid="uid://3ynkmeie71c1" path="res://Assets/Sprites/Expeditions/Expe_QuestDisplay.png" id="4_h0eaq"]
+[ext_resource type="Texture2D" uid="uid://c8f1slg4b523q" path="res://Assets/Sprites/Expeditions/Expe_Exit_Embark_0.png" id="5_qiohl"]
+
+[sub_resource type="Gradient" id="Gradient_opp2h"]
+colors = PackedColorArray(0, 0, 0, 0.490196, 0, 0, 0, 0.490196)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_66hnd"]
+gradient = SubResource("Gradient_opp2h")
+
+[sub_resource type="LabelSettings" id="LabelSettings_82418"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrjsc"]
+font_size = 21
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3nna"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj2cr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egknf"]
+
+[node name="ExpeditionBagPopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3s8g6")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_66hnd")
+
+[node name="Sign" type="TextureRect" parent="BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_right = 219.0
+offset_bottom = 204.0
+grow_horizontal = 2
+texture = ExtResource("2_k717y")
+
+[node name="DungeonTitle" type="Label" parent="BG/Sign"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.575
+anchor_right = 0.9
+anchor_bottom = 0.675
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dungeon Title"
+label_settings = SubResource("LabelSettings_82418")
+horizontal_alignment = 1
+
+[node name="DungeonFloor" type="Label" parent="BG/Sign"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.875
+anchor_right = 0.8
+anchor_bottom = 0.925
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Floor 99"
+label_settings = SubResource("LabelSettings_mrjsc")
+horizontal_alignment = 1
+
+[node name="Info" type="MarginContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.375
+anchor_right = 0.7
+anchor_bottom = 0.8
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/Info"]
+layout_mode = 2
+
+[node name="Bag" type="TextureRect" parent="BG/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_ywxaw")
+
+[node name="PotionSlot" type="TextureRect" parent="BG/Info/HBoxContainer/Bag"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_77d3q")
+
+[node name="Potion" type="TextureRect" parent="BG/Info/HBoxContainer/Bag/PotionSlot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.85
+anchor_bottom = 0.85
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.5
+offset_bottom = -1.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="AP" type="TextureRect" parent="BG/Info/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_h0eaq")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Info/HBoxContainer/VBoxContainer/AP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="BG/Info/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_qiohl")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="BG/Info/HBoxContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i3nna")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wj2cr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_egknf")
+
+[connection signal="gui_input" from="BG/Info/HBoxContainer/Bag/PotionSlot" to="." method="_on_potion_slot_gui_input"]
+[connection signal="pressed" from="BG/Info/HBoxContainer/VBoxContainer/TextureRect/Button" to="." method="_on_button_pressed"]

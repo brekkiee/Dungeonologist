@@ -14,13 +14,13 @@ func _gui_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if InventoryManager.item_mouse_follow != null:
 				for i in InventoryManager.current_plant_inventory:
-					if i.ItemName == item_name:
+					if i.data.Name == item_name:
 						print("Name: ", i.ItemName, "\nQuantity: ", i.ItemQuantity)
 						i.ItemQuantity = i.ItemQuantity + 1
 						i.get_node("TextureRect/Label").text = str(i.ItemQuantity)
 						InventoryManager.return_item(i)
 				# Dragging item onto the slot
-				item_name = InventoryManager.item_mouse_follow.ItemName
+				item_name = InventoryManager.item_mouse_follow.data.Name
 				item_texture = InventoryManager.item_mouse_follow.get_node("TextureRect").texture
 				slot_texture.texture = item_texture
 				

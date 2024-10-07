@@ -4,27 +4,43 @@ var expeditions = [] # List of active expeditions
 var available_adventurers = {} # Dictionary of adventurers with their levels and stats
 var expedition_slots = 1 # Number of expeditions that can be run simultaneously
 
+var timer := Timer.new()
+
+func _ready():
+	add_child(timer)
+	timer.one_shot = true
+	timer.connect("timeout", _on_timer_timeout)
+	
 #func show_expedition_popup():
 #	expedition_bag_popup.visible = true
 #	# Handle logic for showing the popup and initializing it with relevant data
 
+func _on_timer_timeout():
+	print("Expo Timer Done")
+	pass
 
 func SetItem(ItemName: String): #set potion stats
 	match ItemName:
-		"minor_mana_potion_item":
+		"Minor Mana Potion":
 			print("Rare monster rates + 10%, Common monster rates - 20%")
-		"minor_health_potion_item":	
+		"Minor Health Potion":	
 			print("Material carry capacity + 1")
-func start_expedition(floor, adventurer, potion):
+
+
+func start_expedition(expoData, adventurer, potion):
 	if expeditions.size() < expedition_slots:
 		expeditions.append({
-			"floor": floor,
+			"floor": expoData.Floor,
 			"adventurer": adventurer,
 			"potion": potion,
-			"status": "in_progress"
+			"status": "in_progress",
+			"time": Time.get_time_dict_from_system()
 		})
 		# Trigger expedition started
-		print("Expedition started on floor", floor, "with adventurer", adventurer, "and potion", potion)
+		print("Expedition started on floor ", expoData.Floor, " with adventurer ", adventurer, " and potion ", potion, "\nStarted at: ", expeditions[0].time)
+		
+		timer.wait_time = expoData.time
+		timer.start()
 	else:
 		print("No available slots for more expeditions.")
 

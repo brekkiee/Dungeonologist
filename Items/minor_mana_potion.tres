@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c5l7vsmwrpj8q"]
+
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_em534"]
+[ext_resource type="Texture2D" uid="uid://bssk2np6pumtl" path="res://Assets/Sprites/InventoryIcons/minor_mana_potion_item.png" id="1_tql37"]
+
+[resource]
+script = ExtResource("1_em534")
+Name = "Minor Mana Potion"
+Type = 2
+Sprite = ExtResource("1_tql37")

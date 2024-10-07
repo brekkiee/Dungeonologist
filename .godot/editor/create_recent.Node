@@ -1,11 +1,11 @@
-TextureRect
 Button
-MarginContainer
+TextureRect
+VBoxContainer
 HBoxContainer
+MarginContainer
+Label
 PopupPanel
 GridContainer
-Label
-VBoxContainer
 NinePatchRect
 Popup
 Container

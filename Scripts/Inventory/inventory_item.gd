@@ -5,7 +5,9 @@ var ItemName: String
 var ItemQuantity: int
 var ItemType: String
 
-@onready var item_tooltip_template = preload("res://Scenes/UI/InvItemTooltip.tscn")
+var data: ItemData
+
+@onready var item_tooltip_template = preload("res://Scenes/UI/Inventory/InvItemTooltip.tscn")
 var tooltip = null
 # Follow mouse position
 func follow_mouse():
@@ -13,7 +15,7 @@ func follow_mouse():
 
 # Called when inventory item button is clicked (item selected for use)
 func _on_button_pressed():
-	InventoryManager.icon_clicked(self, ItemName)
+	InventoryManager.icon_clicked(self, data.Name)
 
 func on_mouse_entered():
 	tooltip = item_tooltip_template.instantiate()

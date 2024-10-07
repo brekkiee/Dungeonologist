@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Expeditions" load_steps=2 format=3 uid="uid://cvlx4njvpyy1a"]
+
+[ext_resource type="Script" path="res://Singletons/Expedition.gd" id="1_u51ig"]
+
+[resource]
+script = ExtResource("1_u51ig")
+Dungeon = ""
+Floor = 0
+time = 0.0
+rewards = Array[Resource("res://Singletons/RewardResource.gd")]([])
