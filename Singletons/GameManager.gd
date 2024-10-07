@@ -76,6 +76,8 @@ func start_game():
 	if start_menu != null:
 		start_menu.queue_free()
 	
+	PlayerData.load_data()
+	
 	QuestManager.add_quest("SettlingIn")
 	# Ensure NPC updates according to the active quest
 	if npc:

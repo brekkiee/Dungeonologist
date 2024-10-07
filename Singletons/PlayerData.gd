@@ -50,7 +50,7 @@ func save_data():
 	
 	var inventory_data = {
 		"plants": InventoryManager.get_plant_inventory_data(),
-		"potion": InventoryManager.get_potion_inventory_data(),		
+		"potions": InventoryManager.get_potion_inventory_data(),		
 	}
 	
 	var data = {
@@ -68,6 +68,7 @@ func save_data():
 		save_file.store_var(data)
 		save_file.close()
 		print("Data saved successfully to ", SAVE_FILE_PATH)
+		print("save_file data: ", data)
 	else:
 		print("Failed to open save file for writing.")
 
@@ -100,6 +101,7 @@ func load_data():
 			
 			save_file.close()
 			print("Data loaded successfully from ", SAVE_FILE_PATH)
+			print("Loaded save_file data: ", data)
 		
 		else:
 			print("Failed to open save file for reading.")

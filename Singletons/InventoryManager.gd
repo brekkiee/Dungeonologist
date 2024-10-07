@@ -54,7 +54,7 @@ func _ready():
 # Add item to current inventory
 func add_plant_inventory_item(itemName):
 	if inventory_panel_parent == null:
-		print("Warning: inventory_panel_parent is not yet init.")
+		print("Warning: inventory_panel_parent is not yet init. for add_plants")
 		return false
 	
 	# check if max item is reached
@@ -87,6 +87,10 @@ func add_plant_inventory_item(itemName):
 	return true
 
 func add_potion_inventory_item(itemName):
+	if inventory_panel_parent == null:
+		print("Warning: inventory_panel_parent is not yet init.")
+		return false
+	
 	# check if max item is reached
 	if current_potion_inventory.size() >= max_items_in_row:
 		return false
