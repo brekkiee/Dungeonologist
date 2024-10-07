@@ -181,19 +181,23 @@ func feed_monster():
 				foods_fed.append(food_item)
 				check_common_slime_research_task()
 		InventoryManager.item_used_click()
+		GameManager.play_sound("chew0")
 	else:
 		print("This monster dosen't eat that")
+		GameManager.play_sound("monster_sad0")
 		#TODO: Provide player feedback
 
 func pet_monster():
 	happiness_meter = 5
 	_show_emote()
 	update_monster()
+	GameManager.play_sound("monster_happy1")
 
 func inspect_monster():
 	print("Inspected monster using magnifying glass")
 	_show_meters()
 	update_monster()
+	GameManager.play_sound("click")
 # Show monster emote
 func _show_emote():
 	emote_sprite.visible = true
@@ -279,6 +283,7 @@ func attempt_item_drop():
 			item_ready_to_collect = true
 			emote_sprite.texture = emote_question
 			_show_emote()
+			GameManager.play_sound("click")
 			break  # Only one item drop per day
 
 func hide_item_drop_emote():
@@ -290,6 +295,7 @@ func collect_item():
 		# Add item to inventory
 		InventoryManager.add_potion_inventory_item(item_name)
 		print("Collected ", quantity, " x ", item_name)
+		GameManager.play_sound("click")
 	# Reset item drop variables
 	items_dropped.clear()
 	item_ready_to_collect = false

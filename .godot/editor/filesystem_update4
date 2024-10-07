@@ -7,3 +7,16 @@ res://Assets/Alchemy/Ladle.tscn
 res://Quests/Codex/codex.tscn
 res://Quests/Codex/CodexContent/MonsterEntries.json
 res://Scripts/ResearchTasks/codex.gd
+res://Singletons/GameManager.gd
+res://Scripts/Inventory/tool_box.gd
+res://Scenes/Windows/MainWindow.tscn
+res://Scenes/UI/MainUI.tscn
+res://Scenes/UI/StartMenuUI.tscn
+res://Scripts/Enclosure/MonsterBase.gd
+res://Scripts/Quests/NPC.gd
+res://Scripts/UI/UI.gd
+res://Singletons/QuestManager.gd
+res://Scripts/Garden/PlantBase.gd
+res://Singletons/InventoryManager.gd
+res://Assets/Garden/Plants/blood_cap_plant.tscn
+res://Scripts/Garden/Plants/blood_cap_plant.gd

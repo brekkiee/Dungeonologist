@@ -23,10 +23,12 @@ func _on_input_event(viewport, event, shape_idx):
 	if InputMap.event_is_action(event, "left_click"):
 		if event.pressed:
 			if InventoryManager.add_plant_inventory_item(harvested_item_name):
+				print("PlantBase: input event, called Inv.Man. add plant")
 				#This executes if it sucessfully added plants to Inventory 
 				#since there is space available
 				plant_animation.frame = 0
 				plant_animation.play("growth")
+				QuestManager.on_plant_harvested()
 				pass
 			else:
 				#This executes if the inventory is full and can't have more plants

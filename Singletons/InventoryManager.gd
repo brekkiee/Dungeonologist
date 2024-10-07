@@ -64,6 +64,7 @@ func add_plant_inventory_item(itemName):
 	# Check if Item is Stackable
 	for item in current_plant_inventory:
 		if item.ItemName == itemName:
+			QuestManager.on_plant_harvested()
 			# Increase Item Quantity by One
 			item.ItemQuantity = item.ItemQuantity + 1
 			item.get_node("TextureRect/Label").text = str(item.ItemQuantity)
@@ -98,6 +99,7 @@ func add_potion_inventory_item(itemName):
 	# Check if Item is Stackable
 	for item in current_potion_inventory:
 		if item.ItemName == itemName:
+			QuestManager.on_potion_brewed()
 			# Increase Item Quantity by One
 			item.ItemQuantity = item.ItemQuantity + 1
 			item.get_node("TextureRect/Label").text = str(item.ItemQuantity)

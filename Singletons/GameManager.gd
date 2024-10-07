@@ -8,7 +8,6 @@ var scenes: Dictionary = {}
 @onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
 @onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
 @onready var expedition_scene = preload("res://Scenes/Windows/expeditions.tscn")
-
 @onready var npc: Control = null
 @onready var found_monster: Node2D = null
 @onready var scene_spawn_point: Node2D = null
@@ -16,7 +15,6 @@ var scenes: Dictionary = {}
 @onready var pause_menu: Control = null
 @onready var main_window = null
 @onready var main_ui = null
-
 # Monster resources
 var monster_scenes = {
 	"common_slime": preload("res://Assets/Monsters/monster_common_slime.tscn"),
@@ -42,12 +40,29 @@ var test_monsters = [
 	"nekomata",
 	"forest_dinglebat"
 ]
-
 # Variables for research tasks
 var dinglebat_count = 0
 var shrooman_count = 0
 var plains_imp_present = false
 var other_carnivore_present = false
+# Music & Sounds
+var sound_effect_stream_player: AudioStreamPlayer2D
+var sound_effects: Dictionary = {
+	"background_sound0": preload("res://Sounds/Effects/background0.wav"),
+	"background_sound1": preload("res://Sounds/Effects/background1.wav"),
+	"bubble": preload("res://Sounds/Effects/bubble.wav"),
+	"chew0": preload("res://Sounds/Effects/chew0.wav"),
+	"chew1": preload("res://Sounds/Effects/chew1.wav"),
+	"click": preload("res://Sounds/Effects/click.wav"),
+	"drawer": preload("res://Sounds/Effects/drawer.wav"),
+	"mission_completed": preload("res://Sounds/Effects/mission_completed.wav"),
+	"monster_happy0": preload("res://Sounds/Effects/monster_happy0.wav"),
+	"monster_happy1": preload("res://Sounds/Effects/monster_happy1.wav"),
+	"monster_sad0": preload("res://Sounds/Effects/monster_sad0.wav"),
+	"new_mission": preload("res://Sounds/Effects/new_mission.wav"),
+	"plant_complete": preload("res://Sounds/Effects/plant_complete.wav"),
+	"walk": preload("res://Sounds/Effects/walk.wav")
+}
 
 func _ready():
 	randomize()
@@ -87,6 +102,7 @@ func start_game():
 	change_scene("MonsterEnclosure")
 	# Assign found_monster variable after the MonsterEnclosure scene is instantiated
 	assign_monster_spawn_locations()
+	sound_effect_stream_player = get_node("/root/Header/SoundEffectStreamPlayer")
 
 func add_main_ui_npc():
 		# Instantiate and add MainWindow to the scene tree
@@ -310,11 +326,17 @@ func spawn_player_monsters():
 func _on_spawn_timer_timeout():
 	spawn_next_monster()
 
-func play_sound():
-	var audio_stream = get_node("/root/Header/MainMusic")
-	if audio_stream:
-		audio_stream.stream = load("res://Sounds/ToolSuccessSound.wav")
-		audio_stream.play()
+func play_sound(sound_effect: String = ""):
+	if sound_effect_stream_player and sound_effects.has(sound_effect):
+		sound_effect_stream_player.stream = sound_effects[sound_effect]  # Set the stream from the dictionary
+		
+		if sound_effect_stream_player.stream:  # Ensure the stream is valid
+			sound_effect_stream_player.play()
+			print("Playing sound: ", sound_effect)
+		else:
+			print("Error: Sound stream is invalid for effect: ", sound_effect)
+	else:
+		print("Error: Sound effect not found or sound player not initialized.")
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

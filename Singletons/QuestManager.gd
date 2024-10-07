@@ -81,8 +81,10 @@ func progress_active_quest():
 			print("current_stage: ", current_stage)
 			active_quest.progress_quest(current_stage)
 			update_quest_display()
+			GameManager.play_sound("new_mission")
 		else:
 			complete_active_quest()
+			GameManager.play_sound("mission_completed")
 
 # Complete the current active quest
 func complete_active_quest():
@@ -119,6 +121,7 @@ func on_NPC_chat():
 # Function to progress quest when a plant is harvested
 func on_plant_harvested():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "HarvestPlant":
+		print("QuestManager: on_plant_harvested called")
 		progress_active_quest()
 
 # Function to progress quest when a monster is fed

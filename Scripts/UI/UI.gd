@@ -41,6 +41,7 @@ func _on_monster_book_pressed():
 		print("Closing Codex")
 		monster_book.queue_free()
 		monster_book_open = false
+	GameManager.play_sound("click")
 
 func _on_quest_book_pressed():
 	print("Button pressed")

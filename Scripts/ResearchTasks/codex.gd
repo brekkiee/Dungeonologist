@@ -125,11 +125,13 @@ func _on_prev_page_button_pressed():
 	if current_index > 0:
 		current_index -= 1
 		display_entry(current_index)
+		GameManager.play_sound("click")
 
 func _on_next_page_button_pressed():
 	if current_index < entries.size() - 1:
 		current_index += 1
 		display_entry(current_index)
+		GameManager.play_sound("click")
 
 func _on_button_pressed():
 	research_answer_labels[0].visible = true

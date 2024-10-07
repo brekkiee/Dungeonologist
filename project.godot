@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+PlayerData="*res://Singletons/PlayerData.gd"
+GameManager="*res://Singletons/GameManager.gd"
 InventoryManager="*res://Singletons/InventoryManager.gd"
 ExpeditionManager="*res://Singletons/ExpeditionManager.gd"
 QuestManager="*res://Singletons/QuestManager.gd"
-PlayerData="*res://Singletons/PlayerData.gd"
-GameManager="*res://Singletons/GameManager.gd"
 DayNightCycle="*res://Singletons/DayNightCycle.gd"
 DialogueManager="*res://Singletons/DialogueManager.gd"
 

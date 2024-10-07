@@ -79,6 +79,7 @@ func _on_button_pressed():
 		DialogueManager.close_chat_box()
 	else:
 		_start_chat(dialogues[0])
+		GameManager.play_sound("click")
 
 # Start a chat session using the provided array
 func _start_chat(dialogue_array: Array):

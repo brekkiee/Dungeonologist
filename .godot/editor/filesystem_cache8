@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728302119
+::res://::1728307283
 export_presets.cfg::TextFile::-1::1727416893::0::1::::<><>::
 icon.svg::CompressedTexture2D::1676929927616459888::1726802264::1726802264::1::::<><>::
 ::res://Assets/::1727909336
-::res://Assets/Alchemy/::1728302071
-Cauldron.tscn::PackedScene::1067344583262671495::1728302071::0::1::::<><>::res://Scripts/Alchemy/cauldron.gd<>uid://ca5q2jgmss3ic::::res://Assets/Sprites/Alchemy/brew_cauldron_front.png<>uid://dp7ewvdsap0xb::::res://Assets/Sprites/Alchemy/brew_cauldron_back.png<>uid://d10ncmfiqumcv::::res://Assets/Animations/Alchemy/anim_Fire.png<>uid://bpjj35f0odrii::::res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png<>uid://cykaw41hd5xq1::::res://Assets/Animations/Alchemy/anim_brew_splash.tres<>uid://duyhgysnsye1q::::res://Assets/Animations/Alchemy/anim_brew_bubble.tres<>uid://bmoigq87n12ua::::res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png<>res://Scripts/Alchemy/ingredient_slot.gd<>uid://du2m3lbjkf1m::::res://Assets/Alchemy/Ladle.tscn
-Ladle.tscn::PackedScene::253516362031360724::1728302071::0::1::::<><>::res://Scripts/Alchemy/ladle.gd<>uid://ddjd0iyjoe5tx::::res://Assets/Sprites/Alchemy/brew_ladle.png
+::res://Assets/Alchemy/::1728307128
+Cauldron.tscn::PackedScene::1067344583262671495::1728307128::0::1::::<><>::res://Scripts/Alchemy/cauldron.gd<>uid://ca5q2jgmss3ic::::res://Assets/Sprites/Alchemy/brew_cauldron_front.png<>uid://dp7ewvdsap0xb::::res://Assets/Sprites/Alchemy/brew_cauldron_back.png<>uid://d10ncmfiqumcv::::res://Assets/Animations/Alchemy/anim_Fire.png<>uid://bpjj35f0odrii::::res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png<>uid://cykaw41hd5xq1::::res://Assets/Animations/Alchemy/anim_brew_splash.tres<>uid://duyhgysnsye1q::::res://Assets/Animations/Alchemy/anim_brew_bubble.tres<>uid://bmoigq87n12ua::::res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png<>res://Scripts/Alchemy/ingredient_slot.gd<>uid://du2m3lbjkf1m::::res://Assets/Alchemy/Ladle.tscn
+Ladle.tscn::PackedScene::253516362031360724::1728307128::0::1::::<><>::res://Scripts/Alchemy/ladle.gd<>uid://ddjd0iyjoe5tx::::res://Assets/Sprites/Alchemy/brew_ladle.png
 ::res://Assets/Animations/::1726802263
 ::res://Assets/Animations/Alchemy/::1728300508
 anim_Brew_bubble-sheet.png::CompressedTexture2D::677688312485043466::1728299139::1728299139::1::::<><>::
@@ -150,8 +150,7 @@ bg_Grow.png::CompressedTexture2D::1191306493291591755::1726802263::1726804356::1
 Grow_plant_1.png::CompressedTexture2D::209903726232325550::1726802263::1726804356::1::::<><>::
 Grow_plant_2.png::CompressedTexture2D::4929591318860833518::1726802263::1726804356::1::::<><>::
 Grow_plant_3.png::CompressedTexture2D::3860636118439537022::1726802263::1726804356::1::::<><>::
-::res://Assets/Sprites/InventoryIcons/::1728302199
-2minor_mana_potion_icon.png::CompressedTexture2D::3687634762518818673::1727909336::1728302120::1::::<><>::
+::res://Assets/Sprites/InventoryIcons/::1728307283
 Berry 1.png::CompressedTexture2D::9129611811040640953::1728292901::1728292915::1::::<><>::
 berry_2_icon.png::CompressedTexture2D::6101902642071222779::1728292901::1728292915::1::::<><>::
 berry_3_icon.png::CompressedTexture2D::3178722316516314244::1728292901::1728292915::1::::<><>::
@@ -159,7 +158,7 @@ blood_cap_icon.png::CompressedTexture2D::806904957171485759::1727909336::1727909
 common_slime_icon.png::CompressedTexture2D::6214065691636296531::1727909336::1727909336::1::::<><>::
 dawn_grass_icon.png::CompressedTexture2D::8841003925349346209::1727909336::1727909336::1::::<><>::
 dwarven_nettle_icon.png::CompressedTexture2D::5286620854062638303::1727909336::1727909336::1::::<><>::
-Gelatinous_Blob_Icon.png::CompressedTexture2D::1669734460164198404::1728292901::1728292915::1::::<><>::
+gelatinous_blob_icon.png::CompressedTexture2D::1669734460164198404::1728292901::1728307284::1::::<><>::
 imp_droppings_icon.png::CompressedTexture2D::1962351468410128927::1728292901::1728292915::1::::<><>::
 inkberry_icon.png::CompressedTexture2D::787430557949630695::1727909336::1727909336::1::::<><>::
 lucky_coin_icon.png::CompressedTexture2D::753289123765497052::1728292901::1728292915::1::::<><>::
@@ -243,12 +242,12 @@ item_ToolTip.png::CompressedTexture2D::8068177776979095935::1727663803::17276638
 epic_quest.gd::GDScript::-1::1726802264::0::1::::<>QuestBase<>::
 quest_display.tscn::PackedScene::8281028845259341062::1726802264::0::1::::<><>::res://Scripts/Quests/quest_display.gd<>uid://dbujpgfdoqmp3
 the_reaper_of_ravenglass.gd::GDScript::-1::1726802264::0::1::::<>QuestBase<>::
-::res://Quests/Codex/::1728302072
-codex.tscn::PackedScene::6832333898211242532::1728302072::0::1::::<><>::uid://d28bwulw4xhwg::::res://Assets/Sprites/Codex/Codex.png<>res://Scripts/ResearchTasks/codex.gd<>uid://dbujpgfdoqmp3::::res://Assets/Fonts/yoster.ttf<>uid://bau31tfee7vtd::::res://Assets/Fonts/8bitlimr.ttf<>uid://buw8rrcrdjnk7::::res://Assets/Sprites/Monsters/CommonShrooman_Happy.png<>uid://cg2fyq2cmaigd::::res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png
+::res://Quests/Codex/::1728302425
+codex.tscn::PackedScene::6832333898211242532::1728302425::0::1::::<><>::uid://d28bwulw4xhwg::::res://Assets/Sprites/Codex/Codex.png<>res://Scripts/ResearchTasks/codex.gd<>uid://dbujpgfdoqmp3::::res://Assets/Fonts/yoster.ttf<>uid://bau31tfee7vtd::::res://Assets/Fonts/8bitlimr.ttf<>uid://buw8rrcrdjnk7::::res://Assets/Sprites/Monsters/CommonShrooman_Happy.png<>uid://cg2fyq2cmaigd::::res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png
 QuestLog.tscn::PackedScene::6461392754781278340::1727768309::0::1::::<><>::uid://d28bwulw4xhwg
-::res://Quests/Codex/CodexContent/::1728302071
+::res://Quests/Codex/CodexContent/::1728302299
 CommonShroomanEntry.json::JSON::-1::1726802264::0::1::::<><>::
-MonsterEntries.json::JSON::-1::1728302071::0::1::::<><>::
+MonsterEntries.json::JSON::-1::1728302299::0::1::::<><>::
 QuestEntries.json::JSON::-1::1726802264::0::1::::<><>::
 ::res://Quests/Dialogue/::1726802264
 chatbox.tscn::PackedScene::4045111602396686366::1726802264::0::1::::<><>::res://Scripts/Quests/chat_box.gd<>uid://cm6rsa7rb4fbi
@@ -267,7 +266,7 @@ hear.tscn::PackedScene::449987915843023410::1726802264::0::1::::<><>::res://Scri
 magnifying_glass.tscn::PackedScene::8992443192329167323::1726802264::0::1::::<><>::res://Scripts/Inventory/tool_icon.gd<>uid://b6snuvu34wirh
 petting_hand.tscn::PackedScene::5859646832776282007::1726802264::0::1::::<><>::res://Scripts/Inventory/tool_icon.gd<>uid://5qultn6onq1n
 tweezers.tscn::PackedScene::5726082206591770958::1726802264::0::1::::<><>::res://Scripts/Inventory/tool_icon.gd<>uid://cd6vi67x1pv6d
-::res://Scenes/UI/::1728298506
+::res://Scenes/UI/::1728307128
 ExpeditionBagPopUp.gd::GDScript::-1::1726802264::0::1::::<>Control<>::
 ExpeditionBagPopUp.tscn::PackedScene::39558696688014082::1728298506::0::1::::<><>::res://Scenes/UI/ExpeditionBagPopUp.gd<>uid://dvqdpng0m7mq5
 ExpeditionsUI.tscn::PackedScene::8044535144069848083::1727909336::0::1::::<><>::uid://vh3trvjvu4md
@@ -275,16 +274,16 @@ expedition_button.gd::GDScript::-1::1727909336::0::1::::<>TextureButton<>::
 InventoryItem.tscn::PackedScene::8931919586257686861::1727909336::0::1::::<><>::res://Scripts/Inventory/inventory_item.gd<>uid://dx7wbpwv5lcjp
 InvItemTooltip.gd::GDScript::-1::1727909336::0::1::::<>Control<>::
 InvItemTooltip.tscn::PackedScene::7306220380527548827::1727910973::0::1::::<><>::uid://dm7jyd33vbgl0
-MainUI.tscn::PackedScene::3454620744455547567::1728292087::0::1::::<><>::res://Scripts/UI/UI.gd<>uid://bow3kd43jo7je
+MainUI.tscn::PackedScene::3454620744455547567::1728307128::0::1::::<><>::res://Scripts/UI/UI.gd<>uid://bow3kd43jo7je::::res://Assets/Sprites/UI/Overlay_Frame_Top.png<>uid://bj4o23odb3hw6::::res://Assets/Sprites/UI/Overlay_Char_BG.png<>res://Scripts/Quests/NPC.gd<>uid://7w17bej6yhg5::::res://Assets/Sprites/Characters/char_0_basic.png<>uid://b305gyiy1canp::::res://Assets/Sprites/Codex/mons_book.png<>uid://dutncfgxiacn8::::res://Assets/Sprites/UI/drawer_closed.png<>uid://cj7vyh4w4hv07::::res://Scenes/UI/scene_change_buttons.tscn<>uid://bmltqku14lj0d::::res://Assets/Sprites/UI/drawer_open.png<>res://Scripts/Inventory/inventory_panel.gd<>uid://dy58iobnomh1m::::res://Assets/Sprites/UI/drawer_handle.png<>res://Scripts/Inventory/tool_box.gd<>uid://d1eahw0u8vb76::::res://Scenes/Tools/magnifying_glass.tscn<>uid://cpqpr6qjm2oe6::::res://Scenes/Tools/petting_hand.tscn<>uid://iuwvjdrul14t::::res://Assets/Sprites/UI/HomeUI.png
 PauseMenu.tscn::PackedScene::863400309973204714::1728292087::0::1::::<><>::res://Scripts/UI/pause_menu.gd<>uid://dbujpgfdoqmp3
 scene_change_buttons.tscn::PackedScene::5471919377661632078::1726802264::0::1::::<><>::res://Scripts/UI/scene_change_buttons.gd<>uid://5lplwajuqksb
 SettingsMenu.tscn::PackedScene::4643311561481320269::1728292087::0::1::::<><>::res://Scripts/UI/settings_menu.gd<>uid://dbujpgfdoqmp3
-StartMenuUI.tscn::PackedScene::5898063847817562941::1728292087::0::1::::<><>::res://Scripts/UI/start_menu.gd<>uid://b0422noucukd3
-::res://Scenes/Windows/::1728302071
-alchemy_lab.tscn::PackedScene::4630840513595756414::1728302071::0::1::::<><>::uid://dn0go0t5nxx6y::::res://Assets/Sprites/Alchemy/bg_Brew.png<>uid://phbak2krsav4::::res://Assets/Alchemy/Cauldron.tscn
+StartMenuUI.tscn::PackedScene::5898063847817562941::1728307128::0::1::::<><>::res://Scripts/UI/start_menu.gd<>uid://b0422noucukd3::::res://Assets/Sprites/UI/splashart.png<>uid://dbujpgfdoqmp3::::res://Assets/Fonts/yoster.ttf
+::res://Scenes/Windows/::1728307128
+alchemy_lab.tscn::PackedScene::4630840513595756414::1728302299::0::1::::<><>::uid://dn0go0t5nxx6y::::res://Assets/Sprites/Alchemy/bg_Brew.png<>uid://phbak2krsav4::::res://Assets/Alchemy/Cauldron.tscn
 expeditions.tscn::PackedScene::4302567149873935858::1727222484::0::1::::<><>::uid://dmu3k3gncmnnf
 garden.tscn::PackedScene::4326429132280947057::1727909336::0::1::::<><>::uid://q8cv5lswy2yp
-MainWindow.tscn::PackedScene::7662639141960509204::1726802264::0::1::::<><>::res://Scripts/Quests/OnSceneChangeTrigger.gd<>uid://bphpdmmsdqanf
+MainWindow.tscn::PackedScene::7662639141960509204::1728307128::0::1::::<><>::res://Scripts/Quests/OnSceneChangeTrigger.gd<>uid://bphpdmmsdqanf::::res://Scenes/UI/MainUI.tscn<>uid://mkicu74u48ty::::res://Scenes/UI/PauseMenu.tscn<>uid://bqpdm0mr0i0p8::::res://Sounds/MainMusic.wav
 monster_enclosure.tscn::PackedScene::539932079620495528::1728293196::0::1::::<><>::uid://pw1ml4t3lmwr
 start_menu.tscn::PackedScene::1614586681287274573::1727947068::0::1::::<><>::uid://cqbciq3ldcgs8
 ::res://Scripts/::1727909336
@@ -292,8 +291,8 @@ start_menu.tscn::PackedScene::1614586681287274573::1727947068::0::1::::<><>::uid
 cauldron.gd::GDScript::-1::1728300538::0::1::::<>Node2D<>::
 ingredient_slot.gd::GDScript::-1::1727663803::0::1::::<>TextureRect<>::
 ladle.gd::GDScript::-1::1727909336::0::1::::<>Area2D<>::
-::res://Scripts/Enclosure/::1728292087
-MonsterBase.gd::GDScript::-1::1728292087::0::1::::MonsterBase<>CharacterBody2D<>::
+::res://Scripts/Enclosure/::1728306460
+MonsterBase.gd::GDScript::-1::1728306460::0::1::::MonsterBase<>CharacterBody2D<>::
 MonsterSpecies.gd::GDScript::-1::1727909336::0::1::::MonsterSpecies<>Resource<>::
 monster_behaviour.gd::GDScript::-1::1726802264::0::1::::<>MonsterBase<>::
 ::res://Scripts/Enclosure/SpeciesResources/::1727932954
@@ -313,10 +312,10 @@ inkberry_plant.gd::GDScript::-1::1727909336::0::1::::<>PlantBase<>::
 sentient_moss_plant.gd::GDScript::-1::1727909336::0::1::::<>PlantBase<>::
 sweetroot_plant.gd::GDScript::-1::1727909336::0::1::::<>PlantBase<>::
 thimbleweed_plant.gd::GDScript::-1::1727909336::0::1::::<>PlantBase<>::
-::res://Scripts/Inventory/::1728286258
+::res://Scripts/Inventory/::1728306042
 inventory_item.gd::GDScript::-1::1727909336::0::1::::<>Control<>::
 inventory_panel.gd::GDScript::-1::1728286258::0::1::::<>Control<>::
-tool_box.gd::GDScript::-1::1726802264::0::1::::<>Node2D<>::
+tool_box.gd::GDScript::-1::1728306042::0::1::::<>Node2D<>::
 tool_icon.gd::GDScript::-1::1726802264::0::1::::<>Node2D<>::
 ::res://Scripts/Inventory/ItemDrops/::1727909336
 DropTable.gd::GDScript::-1::1727179721::0::1::::DropTable<>Resource<>::
@@ -350,46 +349,45 @@ ShroomSpores.tres::Resource/Resource::3375082081937101055::1727909336::0::1::::<
 SlimeResidue.tres::Resource/Resource::8441781111210067228::1727909336::0::1::::<><>::res://Scripts/Inventory/ItemDrops/ItemDrop.gd
 Sweetroot.tres::Resource/Resource::855800230827100662::1727909336::0::1::::<><>::res://Scripts/Inventory/ItemDrops/ItemDrop.gd
 Thimbleweed.tres::Resource/Resource::8559981640645174316::1727909336::0::1::::<><>::res://Scripts/Inventory/ItemDrops/ItemDrop.gd
-::res://Scripts/Quests/::1728292087
+::res://Scripts/Quests/::1728306592
 chat_box.gd::GDScript::-1::1728183553::0::1::::<>Control<>::
-NPC.gd::GDScript::-1::1728292087::0::1::::<>Control<>::
+NPC.gd::GDScript::-1::1728306592::0::1::::<>Control<>::
 OnSceneChangeTrigger.gd::GDScript::-1::1726802264::0::1::::<>Node2D<>::
 QuestBase.gd::GDScript::-1::1728292087::0::1::::QuestBase<>Node<>::
 QuestLog.gd::GDScript::-1::1726802264::0::1::::<>NinePatchRect<>::
 quest_display.gd::GDScript::-1::1728292087::0::1::::<>Control<>::
-::res://Scripts/ResearchTasks/::1728301904
-codex.gd::GDScript::-1::1728301904::0::1::::<>NinePatchRect<>::
-::res://Scripts/UI/::1728292087
+::res://Scripts/ResearchTasks/::1728306769
+codex.gd::GDScript::-1::1728306769::0::1::::<>NinePatchRect<>::
+::res://Scripts/UI/::1728306696
 pause_menu.gd::GDScript::-1::1728292087::0::1::::<>Control<>::
 scene_change_buttons.gd::GDScript::-1::1726802264::0::1::::<>Control<>::
 settings_menu.gd::GDScript::-1::1728292087::0::1::::<>Control<>::
 start_menu.gd::GDScript::-1::1728292087::0::1::::<>Control<>::
-UI.gd::GDScript::-1::1728292087::0::1::::<>Control<>::
-::res://Singletons/::1728294495
+UI.gd::GDScript::-1::1728306696::0::1::::<>Control<>::
+::res://Singletons/::1728306851
 DayNightCycle.gd::GDScript::-1::1728294495::0::1::::<>Node<>::
 DialogueManager.gd::GDScript::-1::1728292087::0::1::::<>Node<>::
 ExpeditionManager.gd::GDScript::-1::1726802264::0::1::::<>Node<>::
-GameManager.gd::GDScript::-1::1728292087::0::1::::<>Node<>::
+GameManager.gd::GDScript::-1::1728306079::0::1::::<>Node<>::
 InventoryManager.gd::GDScript::-1::1728292087::0::1::::<>Node<>::
 PlayerData.gd::GDScript::-1::1728292087::0::1::::<>Node<>::
-QuestManager.gd::GDScript::-1::1728292087::0::1::::<>Node<>::
-::res://Sounds/::1727909336
+QuestManager.gd::GDScript::-1::1728306851::0::1::::<>Node<>::
+::res://Sounds/::1728302680
 MainMusic.wav::AudioStreamWAV::3540612761145235059::1726802264::1726804356::1::::<><>::
-ToolSuccessSound.wav::AudioStreamWAV::3543625944307675707::1726802264::1726802264::1::::<><>::
-::res://Sounds/Effects/::1727909336
-background demo1.mp3::AudioStreamMP3::733889315519741573::1727909336::1727909336::1::::<><>::
-Background demo 2.mp3::AudioStreamMP3::115229779626324826::1727909336::1727909336::1::::<><>::
-bubble.mp3::AudioStreamMP3::3974401187797895391::1727909336::1727909336::1::::<><>::
-chewing 1.mp3::AudioStreamMP3::8946514446939851214::1727909336::1727909336::1::::<><>::
-chewing 2.mp3::AudioStreamMP3::8242033193105488259::1727909336::1727909336::1::::<><>::
-Click.mp3::AudioStreamMP3::2517866831489409294::1727909336::1727909336::1::::<><>::
-Drawer.mp3::AudioStreamMP3::5591753450585794642::1727909336::1727909336::1::::<><>::
-Mission Completed .mp3::AudioStreamMP3::3517568083229387403::1727909336::1727909336::1::::<><>::
-Monster happy 2.mp3::AudioStreamMP3::4728416842247230374::1727909336::1727909336::1::::<><>::
-Monster Happy.mp3::AudioStreamMP3::5056409494469236296::1727909336::1727909336::1::::<><>::
-Monster sad.mp3::AudioStreamMP3::7548696811890432336::1727909336::1727909336::1::::<><>::
-New mission .mp3::AudioStreamMP3::5463663546079967014::1727909336::1727909336::1::::<><>::
-Plant Complete.mp3::AudioStreamMP3::3722101654950016022::1727909336::1727909336::1::::<><>::
-Walk.mp3::AudioStreamMP3::8090237208965858429::1727909336::1727909336::1::::<><>::
+::res://Sounds/Effects/::1728303430
+background0.wav::AudioStreamWAV::8903592216703110936::1728302860::1728303127::1::::<><>::
+background1.wav::AudioStreamWAV::959987764056120615::1728302861::1728303132::1::::<><>::
+bubble.wav::AudioStreamWAV::7995660214560249098::1728302861::1728303003::1::::<><>::
+chew0.wav::AudioStreamWAV::4306135448195251627::1728302856::1728303426::1::::<><>::
+chew1.wav::AudioStreamWAV::1753520075429441420::1728302855::1728303430::1::::<><>::
+click.wav::AudioStreamWAV::7593728456519468179::1728302862::1728303070::1::::<><>::
+drawer.wav::AudioStreamWAV::2176035833593979723::1728302948::1728303087::1::::<><>::
+mission_completed.wav::AudioStreamWAV::855305076626414883::1728302952::1728303102::1::::<><>::
+monster_happy0.wav::AudioStreamWAV::6029303726460678472::1728302861::1728303123::1::::<><>::
+monster_happy1.wav::AudioStreamWAV::7158482247426261753::1728302862::1728303144::1::::<><>::
+monster_sad0.wav::AudioStreamWAV::2854593465506214729::1728302864::1728303161::1::::<><>::
+new_mission.wav::AudioStreamWAV::2735974189697924839::1728302953::1728303174::1::::<><>::
+plant_complete.wav::AudioStreamWAV::7784238307701968120::1728302868::1728303197::1::::<><>::
+walk.wav::AudioStreamWAV::2303756568570958900::1728302869::1728303212::1::::<><>::
 ::res://Styles/::1726802264
 scenes_button_group.tres::ButtonGroup::1862679751084229505::1726802264::0::1::::<><>::
