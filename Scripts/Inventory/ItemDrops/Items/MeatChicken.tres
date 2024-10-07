@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDrop" load_steps=2 format=3 uid="uid://do83hxlgkpas3"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/ItemDrop.gd" id="1_kkx76"]
+
+[resource]
+script = ExtResource("1_kkx76")
+item_name = "blood_cap_item"
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 1
+type = "meat"
+uses = Array[String](["food"])
+drop_location = "expedition"
+unlock_condition = 1

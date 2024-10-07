@@ -1,6 +1,10 @@
 res://Scenes/Windows/monster_enclosure.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Singletons/GameManager.gd
-res://Singletons/PlayerData.gd
-res://Singletons/InventoryManager.gd
+res://Scripts/Inventory/ItemDrops/Items/MeatOrgan.tres
+res://Scripts/Inventory/ItemDrops/Items/MeatBurger.tres
+res://Scripts/Inventory/ItemDrops/Items/MeatChicken.tres
+res://Scripts/Inventory/ItemDrops/Items/MeatSteak.tres
+res://Scripts/Inventory/ItemDrops/Items/MinorStaminaPotion.tres
+res://Assets/Alchemy/Cauldron.tscn
+res://Singletons/DayNightCycle.gd
