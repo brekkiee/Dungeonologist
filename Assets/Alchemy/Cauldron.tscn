@@ -1,13 +1,12 @@
-[gd_scene load_steps=63 format=3 uid="uid://phbak2krsav4"]
+[gd_scene load_steps=54 format=3 uid="uid://phbak2krsav4"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemy/cauldron.gd" id="1_jvxlh"]
-[ext_resource type="Texture2D" uid="uid://dvqdpng0m7mq5" path="res://Assets/Sprites/Alchemy/Brew_cauldron_liquid.png" id="1_wjf1w"]
-[ext_resource type="SpriteFrames" uid="uid://cykaw41hd5xq1" path="res://Assets/Animations/Alchemy/anim_Brew_splash.tres" id="2_3tt8t"]
-[ext_resource type="Texture2D" uid="uid://ca5q2jgmss3ic" path="res://Assets/Sprites/Alchemy/Brew_cauldron_front.png" id="2_rwoiv"]
-[ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/Alchemy/anim_Brew_bubble.tres" id="3_jah1c"]
+[ext_resource type="Texture2D" uid="uid://ca5q2jgmss3ic" path="res://Assets/Sprites/Alchemy/brew_cauldron_front.png" id="2_bb3mx"]
+[ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Alchemy/brew_cauldron_back.png" id="3_r5veo"]
 [ext_resource type="Texture2D" uid="uid://d10ncmfiqumcv" path="res://Assets/Animations/Alchemy/anim_Fire.png" id="4_cn6mk"]
-[ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Alchemy/Brew_cauldron_back.png" id="5_76mcf"]
-[ext_resource type="Texture2D" uid="uid://dqu15i7q7cawf" path="res://Assets/Animations/Alchemy/anim_Brew_wood.png" id="8_dit8y"]
+[ext_resource type="Texture2D" uid="uid://bpjj35f0odrii" path="res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png" id="5_inqyh"]
+[ext_resource type="SpriteFrames" uid="uid://cykaw41hd5xq1" path="res://Assets/Animations/Alchemy/anim_brew_splash.tres" id="6_nlkxv"]
+[ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/Alchemy/anim_brew_bubble.tres" id="7_lux2x"]
 [ext_resource type="Texture2D" uid="uid://bmoigq87n12ua" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="8_olqu1"]
 [ext_resource type="Script" path="res://Scripts/Alchemy/ingredient_slot.gd" id="9_auto5"]
 [ext_resource type="PackedScene" uid="uid://du2m3lbjkf1m" path="res://Assets/Alchemy/Ladle.tscn" id="11_8fc4n"]
@@ -310,63 +309,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsaaa"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 0, 120, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnhx1"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 29, 120, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmcw2"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 58, 120, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvuvm"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 87, 120, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61kgd"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 116, 120, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hb84u"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 145, 120, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_akb2h"]
-atlas = ExtResource("8_dit8y")
-region = Rect2(0, 174, 120, 29)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vhtd7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gsaaa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qnhx1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hmcw2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bvuvm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61kgd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hb84u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_akb2h")
-}],
-"loop": false,
-"name": &"default",
-"speed": 15.0
-}]
-
 [node name="Cauldron" type="Node2D"]
 script = ExtResource("1_jvxlh")
 
@@ -379,59 +321,45 @@ shape = SubResource("CircleShape2D_ci1dm")
 z_index = 5
 position = Vector2(0, 21)
 scale = Vector2(2.37626, 2.37626)
-texture = ExtResource("2_rwoiv")
+texture = ExtResource("2_bb3mx")
 
 [node name="CauldronBack" type="Sprite2D" parent="."]
 scale = Vector2(2.37626, 2.37626)
-texture = ExtResource("5_76mcf")
+texture = ExtResource("3_r5veo")
 
 [node name="AnimFire" type="AnimatedSprite2D" parent="."]
 z_index = 4
-position = Vector2(0.999996, 67)
+position = Vector2(3, 67)
 scale = Vector2(5.08, 4.48)
 sprite_frames = SubResource("SpriteFrames_186l4")
 autoplay = "default"
 frame_progress = 0.878615
 
 [node name="BrewLiquid" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(0, -72)
 
-[node name="LiquidBack" type="Sprite2D" parent="BrewLiquid"]
+[node name="Liquid" type="Sprite2D" parent="BrewLiquid"]
 z_index = 1
-position = Vector2(-1, 10)
+position = Vector2(-1, -11)
 scale = Vector2(2.56481, 2.53)
-texture = ExtResource("1_wjf1w")
-
-[node name="LiquidFront" type="Sprite2D" parent="BrewLiquid"]
-z_index = 1
-position = Vector2(-1, 10)
-scale = Vector2(2.56481, 2.53)
-texture = ExtResource("1_wjf1w")
+texture = ExtResource("5_inqyh")
 
 [node name="Splash" type="AnimatedSprite2D" parent="BrewLiquid"]
 visible = false
 z_index = 3
 position = Vector2(-1, -16)
 scale = Vector2(2.565, 2.565)
-sprite_frames = ExtResource("2_3tt8t")
-animation = &"brew_splash"
+sprite_frames = ExtResource("6_nlkxv")
+animation = &"brew_splash_red"
 
 [node name="Bubble" type="AnimatedSprite2D" parent="BrewLiquid"]
 z_index = 2
-position = Vector2(0, -17)
+position = Vector2(0, -12)
 scale = Vector2(2.565, 2.565)
-sprite_frames = ExtResource("3_jah1c")
-animation = &"brew_bubble"
-autoplay = "brew_bubble"
-
-[node name="AnimBrewWood" type="AnimatedSprite2D" parent="."]
-z_index = 3
-position = Vector2(1, 85)
-scale = Vector2(2.88411, 3.32411)
-sprite_frames = SubResource("SpriteFrames_vhtd7")
-autoplay = "default"
-frame = 6
-frame_progress = 1.0
+sprite_frames = ExtResource("7_lux2x")
+animation = &"brew_bubble_red"
+autoplay = "brew_bubble_red"
 
 [node name="IngredientSlots" type="Node2D" parent="."]
 
@@ -480,5 +408,6 @@ offset_bottom = -27.9641
 scale = Vector2(9.16666, 3.3295)
 
 [node name="Ladle" parent="." instance=ExtResource("11_8fc4n")]
+z_index = 4
 position = Vector2(249, -78)
 scale = Vector2(3, 3)

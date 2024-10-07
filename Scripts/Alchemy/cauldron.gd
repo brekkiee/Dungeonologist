@@ -10,6 +10,16 @@ extends Node2D
 @onready var ladle = $Ladle
 @onready var color_timer = Timer.new()
 
+## Colour Variants ##
+# Liquid
+@onready var anim_liquid_red = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png")
+@onready var anim_liquid_blue = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_1.png")
+@onready var anim_liquid_green = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_2.png")
+@onready var anim_liquid_yellow = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_3.png")
+@onready var anim_liquid_orange = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_4.png")
+@onready var anim_liquid_violet = preload("res://Assets/Sprites/Alchemy/Brew_cauldron_liquid_5.png")
+@onready var anim_liquid_indigo = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_6.png")
+
 # For sound fx:
 #@onready var sfx_correct = preload("")
 #@onready var sfx_incorrect = preload("")
@@ -19,8 +29,13 @@ func _ready():
 	add_child(color_timer)
 	color_timer.one_shot = true
 	color_timer.connect("timeout", Callable(self, "_on_timer_timeout"))
-	anim_bubble.play()
 	ladle.connect("gui_input", Callable(self, "_on_ladle_gui_input"))
+	
+	liquid.texture = anim_liquid_red
+	anim_splash.set_animation("brew_splash_red")
+	anim_bubble.set_animation("brew_bubble_red")
+	
+	anim_bubble.play()
 	
 func stir_mixture():
 	if slot1.item_name != "" and slot2.item_name != "":
@@ -70,12 +85,18 @@ func _on_item_removed_from_slot(slot, item_name):
 func _show_potion_mixture(correct_recipe: bool):
 	print("correct_recipe: ", correct_recipe)
 	await  get_tree().create_timer(1.0).timeout
-	liquid.modulate = Color(0, 1, 0) if correct_recipe else Color(1, 1, 0)
-	anim_bubble.visible = false
+	if correct_recipe:
+		liquid.texture = anim_liquid_blue
+		anim_bubble.set_animation("brew_bubble_blue")
+	else:
+		liquid.texture = anim_liquid_green
+		anim_bubble.set_animation("brew_bubble_green")
+	#anim_bubble.visible = false
 	# Start timer to reset color
-	color_timer.start(1)
+	color_timer.start(3)
 
 func _on_timer_timeout():
-	liquid.modulate = Color(1, 1, 1)  # Reset to default color
+	liquid.texture = anim_liquid_red  # Reset to default color
+	anim_bubble.set_animation("brew_bubble_red")
 	anim_splash.visible = false
-	anim_bubble.visible = true
+	#anim_bubble.visible = true

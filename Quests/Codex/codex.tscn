@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4lvsnq5ef3lw"]
+[gd_scene load_steps=7 format=3 uid="uid://c4lvsnq5ef3lw"]
 
 [ext_resource type="Texture2D" uid="uid://d28bwulw4xhwg" path="res://Assets/Sprites/Codex/Codex.png" id="2_4r81q"]
 [ext_resource type="Script" path="res://Scripts/ResearchTasks/codex.gd" id="2_shked"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="3_vewcg"]
 [ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
-
+[ext_resource type="Texture2D" uid="uid://cg2fyq2cmaigd" path="res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png" id="6_25oeb"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 anchors_preset = -1
@@ -197,6 +197,75 @@ offset_top = 528.0
 offset_right = 749.0
 offset_bottom = 536.0
 text = ">"
+
+[node name="VBoxContainerLHSPotion" type="VBoxContainer" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.125
+anchor_right = 0.444
+anchor_bottom = 0.917
+offset_left = -0.200005
+offset_right = -0.200043
+offset_bottom = -5.20001
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainerLHSPotion"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_vewcg")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Monster Name[/center]"
+fit_content = true
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerLHSPotion"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.67
+
+[node name="EntrySprite2D" type="TextureRect" parent="VBoxContainerLHSPotion/CenterContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(220, 245)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_25oeb")
+expand_mode = 5
+
+[node name="DetailsVBoxContainer" type="VBoxContainer" parent="VBoxContainerLHSPotion"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Location" type="RichTextLabel" parent="VBoxContainerLHSPotion/DetailsVBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_vewcg")
+bbcode_enabled = true
+text = "Location: Alchemy Lab"
+fit_content = true
+
+[node name="Ingredients" type="RichTextLabel" parent="VBoxContainerLHSPotion/DetailsVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.33
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_vewcg")
+bbcode_enabled = true
+text = "Ingredients: Dawn Grass + Blood Cap"
+fit_content = true
+
+[node name="Use" type="RichTextLabel" parent="VBoxContainerLHSPotion/DetailsVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_vewcg")
+bbcode_enabled = true
+text = "Equip to explorers in before sending them on an expedition for +1 Material Carry Capacity."
+fit_content = true
 
 [connection signal="pressed" from="VBoxContainerRHS/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PrevPageButton" to="." method="_on_prev_page_button_pressed"]

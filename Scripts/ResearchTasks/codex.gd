@@ -91,27 +91,24 @@ func display_entry(index: int):
 	
 	if entry["type"] == "monster":
 		name_label.text = entry["name"]
-		print("name_label.text = " + entry["name"])
 		sprite_node.texture = load(entry["sprite"])
-		print("sprite_label.text = " + entry["sprite"])	
 		diet_label.text = "Diet: " + entry["diet"]
-		print("diet_label.text = " + entry["diet"])	
 		habitat_label.text = "Habitat: " + entry["habitat"]
-		print("habitat_label.text = " + entry["habitat"])	
 		facts_label.text = entry["facts"]
-		print("facts_label.text = " + entry["facts"])	
+		notes_label.text = entry["notes"]
+	elif entry["type"] == "potion":
+		name_label.text = entry["name"]
+		sprite_node.texture = load(entry["sprite"])
+		diet_label.text = entry["diet"]
+		habitat_label.text = entry["habitat"]
+		facts_label.text = entry["facts"]
 		notes_label.text = entry["notes"]
 	elif entry["type"] == "quest":
 		name_label.text = entry["name"]
-		print("name_label.text = " + entry["name"])
 		sprite_node.texture = load(entry["sprite"])
-		print("sprite_label.text = " + entry["sprite"])	
 		diet_label.text = ""
-		print("diet_label.text = " + entry["diet"])	
 		habitat_label.text = ""
-		print("habitat_label.text = " + entry["habitat"])	
 		facts_label.text = entry["facts"]
-		print("facts_label.text = " + entry["facts"])	
 		notes_label.text = entry["notes"]
 	
 	var research_tasks = entry["research_tasks"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8vli4tsmymw1"
-path="res://.godot/imported/anim_Brew_bubble_5.png-ca60d15aa611f49f50be20d3a4419e7a.ctex"
+path="res://.godot/imported/anim_brew_bubble_5.png-0b9f737cae1a5704b627ad8be2794a0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Alchemy/anim_Brew_bubble_5.png"
-dest_files=["res://.godot/imported/anim_Brew_bubble_5.png-ca60d15aa611f49f50be20d3a4419e7a.ctex"]
+source_file="res://Assets/Animations/Alchemy/anim_brew_bubble_5.png"
+dest_files=["res://.godot/imported/anim_brew_bubble_5.png-0b9f737cae1a5704b627ad8be2794a0f.ctex"]
 
 [params]
 
