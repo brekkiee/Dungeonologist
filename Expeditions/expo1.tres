@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_u51ig")
-Dungeon = ""
-Floor = 0
-time = 0.0
+Dungeon = "Expo"
+Floor = 1
+time = 10.0
 rewards = Array[Resource("res://Singletons/RewardResource.gd")]([])

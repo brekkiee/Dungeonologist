@@ -26,6 +26,6 @@ func on_button_pressed_expo1():
 	popup.DungeonName = "expo";
 	popup.DungeonFloor = "1";
 	popup.AdventurerName = "Colin"
-	
+	popup.update()
 	popup.visible = true;
 	pass
