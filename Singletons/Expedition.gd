@@ -24,6 +24,11 @@ func finished():
 		var roll = rng.randi_range(0,100)
 		print(roll)
 		if roll <= chance:
-			print("Reward ", r.item_data.Name, " has been given") 
-	
+			print("Reward ", r.item_data.Name, " has been given")
+			match ItemData.type.keys()[r.item_data.Type]:
+				"Potion":
+					InventoryManager.add_potion_inventory_item(r.item_data)
+				_:
+					InventoryManager.add_plant_inventory_item(r.item_data)
+
 	ExpeditionManager.complete_expedition(index)

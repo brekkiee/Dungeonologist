@@ -8,3 +8,4 @@ res://Expeditions/expo1.tres
 res://Singletons/ExpeditionManager.gd
 res://Singletons/Expedition.gd
 res://Singletons/RewardResource.gd
+res://Items/common_slime.tres

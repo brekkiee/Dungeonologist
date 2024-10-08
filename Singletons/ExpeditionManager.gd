@@ -46,4 +46,4 @@ func complete_expedition(expedition_index):
 		# Handle expedition completion, determine loot, etc.
 		expeditions[expedition_index]["status"] = "completed"
 		print("Expedition completed:", expeditions[expedition_index])
-		expeditions.erase(expedition_index)
+		expeditions.remove_at(expedition_index)
