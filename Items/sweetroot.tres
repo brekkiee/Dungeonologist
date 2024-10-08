@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://bfnxsmr1ehxyk"]
+
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_tqlyy"]
+
+[resource]
+script = ExtResource("1_tqlyy")
+Name = "Sweetroot"
+Type = 0
+drop_rate = 1.0
+min_quantity = 0
+max_quantity = 0

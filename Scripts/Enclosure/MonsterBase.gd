@@ -274,12 +274,13 @@ func attempt_item_drop():
 		print("drop_table not set for this species")
 		return  # No drops available for this species
 
-	for item_drop in drop_table.drops:
+	for item_data in drop_table.drops:
 		var random_value = randf()
-		if random_value <= item_drop.drop_rate:
-			var quantity = randi_range(item_drop.min_quantity, item_drop.max_quantity)
+		if random_value <= item_data.drop_rate:
+			var quantity = randi_range(item_data.min_quantity, item_data.max_quantity)
 			# Store the item in items_dropped dictionary
-			items_dropped[item_drop.item_name] = quantity
+			var temp_dict = {item_data: quantity}
+			items_dropped.merge(temp_dict, true)
 			item_ready_to_collect = true
 			emote_sprite.texture = emote_question
 			_show_emote()
@@ -290,12 +291,13 @@ func hide_item_drop_emote():
 	emote_sprite.visible = false
 
 func collect_item():
-	for item_name in items_dropped.keys():
-		var quantity = items_dropped[item_name]
+	for item_data in items_dropped.keys():
+		var quantity = items_dropped[item_data]
+		
 		# Add item to inventory
-		InventoryManager.add_potion_inventory_item(item_name)
-		print("Collected ", quantity, " x ", item_name)
-		GameManager.play_sound("click")
+		for i in quantity:
+			InventoryManager.add_plant_inventory_item(item_data)
+		print("Collected ", quantity, " x ", item_data.Name)
 	# Reset item drop variables
 	items_dropped.clear()
 	item_ready_to_collect = false

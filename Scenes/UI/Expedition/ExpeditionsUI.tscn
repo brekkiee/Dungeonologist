@@ -1,0 +1,284 @@
+[gd_scene load_steps=36 format=3 uid="uid://dmu3k3gncmnnf"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionsUI.gd" id="1_0jrf1"]
+[ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="2_ij7ww"]
+[ext_resource type="Texture2D" uid="uid://bobxbyxclfgot" path="res://Assets/Sprites/Expeditions/Expe_Board.png" id="3_hoil5"]
+[ext_resource type="Texture2D" uid="uid://cbev5u7nsrfse" path="res://Assets/Sprites/Expeditions/Expe_Page_1.png" id="4_11jdo"]
+[ext_resource type="Texture2D" uid="uid://cmob5lexwse7j" path="res://Assets/Sprites/Expeditions/Expe_Pin_3.png" id="5_hm03j"]
+[ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="6_ph7lu"]
+[ext_resource type="PackedScene" uid="uid://tfr5aen1tpy" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn" id="7_anmr1"]
+[ext_resource type="PackedScene" uid="uid://injcvdbqywyq" path="res://Scenes/UI/Expedition/ExpeditionRewards.tscn" id="8_xeqvu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
+texture = ExtResource("2_ij7ww")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ddwew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utfuy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6c583"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqtug"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 0, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdtkf"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 25, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3mhw"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 50, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7fxo"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 75, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpco5"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 100, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7hn5"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 125, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k4lq"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 150, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86dhq"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 175, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0a21"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 200, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weo1r"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 225, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3fpb"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 250, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jooib"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 275, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu4g4"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 300, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vsar"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 325, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jljr"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 350, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n0o3"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 375, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gwql"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 400, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df572"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 425, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsvp2"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 450, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvtv5"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 475, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42qj5"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 500, 112, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcpji"]
+atlas = ExtResource("6_ph7lu")
+region = Rect2(0, 525, 112, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nvi6"]
+animations = [{
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_rqtug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdtkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3mhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7fxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpco5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7hn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k4lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86dhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0a21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weo1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3fpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jooib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu4g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vsar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jljr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n0o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gwql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df572")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsvp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvtv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42qj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcpji")
+}],
+"loop": true,
+"name": &"adventuring",
+"speed": 5.0
+}]
+
+[node name="ExpeditionsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -1.0
+offset_right = 14.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0jrf1")
+
+[node name="PC" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.235
+anchor_right = 0.988
+anchor_bottom = 1.0
+offset_left = 0.279968
+offset_right = -0.176025
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rl8gd")
+
+[node name="ExpoditionBoard" type="MarginContainer" parent="PC"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="PC/ExpoditionBoard"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_hoil5")
+expand_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="PC/ExpoditionBoard/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21
+anchor_top = 0.15
+anchor_right = 0.79
+anchor_bottom = 0.35
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Expedtion1" type="TextureRect" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_11jdo")
+
+[node name="TextureRect" type="TextureRect" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -15.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_hm03j")
+
+[node name="Button" type="Button" parent="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ddwew")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_utfuy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6c583")
+
+[node name="ExpeditionAnimSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(697, 417)
+scale = Vector2(4.29, 4.29)
+sprite_frames = SubResource("SpriteFrames_1nvi6")
+animation = &"adventuring"
+autoplay = "adventuring"
+frame_progress = 0.958615
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="BagPopUp" parent="." instance=ExtResource("7_anmr1")]
+layout_mode = 1
+offset_left = 125.0
+offset_right = 125.0
+
+[node name="ExpeditionRewards" parent="." instance=ExtResource("8_xeqvu")]
+layout_mode = 1
+offset_left = 125.0
+offset_right = 125.0
+
+[connection signal="pressed" from="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1/Button" to="." method="on_button_pressed_expo1"]

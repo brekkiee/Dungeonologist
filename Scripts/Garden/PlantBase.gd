@@ -4,7 +4,7 @@ extends Area2D
 @onready var plant_animation = $PlantAnimSprite2D
 
 var growth_speed: float = 1
-var harvested_item_name: String = ""
+var harvested_item_data: ItemData = null
 
 func _ready():
 	plant_animation.speed_scale = growth_speed
@@ -22,8 +22,7 @@ func _on_growth_animation_finished():
 func _on_input_event(viewport, event, shape_idx):
 	if InputMap.event_is_action(event, "left_click"):
 		if event.pressed:
-			if InventoryManager.add_plant_inventory_item(harvested_item_name):
-				print("PlantBase: input event, called Inv.Man. add plant")
+			if InventoryManager.add_plant_inventory_item(harvested_item_data):
 				#This executes if it sucessfully added plants to Inventory 
 				#since there is space available
 				plant_animation.frame = 0

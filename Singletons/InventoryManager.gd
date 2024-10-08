@@ -8,7 +8,7 @@ var current_plant_inventory = []
 # Stores all potions in the inventory
 var current_potion_inventory = []
 # Scene template for each inventory item
-var item_template = preload("res://Scenes/UI/InventoryItem.tscn")
+var item_template = preload("res://Scenes/UI/Inventory/InventoryItem.tscn")
 # Tracks item following the mouse
 var item_mouse_follow = null
 var plant_item_origin: Dictionary = {}
@@ -16,34 +16,14 @@ var potion_item_origin: Dictionary = {}
 #item currently in hand
 var held_item = null
 # Dictionary of all possible items and their icons
-var all_Items_list: Dictionary = {
-	"dawn_grass_item": preload("res://Assets/Sprites/InventoryIcons/dawn_grass_icon.png"),
-	"thimbleweed_item": preload("res://Assets/Sprites/InventoryIcons/thimbleweed_icon.png"),
-	"inkberry_item": preload("res://Assets/Sprites/InventoryIcons/inkberry_icon.png"),
-	"sweetroot_item": preload("res://Assets/Sprites/InventoryIcons/sweetroot_icon.png"),
-	"slime_residue_item": preload("res://Assets/Sprites/InventoryIcons/slime_residue_icon.png"),
-	"minor_health_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png"),
-	"blood_cap_item": preload("res://Assets/Sprites/InventoryIcons/blood_cap_icon.png"),
-	"sentient_moss_item": preload("res://Assets/Sprites/InventoryIcons/sentient_moss_icon.png"), 
-	"shroom_spores_item": preload("res://Assets/Sprites/InventoryIcons/shroom_spores_icon.png"),
-	"rotten_fruit_item": preload("res://Assets/Sprites/InventoryIcons/rotten_fruit_icon.png"),
-	"imp_droppings_item": preload("res://Assets/Sprites/InventoryIcons/imp_droppings_icon.png"),
-	"minor_mana_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_mana_potion_icon.png"),
-	"minor_stamina_potion_item": preload("res://Assets/Sprites/InventoryIcons/minor_stamina_potion_icon.png"),
-	"dwarven_nettle_item": preload("res://Assets/Sprites/InventoryIcons/dwarven_nettle_icon.png"),
-	"gelatinous_blob_item": preload("res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"),
-	"lucky_coin_item": preload("res://Assets/Sprites/InventoryIcons/lucky_coin_icon.png")
-}
 # Tracks items in cauldron inventory
 var current_cauldron_inventory = []
 # Dictionary of all possible cauldron recipes
 var cauldron_recipies: Dictionary = {
-	0: { "items_required": ["blood_cap_item", "sweetroot_item"],
-		"result": "minor_health_potion_item"},
-	1: { "items_required": ["blood_cap_item", "thimbleweed_item"],
-		"result": "minor_mana_potion_item"},
-	2: { "items_required": ["blood_cap_item", "dwarven_nettle_item"],
-		"result": "minor_stamina_potion_item"}
+	0: { "items_required": ["snackle_item", "snepper_item", "peepermint_item"],
+		"result": preload("res://Items/minor_health_potion.tres")},
+	1: { "items_required": ["Snepper", "Peerpermint"],
+		"result": preload("res://Items/minor_mana_potion.tres")}
 }
 
 # Sort items required for each cauldron recipe alphabetically
@@ -63,20 +43,19 @@ func add_plant_inventory_item(itemName):
 		
 	# Check if Item is Stackable
 	for item in current_plant_inventory:
-		if item.ItemName == itemName:
-			QuestManager.on_plant_harvested()
+		if item.data.Name == itemName.Name:
 			# Increase Item Quantity by One
-			item.ItemQuantity = item.ItemQuantity + 1
-			item.get_node("TextureRect/Label").text = str(item.ItemQuantity)
+			item.data.Quantity = item.data.Quantity + 1
+			item.get_node("TextureRect/Label").text = str(item.data.Quantity)
 			return true
 
 	var newitem = item_template.instantiate()
-	newitem.ItemName = itemName
-	newitem.ItemQuantity = 1
-	newitem.ItemType = "Plant"
-	# Assign item's texture based on the all_items_list
-	newitem.get_node("TextureRect").texture = all_Items_list[itemName]
-	newitem.get_node("TextureRect/Label").text = str(newitem.ItemQuantity)
+	newitem.data = itemName
+	newitem.data.Quantity = 1
+
+	
+	newitem.get_node("TextureRect").texture = newitem.data.Sprite
+	newitem.get_node("TextureRect/Label").text = str(newitem.data.Quantity)
 	#add item to the plants array
 	current_plant_inventory.append(newitem)
 	var temp = {newitem: newitem.global_position}
@@ -88,36 +67,31 @@ func add_plant_inventory_item(itemName):
 	return true
 
 func add_potion_inventory_item(itemName):
-	if inventory_panel_parent == null:
-		print("Warning: inventory_panel_parent is not yet init.")
-		return false
-	
-	# check if max item is reached
+		# check if max item is reached
 	if current_potion_inventory.size() >= max_items_in_row:
 		return false
-	
+		
 	# Check if Item is Stackable
 	for item in current_potion_inventory:
-		if item.ItemName == itemName:
-			QuestManager.on_potion_brewed()
+		if item.data.Name == itemName.Name:
 			# Increase Item Quantity by One
-			item.ItemQuantity = item.ItemQuantity + 1
-			item.get_node("TextureRect/Label").text = str(item.ItemQuantity)
+			item.data.Quantity = item.data.Quantity + 1
+			item.get_node("TextureRect/Label").text = str(item.data.Quantity)
 			return true
-	
-	var newitem = item_template.instantiate()
-	newitem.ItemName = itemName
-	newitem.ItemQuantity = 1
-	newitem.ItemType = "Potion"
-	# Assign item's texture based on the all_items_list
 
-	newitem.get_node("TextureRect").texture = all_Items_list[itemName]	
-	#add item to the potions array
+	var newitem = item_template.instantiate()
+	newitem.data = itemName
+	newitem.data.Quantity = 1
+	
+	newitem.get_node("TextureRect").texture = newitem.data.Sprite
+	newitem.get_node("TextureRect/Label").text = str(newitem.data.Quantity)
+	#add item to the plants array
 	current_potion_inventory.append(newitem)
-	# Add item to inventory panel
 	var temp = {newitem: newitem.global_position}
 	potion_item_origin.merge(temp)
+	# Add item to inventory panel
 	inventory_panel_parent.get_node("PotionInventory").call_deferred("add_child", newitem)
+
 	QuestManager.on_potion_brewed()
 	return true
 
@@ -132,17 +106,6 @@ func icon_clicked(icon, item_name: String):
 			var temp = {icon: icon.global_position}
 			potion_item_origin.merge(temp, true)
 		item_mouse_follow = icon
-
-# Check the item held for name and texture
-func check_item_held():
-	var item = all_Items_list[held_item]
-	
-	var item_name_and_texture = {
-		"Item": item,
-		"HeldItem": held_item
-	}
-	
-	return item_name_and_texture
 
 # Return Item to original Position
 func return_item(item):
@@ -160,23 +123,23 @@ func item_used_click():
 		print(item_mouse_follow.ItemName + " has been used")
 		if current_plant_inventory.has(item_mouse_follow):
 			# Check if the item needs to be removed
-			if item_mouse_follow.ItemQuantity == 1:
+			if item_mouse_follow.data.Quantity == 1:
 				current_plant_inventory.erase(item_mouse_follow)
 				item_mouse_follow.queue_free()
 			else:
 				# Update Back and Front end quantity
-				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
+				item_mouse_follow.data.Quantity = item_mouse_follow.data.Quantity - 1
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
 				item_mouse_follow.hide_tooltip()
 				return_item(item_mouse_follow)
 		elif current_potion_inventory.has(item_mouse_follow):
 			# Check if the item needs to be removed
-			if item_mouse_follow.ItemQuantity == 1:
+			if item_mouse_follow.data.Quantity == 1:
 				current_potion_inventory.erase(item_mouse_follow)
 				item_mouse_follow.queue_free()
 			else:
 				# Update Back and Front end quantity
-				item_mouse_follow.ItemQuantity = item_mouse_follow.ItemQuantity - 1
+				item_mouse_follow.data.Quantity = item_mouse_follow.data.Quantity - 1
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
 				item_mouse_follow.hide_tooltip()
 				return_item(item_mouse_follow)
