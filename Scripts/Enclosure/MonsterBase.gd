@@ -280,10 +280,11 @@ func hide_item_drop_emote():
 func collect_item():
 	for item_data in items_dropped.keys():
 		var quantity = items_dropped[item_data]
-		item_data.Quantity = quantity
+		
 		# Add item to inventory
-		InventoryManager.add_plant_inventory_item(item_data)
-		print("Collected ", item_data.Quantity, " x ", item_data.Name)
+		for i in quantity:
+			InventoryManager.add_plant_inventory_item(item_data)
+		print("Collected ", quantity, " x ", item_data.Name)
 	# Reset item drop variables
 	items_dropped.clear()
 	item_ready_to_collect = false

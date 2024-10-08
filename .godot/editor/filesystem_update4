@@ -27,3 +27,5 @@ res://Items/slime_residue.tres
 res://Items/sweetroot.tres
 res://Items/thimbleweed.tres
 res://Scenes/UI/Inventory/InvItemTooltip.gd
+res://Singletons/Expedition.gd
+res://Singletons/InventoryManager.gd

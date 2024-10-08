@@ -7,5 +7,5 @@ script = ExtResource("1_xrlex")
 Name = "Slime Residue"
 Type = 0
 drop_rate = 1.0
-min_quantity = 0
-max_quantity = 0
+min_quantity = 1
+max_quantity = 3

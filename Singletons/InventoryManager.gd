@@ -50,6 +50,7 @@ func add_plant_inventory_item(itemName):
 	var newitem = item_template.instantiate()
 	newitem.data = itemName
 	newitem.data.Quantity = 1
+
 	
 	newitem.get_node("TextureRect").texture = newitem.data.Sprite
 	newitem.get_node("TextureRect/Label").text = str(newitem.data.Quantity)
