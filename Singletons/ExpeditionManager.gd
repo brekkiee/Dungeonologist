@@ -31,7 +31,7 @@ func start_expedition(expoData, adventurer, potion):
 		})
 		# Trigger expedition started
 		print("Expedition started on floor ", expoData.Floor, " with adventurer ", adventurer, " and potion ", potion, "\nStarted at: ", expeditions[0].time_started)
-		
+		expoData.index = expeditions.size() - 1
 		var timer := Timer.new()
 		timer.one_shot = true
 		timer.wait_time = expoData.time
