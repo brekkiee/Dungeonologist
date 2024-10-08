@@ -26,3 +26,4 @@ res://Items/shroom_spores.tres
 res://Items/slime_residue.tres
 res://Items/sweetroot.tres
 res://Items/thimbleweed.tres
+res://Scenes/UI/Inventory/InvItemTooltip.gd
