@@ -29,3 +29,9 @@ res://Items/thimbleweed.tres
 res://Scenes/UI/Inventory/InvItemTooltip.gd
 res://Singletons/Expedition.gd
 res://Singletons/InventoryManager.gd
+res://Scripts/Expeditions/potion_slot.gd
+res://Scripts/Alchemy/ingredient_slot.gd
+res://Scenes/UI/Expedition/ExpeditionRewards.tscn
+res://Scenes/UI/Expedition/ExpeditionRewards.gd
+res://Scenes/UI/Expedition/ExpeditionsUI.gd
+res://Singletons/ExpeditionManager.gd

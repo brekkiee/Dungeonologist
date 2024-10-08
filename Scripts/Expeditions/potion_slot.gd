@@ -30,7 +30,7 @@ func _gui_input(event):
 				# Player clicks to return item to inventory
 				get_parent().get_parent()._on_item_removed_from_slot(self, item_name)
 				# Search for and Return Item to inventory
-				for i in InventoryManager.current_plant_inventory:
+				for i in InventoryManager.current_potion_inventory:
 					if i.ItemName == item_name:
 						InventoryManager.return_item(i)
 				

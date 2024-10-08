@@ -1,7 +1,7 @@
 extends Control
 
 var popup = null;
-
+var rewardUI = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,9 +11,17 @@ func _ready():
 	popup.AdventurerName = "Colin"
 	popup.update();
 	popup.visible = false
+	
+	rewardUI = get_node("ExpeditionRewards")
+	rewardUI.visible = false
+	ExpeditionManager.expeditionUI = self
 	pass
 	
 
+func show_rewards(rewards):
+	rewardUI.visible = true
+	rewardUI.expo_title = str(popup.DungeonName," " ,popup.DungeonFloor)
+	rewardUI.expo_rewards = rewards
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

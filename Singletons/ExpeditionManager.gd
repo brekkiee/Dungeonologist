@@ -4,6 +4,7 @@ var expeditions = [] # List of active expeditions
 var available_adventurers = {} # Dictionary of adventurers with their levels and stats
 var expedition_slots = 1 # Number of expeditions that can be run simultaneously
 
+var expeditionUI = null
 
 	
 #func show_expedition_popup():
@@ -41,9 +42,10 @@ func start_expedition(expoData, adventurer, potion):
 	else:
 		print("No available slots for more expeditions.")
 
-func complete_expedition(expedition_index):
+func complete_expedition(expedition_index, rewards):
 	if expeditions[expedition_index]["status"] == "in_progress":
 		# Handle expedition completion, determine loot, etc.
 		expeditions[expedition_index]["status"] = "completed"
 		print("Expedition completed:", expeditions[expedition_index])
+		expeditionUI.show_rewards(rewards)
 		expeditions.remove_at(expedition_index)

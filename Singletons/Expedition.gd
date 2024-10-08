@@ -9,7 +9,7 @@ var timer: Timer
 var index: int
 
 var rng = RandomNumberGenerator.new()
-
+var rewardUI = preload("res://Scenes/UI/Expedition/ExpeditionRewards.tscn")
 func set_timer(iTimer):
 	timer = iTimer
 	timer.connect("timeout", finished)
@@ -26,6 +26,7 @@ func finished():
 		if roll <= chance:
 			print("Reward ", r.item_data.Name, " has been given")
 			print("Reward Quantity: ", r.quantity)
+			
 			for i in r.quantity:
 				print(i)
 				match ItemData.type.keys()[r.item_data.Type]:
@@ -34,4 +35,4 @@ func finished():
 					_:
 						InventoryManager.add_plant_inventory_item(r.item_data)
 
-	ExpeditionManager.complete_expedition(index)
+	ExpeditionManager.complete_expedition(index, rewards)

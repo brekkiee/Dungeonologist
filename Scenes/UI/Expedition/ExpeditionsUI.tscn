@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dmu3k3gncmnnf"]
+[gd_scene load_steps=36 format=3 uid="uid://dmu3k3gncmnnf"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionsUI.gd" id="1_0jrf1"]
 [ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="2_ij7ww"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cmob5lexwse7j" path="res://Assets/Sprites/Expeditions/Expe_Pin_3.png" id="5_hm03j"]
 [ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="6_ph7lu"]
 [ext_resource type="PackedScene" uid="uid://tfr5aen1tpy" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn" id="7_anmr1"]
+[ext_resource type="PackedScene" uid="uid://injcvdbqywyq" path="res://Scenes/UI/Expedition/ExpeditionRewards.tscn" id="8_xeqvu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
 texture = ExtResource("2_ij7ww")
@@ -271,6 +272,11 @@ frame_progress = 0.958615
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BagPopUp" parent="." instance=ExtResource("7_anmr1")]
+layout_mode = 1
+offset_left = 125.0
+offset_right = 125.0
+
+[node name="ExpeditionRewards" parent="." instance=ExtResource("8_xeqvu")]
 layout_mode = 1
 offset_left = 125.0
 offset_right = 125.0
