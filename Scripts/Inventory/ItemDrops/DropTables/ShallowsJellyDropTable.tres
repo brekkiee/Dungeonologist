@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="DropTable" load_steps=3 format=3 uid="uid://druri8a8vx8ih"]
 
-[ext_resource type="Resource" uid="uid://du0jbf4rixxyr" path="res://Scripts/Inventory/ItemDrops/Items/GelatinousBlob.tres" id="1_e5uf4"]
+[ext_resource type="Resource" uid="uid://ub2t8y6n465y" path="res://Items/gelatinous_blob.tres" id="1_uvu6d"]
 [ext_resource type="Script" path="res://Scripts/Inventory/ItemDrops/DropTable.gd" id="2_58m1c"]
 
 [resource]
 script = ExtResource("2_58m1c")
-drops = Array[Resource("res://Scripts/Inventory/ItemDrops/ItemDrop.gd")]([ExtResource("1_e5uf4")])
+drops = Array[Resource("res://Singletons/ItemData.gd")]([ExtResource("1_uvu6d")])

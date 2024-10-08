@@ -8,3 +8,6 @@ script = ExtResource("1_flgyh")
 Name = "Berry"
 Type = 0
 Sprite = ExtResource("1_2wwk1")
+drop_rate = 1.0
+min_quantity = 0
+max_quantity = 0

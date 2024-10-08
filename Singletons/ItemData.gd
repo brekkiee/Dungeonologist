@@ -6,4 +6,10 @@ enum type {Herb, Vegetable, Potion, Flower}
 @export var Name: String
 @export var Type: type
 @export var Sprite: Texture
+
+@export_group("Drop Data")
+@export_range(0.0,1.0) var drop_rate: float = 1.0
+@export var min_quantity: int
+@export var max_quantity: int
+
 var Quantity: int
