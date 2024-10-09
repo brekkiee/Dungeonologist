@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvqdpng0m7mq5"
-path="res://.godot/imported/brew_cauldron_liquid.png-92fa0047ce0cd0b0b2feb526a8df7519.ctex"
+path="res://.godot/imported/Brew_cauldron_liquid.png-20c851643b2e1efee17a50a790fcc204.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Alchemy/brew_cauldron_liquid.png"
-dest_files=["res://.godot/imported/brew_cauldron_liquid.png-92fa0047ce0cd0b0b2feb526a8df7519.ctex"]
+source_file="res://Assets/Sprites/Alchemy/Brew_cauldron_liquid.png"
+dest_files=["res://.godot/imported/Brew_cauldron_liquid.png-20c851643b2e1efee17a50a790fcc204.ctex"]
 
 [params]
 

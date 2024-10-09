@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqu15i7q7cawf"
-path="res://.godot/imported/anim_brew_wood.png-dfedcd8b8095d0e5fef1e4b21f254f75.ctex"
+path="res://.godot/imported/anim_Brew_wood.png-a4355db8b76e898fa14da5b1dea6a460.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Alchemy/anim_brew_wood.png"
-dest_files=["res://.godot/imported/anim_brew_wood.png-dfedcd8b8095d0e5fef1e4b21f254f75.ctex"]
+source_file="res://Assets/Animations/Alchemy/anim_Brew_wood.png"
+dest_files=["res://.godot/imported/anim_Brew_wood.png-a4355db8b76e898fa14da5b1dea6a460.ctex"]
 
 [params]
 
