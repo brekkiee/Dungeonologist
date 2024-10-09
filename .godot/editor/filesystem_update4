@@ -1,12 +1,5 @@
-res://Scenes/Windows/garden.tscn
+res://Scenes/UI/StartMenuUI.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
-res://Scripts/Garden/Plants/sweetroot_plant.gd
-res://Scripts/Garden/Plants/blood_cap_plant.gd
-res://Scripts/Garden/Plants/dawn_grass_plant.gd
-res://Scripts/Garden/Plants/dwarven_nettle_plant.gd
-res://Scripts/Garden/Plants/inkberry_plant.gd
-res://Scripts/Garden/Plants/sentient_moss_plant.gd
-res://Scripts/Garden/Plants/thimbleweed_plant.gd
-res://Scenes/UI/StartMenuUI.tscn
+res://Singletons/InventoryManager.gd

@@ -99,6 +99,11 @@ func add_potion_inventory_item(itemName):
 
 # Handle icon click to start following mouse
 func icon_clicked(icon, item_name: String):
+		print(icon.data.Name)
+		
+		if item_mouse_follow != null:
+			return_item(item_mouse_follow)
+		
 		icon.get_node("Button").visible = false
 		held_item = item_name
 		if current_plant_inventory.has(icon):
@@ -107,17 +112,20 @@ func icon_clicked(icon, item_name: String):
 		if current_potion_inventory.has(icon):
 			var temp = {icon: icon.global_position}
 			potion_item_origin.merge(temp, true)
+			
 		item_mouse_follow = icon
 
 # Return Item to original Position
 func return_item(item):
 	print("Returning ", item.data.Name ," to Origin Position")
-	item.get_node("Button").visible = true
+		
+	item.hide_tooltip()
 	if current_plant_inventory.has(item):
 		item.global_position = plant_item_origin.get(item)
 	elif current_potion_inventory.has(item):
 		item.global_position = potion_item_origin.get(item)
-		
+	await get_tree().create_timer(0.1).timeout;
+	item.get_node("Button").visible = true
 
 # Handle item used by cauldron
 func item_used_click():
@@ -145,7 +153,6 @@ func item_used_click():
 				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.data.Quantity)
 				item_mouse_follow.hide_tooltip()
 				return_item(item_mouse_follow)
-				
 		item_mouse_follow = null
 		
 
