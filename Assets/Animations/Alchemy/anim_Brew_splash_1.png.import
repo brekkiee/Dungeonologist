@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brfrba74lmqpe"
-path="res://.godot/imported/anim_brew_splash_1.png-80a62b9678994cb6f737f425938a701e.ctex"
+path="res://.godot/imported/anim_Brew_splash_1.png-3082d07f0de098c825bdf96391bfe138.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Alchemy/anim_brew_splash_1.png"
-dest_files=["res://.godot/imported/anim_brew_splash_1.png-80a62b9678994cb6f737f425938a701e.ctex"]
+source_file="res://Assets/Animations/Alchemy/anim_Brew_splash_1.png"
+dest_files=["res://.godot/imported/anim_Brew_splash_1.png-3082d07f0de098c825bdf96391bfe138.ctex"]
 
 [params]
 

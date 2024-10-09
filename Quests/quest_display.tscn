@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp8nlnraqbmeg"]
+[gd_scene load_steps=5 format=3 uid="uid://dp8nlnraqbmeg"]
 
 [ext_resource type="Script" path="res://Scripts/Quests/quest_display.gd" id="1_q7b5e"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_2tsrw"]
+[ext_resource type="Texture2D" uid="uid://ypfrkg6tjy3n" path="res://Assets/UI/Expe_QuestDisplay.png" id="3_3exwh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2its"]
 
@@ -21,15 +22,23 @@ quest_text = NodePath("PanelContainer/VBoxContainer/QuestText")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -135.0
-offset_top = 18.0
-offset_right = -27.0
-offset_bottom = 96.0
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.06
+anchor_right = 0.897
+anchor_bottom = 0.322
+offset_left = -0.0700073
+offset_top = 0.119999
+offset_right = -0.0140076
+offset_bottom = 0.0439911
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_e2its")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+z_index = -2
+layout_mode = 2
+texture = ExtResource("3_3exwh")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2

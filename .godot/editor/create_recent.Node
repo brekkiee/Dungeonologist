@@ -1,3 +1,4 @@
+TextureRect
 Node2D
 Button
 OptionButton
@@ -7,7 +8,6 @@ MarginContainer
 NinePatchRect
 Popup
 PopupPanel
-TextureRect
 Container
 CollisionShape2D
 Sprite2D

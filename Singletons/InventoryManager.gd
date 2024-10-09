@@ -38,11 +38,11 @@ var all_Items_list: Dictionary = {
 var current_cauldron_inventory = []
 # Dictionary of all possible cauldron recipes
 var cauldron_recipies: Dictionary = {
-	0: { "items_required": ["blood_cap_item", "sweetroot_item"],
+	0: { "items_required": ["blood_cap_item", "dawn_grass_item"],
 		"result": "minor_health_potion_item"},
-	1: { "items_required": ["blood_cap_item", "thimbleweed_item"],
+	1: { "items_required": ["slime_residue_item", "thimbleweed_item"],
 		"result": "minor_mana_potion_item"},
-	2: { "items_required": ["blood_cap_item", "dwarven_nettle_item"],
+	2: { "items_required": ["blood_cap_item", "shroom_spores_item"],
 		"result": "minor_stamina_potion_item"}
 }
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://du2m3lbjkf1m"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemy/ladle.gd" id="1_66whl"]
-[ext_resource type="Texture2D" uid="uid://ddjd0iyjoe5tx" path="res://Assets/Sprites/Alchemy/brew_ladle.png" id="2_ld8mx"]
+[ext_resource type="Texture2D" uid="uid://ddjd0iyjoe5tx" path="res://Assets/Sprites/Alchemy/Brew_Ladle.png" id="2_ld8mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11mqw"]
 size = Vector2(51, 57.1139)

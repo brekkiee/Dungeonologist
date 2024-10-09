@@ -6,6 +6,8 @@ extends TextureButton
 @export var expedition_timer: Timer
 @export var found_monster: Node2D 
 
+var expedition_number: int = 0
+
 func _ready():
 	add_child(expedition_timer)
 			# Set timer properties
@@ -38,8 +40,30 @@ func _on_expedition_timer_timeout():
 #		if found_monster:
 #			found_monster.visible = true
 #			print("Monster made visible in Monster Enclosure")
-	if GameManager.found_monster:
-		GameManager.found_monster.visible = true
-		print("Monster made visible in Monster Enclosure")
-
+#	if GameManager.found_monster:
+#		GameManager.found_monster.visible = true
+#		print("Monster made visible in Monster Enclosure")
+	if expedition_number == 0:
+		GameManager.award_monster("plains_imp")
+		PlayerData.research_tasks_completed["Plains Imp"][0] = true
+		PlayerData.save_data()
+		print("Research task 'Plains Imp' completed")
+	elif expedition_number == 1:
+		GameManager.award_monster("common_shrooman")
+		GameManager.award_monster("common_shrooman")
+		PlayerData.research_tasks_completed["Common Shrooman"][0] = true
+		PlayerData.save_data()
+		print("Research task 'Common Shrooman' completed")
+	elif expedition_number == 2:
+		GameManager.award_monster("nekomata")
+		PlayerData.research_tasks_completed["Nekomata"][0] = true
+		PlayerData.save_data()
+	elif expedition_number == 3:
+		GameManager.award_monster("forest_dinglebat")
+		PlayerData.save_data()
+	elif expedition_number == 4:
+		GameManager.award_monster("forest_dinglebat")
+		PlayerData.research_tasks_completed["Forest Dinglebat"][0] = true
+		PlayerData.save_data()
+	expedition_number += 1
 

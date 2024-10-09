@@ -268,29 +268,31 @@ mouse_filter = 2
 texture = ExtResource("18_ex3na")
 
 [node name="DayCounterLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.312
-anchor_top = 0.231
-anchor_right = 0.562
-anchor_bottom = 0.336
-offset_left = 0.575989
-offset_top = 0.311996
-offset_right = 0.575928
-offset_bottom = 0.271988
+anchor_left = 0.274
+anchor_top = 0.128
+anchor_right = 0.455
+anchor_bottom = 0.21
+offset_left = 0.35199
+offset_top = 0.0559998
+offset_right = -0.160034
+offset_bottom = -0.0800018
 theme_override_font_sizes/font_size = 25
 
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.31
-anchor_top = 0.383
-anchor_right = 0.56
-anchor_bottom = 0.488
-offset_left = -0.119995
-offset_top = -0.184006
-offset_right = -0.120117
-offset_bottom = -0.22403
+anchor_left = 0.273
+anchor_top = 0.213
+anchor_right = 0.492
+anchor_bottom = 0.29
+offset_left = 0.503998
+offset_top = -0.0240021
+offset_right = 0.216003
+offset_bottom = 0.0799866
 theme_override_font_sizes/font_size = 25
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]

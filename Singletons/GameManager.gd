@@ -31,14 +31,7 @@ var spawn_point_index = 0
 var spawn_timer: Timer = null
 var monster_id_counter: int = 1
 var test_monsters = [
-	"common_slime",
-	"forest_dinglebat",
-	"common_shrooman",
-	"common_shrooman",
-	"plains_imp",
-	"shallows_jelly",
-	"nekomata",
-	"forest_dinglebat"
+	"common_slime" # Spawn plains_imp
 ]
 # Variables for research tasks
 var dinglebat_count = 0
