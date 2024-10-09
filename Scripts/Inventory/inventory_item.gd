@@ -28,7 +28,7 @@ func on_mouse_exited():
 		tooltip = null
 
 func hide_tooltip():
-	print("Hiding Tooltup")
+	print("Hiding Tooltip")
 	if tooltip:
 		tooltip.queue_free()
 		tooltip = null

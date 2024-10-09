@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://d3ig3c0wl7msc"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d3ig3c0wl7msc"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_hoetv"]
+[ext_resource type="Texture2D" uid="uid://chk44xjuflxet" path="res://Assets/Sprites/InventoryIcons/dwarven_nettle_icon.png" id="1_p6m1y"]
 
 [resource]
 script = ExtResource("1_hoetv")
 Name = "Dwarven Nettle"
 Type = 0
+Sprite = ExtResource("1_p6m1y")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0

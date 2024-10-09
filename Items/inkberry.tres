@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://cjebqpft38krd"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cjebqpft38krd"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_i3qcv"]
+[ext_resource type="Texture2D" uid="uid://lho4pm4s8aa6" path="res://Assets/Sprites/InventoryIcons/inkberry_icon.png" id="1_oqscj"]
 
 [resource]
 script = ExtResource("1_i3qcv")
 Name = "Inkberry"
-Type = 0
+Type = 2
+Sprite = ExtResource("1_oqscj")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0

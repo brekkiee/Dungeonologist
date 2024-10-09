@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://4qxsc4k53ohg"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://4qxsc4k53ohg"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_7nhdk"]
+[ext_resource type="Texture2D" uid="uid://ctvjb1xqrp526" path="res://Assets/Sprites/InventoryIcons/sentient_moss_icon.png" id="1_r763b"]
 
 [resource]
 script = ExtResource("1_7nhdk")
 Name = "Sentient Moss"
 Type = 0
+Sprite = ExtResource("1_r763b")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0

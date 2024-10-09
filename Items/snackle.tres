@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cjefb3tpfcrp6"]
 
-[ext_resource type="Texture2D" uid="uid://blm1kxhgx0rne" path="res://Assets/Sprites/InventoryIcons/snackle_item.png" id="1_6fbkj"]
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_e1nxd"]
+[ext_resource type="Texture2D" uid="uid://blm1kxhgx0rne" path="res://Assets/Sprites/InventoryIcons/sweetroot_icon.png" id="1_reai7"]
 
 [resource]
 script = ExtResource("1_e1nxd")
 Name = "Snackle"
 Type = 0
-Sprite = ExtResource("1_6fbkj")
+Sprite = ExtResource("1_reai7")
+drop_rate = 1.0
+min_quantity = 0
+max_quantity = 0

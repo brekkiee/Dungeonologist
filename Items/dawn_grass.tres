@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://umr0qpeuy8ui"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://umr0qpeuy8ui"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_3jg6o"]
+[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/dawn_grass_icon.png" id="1_tniro"]
 
 [resource]
 script = ExtResource("1_3jg6o")
 Name = "Dawn Grass"
 Type = 0
+Sprite = ExtResource("1_tniro")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0

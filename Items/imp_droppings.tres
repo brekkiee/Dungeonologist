@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dyuhmrjc08ybc"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dyuhmrjc08ybc"]
 
+[ext_resource type="Texture2D" uid="uid://27tv3epdfpfb" path="res://Assets/Sprites/InventoryIcons/imp_droppings_icon.png" id="1_7eqeb"]
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_fmfhe"]
 
 [resource]
 script = ExtResource("1_fmfhe")
 Name = "Imp Droppings"
-Type = 0
+Type = 4
+Sprite = ExtResource("1_7eqeb")
 drop_rate = 1.0
-min_quantity = 0
-max_quantity = 0
+min_quantity = 1
+max_quantity = 3

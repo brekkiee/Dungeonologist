@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://bqqmnjmin01jn"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bqqmnjmin01jn"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_bkavi"]
+[ext_resource type="Texture2D" uid="uid://ky5tdpo6xhp1" path="res://Assets/Sprites/InventoryIcons/lucky_coin_icon.png" id="1_sp5kh"]
 
 [resource]
 script = ExtResource("1_bkavi")
 Name = "Lucky Coin"
-Type = 0
+Type = 4
+Sprite = ExtResource("1_sp5kh")
 drop_rate = 1.0
-min_quantity = 0
-max_quantity = 0
+min_quantity = 1
+max_quantity = 3
