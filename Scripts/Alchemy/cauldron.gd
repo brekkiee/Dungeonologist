@@ -38,14 +38,14 @@ func _ready():
 	anim_bubble.play()
 	
 func stir_mixture():
-	if slot1.item_name != "" and slot2.item_name != "":
+	if slot1.item_data.Name != "" and slot2.item_data.Name != "":
 		mix_ingredients()
 	else:
 		# Give player feedback that ingredients are missing
 		print("Need at least 2 ingredients to mix")
 		
 func mix_ingredients():
-	var ingredients = [slot1.item_name, slot2.item_name]
+	var ingredients = [slot1.item_data.Name, slot2.item_data.Name]
 	ingredients.sort()
 	var recipe_found = false
 	
@@ -70,9 +70,9 @@ func mix_ingredients():
 	
 func _clear_slots():
 	# Clear the slots
-	slot1.item_name = ""
+	slot1.item_data = null
 	icon1.texture = null
-	slot2.item_name = ""
+	slot2.item_data = null
 	icon2.texture = null
 	
 func _on_item_added_to_slot(slot, item_name):

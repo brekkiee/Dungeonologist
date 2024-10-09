@@ -32,7 +32,9 @@ func _ready():
 		cauldron_recipies[i].items_required.sort()
 
 # Add item to current inventory
-func add_plant_inventory_item(itemName):
+func add_plant_inventory_item(item_data):
+	
+	print(str(item_data))
 	if inventory_panel_parent == null:
 		print("Warning: inventory_panel_parent is not yet init. for add_plants")
 		return false
@@ -43,14 +45,14 @@ func add_plant_inventory_item(itemName):
 		
 	# Check if Item is Stackable
 	for item in current_plant_inventory:
-		if item.data.Name == itemName.Name:
+		if item.data.Name == item_data.Name:
 			# Increase Item Quantity by One
 			item.data.Quantity = item.data.Quantity + 1
 			item.get_node("TextureRect/Label").text = str(item.data.Quantity)
 			return true
 
 	var newitem = item_template.instantiate()
-	newitem.data = itemName
+	newitem.data = item_data
 	newitem.data.Quantity = 1
 
 	
@@ -109,7 +111,7 @@ func icon_clicked(icon, item_name: String):
 
 # Return Item to original Position
 func return_item(item):
-	print("Returning ", item.ItemName ," to Origin Position")
+	print("Returning ", item.data.Name ," to Origin Position")
 	item.get_node("Button").visible = true
 	if current_plant_inventory.has(item):
 		item.global_position = plant_item_origin.get(item)
@@ -120,7 +122,7 @@ func return_item(item):
 # Handle item used by cauldron
 func item_used_click():
 	if item_mouse_follow != null:
-		print(item_mouse_follow.ItemName + " has been used")
+		print(item_mouse_follow.data.Name + " has been used")
 		if current_plant_inventory.has(item_mouse_follow):
 			# Check if the item needs to be removed
 			if item_mouse_follow.data.Quantity == 1:
@@ -129,7 +131,7 @@ func item_used_click():
 			else:
 				# Update Back and Front end quantity
 				item_mouse_follow.data.Quantity = item_mouse_follow.data.Quantity - 1
-				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
+				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.data.Quantity)
 				item_mouse_follow.hide_tooltip()
 				return_item(item_mouse_follow)
 		elif current_potion_inventory.has(item_mouse_follow):
@@ -140,7 +142,7 @@ func item_used_click():
 			else:
 				# Update Back and Front end quantity
 				item_mouse_follow.data.Quantity = item_mouse_follow.data.Quantity - 1
-				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.ItemQuantity)
+				item_mouse_follow.get_node("TextureRect/Label").text = str(item_mouse_follow.data.Quantity)
 				item_mouse_follow.hide_tooltip()
 				return_item(item_mouse_follow)
 				
@@ -176,8 +178,8 @@ func get_plant_inventory_data() -> Array:
 	var plant_inventory = []
 	for item in current_plant_inventory:
 		plant_inventory.append({
-			"ItemName": item.ItemName,
-			"ItemQuantity": item.ItemQuantity
+			"ItemName": item.data.Name,
+			"ItemQuantity": item.data.Quantity
 		})
 	return plant_inventory
 
@@ -185,8 +187,8 @@ func get_potion_inventory_data() -> Array:
 	var potion_inventory = []
 	for item in current_potion_inventory:
 		potion_inventory.append({
-			"ItemName": item.ItemName,
-			"ItemQuantity": item.ItemQuantity
+			"ItemName": item.data.Name,
+			"ItemQuantity": item.data.Quantity
 		})
 	return potion_inventory
 
