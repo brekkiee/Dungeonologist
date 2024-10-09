@@ -24,6 +24,7 @@ func start_expedition(floor, adventurer, potion):
 			"status": "in_progress"
 		})
 		# Trigger expedition started
+		QuestManager.on_expedition_started()
 		print("Expedition started on floor", floor, "with adventurer", adventurer, "and potion", potion)
 	else:
 		print("No available slots for more expeditions.")
@@ -32,5 +33,6 @@ func complete_expedition(expedition_index):
 	if expeditions[expedition_index]["status"] == "in_progress":
 		# Handle expedition completion, determine loot, etc.
 		expeditions[expedition_index]["status"] = "completed"
+		QuestManager.on_expedition_rewards_collected()		
 		print("Expedition completed:", expeditions[expedition_index])
 		expeditions.erase(expedition_index)

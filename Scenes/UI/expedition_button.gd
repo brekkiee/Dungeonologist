@@ -25,6 +25,7 @@ func _on_start_expedition_button_pressed():
 	adventurer_portrait.modulate = Color(0.3,0.3,0.3)
 	adventure_animation.visible = true
 	expedition_timer.start()
+	QuestManager.on_expedition_started()
 
 func _on_expedition_timer_timeout():
 	adventurer_portrait.modulate = Color(1,1,1)
@@ -65,5 +66,5 @@ func _on_expedition_timer_timeout():
 		GameManager.award_monster("forest_dinglebat")
 		PlayerData.research_tasks_completed["Forest Dinglebat"][0] = true
 		PlayerData.save_data()
+	QuestManager.on_expedition_rewards_collected()
 	expedition_number += 1
-
