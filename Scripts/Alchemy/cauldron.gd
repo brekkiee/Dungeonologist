@@ -17,7 +17,7 @@ extends Node2D
 @onready var anim_liquid_green = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_2.png")
 @onready var anim_liquid_yellow = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_3.png")
 @onready var anim_liquid_orange = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_4.png")
-@onready var anim_liquid_violet = preload("res://Assets/Sprites/Alchemy/Brew_cauldron_liquid_5.png")
+@onready var anim_liquid_violet = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_5.png")
 @onready var anim_liquid_indigo = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_6.png")
 
 # For sound fx:

@@ -1,4 +1,3 @@
-# Ladle.gd
 extends Area2D
 
 var is_following_mouse = false

@@ -1,4 +1,3 @@
-# IngredientSlot.gd
 extends TextureRect
 
 @export var slot_texture: TextureRect

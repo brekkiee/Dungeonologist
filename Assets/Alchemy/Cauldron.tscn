@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ca5q2jgmss3ic" path="res://Assets/Sprites/Alchemy/Brew_cauldron_front.png" id="2_bb3mx"]
 [ext_resource type="Texture2D" uid="uid://dp7ewvdsap0xb" path="res://Assets/Sprites/Alchemy/Brew_cauldron_back.png" id="3_r5veo"]
 [ext_resource type="Texture2D" uid="uid://d10ncmfiqumcv" path="res://Assets/Animations/Alchemy/anim_Fire.png" id="4_cn6mk"]
-[ext_resource type="Texture2D" uid="uid://bpjj35f0odrii" path="res://Assets/Sprites/Alchemy/Brew_cauldron_liquid_0.png" id="5_inqyh"]
+[ext_resource type="Texture2D" uid="uid://bpjj35f0odrii" path="res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png" id="5_inqyh"]
 [ext_resource type="SpriteFrames" uid="uid://cykaw41hd5xq1" path="res://Assets/Animations/Alchemy/anim_Brew_splash.tres" id="6_nlkxv"]
 [ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/Alchemy/anim_Brew_bubble.tres" id="7_lux2x"]
 [ext_resource type="Texture2D" uid="uid://bmoigq87n12ua" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="8_olqu1"]

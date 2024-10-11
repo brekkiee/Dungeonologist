@@ -1,10 +1,5 @@
-res://Scenes/UI/MainUI.tscn
+res://Assets/Alchemy/Cauldron.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
-res://Scenes/Windows/MainWindow.tscn
-res://Assets/Garden/Plants/blood_cap_plant.tscn
-res://Assets/Garden/Plants/sentient_moss_plant.tscn
-res://Singletons/ExpeditionManager.gd
-res://Scenes/UI/expedition_button.gd
 res://Quests/epic_quest.gd
-res://Quests/Codex/QuestLog.tscn
+res://Scripts/Alchemy/cauldron.gd

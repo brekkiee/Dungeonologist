@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x13juxu1itii"
-path="res://.godot/imported/Gelatinous_Blob_Icon.png-8f2dfc3d7bafd0591149fdf5fd2640b5.ctex"
+path="res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/Gelatinous_Blob_Icon.png"
-dest_files=["res://.godot/imported/Gelatinous_Blob_Icon.png-8f2dfc3d7bafd0591149fdf5fd2640b5.ctex"]
+source_file="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png"
+dest_files=["res://.godot/imported/gelatinous_blob_icon.png-f203f36ac72bac5c7e06eb50172fd5e2.ctex"]
 
 [params]
 
