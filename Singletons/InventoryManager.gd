@@ -26,6 +26,26 @@ var cauldron_recipies: Dictionary = {
 		"result": preload("res://Items/minor_mana_potion.tres")}
 }
 
+var save_load_data: Dictionary = {
+	"Blood Cap": preload("res://Items/blood_cap.tres"),
+	"Dawn Grass": preload("res://Items/dawn_grass.tres"),
+	"Dwarven Nettle": preload("res://Items/dwarven_nettle.tres"),
+	"Gelatinous Blob": preload("res://Items/gelatinous_blob.tres"),
+	"Gutweed": preload("res://Items/gutweed.tres"),
+	"Imp Droppings": preload("res://Items/imp_droppings.tres"),
+	"Inkberry": preload("res://Items/inkberry.tres"),
+	"Lucky Coin": preload("res://Items/lucky_coin.tres"),
+	"Minor Health Potion": preload("res://Items/minor_health_potion.tres"),
+	"Minor Mana Potion": preload("res://Items/minor_mana_potion.tres"),
+	"Minor Stamina Potion": preload("res://Items/minor_stamina_potion.tres"),
+	"Rotten Fruit": preload("res://Items/rotten_fruit.tres"),
+	"Sentient Moss": preload("res://Items/sentient_moss.tres"),
+	"Shroom Spores": preload("res://Items/shroom_spores.tres"),
+	"Slime Residue": preload("res://Items/slime_residue.tres"),
+	"Sweetroot": preload("res://Items/sweetroot.tres"),
+	"Thimbleweed": preload("res://Items/thimbleweed.tres"),
+}
+
 # Sort items required for each cauldron recipe alphabetically
 func _ready():
 	for i in cauldron_recipies.size():
@@ -185,8 +205,7 @@ func get_plant_inventory_data() -> Array:
 	var plant_inventory = []
 	for item in current_plant_inventory:
 		plant_inventory.append({
-			"ItemName": item.data.Name,
-			"ItemQuantity": item.data.Quantity
+			"ItemData": item.data.item_save()
 		})
 	return plant_inventory
 
@@ -194,7 +213,7 @@ func get_potion_inventory_data() -> Array:
 	var potion_inventory = []
 	for item in current_potion_inventory:
 		potion_inventory.append({
-			"ItemName": item.data.Name,
+			"ItemData": item.data,
 			"ItemQuantity": item.data.Quantity
 		})
 	return potion_inventory
@@ -209,13 +228,19 @@ func load_inventory_data(inventory_data: Dictionary):
 func _load_inventory_deferred(inventory_data: Dictionary):
 	# Load plant inventory
 	for plant_data in inventory_data.get("plants", []):
-		for i in range(plant_data["ItemQuantity"]):
-			add_plant_inventory_item(plant_data["ItemName"])
+		print(plant_data);
+		for i in range(plant_data["ItemData"]["Quantity"]):
+			add_plant_inventory_item(save_load_data[plant_data["ItemData"]["Name"]]);
+		#for i in range(plant_data["ItemQuantity"]):
+		#	add_plant_inventory_item(plant_data["ItemData"])
 
 	# Load potion inventory
 	for potion_data in inventory_data.get("potions", []):
-		for i in range(potion_data["ItemQuantity"]):
-			add_potion_inventory_item(potion_data["ItemName"])
+		print(potion_data);
+		for i in range(potion_data["ItemData"]["Quantity"]):
+			add_potion_inventory_item(potion_data["ItemData"]);
+		#for i in range(potion_data["ItemQuantity"]):
+		#	add_potion_inventory_item(potion_data["ItemData"])
 
 func clear_inventory():
 	# Clear plant and potion inventories

@@ -3,3 +3,4 @@ res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Singletons/InventoryManager.gd
+res://Singletons/ItemData.gd

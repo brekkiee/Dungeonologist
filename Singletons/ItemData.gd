@@ -13,3 +13,10 @@ enum type {Herb, Vegetable, Fruit, Fungi, Monster_Material, Potion}
 @export var max_quantity: int
 
 var Quantity: int
+
+func item_save() -> Dictionary:
+	var temp: Dictionary = {
+		"Name": Name,
+		"Quantity": Quantity
+	};
+	return temp;
