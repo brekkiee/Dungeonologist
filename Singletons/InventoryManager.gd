@@ -213,8 +213,7 @@ func get_potion_inventory_data() -> Array:
 	var potion_inventory = []
 	for item in current_potion_inventory:
 		potion_inventory.append({
-			"ItemData": item.data,
-			"ItemQuantity": item.data.Quantity
+			"ItemData": item.data.item_save(),
 		})
 	return potion_inventory
 
@@ -238,7 +237,7 @@ func _load_inventory_deferred(inventory_data: Dictionary):
 	for potion_data in inventory_data.get("potions", []):
 		print(potion_data);
 		for i in range(potion_data["ItemData"]["Quantity"]):
-			add_potion_inventory_item(potion_data["ItemData"]);
+			add_potion_inventory_item(save_load_data[potion_data["ItemData"]["Name"]]);
 		#for i in range(potion_data["ItemQuantity"]):
 		#	add_potion_inventory_item(potion_data["ItemData"])
 
