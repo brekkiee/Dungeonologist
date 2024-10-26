@@ -8,13 +8,10 @@ func _init():
 	info["QuestDisplayName"] = "Epic Quest"
 	info["QuestDescription"] = {
 		1: "Talk to Colin",
-		2: "Brew a potion for Colin",
-		3: "Send Colin on an expedition",
-		4: "Collect expedition rewards",
 	}
 	
 	quest_name = info["Name"]
 	quest_type = info["Type"]
-	max_stage = 5
+	max_stage = 2
 	
 	start_quest()

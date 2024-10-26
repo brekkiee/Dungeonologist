@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_4jfne")
-Name = "Minor Stamina Potion"
+Name = "minor_stamina_potion_item"
 Type = 5
 drop_rate = 1.0
 min_quantity = 0

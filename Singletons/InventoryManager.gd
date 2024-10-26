@@ -20,10 +20,12 @@ var held_item = null
 var current_cauldron_inventory = []
 # Dictionary of all possible cauldron recipes
 var cauldron_recipies: Dictionary = {
-	0: { "items_required": ["snackle_item", "snepper_item", "peepermint_item"],
+	0: { "items_required": ["blood_cap_item", "dawn_grass_item"],
 		"result": preload("res://Items/minor_health_potion.tres")},
-	1: { "items_required": ["Snepper", "Peerpermint"],
-		"result": preload("res://Items/minor_mana_potion.tres")}
+	1: { "items_required": ["thimbleweed_item", "slime_residue_item"],
+		"result": preload("res://Items/minor_mana_potion.tres")},
+	2: { "items_required": ["blood_cap_item", "shroom_spores_item"],
+		"result": preload("res://Items/minor_stamina_potion.tres")}
 }
 
 var save_load_data: Dictionary = {

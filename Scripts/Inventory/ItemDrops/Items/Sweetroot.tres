@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_84m8o")
-item_name = "sweetroot_item"
+item_name = "Sweetroot"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1

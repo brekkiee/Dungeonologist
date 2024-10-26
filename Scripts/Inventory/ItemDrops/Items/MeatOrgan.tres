@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ysyd5")
-item_name = "blood_cap_item"
+item_name = "Meat Organ"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1

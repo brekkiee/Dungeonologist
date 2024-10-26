@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_7nhdk")
-Name = "Sentient Moss"
+Name = "sentient_moss_item"
 Type = 0
 Sprite = ExtResource("1_r763b")
 drop_rate = 1.0

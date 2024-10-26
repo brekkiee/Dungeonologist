@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_gdip5")
-Name = "Blood Cap"
+Name = "blood_cap_item"
 Type = 3
 Sprite = ExtResource("1_gpmto")
 drop_rate = 1.0

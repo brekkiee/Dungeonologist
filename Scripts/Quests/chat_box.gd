@@ -10,11 +10,12 @@ const MAX_WIDTH = 800
 
 var textToDisplay = ""
 var letter_index = 0
+var is_fast_forward = false
 
-# timing customisation for text display
-@export var letter_time = 0.0003
-@export var space_time = 0.0006
-@export var punct_time = 0.0002
+# Timing customization for text display (reduced for faster display)
+@export var letter_time = 0.01
+@export var space_time = 0.02
+@export var punct_time = 0.03
 
 signal finished
 
@@ -32,25 +33,33 @@ func display_text(speaker_name: String, text_to_display: String, emotion_texture
 	else:
 		print("Failed to load texture from path: ", emotion_texture_path)
 	
-	# fEnable word wrap if width exceeds max
+	# Enable word wrap if width exceeds max
 	if size.x > MAX_WIDTH:
 		chat.autowrap_mode = TextServer.AUTOWRAP_WORD
 		custom_minimum_size.y = size.y
 		
 	chat.text = ""
 	letter_index = 0
+	is_fast_forward = false
 	_display_character()
 	
-# displays each character with appropriate timing
+# Displays each character with appropriate timing
 func _display_character():
+	if is_fast_forward:
+		chat.text = textToDisplay
+		# Defer emitting 'finished' to avoid immediate state change
+		call_deferred("_emit_finished")
+		return
+	
 	chat.text += textToDisplay[letter_index]
 	letter_index += 1
 	
 	if letter_index >= textToDisplay.length():
-		finished.emit()
+		# Defer emitting 'finished' to avoid immediate state change
+		call_deferred("_emit_finished")
 		return
 	
-	# set timer for character type
+	# Set timer for character type
 	match textToDisplay[letter_index]:
 		"!", ".", ",", "?": # punctuation
 			timer.start(punct_time)
@@ -62,3 +71,11 @@ func _display_character():
 # Timer signals when to display next character
 func _on_timer_timeout():
 	_display_character()
+
+# Finish displaying the text instantly
+func finish_text():
+	is_fast_forward = true
+	_display_character()
+
+func _emit_finished():
+	finished.emit()

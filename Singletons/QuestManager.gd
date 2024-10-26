@@ -27,6 +27,16 @@ var quests_data: Dictionary = {
 		"stage2": "BrewPotion",
 		"stage3": "StartExpedition",
 		"stage4": "CollectExpedition",
+	},
+		"EpicQuest2" :{
+		"script": "res://Quests/epic_quest2.gd",
+		"stage1": "ChatNPC",
+	},
+		"ProgressQuest" :{
+		"script": "res://Quests/progress_quest.gd",
+		"stage1": "ChatNPC",
+		"stage2": "CompleteResearch",
+		"stage3": "ChatNPC",
 	}
 }
 
@@ -108,6 +118,12 @@ func complete_active_quest():
 			add_quest("EpicQuest")
 			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue.json"
 			GameManager.npc._load_dialogue()
+		elif active_quest.quest_name == "EpicQuest":
+			active_quest = null
+			current_stage = 0
+			add_quest("ProgressQuest")
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Progress_Quest_Dialogue.json"
+			GameManager.npc._load_dialogue()
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		
 # Function to progress quest when chat with NPC
@@ -142,4 +158,8 @@ func on_expedition_started():
 # Function to progress quest when expedition rewards are collected
 func on_expedition_rewards_collected():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "CollectExpedition":
+		progress_active_quest()
+
+func on_research_completed():
+	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "CompleteResearch":
 		progress_active_quest()

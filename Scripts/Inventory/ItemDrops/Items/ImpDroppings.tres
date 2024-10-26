@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_f0ssh")
-item_name = "imp_droppings_item"
+item_name = "Imp Droppings"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1

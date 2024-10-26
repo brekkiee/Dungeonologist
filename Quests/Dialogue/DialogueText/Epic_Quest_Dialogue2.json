@@ -1,0 +1,10 @@
+[
+	{"emotion": "wave", "texture": "res://Assets/Sprites/Dialogue/Colin/wave.png"},
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Colin/neutral.png"},
+
+	{"chat_num": "0", "name": "Colin", "emotion": "neutral", "text": "Phew… I made it back. That was… intense. Turns out the first floor has a lot more teeth than I remembered. But I didn’t give up! I got your samples, though I might’ve… accidentally stepped in a slime. Or five. But hey, no one got eaten, so that’s a win, right?"},
+	{"chat_num": "0", "name": "Colin", "emotion": "neutral", "text": "Let’s see… I brought back… well, I’m pretty sure it’s the right stuff. I mean, they’re shiny, and they came from the dungeon, so they’ve gotta be research samples. I think I’m ready for the big leagues now! Maybe a little promotion, eh?"},
+	{"chat_num": "0", "name": "Colin", "emotion": "wave", "text": "Can you picture it? I walk into the guild hall, everyone’s staring, and then Elsie stands up real slow, looks me in the eye, and says, “Colin, I was wrong about you.” And then I’ll say, “I know.” Yeah, that’ll show her!"},
+	{"chat_num": "0", "name": "Colin", "emotion": "neutral", "text": "Anyway, I should be getting back to the guild. Oh man, wait 'til the others see these cool slimes I brought back! They’re gonna flip! I bet none of those “seasoned adventurers” have ever seen anything like ‘em."},
+	{"chat_num": "0", "name": "Colin", "emotion": "wave", "text": "I’m gonna be the talk of the guild! Maybe they’ll even start calling me ‘Colin, the King of Slimes!’ Yeah… I like that. Okay, see ya!"}
+]

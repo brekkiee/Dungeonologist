@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_h8lqc")
-item_name = "lucky_coin_item"
+item_name = "Lucky Coin"
 drop_rate = 0.1
 min_quantity = 1
 max_quantity = 1

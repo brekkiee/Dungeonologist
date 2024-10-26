@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_bg72s")
-item_name = "slime_residue_item"
+item_name = "Slime Residue"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1

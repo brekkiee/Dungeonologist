@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_khfm5")
 name = "common_shrooman"
-diet = Array[String](["dawn_grass_item", "thimbleweed_item", "inkberry_item", "sweetroot_item", "blood_cap_item", "sentient_moss_item", "rotten_fruit_item", "dwarven_nettle_item", "gutweed_item", "gelatinous_blob_item"])
+diet = Array[String](["Dawn Grass", "Thimbleweed", "Inkberry", "Sweetroot", "Blood Cap", "Sentient Moss", "Rotten Fruit", "Dwarven Nettle", "Gutweed", "Gelatinous Blob"])
 habitats = Array[String](["Forests", "Caves"])
 drop_table = ExtResource("1_la31s")
 is_carnivore = true

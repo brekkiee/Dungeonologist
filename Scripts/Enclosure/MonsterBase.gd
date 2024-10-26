@@ -49,7 +49,7 @@ var movement_direction = Vector2.ZERO
 var items_dropped: Dictionary = {}  # Stores items ready to be collected
 var item_ready_to_collect: bool = false
 var foods_fed = []
-var all_food_items = ["dawn_grass", "thimbleweed"]
+var all_food_items = ["DawnGrass", "Thimbleweed"]
 #TODO: Add these food items in all_food_items:
 #"inkberry", "sweetroot", "blood_cap", "sentient_moss", "rotten_fruit", "dwarven_nettle", "gelatinous_blob"
 

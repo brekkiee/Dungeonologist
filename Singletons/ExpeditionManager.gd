@@ -38,6 +38,7 @@ func start_expedition(expoData, adventurer, potion):
 		timer.wait_time = expoData.time
 		add_child(timer)
 		expoData.set_timer(timer)
+		QuestManager.on_expedition_started()
 		
 	else:
 		print("No available slots for more expeditions.")
@@ -49,3 +50,4 @@ func complete_expedition(expedition_index, rewards):
 		print("Expedition completed:", expeditions[expedition_index])
 		expeditionUI.show_rewards(rewards)
 		expeditions.remove_at(expedition_index)
+		QuestManager.on_expedition_rewards_collected()

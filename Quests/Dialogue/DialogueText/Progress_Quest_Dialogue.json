@@ -1,0 +1,17 @@
+[
+	
+	{"emotion": "confident", "texture": "res://Assets/Sprites/Dialogue/Elspeth/confident.png"},
+	{"emotion": "confident_2", "texture": "res://Assets/Sprites/Dialogue/Elspeth/confident_2.png"},
+	{"emotion": "hostile", "texture": "res://Assets/Sprites/Dialogue/Elspeth/hostile.png"}, 
+	{"emotion": "impressed", "texture": "res://Assets/Sprites/Dialogue/Elspeth/impressed.png"},
+	{"emotion": "informative", "texture": "res://Assets/Sprites/Dialogue/Elspeth/informative.png"},
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Elspeth/neutral.png"},
+	
+	{"chat_num": "0", "name": "Elsie", "emotion": "hostile", "text": "Colin is back, and I swear, if he shows me one more glow-in-the-dark slime, I might just lose it!"},
+	{"chat_num": "0", "name": "Elsie", "emotion": "neutral", "text": "He thought it’d be a brilliant idea to share his slimes with the other adventurers. Now I’ve got slime-coated tables, sticky boots everywhere, and a clean-up crew that’s not being paid enough. Classic Colin. And don’t even get me started on the smell. If he calls this “progress,” I swear…"},
+	{"chat_num": "0", "name": "Elsie", "emotion": "confident", "text": "Okay, let’s stop talking about Colin before my blood pressure spikes. What about you? I assume your research is coming along without any… gelatinous interruptions?"},
+	{"chat_num": "0", "name": "Elsie", "emotion": "neutral", "text": "I’m counting on you to give me some real results. The guild’s been *dying* for more solid data on these creatures, and if we can improve adventurer survival rates, our profits will skyrocket."},
+	{"chat_num": "0", "name": "Elsie", "emotion": "confident_2", "text": "Look, I don’t need a masterpiece here, but I do need *something* from you. Any research task you’ve been working on - just finish it and bring me some results. The guild’s depending on it."},
+	{"chat_num": "0", "name": "Elsie", "emotion": "neutral", "text": "I don’t care if it’s slimes, dinglebats, or whatever else you’re studying. Just tick one of those off Gertrude’s list and we’ll be one step closer to getting that field guide together."},
+	{"chat_num": "0", "name": "Elsie", "emotion": "impressed", "text": "Anyway, I’ve got more guild reports to sort through than I care to count, so I’ll leave you to your work. Don’t let me come back and find out you’ve joined Colin’s slime club. Yeah. That’s a thing."}
+]

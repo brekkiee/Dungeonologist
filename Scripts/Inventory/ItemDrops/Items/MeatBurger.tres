@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_n2cb8")
-item_name = "blood_cap_item"
+item_name = "Meat Burger"
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 1
