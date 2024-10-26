@@ -56,3 +56,6 @@ res://Quests/quest_display.tscn
 res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue2.json
 res://Quests/epic_quest2.gd
 res://Quests/Dialogue/DialogueText/Progress_Quest_Dialogue.json
+res://Scenes/Windows/garden.tscn
+res://Scenes/UI/MainUI.tscn
+res://Scenes/Windows/MainWindow.tscn

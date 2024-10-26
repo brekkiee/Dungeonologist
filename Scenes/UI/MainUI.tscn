@@ -274,13 +274,14 @@ anchor_left = 0.312
 anchor_top = 0.231
 anchor_right = 0.562
 anchor_bottom = 0.336
-offset_left = 0.575989
-offset_top = 0.311996
-offset_right = 0.575928
-offset_bottom = 0.271988
+offset_left = 108.576
+offset_top = -145.688
+offset_right = 108.576
+offset_bottom = -145.728
 theme_override_font_sizes/font_size = 25
 
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.31
