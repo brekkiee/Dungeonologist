@@ -166,6 +166,12 @@ func on_potion_brewed():
 # Function to progress quest when an expedition is started
 func on_expedition_started():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "StartExpedition":
+		var crystal_orb = GameManager.main_ui.get_node("MainScreen/ScreenBorders/BookShelf/GuntheidonOrb")
+		if crystal_orb:
+			print("crystal_orb found")
+			crystal_orb.visible = true
+		else:
+			print("crystal_orb not found", crystal_orb)
 		progress_active_quest()
 
 # Function to progress quest when expedition rewards are collected

@@ -8,3 +8,4 @@ res://Quests/Dialogue/chatbox.tscn
 res://Scenes/UI/scene_change_buttons.tscn
 res://Scripts/UI/scene_change_buttons.gd
 res://Singletons/QuestManager.gd
+res://Singletons/GameManager.gd
