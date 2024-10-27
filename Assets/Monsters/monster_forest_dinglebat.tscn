@@ -528,6 +528,7 @@ animations = [{
 }]
 
 [node name="ForestDinglebat" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 input_pickable = true
 script = ExtResource("1_lr3ic")
 species = ExtResource("2_ggycx")

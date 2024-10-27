@@ -528,6 +528,7 @@ animations = [{
 }]
 
 [node name="CommonSlime" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 input_pickable = true
 script = ExtResource("1_52shx")
 species = ExtResource("2_o03ce")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ga586nfvmmim"]
+
+[ext_resource type="Texture2D" uid="uid://c2a2dv3s1kq3g" path="res://Assets/Sprites/InventoryIcons/meat_organ_icon.png" id="1_vgode"]
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="2_qi6tc"]
+
+[resource]
+script = ExtResource("2_qi6tc")
+Name = "blood_cap_item"
+Type = 4
+Sprite = ExtResource("1_vgode")
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 2

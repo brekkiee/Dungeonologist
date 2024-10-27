@@ -528,6 +528,7 @@ animations = [{
 }]
 
 [node name="CommonShrooman" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 input_pickable = true
 script = ExtResource("1_44j5x")
 species = ExtResource("2_c2281")

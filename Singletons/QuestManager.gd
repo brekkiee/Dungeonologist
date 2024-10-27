@@ -28,11 +28,11 @@ var quests_data: Dictionary = {
 		"stage3": "StartExpedition",
 		"stage4": "CollectExpedition",
 	},
-		"EpicQuest2" :{
+	"EpicQuest2" :{
 		"script": "res://Quests/epic_quest2.gd",
 		"stage1": "ChatNPC",
 	},
-		"ProgressQuest" :{
+	"ProgressQuest" :{
 		"script": "res://Quests/progress_quest.gd",
 		"stage1": "ChatNPC",
 		"stage2": "CompleteResearch",
@@ -124,6 +124,15 @@ func complete_active_quest():
 			add_quest("ProgressQuest")
 			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Progress_Quest_Dialogue.json"
 			GameManager.npc._load_dialogue()
+			var crystal_orb = GameManager.main_ui.get_node("MainScreen/ScreenBorders/BookShelf/GuntheidonOrb")
+			if crystal_orb:
+				print("crystal_orb found")
+				crystal_orb.visible = true
+			else:
+				print("crystal_orb not found", crystal_orb)
+		elif active_quest.quest_name == "ProgressQuest":
+			active_quest = null
+			current_stage = 0
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		
 # Function to progress quest when chat with NPC
@@ -166,12 +175,6 @@ func on_potion_brewed():
 # Function to progress quest when an expedition is started
 func on_expedition_started():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "StartExpedition":
-		var crystal_orb = GameManager.main_ui.get_node("MainScreen/ScreenBorders/BookShelf/GuntheidonOrb")
-		if crystal_orb:
-			print("crystal_orb found")
-			crystal_orb.visible = true
-		else:
-			print("crystal_orb not found", crystal_orb)
 		progress_active_quest()
 
 # Function to progress quest when expedition rewards are collected

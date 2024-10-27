@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c70gnrvt17c8p"]
+
+[ext_resource type="Texture2D" uid="uid://ck4c585454htb" path="res://Assets/Sprites/InventoryIcons/meat_burger_icon.png" id="1_l8q8d"]
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="2_kmry5"]
+
+[resource]
+script = ExtResource("2_kmry5")
+Name = "blood_cap_item"
+Type = 4
+Sprite = ExtResource("1_l8q8d")
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 2

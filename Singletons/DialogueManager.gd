@@ -95,21 +95,14 @@ func close_chat_box():
 		chat_box.queue_free()
 		chat_box = null
 		chat_ended = false
+		is_chat_active = false
 
 # Input handling for finishing the text quickly and advancing lines
 func _input(event):
 	if is_chat_active:
-		var action_pressed = false
-		# Check if the event is a key press
-		if event is InputEventKey and event.pressed:
-			action_pressed = event.is_action_pressed("ui_accept")
-		# Check if the event is a mouse button press
-		elif event is InputEventMouseButton and event.pressed:
-			action_pressed = event.is_action_pressed("ui_accept")
-		# Check if the event is an input action (e.g., from Input Map)
-		elif event is InputEventAction and event.pressed and event.action == "ui_accept":
-			action_pressed = true
-
-		if action_pressed:
-			advance_text()
-			event.handled = true  # Marks the event as handled
+		# Handle only mouse button events
+		if event is InputEventMouseButton and event.pressed:
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				# Left mouse button pressed
+				advance_text()
+				event.handled = true  # Marks the event as handled

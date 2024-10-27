@@ -1,18 +1,74 @@
-[gd_resource type="Resource" script_class="Expeditions" load_steps=5 format=3 uid="uid://cvlx4njvpyy1a"]
+[gd_resource type="Resource" script_class="Expeditions" load_steps=21 format=3 uid="uid://cvlx4njvpyy1a"]
 
 [ext_resource type="Resource" uid="uid://bqqmnjmin01jn" path="res://Items/lucky_coin.tres" id="1_ax4l5"]
 [ext_resource type="Script" path="res://Singletons/RewardResource.gd" id="1_cjwn5"]
 [ext_resource type="Script" path="res://Singletons/Expedition.gd" id="1_u51ig"]
+[ext_resource type="Resource" uid="uid://c3nrbrjlxbeee" path="res://Items/meat_steak.tres" id="3_w34kf"]
+[ext_resource type="Resource" uid="uid://c70gnrvt17c8p" path="res://Items/meat_burger.tres" id="4_oylja"]
+[ext_resource type="Resource" uid="uid://crjqgise4kaqp" path="res://Items/meat_chicken.tres" id="5_sw4u5"]
+[ext_resource type="Resource" uid="uid://dy3rbhyqkb00f" path="res://Items/meat_fish.tres" id="6_f1nd0"]
+[ext_resource type="Resource" uid="uid://ga586nfvmmim" path="res://Items/meat_organ.tres" id="7_rw0js"]
+[ext_resource type="Resource" uid="uid://beorjykq5uqer" path="res://Items/blood_cap.tres" id="8_vwmsh"]
+[ext_resource type="Resource" uid="uid://bixu0x8twx5yy" path="res://Items/rotten_fruit.tres" id="9_a6kc8"]
+[ext_resource type="Resource" uid="uid://dhu2r2mhvms0h" path="res://Items/minor_stamina_potion.tres" id="10_jeybu"]
 
 [sub_resource type="Resource" id="Resource_iijcw"]
 script = ExtResource("1_cjwn5")
 item_data = ExtResource("1_ax4l5")
 quantity = 1
-chance = 100.0
+chance = 10.0
+
+[sub_resource type="Resource" id="Resource_yi4hc"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("3_w34kf")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_an3wr"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("4_oylja")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_ptcfn"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("5_sw4u5")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_r53wd"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("6_f1nd0")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_ew0sc"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("7_rw0js")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_jtxdy"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("8_vwmsh")
+quantity = 1
+chance = 15.0
+
+[sub_resource type="Resource" id="Resource_sb1mk"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("9_a6kc8")
+quantity = 2
+chance = 80.0
+
+[sub_resource type="Resource" id="Resource_x2xmg"]
+script = ExtResource("1_cjwn5")
+item_data = ExtResource("10_jeybu")
+quantity = 1
+chance = 30.0
 
 [resource]
 script = ExtResource("1_u51ig")
 Dungeon = "Expo"
 Floor = 1
 time = 10.0
-rewards = Array[ExtResource("1_cjwn5")]([SubResource("Resource_iijcw")])
+rewards = Array[ExtResource("1_cjwn5")]([SubResource("Resource_iijcw"), SubResource("Resource_yi4hc"), SubResource("Resource_an3wr"), SubResource("Resource_ptcfn"), SubResource("Resource_r53wd"), SubResource("Resource_ew0sc"), SubResource("Resource_jtxdy"), SubResource("Resource_sb1mk"), SubResource("Resource_x2xmg")])

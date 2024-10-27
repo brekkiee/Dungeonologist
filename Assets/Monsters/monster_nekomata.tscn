@@ -528,6 +528,7 @@ animations = [{
 }]
 
 [node name="Nekomata" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 input_pickable = true
 script = ExtResource("1_x8xnp")
 species = ExtResource("2_rb4im")
@@ -542,19 +543,19 @@ polygon = PackedVector2Array(-31, -39, 0, -33, 12, -33, 32, -38, 30, -5, 20, 3, 
 
 [node name="EmoteSprite2D" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(0, -127)
+position = Vector2(0, -81.6666)
 scale = Vector2(4, 4)
 
 [node name="HungerAnimSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
-position = Vector2(-25, -110)
+position = Vector2(-25, -64.6667)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_8eihu")
 animation = &"hunger_5"
 
 [node name="HappyAnimSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
-position = Vector2(25, -110)
+position = Vector2(25, -64.6667)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_f10eo")
 animation = &"happy_5"

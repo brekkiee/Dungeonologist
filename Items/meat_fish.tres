@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dy3rbhyqkb00f"]
+
+[ext_resource type="Texture2D" uid="uid://vuehasoxq4py" path="res://Assets/Sprites/InventoryIcons/meat_fish_icon.png" id="1_qyj73"]
+[ext_resource type="Script" path="res://Singletons/ItemData.gd" id="2_p10va"]
+
+[resource]
+script = ExtResource("2_p10va")
+Name = "blood_cap_item"
+Type = 4
+Sprite = ExtResource("1_qyj73")
+drop_rate = 1.0
+min_quantity = 1
+max_quantity = 2

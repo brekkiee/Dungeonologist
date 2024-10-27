@@ -11,12 +11,13 @@ var monster_book_open = false
 var quest_book
 var quest_book_open = false
 
-var guntheidon_hint
+@onready var guntheidon_dialogue_file = "res://Quests/Dialogue/DialogueText/GuntheidonHints.json"
 var guntheidon_hint_open = false
 
 func _ready():
 	DayNightCycle.connect("day_started", Callable(self, "_on_day_started"))
 	update_day_counter(DayNightCycle.day_count)
+	DialogueManager.connect("chat_finished", Callable(self, "_on_guntheidon_chat_finished"))
 
 func _process(delta):
 	update_time_label()
@@ -61,8 +62,77 @@ func _on_quest_book_pressed():
 		quest_book_open = false
 
 func _on_crystal_ball_pressed():
-	print("crystal ball pressed")
+	print("Crystal ball pressed")
 	if not guntheidon_hint_open:
 		print("Opening Guntheidon Hint")
 		guntheidon_hint_open = true
 		
+		# Load Guntheidon's hints dialogue file
+		var hints = _load_guntheidon_hints()
+		
+		# Prepare texture mappings
+		var texture_mappings = {}
+		for entry in hints:
+			if entry.has("texture"):
+				texture_mappings[entry["emotion"]] = entry["texture"]
+		
+		# Determine available hints
+		var available_chat_nums = []
+		var chat_num_to_hint = {}
+		for entry in hints:
+			if entry.has("chat_num"):
+				var chat_num = entry["chat_num"]
+				var research_task_name = _get_research_task_name_from_chat_num(chat_num)
+				if research_task_name != "":
+					var task_completed = PlayerData.research_tasks_completed[research_task_name][0]
+					if not task_completed:
+						if not chat_num_to_hint.has(chat_num):
+							chat_num_to_hint[chat_num] = []
+						chat_num_to_hint[chat_num].append(entry)
+						if !available_chat_nums.has(chat_num):
+							available_chat_nums.append(chat_num)
+		
+		if available_chat_nums.size() > 0:
+			# Choose a random chat_num
+			var random_chat_num = available_chat_nums[randi() % available_chat_nums.size()]
+			# Get the dialogue lines for this chat_num
+			var dialogue_array = chat_num_to_hint[random_chat_num]
+			
+			# Start the dialogue
+			DialogueManager.start_chat(texture_mappings, dialogue_array)
+			GameManager.play_sound("click")
+		else:
+			print("No hints available.")
+			guntheidon_hint_open = false
+	else:
+		print("Closing Guntheidon Hint")
+		# Close the hint dialogue
+		DialogueManager.close_chat_box()
+		guntheidon_hint_open = false
+
+func _on_guntheidon_chat_finished():
+	guntheidon_hint_open = false
+
+func _load_guntheidon_hints():
+	var file = FileAccess.open(guntheidon_dialogue_file, FileAccess.READ)
+	var content = JSON.parse_string(file.get_as_text())
+	return content
+
+func _get_research_task_name_from_chat_num(chat_num):
+	# Map chat_num to research task names
+	match chat_num:
+		"0":
+			return "Common Slime"
+		"1":
+			return "Forest Dinglebat"
+		"2":
+			return "Common Shrooman"
+		"3":
+			return "Plains Imp"
+		"4":
+			return "Shallows Jelly"
+		"5":
+			return "Nekomata"
+		_:
+			return ""
+
