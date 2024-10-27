@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_njo0t"]
 [ext_resource type="Texture2D" uid="uid://bobi08cmu3kf7" path="res://Assets/Animations/Monsters/anim_Idle_PlainsImp.png" id="2_78bcg"]
-[ext_resource type="Resource" uid="uid://dvo56rxhki1jb" path="res://Scripts/Enclosure/species_plains_imp.tres" id="2_fg7q7"]
+[ext_resource type="Resource" uid="uid://dvo56rxhki1jb" path="res://Scripts/Enclosure/SpeciesResources/species_plains_imp.tres" id="2_fg7q7"]
 [ext_resource type="Texture2D" uid="uid://cj1o46qmqk0wg" path="res://Assets/Animations/Monsters/anim_Walk_PlainsImp.png" id="3_68lig"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_xt82a"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_b6l1y"]
@@ -560,3 +560,12 @@ position = Vector2(25, -110)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_iniul")
 animation = &"happy_5"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -29.0
+offset_top = -46.0
+offset_right = 40.0
+offset_bottom = 17.0
+mouse_filter = 1

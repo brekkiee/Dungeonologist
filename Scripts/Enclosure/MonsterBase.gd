@@ -2,8 +2,9 @@ class_name MonsterBase
 extends CharacterBody2D
 
 @export var species: MonsterSpecies
-
 @export var monster_id: int = 0
+
+@onready var mouse_control: Control = $Control
 
 # Meters
 @export_group("Meters Variables")
@@ -285,6 +286,7 @@ func attempt_item_drop():
 			emote_sprite.texture = emote_question
 			_show_emote()
 			GameManager.play_sound("click")
+			mouse_control.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 			break  # Only one item drop per day
 
 func hide_item_drop_emote():
@@ -302,6 +304,7 @@ func collect_item():
 	items_dropped.clear()
 	item_ready_to_collect = false
 	hide_item_drop_emote()
+	mouse_control.mouse_default_cursor_shape = Control.CURSOR_ARROW	
 # TODO: Change the magnifying glass to show meters on hover
 # instead of on click
 

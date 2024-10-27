@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_2mcub"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_r3q7w"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ueglr"]
 atlas = ExtResource("2_d1pqv")
 region = Rect2(0, 0, 106, 96)
@@ -560,3 +559,12 @@ position = Vector2(25, -110)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_kb2ua")
 animation = &"happy_5"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -53.0
+offset_right = 40.0
+offset_bottom = 17.0
+mouse_filter = 1

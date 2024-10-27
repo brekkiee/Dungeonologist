@@ -3,9 +3,8 @@ res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
-res://Scenes/UI/PauseMenu.tscn
-res://Scripts/UI/pause_menu.gd
-res://Singletons/GameManager.gd
-res://Quests/Codex/codex.tscn
 res://Scenes/UI/MainUI.tscn
-res://Scenes/UI/SettingsMenu.tscn
+res://Quests/Dialogue/chatbox.tscn
+res://Scenes/UI/scene_change_buttons.tscn
+res://Scripts/UI/scene_change_buttons.gd
+res://Singletons/QuestManager.gd

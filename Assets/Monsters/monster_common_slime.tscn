@@ -561,3 +561,12 @@ position = Vector2(25, -110)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_hg2oi")
 animation = &"happy_5"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -53.0
+offset_right = 40.0
+offset_bottom = 17.0
+mouse_filter = 1

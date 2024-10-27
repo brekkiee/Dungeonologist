@@ -1,8 +1,9 @@
+Control
+Button
 TextureButton
 CanvasLayer
 TextureRect
 Label
-Button
 VBoxContainer
 MarginContainer
 HBoxContainer
@@ -24,7 +25,6 @@ ScrollContainer
 CenterContainer
 CollisionPolygon2D
 RichTextLabel
-Control
 CharacterBody2D
 StaticBody2D
 Node

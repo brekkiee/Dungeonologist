@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enclosure/monster_behaviour.gd" id="1_x8xnp"]
 [ext_resource type="Texture2D" uid="uid://dux08f4tj4m1s" path="res://Assets/Animations/Monsters/anim_Idle_Nekomata.png" id="2_gyh1j"]
-[ext_resource type="Resource" uid="uid://dy53effmn4ivh" path="res://Scripts/Enclosure/species_nekomata.tres" id="2_rb4im"]
+[ext_resource type="Resource" uid="uid://dy53effmn4ivh" path="res://Scripts/Enclosure/SpeciesResources/species_nekomata.tres" id="2_rb4im"]
 [ext_resource type="Texture2D" uid="uid://dm8arhry1abjk" path="res://Assets/Animations/Monsters/anim_Walk_Nekomata.png" id="3_slrwv"]
 [ext_resource type="Texture2D" uid="uid://k84dwhxqtj1m" path="res://Assets/Sprites/Emotes/anim_Cage_Hunger.png" id="4_mjgle"]
 [ext_resource type="Texture2D" uid="uid://c2ynpg0kvx8as" path="res://Assets/Sprites/Emotes/anim_Cage_Friendship.png" id="5_hi6dx"]
@@ -558,3 +558,12 @@ position = Vector2(25, -110)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_f10eo")
 animation = &"happy_5"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = -31.0
+offset_right = 23.0
+offset_bottom = 38.0
+mouse_filter = 1

@@ -132,6 +132,14 @@ func on_NPC_chat():
 	if active_quest.max_stage >= current_stage and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "ChatNPC":
 		#print("on_NPC_chat() called, active_quest.stage: ", current_stage)
 		GameManager.npc.update_sprite("res://Assets/Sprites/Characters/char_7_blank.png")
+		if active_quest.quest_name == "SettlingIn":
+			var garden_button = GameManager.main_ui.get_node("SceneButtons/GardenButton")
+			if garden_button:
+				garden_button.visible = true
+		elif active_quest.quest_name == "EpicQuest":
+			var alchemy_button = GameManager.main_ui.get_node("SceneButtons/AlchemyLabButton")
+			if alchemy_button:
+				alchemy_button.visible = true
 		progress_active_quest()
 
 # Function to progress quest when a plant is harvested
@@ -148,6 +156,11 @@ func on_monster_fed():
 # Function to progress quest when a plant is harvested
 func on_potion_brewed():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "BrewPotion":
+		var expeditions_button = GameManager.main_ui.get_node("SceneButtons/ExpeditionsButton")
+		if expeditions_button:
+			expeditions_button.visible = true
+		else:
+			print("Expedition button not found: ", expeditions_button)
 		progress_active_quest()
 
 # Function to progress quest when an expedition is started

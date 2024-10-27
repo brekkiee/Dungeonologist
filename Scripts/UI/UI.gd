@@ -11,6 +11,9 @@ var monster_book_open = false
 var quest_book
 var quest_book_open = false
 
+var guntheidon_hint
+var guntheidon_hint_open = false
+
 func _ready():
 	DayNightCycle.connect("day_started", Callable(self, "_on_day_started"))
 	update_day_counter(DayNightCycle.day_count)
@@ -44,7 +47,7 @@ func _on_monster_book_pressed():
 	GameManager.play_sound("click")
 
 func _on_quest_book_pressed():
-	print("Button pressed")
+	print("Quests button pressed")
 	if not quest_book_open:
 		print("Opening QuestLog")
 		quest_book_open = true
@@ -56,3 +59,10 @@ func _on_quest_book_pressed():
 		print("Closing Codex")
 		quest_book.queue_free()
 		quest_book_open = false
+
+func _on_crystal_ball_pressed():
+	print("crystal ball pressed")
+	if not guntheidon_hint_open:
+		print("Opening Guntheidon Hint")
+		guntheidon_hint_open = true
+		

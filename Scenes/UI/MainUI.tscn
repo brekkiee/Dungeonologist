@@ -130,6 +130,7 @@ offset_left = -0.0440025
 offset_top = 0.285995
 offset_right = 0.0419922
 offset_bottom = -0.0700073
+mouse_default_cursor_shape = 2
 
 [node name="Candle" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow"]
 layout_mode = 1
@@ -169,6 +170,7 @@ offset_top = 0.0189972
 offset_right = 2.0
 offset_bottom = 0.0299911
 focus_mode = 0
+mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("7_gwp3y")
 texture_pressed = ExtResource("8_2fgt8")
@@ -212,6 +214,7 @@ offset_left = -0.100006
 offset_top = -0.0110016
 offset_right = -0.0750122
 offset_bottom = -0.0430069
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_7t7ja")
 texture_pressed = ExtResource("12_e0wj0")
 texture_hover = ExtResource("12_e0wj0")
@@ -227,7 +230,6 @@ offset_bottom = 648.0
 mouse_filter = 2
 
 [node name="SceneButtons" parent="." instance=ExtResource("9_17vtp")]
-visible = false
 layout_mode = 1
 anchor_left = 0.215
 anchor_top = -0.035
@@ -274,6 +276,7 @@ offset_right = 16.17
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 2
 texture = ExtResource("11_ltjqf")
 
 [node name="PlantInventory" type="GridContainer" parent="InventoryPanel/SlidingDrawer"]
@@ -375,4 +378,5 @@ theme_override_font_sizes/font_size = 25
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]
+[connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/GuntheidonOrb" to="." method="_on_crystal_ball_pressed"]
 [connection signal="gui_input" from="InventoryPanel/SlidingDrawer/DrawerHandle" to="InventoryPanel/SlidingDrawer" method="_on_texture_rect_gui_input"]
