@@ -22,16 +22,6 @@ scale = Vector2(93.5, 30.5)
 [node name="PauseMenu" parent="." instance=ExtResource("2_pf38i")]
 process_mode = 2
 visible = false
-z_index = 100
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -1.0
-offset_top = 2.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="MainMusicStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1qbxi")

@@ -12,7 +12,7 @@ var scenes: Dictionary = {}
 @onready var found_monster: Node2D = null
 @onready var scene_spawn_point: Node2D = null
 @onready var start_menu: Node = get_node("/root/StartMenu")
-@onready var pause_menu: Control = null
+@onready var pause_menu: CanvasLayer = null
 @onready var main_window = null
 @onready var main_ui = null
 # Monster resources
