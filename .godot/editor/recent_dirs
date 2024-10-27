@@ -1,3 +1,4 @@
+res://Assets/Sprites/UI
 res://Assets/Sprites/InventoryIcons
 res://Assets/Sprites/Expeditions
 res://Items
@@ -5,7 +6,6 @@ res://Expeditions
 res://Scripts/Inventory
 res://Scripts/Expeditions
 res://Assets/Sprites/Alchemy
-res://Assets/Sprites/UI
 res://Scenes/UI
 res://Assets/Animations/Alchemy
 res://Scripts/Enclosure

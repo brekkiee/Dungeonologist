@@ -1,16 +1,22 @@
-[gd_scene load_steps=20 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=26 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
 [ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
-[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="3_40jcq"]
+[ext_resource type="Texture2D" uid="uid://don5jcpnakls1" path="res://Assets/Sprites/UI/Overlay_Frame_Bot.png" id="3_6dltk"]
 [ext_resource type="Script" path="res://Scripts/Quests/NPC.gd" id="4_68fy0"]
 [ext_resource type="Texture2D" uid="uid://7w17bej6yhg5" path="res://Assets/Sprites/Characters/char_0_basic.png" id="5_f4hg6"]
-[ext_resource type="Texture2D" uid="uid://b305gyiy1canp" path="res://Assets/Sprites/Codex/mons_book.png" id="6_503of"]
+[ext_resource type="Texture2D" uid="uid://b8jyvnlx7wx3v" path="res://Assets/Sprites/UI/deco_Candle0.png" id="6_7wh0c"]
+[ext_resource type="Texture2D" uid="uid://c6nhqgj2xxpux" path="res://Assets/Sprites/Codex/tool_Codex_0.png" id="7_gwp3y"]
 [ext_resource type="Texture2D" uid="uid://dutncfgxiacn8" path="res://Assets/Sprites/UI/drawer_closed.png" id="7_m5qe6"]
+[ext_resource type="Texture2D" uid="uid://ct6xxqc8akmjs" path="res://Assets/Sprites/Codex/tool_Codex_1.png" id="8_2fgt8"]
+[ext_resource type="Texture2D" uid="uid://ps7ie0rouux5" path="res://Assets/Sprites/UI/deco_Candle1.png" id="8_6hpuk"]
 [ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/UI/scene_change_buttons.tscn" id="9_17vtp"]
+[ext_resource type="Texture2D" uid="uid://0ituu3hiartc" path="res://Assets/Sprites/UI/deco_Books_1.png" id="9_fds6c"]
 [ext_resource type="Texture2D" uid="uid://bmltqku14lj0d" path="res://Assets/Sprites/UI/drawer_open.png" id="9_kifj2"]
+[ext_resource type="Texture2D" uid="uid://d1yj7yjdq2knd" path="res://Assets/Sprites/UI/tool_CrystalBall_0.png" id="10_7t7ja"]
 [ext_resource type="Script" path="res://Scripts/Inventory/inventory_panel.gd" id="10_ggugm"]
 [ext_resource type="Texture2D" uid="uid://dy58iobnomh1m" path="res://Assets/Sprites/UI/drawer_handle.png" id="11_ltjqf"]
+[ext_resource type="Texture2D" uid="uid://cm6c5bvj858vy" path="res://Assets/Sprites/UI/tool_CrystalBall_1.png" id="12_e0wj0"]
 [ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="12_x6kwb"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/Tools/magnifying_glass.tscn" id="13_tcum6"]
 [ext_resource type="PackedScene" uid="uid://cpqpr6qjm2oe6" path="res://Scenes/Tools/petting_hand.tscn" id="14_e26kt"]
@@ -61,15 +67,15 @@ grow_vertical = 2
 texture = ExtResource("2_wqxa2")
 
 [node name="ChatWindow" type="TextureRect" parent="MainScreen/ScreenBorders"]
+z_index = -1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.569
-offset_left = 7.0
-offset_top = 7.0
-offset_right = -7.0
-offset_bottom = -8.71201
-texture = ExtResource("3_40jcq")
+anchor_bottom = 0.998
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 0.295959
+texture = ExtResource("3_6dltk")
 
 [node name="Character" type="Panel" parent="MainScreen/ScreenBorders/ChatWindow"]
 layout_mode = 1
@@ -85,14 +91,14 @@ dialogue_file = "res://Quests/Dialogue/DialogueText/Settling_In_Dialogue.json"
 [node name="CharacterSprite" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.164
-anchor_top = 0.214
-anchor_right = 0.836
-anchor_bottom = 0.984
-offset_left = 0.0559998
-offset_top = -0.0420074
-offset_right = -0.0559998
-offset_bottom = 0.14798
+anchor_left = 0.161
+anchor_top = 0.155
+anchor_right = 0.808
+anchor_bottom = 0.556
+offset_left = -0.0460052
+offset_top = -0.129997
+offset_right = -0.0880127
+offset_bottom = -0.176025
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_f4hg6")
@@ -114,31 +120,101 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_qeue0")
 
 [node name="Button" type="Button" parent="MainScreen/ScreenBorders/ChatWindow/Character"]
 visibility_layer = 0
-layout_mode = 0
-offset_right = 274.0
-offset_bottom = 356.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.154
+anchor_top = 0.159
+anchor_right = 0.853
+anchor_bottom = 0.545
+offset_left = -0.0440025
+offset_top = 0.285995
+offset_right = 0.0419922
+offset_bottom = -0.0700073
+
+[node name="Candle" type="TextureRect" parent="MainScreen/ScreenBorders/ChatWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.449
+anchor_right = 0.168
+anchor_bottom = 0.551
+offset_left = -0.00800037
+offset_top = -0.0540161
+offset_right = -0.0480042
+offset_bottom = 0.0539856
+texture = ExtResource("6_7wh0c")
 
 [node name="BookShelf" type="Panel" parent="MainScreen/ScreenBorders"]
 clip_contents = true
-layout_mode = 0
-offset_left = 7.0
-offset_top = 371.0
-offset_right = 280.0
-offset_bottom = 502.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.616
+anchor_right = 0.982
+anchor_bottom = 0.775
+offset_left = -2.125
+offset_top = -0.16803
+offset_right = 0.129974
+offset_bottom = -0.200012
 
 [node name="MonsterBook" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.206
-anchor_right = 0.11
-anchor_bottom = 0.954
-offset_left = 1.0
-offset_top = 0.013998
-offset_right = -0.0300026
-offset_bottom = 0.0259933
+anchor_left = 0.607
+anchor_top = 0.427
+anchor_right = 1.0
+anchor_bottom = 0.99
+offset_left = 0.0749817
+offset_top = 0.0189972
+offset_right = 2.0
+offset_bottom = 0.0299911
 focus_mode = 0
 action_mode = 0
-texture_normal = ExtResource("6_503of")
+texture_normal = ExtResource("7_gwp3y")
+texture_pressed = ExtResource("8_2fgt8")
+texture_hover = ExtResource("8_2fgt8")
+stretch_mode = 0
+
+[node name="Candle" type="TextureRect" parent="MainScreen/ScreenBorders/BookShelf"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.175
+anchor_right = 0.113
+anchor_bottom = 0.985
+offset_left = -0.0250003
+offset_top = -0.0250015
+offset_right = -0.0750008
+offset_bottom = -0.455009
+texture = ExtResource("8_6hpuk")
+
+[node name="BookStack" type="TextureRect" parent="MainScreen/ScreenBorders/BookShelf"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.136
+anchor_right = 0.385
+anchor_bottom = 0.985
+offset_left = -0.375
+offset_top = -0.00800037
+offset_right = 0.124992
+offset_bottom = -0.455009
+texture = ExtResource("9_fds6c")
+
+[node name="GuntheidonOrb" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404
+anchor_top = 0.437
+anchor_right = 0.593
+anchor_bottom = 0.981
+offset_left = -0.100006
+offset_top = -0.0110016
+offset_right = -0.0750122
+offset_bottom = -0.0430069
+texture_normal = ExtResource("10_7t7ja")
+texture_pressed = ExtResource("12_e0wj0")
+texture_hover = ExtResource("12_e0wj0")
 stretch_mode = 0
 
 [node name="Drawers" type="TextureRect" parent="MainScreen/ScreenBorders"]
@@ -151,6 +227,7 @@ offset_bottom = 648.0
 mouse_filter = 2
 
 [node name="SceneButtons" parent="." instance=ExtResource("9_17vtp")]
+visible = false
 layout_mode = 1
 anchor_left = 0.215
 anchor_top = -0.035
@@ -268,16 +345,18 @@ mouse_filter = 2
 texture = ExtResource("18_ex3na")
 
 [node name="DayCounterLabel" type="Label" parent="."]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.406
-anchor_top = 0.006
-anchor_right = 0.656
-anchor_bottom = 0.111
-offset_left = 0.287964
-offset_top = 0.112
-offset_right = 0.287903
-offset_bottom = 0.071991
+anchor_left = 0.032
+anchor_top = 0.048
+anchor_right = 0.215
+anchor_bottom = 0.095
+offset_left = 0.136002
+offset_top = -0.104004
+offset_right = 40.32
+offset_bottom = 4.43999
+scale = Vector2(0.84, 0.88)
 theme_override_font_sizes/font_size = 25
 
 [node name="TimeLabel" type="Label" parent="."]

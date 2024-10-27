@@ -8,3 +8,4 @@ res://Scripts/UI/pause_menu.gd
 res://Singletons/GameManager.gd
 res://Quests/Codex/codex.tscn
 res://Scenes/UI/MainUI.tscn
+res://Scenes/UI/SettingsMenu.tscn
