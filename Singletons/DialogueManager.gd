@@ -105,4 +105,3 @@ func _input(event):
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				# Left mouse button pressed
 				advance_text()
-				event.handled = true  # Marks the event as handled
