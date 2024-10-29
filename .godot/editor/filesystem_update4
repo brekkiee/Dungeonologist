@@ -1,5 +1,9 @@
 res://Scenes/Windows/MainWindow.tscn
+res://Assets/Animations/Alchemy/anim_Brew_splash.tres
+res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
+res://Quests/epic_quest.gd
 res://Scenes/Windows/garden.tscn
 res://Assets/Garden/Plants/sweetroot_plant.tscn
-res://Singletons/DialogueManager.gd
+res://Items/blood_cap.tres
+res://Items/dawn_grass.tres
