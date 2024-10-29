@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b68hjcj1kn4s5"]
 
-[ext_resource type="Texture2D" uid="uid://dn0go0t5nxx6y" path="res://Assets/Sprites/Alchemy/bg_Brew.png" id="1_j1vkd"]
+[ext_resource type="Texture2D" uid="uid://b01h8l378d8h7" path="res://Assets/Sprites/Alchemy/bg_Brew.png" id="1_j1vkd"]
 [ext_resource type="PackedScene" uid="uid://phbak2krsav4" path="res://Assets/Alchemy/Cauldron.tscn" id="2_rd2ch"]
 
 [node name="AlchemyLab" type="Node2D"]
