@@ -20,7 +20,7 @@ var held_item = null
 var current_cauldron_inventory = []
 # Dictionary of all possible cauldron recipes
 var cauldron_recipies: Dictionary = {
-	0: { "items_required": ["blood_cap_item", "dawn_grass_item"],
+	0: { "items_required": ["Blood Cap", "Dawn Grass"],
 		"result": preload("res://Items/minor_health_potion.tres")},
 	1: { "items_required": ["thimbleweed_item", "slime_residue_item"],
 		"result": preload("res://Items/minor_mana_potion.tres")},
@@ -46,6 +46,11 @@ var save_load_data: Dictionary = {
 	"Slime Residue": preload("res://Items/slime_residue.tres"),
 	"Sweetroot": preload("res://Items/sweetroot.tres"),
 	"Thimbleweed": preload("res://Items/thimbleweed.tres"),
+	"Meat Burger": preload("res://Items/thimbleweed.tres"),
+	"Meat Chicken": preload("res://Items/thimbleweed.tres"),
+	"Meat Fish": preload("res://Items/thimbleweed.tres"),
+	"Meat Organ": preload("res://Items/thimbleweed.tres"),
+	"Meat Steak": preload("res://Items/thimbleweed.tres"),
 }
 
 # Sort items required for each cauldron recipe alphabetically

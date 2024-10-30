@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_cxoab")
-Name = "blood_cap_item"
+Name = "Meat Chicken"
 Type = 4
 Sprite = ExtResource("1_3bg30")
 drop_rate = 1.0

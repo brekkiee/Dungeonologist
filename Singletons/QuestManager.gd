@@ -35,8 +35,14 @@ var quests_data: Dictionary = {
 	"ProgressQuest" :{
 		"script": "res://Quests/progress_quest.gd",
 		"stage1": "ChatNPC",
+	},
+	"GuntheidonQuest" :{
+		"script": "res://Quests/guntheidon_quest.gd",
+		"stage1": "ChatNPC",
+	},
+	"ProgressQuest2" :{
+		"script": "res://Quests/progress_quest2.gd",
 		"stage2": "CompleteResearch",
-		"stage3": "ChatNPC",
 	}
 }
 
@@ -133,6 +139,16 @@ func complete_active_quest():
 		elif active_quest.quest_name == "ProgressQuest":
 			active_quest = null
 			current_stage = 0
+			add_quest("GuntheidonQuest")
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Guntheidon_Quest_Dialogue.json"
+			GameManager.npc._load_dialogue()
+		elif active_quest.quest_name == "GuntheidonQuest":
+			active_quest = null
+			current_stage = 0
+			add_quest("ProgressQuest2")
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Progress_Quest2_Dialogue.json"
+			GameManager.npc._load_dialogue()
+		
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		
 # Function to progress quest when chat with NPC

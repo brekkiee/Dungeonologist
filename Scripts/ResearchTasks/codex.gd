@@ -120,6 +120,8 @@ func display_entry(index: int):
 		research_question_labels[i].text = research_tasks[i]["question"]
 		research_answer_labels[i].text = research_tasks[i]["completion"]
 		research_answer_labels[i].visible = task_completed
+		if task_completed == true:
+			QuestManager.on_research_completed()
 
 func _on_prev_page_button_pressed():
 	if current_index > 0:

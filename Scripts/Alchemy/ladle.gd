@@ -1,8 +1,9 @@
 extends Area2D
 
+signal stirred_mixture()
+
 var is_following_mouse = false
 var original_position = Vector2.ZERO
-@onready var cauldron_node = get_node("/root/Header/SceneLoadPoint/AlchemyLab/Cauldron")
 
 func _ready():
 	original_position = position
@@ -18,12 +19,11 @@ func _input_event(viewport, event, shape_idx):
 			else:
 				# Stop following mouse
 				is_following_mouse = false
-				# Check if over cauldron
-				#if cauldron_node.overlaps_point(get_global_mouse_position()):
-				cauldron_node.stir_mixture()
+				# Emit signal to stir the mixture
+				emit_signal("stirred_mixture")
 				# Return ladle to original position
 				position = original_position
 
 func _process(delta):
 	if is_following_mouse:
-		self.set_global_position(get_global_mouse_position())
+		self.global_position = get_global_mouse_position()

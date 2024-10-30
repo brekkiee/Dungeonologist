@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_tqlyy")
-Name = "sweetroot_item"
+Name = "Sweetroot"
 Type = 1
 Sprite = ExtResource("1_6sgsf")
 drop_rate = 1.0

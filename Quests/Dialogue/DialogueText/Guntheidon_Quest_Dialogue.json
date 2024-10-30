@@ -1,0 +1,13 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+	
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "sad", "text": "Ah… so the whispers did not deceive me. I thought I sensed a new presence meddling in the dungeon’s affairs. You must be the new Dungeonologist."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "Forgive the intrusion, but when one has lived in the depths for as long as I have, one grows curious. I am Guntheidon, keeper of secrets, master of arcane arts and… occasional mushroom forager, at your service."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "sad", "text": "The dungeon speaks to me, you know. Well, not literally, but in a way… The creatures may seem wild, but they speak to those who know how to listen. Do you listen, I wonder?"},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text": "I’ve seen a few come and go through these halls. You’re a rare breed, aren’t you? No sword, no shield - just a notebook. Brave… or foolish? I have yet to decide. Alas, always good to have a wizard on your side."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "If you seek guidance, young Dungeonologist, just ponder this mystical orb and I shall appear before you - as long as I have nothing else going on, of course. And remember - not everything down here works by the book, you know. Best be prepared for the unexpected."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "sad", "text": "Now, let’s see if you’re as clever as your predecessor, shall we? *Vanishes in a puff of smoke*"}
+]
+

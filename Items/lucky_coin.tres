@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_bkavi")
-Name = "lucky_coin_item"
+Name = "Lucky Coin"
 Type = 4
 Sprite = ExtResource("1_sp5kh")
 drop_rate = 1.0
