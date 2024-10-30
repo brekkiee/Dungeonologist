@@ -1,9 +1,11 @@
-res://Scripts/Alchemy/cauldron.gd
-res://Assets/Alchemy/Cauldron.tscn
+res://Scenes/Windows/MainWindow.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
-res://Scenes/Windows/MainWindow.tscn
+res://Quests/epic_quest.gd
 res://Scenes/Windows/garden.tscn
 res://Assets/Garden/Plants/sweetroot_plant.tscn
 res://Scenes/Windows/alchemy_lab.tscn
+res://Assets/Alchemy/Cauldron.tscn
+res://Scripts/Alchemy/cauldron.gd
+res://Assets/Alchemy/Ladle.tscn

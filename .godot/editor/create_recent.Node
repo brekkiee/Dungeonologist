@@ -1,3 +1,4 @@
+Area2D
 Control
 Button
 TextureButton
@@ -14,7 +15,6 @@ Popup
 Container
 CollisionShape2D
 Sprite2D
-Area2D
 AnimatedSprite2D
 AudioStreamPlayer2D
 Timer
