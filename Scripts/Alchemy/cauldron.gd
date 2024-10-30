@@ -40,6 +40,7 @@ func _ready():
 	anim_bubble.play()
 
 func stir_mixture():
+	print("Stir Mixture Cast Recived")
 	if slot1.item_data != null and slot2.item_data != null:
 		mix_ingredients()
 	else:

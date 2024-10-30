@@ -17,6 +17,7 @@ func _input_event(viewport, event, shape_idx):
 				# Start following mouse
 				is_following_mouse = true
 			else:
+				print("Stiring Mixture Cast")
 				# Stop following mouse
 				is_following_mouse = false
 				# Emit signal to stir the mixture
