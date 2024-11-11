@@ -1,7 +1,8 @@
+res://Scripts/Enclosure/SpeciesResources
+res://Assets/Sprites/InventoryIcons
 C:/Development/Games/Packaging/Dungeonology
 res://Items
 res://Assets/Sprites/UI
-res://Assets/Sprites/InventoryIcons
 res://Assets/Sprites/Expeditions
 res://Expeditions
 res://Scripts/Inventory
@@ -19,5 +20,3 @@ res://Scripts/UI
 res://Scenes
 res://Assets/Animations/Monsters
 res://Assets/Animations/Garden
-res://Assets/Sprites/Monsters
-res://Assets/Monsters

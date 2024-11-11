@@ -63,15 +63,6 @@ horizontal_alignment = 1
 
 [node name="Content" type="Label" parent="BG/MC/VB"]
 layout_mode = 2
-text = "1x Slime Residue
-1x Imp Droppings
-1x
-1x
-1x
-1x
-1x
-1x
-1x"
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="BG"]

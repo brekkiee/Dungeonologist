@@ -186,6 +186,7 @@ func feed_monster():
 	else:
 		print("This monster dosen't eat that")
 		GameManager.play_sound("monster_sad0")
+		InventoryManager.item_mouse_follow.hide_tooltip();
 		#TODO: Provide player feedback
 
 func pet_monster():

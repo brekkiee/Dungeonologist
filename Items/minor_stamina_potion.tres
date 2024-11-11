@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dhu2r2mhvms0h"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dhu2r2mhvms0h"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_4jfne"]
+[ext_resource type="Texture2D" uid="uid://cva5fiyessctr" path="res://Assets/Sprites/InventoryIcons/minor_stamina_potion_icon.png" id="1_gnmmi"]
 
 [resource]
 script = ExtResource("1_4jfne")
 Name = "Minor Stamina Potion"
-Type = 5
+Type = 6
+Sprite = ExtResource("1_gnmmi")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0

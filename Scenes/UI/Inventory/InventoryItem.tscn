@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0ixn7w31wao8"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/inventory_item.gd" id="1_qd0tr"]
-[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/sunflower_item.png" id="2_flpmo"]
+[ext_resource type="Texture2D" uid="uid://dx7wbpwv5lcjp" path="res://Assets/Sprites/InventoryIcons/dawn_grass_icon.png" id="2_flpmo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnb0x"]
 

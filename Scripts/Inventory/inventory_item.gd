@@ -24,8 +24,7 @@ func on_mouse_entered():
 
 func on_mouse_exited():
 	if tooltip:
-		tooltip.queue_free()
-		tooltip = null
+		hide_tooltip()
 
 func hide_tooltip():
 	print("Hiding Tooltip")
@@ -35,5 +34,4 @@ func hide_tooltip():
 
 func _exit_tree():
 	if tooltip:
-		tooltip.queue_free()
-		tooltip = null
+		hide_tooltip()
