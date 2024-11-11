@@ -10,3 +10,4 @@ res://Singletons/InventoryManager.gd
 res://Scripts/UI/UI.gd
 res://Singletons/QuestManager.gd
 res://Scripts/Inventory/inventory_panel.gd
+res://Quests/Dialogue/DialogueText/GuntheidonHints.json
