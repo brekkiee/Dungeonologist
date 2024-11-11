@@ -1,3 +1,4 @@
+res://Assets/Sprites/Emotes
 res://Scripts/Enclosure/SpeciesResources
 res://Assets/Sprites/InventoryIcons
 C:/Development/Games/Packaging/Dungeonology
@@ -15,7 +16,6 @@ res://Scripts/Quests
 res://Singletons
 res://Quests/Dialogue/DialogueText
 res://Scenes/Windows
-res://Assets/Sprites/Emotes
 res://Scripts/UI
 res://Scenes
 res://Assets/Animations/Monsters

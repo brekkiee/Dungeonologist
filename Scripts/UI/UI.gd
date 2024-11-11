@@ -18,6 +18,8 @@ func _ready():
 	DayNightCycle.connect("day_started", Callable(self, "_on_day_started"))
 	update_day_counter(DayNightCycle.day_count)
 	DialogueManager.connect("chat_finished", Callable(self, "_on_guntheidon_chat_finished"))
+	
+	InventoryManager.alert = get_node("InventoryPanel/SlidingDrawer/DrawerHandle/InvAlert")
 
 func _process(delta):
 	update_time_label()

@@ -53,6 +53,9 @@ var save_load_data: Dictionary = {
 	"Meat Steak": preload("res://Items/thimbleweed.tres"),
 }
 
+var alert = null
+
+
 # Sort items required for each cauldron recipe alphabetically
 func _ready():
 	for i in cauldron_recipies.size():

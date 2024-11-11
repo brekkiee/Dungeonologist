@@ -20,6 +20,8 @@ func _process(delta):
 		new_x_pos = clamp(new_x_pos, min_x_value, max_x_value)
 		# sets the positon
 		position = Vector2(new_x_pos, position.y)
+		
+		
 
 func _on_texture_rect_gui_input(event):
 	if InputMap.event_is_action(event, "left_click"):
@@ -34,3 +36,5 @@ func _on_texture_rect_gui_input(event):
 		#event.pressed is false when the mouse lets go of left click
 		else:
 			holding = false
+			if position.x == max_x_value:
+				InventoryManager.alert.visible = false

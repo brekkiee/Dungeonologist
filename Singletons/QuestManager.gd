@@ -172,6 +172,7 @@ func on_plant_harvested():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "HarvestPlant":
 		print("QuestManager: on_plant_harvested called")
 		progress_active_quest()
+		InventoryManager.alert.visible = true
 
 # Function to progress quest when a monster is fed
 func on_monster_fed():

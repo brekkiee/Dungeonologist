@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=27 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
 [ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="12_x6kwb"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/Tools/magnifying_glass.tscn" id="13_tcum6"]
 [ext_resource type="PackedScene" uid="uid://cpqpr6qjm2oe6" path="res://Scenes/Tools/petting_hand.tscn" id="14_e26kt"]
+[ext_resource type="Texture2D" uid="uid://ddlalbsjbif15" path="res://Assets/Sprites/Emotes/emote_8_Shock.png" id="17_f76ys"]
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
@@ -279,6 +280,23 @@ grow_vertical = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 2
 texture = ExtResource("11_ltjqf")
+
+[node name="InvAlert" type="TextureRect" parent="InventoryPanel/SlidingDrawer/DrawerHandle"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.5
+offset_top = -55.0001
+offset_right = 66.5
+offset_bottom = -5.00008
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.637045
+texture = ExtResource("17_f76ys")
 
 [node name="PlantInventory" type="GridContainer" parent="InventoryPanel/SlidingDrawer"]
 layout_direction = 2
