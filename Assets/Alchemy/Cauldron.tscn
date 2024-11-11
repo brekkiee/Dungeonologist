@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://txginxyc5aci" path="res://Assets/Sprites/Alchemy/Brew_cauldron_front.png" id="2_bb3mx"]
 [ext_resource type="Texture2D" uid="uid://bfr2l5bu4g5qs" path="res://Assets/Sprites/Alchemy/Brew_cauldron_back.png" id="3_r5veo"]
 [ext_resource type="Texture2D" uid="uid://d10ncmfiqumcv" path="res://Assets/Animations/Alchemy/anim_Fire.png" id="4_cn6mk"]
-[ext_resource type="Texture2D" uid="uid://67tph2fropjr" path="res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png" id="5_inqyh"]
+[ext_resource type="Texture2D" uid="uid://67tph2fropjr" path="res://Assets/Sprites/Alchemy/Brew_cauldron_liquid_0.png" id="5_inqyh"]
 [ext_resource type="SpriteFrames" uid="uid://cykaw41hd5xq1" path="res://Assets/Animations/Alchemy/anim_Brew_splash.tres" id="6_nlkxv"]
 [ext_resource type="SpriteFrames" uid="uid://duyhgysnsye1q" path="res://Assets/Animations/Alchemy/anim_Brew_bubble.tres" id="7_lux2x"]
 [ext_resource type="Texture2D" uid="uid://cemt6euqye1lp" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="8_olqu1"]
@@ -413,3 +413,16 @@ scale = Vector2(9.16666, 3.3295)
 z_index = 4
 position = Vector2(249, -78)
 scale = Vector2(3, 3)
+
+[node name="PotionSuccess" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -250.0
+offset_right = 50.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2

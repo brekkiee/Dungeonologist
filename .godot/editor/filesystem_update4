@@ -1,14 +1,7 @@
-res://Scenes/UI/Inventory/InventoryItem.tscn
+res://Assets/Alchemy/Cauldron.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
-res://Scripts/Inventory/inventory_item.gd
+res://Scenes/Windows/alchemy_lab.tscn
+res://Scripts/Alchemy/cauldron.gd
 res://Scenes/Windows/MainWindow.tscn
-res://Scenes/UI/Inventory/InvItemTooltip.tscn
-res://Scenes/UI/Expedition/ExpeditionRewards.tscn
-res://Items/minor_stamina_potion.tres
-res://Singletons/Expedition.gd
-res://Scenes/UI/Expedition/ExpeditionRewards.gd
-res://Singletons/RewardResource.gd
-res://Scripts/Enclosure/MonsterSpecies.gd
-res://Scripts/Enclosure/MonsterBase.gd

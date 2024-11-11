@@ -32,11 +32,11 @@ var spawn_timer: Timer = null
 var monster_id_counter: int = 1
 var test_monsters = [
 	"common_slime",
-	"forest_dinglebat",
-	"common_shrooman",
+	#"forest_dinglebat",
+	#"common_shrooman",
 	#"common_shrooman",
 	#"plains_imp",
-	"shallows_jelly",
+	#"shallows_jelly",
 	#"nekomata",
 	#"forest_dinglebat"
 ]

@@ -71,7 +71,9 @@ func mix_ingredients():
 			recipe_found = true
 			print("Correct recipe called")
 			_show_potion_mixture(true)
-
+			get_node("PotionSuccess").texture = recipe.result.Sprite
+			await get_tree().create_timer(1).timeout
+			get_node("PotionSuccess").texture = null
 			# Add potion to inventory
 			InventoryManager.add_potion_inventory_item(recipe.result)
 			break

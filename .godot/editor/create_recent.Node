@@ -1,12 +1,12 @@
+TextureRect
+MarginContainer
 Area2D
 Control
 Button
 TextureButton
 CanvasLayer
-TextureRect
 Label
 VBoxContainer
-MarginContainer
 HBoxContainer
 PopupPanel
 GridContainer
