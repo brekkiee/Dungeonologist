@@ -1,5 +1,6 @@
-res://Assets/UI
+res://Assets/Sprites/Dialogue
 res://Styles
+res://Assets/UI
 res://Quests/Dialogue/DialogueText
 res://Assets/Sprites/Emotes
 res://Scripts/Enclosure/SpeciesResources
@@ -19,4 +20,3 @@ res://Scripts/Quests
 res://Singletons
 res://Scenes/Windows
 res://Scripts/UI
-res://Scenes

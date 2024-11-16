@@ -12,6 +12,9 @@ var research_answer_labels = []
 
 @onready var prev_page_button = $PrevPageButton
 @onready var next_page_button = $NextPageButton
+@onready var close_button = $CloseButton
+
+@onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 
 var entries = []
 var current_index = 0
@@ -38,6 +41,13 @@ func _ready():
 	clear_content()
 	load_json("res://Quests/Codex/CodexContent/MonsterEntries.json")
 	display_entry(0)
+	
+	prev_page_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	prev_page_button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	next_page_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	next_page_button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	close_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	close_button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 	
 # Clear the content of the labels and sprite to ensure they are empty before loading the new content
 func clear_content():
@@ -137,3 +147,14 @@ func _on_next_page_button_pressed():
 
 func _on_button_pressed():
 	research_answer_labels[0].visible = true
+
+# Called when the mouse enters the area
+func _on_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor_pointer_texture)  # Set custom pointer cursor
+
+# Called when the mouse exits the area
+func _on_mouse_exited():
+	Input.set_custom_mouse_cursor(null)  # Reset to default cursor
+
+func _on_close_button_pressed():
+	GameManager.close_codex()

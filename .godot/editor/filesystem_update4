@@ -1,7 +1,11 @@
-res://Quests/quest_display.tscn
+res://Quests/Codex/codex.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
+res://Scripts/ResearchTasks/codex.gd
 res://Scenes/UI/MainUI.tscn
-res://Scenes/Windows/MainWindow.tscn
+res://Singletons/GameManager.gd
+res://Quests/quest_display.tscn
+res://Scripts/Inventory/tool_icon.gd
+res://Scripts/Inventory/inventory_item.gd

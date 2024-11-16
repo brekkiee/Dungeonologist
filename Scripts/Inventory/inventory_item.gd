@@ -8,6 +8,7 @@ var ItemType: String
 var data: ItemData
 
 @onready var item_tooltip_template = preload("res://Scenes/UI/Inventory/InvItemTooltip.tscn")
+@onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 var tooltip = null
 # Follow mouse position
 func follow_mouse():
@@ -21,10 +22,12 @@ func on_mouse_entered():
 	tooltip = item_tooltip_template.instantiate()
 	tooltip.Config(self)
 	add_child(tooltip)
+	Input.set_custom_mouse_cursor(cursor_pointer_texture)
 
 func on_mouse_exited():
 	if tooltip:
 		hide_tooltip()
+	Input.set_custom_mouse_cursor(null)
 
 func hide_tooltip():
 	print("Hiding Tooltip")

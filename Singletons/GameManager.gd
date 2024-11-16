@@ -399,3 +399,7 @@ func get_monster_instance_by_id(monster_id: int) -> MonsterBase:
 		if monster.monster_id == monster_id:
 			return monster
 	return null
+
+func close_codex():
+	main_ui._on_monster_book_pressed()
+	print("main_ui: ", main_ui)

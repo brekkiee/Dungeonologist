@@ -6,6 +6,8 @@ extends Node2D
 @export var hover_sprite: Texture2D
 @export var tool_name: String = ""
 
+@onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
+
 # Inform the toolbox that the tool is clicked
 # Simplified click detection to use a single function
 func _on_input_event(viewport, event, shape_idx):
@@ -20,9 +22,11 @@ func set_hover(is_hover):
 
 func _on_mouse_entered():
 	set_hover(true)
+	Input.set_custom_mouse_cursor(cursor_pointer_texture)
 
 func _on_mouse_exited():
 	set_hover(false)
+	Input.set_custom_mouse_cursor(null)
 
 # Checks if this tool is current active tool
 func is_active_tool():
