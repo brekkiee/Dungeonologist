@@ -1,5 +1,7 @@
-res://Scenes/UI/MainUI.tscn
+res://Quests/quest_display.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
+res://Scenes/UI/MainUI.tscn
+res://Scenes/Windows/MainWindow.tscn
