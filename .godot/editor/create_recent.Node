@@ -1,8 +1,9 @@
+Button
+CollisionShape2D
 TextureRect
 MarginContainer
 Area2D
 Control
-Button
 TextureButton
 CanvasLayer
 Label
@@ -13,7 +14,6 @@ GridContainer
 NinePatchRect
 Popup
 Container
-CollisionShape2D
 Sprite2D
 AnimatedSprite2D
 AudioStreamPlayer2D

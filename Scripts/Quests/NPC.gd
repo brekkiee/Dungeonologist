@@ -13,6 +13,9 @@ extends Control
 @onready var bodyText = $NinePatchRect/Chat
 @onready var NPCtexture = $NPCTexture
 
+@onready var cursor_chat_texture = preload("res://Assets/Sprites/UI/Cursor_Talk.png")
+@onready var char_sprite = get_node("Button")
+
 var already_met = false
 var dialogues = {
 	0: [],
@@ -28,6 +31,18 @@ func _ready():
 	_load_dialogue()
 	DialogueManager.connect("chat_finished", Callable(self, "_on_chat_finished"))
 	DialogueManager.connect("emotion_changed", Callable(self, "_on_emotion_changed"))
+	if char_sprite:
+		char_sprite.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	if char_sprite:
+		char_sprite.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+
+# Called when the mouse enters the area
+func _on_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor_chat_texture)  # Set custom default cursor
+
+# Called when the mouse exits the area
+func _on_mouse_exited():
+	Input.set_custom_mouse_cursor(null)  # Reset to default cursor
 
 # Method to update the NPC sprite based on the active quest
 func update_npc_sprite_based_on_active_quest():
@@ -54,6 +69,7 @@ func update_sprite(texture_path: String):
 # Load dialogue from the JSON file
 func _load_dialogue():
 	clear_dialogue()
+	print("dialogue_file: ", dialogue_file)
 	var file = FileAccess.open(dialogue_file, FileAccess.READ) 
 	var content = JSON.parse_string(file.get_as_text())	
 

@@ -1,3 +1,6 @@
+res://Assets/UI
+res://Styles
+res://Quests/Dialogue/DialogueText
 res://Assets/Sprites/Emotes
 res://Scripts/Enclosure/SpeciesResources
 res://Assets/Sprites/InventoryIcons
@@ -14,9 +17,6 @@ res://Assets/Animations/Alchemy
 res://Scripts/Enclosure
 res://Scripts/Quests
 res://Singletons
-res://Quests/Dialogue/DialogueText
 res://Scenes/Windows
 res://Scripts/UI
 res://Scenes
-res://Assets/Animations/Monsters
-res://Assets/Animations/Garden

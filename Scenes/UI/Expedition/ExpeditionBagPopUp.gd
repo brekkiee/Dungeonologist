@@ -7,6 +7,9 @@ extends Control
 
 var current_potion
 
+@onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
+@onready var button = get_node("BG/Info/HBoxContainer/VBoxContainer/TextureRect/Button")
+
 var adventurers = {
 	"Colin": preload("res://Assets/Sprites/Characters/char_3_Colin.png")
 }
@@ -15,13 +18,15 @@ var expos = {
 	"expo1": preload("res://Expeditions/expo1.tres")
 }
 
+func _ready():
+	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+
 # Update the Data shown onscreen
 func update():
 	get_node("BG/Sign/DungeonFloor").text = str("Floor ",DungeonFloor);
 	get_node("BG/Sign/DungeonTitle").text = DungeonName;
 	get_node("BG/Info/HBoxContainer/VBoxContainer/AP/TextureRect").texture = adventurers[AdventurerName];
-
-
 
 # Called when there is a gui input event
 func _on_potion_slot_gui_input(event):

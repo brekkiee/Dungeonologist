@@ -46,13 +46,16 @@ var movement_direction = Vector2.ZERO
 # Item drop variables
 @onready var item_id: int = species.item_type
 @onready var drop_rate: int = species.drop_rate
-# Item drop variables
+
+@onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
+
 var items_dropped: Dictionary = {}  # Stores items ready to be collected
 var item_ready_to_collect: bool = false
 var foods_fed = []
-var all_food_items = ["DawnGrass", "Thimbleweed"]
-#TODO: Add these food items in all_food_items:
-#"inkberry", "sweetroot", "blood_cap", "sentient_moss", "rotten_fruit", "dwarven_nettle", "gelatinous_blob"
+var all_food_items = [
+	"DawnGrass", "Thimbleweed", "inkberry", "sweetroot",
+	"blood_cap", "sentient_moss", "rotten_fruit",
+	"dwarven_nettle", "gelatinous_blob"]
 
 signal quest_complete
 
@@ -79,9 +82,28 @@ func _ready():
 	add_to_group("monsters")
 	# Connect DayNightCycle signal
 	DayNightCycle.connect("day_started", Callable(self, "_on_day_started"))
+	# Connect mouse signals
+	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	connect("mouse_exited", Callable(self, "_on_mouse_exited"))	
+
+func _on_mouse_entered():
+	if item_ready_to_collect:
+		Input.set_custom_mouse_cursor(cursor_pointer_texture)  # Set custom collect cursor
+
+func _on_mouse_exited():
+	Input.set_custom_mouse_cursor(null)  # Reset to default cursor
+	mouse_control.mouse_default_cursor_shape = Control.CURSOR_ARROW
 
 func _on_day_started(day_count):
 	attempt_item_drop()
+	# Decrease hunger and happiness by 1
+	if hunger_meter > 0:
+		hunger_meter -= 1
+	if happiness_meter > 0:
+		happiness_meter -= 1
+	# Update the monster visuals and status
+	update_monster()
+
 # Load all the monster emote textures
 func _load_emotes():
 	emote_happy = load("res://Assets/Sprites/Emotes/emote_0_Happy.png")
@@ -287,7 +309,8 @@ func attempt_item_drop():
 			emote_sprite.texture = emote_question
 			_show_emote()
 			GameManager.play_sound("click")
-			mouse_control.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+			Input.set_custom_mouse_cursor(null)
+			mouse_control.mouse_default_cursor_shape = Control.CURSOR_ARROW
 			break  # Only one item drop per day
 
 func hide_item_drop_emote():
@@ -305,6 +328,7 @@ func collect_item():
 	items_dropped.clear()
 	item_ready_to_collect = false
 	hide_item_drop_emote()
+	Input.set_custom_mouse_cursor(null)
 	mouse_control.mouse_default_cursor_shape = Control.CURSOR_ARROW	
 # TODO: Change the magnifying glass to show meters on hover
 # instead of on click

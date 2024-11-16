@@ -107,7 +107,7 @@ func update_time_mode(time_mode: String):
 	if time_mode == "Real-Time":
 		day_night_length = 43200
 	else:
-		day_night_length = 5.0
+		day_night_length = 60 * 5
 	
 	var old_duration = day_duration if is_day else night_duration
 	
@@ -128,3 +128,11 @@ func _on_about_to_quit():
 	PlayerData.is_day = is_day
 	PlayerData.day_count = day_count
 	PlayerData.save_data()
+
+# Skip to the next day when the button is pressed
+func skip_to_next_day():
+	day_count += 1
+	current_time = 0.0
+	is_day = true
+	emit_signal("day_started", day_count)
+	print("Day skipped to: ", day_count)

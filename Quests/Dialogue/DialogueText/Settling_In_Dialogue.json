@@ -1,5 +1,4 @@
 [
-	
 	{"emotion": "confident", "texture": "res://Assets/Sprites/Dialogue/Elspeth/confident.png"},
 	{"emotion": "confident_2", "texture": "res://Assets/Sprites/Dialogue/Elspeth/confident_2.png"},
 	{"emotion": "hostile", "texture": "res://Assets/Sprites/Dialogue/Elspeth/hostile.png"}, 

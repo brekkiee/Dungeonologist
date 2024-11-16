@@ -12,8 +12,8 @@ extends Resource
 @export var drop_rate: int
 
 @export_group("Meters (Per Second)")
-@export var hunger_rate = 5.0
-@export var unhappy_rate = 5.0
+@export var hunger_rate = 0.005
+@export var unhappy_rate = 0.005
 
 @export_group("Movement")
 @export_subgroup("Walking")

@@ -272,11 +272,13 @@ frame_progress = 0.958615
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BagPopUp" parent="." instance=ExtResource("7_anmr1")]
+visible = false
 layout_mode = 1
 offset_left = 125.0
 offset_right = 125.0
 
 [node name="ExpeditionRewards" parent="." instance=ExtResource("8_xeqvu")]
+visible = false
 layout_mode = 1
 offset_left = 125.0
 offset_right = 125.0

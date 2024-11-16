@@ -1,5 +1,4 @@
 [
-	
 	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"}, 
 	{"emotion": "happy", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
 	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},

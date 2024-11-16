@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bofkxij4w4wn8" path="res://Assets/Sprites/Alchemy/Brew_Ladle.png" id="2_ld8mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11mqw"]
-size = Vector2(51, 57.1139)
+size = Vector2(24, 57.1139)
 
 [node name="Ladle" type="Area2D"]
 script = ExtResource("1_66whl")
@@ -13,6 +13,5 @@ script = ExtResource("1_66whl")
 texture = ExtResource("2_ld8mx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(18.5, 0)
 scale = Vector2(1, 1.08555)
 shape = SubResource("RectangleShape2D_11mqw")

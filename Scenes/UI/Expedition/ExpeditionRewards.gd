@@ -3,6 +3,12 @@ extends Control
 var expo_title: String
 var expo_rewards: Array[RewardResource]
 
+@onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
+@onready var button = get_node("BG/Button")
+
+func _ready():
+	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,3 +26,9 @@ func show_rewards():
 func _on_button_pressed():
 	self.visible = false
 	pass # Replace with function body.
+	
+func _on_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor_pointer_texture)
+
+func _on_mouse_exited():
+	Input.set_custom_mouse_cursor(null)
