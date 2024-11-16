@@ -220,6 +220,7 @@ offset_bottom = -0.455009
 texture = ExtResource("9_fds6c")
 
 [node name="GuntheidonOrb" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.404
