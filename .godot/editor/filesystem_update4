@@ -4,3 +4,7 @@ res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
 res://Quests/epic_quest2.gd
+res://Singletons/QuestManager.gd
+res://Singletons/PlayerData.gd
+res://Quests/progress_quest2.gd
+res://Scenes/UI/MainUI.tscn

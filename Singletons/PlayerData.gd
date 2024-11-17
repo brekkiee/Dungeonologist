@@ -73,39 +73,42 @@ func save_data():
 		print("Failed to open save file for writing.")
 
 func load_data():
-	if FileAccess.file_exists(SAVE_FILE_PATH):
-		var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
-		if save_file:
-			var data = save_file.get_var()
-			research_tasks_completed = data.get("research_tasks_completed", research_tasks_completed)
-			time_mode = data.get("time_mode", "In-Game Time")
-			current_time = data.get("current_time", 0.0)
-			is_day = data.get("is_day", true)
-			day_count = data.get("day_count", 1)
-			pending_monsters = data.get("pending_monsters", [])
-			
-			player_monsters.clear()
-			var loaded_monsters = data.get("player_monsters", {})
-			
-			for monster_id in loaded_monsters.keys():
-				print("loaded_monster.keys(): ", loaded_monsters.keys())
-				var monster_info = loaded_monsters[monster_id]
-				print("monster_info: ", monster_info)
-				var monster = GameManager.create_monster_from_data(monster_info)
-				if monster_info.has("species_name"):
-					monster.set("species_name", monster_info["species_name"])
-				player_monsters[monster_id] = monster_info
-			
-			if data.has("inventory"):
-				InventoryManager.load_inventory_data(data["inventory"])
-			
-			save_file.close()
-			print("Data loaded successfully from ", SAVE_FILE_PATH)
-			print("Loaded save_file data: ", data)
-		
-		else:
-			print("Failed to open save file for reading.")
-	else:
-		print("Save file does not exist. Starting with default data.")
-		GameManager.spawn_test_monsters()
-		print("spawn test monsters from PlayerData")
+	print("Save file does not exist. Starting with default data.")
+	GameManager.spawn_test_monsters()
+	print("spawn test monsters from PlayerData")
+#	if FileAccess.file_exists(SAVE_FILE_PATH):
+#		var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
+#		if save_file:
+#			var data = save_file.get_var()
+#			research_tasks_completed = data.get("research_tasks_completed", research_tasks_completed)
+#			time_mode = data.get("time_mode", "In-Game Time")
+#			current_time = data.get("current_time", 0.0)
+#			is_day = data.get("is_day", true)
+#			day_count = data.get("day_count", 1)
+#			pending_monsters = data.get("pending_monsters", [])
+#			
+#			player_monsters.clear()
+#			var loaded_monsters = data.get("player_monsters", {})
+#			
+#			for monster_id in loaded_monsters.keys():
+#				print("loaded_monster.keys(): ", loaded_monsters.keys())
+#				var monster_info = loaded_monsters[monster_id]
+#				print("monster_info: ", monster_info)
+#				var monster = GameManager.create_monster_from_data(monster_info)
+#				if monster_info.has("species_name"):
+#					monster.set("species_name", monster_info["species_name"])
+#				player_monsters[monster_id] = monster_info
+#			
+#			if data.has("inventory"):
+#				InventoryManager.load_inventory_data(data["inventory"])
+#			
+#			save_file.close()
+#			print("Data loaded successfully from ", SAVE_FILE_PATH)
+#			print("Loaded save_file data: ", data)
+#		
+#		else:
+#			print("Failed to open save file for reading.")
+#	else:
+#		print("Save file does not exist. Starting with default data.")
+#		GameManager.spawn_test_monsters()
+#		print("spawn test monsters from PlayerData")

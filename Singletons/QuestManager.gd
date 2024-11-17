@@ -1,6 +1,8 @@
 extends Node
 
 @onready var quest_display_scene = preload("res://Quests/quest_display.tscn")
+@onready var character_sprite = null
+@onready var npc_button = null
 
 var quest_display: Control
 var active_quest = null  # Only one active quest
@@ -154,7 +156,10 @@ func complete_active_quest():
 			add_quest("ProgressQuest2")
 			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Progress_Quest2_Dialogue.json"
 			GameManager.npc._load_dialogue()
-		
+			character_sprite = GameManager.npc.get_node("CharacterSprite")
+			character_sprite.visible = false
+			npc_button = GameManager.npc.get_node("Button")
+			npc_button.visible = false
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		
 # Function to progress quest when chat with NPC
