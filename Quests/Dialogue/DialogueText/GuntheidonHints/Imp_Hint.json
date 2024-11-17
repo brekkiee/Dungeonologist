@@ -1,0 +1,8 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "The Plains Imps… tricky creatures, those. They live for the hunt, but not in the way you’d think. No, it’s the chase that excites them. They’ll stalk their prey for hours, watching, waiting, learning. I suspect they enjoy it more than the actual kill. But here’s the thing—they don’t always hunt alone."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text":  "You’ll often find them alongside something bigger, something nastier. Almost as if they enjoy the company of death itself. Throw another carnivore in their enclosure and watch. The Imp will either outwit its new friend or end up as dinner. Nature at its finest, wouldn’t you agree?"},
+]

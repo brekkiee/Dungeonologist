@@ -1,0 +1,8 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+	
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "Ah, the Common Slime… not so common after all. You know, I’ve noticed they react the same way no matter what you put in front of them."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text":  "Do they truly have no taste? Or perhaps they simply appreciate all culinary delights equally? Personally, I’m partial to a fine cheese… but I’ve been having great difficulty finding a minotaur amicable enough for me to milk it."},
+]

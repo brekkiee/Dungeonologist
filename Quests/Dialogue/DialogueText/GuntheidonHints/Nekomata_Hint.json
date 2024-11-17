@@ -1,0 +1,8 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "sad", "text": "The Nekomata… now, that’s a creature steeped in mystery. Many have seen its blue flame, but few understand it. There are tales of them leading lost adventurers to safety, but why?"},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text":  " Some say the flame always points to the dungeon’s exit. But here’s the thing - no one really knows what the flame is. Some say it’s a guide, others say it’s a lure. Personally, I think it’s both. It just depends on how the Nekomata feels about you that day. Catch one yourself and see if it guides you, or if it’s simply playing tricks on us all."},
+]

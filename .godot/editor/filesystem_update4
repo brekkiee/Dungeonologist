@@ -17,3 +17,10 @@ res://Items/slime_residue.tres
 res://Assets/Monsters/monster_common_slime.tscn
 res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres
 res://Quests/completed_tutorial_quest.gd
+res://Quests/Dialogue/DialogueText/Slime_Hint.json
+res://Quests/Dialogue/DialogueText/Dinglebat_Hint.json
+res://Quests/Dialogue/DialogueText/Shrooman_Hint.json
+res://Quests/Dialogue/DialogueText/Imp_Hint.json
+res://Quests/Dialogue/DialogueText/Jelly_Hint.json
+res://Quests/Dialogue/DialogueText/GuntheidonHints/Nekomata_Hint.json
+res://Scripts/UI/UI.gd

@@ -138,12 +138,6 @@ func complete_active_quest():
 			add_quest("ProgressQuest")
 			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Progress_Quest_Dialogue.json"
 			GameManager.npc._load_dialogue()
-			var crystal_orb = GameManager.main_ui.get_node("MainScreen/ScreenBorders/BookShelf/GuntheidonOrb")
-			if crystal_orb:
-				print("crystal_orb found")
-				crystal_orb.visible = true
-			else:
-				print("crystal_orb not found", crystal_orb)
 		elif active_quest.quest_name == "ProgressQuest":
 			active_quest = null
 			current_stage = 0
@@ -160,6 +154,12 @@ func complete_active_quest():
 			character_sprite.visible = false
 			npc_button = GameManager.npc.get_node("Button")
 			npc_button.visible = false
+			var crystal_orb = GameManager.main_ui.get_node("MainScreen/ScreenBorders/BookShelf/GuntheidonOrb")
+			if crystal_orb:
+				print("crystal_orb found")
+				crystal_orb.visible = true
+			else:
+				print("crystal_orb not found", crystal_orb)
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
 		
 # Function to progress quest when chat with NPC

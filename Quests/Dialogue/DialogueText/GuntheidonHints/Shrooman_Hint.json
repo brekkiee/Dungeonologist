@@ -1,0 +1,8 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "The Shroomen? Ah, yes… strange little beings, aren’t they? They seem harmless enough, until you realize they’re watching you too. You’ll notice they act differently when they’re together. "},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text":  "It’s almost like they’re… plotting something. But how do they communicate? Pheromones? Interpretive dance? We won’t know until you put two of them together. This could get… interesting."},
+]

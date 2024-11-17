@@ -1,0 +1,8 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "Ah, the Shallows Jellies, nature’s little decorators! But why do they bother? Some think it’s for camouflage, others say it’s pure vanity. Adorning themselves with whatever they can find—shells, stones, even bits of broken weapons. "},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text":  "Some say it’s for protection, but I think they just like to look fancy. They pick and choose their decorations carefully, you know. I tried giving one a shiny coin once… it dropped it in favour of a rusty nail. Clearly, they’ve got a strange sense of fashion. My advice? Catch a few from different dungeon floors - see if their trends change."},
+]

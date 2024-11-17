@@ -1,0 +1,8 @@
+[
+	{"emotion": "neutral", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png"},
+	{"emotion": "ponder", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_PONDER.png"},
+	{"emotion": "sad", "texture": "res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon_SAD.png"},
+	
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "neutral", "text": "The Dinglebats’ glowing orbs… fascinating. Gertrude suggested they may have a social purpose."},
+	{"chat_num": "0", "name": "Guntheidon", "emotion": "ponder", "text":  "If I were you, I’d get two of them together. See how they react to one another. Sometimes, the real magic happens when you have double the orbs, no? I may have to rethink my theory about them being tiny dungeon lighthouses…"},
+]
