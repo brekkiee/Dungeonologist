@@ -6,6 +6,10 @@ var is_following_mouse = false
 var original_position = Vector2.ZERO
 
 @onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
+@onready var ladle_texture_normal = $Sprite2D.texture
+@onready var ladle_texture_highlighted = preload("res://Assets/Sprites/Alchemy/Brew_Ladle_1.png")
+
+@onready var ladle_sprite = $Sprite2D
 
 func _ready():
 	original_position = position
@@ -32,9 +36,12 @@ func _input_event(viewport, event, shape_idx):
 func _process(delta):
 	if is_following_mouse:
 		self.global_position = get_global_mouse_position()
+		ladle_sprite.texture = ladle_texture_normal
 
 func _on_mouse_entered():
 	Input.set_custom_mouse_cursor(cursor_pointer_texture)
+	ladle_sprite.texture = ladle_texture_highlighted
 
 func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
+	ladle_sprite.texture = ladle_texture_normal
