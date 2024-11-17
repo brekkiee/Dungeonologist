@@ -19,13 +19,13 @@ func finished():
 	print("Expedition Completed, Starting Reward Distribution")
 
 	var awarded_rewards: Array[RewardResource] = []
+	var monster_awarded = false
 
 	for r in rewards:
 		var chance = r.chance
 		var roll = rng.randi_range(0, 100)
 		print(roll)
 		if roll <= chance:
-			awarded_rewards.append(r)
 			if r.isItem:
 				print("Reward ", r.item_data.Name, " has been given")
 				print("Reward Quantity: ", r.quantity)
@@ -36,7 +36,14 @@ func finished():
 							InventoryManager.add_potion_inventory_item(r.item_data)
 						_:
 							InventoryManager.add_plant_inventory_item(r.item_data)
+				awarded_rewards.append(r)
 			else:
-				GameManager.award_monster(r.monster_name.name)
+				if not monster_awarded:
+					GameManager.award_monster(r.monster_name.name)
+					print("Monster Reward: ", r.monster_name.name, " has been awarded")
+					monster_awarded = true
+					awarded_rewards.append(r)
+				else:
+					print("Monster already awarded, skipping extra mons")
 
 	ExpeditionManager.complete_expedition(index, awarded_rewards)
