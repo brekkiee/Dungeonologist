@@ -6,6 +6,11 @@ var rewardUI = null
 @onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 @onready var button = get_node("PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1/Button")
 
+@onready var flyer_texture_normal = $PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1.texture
+@onready var flyer_texture_highlighted = preload("res://Assets/Sprites/Expeditions/Expe_Page_Highlight.png")
+
+@onready var flyer_texture_rect = $PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
@@ -46,6 +51,9 @@ func on_button_pressed_expo1():
 
 func _on_mouse_entered():
 	Input.set_custom_mouse_cursor(cursor_pointer_texture)
+	flyer_texture_rect.texture = flyer_texture_highlighted
+	
 
 func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
+	flyer_texture_rect.texture = flyer_texture_normal

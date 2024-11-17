@@ -4,3 +4,5 @@ res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
 res://Scripts/Alchemy/ladle.gd
+res://Scenes/UI/Expedition/ExpeditionsUI.tscn
+res://Scenes/UI/Expedition/ExpeditionsUI.gd
