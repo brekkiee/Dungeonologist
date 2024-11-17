@@ -24,3 +24,7 @@ res://Quests/Dialogue/DialogueText/Imp_Hint.json
 res://Quests/Dialogue/DialogueText/Jelly_Hint.json
 res://Quests/Dialogue/DialogueText/GuntheidonHints/Nekomata_Hint.json
 res://Scripts/UI/UI.gd
+res://Scripts/Enclosure/SpeciesResources/species_plains_imp.tres
+res://Singletons/GameManager.gd
+res://Scenes/UI/scene_change_buttons.tscn
+res://Scripts/UI/scene_change_buttons.gd

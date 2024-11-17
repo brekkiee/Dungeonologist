@@ -326,6 +326,7 @@ func collect_item():
 		for i in quantity:
 			InventoryManager.add_plant_inventory_item(item_data)
 		print("Collected ", quantity, " x ", item_data.Name)
+	GameManager.play_sound("monster_happy0")
 	# Reset item drop variables
 	items_dropped.clear()
 	item_ready_to_collect = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cj7vyh4w4hv07"]
+[gd_scene load_steps=30 format=3 uid="uid://cj7vyh4w4hv07"]
 
 [ext_resource type="Script" path="res://Scripts/UI/scene_change_buttons.gd" id="1_gkwqc"]
 [ext_resource type="Texture2D" uid="uid://5lplwajuqksb" path="res://Assets/Sprites/UI/btn_Brew_0.png" id="2_as6if"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cvuklclh6nau4" path="res://Assets/Sprites/UI/btn_Grow_0.png" id="8_ka5h2"]
 [ext_resource type="Texture2D" uid="uid://jx7y5swpvpui" path="res://Assets/Sprites/UI/btn_Grow_1.png" id="9_gaiva"]
 [ext_resource type="Texture2D" uid="uid://bcvi1ryaqqjkk" path="res://Assets/Sprites/UI/btn_Expe_0.png" id="9_l6ro0"]
+[ext_resource type="Texture2D" uid="uid://ddlalbsjbif15" path="res://Assets/Sprites/Emotes/emote_8_Shock.png" id="9_ra0kd"]
 [ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/Sprites/UI/btn_Expe_1.png" id="10_wvulv"]
 [ext_resource type="Texture2D" uid="uid://cl0q3oe0opra" path="res://Assets/Sprites/UI/btn_Grow_3.png" id="10_xxead"]
 [ext_resource type="Texture2D" uid="uid://ctp36e4a4ioq4" path="res://Assets/Sprites/UI/btn_Script_3.png" id="13_qsyac"]
@@ -113,6 +114,22 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_qv2j2")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
+[node name="InvAlert" type="TextureRect" parent="AlchemyLabButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.00002
+offset_top = 12.0
+offset_right = 51.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.637045
+texture = ExtResource("9_ra0kd")
+
 [node name="GardenButton" type="Button" parent="."]
 visible = false
 layout_mode = 1
@@ -134,6 +151,22 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_crfos")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
+[node name="InvAlert" type="TextureRect" parent="GardenButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.99997
+offset_top = 11.0
+offset_right = 47.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.637045
+texture = ExtResource("9_ra0kd")
+
 [node name="ExpeditionsButton" type="Button" parent="."]
 visible = false
 layout_mode = 1
@@ -154,6 +187,22 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7s2a4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4k4bs")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
+
+[node name="InvAlert" type="TextureRect" parent="ExpeditionsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 11.0
+offset_right = 48.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.637045
+texture = ExtResource("9_ra0kd")
 
 [connection signal="pressed" from="MonsterEnclosureButton" to="." method="_on_monster_enclosure_button_pressed"]
 [connection signal="pressed" from="AlchemyLabButton" to="." method="_on_alchemy_lab_button_pressed"]

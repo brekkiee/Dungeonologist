@@ -33,10 +33,12 @@ func _on_mouse_exited():
 func _on_expeditions_button_pressed():
 	GameManager.change_scene("Expeditions")
 	Input.set_custom_mouse_cursor(null)
+	expeditions_button.get_node("InvAlert").visible = false
 
 func _on_alchemy_lab_button_pressed():
 	GameManager.change_scene("AlchemyLab")
 	Input.set_custom_mouse_cursor(null)
+	alchemy_button.get_node("InvAlert").visible = false	
 
 func _on_monster_enclosure_button_pressed():
 	GameManager.change_scene("MonsterEnclosure")
@@ -45,3 +47,4 @@ func _on_monster_enclosure_button_pressed():
 func _on_garden_button_pressed():
 	GameManager.change_scene("Garden")
 	Input.set_custom_mouse_cursor(null)
+	garden_button.get_node("InvAlert").visible = false	
