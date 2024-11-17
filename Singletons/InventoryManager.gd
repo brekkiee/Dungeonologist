@@ -58,17 +58,16 @@ var alert = null
 
 # Sort items required for each cauldron recipe alphabetically
 func _ready():
+	inventory_panel_parent = get_node("/root/MainWindow/UI/MainUI/InventoryPanelParent")
 	for i in cauldron_recipies.size():
 		cauldron_recipies[i].items_required.sort()
 
 # Add item to current inventory
 func add_plant_inventory_item(item_data):
-	
-	print(str(item_data))
 	if inventory_panel_parent == null:
 		print("Warning: inventory_panel_parent is not yet init. for add_plants")
 		return false
-	
+		
 	# check if max item is reached
 	if current_plant_inventory.size() >= max_items_in_row:
 		return false
@@ -77,7 +76,7 @@ func add_plant_inventory_item(item_data):
 	for item in current_plant_inventory:
 		if item.data.Name == item_data.Name:
 			# Increase Item Quantity by One
-			item.data.Quantity = item.data.Quantity + 1
+			item.data.Quantity += 1
 			item.get_node("TextureRect/Label").text = str(item.data.Quantity)
 			return true
 
@@ -85,10 +84,9 @@ func add_plant_inventory_item(item_data):
 	newitem.data = item_data
 	newitem.data.Quantity = 1
 
-	
 	newitem.get_node("TextureRect").texture = newitem.data.Sprite
 	newitem.get_node("TextureRect/Label").text = str(newitem.data.Quantity)
-	#add item to the plants array
+	# Add item to the plants array
 	current_plant_inventory.append(newitem)
 	var temp = {newitem: newitem.global_position}
 	plant_item_origin.merge(temp)
@@ -98,26 +96,29 @@ func add_plant_inventory_item(item_data):
 	QuestManager.on_plant_harvested()
 	return true
 
-func add_potion_inventory_item(itemName):
+func add_potion_inventory_item(item_data):
+	if inventory_panel_parent == null:
+		print("Warn: inventory_panel_parent not yet init. for add_potions")
+		return false
 		# check if max item is reached
 	if current_potion_inventory.size() >= max_items_in_row:
 		return false
 		
 	# Check if Item is Stackable
 	for item in current_potion_inventory:
-		if item.data.Name == itemName.Name:
+		if item.data.Name == item_data.Name:
 			# Increase Item Quantity by One
-			item.data.Quantity = item.data.Quantity + 1
+			item.data.Quantity += 1
 			item.get_node("TextureRect/Label").text = str(item.data.Quantity)
 			return true
 
 	var newitem = item_template.instantiate()
-	newitem.data = itemName
+	newitem.data = item_data
 	newitem.data.Quantity = 1
 	
 	newitem.get_node("TextureRect").texture = newitem.data.Sprite
 	newitem.get_node("TextureRect/Label").text = str(newitem.data.Quantity)
-	#add item to the plants array
+	#add item to the potions array
 	current_potion_inventory.append(newitem)
 	var temp = {newitem: newitem.global_position}
 	potion_item_origin.merge(temp)

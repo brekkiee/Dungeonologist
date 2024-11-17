@@ -1,25 +1,17 @@
 extends Node
 
-var expeditions = [] # List of active expeditions
-var available_adventurers = {} # Dictionary of adventurers with their levels and stats
-var expedition_slots = 1 # Number of expeditions that can be run simultaneously
+var expeditions = []  # List of active expeditions
+var available_adventurers = {}  # Dictionary of adventurers with their levels and stats
+var expedition_slots = 1  # Number of expeditions that can be run simultaneously
 
-var expeditionUI = null
+var expeditionUI_instance = null  # This will be set by ExpeditionsUI.gd
 
-	
-#func show_expedition_popup():
-#	expedition_bag_popup.visible = true
-#	# Handle logic for showing the popup and initializing it with relevant data
-
-
-
-func SetItem(ItemName: String): #set potion stats
+func SetItem(ItemName: String):  # Set potion stats
 	match ItemName:
 		"Minor Mana Potion":
 			print("Rare monster rates + 10%, Common monster rates - 20%")
-		"Minor Health Potion":	
+		"Minor Health Potion":
 			print("Material carry capacity + 1")
-
 
 func start_expedition(expoData, adventurer, potion):
 	if expeditions.size() < expedition_slots:
@@ -39,15 +31,26 @@ func start_expedition(expoData, adventurer, potion):
 		add_child(timer)
 		expoData.set_timer(timer)
 		QuestManager.on_expedition_started()
-		
 	else:
 		print("No available slots for more expeditions.")
 
-func complete_expedition(expedition_index, rewards):
+func complete_expedition(expedition_index: int, awarded_rewards: Array[RewardResource]):
 	if expeditions[expedition_index]["status"] == "in_progress":
-		# Handle expedition completion, determine loot, etc.
 		expeditions[expedition_index]["status"] = "completed"
 		print("Expedition completed:", expeditions[expedition_index])
-		expeditionUI.show_rewards(rewards)
+
+		if expeditionUI_instance == null:
+			print("Error: 'ExpeditionsUI' instance not set.")
+		else:
+			# Ensure it's visible
+			expeditionUI_instance.visible = true
+
+			# Access the ExpeditionRewards node
+			var expeditionRewards = expeditionUI_instance.get_node("ExpeditionRewards")  # Adjust the node path if necessary
+
+			expeditionRewards.set_expo_title("Expedition Complete")
+			expeditionRewards.set_expo_rewards(awarded_rewards)
+			expeditionRewards.show_rewards()
+
 		expeditions.remove_at(expedition_index)
 		QuestManager.on_expedition_rewards_collected()
