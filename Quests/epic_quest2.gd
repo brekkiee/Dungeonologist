@@ -2,7 +2,7 @@ extends QuestBase
 
 func _init():
 	# Initialise quest-specific information
-	info["Name"] = "EpicQuest"
+	info["Name"] = "EpicQuest2"
 	info["Type"] = "chat"
 	info["NpcSprite"] = "res://Assets/Sprites/Characters/char_3_Colin.png"
 	info["QuestDisplayName"] = "Epic Quest"

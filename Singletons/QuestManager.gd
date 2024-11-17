@@ -42,7 +42,7 @@ var quests_data: Dictionary = {
 	},
 	"ProgressQuest2" :{
 		"script": "res://Quests/progress_quest2.gd",
-		"stage2": "CompleteResearch",
+		"stage1": "CompleteResearch",
 	}
 }
 
@@ -125,6 +125,12 @@ func complete_active_quest():
 			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue.json"
 			GameManager.npc._load_dialogue()
 		elif active_quest.quest_name == "EpicQuest":
+			active_quest = null
+			current_stage = 0
+			add_quest("EpicQuest2")
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Epic_Quest_Dialogue2.json"
+			GameManager.npc._load_dialogue()
+		elif active_quest.quest_name == "EpicQuest2":
 			active_quest = null
 			current_stage = 0
 			add_quest("ProgressQuest")
