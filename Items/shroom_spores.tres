@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ipfba")
 Name = "Shroom Spores"
-Type = 4
+Type = 5
 Sprite = ExtResource("1_2ji8y")
 drop_rate = 1.0
 min_quantity = 1

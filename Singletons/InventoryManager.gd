@@ -22,9 +22,9 @@ var current_cauldron_inventory = []
 var cauldron_recipies: Dictionary = {
 	0: { "items_required": ["Blood Cap", "Dawn Grass"],
 		"result": preload("res://Items/minor_health_potion.tres")},
-	1: { "items_required": ["thimbleweed_item", "slime_residue_item"],
+	1: { "items_required": ["Thimbleweed", "Slime Residue"],
 		"result": preload("res://Items/minor_mana_potion.tres")},
-	2: { "items_required": ["blood_cap_item", "shroom_spores_item"],
+	2: { "items_required": ["Blood Cap", "Shroom Spores"],
 		"result": preload("res://Items/minor_stamina_potion.tres")}
 }
 

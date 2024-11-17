@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_bjgui")
 Name = "Rotten Fruit"
-Type = 4
+Type = 5
 Sprite = ExtResource("1_rcwm1")
 drop_rate = 1.0
 min_quantity = 1

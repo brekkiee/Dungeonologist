@@ -45,6 +45,10 @@ var quests_data: Dictionary = {
 	"ProgressQuest2" :{
 		"script": "res://Quests/progress_quest2.gd",
 		"stage1": "CompleteResearch",
+	},
+		"CompletedTutorialQuest" :{
+		"script": "res://Quests/completed_tutorial_quest.gd",
+		"stage1": "ChatNPC",
 	}
 }
 
@@ -160,8 +164,14 @@ func complete_active_quest():
 				crystal_orb.visible = true
 			else:
 				print("crystal_orb not found", crystal_orb)
+		elif active_quest.quest_name == "ProgressQuest2":
+			active_quest = null
+			current_stage = 0
+			add_quest("CompletedTutorialQuest")
+			GameManager.npc.dialogue_file = "res://Quests/Dialogue/DialogueText/Tutorial_Complete_Dialogue.json"
+			GameManager.npc._load_dialogue()
 		GameManager.npc.update_npc_sprite_based_on_active_quest()
-		
+			
 # Function to progress quest when chat with NPC
 func on_NPC_chat():
 	#print("active_quest.stage: ", current_stage)

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_xrlex")
 Name = "Slime Residue"
-Type = 4
+Type = 5
 Sprite = ExtResource("1_x7egd")
 drop_rate = 1.0
 min_quantity = 1

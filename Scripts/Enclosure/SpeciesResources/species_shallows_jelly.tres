@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_mbcpu")
 name = "shallows_jelly"
-diet = Array[String](["Dawn Grass", "Thimbelweed", "Inkberry", "Sweetroot", "Blood Cap", "Sentient Moss", "Dwarven Nettle", "Gutweed", "Meat Burger", "Meat Chicken", "Meat Fish", "Meat Organ", "Meat Steak"])
+diet = Array[String](["Dawn Grass", "Thimbelweed", "Inkberry", "Sweetroot", "Blood Cap", "Sentient Moss", "Dwarven Nettle", "Meat Burger", "Meat Chicken", "Meat Fish", "Meat Organ", "Meat Steak"])
 habitats = Array[String](["Coast"])
 drop_table = ExtResource("1_rhfsh")
 is_carnivore = true

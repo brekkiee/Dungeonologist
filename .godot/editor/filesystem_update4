@@ -31,3 +31,15 @@ res://Scripts/UI/scene_change_buttons.gd
 res://Scripts/Enclosure/SpeciesResources/species_forest_dinglebat.tres
 res://Scripts/Enclosure/SpeciesResources/species_nekomata.tres
 res://Scripts/Enclosure/SpeciesResources/species_shallows_jelly.tres
+res://Assets/Monsters/monster_forest_dinglebat.tscn
+res://Items/minor_health_potion.tres
+res://Items/minor_mana_potion.tres
+res://Items/imp_droppings.tres
+res://Items/lucky_coin.tres
+res://Items/rotten_fruit.tres
+res://Items/shroom_spores.tres
+res://Assets/Monsters/monster_shallows_jelly.tscn
+res://Assets/Monsters/monster_plains_imp.tscn
+res://Assets/Monsters/monster_nekomata.tscn
+res://Assets/Alchemy/Cauldron.tscn
+res://Singletons/InventoryManager.gd

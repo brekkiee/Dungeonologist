@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_fmfhe")
 Name = "Imp Droppings"
-Type = 4
+Type = 5
 Sprite = ExtResource("1_7eqeb")
 drop_rate = 1.0
 min_quantity = 1

@@ -7,7 +7,7 @@ func _init():
 	info["NpcSprite"] = "res://Assets/Sprites/Characters/char_4_Elspeth.png"
 	info["QuestDisplayName"] = "Tutorial Completed"
 	info["QuestDescription"] = {
-		1: "Tutorial Completed",
+		1: "Thank you for playing!",
 	}
 	
 	quest_name = info["Name"]
