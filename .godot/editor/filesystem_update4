@@ -8,3 +8,4 @@ res://Singletons/QuestManager.gd
 res://Singletons/PlayerData.gd
 res://Quests/progress_quest2.gd
 res://Scenes/UI/MainUI.tscn
+res://Quests/Dialogue/DialogueText/GuntheidonHints.json
