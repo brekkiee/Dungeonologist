@@ -6,13 +6,14 @@
 [resource]
 script = ExtResource("1_porpw")
 name = "forest_dinglebat"
-diet = Array[String](["inkberry_item"])
+diet = Array[String](["Inkberry"])
 habitats = Array[String](["Forests"])
 drop_table = ExtResource("1_tlbjl")
+is_carnivore = false
 item_type = 9
 drop_rate = 1
-hunger_rate = 5.0
-unhappy_rate = 5.0
+hunger_rate = 25.0
+unhappy_rate = 25.0
 movement_speed = 1.0
 min_move_time = 0.5
 max_move_time = 5.0

@@ -6,14 +6,14 @@
 [resource]
 script = ExtResource("1_iq366")
 name = "plains_imp"
-diet = Array[String](["Meat Burger", "Meat Chicken", "Meat Organ", "Meat Steak"])
+diet = Array[String](["Meat Burger", "Meat Chicken", "Meat Organ", "Meat Steak", "Meat Fish"])
 habitats = Array[String](["Plains"])
 drop_table = ExtResource("1_6htim")
 is_carnivore = true
 item_type = 10
 drop_rate = 1
-hunger_rate = 5.0
-unhappy_rate = 5.0
+hunger_rate = 25.0
+unhappy_rate = 25.0
 movement_speed = 1.0
 min_move_time = 0.5
 max_move_time = 5.0

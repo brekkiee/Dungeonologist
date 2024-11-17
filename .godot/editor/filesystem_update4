@@ -28,3 +28,6 @@ res://Scripts/Enclosure/SpeciesResources/species_plains_imp.tres
 res://Singletons/GameManager.gd
 res://Scenes/UI/scene_change_buttons.tscn
 res://Scripts/UI/scene_change_buttons.gd
+res://Scripts/Enclosure/SpeciesResources/species_forest_dinglebat.tres
+res://Scripts/Enclosure/SpeciesResources/species_nekomata.tres
+res://Scripts/Enclosure/SpeciesResources/species_shallows_jelly.tres

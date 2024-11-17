@@ -6,14 +6,14 @@
 [resource]
 script = ExtResource("1_mbcpu")
 name = "shallows_jelly"
-diet = Array[String](["dawn_grass_item", "thimbelweed_item", "inkberry_item", "sweetroot_item", "blood_cap_item", "sentient_moss_item", "rotten_fruit_item", "dwarven_nettle_item", "gutweed_item", "gelatinous_blob_item"])
+diet = Array[String](["Dawn Grass", "Thimbelweed", "Inkberry", "Sweetroot", "Blood Cap", "Sentient Moss", "Dwarven Nettle", "Gutweed", "Meat Burger", "Meat Chicken", "Meat Fish", "Meat Organ", "Meat Steak"])
 habitats = Array[String](["Coast"])
 drop_table = ExtResource("1_rhfsh")
 is_carnivore = true
 item_type = 15
 drop_rate = 1
-hunger_rate = 5.0
-unhappy_rate = 5.0
+hunger_rate = 25.0
+unhappy_rate = 25.0
 movement_speed = 1.0
 min_move_time = 0.5
 max_move_time = 5.0
