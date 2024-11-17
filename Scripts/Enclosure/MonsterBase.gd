@@ -53,9 +53,11 @@ var items_dropped: Dictionary = {}  # Stores items ready to be collected
 var item_ready_to_collect: bool = false
 var foods_fed = []
 var all_food_items = [
-	"DawnGrass", "Thimbleweed", "inkberry", "sweetroot",
-	"blood_cap", "sentient_moss", "rotten_fruit",
-	"dwarven_nettle", "gelatinous_blob"]
+	"DawnGrass", "Thimbleweed", "Inkberry", 
+	"Sweetroot", "BloodCap", "SentientMoss", 
+	"DwarvenNettle"
+	]
+	#TODO: Add all foods here
 
 signal quest_complete
 

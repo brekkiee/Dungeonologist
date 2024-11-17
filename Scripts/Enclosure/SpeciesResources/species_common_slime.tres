@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_jgvr7")
 name = "common_slime"
-diet = Array[String](["Dawn Grass", "Thimbleweed", "Inkberry", "Sweetroot", "Blood Cap", "Sentient Moss", "Rotten Fruit", "Dwarven Nettle", "Gutweed", "Gelatinous Blob"])
+diet = Array[String](["Dawn Grass", "Thimbleweed", "Inkberry", "Sweetroot", "Blood Cap", "Sentient Moss", "Rotten Fruit", "Dwarven Nettle", "Gutweed"])
 habitats = Array[String](["Plains", "Forests", "Caves"])
 drop_table = ExtResource("1_jbj4i")
 is_carnivore = true

@@ -9,3 +9,11 @@ res://Singletons/PlayerData.gd
 res://Quests/progress_quest2.gd
 res://Scenes/UI/MainUI.tscn
 res://Quests/Dialogue/DialogueText/GuntheidonHints.json
+res://Quests/Codex/codex.tscn
+res://Scripts/Enclosure/MonsterBase.gd
+res://Assets/Monsters/monster_common_shrooman.tscn
+res://Scripts/Enclosure/SpeciesResources/species_common_shrooman.tres
+res://Items/slime_residue.tres
+res://Assets/Monsters/monster_common_slime.tscn
+res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres
+res://Quests/completed_tutorial_quest.gd
