@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Expeditions" load_steps=29 format=3 uid="uid://cvlx4njvpyy1a"]
+[gd_resource type="Resource" script_class="Expeditions" load_steps=33 format=3 uid="uid://cvlx4njvpyy1a"]
 
 [ext_resource type="Resource" uid="uid://bqqmnjmin01jn" path="res://Items/lucky_coin.tres" id="1_ax4l5"]
 [ext_resource type="Script" path="res://Singletons/RewardResource.gd" id="1_cjwn5"]
@@ -15,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://464xev1yvx1j" path="res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres" id="11_yrid1"]
 [ext_resource type="Resource" uid="uid://c006xxedkksd8" path="res://Scripts/Enclosure/SpeciesResources/species_forest_dinglebat.tres" id="13_1jrjg"]
 [ext_resource type="Resource" uid="uid://dvo56rxhki1jb" path="res://Scripts/Enclosure/SpeciesResources/species_plains_imp.tres" id="14_giwy2"]
+[ext_resource type="Resource" uid="uid://bcn8c8b4hh2ro" path="res://Scripts/Enclosure/SpeciesResources/species_shallows_jelly.tres" id="15_1qe4c"]
+[ext_resource type="Resource" uid="uid://dy53effmn4ivh" path="res://Scripts/Enclosure/SpeciesResources/species_nekomata.tres" id="16_7svyv"]
 
 [sub_resource type="Resource" id="Resource_iijcw"]
 script = ExtResource("1_cjwn5")
@@ -79,13 +81,6 @@ item_data = ExtResource("10_jeybu")
 quantity = 1
 chance = 30.0
 
-[sub_resource type="Resource" id="Resource_6fs3a"]
-script = ExtResource("1_cjwn5")
-isItem = false
-monster_name = ExtResource("11_yrid1")
-quantity = 1
-chance = 30.0
-
 [sub_resource type="Resource" id="Resource_qflgc"]
 script = ExtResource("1_cjwn5")
 isItem = false
@@ -98,18 +93,39 @@ script = ExtResource("1_cjwn5")
 isItem = false
 monster_name = ExtResource("13_1jrjg")
 quantity = 0
-chance = 20.0
+chance = 30.0
 
 [sub_resource type="Resource" id="Resource_57ji6"]
 script = ExtResource("1_cjwn5")
 isItem = false
 monster_name = ExtResource("14_giwy2")
 quantity = 0
-chance = 20.0
+chance = 3.0
+
+[sub_resource type="Resource" id="Resource_u88po"]
+script = ExtResource("1_cjwn5")
+isItem = false
+monster_name = ExtResource("15_1qe4c")
+quantity = 0
+chance = 5.0
+
+[sub_resource type="Resource" id="Resource_gf7xh"]
+script = ExtResource("1_cjwn5")
+isItem = false
+monster_name = ExtResource("16_7svyv")
+quantity = 0
+chance = 1.0
+
+[sub_resource type="Resource" id="Resource_6fs3a"]
+script = ExtResource("1_cjwn5")
+isItem = false
+monster_name = ExtResource("11_yrid1")
+quantity = 1
+chance = 30.0
 
 [resource]
 script = ExtResource("1_u51ig")
 Dungeon = "expo"
 Floor = 1
 time = 600.0
-rewards = Array[ExtResource("1_cjwn5")]([SubResource("Resource_iijcw"), SubResource("Resource_yi4hc"), SubResource("Resource_an3wr"), SubResource("Resource_ptcfn"), SubResource("Resource_r53wd"), SubResource("Resource_ew0sc"), SubResource("Resource_jtxdy"), SubResource("Resource_sb1mk"), SubResource("Resource_x2xmg"), SubResource("Resource_6fs3a"), SubResource("Resource_qflgc"), SubResource("Resource_52sgf"), SubResource("Resource_57ji6")])
+rewards = Array[ExtResource("1_cjwn5")]([SubResource("Resource_iijcw"), SubResource("Resource_yi4hc"), SubResource("Resource_an3wr"), SubResource("Resource_ptcfn"), SubResource("Resource_r53wd"), SubResource("Resource_ew0sc"), SubResource("Resource_jtxdy"), SubResource("Resource_sb1mk"), SubResource("Resource_x2xmg"), SubResource("Resource_qflgc"), SubResource("Resource_52sgf"), SubResource("Resource_57ji6"), SubResource("Resource_u88po"), SubResource("Resource_gf7xh"), SubResource("Resource_6fs3a")])

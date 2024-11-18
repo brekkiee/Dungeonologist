@@ -135,8 +135,9 @@ func get_player_monster_data():
 	player_monsters = PlayerData.player_monsters
 	
 	if pending_monsters.size() == 0 and player_monsters.size() > 0:
-		pending_monsters = player_monsters.keys()
-		PlayerData.pending_monsters = pending_monsters
+		print("Loaded player monsters without duplicating pending monsters")
+		#pending_monsters = player_monsters.keys()
+		#PlayerData.pending_monsters = pending_monsters
 
 func assign_monster_spawn_locations():
 	if current_scene and current_scene.name == "MonsterEnclosure":
@@ -196,8 +197,11 @@ func _goto_scene(scene_name: String):
 	elif scene_name == "MonsterEnclosure":
 		main_ui.visible = true
 		assign_monster_spawn_locations()
-		spawn_player_monsters()
-		spawn_pending_monsters()
+		
+		if pending_monsters.size() > 0:
+			spawn_pending_monsters()
+		elif player_monsters.size() > 0:
+			spawn_player_monsters()
 		DayNightCycle.start_time_progression()
 	else:
 		main_ui.visible = true
@@ -216,8 +220,8 @@ func _instantiate_scene(scene_name: String) -> Node:
 
 func award_monster(species_name):
 	pending_monsters.append(species_name)
-	PlayerData.pending_monsters = pending_monsters
-	PlayerData.save_data()
+	#PlayerData.pending_monsters = pending_monsters
+	#PlayerData.save_data()
 	print("Awarded a new monster: ", species_name)
 
 func spawn_pending_monsters():
@@ -237,6 +241,8 @@ func spawn_next_monster():
 	if pending_monsters.is_empty():
 		print("All pending monsters spawned.")
 		return
+	
+	assign_monster_spawn_locations()
 	
 	var spawn_point = monster_spawn_locations[spawn_point_index % monster_spawn_locations.size()]
 	spawn_point_index += 1
@@ -396,7 +402,7 @@ func spawn_test_monsters():
 	for species_name in test_monsters:
 		award_monster(species_name)  # Add test monsters to pending monsters
 	
-	PlayerData.save_data()  # Save test monsters so they persist across game runs
+	#PlayerData.save_data()  # Save test monsters so they persist across game runs
 	print("Test monsters spawned and saved.")
 
 func get_monster_instance_by_id(monster_id: int) -> MonsterBase:

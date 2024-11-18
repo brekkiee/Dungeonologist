@@ -16,3 +16,5 @@ res://Scripts/Inventory/ItemDrops/Items/MinorHealthPotion.tres
 res://Scripts/Inventory/ItemDrops/Items/MinorStaminaPotion.tres
 res://Items/minor_health_potion.tres
 res://Singletons/Expedition.gd
+res://Singletons/PlayerData.gd
+res://Scenes/Windows/monster_enclosure.tscn
