@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bofkxij4w4wn8"
-path="res://.godot/imported/Brew_Ladle.png-dd9963aa9de8c84ccee989deac05b6d7.ctex"
+uid="uid://ouc5wlrgxchc"
+path="res://.godot/imported/Brew_Ladle_0.png-7ae89946421a5b5a804f1ffd4b637d55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Alchemy/Brew_Ladle.png"
-dest_files=["res://.godot/imported/Brew_Ladle.png-dd9963aa9de8c84ccee989deac05b6d7.ctex"]
+source_file="res://Assets/Sprites/Alchemy/Brew_Ladle_0.png"
+dest_files=["res://.godot/imported/Brew_Ladle_0.png-7ae89946421a5b5a804f1ffd4b637d55.ctex"]
 
 [params]
 

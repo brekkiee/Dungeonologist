@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://du2m3lbjkf1m"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemy/ladle.gd" id="1_66whl"]
-[ext_resource type="Texture2D" uid="uid://bofkxij4w4wn8" path="res://Assets/Sprites/Alchemy/Brew_Ladle.png" id="2_ld8mx"]
+[ext_resource type="Texture2D" uid="uid://ouc5wlrgxchc" path="res://Assets/Sprites/Alchemy/Brew_Ladle_0.png" id="2_x2cah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11mqw"]
 size = Vector2(24, 57.1139)
@@ -10,7 +10,7 @@ size = Vector2(24, 57.1139)
 script = ExtResource("1_66whl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ld8mx")
+texture = ExtResource("2_x2cah")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1.08555)

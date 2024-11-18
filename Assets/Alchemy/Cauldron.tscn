@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://du2m3lbjkf1m" path="res://Assets/Alchemy/Ladle.tscn" id="11_8fc4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci1dm"]
-radius = 43.2074
+radius = 44.2675
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hccj"]
 atlas = ExtResource("4_cn6mk")
@@ -316,6 +316,7 @@ script = ExtResource("1_jvxlh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
 z_index = 6
+position = Vector2(0, -57)
 scale = Vector2(3.75, 3.75)
 shape = SubResource("CircleShape2D_ci1dm")
 
