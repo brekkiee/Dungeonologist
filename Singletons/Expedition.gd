@@ -29,10 +29,11 @@ func finished():
 			if r.isItem:
 				print("Reward ", r.item_data.Name, " has been given")
 				print("Reward Quantity: ", r.quantity)
+				print("Item Type: ", r.item_data.Type)
 				for i in range(r.quantity):
 					print(i)
 					match r.item_data.Type:
-						"Potion":
+						6:
 							InventoryManager.add_potion_inventory_item(r.item_data)
 						_:
 							InventoryManager.add_plant_inventory_item(r.item_data)
