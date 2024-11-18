@@ -154,7 +154,12 @@ func assign_monster_spawn_locations():
 func change_scene(scene_name: String):
 	if current_scene == null or scene_name != current_scene.name:
 		#print("Changing to scene: " + scene_name)
+		_close_ui_drawer()
 		_goto_scene(scene_name)
+
+func _close_ui_drawer():
+	if main_ui != null:
+		main_ui.close_inventory_drawer()
 
 func _goto_scene(scene_name: String):
 	scene_spawn_point = get_node("/root/Header/SceneLoadPoint")

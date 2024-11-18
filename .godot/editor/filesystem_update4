@@ -9,3 +9,5 @@ res://Assets/Alchemy/Cauldron.tscn
 res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
 res://Singletons/DayNightCycle.gd
 res://Scenes/UI/MainUI.tscn
+res://Scripts/UI/UI.gd
+res://Singletons/GameManager.gd

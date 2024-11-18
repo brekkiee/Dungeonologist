@@ -5,6 +5,8 @@ extends Control
 @onready var day_count_label = $DayCounterLabel
 @onready var time_label = $TimeLabel
 
+@onready var inventory_drawer = $InventoryPanel/SlidingDrawer
+
 @onready var Cursor_Default_Texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 @onready var monster_book_button = get_node("MainScreen/ScreenBorders/BookShelf/MonsterBook")
 @onready var guntheidon_orb_button = get_node("MainScreen/ScreenBorders/BookShelf/GuntheidonOrb")
@@ -164,3 +166,14 @@ func _on_mouse_exited():
 
 func _on_skip_day_button_pressed():
 	DayNightCycle.skip_to_next_day()
+
+func close_inventory_drawer():
+	# Ensure the reference to the inventory drawer is valid before proceeding
+	if inventory_drawer != null:
+		# Check if drawer is open using its position or other conditions if is_open() isn't available
+		if inventory_drawer.position.x > -924:  # Assuming min_x_value = -924 is closed state
+			inventory_drawer.position.x = -924  # Set the position to the closed state
+			print("Closing inventory drawer")
+			GameManager.play_sound("drawer")  # Optionally, play a sound when closing
+	else:
+		print("Error: Inventory drawer reference is null")
