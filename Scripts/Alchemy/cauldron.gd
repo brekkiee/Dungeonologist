@@ -7,53 +7,38 @@ extends Node2D
 @onready var slot2 = $IngredientSlots/Slot2
 @onready var icon1 = $IngredientSlots/Slot1/Icon1
 @onready var icon2 = $IngredientSlots/Slot2/Icon2
-# Removed reference to ladle
-# @onready var ladle = $Ladle
+@onready var ladle = $Ladle
 @onready var color_timer = Timer.new()
 
 ## Colour Variants ##
-# Ensure the file paths are correctly cased
 @onready var anim_liquid_red = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png")
 @onready var anim_liquid_blue = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_1.png")
 @onready var anim_liquid_green = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_2.png")
-@onready var anim_liquid_yellow = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_3.png")
-@onready var anim_liquid_orange = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_4.png")
-@onready var anim_liquid_violet = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_5.png")
-@onready var anim_liquid_indigo = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_6.png")
 
 func _ready():
 	add_child(color_timer)
 	color_timer.one_shot = true
 	color_timer.connect("timeout", Callable(self, "_on_timer_timeout"))
-	
-	# Removed ladle connection
-	# ladle.connect("stirred_mixture", Callable(self, "stir_mixture"))
-	
-	# Connect signals from ingredient slots
+
 	slot1.connect("item_added_to_slot", Callable(self, "_on_item_added_to_slot"))
 	slot1.connect("item_removed_from_slot", Callable(self, "_on_item_removed_from_slot"))
 	slot2.connect("item_added_to_slot", Callable(self, "_on_item_added_to_slot"))
 	slot2.connect("item_removed_from_slot", Callable(self, "_on_item_removed_from_slot"))
-	
-	# Connect input event from ClickableArea
+
 	$ClickableArea.input_pickable = true
 	$ClickableArea.connect("input_event", Callable(self, "_on_Cauldron_input_event"))
-	
-	liquid.texture = anim_liquid_red
-	anim_splash.animation = "brew_splash_red"
-	anim_bubble.animation = "brew_bubble_red"
+
+	_set_liquid_color("red")
 	anim_bubble.play()
 
 func _on_Cauldron_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and ladle.is_following_mouse == true:
 		stir_mixture()
 
 func stir_mixture():
-	print("Stir Mixture Called")
 	if slot1.item_data != null and slot2.item_data != null:
 		mix_ingredients()
 	else:
-		# Give player feedback that ingredients are missing
 		print("Need at least 2 ingredients to mix")
 
 func mix_ingredients():
@@ -69,12 +54,10 @@ func mix_ingredients():
 		required_items.sort()
 		if required_items == ingredients:
 			recipe_found = true
-			print("Correct recipe called")
 			_show_potion_mixture(true)
 			get_node("PotionSuccess").texture = recipe.result.Sprite
 			await get_tree().create_timer(1).timeout
 			get_node("PotionSuccess").texture = null
-			# Add potion to inventory
 			InventoryManager.add_potion_inventory_item(recipe.result)
 			break
 
@@ -84,32 +67,38 @@ func mix_ingredients():
 	_clear_slots()
 
 func _clear_slots():
-	# Clear the slots
 	slot1.item_data = null
 	icon1.texture = null
 	slot2.item_data = null
 	icon2.texture = null
 
 func _on_item_added_to_slot(slot, item_data):
-	# Additional logic can be added here if needed
 	pass
 
 func _on_item_removed_from_slot(slot, item_data):
 	InventoryManager.add_plant_inventory_item(item_data)
 
 func _show_potion_mixture(correct_recipe: bool):
-	print("correct_recipe: ", correct_recipe)
 	await get_tree().create_timer(1.0).timeout
 	if correct_recipe:
-		liquid.texture = anim_liquid_blue
-		anim_bubble.animation = "brew_bubble_blue"
+		_set_liquid_color("blue")
 	else:
-		liquid.texture = anim_liquid_green
-		anim_bubble.animation = "brew_bubble_green"
-	# Start timer to reset color
+		_set_liquid_color("green")
 	color_timer.start(3)
 
+func _set_liquid_color(color: String):
+	match color:
+		"red":
+			liquid.texture = anim_liquid_red
+			anim_bubble.animation = "brew_bubble_red"
+			anim_splash.animation = "brew_splash_red"
+		"blue":
+			liquid.texture = anim_liquid_blue
+			anim_bubble.animation = "brew_bubble_blue"
+		"green":
+			liquid.texture = anim_liquid_green
+			anim_bubble.animation = "brew_bubble_green"
+
 func _on_timer_timeout():
-	liquid.texture = anim_liquid_red  # Reset to default color
-	anim_bubble.animation = "brew_bubble_red"
+	_set_liquid_color("red")
 	anim_splash.visible = false

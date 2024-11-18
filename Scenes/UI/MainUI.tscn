@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="12_x6kwb"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/Tools/magnifying_glass.tscn" id="13_tcum6"]
 [ext_resource type="PackedScene" uid="uid://cpqpr6qjm2oe6" path="res://Scenes/Tools/petting_hand.tscn" id="14_e26kt"]
-[ext_resource type="Texture2D" uid="uid://ddlalbsjbif15" path="res://Assets/Sprites/Emotes/emote_8_Shock.png" id="17_f76ys"]
+[ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="17_35o0s"]
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="23_bct5r"]
 [ext_resource type="Texture2D" uid="uid://dm7jyd33vbgl0" path="res://Assets/UI/item_ToolTip.png" id="24_q7w0o"]
@@ -302,19 +302,18 @@ texture = ExtResource("11_ltjqf")
 [node name="InvAlert" type="TextureRect" parent="InventoryPanel/SlidingDrawer/DrawerHandle"]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 16.5
-offset_top = -55.0001
-offset_right = 66.5
-offset_bottom = -5.00008
+anchors_preset = -1
+anchor_left = 0.578
+anchor_top = 0.438
+anchor_right = 3.519
+anchor_bottom = 0.823
+offset_left = 0.00252628
+offset_top = 0.0600891
+offset_right = 0.00570679
+offset_bottom = 0.0100555
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.637045
-texture = ExtResource("17_f76ys")
+texture = ExtResource("17_35o0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryPanel/SlidingDrawer/DrawerHandle"]
 position = Vector2(8.82849, 64.5002)
@@ -433,6 +432,22 @@ theme_override_fonts/font = ExtResource("23_bct5r")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxTexture_mwn11")
 text = "Skip Day"
+
+[node name="Alert" type="TextureRect" parent="SkipDayButton"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.803
+anchor_top = 0.742
+anchor_right = 1.451
+anchor_bottom = 3.065
+offset_left = 0.0340195
+offset_top = -0.00199509
+offset_right = -0.0219727
+offset_bottom = -0.0149765
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_35o0s")
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]

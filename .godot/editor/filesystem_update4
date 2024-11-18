@@ -4,3 +4,17 @@ res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
 res://Scripts/Inventory/inventory_item.gd
+res://Assets/Alchemy/Cauldron.tscn
+res://Scripts/Alchemy/cauldron.gd
+res://Assets/Monsters/monster_common_shrooman.tscn
+res://Scripts/Enclosure/MonsterBase.gd
+res://Scripts/Inventory/tool_box.gd
+res://Scenes/UI/scene_change_buttons.tscn
+res://Scenes/Windows/MainWindow.tscn
+res://Singletons/InventoryManager.gd
+res://Scenes/UI/Expedition/ExpeditionsUI.tscn
+res://Scenes/UI/Expedition/ExpeditionsUI.gd
+res://Singletons/ExpeditionManager.gd
+res://Scripts/UI/UI.gd
+res://Scripts/Alchemy/ladle.gd
+res://Scenes/Windows/alchemy_lab.tscn

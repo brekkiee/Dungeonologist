@@ -5,6 +5,8 @@ var available_adventurers = {}  # Dictionary of adventurers with their levels an
 var expedition_slots = 1  # Number of expeditions that can be run simultaneously
 
 var expeditionUI_instance = null  # This will be set by ExpeditionsUI.gd
+var skip_day_button_alert = null
+var first_expedition = true
 
 func SetItem(ItemName: String):  # Set potion stats
 	match ItemName:
@@ -36,6 +38,9 @@ func start_expedition(expoData, adventurer, potion):
 		# Start the expedition countdown timer in the UI
 		if expeditionUI_instance != null:
 			expeditionUI_instance.start_countdown(expoData.time)
+		skip_day_button_alert = GameManager.main_ui.get_node("SkipDayButton/Alert")
+		if first_expedition:
+			skip_day_button_alert.visible = true
 	else:
 		print("No available slots for more expeditions.")
 

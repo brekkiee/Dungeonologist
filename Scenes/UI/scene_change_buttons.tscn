@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cvuklclh6nau4" path="res://Assets/Sprites/UI/btn_Grow_0.png" id="8_ka5h2"]
 [ext_resource type="Texture2D" uid="uid://jx7y5swpvpui" path="res://Assets/Sprites/UI/btn_Grow_1.png" id="9_gaiva"]
 [ext_resource type="Texture2D" uid="uid://bcvi1ryaqqjkk" path="res://Assets/Sprites/UI/btn_Expe_0.png" id="9_l6ro0"]
-[ext_resource type="Texture2D" uid="uid://ddlalbsjbif15" path="res://Assets/Sprites/Emotes/emote_8_Shock.png" id="9_ra0kd"]
+[ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="9_m126e"]
 [ext_resource type="Texture2D" uid="uid://bb4tuupk4qv5h" path="res://Assets/Sprites/UI/btn_Expe_1.png" id="10_wvulv"]
 [ext_resource type="Texture2D" uid="uid://cl0q3oe0opra" path="res://Assets/Sprites/UI/btn_Grow_3.png" id="10_xxead"]
 [ext_resource type="Texture2D" uid="uid://ctp36e4a4ioq4" path="res://Assets/Sprites/UI/btn_Script_3.png" id="13_qsyac"]
@@ -116,19 +116,16 @@ button_group = ExtResource("5_n0l7k")
 
 [node name="InvAlert" type="TextureRect" parent="AlchemyLabButton"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1.00002
-offset_top = 12.0
-offset_right = 51.0
-offset_bottom = 62.0
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.75
+anchor_right = 1.875
+anchor_bottom = 2.0
+offset_left = 1.14441e-05
+offset_bottom = 1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.637045
-texture = ExtResource("9_ra0kd")
+texture = ExtResource("9_m126e")
 
 [node name="GardenButton" type="Button" parent="."]
 visible = false
@@ -153,19 +150,17 @@ button_group = ExtResource("5_n0l7k")
 
 [node name="InvAlert" type="TextureRect" parent="GardenButton"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.99997
-offset_top = 11.0
-offset_right = 47.0
-offset_bottom = 61.0
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.75
+anchor_right = 1.85
+anchor_bottom = 2.0
+offset_left = 3.43323e-05
+offset_right = 5.34058e-05
+offset_bottom = 1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.637045
-texture = ExtResource("9_ra0kd")
+texture = ExtResource("9_m126e")
 
 [node name="ExpeditionsButton" type="Button" parent="."]
 visible = false
@@ -190,19 +185,15 @@ button_group = ExtResource("5_n0l7k")
 
 [node name="InvAlert" type="TextureRect" parent="ExpeditionsButton"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = 11.0
-offset_right = 48.0
-offset_bottom = 61.0
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.725
+anchor_right = 1.9
+anchor_bottom = 1.975
+offset_right = -2.28882e-05
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.637045
-texture = ExtResource("9_ra0kd")
+texture = ExtResource("9_m126e")
 
 [connection signal="pressed" from="MonsterEnclosureButton" to="." method="_on_monster_enclosure_button_pressed"]
 [connection signal="pressed" from="AlchemyLabButton" to="." method="_on_alchemy_lab_button_pressed"]

@@ -21,7 +21,7 @@ var countdown_timer = null
 func _ready():
 	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
-
+	
 	# Register this instance with ExpeditionManager
 	ExpeditionManager.expeditionUI_instance = self
 

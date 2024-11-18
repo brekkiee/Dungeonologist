@@ -6,6 +6,7 @@ extends Control
 @onready var time_label = $TimeLabel
 
 @onready var inventory_drawer = $InventoryPanel/SlidingDrawer
+@onready var skip_day_button_alert = $SkipDayButton/Alert
 
 @onready var Cursor_Default_Texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 @onready var monster_book_button = get_node("MainScreen/ScreenBorders/BookShelf/MonsterBook")
@@ -166,6 +167,8 @@ func _on_mouse_exited():
 
 func _on_skip_day_button_pressed():
 	DayNightCycle.skip_to_next_day()
+	if skip_day_button_alert.visible == true:
+		skip_day_button_alert.visible = false
 
 func close_inventory_drawer():
 	# Ensure the reference to the inventory drawer is valid before proceeding

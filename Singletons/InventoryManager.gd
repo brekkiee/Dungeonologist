@@ -2,7 +2,7 @@ extends Node
 
 var inventory_panel_parent: Control
 # Number of items allowed in one row ( Array Control)
-var max_items_in_row = 15
+var max_items_in_row = 18
 # Stores all plants in the inventory
 var current_plant_inventory = []
 # Stores all potions in the inventory
