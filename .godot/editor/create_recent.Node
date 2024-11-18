@@ -1,12 +1,13 @@
+Label
+Control
+AnimatedSprite2D
 Button
 CollisionShape2D
 TextureRect
 MarginContainer
 Area2D
-Control
 TextureButton
 CanvasLayer
-Label
 VBoxContainer
 HBoxContainer
 PopupPanel
@@ -15,7 +16,6 @@ NinePatchRect
 Popup
 Container
 Sprite2D
-AnimatedSprite2D
 AudioStreamPlayer2D
 Timer
 Camera2D

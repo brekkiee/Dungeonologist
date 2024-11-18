@@ -11,6 +11,13 @@ var rewardUI = null
 
 @onready var flyer_texture_rect = $PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1
 
+@onready var expedition_countdown = $ExpeditionCountdown  # Adjust the node path if necessary
+@onready var countdown_label = $ExpeditionCountdown/CountdownLabel
+@onready var expedition_anim = $ExpeditionCountdown/ExpeditionAnim
+
+var countdown_time_remaining = 0.0
+var countdown_timer = null
+
 func _ready():
 	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
@@ -33,6 +40,45 @@ func _ready():
 		print("Error: 'ExpeditionRewards' node not found")
 	else:
 		rewardUI.visible = false
+	
+	expedition_countdown.visible = false
+
+func start_countdown(total_time):
+	expedition_countdown.visible = true
+	expedition_anim.play("adventuring")
+	countdown_time_remaining = total_time
+	countdown_label.text = format_time(countdown_time_remaining)
+	if countdown_timer != null:
+		countdown_timer.stop()
+		remove_child(countdown_timer)
+	countdown_timer = Timer.new()
+	countdown_timer.wait_time = 1.0
+	countdown_timer.one_shot = false
+	countdown_timer.connect("timeout", Callable(self, "_on_countdown_timer_timeout"))
+	add_child(countdown_timer)
+	countdown_timer.start()
+
+func _on_countdown_timer_timeout():
+	countdown_time_remaining -= 1.0
+	if countdown_time_remaining <= 0.0:
+		countdown_label.text = "Expedition Complete"
+		countdown_timer.stop()
+		expedition_countdown.visible = false
+	else:
+		countdown_label.text = format_time(countdown_time_remaining)
+
+func stop_countdown():
+	if countdown_timer != null:
+		countdown_timer.stop()
+		remove_child(countdown_timer)
+		countdown_timer = null
+	expedition_countdown.visible = false
+
+func format_time(seconds):
+	seconds = int(seconds)
+	var minutes = int(seconds / 60)
+	seconds = int(seconds % 60)
+	return "%dm %ds" % [minutes, seconds]
 
 func show_rewards(rewards):
 	rewardUI.visible = true

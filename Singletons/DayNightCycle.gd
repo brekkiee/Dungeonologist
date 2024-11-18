@@ -136,3 +136,4 @@ func skip_to_next_day():
 	is_day = true
 	emit_signal("day_started", day_count)
 	print("Day skipped to: ", day_count)
+	ExpeditionManager.complete_all_expeditions()

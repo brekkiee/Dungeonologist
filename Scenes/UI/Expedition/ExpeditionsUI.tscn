@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dmu3k3gncmnnf"]
+[gd_scene load_steps=37 format=3 uid="uid://dmu3k3gncmnnf"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionsUI.gd" id="1_0jrf1"]
 [ext_resource type="Texture2D" uid="uid://vh3trvjvu4md" path="res://Assets/Sprites/Expeditions/bg_Expe.png" id="2_ij7ww"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://070j6i5fa6cb" path="res://Assets/Sprites/Expeditions/expedition_loading_bar.png" id="6_ph7lu"]
 [ext_resource type="PackedScene" uid="uid://tfr5aen1tpy" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn" id="7_anmr1"]
 [ext_resource type="PackedScene" uid="uid://injcvdbqywyq" path="res://Scenes/UI/Expedition/ExpeditionRewards.tscn" id="8_xeqvu"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="9_1gix1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl8gd"]
 texture = ExtResource("2_ij7ww")
@@ -133,13 +134,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_86dhq")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_g0a21")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_weo1r")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_t3fpb")
 }, {
 "duration": 1.0,
@@ -260,15 +261,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ddwew")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_utfuy")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6c583")
 
-[node name="ExpeditionAnimSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(697, 417)
-scale = Vector2(4.29, 4.29)
-sprite_frames = SubResource("SpriteFrames_1nvi6")
-animation = &"adventuring"
-autoplay = "adventuring"
-frame_progress = 0.958615
-
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BagPopUp" parent="." instance=ExtResource("7_anmr1")]
@@ -282,5 +274,42 @@ visible = false
 layout_mode = 1
 offset_left = 125.0
 offset_right = 125.0
+
+[node name="ExpeditionCountdown" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.401
+anchor_top = 0.611
+anchor_right = 0.824
+anchor_bottom = 0.77
+offset_left = 0.0479736
+offset_top = 0.071991
+offset_right = -0.248047
+offset_bottom = 0.039978
+
+[node name="ExpeditionAnim" type="AnimatedSprite2D" parent="ExpeditionCountdown"]
+position = Vector2(243, 51)
+scale = Vector2(4.29, 4.29)
+sprite_frames = SubResource("SpriteFrames_1nvi6")
+animation = &"adventuring"
+autoplay = "adventuring"
+frame_progress = 0.936786
+
+[node name="CountdownLabel" type="Label" parent="ExpeditionCountdown"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = -0.447
+anchor_right = 0.842
+offset_left = -0.232002
+offset_top = -2.959
+offset_right = -0.0540466
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("9_1gix1")
+theme_override_font_sizes/font_size = 25
+text = "Time Remaining: 00 MIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="PC/ExpoditionBoard/TextureRect/HBoxContainer/Expedtion1/Button" to="." method="on_button_pressed_expo1"]

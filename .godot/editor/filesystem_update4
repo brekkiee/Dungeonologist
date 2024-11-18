@@ -4,8 +4,8 @@ res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
 res://Singletons/ExpeditionManager.gd
-res://Singletons/Expedition.gd
-res://Scenes/UI/Expedition/ExpeditionRewards.gd
 res://Scenes/UI/Expedition/ExpeditionsUI.gd
 res://Assets/Alchemy/Cauldron.tscn
-res://Singletons/InventoryManager.gd
+res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
+res://Singletons/DayNightCycle.gd
+res://Scenes/UI/MainUI.tscn
