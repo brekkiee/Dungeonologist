@@ -1,3 +1,6 @@
+res://Assets/Sprites/UI
+C:/Users/danie/Downloads
+C:/Users/danie/Documents/Torrens/2024/PPR301/Dundeonologist
 res://Assets/Sprites/Expeditions
 res://Assets/Sprites/Dialogue
 res://Styles
@@ -6,9 +9,7 @@ res://Quests/Dialogue/DialogueText
 res://Assets/Sprites/Emotes
 res://Scripts/Enclosure/SpeciesResources
 res://Assets/Sprites/InventoryIcons
-C:/Development/Games/Packaging/Dungeonology
 res://Items
-res://Assets/Sprites/UI
 res://Expeditions
 res://Scripts/Inventory
 res://Scripts/Expeditions
@@ -19,4 +20,3 @@ res://Scripts/Enclosure
 res://Scripts/Quests
 res://Singletons
 res://Scenes/Windows
-res://Scripts/UI
