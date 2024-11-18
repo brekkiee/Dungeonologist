@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cva5fiyessctr"
-path="res://.godot/imported/minor_stamina_potion_icon.png-147c4a60141832dafa569897bc8ab64b.ctex"
+uid="uid://butat8aiq4v2u"
+path="res://.godot/imported/potion_ 1_Red.png-452b3e001922b9a35071060be2a32e91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/minor_stamina_potion_icon.png"
-dest_files=["res://.godot/imported/minor_stamina_potion_icon.png-147c4a60141832dafa569897bc8ab64b.ctex"]
+source_file="res://Assets/Sprites/Alchemy/potion_ 1_Red.png"
+dest_files=["res://.godot/imported/potion_ 1_Red.png-452b3e001922b9a35071060be2a32e91.ctex"]
 
 [params]
 

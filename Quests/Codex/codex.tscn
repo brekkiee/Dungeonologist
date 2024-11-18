@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="3_vewcg"]
 [ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
-[ext_resource type="Texture2D" uid="uid://cg2fyq2cmaigd" path="res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png" id="6_25oeb"]
+[ext_resource type="Texture2D" uid="uid://cg2fyq2cmaigd" path="res://Assets/Sprites/InventoryIcons/oldhealth.png" id="6_qs2vo"]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 z_index = 3
@@ -233,7 +233,7 @@ clip_contents = true
 custom_minimum_size = Vector2(220, 245)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("6_25oeb")
+texture = ExtResource("6_qs2vo")
 expand_mode = 5
 
 [node name="DetailsVBoxContainer" type="VBoxContainer" parent="VBoxContainerLHSPotion"]

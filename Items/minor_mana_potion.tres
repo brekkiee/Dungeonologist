@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c5l7vsmwrpj8q"]
 
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_em534"]
-[ext_resource type="Texture2D" uid="uid://bnfe7mvgy3xum" path="res://Assets/Sprites/InventoryIcons/minor_mana_potion_icon.png" id="1_gh03m"]
+[ext_resource type="Texture2D" uid="uid://doudblgh4hrpl" path="res://Assets/Sprites/InventoryIcons/minor_mana_potion.png" id="1_mprus"]
 
 [resource]
 script = ExtResource("1_em534")
 Name = "Minor Mana Potion"
 Type = 6
-Sprite = ExtResource("1_gh03m")
+Sprite = ExtResource("1_mprus")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0

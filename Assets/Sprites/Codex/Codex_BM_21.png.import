@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnfe7mvgy3xum"
-path="res://.godot/imported/minor_mana_potion_icon.png-14aea9cbab23b67a1824b260788d0f89.ctex"
+uid="uid://cq7qxgayipi5"
+path="res://.godot/imported/Codex_BM_21.png-fdde4c1d47507ea1a46512da151e520e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/InventoryIcons/minor_mana_potion_icon.png"
-dest_files=["res://.godot/imported/minor_mana_potion_icon.png-14aea9cbab23b67a1824b260788d0f89.ctex"]
+source_file="res://Assets/Sprites/Codex/Codex_BM_21.png"
+dest_files=["res://.godot/imported/Codex_BM_21.png-fdde4c1d47507ea1a46512da151e520e.ctex"]
 
 [params]
 

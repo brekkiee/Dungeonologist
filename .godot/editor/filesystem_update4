@@ -18,3 +18,8 @@ res://Singletons/ExpeditionManager.gd
 res://Scripts/UI/UI.gd
 res://Scripts/Alchemy/ladle.gd
 res://Scenes/Windows/alchemy_lab.tscn
+res://Items/minor_health_potion.tres
+res://Items/minor_mana_potion.tres
+res://Items/minor_stamina_potion.tres
+res://Quests/Codex/CodexContent/MonsterEntries.json
+res://Quests/Codex/codex.tscn

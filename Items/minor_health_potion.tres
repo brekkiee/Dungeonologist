@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://byin7y1bcfcn7"]
 
-[ext_resource type="Texture2D" uid="uid://cg2fyq2cmaigd" path="res://Assets/Sprites/InventoryIcons/minor_health_potion_icon.png" id="1_e33ck"]
+[ext_resource type="Texture2D" uid="uid://ddwqpio0g3chh" path="res://Assets/Sprites/InventoryIcons/minor_health_potion.png" id="1_n28xq"]
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_u64nf"]
 
 [resource]
 script = ExtResource("1_u64nf")
 Name = "Minor Health Potion"
 Type = 6
-Sprite = ExtResource("1_e33ck")
+Sprite = ExtResource("1_n28xq")
 drop_rate = 1.0
 min_quantity = 0
 max_quantity = 0
