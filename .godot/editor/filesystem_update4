@@ -17,3 +17,8 @@ res://Scripts/Alchemy/cauldron.gd
 res://Singletons/QuestManager.gd
 res://Singletons/Expedition.gd
 res://Singletons/ExpeditionManager.gd
+res://Scripts/Inventory/ToolTooltip.tscn
+res://Scripts/Inventory/tool_icon.gd
+res://Scripts/Inventory/ToolTooltip.gd
+res://Scenes/UI/Inventory/InvItemTooltip.gd
+res://Scenes/UI/Inventory/InvItemTooltip.tscn

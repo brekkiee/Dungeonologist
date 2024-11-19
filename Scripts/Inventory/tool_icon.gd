@@ -5,8 +5,12 @@ extends Node2D
 @export var normal_sprite: Texture2D
 @export var hover_sprite: Texture2D
 @export var tool_name: String = ""
+@export var tool_use: String = ""
 
 @onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
+@onready var tooltip_template = preload("res://Scripts/Inventory/ToolTooltip.tscn")
+
+var tooltip = null
 
 # Inform the toolbox that the tool is clicked
 # Simplified click detection to use a single function
@@ -22,6 +26,9 @@ func set_hover(is_hover):
 
 func _on_mouse_entered():
 	set_hover(true)
+	tooltip = tooltip_template.instantiate()
+	tooltip.Config(self)
+	add_child(tooltip)
 	Input.set_custom_mouse_cursor(cursor_pointer_texture)
 
 func _on_mouse_exited():

@@ -397,11 +397,13 @@ tool_nodes = [NodePath("MagnifyingGlass"), NodePath("PettingHand")]
 z_index = 0
 position = Vector2(633, 606)
 tool_name = "MagnifyingGlass"
+tool_use = "Use to inspect monsters"
 
 [node name="PettingHand" parent="ToolBox" instance=ExtResource("14_e26kt")]
 z_index = 0
 position = Vector2(712, 606)
 tool_name = "PettingHand"
+tool_use = "Use to pet monsters"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
