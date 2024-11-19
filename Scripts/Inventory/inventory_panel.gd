@@ -52,3 +52,11 @@ func _on_mouse_entered():
 # Called when the mouse exits the area
 func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)  # Reset to default cursor
+
+func open_slightly():
+	# Define the target position for the drawer to be slightly open
+	var target_x = clamp(-800, min_x_value, max_x_value)
+	# Create a tween to animate the drawer's position
+	var tween = create_tween()
+	tween.tween_property(self, "position:x", target_x, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+

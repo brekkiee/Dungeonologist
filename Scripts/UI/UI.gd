@@ -46,7 +46,8 @@ func _ready():
 	update_day_counter(DayNightCycle.day_count)
 	DialogueManager.connect("chat_finished", Callable(self, "_on_guntheidon_chat_finished"))
 	InventoryManager.alert = get_node("InventoryPanel/SlidingDrawer/DrawerHandle/InvAlert")
-
+	inventory_alert.connect("visibility_changed", Callable(self, "_on_inventory_alert_visibility_changed"))
+	
 	# Connect mouse enter and exit signals for MonsterBook and GuntheidonOrb
 	if monster_book_button:
 		monster_book_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
@@ -170,3 +171,9 @@ func close_inventory_drawer():
 			GameManager.play_sound("drawer")  # Optionally, play a sound when closing
 	else:
 		print("Error: Inventory drawer reference is null")
+
+func _on_inventory_alert_visibility_changed():
+	if inventory_alert.visible == true:
+		# Open the drawer slightly
+		if inventory_drawer:
+			inventory_drawer.open_slightly()
