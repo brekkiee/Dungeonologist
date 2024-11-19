@@ -1,0 +1,80 @@
+[
+	{
+		"type": "potion",
+		"name": "Minor Health Potion",
+		"sprite": "res://Assets/Sprites/InventoryIcons/minor_health_potion.png",
+		"diet": "Location: Alchemy Lab",
+		"habitat": "Ingredients: Dawn Grass + Blood Cap",
+		"facts": "Equip to explorers in before sending them on an expedition for +1 Material Carry Capacity.",
+		"notes": "",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "",
+				"completion": ""
+			},
+			{
+				"task_num": 1,
+				"question": "",
+				"completion": ""
+			},
+			{
+				"task_num": 2,
+				"question": "",
+				"completion": ""
+			}
+		]
+	},
+	{
+		"type": "potion",
+		"name": "Minor Mana Potion",
+		"sprite": "res://Assets/Sprites/InventoryIcons/minor_mana_potion.png",
+		"diet": "Location: Alchemy Lab",
+		"habitat": "Ingredients: Thimbleweed + Slime Residue",
+		"facts": "Equip to explorers in before sending them on an expedition for Rare Monster Rate Increase (+10%), Common Monster Rate Increase (-20%)",
+		"notes": "",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "",
+				"completion": ""
+			},
+			{
+				"task_num": 1,
+				"question": "",
+				"completion": ""
+			},
+			{
+				"task_num": 2,
+				"question": "",
+				"completion": ""
+			}
+		]
+	},
+	{
+		"type": "potion",
+		"name": "Minor Stamina Potion",
+		"sprite": "res://Assets/Sprites/InventoryIcons/minor_stamina_potion.png",
+		"diet": "Location: Alchemy Lab",
+		"habitat": "Ingredients: Blood Cap + Shroom Spores",
+		"facts": "Equip to explorers before sending them on an expedition for a +50% chance to obtain 2 monsters",
+		"notes": "",
+		"research_tasks": [
+			{
+				"task_num": 0,
+				"question": "",
+				"completion": ""
+			},
+			{
+				"task_num": 1,
+				"question": "",
+				"completion": ""
+			},
+			{
+				"task_num": 2,
+				"question": "",
+				"completion": ""
+			}
+		]
+	}
+]

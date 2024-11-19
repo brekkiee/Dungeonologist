@@ -1,5 +1,12 @@
-res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
+res://Quests/Codex/codex.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Quests/epic_quest.gd
+res://Scripts/ResearchTasks/codex.gd
+res://Quests/Codex/CodexContent/PotionEntries.json
+res://Quests/Codex/CodexContent/MonsterEntries.json
+res://Scenes/UI/scene_change_buttons.tscn
+res://Styles/scenes_button_group.tres
+res://Styles/codex_tabs_group.tres
+res://Scenes/UI/MainUI.tscn

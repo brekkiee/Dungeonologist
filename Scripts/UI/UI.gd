@@ -79,20 +79,6 @@ func _on_monster_book_pressed():
 		monster_book_open = false
 	GameManager.play_sound("click")
 
-func _on_quest_book_pressed():
-	print("Quests button pressed")
-	if not quest_book_open:
-		print("Opening QuestLog")
-		quest_book_open = true
-		quest_book = quest_book_scene.instantiate()
-		print("Codex instantiated")
-		call_deferred("add_child", quest_book)    
-		print("Codex added to scene tree")
-	elif quest_book_open:
-		print("Closing Codex")
-		quest_book.queue_free()
-		quest_book_open = false
-
 func _on_crystal_ball_pressed():
 	print("Crystal ball pressed")
 	if DialogueManager.is_chat_active:

@@ -1,7 +1,7 @@
+Button
 Label
 Control
 AnimatedSprite2D
-Button
 CollisionShape2D
 TextureRect
 MarginContainer

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=34 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
 [ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
@@ -43,6 +43,8 @@ size = Vector2(14, 127)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mwn11"]
 texture = ExtResource("24_q7w0o")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqlmn"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -431,6 +433,7 @@ offset_bottom = -0.152008
 theme_override_fonts/font = ExtResource("23_bct5r")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxTexture_mwn11")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dqlmn")
 text = "Skip Day"
 
 [node name="Alert" type="TextureRect" parent="SkipDayButton"]

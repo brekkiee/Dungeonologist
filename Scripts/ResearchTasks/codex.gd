@@ -13,42 +13,77 @@ var research_answer_labels = []
 @onready var prev_page_button = $PrevPageButton
 @onready var next_page_button = $NextPageButton
 @onready var close_button = $CloseButton
+@onready var potions_tab = $PotionsTab
+@onready var monsters_tab = $MonstersTab
+@onready var plants_tab = $PlantsTab
 
 @onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 
 var entries = []
 var current_index = 0
+var codex_section = "monsters"  # Default section to load
 
 func _ready():
-	
+	$MonstersTab.set_pressed_no_signal(true)
 	if not validate_nodes():
 		return
-	
-		# Initialize research question and answer labels
+
+	# Initialize research question and answer labels
 	for i in range(3):
 		var question_label_path = "VBoxContainerRHS/ResearchQuestion%d" % i
 		var answer_label_path = "VBoxContainerRHS/CenterContainer%d/ResearchAnswer%d" % [i, i]
-		
+
 		var question_label = get_node_or_null(question_label_path)
 		var answer_label = get_node_or_null(answer_label_path)
-		
+
 		if question_label and answer_label:
 			research_question_labels.append(question_label)
 			research_answer_labels.append(answer_label)
 		else:
 			push_error("Failed to find labels for index " + str(i))
-	
+
 	clear_content()
-	load_json("res://Quests/Codex/CodexContent/MonsterEntries.json")
+	load_section(codex_section)
 	display_entry(0)
-	
+
+	# Connect button signals
+	prev_page_button.connect("pressed", Callable(self, "_on_prev_page_button_pressed"))
+	next_page_button.connect("pressed", Callable(self, "_on_next_page_button_pressed"))
+	close_button.connect("pressed", Callable(self, "_on_close_button_pressed"))
+	potions_tab.connect("pressed", Callable(self, "_on_potions_tab_pressed"))
+	monsters_tab.connect("pressed", Callable(self, "_on_monsters_tab_pressed"))
+	plants_tab.connect("pressed", Callable(self, "_on_plants_tab_pressed"))
+
 	prev_page_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	prev_page_button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 	next_page_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	next_page_button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 	close_button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	close_button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
-	
+	potions_tab.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	potions_tab.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	monsters_tab.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	monsters_tab.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	plants_tab.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	plants_tab.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+
+# Load the JSON file based on the selected section
+var tab_paths := {
+	"monsters": "res://Quests/Codex/CodexContent/MonsterEntries.json",
+	"potions": "res://Quests/Codex/CodexContent/PotionEntries.json",
+	"plants": "res://Quests/Codex/CodexContent/PlantEntries.json"
+}
+
+func load_section(section: String):
+	codex_section = section
+	var json_path = tab_paths.get(section, "")
+	if json_path != "":
+		load_json(json_path)
+		current_index = 0
+		display_entry(current_index)
+	else:
+		push_error("Invalid section specified: " + section)
+
 # Clear the content of the labels and sprite to ensure they are empty before loading the new content
 func clear_content():
 	name_label.text = ""
@@ -57,7 +92,7 @@ func clear_content():
 	habitat_label.text = ""
 	facts_label.text = ""
 	notes_label.text = ""
-	
+
 	for question_label in research_question_labels:
 		question_label.text = ""
 	for answer_label in research_answer_labels:
@@ -93,35 +128,24 @@ func load_json(json_path: String):
 	if data == null:
 		push_error("Failed to parse JSON")
 		return
-		
+
 	entries = data
 
 func display_entry(index: int):
+	clear_content()
+	if index < 0 or index >= entries.size():
+		return
+
 	var entry = entries[index]
-	
-	if entry["type"] == "monster":
-		name_label.text = entry["name"]
-		sprite_node.texture = load(entry["sprite"])
-		diet_label.text = "Diet: " + entry["diet"]
-		habitat_label.text = "Habitat: " + entry["habitat"]
-		facts_label.text = entry["facts"]
-		notes_label.text = entry["notes"]
-	elif entry["type"] == "potion":
-		name_label.text = entry["name"]
-		sprite_node.texture = load(entry["sprite"])
-		diet_label.text = entry["diet"]
-		habitat_label.text = entry["habitat"]
-		facts_label.text = entry["facts"]
-		notes_label.text = entry["notes"]
-	elif entry["type"] == "quest":
-		name_label.text = entry["name"]
-		sprite_node.texture = load(entry["sprite"])
-		diet_label.text = ""
-		habitat_label.text = ""
-		facts_label.text = entry["facts"]
-		notes_label.text = entry["notes"]
-	
-	var research_tasks = entry["research_tasks"]
+
+	name_label.text = entry["name"]
+	sprite_node.texture = load(entry["sprite"])
+	diet_label.text = entry.get("diet", "")
+	habitat_label.text = entry.get("habitat", "")
+	facts_label.text = entry.get("facts", "")
+	notes_label.text = entry.get("notes", "")
+
+	var research_tasks = entry.get("research_tasks", [])
 	for i in range(research_tasks.size()):
 		var task_completed = false
 		if PlayerData.research_tasks_completed.has(entry["name"]):
@@ -145,16 +169,25 @@ func _on_next_page_button_pressed():
 		display_entry(current_index)
 		GameManager.play_sound("click")
 
-func _on_button_pressed():
-	research_answer_labels[0].visible = true
+func _on_close_button_pressed():
+	GameManager.close_codex()
+
+func _on_potions_tab_pressed():
+	load_section("potions")
+	GameManager.play_sound("click")
+
+func _on_monsters_tab_pressed():
+	load_section("monsters")
+	GameManager.play_sound("click")
+
+func _on_plants_tab_pressed():
+	load_section("plants")
+	GameManager.play_sound("click")
 
 # Called when the mouse enters the area
 func _on_mouse_entered():
-	Input.set_custom_mouse_cursor(cursor_pointer_texture)  # Set custom pointer cursor
+	Input.set_custom_mouse_cursor(cursor_pointer_texture)
 
 # Called when the mouse exits the area
 func _on_mouse_exited():
-	Input.set_custom_mouse_cursor(null)  # Reset to default cursor
-
-func _on_close_button_pressed():
-	GameManager.close_codex()
+	Input.set_custom_mouse_cursor(null)
