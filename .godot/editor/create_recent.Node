@@ -1,9 +1,9 @@
+TextureRect
 Button
 Label
 Control
 AnimatedSprite2D
 CollisionShape2D
-TextureRect
 MarginContainer
 Area2D
 TextureButton

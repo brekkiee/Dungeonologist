@@ -64,6 +64,7 @@ var sound_effects: Dictionary = {
 	"plant_complete": preload("res://Sounds/Effects/plant_complete.wav"),
 	"walk": preload("res://Sounds/Effects/walk.wav")
 }
+var first_time_alchemy_lab = true
 
 func _ready():
 	randomize()
@@ -204,6 +205,22 @@ func _goto_scene(scene_name: String):
 		elif player_monsters.size() > 0:
 			spawn_player_monsters()
 		DayNightCycle.start_time_progression()
+	elif scene_name == "AlchemyLab":
+		main_ui.visible = true
+		DayNightCycle.start_time_progression()
+		
+		# Check if it's the first time visiting the Alchemy Lab
+		if first_time_alchemy_lab:
+			first_time_alchemy_lab = false  # Update the flag to prevent future triggers
+			if main_ui != null:
+				var codex_alert = main_ui.get_node("MainScreen/ScreenBorders/BookShelf/MonsterBook/CodexAlert")
+				if codex_alert:
+					codex_alert.visible = true  # Make the Codex alert visible
+					print("Codex alert is now visible")
+				else:
+					print("Codex alert node not found")
+			else:
+				print("Main UI is null")
 	else:
 		main_ui.visible = true
 		DayNightCycle.start_time_progression()

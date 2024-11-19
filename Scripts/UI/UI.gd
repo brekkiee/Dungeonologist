@@ -7,6 +7,7 @@ extends Control
 
 @onready var inventory_drawer = $InventoryPanel/SlidingDrawer
 @onready var skip_day_button_alert = $SkipDayButton/Alert
+@onready var inventory_alert = $InventoryPanel/SlidingDrawer/DrawerHandle/InvAlert
 
 @onready var Cursor_Default_Texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 @onready var monster_book_button = get_node("MainScreen/ScreenBorders/BookShelf/MonsterBook")
@@ -34,7 +35,10 @@ var hint_files = {
 	"Nekomata": nekomata_hint_file,
 }
 
+var potions_alert = null
 var guntheidon_hint_open = false
+@onready var hint_alert = $MainScreen/ScreenBorders/BookShelf/GuntheidonOrb/HintOrbAlert
+@onready var codex_alert = $MainScreen/ScreenBorders/BookShelf/MonsterBook/CodexAlert
 
 func _ready():
 	randomize()
@@ -73,6 +77,7 @@ func _on_monster_book_pressed():
 		print("Codex instantiated")
 		call_deferred("add_child", monster_book)    
 		print("Codex added to scene tree")
+	
 	elif monster_book_open:
 		print("Closing Codex")
 		monster_book.queue_free()
@@ -81,6 +86,8 @@ func _on_monster_book_pressed():
 
 func _on_crystal_ball_pressed():
 	print("Crystal ball pressed")
+	if hint_alert.visible == true:
+		hint_alert.visible = false
 	if DialogueManager.is_chat_active:
 		DialogueManager.advance_text()
 	elif DialogueManager.chat_ended:
@@ -116,7 +123,6 @@ func _on_crystal_ball_pressed():
 			print("No hints available.")
 			guntheidon_hint_open = false
 
-
 func _on_guntheidon_chat_finished():
 	guntheidon_hint_open = false
 
@@ -142,11 +148,9 @@ func _get_research_task_name_from_chat_num(chat_num):
 			return "Nekomata"
 		_:
 			return ""
-
 # Called when the mouse enters the area
 func _on_mouse_entered():
 	Input.set_custom_mouse_cursor(Cursor_Default_Texture)  # Set custom default cursor
-
 # Called when the mouse exits the area
 func _on_mouse_exited():
 	Input.set_custom_mouse_cursor(null)  # Reset to default cursor

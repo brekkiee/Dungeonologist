@@ -10,6 +10,8 @@ extends Node2D
 @onready var ladle = $Ladle
 @onready var color_timer = Timer.new()
 
+var first_potion_mixed = true
+
 ## Colour Variants ##
 @onready var anim_liquid_red = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_0.png")
 @onready var anim_liquid_blue = preload("res://Assets/Sprites/Alchemy/brew_cauldron_liquid_1.png")
@@ -59,6 +61,9 @@ func mix_ingredients():
 			await get_tree().create_timer(1).timeout
 			get_node("PotionSuccess").texture = null
 			InventoryManager.add_potion_inventory_item(recipe.result)
+			if first_potion_mixed:
+				first_potion_mixed = false
+				GameManager.main_ui.inventory_alert.visible = true
 			break
 
 	if not recipe_found:

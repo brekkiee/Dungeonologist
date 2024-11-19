@@ -41,6 +41,7 @@ func start_expedition(expoData, adventurer, potion):
 		skip_day_button_alert = GameManager.main_ui.get_node("SkipDayButton/Alert")
 		if first_expedition:
 			skip_day_button_alert.visible = true
+			first_expedition = false
 	else:
 		print("No available slots for more expeditions.")
 

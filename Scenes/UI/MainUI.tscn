@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=36 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
 [ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ct6xxqc8akmjs" path="res://Assets/Sprites/Codex/tool_Codex_1.png" id="8_2fgt8"]
 [ext_resource type="Texture2D" uid="uid://ps7ie0rouux5" path="res://Assets/Sprites/UI/deco_Candle1.png" id="8_6hpuk"]
 [ext_resource type="PackedScene" uid="uid://cj7vyh4w4hv07" path="res://Scenes/UI/scene_change_buttons.tscn" id="9_17vtp"]
+[ext_resource type="Texture2D" uid="uid://0t8qajxxnjjm" path="res://Assets/Sprites/UI/Notif_BR_1.png" id="9_dg2an"]
 [ext_resource type="Texture2D" uid="uid://0ituu3hiartc" path="res://Assets/Sprites/UI/deco_Books_1.png" id="9_fds6c"]
 [ext_resource type="Texture2D" uid="uid://bmltqku14lj0d" path="res://Assets/Sprites/UI/drawer_open.png" id="9_kifj2"]
 [ext_resource type="Texture2D" uid="uid://d1yj7yjdq2knd" path="res://Assets/Sprites/UI/tool_CrystalBall_0.png" id="10_7t7ja"]
@@ -20,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/Inventory/tool_box.gd" id="12_x6kwb"]
 [ext_resource type="PackedScene" uid="uid://d1eahw0u8vb76" path="res://Scenes/Tools/magnifying_glass.tscn" id="13_tcum6"]
 [ext_resource type="PackedScene" uid="uid://cpqpr6qjm2oe6" path="res://Scenes/Tools/petting_hand.tscn" id="14_e26kt"]
+[ext_resource type="Texture2D" uid="uid://bmmfov4n6hf82" path="res://Assets/Sprites/UI/Notif_BL_1.png" id="14_ebjr6"]
 [ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="17_35o0s"]
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="23_bct5r"]
@@ -174,6 +176,7 @@ offset_right = 0.129974
 offset_bottom = -0.200012
 
 [node name="MonsterBook" type="TextureButton" parent="MainScreen/ScreenBorders/BookShelf"]
+z_index = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.607
@@ -194,6 +197,15 @@ stretch_mode = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainScreen/ScreenBorders/BookShelf/MonsterBook"]
 position = Vector2(54, 30.5)
 shape = SubResource("RectangleShape2D_gaqgx")
+
+[node name="CodexAlert" type="TextureRect" parent="MainScreen/ScreenBorders/BookShelf/MonsterBook"]
+visible = false
+layout_mode = 0
+offset_left = -37.0
+offset_top = -39.0
+offset_right = 32.0
+offset_bottom = 30.0
+texture = ExtResource("9_dg2an")
 
 [node name="Candle" type="TextureRect" parent="MainScreen/ScreenBorders/BookShelf"]
 layout_mode = 1
@@ -242,6 +254,20 @@ stretch_mode = 0
 position = Vector2(25, 23)
 scale = Vector2(2.51434, 2.4287)
 shape = SubResource("CircleShape2D_gx11f")
+
+[node name="HintOrbAlert" type="TextureRect" parent="MainScreen/ScreenBorders/BookShelf/GuntheidonOrb"]
+z_index = 11
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.731
+anchor_top = -0.804
+anchor_right = 2.154
+anchor_bottom = 0.5
+offset_left = -0.0119743
+offset_top = 0.024025
+offset_right = -0.00795746
+offset_bottom = 1.00003
+texture = ExtResource("14_ebjr6")
 
 [node name="Drawers" type="TextureRect" parent="MainScreen/ScreenBorders"]
 visible = false

@@ -38,6 +38,7 @@ func finished():
 						_:
 							InventoryManager.add_plant_inventory_item(r.item_data)
 				awarded_rewards.append(r)
+				GameManager.main_ui.inventory_alert.visible = true
 			else:
 				if not monster_awarded:
 					GameManager.award_monster(r.monster_name.name)

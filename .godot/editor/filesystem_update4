@@ -12,3 +12,8 @@ res://Styles/codex_tabs_group.tres
 res://Scenes/UI/MainUI.tscn
 res://Singletons/GameManager.gd
 res://Scripts/Enclosure/MonsterBase.gd
+res://Scripts/UI/UI.gd
+res://Scripts/Alchemy/cauldron.gd
+res://Singletons/QuestManager.gd
+res://Singletons/Expedition.gd
+res://Singletons/ExpeditionManager.gd

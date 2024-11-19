@@ -22,9 +22,16 @@ var research_answer_labels = []
 var entries = []
 var current_index = 0
 var codex_section = "monsters"  # Default section to load
+var codex_alert = null
+
+@onready var potions_alert = $PotionsAlert
 
 func _ready():
 	$MonstersTab.set_pressed_no_signal(true)
+	codex_alert = GameManager.main_ui.codex_alert
+	if codex_alert.visible == true:
+		codex_alert.visible = false
+		
 	if not validate_nodes():
 		return
 
@@ -46,6 +53,9 @@ func _ready():
 	load_section(codex_section)
 	display_entry(0)
 
+	if QuestManager.active_quest and QuestManager.active_quest.quest_name == "EpicQuest":
+		potions_alert.visible = true
+	
 	# Connect button signals
 	prev_page_button.connect("pressed", Callable(self, "_on_prev_page_button_pressed"))
 	next_page_button.connect("pressed", Callable(self, "_on_next_page_button_pressed"))
@@ -175,6 +185,7 @@ func _on_close_button_pressed():
 func _on_potions_tab_pressed():
 	load_section("potions")
 	GameManager.play_sound("click")
+	potions_alert.visible = false
 
 func _on_monsters_tab_pressed():
 	load_section("monsters")

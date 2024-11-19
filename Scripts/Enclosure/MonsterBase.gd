@@ -322,6 +322,7 @@ func collect_item():
 	_hide_emote()
 	Input.set_custom_mouse_cursor(null)
 	mouse_control.mouse_default_cursor_shape = Control.CURSOR_ARROW
+	GameManager.main_ui.inventory_alert.visible = true
 
 # Check if common slime research task is completed
 func check_common_slime_research_task():
