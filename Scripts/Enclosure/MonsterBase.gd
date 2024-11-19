@@ -41,6 +41,7 @@ var movement_direction = Vector2.ZERO
 @onready var hunger_meter_animation = $HungerAnimSprite2D
 @onready var happiness_meter_animation = $HappyAnimSprite2D
 @onready var emote_sprite = $EmoteSprite2D
+var emote_override = false
 
 # Timers
 @onready var hunger_timer = Timer.new()
@@ -48,6 +49,7 @@ var movement_direction = Vector2.ZERO
 @onready var pause_timer = Timer.new()
 @onready var visibility_timer = Timer.new()
 @onready var emote_timer = Timer.new()
+@onready var emote_override_timer = Timer.new()
 
 # Item drop variables
 @onready var item_id: int = species.item_type
@@ -73,6 +75,7 @@ func _ready():
 	add_child(pause_timer)
 	add_child(visibility_timer)
 	add_child(emote_timer)
+	add_child(emote_override_timer)
 	
 	# Load monster emotes
 	_load_emotes()
@@ -134,7 +137,7 @@ func _load_emotes():
 
 # Update monster visuals and emotes based on hunger and happiness
 func update_monster():
-	if not item_ready_to_collect:
+	if not item_ready_to_collect and not emote_override:
 		if happiness_meter == 0:
 			emote_sprite.texture = emote_sad
 		elif hunger_meter == 0:
@@ -144,7 +147,6 @@ func update_monster():
 		else:
 			emote_sprite.texture = emote_happy
 		_show_emote()
-	
 	_play_meter_animations()
 
 # Play hunger and happiness meter animations based on meter values
@@ -159,6 +161,7 @@ func _set_timer_properties():
 	_configure_timer(pause_timer, randf_range(min_idle_time, max_idle_time), true, "random_move")
 	_configure_timer(visibility_timer, 5.0, true, "_hide_meters")
 	_configure_timer(emote_timer, emote_time, true, "_hide_emote")
+	_configure_timer(emote_override_timer, emote_time, true, "_on_emote_override_timeout")
 
 # Generalized function to configure timers
 func _configure_timer(timer: Timer, wait_time: float, one_shot: bool, callback: String):
@@ -178,11 +181,19 @@ func _on_happiness_timer_timeout():
 		happiness_meter -= 1
 	update_monster()
 
+func _on_emote_override_timeout():
+	emote_override = false
+	update_monster()
+
 # Feed the monster if the food matches its diet
 func feed_monster():
 	var food_item = InventoryManager.held_item
 	if food_item in species.diet:
 		hunger_meter = 5
+		emote_override = true
+		emote_sprite.texture = emote_happy
+		_show_emote()
+		emote_override_timer.start()
 		update_monster()
 		QuestManager.on_monster_fed()
 		if species.name == "common_slime" and food_item not in foods_fed:
@@ -200,7 +211,10 @@ func feed_monster():
 # Pet the monster to increase its happiness
 func pet_monster():
 	happiness_meter = 5
+	emote_override = true
+	emote_sprite.texture = emote_happy
 	_show_emote()
+	emote_override_timer.start()
 	update_monster()
 	GameManager.play_sound("monster_happy1")
 
