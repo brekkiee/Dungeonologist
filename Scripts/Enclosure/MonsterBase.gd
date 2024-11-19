@@ -135,8 +135,10 @@ func _load_emotes():
 # Update monster visuals and emotes based on hunger and happiness
 func update_monster():
 	if not item_ready_to_collect:
-		if hunger_meter == 0 or happiness_meter == 0:
+		if happiness_meter == 0:
 			emote_sprite.texture = emote_sad
+		elif hunger_meter == 0:
+			emote_sprite.texture = emote_plead
 		elif hunger_meter <= 2 or happiness_meter <= 2:
 			emote_sprite.texture = emote_neutral
 		else:
@@ -181,7 +183,6 @@ func feed_monster():
 	var food_item = InventoryManager.held_item
 	if food_item in species.diet:
 		hunger_meter = 5
-		_show_emote()
 		update_monster()
 		QuestManager.on_monster_fed()
 		if species.name == "common_slime" and food_item not in foods_fed:
@@ -191,9 +192,11 @@ func feed_monster():
 		GameManager.play_sound("chew0")
 	else:
 		print("This monster doesn't eat that")
+		emote_sprite.texture = emote_sick
 		GameManager.play_sound("monster_sad0")
 		InventoryManager.item_mouse_follow.hide_tooltip()
-
+	_show_emote()
+	
 # Pet the monster to increase its happiness
 func pet_monster():
 	happiness_meter = 5
@@ -301,6 +304,7 @@ func collect_item():
 	GameManager.play_sound("monster_happy0")
 	items_dropped.clear()
 	item_ready_to_collect = false
+	emote_sprite.texture = null
 	_hide_emote()
 	Input.set_custom_mouse_cursor(null)
 	mouse_control.mouse_default_cursor_shape = Control.CURSOR_ARROW

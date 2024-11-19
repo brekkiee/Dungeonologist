@@ -45,6 +45,7 @@ var dinglebat_count = 0
 var shrooman_count = 0
 var plains_imp_present = false
 var other_carnivore_present = false
+var jelly_count = 0
 # Music & Sounds
 var sound_effect_stream_player: AudioStreamPlayer2D
 var sound_effects: Dictionary = {
@@ -302,6 +303,13 @@ func spawn_next_monster():
 		PlayerData.research_tasks_completed["Nekomata"][0] = true
 		PlayerData.save_data()
 		print("Research task 'Nekomata' completed")
+	
+	if species.name == "shallows_jelly":
+		jelly_count += 1
+		if jelly_count >= 4:
+			PlayerData.research_tasks_completed["Shallows Jelly"][0] = true
+			PlayerData.save_data()
+			print("Research task 'Shallows Jelly' completed")
 	# End research tasks check section
 
 	if pending_monsters.size() > 0:

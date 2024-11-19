@@ -10,3 +10,5 @@ res://Scenes/UI/scene_change_buttons.tscn
 res://Styles/scenes_button_group.tres
 res://Styles/codex_tabs_group.tres
 res://Scenes/UI/MainUI.tscn
+res://Singletons/GameManager.gd
+res://Scripts/Enclosure/MonsterBase.gd
