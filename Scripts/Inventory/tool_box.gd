@@ -42,4 +42,4 @@ func toolbox_click(tool_node):
 			current_tool_index = i
 			# Hide mouse cursor
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-
+			tool_node.hide_tooltip()

@@ -22,3 +22,5 @@ res://Scripts/Inventory/tool_icon.gd
 res://Scripts/Inventory/ToolTooltip.gd
 res://Scenes/UI/Inventory/InvItemTooltip.gd
 res://Scenes/UI/Inventory/InvItemTooltip.tscn
+res://Scripts/Inventory/inventory_item.gd
+res://Scripts/Inventory/tool_box.gd

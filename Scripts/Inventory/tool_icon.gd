@@ -25,6 +25,10 @@ func set_hover(is_hover):
 		sprite.texture = normal_sprite
 
 func _on_mouse_entered():
+	# Prevent tooltip appearing when tool is in use
+	if tool_box.current_tool == self:
+		return
+	
 	set_hover(true)
 	tooltip = tooltip_template.instantiate()
 	tooltip.Config(self)
@@ -33,7 +37,15 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	set_hover(false)
+	if tooltip:
+		hide_tooltip()
 	Input.set_custom_mouse_cursor(null)
+
+func hide_tooltip():
+	print("Hiding Tooltip")
+	if tooltip:
+		tooltip.queue_free()
+		tooltip = null
 
 # Checks if this tool is current active tool
 func is_active_tool():

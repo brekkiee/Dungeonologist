@@ -284,9 +284,9 @@ func _input_event(viewport, event, shape_idx):
 		var current_tool = toolbox.current_tool
 		if item_ready_to_collect:
 			collect_item()
-		elif current_tool and current_tool.tool_name == "PettingHand":
+		elif current_tool and current_tool.tool_name == "Petting Hand":
 			pet_monster()
-		elif current_tool and current_tool.tool_name == "MagnifyingGlass":
+		elif current_tool and current_tool.tool_name == "Magnifying Glass":
 			inspect_monster()
 		elif InventoryManager.item_mouse_follow != null:
 			feed_monster()
