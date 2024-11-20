@@ -35,7 +35,7 @@ func _ready():
 		popup.update()
 		popup.visible = false
 
-	rewardUI = get_node("ExpeditionRewards")  # Adjust the node path if necessary
+	rewardUI = ExpeditionManager.expeditionRewards  # Adjust the node path if necessary
 	if rewardUI == null:
 		print("Error: 'ExpeditionRewards' node not found")
 	else:

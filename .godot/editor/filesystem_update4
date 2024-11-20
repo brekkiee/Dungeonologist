@@ -3,3 +3,5 @@ res://Singletons/ExpeditionManager.gd
 res://Scenes/UI/Expedition/ExpeditionsUI.gd
 res://Scripts/UI/UI.gd
 res://Scenes/UI/MainUI.tscn
+res://Singletons/Expedition.gd
+res://Scenes/UI/Expedition/ExpeditionRewards.gd

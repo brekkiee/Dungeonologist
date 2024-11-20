@@ -10,6 +10,7 @@ var index: int
 
 var rng = RandomNumberGenerator.new()
 
+
 func set_timer(iTimer):
 	timer = iTimer
 	timer.connect("timeout", finished)
@@ -17,8 +18,9 @@ func set_timer(iTimer):
 
 func finished():
 	print("Expedition Completed, Starting Reward Distribution")
-
+	
 	var awarded_rewards: Array[RewardResource] = []
+	
 	var monster_awarded = false
 
 	for r in rewards:
@@ -30,13 +32,7 @@ func finished():
 				print("Reward ", r.item_data.Name, " has been given")
 				print("Reward Quantity: ", r.quantity)
 				print("Item Type: ", r.item_data.Type)
-				for i in range(r.quantity):
-					print(i)
-					match r.item_data.Type:
-						6:
-							InventoryManager.add_potion_inventory_item(r.item_data)
-						_:
-							InventoryManager.add_plant_inventory_item(r.item_data)
+				
 				awarded_rewards.append(r)
 				GameManager.main_ui.inventory_alert.visible = true
 			else:

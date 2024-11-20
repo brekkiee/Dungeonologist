@@ -25,6 +25,14 @@ func show_rewards():
 
 func _on_button_pressed():
 	self.visible = false
+	
+	for r in expo_rewards:
+		for i in range(r.quantity):
+			match r.item_data.Type:
+				6:
+					InventoryManager.add_potion_inventory_item(r.item_data)
+				_:
+					InventoryManager.add_plant_inventory_item(r.item_data)	
 	# Optionally queue_free() if you want to remove it from the scene tree
 	# queue_free()
 
