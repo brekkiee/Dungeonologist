@@ -46,6 +46,7 @@ func _ready():
 	update_day_counter(DayNightCycle.day_count)
 	DialogueManager.connect("chat_finished", Callable(self, "_on_guntheidon_chat_finished"))
 	InventoryManager.alert = get_node("InventoryPanel/SlidingDrawer/DrawerHandle/InvAlert")
+	ExpeditionManager.expeditionRewards = get_node("ExpeditionRewards")
 	inventory_alert.connect("visibility_changed", Callable(self, "_on_inventory_alert_visibility_changed"))
 	
 	# Connect mouse enter and exit signals for MonsterBook and GuntheidonOrb
