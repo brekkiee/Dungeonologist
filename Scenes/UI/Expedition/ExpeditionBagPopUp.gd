@@ -53,5 +53,7 @@ func _on_potion_slot_gui_input(event):
 # When Button is pressed
 func _on_button_pressed():
 	var expo = str(DungeonName,DungeonFloor)
+	get_node("BG/Info/HBoxContainer/Bag/PotionSlot/Potion").texture = null
+	current_potion = null
 	self.visible = false
 	ExpeditionManager.start_expedition(expos[expo], AdventurerName, current_potion)

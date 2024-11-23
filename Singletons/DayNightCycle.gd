@@ -50,6 +50,7 @@ func stop_time_progression():
 # Start the day cycle, without resetting the time if not required
 func start_day(reset_current_time = true):
 	is_day = true
+	ExpeditionManager.newDay = true
 	if reset_current_time:
 		current_time = 0.0
 	emit_signal("day_started", day_count)
@@ -80,6 +81,7 @@ func _on_day_cycle_complete():
 # Transition to the day cycle when the night completes
 func _on_night_cycle_complete():
 	day_count += 1
+	
 	print("DayNightCycle: _on_night_cycle_complete called, day_count: ", day_count)
 	start_day(true)
 
