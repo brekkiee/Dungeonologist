@@ -9,3 +9,5 @@ res://Singletons/ExpeditionManager.gd
 res://Singletons/DayNightCycle.gd
 res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
 res://Scenes/UI/Expedition/ExpeditionBagPopUp.gd
+res://Scenes/UI/Expedition/ExpeditionsUI.gd
+res://Expeditions/expo2.tres

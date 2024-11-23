@@ -1,0 +1,131 @@
+[gd_resource type="Resource" script_class="Expeditions" load_steps=33 format=3 uid="uid://vu6ah50dokru"]
+
+[ext_resource type="Resource" uid="uid://bqqmnjmin01jn" path="res://Items/lucky_coin.tres" id="1_k22hy"]
+[ext_resource type="Script" path="res://Singletons/RewardResource.gd" id="2_aaovs"]
+[ext_resource type="Resource" uid="uid://c3nrbrjlxbeee" path="res://Items/meat_steak.tres" id="3_q0ic8"]
+[ext_resource type="Resource" uid="uid://c70gnrvt17c8p" path="res://Items/meat_burger.tres" id="4_5wsjb"]
+[ext_resource type="Resource" uid="uid://crjqgise4kaqp" path="res://Items/meat_chicken.tres" id="5_dysj8"]
+[ext_resource type="Resource" uid="uid://dy3rbhyqkb00f" path="res://Items/meat_fish.tres" id="6_a0kmc"]
+[ext_resource type="Resource" uid="uid://ga586nfvmmim" path="res://Items/meat_organ.tres" id="7_jpeeb"]
+[ext_resource type="Resource" uid="uid://beorjykq5uqer" path="res://Items/blood_cap.tres" id="8_mknog"]
+[ext_resource type="Resource" uid="uid://bixu0x8twx5yy" path="res://Items/rotten_fruit.tres" id="9_rpuyt"]
+[ext_resource type="Resource" uid="uid://dhu2r2mhvms0h" path="res://Items/minor_stamina_potion.tres" id="10_chjdd"]
+[ext_resource type="Resource" uid="uid://dwvqs4e706ygk" path="res://Scripts/Enclosure/SpeciesResources/species_common_shrooman.tres" id="11_77rn3"]
+[ext_resource type="Resource" uid="uid://c006xxedkksd8" path="res://Scripts/Enclosure/SpeciesResources/species_forest_dinglebat.tres" id="12_sqti3"]
+[ext_resource type="Resource" uid="uid://dvo56rxhki1jb" path="res://Scripts/Enclosure/SpeciesResources/species_plains_imp.tres" id="13_gpkbx"]
+[ext_resource type="Resource" uid="uid://bcn8c8b4hh2ro" path="res://Scripts/Enclosure/SpeciesResources/species_shallows_jelly.tres" id="14_d2uu4"]
+[ext_resource type="Resource" uid="uid://dy53effmn4ivh" path="res://Scripts/Enclosure/SpeciesResources/species_nekomata.tres" id="15_lngc5"]
+[ext_resource type="Resource" uid="uid://464xev1yvx1j" path="res://Scripts/Enclosure/SpeciesResources/species_common_slime.tres" id="16_k8kbl"]
+[ext_resource type="Script" path="res://Singletons/Expedition.gd" id="17_atmyt"]
+
+[sub_resource type="Resource" id="Resource_iijcw"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("1_k22hy")
+quantity = 1
+chance = 10.0
+
+[sub_resource type="Resource" id="Resource_yi4hc"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("3_q0ic8")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_an3wr"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("4_5wsjb")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_ptcfn"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("5_dysj8")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_r53wd"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("6_a0kmc")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_ew0sc"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("7_jpeeb")
+quantity = 1
+chance = 50.0
+
+[sub_resource type="Resource" id="Resource_jtxdy"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("8_mknog")
+quantity = 1
+chance = 15.0
+
+[sub_resource type="Resource" id="Resource_sb1mk"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("9_rpuyt")
+quantity = 2
+chance = 80.0
+
+[sub_resource type="Resource" id="Resource_x2xmg"]
+script = ExtResource("2_aaovs")
+isItem = true
+item_data = ExtResource("10_chjdd")
+quantity = 1
+chance = 30.0
+
+[sub_resource type="Resource" id="Resource_qflgc"]
+script = ExtResource("2_aaovs")
+isItem = false
+monster_name = ExtResource("11_77rn3")
+quantity = 0
+chance = 30.0
+
+[sub_resource type="Resource" id="Resource_52sgf"]
+script = ExtResource("2_aaovs")
+isItem = false
+monster_name = ExtResource("12_sqti3")
+quantity = 0
+chance = 30.0
+
+[sub_resource type="Resource" id="Resource_57ji6"]
+script = ExtResource("2_aaovs")
+isItem = false
+monster_name = ExtResource("13_gpkbx")
+quantity = 0
+chance = 3.0
+
+[sub_resource type="Resource" id="Resource_u88po"]
+script = ExtResource("2_aaovs")
+isItem = false
+monster_name = ExtResource("14_d2uu4")
+quantity = 0
+chance = 5.0
+
+[sub_resource type="Resource" id="Resource_gf7xh"]
+script = ExtResource("2_aaovs")
+isItem = false
+monster_name = ExtResource("15_lngc5")
+quantity = 0
+chance = 1.0
+
+[sub_resource type="Resource" id="Resource_6fs3a"]
+script = ExtResource("2_aaovs")
+isItem = false
+monster_name = ExtResource("16_k8kbl")
+quantity = 1
+chance = 30.0
+
+[resource]
+script = ExtResource("17_atmyt")
+Dungeon = "The Great Tree"
+Floor = 2
+time = 600.0
+rewards = Array[ExtResource("2_aaovs")]([SubResource("Resource_iijcw"), SubResource("Resource_yi4hc"), SubResource("Resource_an3wr"), SubResource("Resource_ptcfn"), SubResource("Resource_r53wd"), SubResource("Resource_ew0sc"), SubResource("Resource_jtxdy"), SubResource("Resource_sb1mk"), SubResource("Resource_x2xmg"), SubResource("Resource_qflgc"), SubResource("Resource_52sgf"), SubResource("Resource_57ji6"), SubResource("Resource_u88po"), SubResource("Resource_gf7xh"), SubResource("Resource_6fs3a")])
