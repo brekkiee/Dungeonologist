@@ -9,8 +9,6 @@ var expeditionRewards = null # Set in the MainUI.GD
 var skip_day_button_alert = null
 var first_expedition = true
 
-var newDay = true
-
 func SetItem(ItemName: String):  # Set potion stats
 	match ItemName:
 		"Minor Mana Potion":
@@ -19,8 +17,7 @@ func SetItem(ItemName: String):  # Set potion stats
 			print("Material carry capacity + 1")
 
 func start_expedition(expoData, adventurer, potion):
-	if expeditions.size() < expedition_slots and newDay:
-		newDay = false
+	if expeditions.size() < expedition_slots:
 		var timer := Timer.new()
 		timer.one_shot = true
 		timer.wait_time = expoData.time

@@ -50,7 +50,6 @@ func stop_time_progression():
 # Start the day cycle, without resetting the time if not required
 func start_day(reset_current_time = true):
 	is_day = true
-	ExpeditionManager.newDay = true
 	if reset_current_time:
 		current_time = 0.0
 	emit_signal("day_started", day_count)

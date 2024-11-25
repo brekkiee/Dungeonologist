@@ -1,13 +1,7 @@
-res://Scenes/UI/MainUI.tscn
+res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
-res://Scenes/UI/Expedition/ExpeditionRewards.tscn
-res://Scenes/UI/StartMenuUI.tscn
-res://Scenes/UI/SettingsMenu.tscn
+res://Expeditions/expo2.tres
 res://Singletons/ExpeditionManager.gd
 res://Singletons/DayNightCycle.gd
-res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
-res://Scenes/UI/Expedition/ExpeditionBagPopUp.gd
-res://Scenes/UI/Expedition/ExpeditionsUI.gd
-res://Expeditions/expo2.tres
