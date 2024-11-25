@@ -24,8 +24,6 @@ offset_right = -1112.0
 offset_bottom = -608.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_qd0tr")
 

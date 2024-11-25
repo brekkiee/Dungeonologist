@@ -5,3 +5,9 @@ res://Expeditions/expo1.tres
 res://Expeditions/expo2.tres
 res://Singletons/ExpeditionManager.gd
 res://Singletons/DayNightCycle.gd
+res://Scenes/UI/Expedition/ExpeditionRewards.tscn
+res://Scenes/UI/Expedition/ExpeditionRewards.gd
+res://Scenes/UI/MainUI.tscn
+res://Scenes/UI/Inventory/InventoryItem.tscn
+res://Scenes/Windows/monster_enclosure.tscn
+res://Assets/Monsters/monster_common_shrooman.tscn

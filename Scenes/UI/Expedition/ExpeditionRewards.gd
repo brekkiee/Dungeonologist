@@ -6,6 +6,17 @@ var expo_rewards: Array[RewardResource] = []
 @onready var cursor_pointer_texture = preload("res://Assets/Sprites/UI/Cursor_Default.png")
 @onready var button = $BG/Button  # Adjust the node path if necessary
 
+var monsters = {
+	"common_shrooman": preload("res://Assets/Sprites/Monsters/CommonShrooman_Happy.png"),
+	"common_slime": preload("res://Assets/Sprites/Monsters/CommonSlime_Happy.png"),
+	"forest_dinglebat": preload("res://Assets/Sprites/Monsters/ForestDinglebat_Happy.png"),
+	"nekomata": preload("res://Assets/Sprites/Monsters/Nekomata_Happy.png"),
+	"plains_imp": preload("res://Assets/Sprites/Monsters/PlainsImp_Happy.png"),
+	"shallows_jelly": preload("res://Assets/Sprites/Monsters/ShallowsJelly_Happy.png"),
+
+}
+
+
 func _ready():
 	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
@@ -15,13 +26,15 @@ func _ready():
 func show_rewards():
 	self.visible = true
 	$BG/MC/VB/Title.text = expo_title  # Adjust the node path if necessary
-	var content_text = ""
 	for r in expo_rewards:
 		if r.isItem:
-			content_text += str(r.quantity) + "x " + r.item_data.Name + "\n"
-		else:
-			content_text += "1x " + r.monster_name.name + "\n"
-	$BG/MC/VB/Content.text = content_text  # Adjust the node path if necessary
+			var _inv_item = preload("res://Scenes/UI/Inventory/InventoryItem.tscn").instantiate()
+			_inv_item.ItemName = r.item_data.Name
+			_inv_item.ItemQuantity = r.quantity
+			_inv_item.data = r.item_data
+			_inv_item.get_node("TextureRect").texture = r.item_data.Sprite
+			$BG/MC/VB/Content/GridContainer.call_deferred("add_child", _inv_item)
+			
 
 func _on_button_pressed():
 	self.visible = false
