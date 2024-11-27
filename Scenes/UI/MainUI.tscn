@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://bmmfov4n6hf82" path="res://Assets/Sprites/UI/Notif_BL_1.png" id="14_ebjr6"]
 [ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="17_35o0s"]
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
-[ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="23_bct5r"]
 [ext_resource type="Texture2D" uid="uid://dm7jyd33vbgl0" path="res://Assets/UI/item_ToolTip.png" id="24_q7w0o"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="25_us811"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
@@ -421,16 +421,18 @@ texture = ExtResource("18_ex3na")
 z_index = 10
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.032
-anchor_top = 0.048
+anchor_left = 0.033
+anchor_top = 0.103
 anchor_right = 0.215
-anchor_bottom = 0.095
-offset_left = 0.136002
-offset_top = -0.104004
-offset_right = 40.32
-offset_bottom = 4.43999
+anchor_bottom = 0.151
+offset_left = -0.015995
+offset_top = 4.256
+offset_right = 41.32
+offset_bottom = 8.15199
 scale = Vector2(0.84, 0.88)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("25_us811")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="."]
 visible = false
@@ -450,16 +452,16 @@ theme_override_font_sizes/font_size = 25
 z_index = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.128
-anchor_top = 0.051
-anchor_right = 0.234
-anchor_bottom = 0.099
-offset_left = 0.543991
-offset_top = -0.0480003
-offset_right = 0.431976
-offset_bottom = -0.152008
-theme_override_fonts/font = ExtResource("23_bct5r")
-theme_override_font_sizes/font_size = 21
+anchor_left = 0.061
+anchor_top = 0.014
+anchor_right = 0.183
+anchor_bottom = 0.091
+offset_left = -0.272003
+offset_top = -0.0720005
+offset_right = 0.18399
+offset_bottom = 0.0319977
+theme_override_fonts/font = ExtResource("25_us811")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_mwn11")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dqlmn")
 text = "Skip Day"
