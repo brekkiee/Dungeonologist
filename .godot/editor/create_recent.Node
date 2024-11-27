@@ -1,10 +1,10 @@
+MarginContainer
+Control
 TextureRect
 Button
 Label
-Control
 AnimatedSprite2D
 CollisionShape2D
-MarginContainer
 Area2D
 TextureButton
 CanvasLayer

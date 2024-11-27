@@ -1,3 +1,4 @@
 res://Scenes/UI/MainUI.tscn
 res://Quests/Dialogue/chatbox.tscn
 res://Quests/quest_display.tscn
+res://Quests/Codex/codex.tscn
