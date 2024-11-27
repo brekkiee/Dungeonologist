@@ -2,3 +2,7 @@ res://Scenes/UI/MainUI.tscn
 res://Quests/Dialogue/chatbox.tscn
 res://Quests/quest_display.tscn
 res://Quests/Codex/codex.tscn
+res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
+res://Scenes/UI/Expedition/ExpeditionRewards.tscn
+res://Scenes/UI/Inventory/InvItemTooltip.tscn
+res://Scripts/Inventory/ToolTooltip.tscn
