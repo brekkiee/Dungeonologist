@@ -5,6 +5,7 @@ var available_adventurers = {}  # Dictionary of adventurers with their levels an
 var expedition_slots = 1  # Number of expeditions that can be run simultaneously
 
 var expeditionUI_instance = null  # This will be set by ExpeditionsUI.gd
+var expeditionRewards = null # Set in the MainUI.GD
 var skip_day_button_alert = null
 var first_expedition = true
 
@@ -60,9 +61,7 @@ func complete_expedition(expedition_index: int, awarded_rewards: Array[RewardRes
 			# Ensure it's visible
 			expeditionUI_instance.visible = true
 
-			# Access the ExpeditionRewards node
-			var expeditionRewards = expeditionUI_instance.get_node("ExpeditionRewards")  # Adjust the node path if necessary
-
+			# Set Variables in the Expedition Rewards then Show
 			expeditionRewards.set_expo_title("Expedition Complete")
 			expeditionRewards.set_expo_rewards(awarded_rewards)
 			expeditionRewards.show_rewards()

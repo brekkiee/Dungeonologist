@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bphpdmmsdqanf"]
+[gd_scene load_steps=37 format=3 uid="uid://bphpdmmsdqanf"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_my5jn"]
 [ext_resource type="Texture2D" uid="uid://bow3kd43jo7je" path="res://Assets/Sprites/UI/Overlay_Frame_Top.png" id="2_wqxa2"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="23_bct5r"]
 [ext_resource type="Texture2D" uid="uid://dm7jyd33vbgl0" path="res://Assets/UI/item_ToolTip.png" id="24_q7w0o"]
+[ext_resource type="PackedScene" uid="uid://injcvdbqywyq" path="res://Scenes/UI/Expedition/ExpeditionRewards.tscn" id="27_jgly5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
@@ -479,6 +480,19 @@ offset_bottom = -0.0149765
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_35o0s")
+
+[node name="ExpeditionRewards" parent="." instance=ExtResource("27_jgly5")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -200.0
+offset_right = 324.0
+offset_bottom = 200.0
 
 [connection signal="pressed" from="MainScreen/ScreenBorders/ChatWindow/Character/Button" to="MainScreen/ScreenBorders/ChatWindow/Character" method="_on_button_pressed"]
 [connection signal="pressed" from="MainScreen/ScreenBorders/BookShelf/MonsterBook" to="." method="_on_monster_book_pressed"]

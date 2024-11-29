@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://injcvdbqywyq"]
+[gd_scene load_steps=7 format=3 uid="uid://injcvdbqywyq"]
 
 [ext_resource type="Texture2D" uid="uid://3ynkmeie71c1" path="res://Assets/Sprites/Expeditions/Expe_QuestDisplay.png" id="1_c0edn"]
 [ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionRewards.gd" id="1_pgcew"]
+[ext_resource type="PackedScene" uid="uid://d0ixn7w31wao8" path="res://Scenes/UI/Inventory/InventoryItem.tscn" id="3_bseph"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1cnm"]
 font_size = 36
@@ -61,9 +62,17 @@ text = "Expedition Rewards"
 label_settings = SubResource("LabelSettings_g1cnm")
 horizontal_alignment = 1
 
-[node name="Content" type="Label" parent="BG/MC/VB"]
+[node name="Content" type="MarginContainer" parent="BG/MC/VB"]
 layout_mode = 2
-autowrap_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 40
+
+[node name="GridContainer" type="GridContainer" parent="BG/MC/VB/Content"]
+layout_mode = 2
+columns = 7
+
+[node name="InventoryItem" parent="BG/MC/VB/Content/GridContainer" instance=ExtResource("3_bseph")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="BG"]
 layout_mode = 1

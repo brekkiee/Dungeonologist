@@ -125,7 +125,7 @@ chance = 30.0
 
 [resource]
 script = ExtResource("1_u51ig")
-Dungeon = "expo"
+Dungeon = "The Great Tree"
 Floor = 1
 time = 600.0
 rewards = Array[ExtResource("1_cjwn5")]([SubResource("Resource_iijcw"), SubResource("Resource_yi4hc"), SubResource("Resource_an3wr"), SubResource("Resource_ptcfn"), SubResource("Resource_r53wd"), SubResource("Resource_ew0sc"), SubResource("Resource_jtxdy"), SubResource("Resource_sb1mk"), SubResource("Resource_x2xmg"), SubResource("Resource_qflgc"), SubResource("Resource_52sgf"), SubResource("Resource_57ji6"), SubResource("Resource_u88po"), SubResource("Resource_gf7xh"), SubResource("Resource_6fs3a")])

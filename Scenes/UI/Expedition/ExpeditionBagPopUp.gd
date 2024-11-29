@@ -14,16 +14,15 @@ var adventurers = {
 	"Colin": preload("res://Assets/Sprites/Characters/char_3_Colin.png")
 }
 
-var expos = {
-	"expo1": preload("res://Expeditions/expo1.tres")
-}
+var expo = null
 
 func _ready():
 	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 
 # Update the Data shown onscreen
-func update():
+func update(expoData: Expeditions):
+	expo = expoData
 	get_node("BG/Sign/DungeonFloor").text = str("Floor ",DungeonFloor);
 	get_node("BG/Sign/DungeonTitle").text = DungeonName;
 	get_node("BG/Info/HBoxContainer/VBoxContainer/AP/TextureRect").texture = adventurers[AdventurerName];
@@ -52,6 +51,7 @@ func _on_potion_slot_gui_input(event):
 
 # When Button is pressed
 func _on_button_pressed():
-	var expo = str(DungeonName,DungeonFloor)
+	get_node("BG/Info/HBoxContainer/Bag/PotionSlot/Potion").texture = null
+	current_potion = null
 	self.visible = false
-	ExpeditionManager.start_expedition(expos[expo], AdventurerName, current_potion)
+	ExpeditionManager.start_expedition(expo, AdventurerName, current_potion)

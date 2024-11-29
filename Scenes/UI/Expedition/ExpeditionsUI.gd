@@ -18,6 +18,17 @@ var rewardUI = null
 var countdown_time_remaining = 0.0
 var countdown_timer = null
 
+var level_1_expos = [
+	preload("res://Expeditions/expo1.tres"),
+	preload("res://Expeditions/expo2.tres")
+]
+
+var level_2_expos = {
+	
+}
+
+var expoData: Expeditions
+
 func _ready():
 	button.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	button.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
@@ -32,10 +43,10 @@ func _ready():
 		popup.DungeonName = "NULL"
 		popup.DungeonFloor = "Floor 0"
 		popup.AdventurerName = "Colin"
-		popup.update()
+		popup.update(null)
 		popup.visible = false
 
-	rewardUI = get_node("ExpeditionRewards")  # Adjust the node path if necessary
+	rewardUI = ExpeditionManager.expeditionRewards  # Adjust the node path if necessary
 	if rewardUI == null:
 		print("Error: 'ExpeditionRewards' node not found")
 	else:
@@ -95,13 +106,14 @@ func _on_mouse_exited():
 	flyer_texture_rect.texture = flyer_texture_normal
 
 func on_button_pressed_expo1():
-	print("Expedition 1 Button Pressed")
-
+	var rng = RandomNumberGenerator.new()
+	var index = rng.randi_range(0, level_1_expos.size() -1)
+	expoData = level_1_expos[index]
 	if popup != null:
-		popup.DungeonName = "expo"
-		popup.DungeonFloor = "1"
+		popup.DungeonName = expoData.Dungeon
+		popup.DungeonFloor = str(expoData.Floor)
 		popup.AdventurerName = "Colin"
-		popup.update()
+		popup.update(expoData)
 		popup.visible = true
 	else:
 		print("Error: 'popup' is null.")

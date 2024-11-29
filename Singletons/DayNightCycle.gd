@@ -80,6 +80,7 @@ func _on_day_cycle_complete():
 # Transition to the day cycle when the night completes
 func _on_night_cycle_complete():
 	day_count += 1
+	
 	print("DayNightCycle: _on_night_cycle_complete called, day_count: ", day_count)
 	start_day(true)
 
