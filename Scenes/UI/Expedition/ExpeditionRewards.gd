@@ -32,6 +32,7 @@ func show_rewards():
 			_inv_item.ItemName = r.item_data.Name
 			_inv_item.ItemQuantity = r.quantity
 			_inv_item.data = r.item_data
+			_inv_item.get_node("TextureRect/Label").text = str(r.quantity)
 			_inv_item.get_node("TextureRect").texture = r.item_data.Sprite
 			$BG/MC/VB/Content/GridContainer.call_deferred("add_child", _inv_item)
 			
