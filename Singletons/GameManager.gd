@@ -3,7 +3,7 @@ extends Node
 var current_scene: Node = null
 var scenes: Dictionary = {}
 
-@onready var start_menu_scene = preload("res://Scenes/Windows/start_menu.tscn")
+@onready var start_menu_scene = preload("res://Scenes/UI/StartMenuUI.tscn")
 @onready var monster_enclosure_scene = preload("res://Scenes/Windows/monster_enclosure.tscn")
 @onready var garden_scene = preload("res://Scenes/Windows/garden.tscn")
 @onready var alchemy_lab_scene = preload("res://Scenes/Windows/alchemy_lab.tscn")
@@ -15,6 +15,7 @@ var scenes: Dictionary = {}
 @onready var pause_menu: CanvasLayer = null
 @onready var main_window = null
 @onready var main_ui = null
+@onready var quest_ui = null
 # Monster resources
 var monster_scenes = {
 	"common_slime": preload("res://Assets/Monsters/monster_common_slime.tscn"),
@@ -66,6 +67,8 @@ var sound_effects: Dictionary = {
 }
 var first_time_alchemy_lab = true
 
+var first_start = true
+
 func _ready():
 	randomize()
 	add_main_ui_npc()
@@ -87,15 +90,21 @@ func start_game():
 		return
 		
 	main_window.visible = true
+	main_ui.visible = true
+	if !first_start:
+		quest_ui.visible = true
 	get_tree().root.add_child(main_window)
 	#print("MainWindow added to the scene tree.")
 	
 	if start_menu != null:
 		start_menu.queue_free()
 	
-	PlayerData.load_data()
+	if first_start:
+		PlayerData.load_data()
 	
-	QuestManager.add_quest("SettlingIn")
+		QuestManager.add_quest("SettlingIn")
+		first_start = false
+	DayNightCycle.start_time_progression()
 	# Ensure NPC updates according to the active quest
 	if npc:
 		npc.update_npc_sprite_based_on_active_quest()
@@ -115,6 +124,7 @@ func add_main_ui_npc():
 	#else:
 		#print("MainWindow instantiated successfully.")
 	main_ui = main_window.get_node("UI/MainUI")
+	quest_ui = main_window.get_node("UI/Quests")
 	main_window.visible = false  # Hide initially
 	get_tree().root.add_child(main_window)
 	
@@ -156,7 +166,7 @@ func assign_monster_spawn_locations():
 
 func change_scene(scene_name: String):
 	if current_scene == null or scene_name != current_scene.name:
-		#print("Changing to scene: " + scene_name)
+		print("Changing to scene: " + scene_name)
 		_close_ui_drawer()
 		_goto_scene(scene_name)
 
@@ -165,12 +175,29 @@ func _close_ui_drawer():
 		main_ui.close_inventory_drawer()
 
 func _goto_scene(scene_name: String):
+	
+	if scene_name == "StartMenu":
+		if current_scene != null:
+			current_scene.visible = false
+		PlayerData.save_data()
+		main_ui.visible = false
+		if !first_start:
+			quest_ui.visible = false
+		DayNightCycle.stop_time_progression()
+		start_menu = get_node("/root/StartMenu")
+
+		get_tree().root.add_child(start_menu_scene.instantiate())
+		scenes[scene_name] = start_menu_scene.instantiate()
+		current_scene = scenes[scene_name]
+		pause_menu.visible = false
+		return
+	
 	scene_spawn_point = get_node("/root/Header/SceneLoadPoint")
 
 	if scene_spawn_point == null:
 		print("Can't load scene - SceneLoadPoint not found")
 		return
-
+		
 	# Hide the current scene if any
 	if current_scene != null:
 		current_scene.visible = false
@@ -181,22 +208,19 @@ func _goto_scene(scene_name: String):
 		if new_scene:
 			scenes[scene_name] = new_scene
 			scene_spawn_point.add_child(new_scene)
-			#print("Scene added: " + new_scene.name)
+			print("Scene added: " + new_scene.name)
 		else:
 			print("Error: Scene instantiation failed for: " + scene_name)
 			return
 	else:
 		current_scene = scenes[scene_name]
 		current_scene.visible = true
-		#print("Using cached scene: " + current_scene.name)
+		print("Using cached scene: " + current_scene.name)
 
 	current_scene = scenes[scene_name]
 	print("Scene switched to: " + current_scene.name)
 
-	if scene_name == "StartMenu":
-		main_ui.visible = false
-		DayNightCycle.stop_time_progression()
-	elif scene_name == "MonsterEnclosure":
+	if scene_name == "MonsterEnclosure":
 		main_ui.visible = true
 		assign_monster_spawn_locations()
 		

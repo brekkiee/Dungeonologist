@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhf3suq5hqkjk"]
+[gd_scene load_steps=6 format=3 uid="uid://dhf3suq5hqkjk"]
 
 [ext_resource type="Script" path="res://Scripts/Quests/OnSceneChangeTrigger.gd" id="1_drlba"]
 [ext_resource type="PackedScene" uid="uid://bphpdmmsdqanf" path="res://Scenes/UI/MainUI.tscn" id="1_nqokc"]
 [ext_resource type="PackedScene" uid="uid://mkicu74u48ty" path="res://Scenes/UI/PauseMenu.tscn" id="2_pf38i"]
 [ext_resource type="AudioStream" uid="uid://bqpdm0mr0i0p8" path="res://Sounds/MainMusic.wav" id="3_1qbxi"]
+[ext_resource type="PackedScene" uid="uid://dp8nlnraqbmeg" path="res://Quests/quest_display.tscn" id="3_2iuog"]
 
 [node name="Header" type="Node2D"]
 script = ExtResource("1_drlba")
@@ -14,6 +15,8 @@ script = ExtResource("1_drlba")
 layer = 8
 
 [node name="MainUI" parent="UI" instance=ExtResource("1_nqokc")]
+
+[node name="Quests" parent="UI" instance=ExtResource("3_2iuog")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(339, 586)
