@@ -17,8 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_q7b5e")
-quest_name = NodePath("PanelContainer/VBoxContainer/QuestName")
-quest_text = NodePath("PanelContainer/VBoxContainer/QuestText")
+quest_name = NodePath("PanelContainer/MarginContainer/VBoxContainer/QuestName")
+quest_text = NodePath("PanelContainer/MarginContainer/VBoxContainer/QuestText")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -39,33 +39,42 @@ layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_fp30y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 clip_contents = true
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
-z_index = -1
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2tsrw")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 24
 text = "Quests"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="QuestName" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="QuestName" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2tsrw")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
+text = "Quest"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="QuestText" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="QuestText" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2tsrw")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
+text = "Stage"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

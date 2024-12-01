@@ -1,4 +1,5 @@
 res://Scenes/UI/MainUI.tscn
+<<<<<<< HEAD
 res://Assets/Animations/Alchemy/anim_Brew_splash.tres
 res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
@@ -13,3 +14,12 @@ res://Scenes/UI/StartMenuUI.tscn
 res://Scenes/UI/PauseMenu.tscn
 res://Quests/quest_display.tscn
 res://Singletons/QuestManager.gd
+=======
+res://Quests/Dialogue/chatbox.tscn
+res://Quests/quest_display.tscn
+res://Quests/Codex/codex.tscn
+res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
+res://Scenes/UI/Expedition/ExpeditionRewards.tscn
+res://Scenes/UI/Inventory/InvItemTooltip.tscn
+res://Scripts/Inventory/ToolTooltip.tscn
+>>>>>>> origin/Visual_Polish_Fonts_Etc

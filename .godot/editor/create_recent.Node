@@ -1,10 +1,8 @@
-ColorRect
-GridContainer
-TextureRect
 MarginContainer
+Control
+TextureRect
 Button
 Label
-Control
 AnimatedSprite2D
 CollisionShape2D
 Area2D
@@ -13,6 +11,7 @@ CanvasLayer
 VBoxContainer
 HBoxContainer
 PopupPanel
+GridContainer
 NinePatchRect
 Popup
 Container
@@ -21,6 +20,7 @@ AudioStreamPlayer2D
 Timer
 Camera2D
 PanelContainer
+ColorRect
 ScrollContainer
 CenterContainer
 CollisionPolygon2D

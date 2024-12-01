@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://tfr5aen1tpy"]
+[gd_scene load_steps=15 format=3 uid="uid://tfr5aen1tpy"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.gd" id="1_3s8g6"]
 [ext_resource type="Texture2D" uid="uid://b8x261ipqu838" path="res://Assets/Sprites/Expeditions/Expe_Exit_Sign.png" id="2_k717y"]
+[ext_resource type="FontFile" uid="uid://ty1a6jpkrkqh" path="res://Assets/Fonts/alagard.ttf" id="3_lvksi"]
 [ext_resource type="Texture2D" uid="uid://dmhht46gjb4nq" path="res://Assets/Sprites/Expeditions/Expe_Exit_BagSlot.png" id="3_ywxaw"]
 [ext_resource type="Texture2D" uid="uid://bkik4tcgqerwn" path="res://Assets/Sprites/Expeditions/Brew_Slot.png" id="4_77d3q"]
 [ext_resource type="Texture2D" uid="uid://3ynkmeie71c1" path="res://Assets/Sprites/Expeditions/Expe_QuestDisplay.png" id="4_h0eaq"]
@@ -67,9 +68,12 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lvksi")
+theme_override_font_sizes/font_size = 32
 text = "Dungeon Title"
 label_settings = SubResource("LabelSettings_82418")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DungeonFloor" type="Label" parent="BG/Sign"]
 layout_mode = 1
@@ -84,9 +88,12 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lvksi")
+theme_override_font_sizes/font_size = 16
 text = "Floor 99"
 label_settings = SubResource("LabelSettings_mrjsc")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Info" type="MarginContainer" parent="BG"]
 layout_mode = 1

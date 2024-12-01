@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://injcvdbqywyq"]
+[gd_scene load_steps=7 format=3 uid="uid://injcvdbqywyq"]
 
 [ext_resource type="Texture2D" uid="uid://3ynkmeie71c1" path="res://Assets/Sprites/Expeditions/Expe_QuestDisplay.png" id="1_c0edn"]
 [ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionRewards.gd" id="1_pgcew"]
+[ext_resource type="FontFile" uid="uid://ty1a6jpkrkqh" path="res://Assets/Fonts/alagard.ttf" id="3_gu1mh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1cnm"]
 font_size = 36
@@ -57,9 +58,12 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="BG/MC/VB"]
 layout_mode = 2
-text = "Expedition Rewards"
+theme_override_fonts/font = ExtResource("3_gu1mh")
+theme_override_font_sizes/font_size = 16
+text = "Loot"
 label_settings = SubResource("LabelSettings_g1cnm")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Content" type="MarginContainer" parent="BG/MC/VB"]
 layout_mode = 2
@@ -92,8 +96,11 @@ anchor_right = 0.9
 anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
-text = "Confirm"
+theme_override_fonts/font = ExtResource("3_gu1mh")
+theme_override_font_sizes/font_size = 16
+text = "Collect"
 label_settings = SubResource("LabelSettings_inhs5")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BG/Button" to="." method="_on_button_pressed"]

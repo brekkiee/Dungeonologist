@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://8yhuq2bbtqek"]
+[gd_scene load_steps=4 format=3 uid="uid://8yhuq2bbtqek"]
 
 [ext_resource type="Texture2D" uid="uid://dm7jyd33vbgl0" path="res://Assets/UI/item_ToolTip.png" id="1_ciexy"]
 [ext_resource type="Script" path="res://Scripts/Inventory/ToolTooltip.gd" id="2_3sdm3"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_sq27w"]
 
 [node name="InvItemTooltip" type="NinePatchRect"]
 z_index = 50
 offset_left = 10.0
 offset_top = -20.0
-offset_right = 160.0
-offset_bottom = 55.0
+offset_right = 196.0
+offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ciexy")
 patch_margin_left = 8
@@ -35,6 +36,8 @@ mouse_filter = 2
 
 [node name="ToolName" type="Label" parent="M/V"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sq27w")
+theme_override_font_sizes/font_size = 12
 text = "<Tool Name>
 "
 horizontal_alignment = 1
@@ -42,6 +45,7 @@ vertical_alignment = 1
 
 [node name="ToolUse" type="Label" parent="M/V"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sq27w")
 theme_override_font_sizes/font_size = 12
 text = "<Tool Use>
 "

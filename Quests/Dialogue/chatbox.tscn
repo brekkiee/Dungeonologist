@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxvqnrbmbgdpu"]
+[gd_scene load_steps=6 format=3 uid="uid://bxvqnrbmbgdpu"]
 
 [ext_resource type="Script" path="res://Scripts/Quests/chat_box.gd" id="1_dd7n4"]
 [ext_resource type="Texture2D" uid="uid://cm6rsa7rb4fbi" path="res://Assets/Sprites/Dialogue/Guntheidon/Guntheidon.png" id="2_37don"]
 [ext_resource type="Texture2D" uid="uid://cj32w87ulmafe" path="res://Assets/Sprites/Dialogue/textbox.png" id="3_mjs1g"]
-[ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="4_djoah"]
+[ext_resource type="FontFile" uid="uid://ty1a6jpkrkqh" path="res://Assets/Fonts/alagard.ttf" id="4_6mmfr"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="5_423n7"]
 
 [node name="Dialogue" type="Control" node_paths=PackedStringArray("chat", "character_name", "scroll_container")]
 z_index = 100
@@ -36,28 +37,32 @@ texture = ExtResource("3_mjs1g")
 region_rect = Rect2(0, 0, 308, 98)
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+clip_contents = false
 layout_mode = 0
-offset_left = 66.5928
-offset_top = 15.3868
-offset_right = 208.593
-offset_bottom = 39.3868
-scale = Vector2(3.608, 3.608)
+offset_left = 74.2265
+offset_top = 20.4758
+offset_right = 216.227
+offset_bottom = 44.4758
+scale = Vector2(5, 5)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_djoah")
-theme_override_font_sizes/normal_font_size = 15
+theme_override_fonts/normal_font = ExtResource("4_6mmfr")
+theme_override_font_sizes/normal_font_size = 16
 text = "Name"
+scroll_active = false
+autowrap_mode = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.063
-anchor_top = 0.269
-anchor_right = 0.973
-anchor_bottom = 0.938
-offset_left = -29.5638
-offset_top = -24.4018
-offset_right = -29.9738
-offset_bottom = -24.4238
+anchor_left = 0.045
+anchor_top = 0.213
+anchor_right = 0.959
+anchor_bottom = 0.879
+offset_left = 0.0899963
+offset_top = 0.0559921
+offset_right = -1168.48
+offset_bottom = -259.952
+scale = Vector2(5, 5)
 follow_focus = true
 horizontal_scroll_mode = 0
 
@@ -66,8 +71,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_djoah")
-theme_override_font_sizes/normal_font_size = 60
+theme_override_fonts/normal_font = ExtResource("5_423n7")
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Text"
 scroll_following = true
