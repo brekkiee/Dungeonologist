@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_skskk")
 name = "nekomata"
-diet = Array[String](["Meat Buger", "Meat Chicken", "Meat Organ", "Meat Steak", "Meat Fish"])
+diet = Array[String](["Meat Burger", "Meat Chicken", "Meat Organ", "Meat Steak", "Meat Fish"])
 habitats = Array[String](["Mountains"])
 drop_table = ExtResource("1_h2m0w")
 is_carnivore = true

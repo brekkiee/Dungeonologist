@@ -9,6 +9,7 @@ extends Node2D
 @onready var icon2 = $IngredientSlots/Slot2/Icon2
 @onready var ladle = $Ladle
 @onready var color_timer = Timer.new()
+@onready var ladle_alert = ladle.get_node("InvAlert")
 
 var first_potion_mixed = true
 
@@ -57,6 +58,7 @@ func mix_ingredients():
 		if required_items == ingredients:
 			recipe_found = true
 			_show_potion_mixture(true)
+			GameManager.play_sound("mission_completed")
 			get_node("PotionSuccess").texture = recipe.result.Sprite
 			await get_tree().create_timer(1).timeout
 			get_node("PotionSuccess").texture = null
@@ -70,6 +72,7 @@ func mix_ingredients():
 		_show_potion_mixture(false)
 
 	_clear_slots()
+	ladle_alert.visible = false
 
 func _clear_slots():
 	slot1.item_data = null
@@ -78,6 +81,10 @@ func _clear_slots():
 	icon2.texture = null
 
 func _on_item_added_to_slot(slot, item_data):
+	if slot1.item_data != null and slot2.item_data != null:
+		if GameManager.first_time_alchemy_lab == true:
+			ladle_alert.visible = true
+			GameManager.first_time_alchemy_lab = false
 	pass
 
 func _on_item_removed_from_slot(slot, item_data):

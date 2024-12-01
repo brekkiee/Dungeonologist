@@ -10,6 +10,7 @@ var original_position = Vector2.ZERO
 @onready var ladle_texture_highlighted = preload("res://Assets/Sprites/Alchemy/Brew_Ladle_1.png")
 
 @onready var ladle_sprite = $Sprite2D
+@onready var ladle_alert = $InvAlert
 
 func _ready():
 	original_position = position
@@ -24,6 +25,7 @@ func _input_event(viewport, event, shape_idx):
 			if not is_following_mouse:
 				# Start following mouse
 				is_following_mouse = true
+				ladle_alert.visible = false
 			else:
 				print("Stiring Mixture Cast")
 				# Stop following mouse

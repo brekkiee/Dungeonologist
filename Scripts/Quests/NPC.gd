@@ -16,6 +16,8 @@ extends Control
 @onready var cursor_chat_texture = preload("res://Assets/Sprites/UI/Cursor_Talk.png")
 @onready var char_sprite = get_node("Button")
 
+@onready var can_start_chat = true
+
 var already_met = false
 var dialogues = {
 	0: [],
@@ -84,13 +86,15 @@ func _load_dialogue():
 
 # Handle button press to start or continue the chat
 func _on_button_pressed():
-	if DialogueManager.is_chat_active:
-		DialogueManager.advance_text()
-	elif DialogueManager.chat_ended:
-		DialogueManager.close_chat_box()
-	else:
-		_start_chat(dialogues[0])
-		GameManager.play_sound("click")
+	if can_start_chat == true:
+		if DialogueManager.is_chat_active:
+			DialogueManager.advance_text()
+		elif DialogueManager.chat_ended:
+			DialogueManager.close_chat_box()
+			can_start_chat = false
+		else:
+			_start_chat(dialogues[0])
+			GameManager.play_sound("click")
 
 # Start a chat session using the provided array
 func _start_chat(dialogue_array: Array):

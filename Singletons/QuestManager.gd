@@ -3,6 +3,7 @@ extends Node
 @onready var quest_display_scene = preload("res://Quests/quest_display.tscn")
 @onready var character_sprite = null
 @onready var npc_button = null
+@onready var enclosure_alert = null
 
 var quest_display: Control
 var active_quest = null  # Only one active quest
@@ -80,6 +81,8 @@ func add_quest(quest_id: String):
 		#print("Started quest: ", quest_id)
 	else:
 		print("Failed to load quest script: ", quest_data["script"])
+	
+	enclosure_alert = get_node("/root/Header/UI/MainUI/SceneButtons/MonsterEnclosureButton/InvAlert")
 
 # Method to update the quest display
 func update_quest_display() -> void:
@@ -100,6 +103,8 @@ func progress_active_quest():
 			active_quest.progress_quest(current_stage)
 			update_quest_display()
 			GameManager.play_sound("new_mission")
+			if active_quest.quest_name == "SettlingIn" and current_stage == 3:
+				enclosure_alert.visible = true
 		else:
 			complete_active_quest()
 			GameManager.play_sound("mission_completed")
@@ -113,7 +118,7 @@ func complete_active_quest():
 		completed_quests.append(active_quest.quest_name)
 		
 		GameManager.npc.clear_dialogue()
-		
+		GameManager.npc.can_start_chat = true
 		if active_quest.quest_name == "SettlingIn":
 			active_quest = null
 			current_stage = 0

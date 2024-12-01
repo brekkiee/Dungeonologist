@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4lvsnq5ef3lw"]
+[gd_scene load_steps=46 format=3 uid="uid://c4lvsnq5ef3lw"]
 
 [ext_resource type="Texture2D" uid="uid://bb6nak0htrxdp" path="res://Assets/Sprites/Codex/Codex_Book.png" id="1_t6w4t"]
 [ext_resource type="Script" path="res://Scripts/ResearchTasks/codex.gd" id="2_shked"]
@@ -6,15 +6,55 @@
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_pdsf2"]
 [ext_resource type="FontFile" uid="uid://bau31tfee7vtd" path="res://Assets/Fonts/8bitlimr.ttf" id="3_vewcg"]
 [ext_resource type="Texture2D" uid="uid://buw8rrcrdjnk7" path="res://Assets/Sprites/Monsters/CommonShrooman_Happy.png" id="4_lbd4c"]
+[ext_resource type="Texture2D" uid="uid://d32sayb14nq6c" path="res://Assets/Sprites/UI/btn_CodexArrow_L_0.png" id="6_ak0cu"]
 [ext_resource type="Texture2D" uid="uid://cg2fyq2cmaigd" path="res://Assets/Sprites/InventoryIcons/oldhealth.png" id="6_qs2vo"]
+[ext_resource type="Texture2D" uid="uid://cmgievdtnu6x6" path="res://Assets/Sprites/UI/btn_CodexArrow_L_1.png" id="7_u17wa"]
 [ext_resource type="Texture2D" uid="uid://cr6hhu4sp011c" path="res://Assets/Sprites/Codex/Codex_BM_11.png" id="7_vwexi"]
+[ext_resource type="Texture2D" uid="uid://bfg3814tc5bxq" path="res://Assets/Sprites/UI/btn_CodexArrow_R_0.png" id="8_jj0f5"]
 [ext_resource type="Texture2D" uid="uid://emuulsybwdvg" path="res://Assets/Sprites/Codex/Codex_BM_10.png" id="8_vew1b"]
 [ext_resource type="Texture2D" uid="uid://cq7qxgayipi5" path="res://Assets/Sprites/Codex/Codex_BM_21.png" id="9_1s04t"]
 [ext_resource type="ButtonGroup" uid="uid://luv0i5t7cqlp" path="res://Styles/codex_tabs_group.tres" id="9_jvqrd"]
+[ext_resource type="Texture2D" uid="uid://cdvesbwk4xl7m" path="res://Assets/Sprites/UI/btn_CodexArrow_R_1.png" id="9_uetau"]
 [ext_resource type="Texture2D" uid="uid://b37hph8r0nuru" path="res://Assets/Sprites/Codex/Codex_BM_31.png" id="10_trstf"]
 [ext_resource type="Texture2D" uid="uid://beaacgr6b170u" path="res://Assets/Sprites/Codex/Codex_BM_20.png" id="10_w1o8p"]
+[ext_resource type="Texture2D" uid="uid://gvih83td67sc" path="res://Assets/Sprites/UI/btn_CodexX_0.png" id="12_fnsay"]
 [ext_resource type="Texture2D" uid="uid://b2kj5mad38ymh" path="res://Assets/Sprites/Codex/Codex_BM_30.png" id="12_vkyjp"]
+[ext_resource type="Texture2D" uid="uid://c2aptpss7jp0g" path="res://Assets/Sprites/UI/btn_CodexX_1.png" id="13_8jipc"]
 [ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="14_itwjw"]
+[ext_resource type="Texture2D" uid="uid://mm3y3bvej5qe" path="res://Assets/Sprites/UI/btn_CodexX_2.png" id="14_mdbux"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sonk2"]
+texture = ExtResource("6_ak0cu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfkyp"]
+texture = ExtResource("7_u17wa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1qln1"]
+texture = ExtResource("6_ak0cu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mw0j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7osou"]
+texture = ExtResource("8_jj0f5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijc3i"]
+texture = ExtResource("9_uetau")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6ji0"]
+texture = ExtResource("8_jj0f5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcu1o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8fgp"]
+texture = ExtResource("12_fnsay")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2wo0"]
+texture = ExtResource("13_8jipc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etigx"]
+texture = ExtResource("14_mdbux")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vws6f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrioo"]
 texture = ExtResource("7_vwexi")
@@ -230,19 +270,25 @@ fit_content = true
 
 [node name="PrevPageButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 525.0
-offset_right = 53.0
-offset_bottom = 533.0
-text = "<"
+offset_left = 37.0
+offset_top = 530.0
+offset_right = 67.0
+offset_bottom = 560.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_sonk2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lfkyp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1qln1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3mw0j")
 
 [node name="NextPageButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 741.0
-offset_top = 528.0
-offset_right = 749.0
-offset_bottom = 536.0
-text = ">"
+offset_top = 530.0
+offset_right = 771.0
+offset_bottom = 560.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_7osou")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ijc3i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g6ji0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gcu1o")
 
 [node name="VBoxContainerLHSPotion" type="VBoxContainer" parent="."]
 visible = false
@@ -323,7 +369,10 @@ anchor_bottom = 0.107
 offset_left = 0.00012207
 offset_top = 0.199999
 offset_bottom = -0.200005
-text = "X"
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8fgp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c2wo0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_etigx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vws6f")
 
 [node name="PotionsTab" type="Button" parent="."]
 layout_mode = 1

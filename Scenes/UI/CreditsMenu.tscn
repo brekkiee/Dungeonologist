@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3yirmb64h4sc"]
+
+[ext_resource type="Script" path="res://Scripts/UI/credits_menu.gd" id="1_c2aux"]
+[ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="2_7vtfy"]
+[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_qpun6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1liw0"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2aux")
+
+[node name="CreditsScreen" type="Panel" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1liw0")
+
+[node name="ScreenLabel" type="Label" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 0.242
+anchor_right = 0.576
+anchor_bottom = 0.315
+offset_left = -0.0560303
+offset_top = 0.18399
+offset_right = -0.552063
+offset_bottom = -0.12001
+theme_override_font_sizes/font_size = 31
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CreditsScreen"]
+layout_mode = 2
+offset_left = 444.0
+offset_top = 230.0
+offset_right = 742.0
+offset_bottom = 606.0
+texture = ExtResource("2_7vtfy")
+
+[node name="ButtonGridContainer" type="VBoxContainer" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -102.0
+offset_right = 156.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsScreen/ButtonGridContainer"]
+layout_mode = 2
+text = "
+Project Manager
+Aera Skimming
+
+Game Designer & Writer
+Aera Skimming
+
+Programmers
+Daniel Campbell, Aera Skimming, Joel Bernoth
+
+Artists
+Laurence Chan, Julia Parkinson, Xuan Liu
+
+Sound Designer
+Xuan Liu
+"
+fit_content = true
+tab_size = 11
+
+[node name="CloseButton" type="Button" parent="CreditsScreen/ButtonGridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qpun6")
+theme_override_font_sizes/font_size = 25
+text = "Close"

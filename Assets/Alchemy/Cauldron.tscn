@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://phbak2krsav4"]
+[gd_scene load_steps=55 format=3 uid="uid://phbak2krsav4"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemy/cauldron.gd" id="1_jvxlh"]
 [ext_resource type="Texture2D" uid="uid://txginxyc5aci" path="res://Assets/Sprites/Alchemy/Brew_cauldron_front.png" id="2_bb3mx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cemt6euqye1lp" path="res://Assets/Sprites/Alchemy/Placeholder_Ingredient_Slot.png" id="8_olqu1"]
 [ext_resource type="Script" path="res://Scripts/Alchemy/ingredient_slot.gd" id="9_auto5"]
 [ext_resource type="PackedScene" uid="uid://du2m3lbjkf1m" path="res://Assets/Alchemy/Ladle.tscn" id="11_8fc4n"]
+[ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="11_pbb8s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci1dm"]
 radius = 44.2675
@@ -414,6 +415,13 @@ scale = Vector2(9.16666, 3.3295)
 z_index = 4
 position = Vector2(249, -78)
 scale = Vector2(3, 3)
+
+[node name="InvAlert" type="TextureRect" parent="Ladle"]
+offset_left = 7.0
+offset_top = 13.6667
+offset_right = 39.0
+offset_bottom = 45.6667
+texture = ExtResource("11_pbb8s")
 
 [node name="PotionSuccess" type="TextureRect" parent="."]
 anchors_preset = 8

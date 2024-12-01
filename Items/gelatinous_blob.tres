@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ub2t8y6n465y"]
 
+[ext_resource type="Texture2D" path="res://Assets/Sprites/InventoryIcons/Drop_Mob_Slime.png" id="1_2n5ta"]
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_gnvp0"]
-[ext_resource type="Texture2D" uid="uid://x13juxu1itii" path="res://Assets/Sprites/InventoryIcons/gelatinous_blob_icon.png" id="1_pt7fs"]
 
 [resource]
 script = ExtResource("1_gnvp0")
 Name = "Gelatinous Blob"
 Type = 4
-Sprite = ExtResource("1_pt7fs")
+Sprite = ExtResource("1_2n5ta")
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 3

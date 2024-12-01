@@ -16,6 +16,9 @@ var scenes: Dictionary = {}
 @onready var main_window = null
 @onready var main_ui = null
 @onready var quest_ui = null
+@onready var first_monster_item = true
+@onready var first_potion_mix = true
+
 # Monster resources
 var monster_scenes = {
 	"common_slime": preload("res://Assets/Monsters/monster_common_slime.tscn"),

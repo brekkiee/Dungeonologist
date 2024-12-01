@@ -6,7 +6,7 @@
 		"diet": "Diet: Anything",
 		"habitat": "Habitat: Plains, Forests, Caves",
 		"facts": "Slimes can be found throughout dungeons all over the world. They can survive and adapt to any type of environment, making them a menace to dungeon ecosystems without adventurers to keep their numbers in check.",
-		"notes": "Notes",
+		"notes": "Research Tasks",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -32,7 +32,7 @@
 		"diet": "Diet: Fruit",
 		"habitat": "Habitat: Forests",
 		"facts": "Dinglebats are known for their affinity for fruits and can be seen darting between trees in search of their next snack. They are shy creatures, but struggle to hide due to the glowing orb on their head.",
-		"notes": "Notes",
+		"notes": "Research Tasks",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -58,7 +58,7 @@
 		"diet": "Diet: Anything",
 		"habitat": "Habitat: Forests, Caves",
 		"facts": "Shroomen seem to be able to communicate with others of their species without the need for vocalisations or body language.",
-		"notes": "Notes",
+		"notes": "Research Tasks",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -84,7 +84,7 @@
 		"diet": "Diet: Meat",
 		"habitat": "Habitat: Plains",
 		"facts": "Plains imps are mischievous creatures, known for playing pranks on novice adventurers. They live on a diet of meat, yet appear to lack the means to hunt their own prey.",
-		"notes": "Notes",
+		"notes": "Research Tasks",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -110,7 +110,7 @@
 		"diet": "Diet: Anything",
 		"habitat": "Habitat: Coast",
 		"facts": "Shallows jellies have translucent bodies, making them difficult to spot amongst the waves. Some decorate themselves with debris such as shells, coral and seaweed.",
-		"notes": "Notes",
+		"notes": "Research Tasks",
 		"research_tasks": [
 			{
 				"task_num": 0,
@@ -136,7 +136,7 @@
 		"diet": "Diet: Meat",
 		"habitat": "Habitat: Mountains",
 		"facts": "Nekomata are mysterious creatures, and have a complicated relationship with adventurers. There are multiple accounts of adventurers being rescued from danger by a benevolent nekomata.",
-		"notes": "Notes",
+		"notes": "Research Tasks",
 		"research_tasks": [
 			{
 				"task_num": 0,

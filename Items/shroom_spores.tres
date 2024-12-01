@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://0pedi1t65moj"]
 
-[ext_resource type="Texture2D" uid="uid://bnf5fbo8jvq88" path="res://Assets/Sprites/InventoryIcons/shroom_spores_icon.png" id="1_2ji8y"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/InventoryIcons/Drop_Mob_Spore.png" id="1_612mv"]
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_ipfba"]
 
 [resource]
 script = ExtResource("1_ipfba")
 Name = "Shroom Spores"
 Type = 5
-Sprite = ExtResource("1_2ji8y")
+Sprite = ExtResource("1_612mv")
 drop_rate = 1.0
 min_quantity = 1
 max_quantity = 3

@@ -105,3 +105,8 @@ func _input(event):
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				# Left mouse button pressed
 				advance_text()
+	elif chat_ended:
+		# If the chat has ended and the player clicks, close the chat box
+		if event is InputEventMouseButton and event.pressed:
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				close_chat_box()

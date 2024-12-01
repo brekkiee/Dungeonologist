@@ -55,3 +55,6 @@ func _on_button_pressed():
 	current_potion = null
 	self.visible = false
 	ExpeditionManager.start_expedition(expo, AdventurerName, current_potion)
+
+func _on_close_button_pressed():
+	self.visible = false

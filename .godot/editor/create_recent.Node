@@ -1,6 +1,10 @@
+AspectRatioContainer
 MarginContainer
-Control
 TextureRect
+HSeparator
+Panel
+RichTextLabel
+Control
 Button
 Label
 AnimatedSprite2D
@@ -24,7 +28,6 @@ ColorRect
 ScrollContainer
 CenterContainer
 CollisionPolygon2D
-RichTextLabel
 CharacterBody2D
 StaticBody2D
 Node

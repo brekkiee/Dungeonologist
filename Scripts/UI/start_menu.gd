@@ -14,6 +14,13 @@ func _on_settings_button_pressed():
 	start_menu_screen.visible = false
 	settings_menu.connect("menu_closed", Callable(self, "_on_settings_menu_closed"))
 
+func _on_credits_button_pressed():
+	var credits_scene = preload("res://Scenes/UI/CreditsMenu.tscn")
+	var credits_menu = credits_scene.instantiate()
+	add_child(credits_menu)
+	start_menu_screen.visible = false
+	credits_menu.connect("menu_closed", Callable(self, "_on_settings_menu_closed"))
+
 func _on_settings_menu_closed():
 	start_menu_screen.visible = true
 

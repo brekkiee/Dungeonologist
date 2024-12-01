@@ -43,6 +43,7 @@ func _on_alchemy_lab_button_pressed():
 func _on_monster_enclosure_button_pressed():
 	GameManager.change_scene("MonsterEnclosure")
 	Input.set_custom_mouse_cursor(null)
+	enclosure_button.get_node("InvAlert").visible = false
 
 func _on_garden_button_pressed():
 	GameManager.change_scene("Garden")

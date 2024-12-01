@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tfr5aen1tpy"]
+[gd_scene load_steps=22 format=3 uid="uid://tfr5aen1tpy"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Expedition/ExpeditionBagPopUp.gd" id="1_3s8g6"]
 [ext_resource type="Texture2D" uid="uid://b8x261ipqu838" path="res://Assets/Sprites/Expeditions/Expe_Exit_Sign.png" id="2_k717y"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bkik4tcgqerwn" path="res://Assets/Sprites/Expeditions/Brew_Slot.png" id="4_77d3q"]
 [ext_resource type="Texture2D" uid="uid://3ynkmeie71c1" path="res://Assets/Sprites/Expeditions/Expe_QuestDisplay.png" id="4_h0eaq"]
 [ext_resource type="Texture2D" uid="uid://c8f1slg4b523q" path="res://Assets/Sprites/Expeditions/Expe_Exit_Embark_0.png" id="5_qiohl"]
+[ext_resource type="Texture2D" uid="uid://gvih83td67sc" path="res://Assets/Sprites/UI/btn_CodexX_0.png" id="8_1wlx4"]
+[ext_resource type="Texture2D" uid="uid://c2aptpss7jp0g" path="res://Assets/Sprites/UI/btn_CodexX_1.png" id="9_sl6h7"]
+[ext_resource type="Texture2D" uid="uid://mm3y3bvej5qe" path="res://Assets/Sprites/UI/btn_CodexX_2.png" id="10_c8dtt"]
 
 [sub_resource type="Gradient" id="Gradient_opp2h"]
 colors = PackedColorArray(0, 0, 0, 0.490196, 0, 0, 0, 0.490196)
@@ -25,6 +28,17 @@ font_size = 21
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj2cr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egknf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x22t5"]
+texture = ExtResource("8_1wlx4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uvgxk"]
+texture = ExtResource("9_sl6h7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34kj3"]
+texture = ExtResource("10_c8dtt")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecr84"]
 
 [node name="ExpeditionBagPopUp" type="Control"]
 layout_mode = 3
@@ -183,5 +197,23 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_i3nna")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wj2cr")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_egknf")
 
+[node name="CloseButton" type="Button" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.633
+anchor_top = 0.14
+anchor_right = 0.689
+anchor_bottom = 0.241
+offset_left = -0.216003
+offset_top = 0.279999
+offset_right = 0.271973
+offset_bottom = -0.168015
+theme_override_styles/normal = SubResource("StyleBoxTexture_x22t5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uvgxk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34kj3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ecr84")
+
 [connection signal="gui_input" from="BG/Info/HBoxContainer/Bag/PotionSlot" to="." method="_on_potion_slot_gui_input"]
 [connection signal="pressed" from="BG/Info/HBoxContainer/VBoxContainer/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

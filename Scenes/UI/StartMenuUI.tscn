@@ -1,10 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqbciq3ldcgs8"]
+[gd_scene load_steps=10 format=3 uid="uid://cqbciq3ldcgs8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/start_menu.gd" id="1_dl8wi"]
 [ext_resource type="Texture2D" uid="uid://b0422noucukd3" path="res://Assets/Sprites/UI/splashart.png" id="2_x1xi7"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="3_t2lgr"]
+[ext_resource type="Texture2D" uid="uid://cj32w87ulmafe" path="res://Assets/Sprites/Dialogue/textbox.png" id="4_8xjpm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxmlv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usdub"]
+texture = ExtResource("4_8xjpm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0oqdc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34gqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gs5sx"]
 
 [node name="StartMenuUI" type="Control"]
 layout_mode = 3
@@ -55,28 +65,49 @@ offset_bottom = 128.168
 
 [node name="StartButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_t2lgr")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxTexture_usdub")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0oqdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34gqq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gs5sx")
 text = "Start"
 
 [node name="SettingsButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_t2lgr")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxTexture_usdub")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0oqdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34gqq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gs5sx")
 text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_t2lgr")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_usdub")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0oqdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34gqq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gs5sx")
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="StartMenuScreen/ButtonGridContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_t2lgr")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_usdub")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0oqdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34gqq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gs5sx")
 text = "Exit"
 
 [connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="StartMenuScreen/ButtonGridContainer/ExitButton" to="." method="_on_exit_button_pressed"]
