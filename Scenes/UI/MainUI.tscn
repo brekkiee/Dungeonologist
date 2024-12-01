@@ -25,11 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://dkbc34yrei8rn" path="res://Assets/Sprites/UI/Notif_TL_1.png" id="17_35o0s"]
 [ext_resource type="Texture2D" uid="uid://iuwvjdrul14t" path="res://Assets/Sprites/UI/HomeUI.png" id="18_ex3na"]
 [ext_resource type="Texture2D" uid="uid://dm7jyd33vbgl0" path="res://Assets/UI/item_ToolTip.png" id="24_q7w0o"]
-<<<<<<< HEAD
+
 [ext_resource type="PackedScene" uid="uid://injcvdbqywyq" path="res://Scenes/UI/Expedition/ExpeditionRewards.tscn" id="27_jgly5"]
-=======
+
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="25_us811"]
->>>>>>> origin/Visual_Polish_Fonts_Etc
+
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
