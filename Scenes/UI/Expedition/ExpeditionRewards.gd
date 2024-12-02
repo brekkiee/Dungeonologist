@@ -48,6 +48,10 @@ func _on_button_pressed():
 				_:
 					InventoryManager.add_plant_inventory_item(r.item_data)
 			expo_rewards.erase(r)
+	if get_node("BG/MC/VB/Content/GridContainer").get_child_count() > 0:
+		for n in get_node("BG/MC/VB/Content/GridContainer").get_children():
+			get_node("BG/MC/VB/Content/GridContainer").remove_child(n)
+			n.queue_free()
 	# Optionally queue_free() if you want to remove it from the scene tree
 	# queue_free()
 

@@ -1,11 +1,9 @@
-res://Scenes/UI/scene_change_buttons.tscn
-res://Assets/Animations/Alchemy/anim_Brew_splash.tres
-res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
+res://Scenes/UI/Expedition/ExpeditionRewards.tscn
 res://Expeditions/expo1.tres
 res://Expeditions/expo2.tres
-res://Quests/epic_quest.gd
-res://Scenes/UI/SettingsMenu.tscn
+res://Scenes/UI/Expedition/ExpeditionRewards.gd
 res://Scenes/UI/PauseMenu.tscn
-res://Scripts/UI/settings_menu.gd
-res://Scenes/UI/StartMenuUI.tscn
 res://Scenes/UI/MainUI.tscn
+res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
+res://Quests/Codex/codex.tscn
