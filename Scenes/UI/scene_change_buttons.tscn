@@ -93,21 +93,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_yq15j")
 toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
-[node name="InvAlert" type="TextureRect" parent="MonsterEnclosureButton"]
-visible = false
-z_index = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.625
-anchor_top = 0.75
-anchor_right = 1.875
-anchor_bottom = 2.0
-offset_left = 1.14441e-05
-offset_bottom = 1.52588e-05
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_m126e")
-
 [node name="AlchemyLabButton" type="Button" parent="."]
 visible = false
 layout_mode = 1
@@ -130,7 +115,6 @@ toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
 [node name="InvAlert" type="TextureRect" parent="AlchemyLabButton"]
-z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.625
@@ -165,7 +149,6 @@ toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
 [node name="InvAlert" type="TextureRect" parent="GardenButton"]
-z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6
@@ -201,7 +184,6 @@ toggle_mode = true
 button_group = ExtResource("5_n0l7k")
 
 [node name="InvAlert" type="TextureRect" parent="ExpeditionsButton"]
-z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.65
