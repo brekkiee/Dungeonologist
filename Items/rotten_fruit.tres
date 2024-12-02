@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bixu0x8twx5yy"]
 
-[ext_resource type="Texture2D" path="res://Assets/Sprites/InventoryIcons/Drop_Fruit_Rotten.png" id="1_57am6"]
+[ext_resource type="Texture2D" uid="uid://cpotchr35x0yp" path="res://Assets/Sprites/InventoryIcons/Drop_Fruit_Rotten.png" id="1_57am6"]
 [ext_resource type="Script" path="res://Singletons/ItemData.gd" id="1_bjgui"]
 
 [resource]
 script = ExtResource("1_bjgui")
 Name = "Rotten Fruit"
-Type = 5
+Type = 2
 Sprite = ExtResource("1_57am6")
 drop_rate = 1.0
 min_quantity = 1

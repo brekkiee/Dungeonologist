@@ -1,9 +1,14 @@
-res://Scenes/UI/Expedition/ExpeditionRewards.tscn
+res://Scenes/UI/PauseMenu.tscn
+res://Assets/Animations/Alchemy/anim_Brew_splash.tres
+res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Expeditions/expo2.tres
-res://Scenes/UI/Expedition/ExpeditionRewards.gd
-res://Scenes/UI/PauseMenu.tscn
+res://Quests/epic_quest.gd
 res://Scenes/UI/MainUI.tscn
 res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/Expedition/ExpeditionRewards.tscn
 res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
 res://Quests/Codex/codex.tscn
+res://Assets/Monsters/monster_nekomata.tscn
+res://Items/rotten_fruit.tres
+res://Scripts/Enclosure/SpeciesResources/species_nekomata.tres
