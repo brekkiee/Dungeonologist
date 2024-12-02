@@ -27,7 +27,6 @@ DialogueManager="*res://Singletons/DialogueManager.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

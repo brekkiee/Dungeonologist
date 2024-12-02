@@ -4,3 +4,8 @@ res://Assets/Animations/Alchemy/anim_Brew_bubble.tres
 res://Expeditions/expo1.tres
 res://Expeditions/expo2.tres
 res://Quests/epic_quest.gd
+res://Scenes/UI/SettingsMenu.tscn
+res://Scenes/UI/PauseMenu.tscn
+res://Scripts/UI/settings_menu.gd
+res://Scenes/UI/StartMenuUI.tscn
+res://Scenes/UI/MainUI.tscn

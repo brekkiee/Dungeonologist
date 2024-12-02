@@ -73,6 +73,7 @@ texture_hover = ExtResource("6_h1emu")
 stretch_mode = 3
 
 [node name="SettingsButton" type="TextureButton" parent="StartMenuScreen/ButtonGridContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("6_ylics")
 texture_pressed = ExtResource("7_q1dcq")

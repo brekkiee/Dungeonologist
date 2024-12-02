@@ -41,6 +41,7 @@ theme_override_font_sizes/font_size = 25
 text = "Resume"
 
 [node name="SettingsMenuButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rrwx8")
 theme_override_font_sizes/font_size = 25
