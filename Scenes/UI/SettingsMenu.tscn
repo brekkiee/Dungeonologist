@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7fiwspnhlyyv"]
+[gd_scene load_steps=6 format=3 uid="uid://b7fiwspnhlyyv"]
 
 [ext_resource type="Script" path="res://Scripts/UI/settings_menu.gd" id="1_3qiav"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_1vnv4"]
+[ext_resource type="Texture2D" uid="uid://cs5ewqng8cn8b" path="res://Assets/Sprites/UI/Menu_Menu_1.png" id="2_sq5dq"]
+[ext_resource type="Texture2D" uid="uid://dm8au244fcxeh" path="res://Assets/Sprites/UI/Menu_Menu_3.png" id="3_nob8u"]
+[ext_resource type="Texture2D" uid="uid://c2l0x7131ohkd" path="res://Assets/Sprites/UI/Menu_Menu_2.png" id="4_vw1f1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1liw0"]
 
@@ -43,32 +45,38 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonGridContainer" type="VBoxContainer" parent="SettingsMenuScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -50.5
-offset_right = 48.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TimeOptionButton" type="OptionButton" parent="SettingsMenuScreen/ButtonGridContainer"]
+[node name="TimeOptionButton" type="OptionButton" parent="SettingsMenuScreen"]
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 452.0
+offset_top = 242.0
+offset_right = -452.0
+offset_bottom = -355.0
 item_count = 2
 popup/item_0/text = "In-Game Time"
 popup/item_0/id = 0
 popup/item_1/text = "Real-Time"
 popup/item_1/id = 1
 
-[node name="CloseButton" type="Button" parent="SettingsMenuScreen/ButtonGridContainer"]
+[node name="ButtonGridContainer" type="VBoxContainer" parent="SettingsMenuScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = 440.0
+offset_right = -621.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="CloseButton" type="TextureButton" parent="SettingsMenuScreen/ButtonGridContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_1vnv4")
-theme_override_font_sizes/font_size = 25
-text = "Close"
+texture_normal = ExtResource("2_sq5dq")
+texture_pressed = ExtResource("3_nob8u")
+texture_hover = ExtResource("4_vw1f1")
+stretch_mode = 3
 
 [connection signal="pressed" from="SettingsMenuScreen/ButtonGridContainer/CloseButton" to="." method="_on_close_button_pressed"]

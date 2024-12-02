@@ -1,3 +1,6 @@
+TextureButton
+Button
+MenuButton
 AspectRatioContainer
 MarginContainer
 TextureRect
@@ -5,12 +8,10 @@ HSeparator
 Panel
 RichTextLabel
 Control
-Button
 Label
 AnimatedSprite2D
 CollisionShape2D
 Area2D
-TextureButton
 CanvasLayer
 VBoxContainer
 HBoxContainer
@@ -29,5 +30,3 @@ ScrollContainer
 CenterContainer
 CollisionPolygon2D
 CharacterBody2D
-StaticBody2D
-Node

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3yirmb64h4sc"]
+[gd_scene load_steps=7 format=3 uid="uid://d3yirmb64h4sc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/credits_menu.gd" id="1_c2aux"]
 [ext_resource type="Texture2D" uid="uid://bj4o23odb3hw6" path="res://Assets/Sprites/UI/Overlay_Char_BG.png" id="2_7vtfy"]
-[ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_qpun6"]
+[ext_resource type="Texture2D" uid="uid://cs5ewqng8cn8b" path="res://Assets/Sprites/UI/Menu_Menu_1.png" id="3_xqjfc"]
+[ext_resource type="Texture2D" uid="uid://dm8au244fcxeh" path="res://Assets/Sprites/UI/Menu_Menu_3.png" id="4_pqx0s"]
+[ext_resource type="Texture2D" uid="uid://c2l0x7131ohkd" path="res://Assets/Sprites/UI/Menu_Menu_2.png" id="5_58t6q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1liw0"]
 
@@ -31,13 +33,13 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1liw0")
 [node name="ScreenLabel" type="Label" parent="CreditsScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.428
+anchor_left = 0.444
 anchor_top = 0.242
-anchor_right = 0.576
+anchor_right = 0.592
 anchor_bottom = 0.315
-offset_left = -0.0560303
+offset_left = 0.511963
 offset_top = 0.18399
-offset_right = -0.552063
+offset_right = 0.0159912
 offset_bottom = -0.12001
 theme_override_font_sizes/font_size = 31
 text = "CREDITS"
@@ -46,30 +48,25 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CreditsScreen"]
 layout_mode = 2
-offset_left = 444.0
-offset_top = 230.0
-offset_right = 742.0
-offset_bottom = 606.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 398.0
+offset_top = 205.0
+offset_right = -329.0
+offset_bottom = -121.0
 texture = ExtResource("2_7vtfy")
 
-[node name="ButtonGridContainer" type="VBoxContainer" parent="CreditsScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -102.0
-offset_right = 156.0
-offset_bottom = 304.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsScreen/ButtonGridContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsScreen/TextureRect"]
 layout_mode = 2
-text = "
-Project Manager
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = -4.0
+offset_bottom = -1.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "[center]Project Manager
 Aera Skimming
 
 Game Designer & Writer
@@ -82,13 +79,28 @@ Artists
 Laurence Chan, Julia Parkinson, Xuan Liu
 
 Sound Designer
-Xuan Liu
-"
+Xuan Liu[/center]"
 fit_content = true
-tab_size = 11
+tab_size = 7
 
-[node name="CloseButton" type="Button" parent="CreditsScreen/ButtonGridContainer"]
+[node name="ButtonGridContainer" type="VBoxContainer" parent="CreditsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.405
+anchor_top = 0.816
+anchor_right = 0.641
+anchor_bottom = 0.9
+offset_left = -0.560089
+offset_top = 0.231995
+offset_right = -181.432
+offset_bottom = -36.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="CloseButton" type="TextureButton" parent="CreditsScreen/ButtonGridContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qpun6")
-theme_override_font_sizes/font_size = 25
-text = "Close"
+texture_normal = ExtResource("3_xqjfc")
+texture_pressed = ExtResource("4_pqx0s")
+texture_hover = ExtResource("5_58t6q")
+stretch_mode = 3
