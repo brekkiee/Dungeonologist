@@ -46,7 +46,8 @@ func _on_button_pressed():
 				6:
 					InventoryManager.add_potion_inventory_item(r.item_data)
 				_:
-					InventoryManager.add_plant_inventory_item(r.item_data)	
+					InventoryManager.add_plant_inventory_item(r.item_data)
+			expo_rewards.erase(r)
 	# Optionally queue_free() if you want to remove it from the scene tree
 	# queue_free()
 
