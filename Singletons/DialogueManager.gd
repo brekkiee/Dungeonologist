@@ -71,7 +71,9 @@ func advance_text():
 	if is_chat_active:
 		if can_advance_line:
 			current_line_index += 1
-			if current_line_index >= chat_lines.size():
+			print(current_line_index)
+			if current_line_index >= chat_lines.size()-1:
+				_display_current_line()
 				_end_chat()
 			else:
 				_display_current_line()
@@ -87,7 +89,7 @@ func _end_chat():
 	is_chat_active = false
 	current_line_index = 0  # Resets the line index
 	chat_ended = true
-	emit_signal("chat_finished")
+	
 
 # Method to close the chat box if the player clicks the NPC after the chat ends
 func close_chat_box():
@@ -96,6 +98,7 @@ func close_chat_box():
 		chat_box = null
 		chat_ended = false
 		is_chat_active = false
+		emit_signal("chat_finished")
 
 # Input handling for finishing the text quickly and advancing lines
 func _input(event):
