@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://mkicu74u48ty"]
+[gd_scene load_steps=13 format=3 uid="uid://mkicu74u48ty"]
 
 [ext_resource type="Script" path="res://Scripts/UI/pause_menu.gd" id="1_0libc"]
+[ext_resource type="Texture2D" uid="uid://dym1705vlsblc" path="res://Assets/Sprites/UI/Menu_Resume_1.png" id="2_ltfew"]
 [ext_resource type="FontFile" uid="uid://dbujpgfdoqmp3" path="res://Assets/Fonts/yoster.ttf" id="2_rrwx8"]
+[ext_resource type="Texture2D" uid="uid://qljcb31ke02a" path="res://Assets/Sprites/UI/Menu_Resume_3.png" id="3_5mx77"]
+[ext_resource type="Texture2D" uid="uid://dahycrpk710ue" path="res://Assets/Sprites/UI/Menu_Resume_2.png" id="4_w14gl"]
+[ext_resource type="Texture2D" uid="uid://cs5ewqng8cn8b" path="res://Assets/Sprites/UI/Menu_Menu_1.png" id="6_jv51g"]
+[ext_resource type="Texture2D" uid="uid://dm8au244fcxeh" path="res://Assets/Sprites/UI/Menu_Menu_3.png" id="7_5fqq3"]
+[ext_resource type="Texture2D" uid="uid://c2l0x7131ohkd" path="res://Assets/Sprites/UI/Menu_Menu_2.png" id="8_gceb1"]
+[ext_resource type="Texture2D" uid="uid://culyw4xmybimn" path="res://Assets/Sprites/UI/Menu_Exit_1.png" id="9_xw1xq"]
+[ext_resource type="Texture2D" uid="uid://bi2bgtvcyi3uh" path="res://Assets/Sprites/UI/Menu_Exit_3.png" id="10_7o58o"]
+[ext_resource type="Texture2D" uid="uid://koddsxgjpc2w" path="res://Assets/Sprites/UI/Menu_Exit_2.png" id="11_nghi6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j37hr"]
 
@@ -34,11 +43,12 @@ offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+[node name="ResumeButton" type="TextureButton" parent="PauseMenuScreen/ButtonGridContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_rrwx8")
-theme_override_font_sizes/font_size = 25
-text = "Resume"
+texture_normal = ExtResource("2_ltfew")
+texture_pressed = ExtResource("3_5mx77")
+texture_hover = ExtResource("4_w14gl")
+stretch_mode = 0
 
 [node name="SettingsMenuButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
 visible = false
@@ -47,17 +57,19 @@ theme_override_fonts/font = ExtResource("2_rrwx8")
 theme_override_font_sizes/font_size = 25
 text = "Settings"
 
-[node name="MainMenuButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+[node name="MainMenuButton" type="TextureButton" parent="PauseMenuScreen/ButtonGridContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_rrwx8")
-theme_override_font_sizes/font_size = 25
-text = "Main Menu"
+texture_normal = ExtResource("6_jv51g")
+texture_pressed = ExtResource("7_5fqq3")
+texture_hover = ExtResource("8_gceb1")
+stretch_mode = 0
 
-[node name="ExitButton" type="Button" parent="PauseMenuScreen/ButtonGridContainer"]
+[node name="ExitButton" type="TextureButton" parent="PauseMenuScreen/ButtonGridContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_rrwx8")
-theme_override_font_sizes/font_size = 25
-text = "Exit"
+texture_normal = ExtResource("9_xw1xq")
+texture_pressed = ExtResource("10_7o58o")
+texture_hover = ExtResource("11_nghi6")
+stretch_mode = 0
 
 [connection signal="pressed" from="PauseMenuScreen/ButtonGridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenuScreen/ButtonGridContainer/SettingsMenuButton" to="." method="_on_settings_button_pressed"]
