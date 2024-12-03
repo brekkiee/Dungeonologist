@@ -330,5 +330,6 @@ func collect_item():
 func check_common_slime_research_task():
 	if foods_fed.size() == all_food_items.size():
 		PlayerData.research_tasks_completed["Common Slime"][0] = true
+		QuestManager.on_research_completed()
 		PlayerData.save_data()
 		print("Research task 'Common Slime' completed")

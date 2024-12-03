@@ -325,12 +325,14 @@ func spawn_next_monster():
 		if dinglebat_count >= 2:
 			PlayerData.research_tasks_completed["Forest Dinglebat"][0] = true
 			PlayerData.save_data()
+			QuestManager.on_research_completed()
 			print("Research task 'Forest Dinglebat' completed")
 	if species.name == "common_shrooman":
 		shrooman_count += 1
 		if shrooman_count >= 2:
 			PlayerData.research_tasks_completed["Common Shrooman"][0] = true
 			PlayerData.save_data()
+			QuestManager.on_research_completed()
 			print("Research task 'Common Shrooman' completed")
 
 	if species.name == "plains_imp":
@@ -341,11 +343,13 @@ func spawn_next_monster():
 	if plains_imp_present and other_carnivore_present:
 		PlayerData.research_tasks_completed["Plains Imp"][0] = true
 		PlayerData.save_data()
+		QuestManager.on_research_completed()
 		print("Research task 'Plains Imp' completed")
 
 	if species.name == "nekomata":
 		PlayerData.research_tasks_completed["Nekomata"][0] = true
 		PlayerData.save_data()
+		QuestManager.on_research_completed()
 		print("Research task 'Nekomata' completed")
 	
 	if species.name == "shallows_jelly":
@@ -353,6 +357,7 @@ func spawn_next_monster():
 		if jelly_count >= 4:
 			PlayerData.research_tasks_completed["Shallows Jelly"][0] = true
 			PlayerData.save_data()
+			QuestManager.on_research_completed()
 			print("Research task 'Shallows Jelly' completed")
 	# End research tasks check section
 

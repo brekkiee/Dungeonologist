@@ -223,4 +223,6 @@ func on_expedition_rewards_collected():
 
 func on_research_completed():
 	if active_quest and quests_data[active_quest.quest_name]["stage" + str(current_stage)] == "CompleteResearch":
+		var codex_alert = GameManager.main_ui.get_node("MainScreen/ScreenBorders/BookShelf/MonsterBook/CodexAlert")
+		codex_alert.visible = true
 		progress_active_quest()

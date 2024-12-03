@@ -7,3 +7,7 @@ res://Quests/epic_quest.gd
 res://Scenes/UI/Expedition/ExpeditionRewards.tscn
 res://Quests/Codex/codex.tscn
 res://Scenes/UI/PauseMenu.tscn
+res://Singletons/QuestManager.gd
+res://Singletons/GameManager.gd
+res://Scripts/Enclosure/MonsterBase.gd
+res://Scenes/UI/Expedition/ExpeditionBagPopUp.tscn
